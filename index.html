@@ -16,11 +16,16 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"Brassivo Research","url":"https://brassivo.com/","inLanguage":"zh-CN","description":"每周自动更新的投研看板：全球流动性周期与AI产业链选股。","hasPart":[{"@type":"WebPage","name":"Global Liquidity","url":"https://investment.brassivo.com/","description":"G3/G4央行流动性同比、美元净流动性周频、周期定位与资产配置立场。"},{"@type":"WebPage","name":"Stocks","url":"https://stocks.brassivo.com/","description":"AI产业链15个环节按质量×定价未充分程度排序的选股表。"}]}
 </script>
+<script>(function(){var m=document.cookie.match(/brassivo_theme=(dark|light)/);document.documentElement.setAttribute('data-theme',m?m[1]:'light');})();</script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" fdata-cf-beacon='{"token": "3be817e4a2314134a9e291596330cb26"}'></script>
 <style>
   :root{
+    --bg:#f6f7f9; --card:#fff; --line:#e2e5ea;
+    --txt:#1d2129; --mut:#5f6672; --hi:#0b0d12; --warm:#e0913a; --cool:#3a9b78;
+  }
+  html[data-theme=dark]{
     --bg:#171a21; --card:#1f232c; --line:#343a47;
-    --txt:#e6e8ee; --mut:#9aa3b2; --hi:#f5f7fa; --warm:#e0913a; --cool:#3a9b78;
+    --txt:#e6e8ee; --mut:#9aa3b2; --hi:#f5f7fa;
   }
   *{box-sizing:border-box}
   body{margin:0;min-height:100vh;background:var(--bg);color:var(--txt);display:flex;align-items:center;justify-content:center;
@@ -40,6 +45,7 @@
 </style>
 </head>
 <body>
+<button onclick="(function(){var d=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.cookie='brassivo_theme='+d+'; domain=.brassivo.com; path=/; max-age=31536000; SameSite=Lax';document.documentElement.setAttribute('data-theme',d);})()" style="position:fixed;top:16px;right:16px;cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--mut);font-size:12px;padding:4px 10px;border-radius:6px">深色/浅色</button>
 <div class="wrap">
   <h1>Brassivo 投研看板</h1>
   <div class="sub">个人投研项目导航 · 数据定期自动更新</div>
