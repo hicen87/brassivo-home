@@ -3,24 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brassivo Research · 全球流动性与AI产业链投研看板</title>
-<meta name="description" content="Brassivo Research：每周自动更新的投研看板。Global Liquidity 追踪G3/G4央行流动性与美元净流动性周期；Stocks 用质量×定价框架对AI产业链15个环节排序选股。">
-<meta name="keywords" content="全球流动性,央行流动性,美元净流动性,AI产业链,选股,价值投资,liquidity,AI supply chain,stock screening">
+<title>Brassivo Research · 全球流动性与AI产业链投研系统</title>
+<meta name="description" content="Brassivo Research：每周自动更新的量化投研系统。Global Liquidity 追踪G3/G4央行流动性与美元净流动性周期；Global Stocks 与 China Stocks 用质量×定价框架对全球及中国AI产业链瓶颈环节排序选股，全部结论附可证伪条款。">
+<meta name="keywords" content="全球流动性,央行流动性,美元净流动性,AI产业链,选股,价值投资,中国科技股,A股,港股,liquidity,AI supply chain,stock screening,China tech stocks">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://brassivo.com/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Brassivo Research">
-<meta property="og:title" content="Brassivo Research · 投研看板">
-<meta property="og:description" content="每周自动更新：全球流动性周期看板 + AI产业链选股表。">
+<meta property="og:title" content="Brassivo Research · 投研系统">
+<meta property="og:description" content="每周自动更新：全球流动性周期看板 + 全球/中国AI产业链选股表，结论附可证伪条款。">
 <meta property="og:url" content="https://brassivo.com/">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"Brassivo Research","url":"https://brassivo.com/","inLanguage":"zh-CN","description":"每周自动更新的投研看板：全球流动性周期与AI产业链选股。","hasPart":[{"@type":"WebPage","name":"Global Liquidity","url":"https://investment.brassivo.com/","description":"G3/G4央行流动性同比、美元净流动性周频、周期定位与资产配置立场。"},{"@type":"WebPage","name":"Stocks","url":"https://stocks.brassivo.com/","description":"AI产业链15个环节按质量×定价未充分程度排序的选股表。"}]}
+{"@context":"https://schema.org","@type":"WebSite","name":"Brassivo Research","url":"https://brassivo.com/","inLanguage":"zh-CN","description":"每周自动更新的投研系统：全球流动性周期、全球与中国AI产业链选股。","hasPart":[{"@type":"WebPage","name":"Global Liquidity","url":"https://investment.brassivo.com/","description":"G3/G4央行流动性同比、美元净流动性周频、周期定位与资产配置立场。"},{"@type":"WebPage","name":"Global Stocks","url":"https://stocks.brassivo.com/","description":"全球AI产业链15个环节按质量×定价未充分程度排序的选股表。"},{"@type":"WebPage","name":"China Stocks","url":"https://china.brassivo.com/","description":"A股/港股/中概科技股供应链瓶颈环节选股表。"}],"offers":{"@type":"Offer","name":"黄金组合专业版","price":"24.9","priceCurrency":"USD"}}
 </script>
 <script>(function(){var m=document.cookie.match(/brassivo_theme=(dark|light)/);document.documentElement.setAttribute('data-theme',m?m[1]:'light');})();</script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" fdata-cf-beacon='{"token": "3be817e4a2314134a9e291596330cb26"}'></script>
 <style>
   :root{
-    --bg:#f6f7f9; --card:#fff; --line:#e2e5ea;
+    --bg:#f6f7f9; --card:#fff; --line:#d8dce3;
     --txt:#15181e; --mut:#3e4552; --hi:#0b0d12; --warm:#e0913a; --cool:#3a9b78;
   }
   html[data-theme=dark]{
@@ -28,70 +29,123 @@
     --txt:#edeff4; --mut:#b6bec9; --hi:#f5f7fa;
   }
   *{box-sizing:border-box}
-  body{margin:0;min-height:100vh;background:var(--bg);color:var(--txt);display:flex;align-items:center;justify-content:center;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;padding:24px}
-  .wrap{max-width:680px;width:100%}
-  h1{font-size:26px;font-weight:600;margin:0 0 6px;color:var(--hi)}
-  .sub{color:var(--mut);font-size:14px;margin-bottom:28px}
+  body{margin:0;min-height:100vh;background:var(--bg);color:var(--txt);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.65}
+  .wrap{max-width:860px;margin:0 auto;padding:0 22px 48px}
+  header{display:flex;align-items:center;gap:10px;padding:20px 0 6px}
+  header img{width:30px;height:30px;border-radius:7px}
+  header .bname{font-size:15px;font-weight:800;letter-spacing:.12em;color:var(--hi)}
+  header .bname span{color:var(--warm)}
+  header button{margin-left:auto;cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--mut);font-size:12px;padding:4px 10px;border-radius:6px}
+  .hero{padding:34px 0 8px}
+  .hero h1{font-size:30px;line-height:1.3;font-weight:700;margin:0 0 10px;color:var(--hi);letter-spacing:.01em}
+  .hero h1 b{color:var(--warm);font-weight:700}
+  .hero .sub{color:var(--mut);font-size:14.5px;max-width:640px}
+  .badges{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 4px}
+  .badges span{font-size:11.5px;color:var(--mut);border:1px solid var(--line);border-radius:20px;padding:3px 12px;background:var(--card)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:22px}
   a.card{display:block;background:var(--card);border:1px solid var(--line);border-radius:14px;
-    padding:22px 24px;margin-bottom:16px;text-decoration:none;color:var(--txt);transition:border-color .15s, transform .15s}
+    padding:20px 22px;text-decoration:none;color:var(--txt);transition:border-color .15s, transform .15s}
   a.card:hover{border-color:var(--warm);transform:translateY(-2px)}
-  .card h2{margin:0 0 6px;font-size:17px;color:var(--hi)}
-  .card p{margin:0;font-size:13px;color:var(--mut);line-height:1.6}
-  .tag{display:inline-block;font-size:11px;font-weight:600;padding:2px 10px;border-radius:20px;
-    border:1px solid var(--line);color:var(--mut);margin-bottom:10px}
-  .go{float:right;color:var(--warm);font-size:14px;margin-top:2px}
-  .foot{color:var(--mut);font-size:11.5px;margin-top:24px;text-align:center}
+  .card h2{margin:0 0 6px;font-size:16.5px;color:var(--hi)}
+  .card p{margin:0;font-size:12.5px;color:var(--mut);line-height:1.65}
+  .tag{display:inline-block;font-size:10.5px;font-weight:600;padding:2px 10px;border-radius:20px;
+    border:1px solid var(--line);color:var(--mut);margin-bottom:10px;letter-spacing:.05em}
+  .go{float:right;color:var(--warm);font-size:13px;margin-top:1px}
+  .meth{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:14px}
+  .meth div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+  .meth h3{margin:0 0 6px;font-size:13.5px;color:var(--hi)}
+  .meth p{margin:0;font-size:12px;color:var(--mut)}
+  h2.sect{font-size:14px;font-weight:700;color:var(--hi);margin:36px 0 4px;letter-spacing:.06em;text-transform:uppercase}
+  h2.sect small{color:var(--mut);font-weight:400;font-size:11px;letter-spacing:0;text-transform:none;margin-left:8px}
+  .price{background:var(--card);border:1.5px solid var(--warm);border-radius:14px;padding:22px 24px;margin-top:14px}
+  .price .pnum{font-size:26px;color:var(--hi);font-weight:800}
+  .price .pnum small{font-size:12px;font-weight:400;color:var(--mut)}
+  .price .annual{color:var(--warm);font-weight:700;font-size:14px}
+  .price ul{margin:10px 0;padding-left:18px;font-size:12.5px;color:var(--mut)}
+  .price li{margin:3px 0}
+  .flow{font-size:12px;color:var(--mut);border-top:1px dashed var(--line);padding-top:10px;margin-top:12px}
+  .flow b{color:var(--hi)}
+  form.line{display:flex;gap:8px;margin-top:12px}
+  form.line input{flex:1;padding:10px 12px;border-radius:8px;border:1px solid var(--line);background:transparent;color:var(--txt);font-size:13px;min-width:0}
+  form.line button{padding:10px 18px;border-radius:8px;border:none;background:var(--warm);color:#fff;font-weight:600;font-size:13px;cursor:pointer;white-space:nowrap}
+  form.line button.k{background:var(--cool)}
+  .msg{margin-top:8px;font-size:12px;color:var(--mut)}
+  details summary{cursor:pointer;font-size:12.5px;color:var(--mut);margin-top:12px}
+  .foot{color:var(--mut);font-size:11.5px;margin-top:40px;padding-top:16px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  @media(max-width:640px){.hero h1{font-size:23px}}
 </style>
 </head>
 <body>
-<button onclick="(function(){var d=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.cookie='brassivo_theme='+d+'; domain=.brassivo.com; path=/; max-age=31536000; SameSite=Lax';document.documentElement.setAttribute('data-theme',d);})()" style="position:fixed;top:16px;right:16px;cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--mut);font-size:12px;padding:4px 10px;border-radius:6px">深色/浅色</button>
 <div class="wrap">
-  <h1>Brassivo 投研看板</h1>
-  <div class="sub">个人投研项目导航 · 数据定期自动更新</div>
+  <header>
+    <img src="/favicon.svg" alt="Brassivo logo">
+    <span class="bname">BRASSIVO <span>RESEARCH</span></span>
+    <button onclick="(function(){var d=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.cookie='brassivo_theme='+d+'; domain=.brassivo.com; path=/; max-age=31536000; SameSite=Lax';document.documentElement.setAttribute('data-theme',d);})()">深色/浅色</button>
+    <button id="langbtn" onclick="toggleLang()">EN</button>
+  </header>
 
-  <a class="card" href="https://investment.brassivo.com">
-    <span class="tag">宏观 · 周更</span><span class="go">进入 →</span>
-    <h2>Global Liquidity</h2>
-    <p>G3/G4 央行流动性同比、美元净流动性周频、五层周期定位与大类资产配置立场。</p>
-  </a>
-
-  <a class="card" href="https://stocks.brassivo.com">
-    <span class="tag">个股 · 周更</span><span class="go">进入 →</span>
-    <h2>Stocks</h2>
-    <p>15 个产业链环节按「质量 × 定价未充分程度」排序，含操作分层与可证伪条款。</p>
-  </a>
-
-  <div class="card" style="cursor:default">
-    <span class="tag">关于本站</span>
-    <h2 style="font-size:15px">这是什么</h2>
-    <p>Brassivo Research 是一套<b style="color:var(--hi)">每周自动更新的个人投研系统</b>：宏观层追踪 G3/G4 央行流动性与美元净流动性周期，判断「水位」与大类资产立场；个股层用「质量 × 定价未充分程度」框架对 AI 产业链 15 个环节持续排序，两层交叉验证、互为约束。数据管道全自动（FRED / 央行 / 行情源），结论带可证伪条款——观点错了会被规则强制纠正，而不是靠嘴硬。它首先是作者自用的实盘决策工具，其次才是一份对外分享的研究。</p>
+  <div class="hero">
+    <h1>全球流动性 × 供应链瓶颈<br>每周自动更新的<b>可证伪</b>投研系统</h1>
+    <p class="sub">宏观层判断「水位」，个股层寻找「瓶颈」，两层交叉验证、互为约束。数据管道全自动（FRED / 央行 / 行情源），每一条结论都附带触发即执行的可证伪条款——观点错了会被规则强制纠正，而不是靠嘴硬。它首先是作者自用的实盘决策工具，其次才是一份对外分享的研究。</p>
+    <div class="badges"><span>每周日自动更新</span><span>数据管道全自动</span><span>结论可证伪</span><span>宏观×个股交叉验证</span></div>
   </div>
 
-  <div class="card" style="cursor:default;border-color:var(--warm)">
-    <span class="tag" style="color:var(--warm);border-color:var(--warm)">Pro · 全站解锁</span>
-    <h2 style="font-size:16px">黄金组合专业版</h2>
-    <p style="margin-bottom:10px">适合既看宏观周期、又要落地到资产配置与个股交叉验证的重度投资者。</p>
-    <p style="font-size:20px;color:var(--hi);font-weight:700;margin-bottom:2px">$24.9 <span style="font-size:12px;font-weight:400;color:var(--mut)">/ 月</span></p>
-    <p style="margin-bottom:10px"><b style="color:var(--warm)">年付特惠 $189 / 年</b>（折合 $15.75/月，省约 37%）</p>
-    <p style="margin-bottom:12px">权益：解锁全站（宏观 + 个股）· 每周邮件深度提醒与核心指标异动告警 · 看板历史轨迹回溯。</p>
-    <p style="font-size:12px;margin-bottom:12px;color:var(--mut)">订阅方式：① 下方留邮箱，<b style="color:var(--hi)">首月免费全站试用</b>；② 到期前会收到续订邮件，回复即可获得付款方式（支持微信 / 支付宝）；③ 付款后发放激活 Key，输入即解锁一年。</p>
-    <form id="bsubf" style="display:flex;gap:8px">
-      <input id="bsube" type="email" required placeholder="you@email.com" style="flex:1;padding:9px 12px;border-radius:8px;border:1px solid var(--line);background:transparent;color:var(--txt);font-size:13px">
-      <button style="padding:9px 16px;border-radius:8px;border:none;background:var(--warm);color:#fff;font-weight:600;font-size:13px;cursor:pointer">免费试用1个月</button>
+  <h2 class="sect">Research Modules <small>三大看板</small></h2>
+  <div class="grid">
+    <a class="card" href="https://investment.brassivo.com">
+      <span class="tag">MACRO · 宏观</span><span class="go">进入 →</span>
+      <h2>Global Liquidity</h2>
+      <p>G3/G4 央行流动性同比、美元净流动性周频（WALCL−TGA−RRP）、五层周期定位与大类资产配置立场。</p>
+    </a>
+    <a class="card" href="https://stocks.brassivo.com">
+      <span class="tag">EQUITY · 全球个股</span><span class="go">进入 →</span>
+      <h2>Global Stocks</h2>
+      <p>全球 AI 产业链 15 个环节按「质量 × 定价未充分程度」排序，含操作分层、仓位档与可证伪条款。</p>
+    </a>
+    <a class="card" href="https://china.brassivo.com">
+      <span class="tag">EQUITY · 中国个股</span><span class="go">进入 →</span>
+      <h2>China Stocks</h2>
+      <p>A股 / 港股 / 中概科技股：中国 AI 与半导体供应链瓶颈环节排序选股，同一框架 + 国产替代与管制约束。</p>
+    </a>
+  </div>
+
+  <h2 class="sect">Methodology <small>方法论</small></h2>
+  <div class="meth">
+    <div><h3>数据管道全自动</h3><p>FRED、各国央行、行情源每周定时拉取重算，杜绝手抄与「拍脑袋」数字；未核实的数字宁可不写。</p></div>
+    <div><h3>结论可证伪</h3><p>每张表附 10 条可证伪条款：触发即 48 小时内机械执行减仓/清零，纪律高于观点。</p></div>
+    <div><h3>宏观×个股交叉验证</h3><p>流动性档位决定总敞口，供应链瓶颈决定标的；两层互为约束，防止单边叙事。</p></div>
+  </div>
+
+  <h2 class="sect">Pricing <small>订阅</small></h2>
+  <div class="price">
+    <span class="tag" style="color:var(--warm);border-color:var(--warm)">PRO · 全站解锁</span>
+    <h2 style="font-size:17px;margin:6px 0;color:var(--hi)">黄金组合专业版</h2>
+    <p style="font-size:12.5px;color:var(--mut);margin:0 0 10px">适合既看宏观周期、又要落地到资产配置与个股交叉验证的重度投资者。</p>
+    <div class="pnum">$24.9 <small>/ 月</small></div>
+    <div class="annual">年付特惠 $189 / 年 <span style="font-weight:400;font-size:12px;color:var(--mut)">（折合 $15.75/月，省约 37%）</span></div>
+    <ul>
+      <li>解锁全站内容（宏观 + 全球个股 + 中国个股）</li>
+      <li>每周更新邮件深度提醒，含核心指标异动告警</li>
+      <li>专属数据看板历史轨迹回溯权限</li>
+    </ul>
+    <div class="flow">订阅方式：① 下方留邮箱，<b>首月免费全站试用</b> → ② 到期前收到续订邮件，回复即获付款方式（微信 / 支付宝）→ ③ 付款后发放激活 Key，输入即解锁一年。</div>
+    <form id="bsubf" class="line">
+      <input id="bsube" type="email" required placeholder="you@email.com">
+      <button>免费试用1个月</button>
     </form>
-    <p id="bsubm" style="margin-top:8px;font-size:12px"></p>
-    <details style="margin-top:10px">
-      <summary style="cursor:pointer;font-size:12.5px;color:var(--mut)">已有激活 Key？点此激活</summary>
-      <form id="bkeyf" style="display:flex;gap:8px;margin-top:8px">
-        <input id="bkey" required placeholder="BRSV-XXXX-XXXX-XXXX" style="flex:1;padding:9px 12px;border-radius:8px;border:1px solid var(--line);background:transparent;color:var(--txt);font-size:13px;text-transform:uppercase">
-        <button style="padding:9px 16px;border-radius:8px;border:none;background:var(--cool);color:#fff;font-weight:600;font-size:13px;cursor:pointer">激活</button>
+    <p id="bsubm" class="msg"></p>
+    <details>
+      <summary>已有激活 Key？点此激活</summary>
+      <form id="bkeyf" class="line">
+        <input id="bkey" required placeholder="BRSV-XXXX-XXXX-XXXX" style="text-transform:uppercase">
+        <button class="k">激活</button>
       </form>
-      <p id="bkeym" style="margin-top:6px;font-size:12px"></p>
+      <p id="bkeym" class="msg"></p>
     </details>
   </div>
 
-  <div class="foot">仅为个人研究参考，非投资建议 · Brassivo Research</div>
+  <div class="foot"><span id="ft1">仅为个人研究参考，非投资建议</span><span><a href="/account.html" style="color:inherit" id="ft2">会员中心</a> · <a href="/admin.html" style="color:inherit;opacity:.6" id="ft3">管理员入口</a> · © Brassivo Research</span></div>
 </div>
 <script>
 (function(){
@@ -124,6 +178,40 @@
     });
   });
 })();
+// ---- 中英切换（默认中文，cookie 记忆）----
+var I18N=[
+  ['.hero h1','全球流动性 × 供应链瓶颈<br>每周自动更新的<b>可证伪</b>投研系统','Global Liquidity × Supply-Chain Bottlenecks<br>A weekly-updated, <b>falsifiable</b> research system'],
+  ['.hero .sub','宏观层判断「水位」，个股层寻找「瓶颈」，两层交叉验证、互为约束。数据管道全自动（FRED / 央行 / 行情源），每一条结论都附带触发即执行的可证伪条款——观点错了会被规则强制纠正，而不是靠嘴硬。它首先是作者自用的实盘决策工具，其次才是一份对外分享的研究。','The macro layer reads the liquidity tide; the equity layer hunts supply-chain bottlenecks. The two cross-validate and constrain each other. Data pipelines are fully automated (FRED / central banks / market feeds), and every conclusion carries falsifiable triggers executed mechanically — wrong views get corrected by rules, not rhetoric. Built first as the author\'s own live trading tool, shared second.'],
+  ['.badges','<span>每周日自动更新</span><span>数据管道全自动</span><span>结论可证伪</span><span>宏观×个股交叉验证</span>','<span>Auto-updated every Sunday</span><span>Automated data pipelines</span><span>Falsifiable conclusions</span><span>Macro × equity cross-check</span>'],
+  ['a[href*="investment"] p','G3/G4 央行流动性同比、美元净流动性周频（WALCL−TGA−RRP）、五层周期定位与大类资产配置立场。','G3/G4 central-bank liquidity YoY, weekly USD net liquidity (WALCL−TGA−RRP), five-layer cycle positioning and asset-allocation stance.'],
+  ['a[href*="stocks.brassivo"] p','全球 AI 产业链 15 个环节按「质量 × 定价未充分程度」排序，含操作分层、仓位档与可证伪条款。','15 global AI supply-chain segments ranked by quality × mispricing, with action tiers, position bands and falsifiable clauses.'],
+  ['a[href*="china"] p','A股 / 港股 / 中概科技股：中国 AI 与半导体供应链瓶颈环节排序选股，同一框架 + 国产替代与管制约束。','China tech across A-shares / HK / ADRs: AI & semiconductor bottleneck segments, same framework plus localization and export-control constraints.'],
+  ['.meth div:nth-child(1)','<h3>数据管道全自动</h3><p>FRED、各国央行、行情源每周定时拉取重算，杜绝手抄与「拍脑袋」数字；未核实的数字宁可不写。</p>','<h3>Automated pipelines</h3><p>FRED, central banks and market feeds are pulled and recomputed on schedule — no hand-copied or made-up numbers; unverified figures are omitted.</p>'],
+  ['.meth div:nth-child(2)','<h3>结论可证伪</h3><p>每张表附 10 条可证伪条款：触发即 48 小时内机械执行减仓/清零，纪律高于观点。</p>','<h3>Falsifiable by design</h3><p>Every board ships with 10 falsifiable clauses: once triggered, positions are cut mechanically within 48 hours. Discipline beats opinion.</p>'],
+  ['.meth div:nth-child(3)','<h3>宏观×个股交叉验证</h3><p>流动性档位决定总敞口，供应链瓶颈决定标的；两层互为约束，防止单边叙事。</p>','<h3>Macro × equity cross-check</h3><p>Liquidity regime sets total exposure; supply-chain bottlenecks pick the names. Each layer constrains the other against one-sided narratives.</p>'],
+  ['.price h2','黄金组合专业版','Golden Portfolio Pro'],
+  ['.price > p','适合既看宏观周期、又要落地到资产配置与个股交叉验证的重度投资者。','For serious investors who track macro cycles and need them grounded in allocation and single-stock cross-validation.'],
+  ['.annual','年付特惠 $189 / 年 <span style="font-weight:400;font-size:12px;color:var(--mut)">（折合 $15.75/月，省约 37%）</span>','Annual: $189 / yr <span style="font-weight:400;font-size:12px;color:var(--mut)">($15.75/mo equivalent, save ~37%)</span>'],
+  ['.price ul','<li>解锁全站内容（宏观 + 全球个股 + 中国个股）</li><li>每周更新邮件深度提醒，含核心指标异动告警</li><li>专属数据看板历史轨迹回溯权限</li>','<li>Full-site access (macro + global equities + China equities)</li><li>Weekly deep-dive email alerts incl. key-indicator anomalies</li><li>Historical trajectory playback on all dashboards</li>'],
+  ['.flow','订阅方式：① 下方留邮箱，<b>首月免费全站试用</b> → ② 到期前收到续订邮件，回复即获付款方式（微信 / 支付宝）→ ③ 付款后发放激活 Key，输入即解锁一年。','How it works: ① Leave your email below for a <b>free 1-month full-site trial</b> → ② Before expiry you\'ll get a renewal email; reply for payment options → ③ After payment an activation key unlocks one year.'],
+  ['#bsubf button','免费试用1个月','Start free month'],
+  ['details summary','已有激活 Key？点此激活','Have an activation key? Activate here'],
+  ['#bkeyf button','激活','Activate'],
+  ['#ft1','仅为个人研究参考，非投资建议','Personal research only. Not investment advice.'],
+  ['#ft2','会员中心','Account'],
+  ['#ft3','管理员入口','Admin']
+];
+function applyLang(l){
+  I18N.forEach(function(it){var el=document.querySelector(it[0]);if(el)el.innerHTML=l==='en'?it[2]:it[1];});
+  document.getElementById('langbtn').textContent=l==='en'?'中':'EN';
+  document.documentElement.lang=l==='en'?'en':'zh-CN';
+}
+function toggleLang(){
+  var l=(document.cookie.match(/brassivo_lang=(en|zh)/)||[])[1]==='en'?'zh':'en';
+  document.cookie='brassivo_lang='+l+'; domain=.brassivo.com; path=/; max-age=31536000; SameSite=Lax';
+  applyLang(l);
+}
+(function(){var l=(document.cookie.match(/brassivo_lang=(en|zh)/)||[])[1]||'zh';if(l==='en')applyLang('en');})();
 </script>
 </body>
 </html>

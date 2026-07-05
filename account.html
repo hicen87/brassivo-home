@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>会员中心 · Brassivo Research</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<script>(function(){var m=document.cookie.match(/brassivo_theme=(dark|light)/);document.documentElement.setAttribute('data-theme',m?m[1]:'light');})();</script>
+<style>
+  :root{--bg:#f6f7f9;--card:#fff;--line:#d8dce3;--txt:#15181e;--mut:#3e4552;--hi:#0b0d12;--warm:#e0913a;--cool:#3a9b78;--hot:#e2554a}
+  html[data-theme=dark]{--bg:#171a21;--card:#1f232c;--line:#343a47;--txt:#edeff4;--mut:#b6bec9;--hi:#f5f7fa}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",sans-serif;line-height:1.6;padding:24px}
+  .wrap{max-width:480px;margin:0 auto}
+  h1{font-size:20px;color:var(--hi)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin-top:14px}
+  input,button{width:100%;padding:10px 12px;border-radius:8px;border:1px solid var(--line);background:transparent;color:var(--txt);font-size:13px;margin-top:8px}
+  button{background:var(--warm);color:#fff;border:none;font-weight:600;cursor:pointer}
+  button.g{background:var(--cool)}
+  .mut{color:var(--mut);font-size:12px}
+  h3{font-size:14px;margin:0;color:var(--hi)}
+  .big{font-size:22px;font-weight:700;color:var(--hi)}
+  .exp{color:var(--hot)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>会员中心</h1>
+
+  <div class="card" id="actcard">
+    <h3>激活 Key</h3>
+    <p class="mut">付款后收到的 Key 在此激活，激活即建立账户（初始密码 = Key）。</p>
+    <input id="ae" type="email" placeholder="你的邮箱">
+    <input id="ak" placeholder="BRSV-XXXX-XXXX-XXXX" style="text-transform:uppercase">
+    <button class="g" onclick="act()">激活</button>
+    <p class="mut" id="am"></p>
+  </div>
+
+  <div class="card" id="logincard">
+    <h3>登录查看账户</h3>
+    <input id="le" type="email" placeholder="邮箱">
+    <input id="lp" type="password" placeholder="密码（首次登录为激活Key）">
+    <button onclick="info()">登录</button>
+    <p class="mut" id="lm"></p>
+  </div>
+
+  <div class="card" id="acct" style="display:none">
+    <h3>我的账户</h3>
+    <p>剩余有效期：<span class="big" id="days"></span></p>
+    <p class="mut" id="detail"></p>
+    <h3 style="margin-top:14px">修改密码</h3>
+    <input id="np" type="password" placeholder="新密码（至少6位）">
+    <button onclick="pw()">修改密码</button>
+    <p class="mut" id="pm"></p>
+  </div>
+
+  <p class="mut" style="margin-top:20px"><a href="/" style="color:inherit">← 返回首页</a> · 到期续费请邮件联系 <a href="mailto:cenhao87@gmail.com" style="color:inherit">cenhao87@gmail.com</a></p>
+</div>
+<script>
+var API='https://api.brassivo.com';
+function post(p,b){return fetch(API+p,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(b)}).then(function(r){return r.json();});}
+function setPro(days){document.cookie='brassivo_pro=1; domain=.brassivo.com; path=/; max-age='+(days*86400)+'; SameSite=Lax';}
+function act(){
+  var e=document.getElementById('ae').value.trim(), k=document.getElementById('ak').value.trim().toUpperCase();
+  document.getElementById('am').textContent='激活中…';
+  post('/activate',{email:e,key:k}).then(function(j){
+    if(j.ok){ var d=Math.max(1,Math.round((new Date(j.expires_at)-Date.now())/864e5)); setPro(d);
+      document.getElementById('am').textContent='✓ 激活成功，有效期至 '+j.expires_at+'。初始密码=Key，建议登录后修改。'; }
+    else document.getElementById('am').textContent=j.err||'激活失败';
+  }).catch(function(){document.getElementById('am').textContent='网络异常或后端未部署';});
+}
+function info(){
+  var e=document.getElementById('le').value.trim(), p=document.getElementById('lp').value;
+  document.getElementById('lm').textContent='查询中…';
+  post('/member/info',{email:e,password:p}).then(function(j){
+    if(!j.ok){document.getElementById('lm').textContent=j.err||'登录失败';return;}
+    document.getElementById('lm').textContent='';
+    document.getElementById('acct').style.display='';
+    var d=Math.round((new Date(j.member.expires_at)-Date.now())/864e5);
+    document.getElementById('days').textContent=d>0? d+' 天':'已到期';
+    document.getElementById('days').className='big'+(d<=14?' exp':'');
+    document.getElementById('detail').textContent='套餐 '+(j.member.plan||'pro')+' · 到期日 '+j.member.expires_at+' · 开通于 '+j.member.created_at;
+    if(d>0) setPro(d);
+  }).catch(function(){document.getElementById('lm').textContent='网络异常或后端未部署';});
+}
+function pw(){
+  var e=document.getElementById('le').value.trim(), p=document.getElementById('lp').value, n=document.getElementById('np').value;
+  post('/member/passwd',{email:e,old_password:p,new_password:n}).then(function(j){
+    document.getElementById('pm').textContent=j.ok?'✓ 已修改，下次请用新密码登录':(j.err||'失败');
+    if(j.ok)document.getElementById('lp').value=n;
+  });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>管理后台 · Brassivo CRM</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<script>(function(){var m=document.cookie.match(/brassivo_theme=(dark|light)/);document.documentElement.setAttribute('data-theme',m?m[1]:'light');})();</script>
+<style>
+  :root{--bg:#f6f7f9;--card:#fff;--line:#d8dce3;--txt:#15181e;--mut:#3e4552;--hi:#0b0d12;--warm:#e0913a;--cool:#3a9b78;--hot:#e2554a}
+  html[data-theme=dark]{--bg:#171a21;--card:#1f232c;--line:#343a47;--txt:#edeff4;--mut:#b6bec9;--hi:#f5f7fa}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",sans-serif;line-height:1.6;padding:24px}
+  .wrap{max-width:980px;margin:0 auto}
+  h1{font-size:20px;color:var(--hi)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-top:14px}
+  input,button,select{padding:8px 12px;border-radius:8px;border:1px solid var(--line);background:transparent;color:var(--txt);font-size:13px}
+  button{background:var(--warm);color:#fff;border:none;font-weight:600;cursor:pointer}
+  table{width:100%;border-collapse:collapse;font-size:12px;margin-top:8px}
+  th,td{padding:6px 8px;border-bottom:1px solid var(--line);text-align:left;word-break:break-all}
+  th{color:var(--mut);font-weight:500}
+  .mut{color:var(--mut);font-size:12px}
+  .exp{color:var(--hot);font-weight:600}
+  h3{font-size:14px;margin:0 0 6px;color:var(--hi)}
+  .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Brassivo CRM · 管理后台</h1>
+  <div class="card" id="login">
+    <h3>管理员登录</h3>
+    <div class="row">
+      <input id="aemail" type="email" placeholder="管理员邮箱" style="min-width:220px">
+      <input id="apass" type="password" placeholder="密码">
+      <button onclick="load()">登录</button>
+    </div>
+    <p class="mut" id="lmsg"></p>
+  </div>
+  <div id="panel" style="display:none">
+    <div class="card">
+      <h3>生成激活 Key</h3>
+      <div class="row">
+        数量 <input id="gcount" type="number" value="1" min="1" max="20" style="width:70px">
+        月数 <input id="gmonths" type="number" value="12" min="1" style="width:70px">
+        <button onclick="genkey()">生成</button> <span class="mut" id="gout"></span>
+      </div>
+    </div>
+    <div class="card">
+      <h3>调整会员（手动改到期日 / 备注）</h3>
+      <div class="row">
+        <input id="semail" placeholder="会员邮箱" style="min-width:220px">
+        <input id="sexp" placeholder="到期日 YYYY-MM-DD" style="width:150px">
+        <input id="snote" placeholder="备注（微信名等）" style="min-width:160px">
+        <button onclick="setm()">保存</button><span class="mut" id="sout"></span>
+      </div>
+    </div>
+    <div class="card"><h3>付费会员 <span class="mut" id="mcount"></span></h3><div style="overflow-x:auto"><table id="mtbl"></table></div></div>
+    <div class="card"><h3>激活 Key 池 <span class="mut" id="kcount"></span></h3><div style="overflow-x:auto"><table id="ktbl"></table></div></div>
+    <div class="card"><h3>试用订阅者 <span class="mut" id="scount"></span></h3><div style="overflow-x:auto"><table id="stbl"></table></div></div>
+  </div>
+  <p class="mut" style="margin-top:20px"><a href="/" style="color:inherit">← 返回首页</a></p>
+</div>
+<script>
+var API='https://api.brassivo.com';
+function creds(){return {email:document.getElementById('aemail').value.trim(), password:document.getElementById('apass').value};}
+function post(path, extra){return fetch(API+path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(Object.assign(creds(),extra||{}))}).then(function(r){return r.json();});}
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+function load(){
+  document.getElementById('lmsg').textContent='加载中…';
+  post('/admin/overview').then(function(j){
+    if(!j.ok){document.getElementById('lmsg').textContent=j.err||'登录失败';return;}
+    document.getElementById('lmsg').textContent='';
+    document.getElementById('panel').style.display='';
+    var today=new Date().toISOString().slice(0,10);
+    document.getElementById('mtbl').innerHTML='<tr><th>邮箱</th><th>Key</th><th>到期</th><th>开通时间</th><th>备注</th></tr>'+j.members.map(function(m){
+      return '<tr><td>'+esc(m.email)+'</td><td>'+esc(m.activation_key)+'</td><td class="'+(m.expires_at<today?'exp':'')+'">'+esc(m.expires_at)+'</td><td>'+esc(m.created_at)+'</td><td>'+esc(m.note)+'</td></tr>';}).join('');
+    document.getElementById('mcount').textContent='（'+j.members.length+'）';
+    document.getElementById('ktbl').innerHTML='<tr><th>Key</th><th>月数</th><th>已用（by）</th><th>生成时间</th></tr>'+j.keys.map(function(k){
+      return '<tr><td>'+esc(k.activation_key)+'</td><td>'+k.months+'</td><td>'+esc(k.used_by||'未用')+'</td><td>'+esc(k.created_at)+'</td></tr>';}).join('');
+    document.getElementById('kcount').textContent='（'+j.keys.length+'，未用 '+j.keys.filter(function(k){return !k.used_by;}).length+'）';
+    document.getElementById('stbl').innerHTML='<tr><th>邮箱</th><th>订阅时间</th><th>来源</th></tr>'+j.subscribers.map(function(s){
+      return '<tr><td>'+esc(s.email)+'</td><td>'+esc(s.created_at)+'</td><td>'+esc(s.source)+'</td></tr>';}).join('');
+    document.getElementById('scount').textContent='（'+j.subscribers.length+'）';
+  }).catch(function(){document.getElementById('lmsg').textContent='网络异常或后端未部署';});
+}
+function genkey(){
+  post('/admin/genkey',{count:+document.getElementById('gcount').value, months:+document.getElementById('gmonths').value})
+    .then(function(j){document.getElementById('gout').textContent=j.ok?('新Key: '+j.keys.join('  ')):(j.err||'失败');load();});
+}
+function setm(){
+  post('/admin/setmember',{target:document.getElementById('semail').value.trim(), expires_at:document.getElementById('sexp').value.trim()||null, note:document.getElementById('snote').value.trim()||null})
+    .then(function(j){document.getElementById('sout').textContent=j.ok?'✓ 已保存':(j.err||'失败');load();});
+}
+</script>
+</body>
+</html>
