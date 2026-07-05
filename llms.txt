@@ -1,0 +1,12 @@
+# Brassivo Research
+
+> 个人投研站点，每周自动更新两个数据看板。非投资建议。
+
+## 看板
+
+- [Global Liquidity](https://investment.brassivo.com/): 全球流动性周期看板。G3/G4 央行资产负债表同比、美元净流动性（WALCL−TGA−RRP）周频序列、五层周期定位、大类资产配置立场与触发条件。
+- [Stocks](https://stocks.brassivo.com/): AI 产业链选股表。将先进制程/封装、云平台、GPU、ASIC、半导体设备、EDA、电力基建、HBM存储、光模块等 15 个环节，按「利润池持续性（紧缺度×扩产难度×定价权）×边际变化×定价未充分程度」排序，附操作分层与 10 条可证伪条款。
+
+## 更新频率
+
+两个看板均为每周日自动刷新（数据来源：公司财报/SEC、TrendForce、FRED 等公开渠道）。
