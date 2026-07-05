@@ -74,14 +74,14 @@
 </div>
 <script>
 (function(){
-  var KEY='brassivo_sub', API='https://brassivo-subscribe.jackycen-brassivo.workers.dev/subscribe';
+  var KEY='brassivo_sub', API='https://api.brassivo.com/subscribe';
   var f=document.getElementById('bsubf'), m=document.getElementById('bsubm');
   if(localStorage.getItem(KEY)==='1'){ m.textContent='✓ 已订阅，全站内容已解锁'; }
   f.addEventListener('submit', function(e){
     e.preventDefault();
     var em=document.getElementById('bsube').value.trim();
     m.textContent='提交中…';
-    fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:em})})
+    fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:em}),signal:(window.AbortSignal&&AbortSignal.timeout)?AbortSignal.timeout(10000):undefined})
       .then(function(r){return r.json();}).then(function(j){ if(j.ok){ localStorage.setItem(KEY,'1'); m.textContent='✓ 订阅成功，全站内容已解锁'; } else { m.textContent='邮箱格式有误，请重试'; }})
       .catch(function(){ m.textContent='网络异常，请稍后重试'; });
   });
