@@ -59,7 +59,33 @@
     <p>15 个产业链环节按「质量 × 定价未充分程度」排序，含操作分层与可证伪条款。</p>
   </a>
 
+  <div class="card" style="cursor:default" id="subcard">
+    <span class="tag">免费订阅</span>
+    <h2 style="font-size:15px">邮件订阅 · 解锁全站</h2>
+    <p style="margin-bottom:12px">订阅后可浏览两个看板的完整内容，每周更新提醒。</p>
+    <form id="bsubf" style="display:flex;gap:8px">
+      <input id="bsube" type="email" required placeholder="you@email.com" style="flex:1;padding:9px 12px;border-radius:8px;border:1px solid var(--line);background:transparent;color:var(--txt);font-size:13px">
+      <button style="padding:9px 16px;border-radius:8px;border:none;background:var(--warm);color:#fff;font-weight:600;font-size:13px;cursor:pointer">订阅</button>
+    </form>
+    <p id="bsubm" style="margin-top:8px;font-size:12px"></p>
+  </div>
+
   <div class="foot">仅为个人研究参考，非投资建议 · Brassivo Research</div>
 </div>
+<script>
+(function(){
+  var KEY='brassivo_sub', API='https://brassivo-subscribe.jackycen-brassivo.workers.dev/subscribe';
+  var f=document.getElementById('bsubf'), m=document.getElementById('bsubm');
+  if(localStorage.getItem(KEY)==='1'){ m.textContent='✓ 已订阅，全站内容已解锁'; }
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    var em=document.getElementById('bsube').value.trim();
+    m.textContent='提交中…';
+    fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:em})})
+      .then(function(r){return r.json();}).then(function(j){ if(j.ok){ localStorage.setItem(KEY,'1'); m.textContent='✓ 订阅成功，全站内容已解锁'; } else { m.textContent='邮箱格式有误，请重试'; }})
+      .catch(function(){ m.textContent='网络异常，请稍后重试'; });
+  });
+})();
+</script>
 </body>
 </html>
