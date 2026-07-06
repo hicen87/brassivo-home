@@ -15,7 +15,7 @@
 <meta property="og:description" content="每周自动更新：全球流动性周期看板 + 全球/中国AI产业链选股表，结论附可证伪条款。">
 <meta property="og:url" content="https://brassivo.com/">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"Brassivo Research","url":"https://brassivo.com/","inLanguage":"zh-CN","description":"每周自动更新的投研系统：全球流动性周期、全球与中国AI产业链选股。","hasPart":[{"@type":"WebPage","name":"Global Liquidity","url":"https://investment.brassivo.com/","description":"G3/G4央行流动性同比、美元净流动性周频、周期定位与资产配置立场。"},{"@type":"WebPage","name":"Global Stocks","url":"https://stocks.brassivo.com/","description":"全球AI产业链15个环节按质量×定价未充分程度排序的选股表。"},{"@type":"WebPage","name":"China Stocks","url":"https://china.brassivo.com/","description":"A股/港股/中概科技股供应链瓶颈环节选股表。"}],"offers":{"@type":"Offer","name":"黄金组合专业版","price":"24.9","priceCurrency":"USD"}}
+{"@context":"https://schema.org","@type":"WebSite","name":"Brassivo Research","url":"https://brassivo.com/","inLanguage":"zh-CN","description":"每周自动更新的投研系统：全球流动性周期、全球与中国AI产业链选股。","hasPart":[{"@type":"WebPage","name":"Global Liquidity","url":"https://investment.brassivo.com/","description":"G3/G4央行流动性同比、美元净流动性周频、周期定位与资产配置立场。"},{"@type":"WebPage","name":"Global Stocks","url":"https://stocks.brassivo.com/","description":"全球AI产业链15个环节按质量×定价未充分程度排序的选股表。"},{"@type":"WebPage","name":"US Sectors","url":"https://stocks.brassivo.com/sectors.html","description":"美股11个GICS板块表现潜力表，与个股选股表同一打分框架。"},{"@type":"WebPage","name":"China Stocks","url":"https://china.brassivo.com/","description":"A股/港股/中概科技股供应链瓶颈环节选股表。"},{"@type":"WebPage","name":"China Sectors","url":"https://china.brassivo.com/sectors.html","description":"A股/港股12个大板块表现潜力表，同一打分框架。"}],"offers":{"@type":"Offer","name":"黄金组合专业版","price":"24.9","priceCurrency":"USD"}}
 </script>
 <script>(function(){var m=document.cookie.match(/brassivo_theme=(dark|light)/);document.documentElement.setAttribute('data-theme',m?m[1]:'light');})();</script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" fdata-cf-beacon='{"token": "3be817e4a2314134a9e291596330cb26"}'></script>
@@ -118,10 +118,20 @@
       <h2>Global Stocks</h2>
       <p>全球 AI 产业链 15 个环节按「质量 × 定价未充分程度」排序，含操作分层、仓位档与可证伪条款。</p>
     </a>
+    <a class="card" href="https://stocks.brassivo.com/sectors.html">
+      <span class="tag">EQUITY · 美股板块</span><span class="go">进入 →</span>
+      <h2>US Sectors</h2>
+      <p>美股 11 个 GICS 板块表现潜力表：与个股选股表同一打分框架的上层视图，板块 Forward PE 与盈利修正每周刷新。</p>
+    </a>
     <a class="card" href="https://china.brassivo.com">
       <span class="tag">EQUITY · 中国个股</span><span class="go">进入 →</span>
       <h2>China Stocks</h2>
       <p>A股 / 港股 / 中概科技股：中国 AI 与半导体供应链瓶颈环节排序选股，同一框架 + 国产替代与管制约束。</p>
+    </a>
+    <a class="card" href="https://china.brassivo.com/sectors.html">
+      <span class="tag">EQUITY · 中国板块</span><span class="go">进入 →</span>
+      <h2>China Sectors</h2>
+      <p>A股 / 港股 12 个大板块表现潜力表：同一打分框架的上层视图，申万估值分位与 2026E 一致预测每周刷新。</p>
     </a>
   </div>
 
@@ -200,6 +210,8 @@ var I18N=[
   ['.badges','<span>每周日自动更新</span><span>数据管道全自动</span><span>结论可证伪</span><span>宏观×个股交叉验证</span>','<span>Auto-updated every Sunday</span><span>Automated data pipelines</span><span>Falsifiable conclusions</span><span>Macro × equity cross-check</span>'],
   ['a[href*="investment"] p','G3/G4 央行流动性同比、美元净流动性周频（WALCL−TGA−RRP）、五层周期定位与大类资产配置立场。','G3/G4 central-bank liquidity YoY, weekly USD net liquidity (WALCL−TGA−RRP), five-layer cycle positioning and asset-allocation stance.'],
   ['a[href*="stocks.brassivo"] p','全球 AI 产业链 15 个环节按「质量 × 定价未充分程度」排序，含操作分层、仓位档与可证伪条款。','15 global AI supply-chain segments ranked by quality × mispricing, with action tiers, position bands and falsifiable clauses.'],
+  ['a[href*="sectors"] p','美股 11 个 GICS 板块表现潜力表：与个股选股表同一打分框架的上层视图，板块 Forward PE 与盈利修正每周刷新。','All 11 US GICS sectors ranked with the same scoring framework as the stock table — a top-down view with sector forward P/E and earnings revisions refreshed weekly.'],
+  ['a[href*="china.brassivo.com/sectors"] p','A股 / 港股 12 个大板块表现潜力表：同一打分框架的上层视图，申万估值分位与 2026E 一致预测每周刷新。','All 12 major China sectors (A-shares/HK) ranked with the same scoring framework — a top-down view with SW valuation percentiles and 2026E consensus refreshed weekly.'],
   ['a[href*="china"] p','A股 / 港股 / 中概科技股：中国 AI 与半导体供应链瓶颈环节排序选股，同一框架 + 国产替代与管制约束。','China tech across A-shares / HK / ADRs: AI & semiconductor bottleneck segments, same framework plus localization and export-control constraints.'],
   ['.meth div:nth-child(1)','<h3>数据管道全自动</h3><p>FRED、各国央行、行情源每周定时拉取重算，杜绝手抄与「拍脑袋」数字；未核实的数字宁可不写。</p>','<h3>Automated pipelines</h3><p>FRED, central banks and market feeds are pulled and recomputed on schedule — no hand-copied or made-up numbers; unverified figures are omitted.</p>'],
   ['.meth div:nth-child(2)','<h3>结论可证伪</h3><p>每张表附 10 条可证伪条款：触发即 48 小时内机械执行减仓/清零，纪律高于观点。</p>','<h3>Falsifiable by design</h3><p>Every board ships with 10 falsifiable clauses: once triggered, positions are cut mechanically within 48 hours. Discipline beats opinion.</p>'],
