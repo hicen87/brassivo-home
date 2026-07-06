@@ -17,16 +17,11 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"Brassivo Research","url":"https://brassivo.com/","inLanguage":"zh-CN","description":"每周自动更新的投研系统：全球流动性周期、全球与中国AI产业链选股。","hasPart":[{"@type":"WebPage","name":"Global Liquidity","url":"https://investment.brassivo.com/","description":"G3/G4央行流动性同比、美元净流动性周频、周期定位与资产配置立场。"},{"@type":"WebPage","name":"Global Stocks","url":"https://stocks.brassivo.com/","description":"全球AI产业链15个环节按质量×定价未充分程度排序的选股表。"},{"@type":"WebPage","name":"US Sectors","url":"https://stocks.brassivo.com/sectors.html","description":"美股11个GICS板块表现潜力表，与个股选股表同一打分框架。"},{"@type":"WebPage","name":"China Stocks","url":"https://china.brassivo.com/","description":"A股/港股/中概科技股供应链瓶颈环节选股表。"},{"@type":"WebPage","name":"China Sectors","url":"https://china.brassivo.com/sectors.html","description":"A股/港股12个大板块表现潜力表，同一打分框架。"}],"offers":{"@type":"Offer","name":"黄金组合专业版","price":"24.9","priceCurrency":"USD"}}
 </script>
-<script>(function(){var m=document.cookie.match(/brassivo_theme=(dark|light)/);document.documentElement.setAttribute('data-theme',m?m[1]:'light');})();</script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" fdata-cf-beacon='{"token": "3be817e4a2314134a9e291596330cb26"}'></script>
 <style>
   :root{
     --bg:#f6f7f9; --card:#fff; --line:#d8dce3;
     --txt:#15181e; --mut:#3e4552; --hi:#0b0d12; --warm:#e0913a; --cool:#3a9b78;
-  }
-  html[data-theme=dark]{
-    --bg:#171a21; --card:#1f232c; --line:#343a47;
-    --txt:#edeff4; --mut:#b6bec9; --hi:#f5f7fa;
   }
   *{box-sizing:border-box}
   body{margin:0;min-height:100vh;background:var(--bg);color:var(--txt);
@@ -42,7 +37,6 @@
     background:radial-gradient(circle, var(--glow) 0%, transparent 66%);
     opacity:.55;animation:bg-breathe 14s ease-in-out infinite;}
   :root{--dot:rgba(20,40,80,.09); --glow:rgba(224,145,58,.14);}
-  html[data-theme=dark]{--dot:rgba(140,170,220,.07); --glow:rgba(224,145,58,.10);}
   @keyframes bg-breathe{0%,100%{opacity:.42;transform:translateX(-50%) scale(1)}50%{opacity:.62;transform:translateX(-50%) scale(1.08)}}
   @media(prefers-reduced-motion:reduce){body::after{animation:none}}
   .wrap{max-width:1200px;margin:0 auto;padding:0 24px 48px}
@@ -58,7 +52,9 @@
   .hero .sub{color:var(--mut);font-size:17px;max-width:640px}
   .badges{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 4px}
   .badges span{font-size:13.5px;color:var(--mut);border:1px solid var(--line);border-radius:20px;padding:3px 12px;background:var(--card)}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:22px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
+  .grid .card.wide{grid-column:1/-1}
+  @media(max-width:640px){.grid{grid-template-columns:1fr}}
   a.card{display:block;background:var(--card);border:1px solid var(--line);border-radius:14px;
     padding:20px 22px;text-decoration:none;color:var(--txt);transition:border-color .15s, transform .15s}
   a.card:hover{border-color:var(--warm);transform:translateY(-2px)}
@@ -96,7 +92,6 @@
   <header>
     <img src="/favicon.svg" alt="Brassivo logo">
     <span class="bname">BRASSIVO <span>RESEARCH</span></span>
-    <button onclick="(function(){var d=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';document.cookie='brassivo_theme='+d+'; domain=.brassivo.com; path=/; max-age=31536000; SameSite=Lax';document.documentElement.setAttribute('data-theme',d);})()">深色/浅色</button>
     <button id="langbtn" onclick="toggleLang()">EN</button>
   </header>
 
@@ -108,30 +103,30 @@
 
   <h2 class="sect">Research Modules <small>三大看板</small></h2>
   <div class="grid">
-    <a class="card" href="https://investment.brassivo.com">
+    <a class="card wide" href="https://investment.brassivo.com">
       <span class="tag">MACRO · 宏观</span><span class="go">进入 →</span>
       <h2>Global Liquidity</h2>
       <p>G3/G4 央行流动性同比、美元净流动性周频（WALCL−TGA−RRP）、五层周期定位与大类资产配置立场。</p>
-    </a>
-    <a class="card" href="https://stocks.brassivo.com">
-      <span class="tag">EQUITY · 全球个股</span><span class="go">进入 →</span>
-      <h2>Global Stocks</h2>
-      <p>全球 AI 产业链 15 个环节按「质量 × 定价未充分程度」排序，含操作分层、仓位档与可证伪条款。</p>
     </a>
     <a class="card" href="https://stocks.brassivo.com/sectors.html">
       <span class="tag">EQUITY · 美股板块</span><span class="go">进入 →</span>
       <h2>US Sectors</h2>
       <p>美股 11 个 GICS 板块表现潜力表：与个股选股表同一打分框架的上层视图，板块 Forward PE 与盈利修正每周刷新。</p>
     </a>
-    <a class="card" href="https://china.brassivo.com">
-      <span class="tag">EQUITY · 中国个股</span><span class="go">进入 →</span>
-      <h2>China Stocks</h2>
-      <p>A股 / 港股 / 中概科技股：中国 AI 与半导体供应链瓶颈环节排序选股，同一框架 + 国产替代与管制约束。</p>
-    </a>
     <a class="card" href="https://china.brassivo.com/sectors.html">
       <span class="tag">EQUITY · 中国板块</span><span class="go">进入 →</span>
       <h2>China Sectors</h2>
       <p>A股 / 港股 12 个大板块表现潜力表：同一打分框架的上层视图，申万估值分位与 2026E 一致预测每周刷新。</p>
+    </a>
+    <a class="card" href="https://stocks.brassivo.com">
+      <span class="tag">EQUITY · 全球个股</span><span class="go">进入 →</span>
+      <h2>Global Stocks</h2>
+      <p>全球 AI 产业链 15 个环节按「质量 × 定价未充分程度」排序，含操作分层、仓位档与可证伪条款。</p>
+    </a>
+    <a class="card" href="https://china.brassivo.com">
+      <span class="tag">EQUITY · 中国个股</span><span class="go">进入 →</span>
+      <h2>China Stocks</h2>
+      <p>A股 / 港股 / 中概科技股：中国 AI 与半导体供应链瓶颈环节排序选股，同一框架 + 国产替代与管制约束。</p>
     </a>
   </div>
 
