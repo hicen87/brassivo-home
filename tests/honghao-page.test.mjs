@@ -18,10 +18,14 @@ const data = context.window.HONG_HAO_DASHBOARD_DATA;
 
 test("public page contains the verified baseline", () => {
   assert.equal(data.meta.baselineDate, "2026-09-01");
-  assert.equal(data.meta.latestSourceDate, "2026-08-31");
-  assert.equal(data.assets.length, 13);
+  assert.equal(data.meta.latestSourceDate, "2026-09-01");
+  assert.equal(data.assets.length, 14);
+  assert.equal(data.sources.length, 5);
   assert.equal(data.rotation.filter((step) => step.state === "current").length, 1);
   assert.equal(data.rotation.find((step) => step.state === "current").id, "agriculture");
+  assert.equal(data.rotation.find((step) => step.state === "current").stage, "结构主线");
+  assert.equal(data.changes[0].date, "2026-09-01");
+  assert.equal(data.changes.at(-1).date, "2026-08-31");
 });
 
 test("asset records are complete, unique, and traceable", () => {
@@ -47,9 +51,10 @@ test("public dataset exposes source metadata but no private file paths", () => {
   assert.doesNotMatch(dataCode, /9月1日|HongHao趋势跟踪|\/Users\//);
 });
 
-test("Hong Hao page is direct-file compatible and has public metadata", () => {
+test("macro view page is direct-file compatible and has public metadata", () => {
   const html = read("honghao/index.html");
   const app = read("honghao/app.js");
+  const css = read("honghao/styles.css");
 
   for (const id of ["overview", "rotation", "asset-ledger", "observations", "change-log", "sources"]) {
     assert.match(html, new RegExp(`id=["']${id}["']`));
@@ -57,8 +62,14 @@ test("Hong Hao page is direct-file compatible and has public metadata", () => {
   assert.match(html, /https:\/\/brassivo\.com\/honghao\//);
   assert.match(html, /dashboard-data\.js/);
   assert.match(html, /app\.js/);
+  assert.match(html, /<meta name="color-scheme" content="light"/);
+  assert.match(html, /<meta name="theme-color" content="#f6f7f9"/);
   assert.doesNotMatch(html, /洪灏资产方向跟踪台账\.md|\.pdf|\.jpg/);
+  assert.doesNotMatch(html, /HONG HAO|Hong Hao|洪灏/);
   assert.doesNotMatch(app, /\bfetch\s*\(|source\.path|target=["']_blank["']/);
+  assert.match(css, /--ink:\s*#f6f7f9/);
+  assert.match(css, /--dot:\s*rgba\(20, 40, 80, 0\.09\)/);
+  assert.match(css, /body::after[\s\S]*radial-gradient\(circle, var\(--glow\)/);
 });
 
 test("homepage, structured data, sitemap, and llms index the new page", () => {
@@ -69,7 +80,9 @@ test("homepage, structured data, sitemap, and llms index the new page", () => {
   assert.match(homepage, /href=["']\/honghao\/["']/);
   assert.match(homepage, /a\[href=["']\/honghao\/["']\]/);
   assert.match(sitemap, /https:\/\/brassivo\.com\/honghao\//);
-  assert.match(llms, /Hong Hao Trend Ledger/);
+  assert.match(homepage, /Macro View Ledger/);
+  assert.doesNotMatch(homepage, /Hong Hao|HONG HAO|洪灏/);
+  assert.match(llms, /Macro View Ledger/);
 
   const jsonLdMatch = homepage.match(/<script type="application\/ld\+json">\s*([\s\S]*?)\s*<\/script>/);
   assert.ok(jsonLdMatch, "homepage JSON-LD is missing");
