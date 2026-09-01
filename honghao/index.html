@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#08110f" />
+    <meta name="description" content="Brassivo Research 洪灏资产方向跟踪：按时间视角、证据等级和反转条件整理公开文章中的资产配置观点。" />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://brassivo.com/honghao/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Brassivo Research" />
+    <meta property="og:title" content="洪灏资产方向跟踪 · Brassivo Research" />
+    <meta property="og:description" content="区分长期配置、短期交易、原文判断与推导，持续记录资产方向及证伪条件。" />
+    <meta property="og:url" content="https://brassivo.com/honghao/" />
+    <title>洪灏资产方向跟踪 · Brassivo Research</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="dashboard-data.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#asset-ledger">跳到资产台账</a>
+    <div class="page-noise" aria-hidden="true"></div>
+    <div class="orb orb-one" aria-hidden="true"></div>
+    <div class="orb orb-two" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="返回 Brassivo Research 首页">
+        <span class="brand-mark">HH</span>
+        <span>
+          <strong>宏观周期档案</strong>
+          <small>HONG HAO / CYCLE LEDGER</small>
+        </span>
+      </a>
+      <nav class="main-nav" aria-label="主导航">
+        <a href="/">Brassivo首页</a>
+        <a href="#overview">总览</a>
+        <a href="#rotation">轮动</a>
+        <a href="#asset-ledger">资产</a>
+        <a href="#sources">资料</a>
+      </nav>
+      <div class="header-status">
+        <span class="live-dot" aria-hidden="true"></span>
+        <span>公开摘要</span>
+        <time id="header-date">—</time>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero shell" id="overview" aria-labelledby="hero-title">
+        <div class="hero-copy reveal">
+          <div class="eyebrow">
+            <span>策略基线</span>
+            <time id="baseline-date">—</time>
+          </div>
+          <h1 id="hero-title">短期防守，<br /><em>长期商品趋势未破</em></h1>
+          <p class="hero-note" id="posture-note"></p>
+          <div class="hero-actions">
+            <a class="primary-action" href="#asset-ledger">查看交易方向</a>
+            <button class="text-action" id="copy-summary" type="button">
+              <span>复制基线摘要</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-3M5 8h9a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2Z" /></svg>
+            </button>
+          </div>
+          <div class="signal-strip" aria-label="关键策略信号">
+            <span><i class="signal caution"></i>风险资产：降速</span>
+            <span><i class="signal positive"></i>贵金属：长多短慎</span>
+            <span><i class="signal focus"></i>新增重点：农产品</span>
+          </div>
+        </div>
+
+        <div class="hero-instrument reveal reveal-delay-one" aria-label="台账统计">
+          <div class="instrument-head">
+            <span>方向仪表</span>
+            <span class="instrument-code">BASE / 001</span>
+          </div>
+          <div class="compass-wrap">
+            <div class="compass" id="direction-compass" aria-label="资产方向分布">
+              <div class="compass-core">
+                <strong id="asset-total">0</strong>
+                <span>资产方向</span>
+              </div>
+            </div>
+            <div class="compass-legend" id="direction-legend"></div>
+          </div>
+          <div class="metric-grid">
+            <div class="metric"><span>有效方向</span><strong id="metric-active">0</strong></div>
+            <div class="metric"><span>重点信号</span><strong id="metric-priority">0</strong></div>
+            <div class="metric"><span>原文触达</span><strong id="metric-explicit">0</strong></div>
+            <div class="metric"><span>资料文件</span><strong id="metric-sources">0</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="rotation-section shell" id="rotation" aria-labelledby="rotation-title">
+        <div class="section-heading reveal">
+          <div>
+            <span class="section-index">01 / ROTATION</span>
+            <h2 id="rotation-title">商品轮动走到哪一棒？</h2>
+          </div>
+          <p>顺序来自本期纪要；位置只表达观点阶段，不代表实时价格强弱。</p>
+        </div>
+        <div class="rotation-track reveal reveal-delay-one" id="rotation-track"></div>
+      </section>
+
+      <section class="ledger-section shell" id="asset-ledger" aria-labelledby="ledger-title">
+        <div class="section-heading reveal">
+          <div>
+            <span class="section-index">02 / ASSET LEDGER</span>
+            <h2 id="ledger-title">资产方向台账</h2>
+          </div>
+          <p>点击资产查看动作、依据和反转条件；筛选不会改变原始数据。</p>
+        </div>
+
+        <div class="filter-console reveal reveal-delay-one" aria-label="资产筛选">
+          <label class="search-field">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+            <span class="sr-only">搜索资产或方向</span>
+            <input id="asset-search" type="search" placeholder="搜索资产、方向或动作…" autocomplete="off" />
+          </label>
+          <div class="filter-group" aria-label="时间视角">
+            <span>时间</span>
+            <button class="filter-button is-active" type="button" data-filter="horizon" data-value="全部">全部</button>
+            <button class="filter-button" type="button" data-filter="horizon" data-value="短期">短期</button>
+            <button class="filter-button" type="button" data-filter="horizon" data-value="中期">中期</button>
+            <button class="filter-button" type="button" data-filter="horizon" data-value="长期">长期</button>
+          </div>
+          <label class="select-field">
+            <span>证据</span>
+            <select id="evidence-filter">
+              <option value="全部">全部证据</option>
+              <option value="原文明确">原文明确</option>
+              <option value="基于原文推导">含推导</option>
+              <option value="行情观察">行情观察</option>
+            </select>
+          </label>
+          <label class="select-field">
+            <span>状态</span>
+            <select id="status-filter">
+              <option value="全部">全部状态</option>
+              <option value="有效">有效</option>
+              <option value="观察中">观察中</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="ledger-layout reveal reveal-delay-two">
+          <div class="asset-list-panel">
+            <div class="list-meta">
+              <span><strong id="filtered-count">0</strong> 条记录</span>
+              <span>最新资料 <time id="latest-source-date">—</time></span>
+            </div>
+            <div class="asset-table-wrap">
+              <table class="asset-table">
+                <thead>
+                  <tr>
+                    <th>资产 / 分类</th>
+                    <th>视角</th>
+                    <th>方向</th>
+                    <th>证据</th>
+                  </tr>
+                </thead>
+                <tbody id="asset-table-body"></tbody>
+              </table>
+              <div class="empty-state" id="empty-state" hidden>
+                <strong>没有匹配的资产</strong>
+                <span>调整搜索词或筛选条件</span>
+              </div>
+            </div>
+          </div>
+
+          <aside class="asset-detail" id="asset-detail" aria-live="polite" aria-label="资产详情"></aside>
+        </div>
+      </section>
+
+      <section class="observation-section shell" id="observations" aria-labelledby="observation-title">
+        <div class="section-heading reveal">
+          <div>
+            <span class="section-index">03 / MARKET TAPE</span>
+            <h2 id="observation-title">当日市场观察</h2>
+          </div>
+          <p>只记录当日异动，不自动升级为配置建议。</p>
+        </div>
+        <div class="observation-grid" id="observation-grid"></div>
+      </section>
+
+      <section class="archive-section shell">
+        <div class="change-panel reveal" id="change-log">
+          <div class="panel-heading">
+            <span class="section-index">04 / CHANGE LOG</span>
+            <h2>方向变更</h2>
+          </div>
+          <div id="change-list"></div>
+        </div>
+
+        <div class="source-panel reveal reveal-delay-one" id="sources">
+          <div class="panel-heading">
+            <span class="section-index">05 / SOURCES</span>
+            <h2>原始资料</h2>
+          </div>
+          <p class="source-note">仅公开资料标题、日期和证据编号；原始PDF与截图不在本站公开。</p>
+          <div class="source-list" id="source-list"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer shell">
+      <div>
+        <strong>洪灏资产方向跟踪</strong>
+        <span id="footer-disclaimer"></span>
+      </div>
+      <a href="/">返回 Brassivo Research 首页 ↗</a>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
