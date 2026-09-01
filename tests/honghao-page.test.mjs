@@ -60,8 +60,9 @@ test("macro view page is direct-file compatible and has public metadata", () => 
     assert.match(html, new RegExp(`id=["']${id}["']`));
   }
   assert.match(html, /https:\/\/brassivo\.com\/honghao\//);
-  assert.match(html, /dashboard-data\.js/);
-  assert.match(html, /app\.js/);
+  assert.match(html, /styles\.css\?v=20260901b/);
+  assert.match(html, /dashboard-data\.js\?v=20260901b/);
+  assert.match(html, /app\.js\?v=20260901b/);
   assert.match(html, /<meta name="color-scheme" content="light"/);
   assert.match(html, /<meta name="theme-color" content="#f6f7f9"/);
   assert.doesNotMatch(html, /洪灏资产方向跟踪台账\.md|\.pdf|\.jpg/);
