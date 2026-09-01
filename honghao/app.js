@@ -12,8 +12,12 @@
     horizon: "全部",
     evidence: "全部",
     status: "全部",
-    selectedId: data.assets[0]?.id || null
+    selectedId: null
   };
+
+  const horizonOrder = ["短期", "中期", "长期"];
+  const toneOrder = { positive: 0, neutral: 1, caution: 2, negative: 3 };
+  const originalOrder = new Map(data.assets.map((asset, index) => [asset.id, index]));
 
   const toneMeta = {
     positive: { label: "偏多 / 支撑", color: "#79b995" },
@@ -34,21 +38,36 @@
       .replaceAll("'", "&#039;");
   }
 
+  function horizonGroup(asset) {
+    if (asset.horizon.includes("短")) return "短期";
+    if (asset.horizon.includes("中")) return "中期";
+    return "长期";
+  }
+
   function matchesHorizon(asset, value) {
-    if (value === "全部") return true;
-    return asset.horizon.includes(value);
+    return value === "全部" || horizonGroup(asset) === value;
+  }
+
+  function sortAssets(assets) {
+    return [...assets].sort((left, right) => {
+      const horizonDiff = horizonOrder.indexOf(horizonGroup(left)) - horizonOrder.indexOf(horizonGroup(right));
+      if (horizonDiff) return horizonDiff;
+      const toneDiff = toneOrder[left.tone] - toneOrder[right.tone];
+      if (toneDiff) return toneDiff;
+      return originalOrder.get(left.id) - originalOrder.get(right.id);
+    });
   }
 
   function filteredAssets() {
     const query = state.query.trim().toLocaleLowerCase("zh-CN");
-    return data.assets.filter((asset) => {
+    return sortAssets(data.assets.filter((asset) => {
       const searchable = [asset.asset, asset.category, asset.direction, asset.action, asset.rationale].join(" ").toLocaleLowerCase("zh-CN");
       const queryMatch = !query || searchable.includes(query);
       const horizonMatch = matchesHorizon(asset, state.horizon);
       const evidenceMatch = state.evidence === "全部" || asset.evidence.includes(state.evidence);
       const statusMatch = state.status === "全部" || asset.status === state.status;
       return queryMatch && horizonMatch && evidenceMatch && statusMatch;
-    });
+    }));
   }
 
   function renderMeta() {
@@ -112,19 +131,38 @@
       state.selectedId = assets[0].id;
     }
 
-    $("#asset-table-body").innerHTML = assets.map((asset) => `
-      <tr class="asset-row ${asset.id === state.selectedId ? "is-selected" : ""}" data-id="${escapeHTML(asset.id)}" tabindex="0" role="button" aria-label="查看${escapeHTML(asset.asset)}详情" aria-selected="${asset.id === state.selectedId}">
-        <td>
-          <div class="asset-name">
-            <i class="tone-mark ${escapeHTML(asset.tone)}" aria-hidden="true"></i>
-            <span><strong>${escapeHTML(asset.asset)}</strong><small>${escapeHTML(asset.category)}</small></span>
-          </div>
-        </td>
-        <td><span class="horizon-label">${escapeHTML(asset.horizon)}</span></td>
-        <td><span class="direction-label">${escapeHTML(asset.direction)}</span></td>
-        <td><span class="evidence-label">${escapeHTML(asset.evidence)}</span></td>
-      </tr>
-    `).join("");
+    const groupCounts = assets.reduce((counts, asset) => {
+      const group = horizonGroup(asset);
+      counts[group] = (counts[group] || 0) + 1;
+      return counts;
+    }, {});
+
+    let previousGroup = null;
+    $("#asset-table-body").innerHTML = assets.map((asset) => {
+      const group = horizonGroup(asset);
+      const groupHeader = group === previousGroup ? "" : `
+        <tr class="asset-group-row" data-horizon-group="${escapeHTML(group)}">
+          <th colspan="4" scope="rowgroup">
+            <span>${escapeHTML(group)}</span>
+            <small>利多优先 · 谨慎与利空靠后</small>
+            <strong>${groupCounts[group]} 项</strong>
+          </th>
+        </tr>
+      `;
+      previousGroup = group;
+      return `${groupHeader}
+        <tr class="asset-row ${asset.id === state.selectedId ? "is-selected" : ""}" data-id="${escapeHTML(asset.id)}" tabindex="0" role="button" aria-label="查看${escapeHTML(asset.asset)}详情" aria-selected="${asset.id === state.selectedId}">
+          <td>
+            <div class="asset-name">
+              <i class="tone-mark ${escapeHTML(asset.tone)}" aria-hidden="true"></i>
+              <span><strong>${escapeHTML(asset.asset)}</strong><small>${escapeHTML(asset.category)}</small></span>
+            </div>
+          </td>
+          <td><span class="horizon-label">${escapeHTML(asset.horizon)}</span></td>
+          <td><span class="direction-label">${escapeHTML(asset.direction)}</span></td>
+          <td><span class="evidence-label">${escapeHTML(asset.evidence)}</span></td>
+        </tr>`;
+    }).join("");
 
     renderAssetDetail();
   }

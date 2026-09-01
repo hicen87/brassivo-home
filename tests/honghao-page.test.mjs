@@ -41,6 +41,25 @@ test("asset records are complete, unique, and traceable", () => {
   }
 });
 
+test("assets follow the horizon groups and direction priority", () => {
+  const horizonGroup = (asset) => asset.horizon.includes("短") ? "短期" : asset.horizon.includes("中") ? "中期" : "长期";
+  const horizonOrder = ["短期", "中期", "长期"];
+  const toneOrder = { positive: 0, neutral: 1, caution: 2, negative: 3 };
+  const originalOrder = new Map(data.assets.map((asset, index) => [asset.id, index]));
+  const sorted = [...data.assets].sort((left, right) =>
+    horizonOrder.indexOf(horizonGroup(left)) - horizonOrder.indexOf(horizonGroup(right)) ||
+    toneOrder[left.tone] - toneOrder[right.tone] ||
+    originalOrder.get(left.id) - originalOrder.get(right.id)
+  );
+
+  assert.deepEqual(
+    horizonOrder.map((group) => sorted.filter((asset) => horizonGroup(asset) === group).length),
+    [8, 5, 1]
+  );
+  assert.equal(sorted[0].id, "usd");
+  assert.equal(sorted.at(-1).id, "precious-long");
+});
+
 test("public dataset exposes source metadata but no private file paths", () => {
   for (const source of data.sources) {
     assert.deepEqual(Object.keys(source).sort(), ["date", "id", "role", "title", "type"]);
@@ -60,14 +79,17 @@ test("macro view page is direct-file compatible and has public metadata", () => 
     assert.match(html, new RegExp(`id=["']${id}["']`));
   }
   assert.match(html, /https:\/\/brassivo\.com\/honghao\//);
-  assert.match(html, /styles\.css\?v=20260901b/);
+  assert.match(html, /styles\.css\?v=20260901c/);
   assert.match(html, /dashboard-data\.js\?v=20260901b/);
-  assert.match(html, /app\.js\?v=20260901b/);
+  assert.match(html, /app\.js\?v=20260901c/);
   assert.match(html, /<meta name="color-scheme" content="light"/);
   assert.match(html, /<meta name="theme-color" content="#f6f7f9"/);
   assert.doesNotMatch(html, /洪灏资产方向跟踪台账\.md|\.pdf|\.jpg/);
   assert.doesNotMatch(html, /HONG HAO|Hong Hao|洪灏/);
   assert.doesNotMatch(app, /\bfetch\s*\(|source\.path|target=["']_blank["']/);
+  assert.match(app, /function horizonGroup\(/);
+  assert.match(app, /function sortAssets\(/);
+  assert.match(app, /asset-group-row/);
   assert.match(css, /--ink:\s*#f6f7f9/);
   assert.match(css, /--dot:\s*rgba\(20, 40, 80, 0\.09\)/);
   assert.match(css, /body::after[\s\S]*radial-gradient\(circle, var\(--glow\)/);
