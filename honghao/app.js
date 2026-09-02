@@ -72,8 +72,9 @@
 
   function renderMeta() {
     $("#baseline-date").textContent = data.meta.baselineDate;
-    $("#header-date").textContent = data.meta.baselineDate;
+    $("#header-date").textContent = data.meta.latestSourceDate;
     $("#latest-source-date").textContent = data.meta.latestSourceDate;
+    $("#hero-title").textContent = data.meta.posture;
     $("#posture-note").textContent = data.meta.postureNote;
     $("#footer-disclaimer").textContent = data.meta.disclaimer;
 

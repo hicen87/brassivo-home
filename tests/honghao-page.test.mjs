@@ -18,13 +18,13 @@ const data = context.window.HONG_HAO_DASHBOARD_DATA;
 
 test("public page contains the verified baseline", () => {
   assert.equal(data.meta.baselineDate, "2026-09-01");
-  assert.equal(data.meta.latestSourceDate, "2026-09-01");
-  assert.equal(data.assets.length, 14);
-  assert.equal(data.sources.length, 5);
+  assert.equal(data.meta.latestSourceDate, "2026-09-02");
+  assert.equal(data.assets.length, 15);
+  assert.equal(data.sources.length, 7);
   assert.equal(data.rotation.filter((step) => step.state === "current").length, 1);
   assert.equal(data.rotation.find((step) => step.state === "current").id, "agriculture");
   assert.equal(data.rotation.find((step) => step.state === "current").stage, "结构主线");
-  assert.equal(data.changes[0].date, "2026-09-01");
+  assert.equal(data.changes[0].date, "2026-09-02");
   assert.equal(data.changes.at(-1).date, "2026-08-31");
 });
 
@@ -38,6 +38,9 @@ test("asset records are complete, unique, and traceable", () => {
     assert.ok(!assetIds.has(asset.id), `duplicate asset id ${asset.id}`);
     assetIds.add(asset.id);
     for (const ref of asset.sourceRefs) assert.ok(sourceIds.has(ref), `${asset.id} has unknown source ${ref}`);
+  }
+  for (const change of data.changes) {
+    for (const ref of change.sources) assert.ok(sourceIds.has(ref), `${change.asset} change has unknown source ${ref}`);
   }
 });
 
@@ -54,7 +57,7 @@ test("assets follow the horizon groups and direction priority", () => {
 
   assert.deepEqual(
     horizonOrder.map((group) => sorted.filter((asset) => horizonGroup(asset) === group).length),
-    [8, 5, 1]
+    [9, 5, 1]
   );
   assert.equal(sorted[0].id, "usd");
   assert.equal(sorted.at(-1).id, "precious-long");
@@ -80,8 +83,8 @@ test("macro view page is direct-file compatible and has public metadata", () => 
   }
   assert.match(html, /https:\/\/brassivo\.com\/honghao\//);
   assert.match(html, /styles\.css\?v=20260901c/);
-  assert.match(html, /dashboard-data\.js\?v=20260901b/);
-  assert.match(html, /app\.js\?v=20260901c/);
+  assert.match(html, /dashboard-data\.js\?v=20260902a/);
+  assert.match(html, /app\.js\?v=20260902a/);
   assert.match(html, /<meta name="color-scheme" content="light"/);
   assert.match(html, /<meta name="theme-color" content="#f6f7f9"/);
   assert.doesNotMatch(html, /洪灏资产方向跟踪台账\.md|\.pdf|\.jpg/);
