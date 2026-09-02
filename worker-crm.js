@@ -4,19 +4,65 @@
 // （原有 KV 绑定 SUBS 保留不动）
 const ADMIN_EMAIL = 'cenhao87@gmail.com';
 const ADMIN_HASH = '13911b09475584a29901a3fc16adbf496c97c762c6d13ad1f8ec32cc157752b1'; // sha256('brassivo:'+密码)
+const SESSION_COOKIE = 'brassivo_session';
+const SESSION_TTL_SECONDS = 7 * 24 * 60 * 60;
 
 async function sha(s){
   const b = await crypto.subtle.digest('SHA-256', new TextEncoder().encode('brassivo:'+s));
   return Array.from(new Uint8Array(b)).map(x=>x.toString(16).padStart(2,'0')).join('');
 }
-const J = (o, s, cors) => new Response(JSON.stringify(o), {status:s||200, headers:{...cors,'Content-Type':'application/json'}});
+const J = (o, s, cors, extra) => new Response(JSON.stringify(o), {status:s||200, headers:{...cors,...(extra||{}),'Content-Type':'application/json'}});
+
+function cookieValue(req, name){
+  const cookie = req.headers.get('Cookie') || '';
+  const match = cookie.match(new RegExp('(?:^|;\\s*)'+name.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'=([^;]*)'));
+  return match ? decodeURIComponent(match[1]) : '';
+}
+
+function randomToken(){
+  return Array.from(crypto.getRandomValues(new Uint8Array(32))).map(x=>x.toString(16).padStart(2,'0')).join('');
+}
+
+function constantTimeEqual(left, right){
+  const a = new TextEncoder().encode(String(left||''));
+  const b = new TextEncoder().encode(String(right||''));
+  let diff = a.length ^ b.length;
+  const n = Math.max(a.length, b.length);
+  for(let i=0;i<n;i++) diff |= (a[i%Math.max(1,a.length)]||0) ^ (b[i%Math.max(1,b.length)]||0);
+  return diff === 0;
+}
+
+function memberIsActive(member){
+  return !!(member && member.expires_at && member.expires_at >= new Date().toISOString().slice(0,10));
+}
+
+function validEpsSnapshot(data){
+  if(!data || data.version !== 1 || data.status !== 'sent') return false;
+  if(!/^\d{4}-\d{2}-\d{2}$/.test(data.asOf||'') || !/^\d{4}-\d{2}-\d{2}$/.test(data.baselineDate||'')) return false;
+  if(!data.summary || !Array.isArray(data.stocks) || data.stocks.length < 1) return false;
+  const counts = ['stocksTotal','stocksSuccess','currentNumericChanges','periodChanges','trendCarry'];
+  if(counts.some(key=>!Number.isInteger(data.summary[key]) || data.summary[key] < 0)) return false;
+  if(data.summary.stocksTotal !== data.stocks.length || data.summary.stocksSuccess !== data.stocks.length) return false;
+  const required = ['symbol','name','market','source','baselineDate','periods','estimates','revisionsUp','revisionsDown','recentChanges'];
+  if(data.stocks.some(stock=>required.some(key=>stock[key]===undefined) || !Array.isArray(stock.periods) || stock.periods.length !== 4 || !Array.isArray(stock.estimates) || stock.estimates.length !== 4 || !Array.isArray(stock.revisionsUp) || stock.revisionsUp.length !== 4 || !Array.isArray(stock.revisionsDown) || stock.revisionsDown.length !== 4 || !Array.isArray(stock.recentChanges))) return false;
+  return !/(gmail_message_id|password|authorization|\/Users\/|\.png\b|"url"\s*:)/i.test(JSON.stringify(data));
+}
+
+async function currentSession(req, env){
+  const token = cookieValue(req, SESSION_COOKIE);
+  if(!token || !env.SUBS) return null;
+  const session = await env.SUBS.get('session:'+await sha(token), 'json');
+  return memberIsActive(session) ? session : null;
+}
 
 export default {
   async fetch(req, env) {
     const cors = (o) => ({
       'Access-Control-Allow-Origin': /^https?:\/\/((investment|stocks|china)\.)?brassivo\.com$/.test(o) ? o : 'https://brassivo.com',
       'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type'
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+      'Access-Control-Allow-Credentials': 'true',
+      'Vary': 'Origin'
     });
     const origin = req.headers.get('Origin') || '';
     const C = cors(origin);
@@ -25,6 +71,48 @@ export default {
     let body = {};
     if (req.method === 'POST') { try { body = await req.json(); } catch(e){} }
     const email = (body.email||'').trim().toLowerCase();
+
+    // ---- 安全会员会话（EPS 私有页）----
+    if (req.method === 'POST' && url.pathname === '/member/session') {
+      if (!env.DB || !env.SUBS) return J({ok:false,err:'auth service unavailable'},503,C);
+      const m = await env.DB.prepare('SELECT email,plan,expires_at,created_at FROM members WHERE email=? AND pass_hash=?').bind(email, await sha(body.password||'')).first();
+      if (!m) return J({ok:false,err:'邮箱或密码错误'},401,C);
+      if (!memberIsActive(m)) return J({ok:false,err:'会员已到期'},403,C);
+      const token = randomToken();
+      await env.SUBS.put('session:'+await sha(token), JSON.stringify({email:m.email,plan:m.plan,expires_at:m.expires_at}), {expirationTtl:SESSION_TTL_SECONDS});
+      return J({ok:true,member:{email:m.email,plan:m.plan,expires_at:m.expires_at}},200,C,{
+        'Cache-Control':'no-store',
+        'Set-Cookie':`${SESSION_COOKIE}=${token}; Path=/; Max-Age=${SESSION_TTL_SECONDS}; HttpOnly; Secure; SameSite=Lax`
+      });
+    }
+
+    if (req.method === 'POST' && url.pathname === '/member/logout') {
+      const token = cookieValue(req, SESSION_COOKIE);
+      if (token && env.SUBS) await env.SUBS.delete('session:'+await sha(token));
+      return J({ok:true},200,C,{
+        'Cache-Control':'no-store',
+        'Set-Cookie':`${SESSION_COOKIE}=; Path=/; Max-Age=0; HttpOnly; Secure; SameSite=Lax`
+      });
+    }
+
+    // ---- EPS 私有数据 ----
+    if (req.method === 'GET' && url.pathname === '/eps/data') {
+      if (!await currentSession(req,env)) return J({ok:false,err:'请先登录'},401,C,{'Cache-Control':'no-store'});
+      const data = env.SUBS ? await env.SUBS.get('eps:current','json') : null;
+      if (!data) return J({ok:false,err:'EPS 数据尚未发布'},404,C,{'Cache-Control':'no-store'});
+      return J(data,200,C,{'Cache-Control':'no-store'});
+    }
+
+    // 发布令牌必须通过 Cloudflare secret 提供，不能写入仓库。
+    if (req.method === 'POST' && url.pathname === '/admin/eps') {
+      const auth = req.headers.get('Authorization') || '';
+      const expected = env.EPS_PUBLISH_TOKEN ? 'Bearer '+env.EPS_PUBLISH_TOKEN : '';
+      if (!expected || !constantTimeEqual(auth,expected)) return J({ok:false,err:'publisher authentication failed'},401,C);
+      if (!validEpsSnapshot(body)) return J({ok:false,err:'invalid EPS snapshot'},422,C);
+      if (!env.SUBS) return J({ok:false,err:'storage unavailable'},503,C);
+      await env.SUBS.put('eps:current',JSON.stringify(body));
+      return J({ok:true,asOf:body.asOf,stocks:body.stocks.length},200,C,{'Cache-Control':'no-store'});
+    }
 
     // ---- 订阅（试用）----
     if (req.method === 'POST' && url.pathname === '/subscribe') {
