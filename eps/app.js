@@ -43,10 +43,6 @@
     return { US: "美股", A: "A股", HK: "港股" }[market] || market;
   }
 
-  function directionLabel(direction) {
-    return { up: "上调", down: "下调", new: "新增", missing: "缺失" }[direction] || direction;
-  }
-
   function stockTone(stock) {
     const newestDate = stock.recentChanges[0]?.changeDate;
     const newest = stock.recentChanges.filter((change) => change.changeDate === newestDate);
@@ -55,24 +51,39 @@
     return up > down ? "has-up" : down > up ? "has-down" : "";
   }
 
-  function renderChanges(changes) {
+  function renderChanges(stock) {
+    const changes = stock.recentChanges;
     if (!changes.length) return '<div class="change-block"><span class="muted">尚无可延续的真实变化</span></div>';
+    const screenshotSrc = `${API}/eps/image/${encodeURIComponent(stock.baselineDate)}/${encodeURIComponent(stock.symbol)}/${encodeURIComponent(stock.screenshotSha256)}`;
     return `
       <details class="change-block">
         <summary>最近真实变化 · ${changes.length} 项</summary>
-        <div class="change-list">
-          ${changes.slice(0, 12).map((change) => `
-            <div class="change-item ${escapeHTML(change.direction)}">
-              <i aria-hidden="true"></i>
-              <div class="change-copy">
-                <strong>${escapeHTML(change.field)} · ${escapeHTML(change.period)}</strong>
-                <span>${escapeHTML(change.changeDate)} · ${directionLabel(change.direction)}</span>
-              </div>
-              <div class="change-value">${escapeHTML(change.newValue)}<span>${escapeHTML(change.delta)}</span></div>
-            </div>
-          `).join("")}
+        <div class="screenshot-frame">
+          <span class="screenshot-status">截图加载中…</span>
+          <img class="change-screenshot" data-screenshot-src="${escapeHTML(screenshotSrc)}" alt="${escapeHTML(stock.name)} ${escapeHTML(stock.baselineDate)} 邮件截图" hidden>
         </div>
       </details>`;
+  }
+
+  function bindScreenshotLoaders() {
+    document.querySelectorAll("details.change-block").forEach((details) => {
+      details.addEventListener("toggle", () => {
+        if (!details.open) return;
+        const image = details.querySelector(".change-screenshot");
+        const status = details.querySelector(".screenshot-status");
+        if (!image || image.dataset.loaded || image.src) return;
+        image.addEventListener("load", () => {
+          image.dataset.loaded = "true";
+          image.hidden = false;
+          status.hidden = true;
+        }, { once: true });
+        image.addEventListener("error", () => {
+          status.textContent = "截图暂时无法加载，请稍后重试。";
+          image.removeAttribute("src");
+        }, { once: true });
+        image.src = image.dataset.screenshotSrc;
+      });
+    });
   }
 
   function renderStocks(stocks) {
@@ -103,9 +114,10 @@
             </div>
           `).join("")}
         </div>
-        ${renderChanges(stock.recentChanges)}
+        ${renderChanges(stock)}
       </article>
     `).join("");
+    bindScreenshotLoaders();
   }
 
   function applyFilters() {

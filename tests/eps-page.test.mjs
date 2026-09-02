@@ -33,6 +33,10 @@ test("EPS app loads public data with no-store requests", () => {
   assert.match(app, /function escapeHTML\(/);
   assert.match(app, /function renderStocks\(/);
   assert.match(app, /function applyFilters\(/);
+  assert.match(app, /\/eps\/image\//);
+  assert.match(app, /data-screenshot-src/);
+  assert.match(app, /addEventListener\(["']toggle["']/);
+  assert.doesNotMatch(app, /change-list|change-item/);
   assert.doesNotMatch(app, /member\/session|member\/logout|credentials:\s*["']include["']|localStorage|sessionStorage|document\.cookie/);
   assert.doesNotMatch(app, /NVDA|AAPL|腾讯控股|中际旭创|招商银行/);
 });
@@ -43,6 +47,8 @@ test("EPS styles support readable desktop and mobile layouts", () => {
   assert.match(css, /--bg:\s*#f6f7f9/);
   assert.match(css, /\.summary-grid\s*\{[^}]*display:\s*grid/s);
   assert.match(css, /\.stock-grid\s*\{[^}]*display:\s*grid/s);
+  assert.match(css, /\.screenshot-frame/);
+  assert.match(css, /\.change-screenshot/);
   assert.match(css, /@media\s*\(max-width:\s*720px\)/);
   assert.match(css, /prefers-reduced-motion/);
   assert.match(css, /:focus-visible/);

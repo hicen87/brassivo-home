@@ -32,6 +32,30 @@ function constantTimeEqual(left, right){
   return diff === 0;
 }
 
+async function rawSha(bytes){
+  const digest = await crypto.subtle.digest('SHA-256', bytes);
+  return Array.from(new Uint8Array(digest)).map(x=>x.toString(16).padStart(2,'0')).join('');
+}
+
+function epsImageRoute(pathname, prefix){
+  if(!pathname.startsWith(prefix+'/')) return null;
+  const parts = pathname.slice(prefix.length+1).split('/');
+  if(parts.length !== 3) return null;
+  try {
+    const asOf = decodeURIComponent(parts[0]);
+    const symbol = decodeURIComponent(parts[1]);
+    const imageHash = parts[2].toLowerCase();
+    if(!/^\d{4}-\d{2}-\d{2}$/.test(asOf) || !/^[A-Z0-9.-]{1,20}$/.test(symbol) || !/^[a-f0-9]{64}$/.test(imageHash)) return null;
+    return {asOf,symbol,imageHash,key:`eps:image:${asOf}:${symbol}:${imageHash}`};
+  } catch(e) { return null; }
+}
+
+function isPng(bytes){
+  const signature = [137,80,78,71,13,10,26,10];
+  const view = new Uint8Array(bytes);
+  return view.length > signature.length && signature.every((value,index)=>view[index]===value);
+}
+
 function memberIsActive(member){
   return !!(member && member.expires_at && member.expires_at >= new Date().toISOString().slice(0,10));
 }
@@ -43,8 +67,9 @@ function validEpsSnapshot(data){
   const counts = ['stocksTotal','stocksSuccess','currentNumericChanges','periodChanges','trendCarry'];
   if(counts.some(key=>!Number.isInteger(data.summary[key]) || data.summary[key] < 0)) return false;
   if(data.summary.stocksTotal !== data.stocks.length || data.summary.stocksSuccess !== data.stocks.length) return false;
-  const required = ['symbol','name','market','source','baselineDate','periods','estimates','revisionsUp','revisionsDown','recentChanges'];
+  const required = ['symbol','name','market','source','baselineDate','periods','estimates','revisionsUp','revisionsDown','recentChanges','screenshotSha256'];
   if(data.stocks.some(stock=>required.some(key=>stock[key]===undefined) || !Array.isArray(stock.periods) || stock.periods.length !== 4 || !Array.isArray(stock.estimates) || stock.estimates.length !== 4 || !Array.isArray(stock.revisionsUp) || stock.revisionsUp.length !== 4 || !Array.isArray(stock.revisionsDown) || stock.revisionsDown.length !== 4 || !Array.isArray(stock.recentChanges))) return false;
+  if(data.stocks.some(stock=>!/^[a-f0-9]{64}$/.test(stock.screenshotSha256))) return false;
   return !/(gmail_message_id|password|authorization|\/Users\/|\.png\b|"url"\s*:)/i.test(JSON.stringify(data));
 }
 
@@ -60,7 +85,7 @@ export default {
     const cors = (o) => ({
       'Access-Control-Allow-Origin': /^https?:\/\/((investment|stocks|china)\.)?brassivo\.com$/.test(o) ? o : 'https://brassivo.com',
       'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Content-SHA256',
       'Access-Control-Allow-Credentials': 'true',
       'Vary': 'Origin'
     });
@@ -69,7 +94,7 @@ export default {
     if (req.method === 'OPTIONS') return new Response(null, {headers: C});
     const url = new URL(req.url);
     let body = {};
-    if (req.method === 'POST') { try { body = await req.json(); } catch(e){} }
+    if (req.method === 'POST' && (req.headers.get('Content-Type')||'').includes('application/json')) { try { body = await req.json(); } catch(e){} }
     const email = (body.email||'').trim().toLowerCase();
 
     // ---- 安全会员会话（EPS 私有页）----
@@ -100,6 +125,35 @@ export default {
       const data = env.SUBS ? await env.SUBS.get('eps:current','json') : null;
       if (!data) return J({ok:false,err:'EPS 数据尚未发布'},404,C,{'Cache-Control':'no-store'});
       return J(data,200,C,{'Cache-Control':'no-store'});
+    }
+
+    const publicImage = epsImageRoute(url.pathname,'/eps/image');
+    if (req.method === 'GET' && publicImage) {
+      if (!env.SUBS) return J({ok:false,err:'storage unavailable'},503,C,{'Cache-Control':'no-store'});
+      const bytes = await env.SUBS.get(publicImage.key,'arrayBuffer');
+      if (!bytes) return J({ok:false,err:'EPS screenshot not found'},404,C,{'Cache-Control':'no-store'});
+      return new Response(bytes,{status:200,headers:{
+        ...C,
+        'Content-Type':'image/png',
+        'Cache-Control':'public, max-age=31536000, immutable',
+        'X-Content-Type-Options':'nosniff'
+      }});
+    }
+
+    const adminImage = epsImageRoute(url.pathname,'/admin/eps/image');
+    if (req.method === 'POST' && adminImage) {
+      const auth = req.headers.get('Authorization') || '';
+      const expected = env.EPS_PUBLISH_TOKEN ? 'Bearer '+env.EPS_PUBLISH_TOKEN : '';
+      if (!expected || !constantTimeEqual(auth,expected)) return J({ok:false,err:'publisher authentication failed'},401,C);
+      if (!env.SUBS) return J({ok:false,err:'storage unavailable'},503,C);
+      if (!(req.headers.get('Content-Type')||'').toLowerCase().startsWith('image/png')) return J({ok:false,err:'image/png required'},415,C);
+      const bytes = await req.arrayBuffer();
+      if (bytes.byteLength > 5*1024*1024 || !isPng(bytes)) return J({ok:false,err:'invalid EPS screenshot'},422,C);
+      const digest = await rawSha(bytes);
+      const claimed = (req.headers.get('X-Content-SHA256')||'').toLowerCase();
+      if (!/^[a-f0-9]{64}$/.test(claimed) || !constantTimeEqual(digest,claimed) || !constantTimeEqual(digest,adminImage.imageHash)) return J({ok:false,err:'screenshot hash mismatch'},422,C);
+      await env.SUBS.put(adminImage.key,bytes,{metadata:{contentType:'image/png',sha256:digest,bytes:bytes.byteLength}});
+      return J({ok:true,asOf:adminImage.asOf,symbol:adminImage.symbol,bytes:bytes.byteLength,sha256:digest},200,C,{'Cache-Control':'no-store'});
     }
 
     // 发布令牌必须通过 Cloudflare secret 提供，不能写入仓库。

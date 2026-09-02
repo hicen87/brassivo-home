@@ -36,13 +36,19 @@ class MemoryKV {
   }
 
   async put(key, value, options = {}) {
-    this.values.set(key, String(value));
-    this.puts.push({ key, value: String(value), options });
+    const stored = value instanceof ArrayBuffer
+      ? value.slice(0)
+      : ArrayBuffer.isView(value)
+        ? value.buffer.slice(value.byteOffset, value.byteOffset + value.byteLength)
+        : String(value);
+    this.values.set(key, stored);
+    this.puts.push({ key, value: stored, options });
   }
 
   async get(key, type) {
     const value = this.values.get(key);
     if (value === undefined) return null;
+    if (type === "arrayBuffer") return value instanceof ArrayBuffer ? value.slice(0) : new TextEncoder().encode(value).buffer;
     return type === "json" ? JSON.parse(value) : value;
   }
 
@@ -135,7 +141,8 @@ const validSnapshot = {
       estimates: ["1", "2", "3", "4"],
       revisionsUp: ["1", "0", "0", "0"],
       revisionsDown: ["0", "0", "0", "0"],
-      recentChanges: []
+      recentChanges: [],
+      screenshotSha256: "7f47b756761a46e6d4a4d96f0d8a4448f8449235009d1f3ad1493f5c773c19e8"
     }
   ]
 };
@@ -203,6 +210,58 @@ test("EPS publisher requires the secret and validates the snapshot", async () =>
   }), env);
   assert.equal(accepted.status, 200);
   assert.deepEqual(JSON.parse(env.SUBS.values.get("eps:current")), validSnapshot);
+});
+
+test("EPS screenshot upload is protected and public readback preserves PNG bytes", async () => {
+  const worker = loadWorker();
+  const env = makeEnv();
+  const png = Uint8Array.from([137, 80, 78, 71, 13, 10, 26, 10, 1, 2, 3]);
+  const imageHash = "7f47b756761a46e6d4a4d96f0d8a4448f8449235009d1f3ad1493f5c773c19e8";
+  const uploadUrl = `/admin/eps/image/2026-09-02/NVDA/${imageHash}`;
+
+  const denied = await worker.fetch(new Request(`https://api.brassivo.com${uploadUrl}`, {
+    method: "POST",
+    headers: { "Content-Type": "image/png" },
+    body: png
+  }), env);
+  assert.equal(denied.status, 401);
+
+  const accepted = await worker.fetch(new Request(`https://api.brassivo.com${uploadUrl}`, {
+    method: "POST",
+    headers: {
+      Authorization: "Bearer publish-secret",
+      "Content-Type": "image/png",
+      "X-Content-SHA256": imageHash
+    },
+    body: png
+  }), env);
+  assert.equal(accepted.status, 200);
+  assert.equal(env.SUBS.puts.at(-1).key, `eps:image:2026-09-02:NVDA:${imageHash}`);
+
+  const readback = await worker.fetch(new Request(`https://api.brassivo.com/eps/image/2026-09-02/NVDA/${imageHash}`, {
+    headers: { Origin: "https://brassivo.com" }
+  }), env);
+  assert.equal(readback.status, 200);
+  assert.equal(readback.headers.get("Content-Type"), "image/png");
+  assert.match(readback.headers.get("Cache-Control"), /immutable/);
+  assert.deepEqual([...new Uint8Array(await readback.arrayBuffer())], [...png]);
+});
+
+test("EPS screenshot upload rejects non-PNG content", async () => {
+  const worker = loadWorker();
+  const env = makeEnv();
+  const badHash = "2aade9c49b9414c70f452b226271ef5066e2894cdd0557f54857819fb7bcc782";
+  const response = await worker.fetch(new Request(`https://api.brassivo.com/admin/eps/image/2026-09-02/NVDA/${badHash}`, {
+    method: "POST",
+    headers: {
+      Authorization: "Bearer publish-secret",
+      "Content-Type": "image/png",
+      "X-Content-SHA256": badHash
+    },
+    body: "not a png"
+  }), env);
+  assert.equal(response.status, 422);
+  assert.equal(env.SUBS.puts.length, 0);
 });
 
 test("logout invalidates the server session and clears the cookie", async () => {
