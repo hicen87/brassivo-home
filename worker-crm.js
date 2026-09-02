@@ -95,9 +95,8 @@ export default {
       });
     }
 
-    // ---- EPS 私有数据 ----
+    // ---- EPS 公开只读数据（内容已在发布前脱敏并校验）----
     if (req.method === 'GET' && url.pathname === '/eps/data') {
-      if (!await currentSession(req,env)) return J({ok:false,err:'请先登录'},401,C,{'Cache-Control':'no-store'});
       const data = env.SUBS ? await env.SUBS.get('eps:current','json') : null;
       if (!data) return J({ok:false,err:'EPS 数据尚未发布'},404,C,{'Cache-Control':'no-store'});
       return J(data,200,C,{'Cache-Control':'no-store'});

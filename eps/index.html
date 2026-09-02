@@ -6,11 +6,11 @@
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#f6f7f9">
   <title>EPS Margin Tracker · Brassivo Research</title>
-  <meta name="description" content="Brassivo 会员专属 EPS 盈利预期修正跟踪页。">
+  <meta name="description" content="Brassivo EPS 盈利预期修正与趋势延续跟踪页。">
   <link rel="canonical" href="https://brassivo.com/eps/">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="styles.css?v=20260901a">
-  <script defer src="app.js?v=20260901a"></script>
+  <link rel="stylesheet" href="styles.css?v=20260902a">
+  <script defer src="app.js?v=20260902a"></script>
 </head>
 <body>
   <div class="page-shell">
@@ -19,39 +19,11 @@
         <img src="/favicon.svg" alt="">
         <span>BRASSIVO <b>RESEARCH</b></span>
       </a>
-      <span class="private-mark">PRIVATE LEDGER</span>
-      <button id="logout-button" class="text-button" type="button" hidden>退出登录</button>
+      <span class="private-mark">LIVE LEDGER</span>
     </header>
 
     <main>
-      <section id="login-panel" class="login-panel" aria-labelledby="login-title">
-        <div class="login-copy">
-          <span class="eyebrow">EARNINGS REVISION / 01</span>
-          <h1 id="login-title">EPS 边际<br>跟踪台账</h1>
-          <p>每天比较上一期成功基线，分开标记今日真实变化与最近趋势延续。仅展示结构化数据，不公开原始网页截图。</p>
-          <div class="method-strip" aria-label="数据口径">
-            <span><b>US</b>Zacks Rank Factors</span>
-            <span><b>A / HK</b>Yahoo Normalized EPS</span>
-          </div>
-        </div>
-
-        <form id="login-form" class="login-card">
-          <div>
-            <span class="card-index">MEMBER ACCESS</span>
-            <h2>会员登录</h2>
-            <p>使用会员中心的邮箱和密码。会话保留 7 天，密码不会保存在浏览器。</p>
-          </div>
-          <label for="member-email">邮箱</label>
-          <input id="member-email" name="email" type="email" autocomplete="username" required placeholder="you@example.com">
-          <label for="member-password">密码</label>
-          <input id="member-password" name="password" type="password" autocomplete="current-password" required placeholder="会员密码">
-          <button class="primary-button" type="submit">进入 EPS 台账 <span>→</span></button>
-          <p id="login-message" class="form-message" role="status"></p>
-          <a class="account-link" href="/account.html">激活 Key 或修改密码</a>
-        </form>
-      </section>
-
-      <section id="dashboard" class="dashboard" hidden aria-labelledby="dashboard-title">
+      <section id="dashboard" class="dashboard" aria-labelledby="dashboard-title">
         <div class="dashboard-hero">
           <div>
             <span class="eyebrow">EARNINGS REVISION / LIVE BASELINE</span>
@@ -91,7 +63,7 @@
 
         <div id="loading-state" class="state-card" role="status" hidden>
           <span class="loading-line"></span>
-          <strong>正在读取私有 EPS 快照</strong>
+          <strong>正在读取 EPS 快照</strong>
         </div>
         <div id="error-state" class="state-card error" role="alert" hidden>
           <strong>数据读取失败</strong>

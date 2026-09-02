@@ -173,29 +173,12 @@ test("expired members cannot create a session", async () => {
   assert.equal(env.SUBS.puts.length, 0);
 });
 
-test("EPS data rejects anonymous requests", async () => {
+test("EPS data is publicly readable without a member session", async () => {
   const worker = loadWorker();
   const env = makeEnv();
   env.SUBS.values.set("eps:current", JSON.stringify(validSnapshot));
   const response = await worker.fetch(new Request("https://api.brassivo.com/eps/data", {
     headers: { Origin: "https://brassivo.com" }
-  }), env);
-
-  assert.equal(response.status, 401);
-});
-
-test("EPS data is returned only for a valid member session", async () => {
-  const worker = loadWorker();
-  const env = makeEnv();
-  const login = await worker.fetch(jsonRequest("/member/session", {
-    email: "member@example.com",
-    password: "correct-password"
-  }), env);
-  const cookie = login.headers.get("Set-Cookie").split(";", 1)[0];
-  env.SUBS.values.set("eps:current", JSON.stringify(validSnapshot));
-
-  const response = await worker.fetch(new Request("https://api.brassivo.com/eps/data", {
-    headers: { Cookie: cookie, Origin: "https://brassivo.com" }
   }), env);
 
   assert.equal(response.status, 200);

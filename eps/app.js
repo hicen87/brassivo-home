@@ -19,7 +19,6 @@
     if (options.body !== undefined) headers["Content-Type"] = "application/json";
     const response = await fetch(`${API}${path}`, {
       ...options,
-      credentials: "include",
       cache: "no-store",
       headers,
       signal: AbortSignal.timeout(10_000)
@@ -31,20 +30,6 @@
       throw error;
     }
     return payload;
-  }
-
-  function showLogin(message = "") {
-    state.data = null;
-    $("#login-panel").hidden = false;
-    $("#dashboard").hidden = true;
-    $("#logout-button").hidden = true;
-    $("#login-message").textContent = message;
-  }
-
-  function showDashboard() {
-    $("#login-panel").hidden = true;
-    $("#dashboard").hidden = false;
-    $("#logout-button").hidden = false;
   }
 
   function setLoadState(kind, message = "") {
@@ -144,7 +129,6 @@
   }
 
   async function loadData() {
-    showDashboard();
     setLoadState("loading");
     try {
       const data = await api("/eps/data", { method: "GET" });
@@ -153,48 +137,11 @@
       setLoadState("ready");
       applyFilters();
     } catch (error) {
-      if (error.status === 401 || error.status === 403) {
-        showLogin(error.status === 403 ? "会员已到期，请先续费。" : "请先登录后查看。 ");
-        return;
-      }
       setLoadState("error", error.message || "请稍后重试。");
     }
   }
 
-  async function login(event) {
-    event.preventDefault();
-    const button = event.currentTarget.querySelector("button[type=submit]");
-    const email = $("#member-email").value.trim();
-    const password = $("#member-password").value;
-    button.disabled = true;
-    $("#login-message").textContent = "正在验证会员状态…";
-    try {
-      await api("/member/session", { method: "POST", body: JSON.stringify({ email, password }) });
-      $("#member-password").value = "";
-      $("#login-message").textContent = "";
-      await loadData();
-    } catch (error) {
-      $("#login-message").textContent = error.message || "登录失败";
-    } finally {
-      button.disabled = false;
-    }
-  }
-
-  async function logout() {
-    $("#logout-button").disabled = true;
-    try {
-      await api("/member/logout", { method: "POST", body: "{}" });
-    } catch (_error) {
-      // Cookie is cleared server-side when reachable; local UI always returns to login.
-    } finally {
-      $("#logout-button").disabled = false;
-      showLogin("已退出登录。 ");
-    }
-  }
-
   function bindEvents() {
-    $("#login-form").addEventListener("submit", login);
-    $("#logout-button").addEventListener("click", logout);
     $("#retry-button").addEventListener("click", loadData);
     $("#stock-search").addEventListener("input", (event) => {
       state.query = event.target.value;

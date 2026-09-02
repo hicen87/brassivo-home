@@ -61,50 +61,14 @@ select:focus-visible {
 .brand span { font-size: 15px; font-weight: 800; letter-spacing: 0.12em; }
 .brand b { color: var(--brass); }
 .private-mark { padding: 4px 9px; border: 1px solid var(--line-strong); border-radius: 999px; color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: 0.12em; }
-.text-button { margin-left: auto; padding: 7px 0; border: 0; color: var(--muted); background: transparent; cursor: pointer; }
-.text-button:hover { color: var(--brass); }
+.eyebrow { display: block; color: var(--brass); font: 700 11px/1.4 "SFMono-Regular", Consolas, monospace; letter-spacing: 0.14em; }
+.dashboard-hero h1 { margin: 14px 0 20px; font-family: "Iowan Old Style", "Songti SC", Georgia, serif; font-weight: 600; letter-spacing: -0.04em; }
 
-.login-panel {
-  min-height: calc(100vh - 162px);
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
-  align-items: center;
-  gap: clamp(44px, 8vw, 110px);
-  padding: 64px 5vw 80px;
-}
+.toolbar input, .toolbar select { width: 100%; border: 1px solid var(--line); border-radius: 4px; color: var(--ink); background: var(--paper); }
+.toolbar input:hover, .toolbar input:focus, .toolbar select:hover, .toolbar select:focus { border-color: var(--brass); }
 
-.eyebrow, .card-index { display: block; color: var(--brass); font: 700 11px/1.4 "SFMono-Regular", Consolas, monospace; letter-spacing: 0.14em; }
-.login-copy h1, .dashboard-hero h1 { margin: 14px 0 20px; font-family: "Iowan Old Style", "Songti SC", Georgia, serif; font-weight: 600; letter-spacing: -0.04em; }
-.login-copy h1 { max-width: 580px; font-size: clamp(58px, 8vw, 102px); line-height: 0.9; }
-.login-copy > p { max-width: 610px; color: var(--muted); font-size: 17px; }
-
-.method-strip { display: flex; gap: 28px; margin-top: 38px; padding-top: 20px; border-top: 1px solid var(--line); }
-.method-strip span { display: grid; gap: 2px; color: var(--muted); font-size: 12px; }
-.method-strip b { color: var(--ink); font: 700 11px/1.4 "SFMono-Regular", Consolas, monospace; letter-spacing: 0.1em; }
-
-.login-card {
-  display: grid;
-  gap: 10px;
-  padding: clamp(28px, 4vw, 48px);
-  border: 1px solid var(--line-strong);
-  border-top: 5px solid var(--brass);
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: var(--shadow);
-}
-.login-card h2 { margin: 8px 0 4px; font-family: "Iowan Old Style", "Songti SC", Georgia, serif; font-size: 30px; }
-.login-card p { margin: 0 0 16px; color: var(--muted); font-size: 14px; }
-.login-card label { margin-top: 7px; color: var(--muted); font-size: 12px; font-weight: 700; letter-spacing: 0.06em; }
-.login-card input, .toolbar input, .toolbar select { width: 100%; border: 1px solid var(--line); border-radius: 4px; color: var(--ink); background: var(--paper); }
-.login-card input { height: 48px; padding: 0 13px; }
-.login-card input:hover, .login-card input:focus, .toolbar input:hover, .toolbar input:focus, .toolbar select:hover, .toolbar select:focus { border-color: var(--brass); }
-
-.primary-button, .secondary-button { border: 0; border-radius: 4px; cursor: pointer; font-weight: 700; }
-.primary-button { display: flex; justify-content: space-between; margin-top: 14px; padding: 14px 16px; color: white; background: var(--ink); }
-.primary-button:hover { background: var(--brass); }
-.primary-button:disabled { opacity: 0.55; cursor: wait; }
+.secondary-button { border: 0; border-radius: 4px; cursor: pointer; font-weight: 700; }
 .secondary-button { padding: 9px 14px; color: var(--ink); background: var(--brass-soft); }
-.form-message { min-height: 22px; color: var(--down) !important; }
-.account-link { width: fit-content; color: var(--muted); font-size: 13px; text-underline-offset: 3px; }
 
 .dashboard { padding: 70px 0 90px; }
 .dashboard-hero { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 30px; }
@@ -176,9 +140,6 @@ footer a { color: inherit; }
 [hidden] { display: none !important; }
 
 @media (max-width: 900px) {
-  .login-panel { grid-template-columns: 1fr; padding-inline: 0; }
-  .login-copy h1 { font-size: clamp(58px, 13vw, 90px); }
-  .login-card { max-width: 620px; }
   .dashboard-hero { grid-template-columns: 1fr; }
   .baseline-stamp { width: 100%; }
   .summary-grid { grid-template-columns: repeat(2, 1fr); }
@@ -190,10 +151,6 @@ footer a { color: inherit; }
   .page-shell { width: min(100% - 28px, 1180px); }
   .site-header { height: 68px; }
   .private-mark { display: none; }
-  .login-panel { min-height: auto; gap: 34px; padding: 48px 0 64px; }
-  .login-copy h1 { font-size: clamp(52px, 17vw, 78px); }
-  .method-strip { gap: 16px; }
-  .login-card { padding: 26px 20px; }
   .dashboard { padding: 48px 0 66px; }
   .dashboard-hero h1 { font-size: 47px; }
   .summary-grid article { padding: 16px; }
