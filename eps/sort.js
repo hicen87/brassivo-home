@@ -8,27 +8,18 @@
     return Number.isFinite(number) ? number : null;
   }
 
-  function trendStrength(stock) {
-    const values = (stock.estimateRevisionTrend || [])
-      .slice(0, 4)
-      .map(numericTrend)
-      .filter((value) => value !== null);
-    if (!values.length) return null;
-    return values.reduce((sum, value) => sum + value, 0) / values.length;
-  }
-
-  function formatTrendStrength(value) {
-    if (!Number.isFinite(value)) return "--";
-    if (Math.abs(value) < 0.005) return "0.00%";
-    return `${value > 0 ? "+" : ""}${value.toFixed(2)}%`;
+  function trendVector(stock) {
+    return Array.from({ length: 4 }, (_, index) => numericTrend(stock.estimateRevisionTrend?.[index]));
   }
 
   function compareStocks(left, right) {
-    const leftStrength = trendStrength(left);
-    const rightStrength = trendStrength(right);
-    if (leftStrength === null && rightStrength !== null) return 1;
-    if (leftStrength !== null && rightStrength === null) return -1;
-    if (leftStrength !== rightStrength) return rightStrength - leftStrength;
+    const leftTrend = trendVector(left);
+    const rightTrend = trendVector(right);
+    for (let index = 0; index < leftTrend.length; index += 1) {
+      if (leftTrend[index] === null && rightTrend[index] !== null) return 1;
+      if (leftTrend[index] !== null && rightTrend[index] === null) return -1;
+      if (leftTrend[index] !== rightTrend[index]) return rightTrend[index] - leftTrend[index];
+    }
     return String(left.symbol).localeCompare(String(right.symbol), "en");
   }
 
@@ -48,5 +39,5 @@
       .map(([market, marketStocks]) => ({ market, stocks: [...marketStocks].sort(compareStocks) }));
   }
 
-  root.EPSSort = Object.freeze({ formatTrendStrength, groupAndSortStocks, trendStrength });
+  root.EPSSort = Object.freeze({ groupAndSortStocks, trendVector });
 })(typeof window !== "undefined" ? window : globalThis);

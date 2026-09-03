@@ -108,9 +108,6 @@ select:focus-visible {
 .stock-identity p { margin: 4px 0 0; color: var(--muted); font: 600 12px/1.4 "SFMono-Regular", Consolas, monospace; letter-spacing: 0.06em; }
 .stock-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-left: auto; }
 .stock-tags span { padding: 3px 8px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: 10px; font-weight: 700; }
-.stock-tags .rank-strength.up { color: var(--up); border-color: rgba(28, 117, 85, 0.28); background: var(--up-soft); }
-.stock-tags .rank-strength.down { color: var(--down); border-color: rgba(177, 67, 57, 0.28); background: var(--down-soft); }
-
 .stock-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .period-cell { min-width: 0; padding: 16px 20px 17px; border-right: 1px solid var(--line); }
 .period-cell:last-child { border-right: 0; }
