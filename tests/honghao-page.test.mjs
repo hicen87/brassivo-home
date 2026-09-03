@@ -40,8 +40,27 @@ test("asset records are complete, unique, and traceable", () => {
     for (const ref of asset.sourceRefs) assert.ok(sourceIds.has(ref), `${asset.id} has unknown source ${ref}`);
   }
   for (const change of data.changes) {
+    assert.ok(Object.hasOwn(change, "turningPoint"), `${change.asset} missing turning-point assessment`);
+    if (change.turningPoint) {
+      assert.ok(["top", "bottom"].includes(change.turningPoint.side), `${change.asset} has invalid turning-point side`);
+      assert.ok(change.turningPoint.label, `${change.asset} missing turning-point label`);
+      assert.ok(change.turningPoint.priceContext, `${change.asset} missing turning-point price context`);
+    }
     for (const ref of change.sources) assert.ok(sourceIds.has(ref), `${change.asset} change has unknown source ${ref}`);
   }
+});
+
+test("turning-point signals are explicit and limited to qualified changes", () => {
+  const candidates = data.changes.filter((change) => change.turningPoint);
+  assert.equal(candidates.length, 1);
+  assert.equal(candidates[0].asset, "贵金属及矿业股");
+  assert.equal(candidates[0].turningPoint.side, "top");
+
+  const html = read("honghao/index.html");
+  const app = read("honghao/app.js");
+  assert.match(html, /标有“拐点”的记录/);
+  assert.match(app, /change\.turningPoint \? " is-turning-point"/);
+  assert.match(app, /turning-point-badge/);
 });
 
 test("assets follow the horizon groups and direction priority", () => {
@@ -82,9 +101,9 @@ test("macro view page is direct-file compatible and has public metadata", () => 
     assert.match(html, new RegExp(`id=["']${id}["']`));
   }
   assert.match(html, /https:\/\/brassivo\.com\/honghao\//);
-  assert.match(html, /styles\.css\?v=20260901c/);
-  assert.match(html, /dashboard-data\.js\?v=20260902a/);
-  assert.match(html, /app\.js\?v=20260902a/);
+  assert.match(html, /styles\.css\?v=20260903a/);
+  assert.match(html, /dashboard-data\.js\?v=20260903a/);
+  assert.match(html, /app\.js\?v=20260903a/);
   assert.match(html, /<meta name="color-scheme" content="light"/);
   assert.match(html, /<meta name="theme-color" content="#f6f7f9"/);
   assert.doesNotMatch(html, /洪灏资产方向跟踪台账\.md|\.pdf|\.jpg/);

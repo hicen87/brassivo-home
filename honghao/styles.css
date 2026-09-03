@@ -422,11 +422,18 @@ a { color: inherit; text-decoration: none; }
 .archive-section { display: grid; grid-template-columns: .8fr 1.2fr; gap: 20px; padding-block: 92px 110px; border-top: 1px solid var(--line); }
 .change-panel, .source-panel { padding: 30px; border: 1px solid var(--line); background: rgba(255,255,255,.78); }
 .panel-heading h2 { font-size: 32px; }
+.change-note { margin: 12px 0 0; color: var(--paper-muted); font-size: 10px; line-height: 1.7; }
 .change-entry { position: relative; margin-top: 34px; padding: 0 0 0 28px; border-left: 1px solid var(--line-strong); }
 .change-entry::before { content: ""; position: absolute; top: 6px; left: -4px; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 6px var(--ink-soft); }
+.change-entry.is-turning-point::before { background: var(--vermilion); box-shadow: 0 0 0 6px var(--ink-soft), 0 0 0 8px rgba(211,95,76,.18); }
+.change-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
 .change-entry time { color: var(--gold); font-family: Georgia, serif; font-size: 11px; }
+.turning-point-badge { display: inline-flex; align-items: center; gap: 5px; padding: 3px 8px; color: var(--vermilion); border: 1px solid rgba(211,95,76,.42); background: rgba(211,95,76,.08); font-size: 9px; font-weight: 700; letter-spacing: .08em; }
+.turning-point-mark { font-family: Georgia, serif; font-size: 13px; line-height: 1; }
 .change-entry h3 { margin: 8px 0 6px; font-family: var(--display); font-size: 18px; font-weight: 500; }
 .change-entry p { margin: 0; color: var(--paper-muted); font-size: 11px; }
+.change-entry .turning-point-context { margin-top: 10px; padding: 9px 11px; color: var(--paper); border-left: 2px solid var(--vermilion); background: rgba(211,95,76,.06); line-height: 1.7; }
+.turning-point-context b { margin-right: 8px; color: var(--vermilion); font-size: 9px; letter-spacing: .08em; }
 .source-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 30px; }
 .source-card { display: flex; flex-direction: column; min-height: 215px; padding: 20px; border: 1px solid var(--line); transition: border-color .2s ease, transform .2s ease, background .2s ease; }
 .source-note { margin: 16px 0 0; color: var(--paper-muted); font-size: 11px; line-height: 1.7; }

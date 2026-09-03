@@ -221,10 +221,21 @@
 
   function renderChanges() {
     $("#change-list").innerHTML = data.changes.map((change) => `
-      <article class="change-entry">
-        <time>${escapeHTML(change.date)}</time>
+      <article class="change-entry${change.turningPoint ? " is-turning-point" : ""}">
+        <div class="change-meta">
+          <time>${escapeHTML(change.date)}</time>
+          ${change.turningPoint ? `
+            <span class="turning-point-badge" aria-label="拐点信号：${escapeHTML(change.turningPoint.label)}">
+              <span class="turning-point-mark" aria-hidden="true">↺</span>
+              拐点 · ${escapeHTML(change.turningPoint.label)}
+            </span>
+          ` : ""}
+        </div>
         <h3>${escapeHTML(change.asset)} · ${escapeHTML(change.to)}</h3>
         <p>${escapeHTML(change.reason)}</p>
+        ${change.turningPoint ? `
+          <p class="turning-point-context"><b>价格位置</b>${escapeHTML(change.turningPoint.priceContext)}</p>
+        ` : ""}
       </article>
     `).join("");
   }
