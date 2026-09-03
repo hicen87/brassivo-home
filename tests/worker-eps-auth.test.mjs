@@ -139,6 +139,7 @@ const validSnapshot = {
       currency: null,
       periods: ["Q1", "Q2", "F1", "F2"],
       estimates: ["1", "2", "3", "4"],
+      estimateRevisionTrend: ["+1.00%", "0.00%", "-1.00%", "--"],
       revisionsUp: ["1", "0", "0", "0"],
       revisionsDown: ["0", "0", "0", "0"],
       recentChanges: [],
@@ -204,6 +205,13 @@ test("EPS publisher requires the secret and validates the snapshot", async () =>
     Authorization: "Bearer publish-secret"
   }), env);
   assert.equal(invalid.status, 422);
+
+  const missingTrend = structuredClone(validSnapshot);
+  delete missingTrend.stocks[0].estimateRevisionTrend;
+  const missingTrendResponse = await worker.fetch(jsonRequest("/admin/eps", missingTrend, {
+    Authorization: "Bearer publish-secret"
+  }), env);
+  assert.equal(missingTrendResponse.status, 422);
 
   const accepted = await worker.fetch(jsonRequest("/admin/eps", validSnapshot, {
     Authorization: "Bearer publish-secret"

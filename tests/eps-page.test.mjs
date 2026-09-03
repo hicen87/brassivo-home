@@ -32,6 +32,8 @@ test("EPS app loads public data with no-store requests", () => {
   assert.match(app, /cache:\s*["']no-store["']/);
   assert.match(app, /function escapeHTML\(/);
   assert.match(app, /function renderStocks\(/);
+  assert.match(app, /estimateRevisionTrend/);
+  assert.match(app, /Trend of estimate revision/);
   assert.match(app, /function applyFilters\(/);
   assert.match(app, /\/eps\/image\//);
   assert.match(app, /data-screenshot-src/);
@@ -49,6 +51,7 @@ test("EPS styles support readable desktop and mobile layouts", () => {
   assert.match(css, /\.stock-grid\s*\{[^}]*display:\s*grid/s);
   assert.match(css, /\.screenshot-frame/);
   assert.match(css, /\.change-screenshot/);
+  assert.match(css, /\.estimate-trend/);
   assert.match(css, /@media\s*\(max-width:\s*720px\)/);
   assert.match(css, /prefers-reduced-motion/);
   assert.match(css, /:focus-visible/);

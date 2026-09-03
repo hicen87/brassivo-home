@@ -51,6 +51,12 @@
     return up > down ? "has-up" : down > up ? "has-down" : "";
   }
 
+  function estimateTrendTone(value) {
+    const number = Number.parseFloat(String(value ?? "").replace("%", ""));
+    if (!Number.isFinite(number) || number === 0) return "neutral";
+    return number > 0 ? "up" : "down";
+  }
+
   function renderChanges(stock) {
     const changes = stock.recentChanges;
     if (!changes.length) return '<div class="change-block"><span class="muted">尚无可延续的真实变化</span></div>';
@@ -110,6 +116,10 @@
               <div class="revision-line" aria-label="7日盈利修正">
                 <small class="up">↑ ${escapeHTML(stock.revisionsUp[index])}</small>
                 <small class="down">↓ ${escapeHTML(stock.revisionsDown[index])}</small>
+              </div>
+              <div class="estimate-trend ${estimateTrendTone(stock.estimateRevisionTrend[index])}">
+                <span>Trend of estimate revision</span>
+                <b>${escapeHTML(stock.estimateRevisionTrend[index])}</b>
               </div>
             </div>
           `).join("")}

@@ -67,8 +67,8 @@ function validEpsSnapshot(data){
   const counts = ['stocksTotal','stocksSuccess','currentNumericChanges','periodChanges','trendCarry'];
   if(counts.some(key=>!Number.isInteger(data.summary[key]) || data.summary[key] < 0)) return false;
   if(data.summary.stocksTotal !== data.stocks.length || data.summary.stocksSuccess !== data.stocks.length) return false;
-  const required = ['symbol','name','market','source','baselineDate','periods','estimates','revisionsUp','revisionsDown','recentChanges','screenshotSha256'];
-  if(data.stocks.some(stock=>required.some(key=>stock[key]===undefined) || !Array.isArray(stock.periods) || stock.periods.length !== 4 || !Array.isArray(stock.estimates) || stock.estimates.length !== 4 || !Array.isArray(stock.revisionsUp) || stock.revisionsUp.length !== 4 || !Array.isArray(stock.revisionsDown) || stock.revisionsDown.length !== 4 || !Array.isArray(stock.recentChanges))) return false;
+  const required = ['symbol','name','market','source','baselineDate','periods','estimates','estimateRevisionTrend','revisionsUp','revisionsDown','recentChanges','screenshotSha256'];
+  if(data.stocks.some(stock=>required.some(key=>stock[key]===undefined) || !Array.isArray(stock.periods) || stock.periods.length !== 4 || !Array.isArray(stock.estimates) || stock.estimates.length !== 4 || !Array.isArray(stock.estimateRevisionTrend) || stock.estimateRevisionTrend.length !== 4 || !Array.isArray(stock.revisionsUp) || stock.revisionsUp.length !== 4 || !Array.isArray(stock.revisionsDown) || stock.revisionsDown.length !== 4 || !Array.isArray(stock.recentChanges))) return false;
   if(data.stocks.some(stock=>!/^[a-f0-9]{64}$/.test(stock.screenshotSha256))) return false;
   return !/(gmail_message_id|password|authorization|\/Users\/|\.png\b|"url"\s*:)/i.test(JSON.stringify(data));
 }
