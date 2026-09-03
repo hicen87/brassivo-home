@@ -92,7 +92,13 @@ select:focus-visible {
 .result-count strong { color: var(--ink); font-size: 22px; }
 .result-count span { font-size: 12px; }
 
-.stock-list { display: grid; gap: 18px; }
+.stock-list { display: grid; gap: 38px; }
+.market-group { display: grid; gap: 14px; }
+.market-group-head { display: grid; grid-template-columns: auto 1fr auto; align-items: end; column-gap: 12px; padding: 0 2px 10px; border-bottom: 1px solid var(--line-strong); }
+.market-group-head > span { grid-column: 1 / -1; color: var(--brass-dark); font: 700 9px/1.2 "SFMono-Regular", Consolas, monospace; letter-spacing: 0.14em; }
+.market-group-head h2 { margin: 2px 0 0; font: 600 27px/1 "Iowan Old Style", "Songti SC", Georgia, serif; }
+.market-group-head small { color: var(--muted); font-size: 11px; }
+.market-stock-list { display: grid; gap: 18px; }
 .stock-card { overflow: hidden; border: 1px solid var(--line-strong); border-left: 5px solid var(--brass); background: rgba(255, 255, 255, 0.94); box-shadow: 0 8px 30px rgba(32, 38, 49, 0.04); }
 .stock-card.has-up { border-left-color: var(--up); }
 .stock-card.has-down { border-left-color: var(--down); }
@@ -102,6 +108,8 @@ select:focus-visible {
 .stock-identity p { margin: 4px 0 0; color: var(--muted); font: 600 12px/1.4 "SFMono-Regular", Consolas, monospace; letter-spacing: 0.06em; }
 .stock-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-left: auto; }
 .stock-tags span { padding: 3px 8px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: 10px; font-weight: 700; }
+.stock-tags .rank-strength.up { color: var(--up); border-color: rgba(28, 117, 85, 0.28); background: var(--up-soft); }
+.stock-tags .rank-strength.down { color: var(--down); border-color: rgba(177, 67, 57, 0.28); background: var(--down-soft); }
 
 .stock-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .period-cell { min-width: 0; padding: 16px 20px 17px; border-right: 1px solid var(--line); }
@@ -155,6 +163,8 @@ footer a { color: inherit; }
   .toolbar { grid-template-columns: 1fr 130px; }
   .result-count { grid-column: 1 / -1; height: auto; padding: 0; }
   .stock-head { padding: 16px; }
+  .market-group-head { grid-template-columns: 1fr auto; }
+  .market-group-head > span { grid-column: 1 / -1; }
   .stock-tags { display: none; }
   .stock-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .period-cell { padding: 14px 15px; border-bottom: 1px solid var(--line); }

@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import test from "node:test";
+import vm from "node:vm";
 import { fileURLToPath } from "node:url";
 
 const testDir = path.dirname(fileURLToPath(import.meta.url));
@@ -22,6 +23,7 @@ test("EPS page is a public dashboard shell with no embedded portfolio data", () 
   assert.doesNotMatch(html, /NVDA|AAPL|腾讯控股|中际旭创|招商银行/);
   assert.doesNotMatch(html, /dashboard-data|eps-data|\.json["']/i);
   assert.doesNotMatch(html, /<script[^>]+type=["']application\/ld\+json/i);
+  assert.match(html, /<script defer src="sort\.js\?v=20260903b"><\/script>\s*<script defer src="app\.js\?v=20260903b"><\/script>/);
 });
 
 test("EPS app loads public data with no-store requests", () => {
@@ -32,6 +34,9 @@ test("EPS app loads public data with no-store requests", () => {
   assert.match(app, /cache:\s*["']no-store["']/);
   assert.match(app, /function escapeHTML\(/);
   assert.match(app, /function renderStocks\(/);
+  assert.match(app, /groupAndSortStocks/);
+  assert.match(app, /market-group/);
+  assert.match(app, /综合趋势/);
   assert.match(app, /estimateRevisionTrend/);
   assert.match(app, /Trend of estimate revision/);
   assert.match(app, /function applyFilters\(/);
@@ -52,9 +57,30 @@ test("EPS styles support readable desktop and mobile layouts", () => {
   assert.match(css, /\.screenshot-frame/);
   assert.match(css, /\.change-screenshot/);
   assert.match(css, /\.estimate-trend/);
+  assert.match(css, /\.market-group-head/);
   assert.match(css, /@media\s*\(max-width:\s*720px\)/);
   assert.match(css, /prefers-reduced-motion/);
   assert.match(css, /:focus-visible/);
+});
+
+test("EPS stocks are grouped by market and ranked by four-period trend average", () => {
+  const context = { window: {} };
+  vm.runInNewContext(read("eps/sort.js"), context);
+  const { formatTrendStrength, groupAndSortStocks, trendStrength } = context.window.EPSSort;
+  const stocks = [
+    { symbol: "US-WEAK", market: "US", estimateRevisionTrend: ["-4%", "-2%", "0%", "2%"] },
+    { symbol: "A-STRONG", market: "A", estimateRevisionTrend: ["20%", "20%", "20%", "20%"] },
+    { symbol: "US-MISSING", market: "US", estimateRevisionTrend: ["--", "--", "--", "--"] },
+    { symbol: "HK-ONE", market: "HK", estimateRevisionTrend: ["1%", "1%", "1%", "1%"] },
+    { symbol: "US-STRONG", market: "US", estimateRevisionTrend: ["4%", "6%", "8%", "10%"] }
+  ];
+
+  assert.equal(trendStrength(stocks[4]), 7);
+  assert.equal(formatTrendStrength(trendStrength(stocks[0])), "-1.00%");
+  assert.equal(trendStrength(stocks[2]), null);
+  const groups = JSON.parse(JSON.stringify(groupAndSortStocks(stocks)));
+  assert.deepEqual(groups.map((group) => group.market), ["US", "A", "HK"]);
+  assert.deepEqual(groups[0].stocks.map((stock) => stock.symbol), ["US-STRONG", "US-WEAK", "US-MISSING"]);
 });
 
 test("homepage and public indexes link to the public EPS module", () => {

@@ -4,6 +4,7 @@
   const API = "https://api.brassivo.com";
   const state = { data: null, query: "", market: "ALL" };
   const $ = (selector) => document.querySelector(selector);
+  const { formatTrendStrength, groupAndSortStocks, trendStrength } = window.EPSSort;
 
   function escapeHTML(value) {
     return String(value ?? "")
@@ -41,6 +42,10 @@
 
   function marketLabel(market) {
     return { US: "美股", A: "A股", HK: "港股" }[market] || market;
+  }
+
+  function marketEnglishLabel(market) {
+    return { US: "US EQUITIES", A: "A-SHARES", HK: "HONG KONG" }[market] || market;
   }
 
   function stockTone(stock) {
@@ -92,10 +97,9 @@
     });
   }
 
-  function renderStocks(stocks) {
-    $("#filtered-count").textContent = stocks.length;
-    $("#empty-state").hidden = stocks.length !== 0;
-    $("#stock-list").innerHTML = stocks.map((stock) => `
+  function renderStock(stock) {
+    const strength = trendStrength(stock);
+    return `
       <article class="stock-card ${stockTone(stock)}">
         <header class="stock-head">
           <div class="stock-identity">
@@ -103,6 +107,7 @@
             <p>${escapeHTML(stock.symbol)} · BASELINE ${escapeHTML(stock.baselineDate)}</p>
           </div>
           <div class="stock-tags">
+            <span class="rank-strength ${estimateTrendTone(strength)}" title="Q1、Q2、F1、F2 可用趋势值的简单平均">综合趋势 ${escapeHTML(formatTrendStrength(strength))}</span>
             <span>${escapeHTML(marketLabel(stock.market))}</span>
             <span>${escapeHTML(stock.source)}</span>
             ${stock.currency ? `<span>${escapeHTML(stock.currency)}</span>` : ""}
@@ -125,7 +130,21 @@
           `).join("")}
         </div>
         ${renderChanges(stock)}
-      </article>
+      </article>`;
+  }
+
+  function renderStocks(stocks) {
+    $("#filtered-count").textContent = stocks.length;
+    $("#empty-state").hidden = stocks.length !== 0;
+    $("#stock-list").innerHTML = groupAndSortStocks(stocks).map((group) => `
+      <section class="market-group" aria-labelledby="market-group-${escapeHTML(group.market)}">
+        <header class="market-group-head">
+          <span>${escapeHTML(marketEnglishLabel(group.market))}</span>
+          <h2 id="market-group-${escapeHTML(group.market)}">${escapeHTML(marketLabel(group.market))}</h2>
+          <small>${group.stocks.length} 只 · 按综合趋势由强到弱</small>
+        </header>
+        <div class="market-stock-list">${group.stocks.map(renderStock).join("")}</div>
+      </section>
     `).join("");
     bindScreenshotLoaders();
   }
