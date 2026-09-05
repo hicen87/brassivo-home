@@ -89,6 +89,8 @@ test("homepage and public indexes link to the public EPS module", () => {
   const sitemap = read("sitemap.xml");
   const llms = read("llms.txt");
 
+  const firstModule = homepage.match(/<div class="grid">\s*<a class="card wide" href="([^"]+)"/);
+  assert.equal(firstModule?.[1], "/eps/");
   assert.match(homepage, /href=["']\/eps\/["']/);
   assert.match(homepage, /EPS Margin Tracker/);
   assert.match(homepage, /a\[href=["']\/eps\/["']\]/);
