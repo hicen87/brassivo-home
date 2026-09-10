@@ -101,9 +101,9 @@ test("macro view page is direct-file compatible and has public metadata", () => 
     assert.match(html, new RegExp(`id=["']${id}["']`));
   }
   assert.match(html, /https:\/\/brassivo\.com\/honghao\//);
-  assert.match(html, /styles\.css\?v=20260903a/);
-  assert.match(html, /dashboard-data\.js\?v=20260907a/);
-  assert.match(html, /app\.js\?v=20260903a/);
+  assert.match(html, /styles\.css\?v=20260910allocation/);
+  assert.match(html, /dashboard-data\.js\?v=20260910allocation/);
+  assert.match(html, /app\.js\?v=20260910allocation/);
   assert.match(html, /<meta name="color-scheme" content="light"/);
   assert.match(html, /<meta name="theme-color" content="#f6f7f9"/);
   assert.doesNotMatch(html, /洪灏资产方向跟踪台账\.md|\.pdf|\.jpg/);
@@ -133,4 +133,15 @@ test("homepage, structured data, sitemap, and llms index the new page", () => {
   assert.ok(jsonLdMatch, "homepage JSON-LD is missing");
   const jsonLd = JSON.parse(jsonLdMatch[1]);
   assert.ok(jsonLd.hasPart.some((part) => part.url === "https://brassivo.com/honghao/"));
+});
+
+test("allocation is a sourced inference, separate from direction counts", () => {
+  const a = data.allocation;
+  assert.equal(a.stocks + a.cash, 100);
+  assert.ok(a.stocks >= 0 && a.stocks <= 100 && a.cash >= 0 && a.cash <= 100);
+  assert.match(a.basis, /文章推导/);
+  assert.match(a.note, /非原文明确/);
+  assert.equal(a.asOf, data.meta.latestSourceDate);
+  assert.ok(a.method && a.increaseCondition && a.decreaseCondition);
+  for (const ref of a.sourceRefs) assert.ok(data.sources.some(s => s.id === ref));
 });

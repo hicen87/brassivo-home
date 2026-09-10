@@ -109,6 +109,30 @@
     `).join("");
   }
 
+  function renderAllocation() {
+    const allocation = data.allocation;
+    const valid = allocation && Number.isFinite(allocation.stocks) && Number.isFinite(allocation.cash)
+      && allocation.stocks >= 0 && allocation.cash >= 0
+      && Math.abs(allocation.stocks + allocation.cash - 100) < 0.000001;
+    const bar = $("#allocation-bar");
+    bar.hidden = !valid;
+    $("#allocation-stocks").textContent = valid ? `${allocation.stocks}%` : "—";
+    $("#allocation-cash").textContent = valid ? `${allocation.cash}%` : "—";
+    $("#allocation-basis").textContent = valid ? allocation.basis : "待设置";
+    $("#allocation-note").textContent = valid ? allocation.note : "配比尚未设置。";
+    $("#allocation-date").textContent = valid ? allocation.asOf : "";
+    $("#allocation-method").textContent = valid ? allocation.method : "";
+    $("#allocation-increase").textContent = valid ? `提高股票比例：${allocation.increaseCondition}` : "";
+    $("#allocation-decrease").textContent = valid ? `降低股票比例：${allocation.decreaseCondition}` : "";
+    $("#allocation-scope-note").textContent = valid ? allocation.scope : "";
+    $(".allocation-details").hidden = !valid;
+    bar.setAttribute("aria-label", valid ? `股票 ${allocation.stocks}%，现金 ${allocation.cash}%` : "资金配比待设置");
+    if (valid) {
+      $("#allocation-stock-segment").style.flex = `${allocation.stocks} 1 0%`;
+      $("#allocation-cash-segment").style.flex = `${allocation.cash} 1 0%`;
+    }
+  }
+
   function renderRotation() {
     $("#rotation-track").innerHTML = data.rotation.map((step, index) => `
       <article class="rotation-step ${escapeHTML(step.state)}" data-order="${String(index + 1).padStart(2, "0")}">
@@ -329,6 +353,7 @@
   function init() {
     renderMeta();
     renderCompass();
+    renderAllocation();
     renderRotation();
     renderAssetTable();
     renderObservations();

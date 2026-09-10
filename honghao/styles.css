@@ -300,6 +300,25 @@ a { color: inherit; text-decoration: none; }
 .legend-item[data-tone="neutral"] i { background: var(--smoke); }
 .legend-item[data-tone="negative"] i { background: var(--vermilion); }
 
+
+.capital-allocation { padding: 22px 0 20px; border-top: 1px solid var(--line); }
+.allocation-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 16px; }
+.allocation-heading h3 { margin: 0; color: var(--paper); font-size: 13px; font-weight: 500; letter-spacing: .12em; }
+.allocation-heading > span { color: var(--paper-muted); font-size: 10px; text-align: right; }
+.allocation-values { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 12px; }
+.allocation-values > div { display: flex; align-items: baseline; gap: 10px; }
+.allocation-values > div:last-child { justify-content: flex-end; }
+.allocation-values span { display: inline-flex; align-items: center; gap: 7px; color: var(--paper-muted); font-size: 12px; }
+.allocation-values strong { font-family: Georgia, serif; font-weight: 400; font-size: clamp(26px, 3vw, 34px); line-height: 1.1; color: var(--paper); font-variant-numeric: tabular-nums; }
+.allocation-dot { width: 6px; height: 6px; border-radius: 50%; }
+.allocation-bar { display: flex; gap: 3px; height: 9px; overflow: hidden; }
+.allocation-bar[hidden] { display: none; }
+.allocation-segment { min-width: 0; }
+.allocation-dot.stocks, .allocation-segment.stocks { background: var(--jade); }
+.allocation-dot.cash, .allocation-segment.cash { background: var(--gold); }
+.allocation-scope, .allocation-note { color: var(--paper-muted); font-size: 10px; line-height: 1.7; margin: 10px 0 0; }
+.allocation-note { margin-top: 5px; }
+
 .metric-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }
 .metric { display: flex; flex-direction: column; gap: 4px; padding: 20px 14px 2px; border-right: 1px solid var(--line); }
 .metric:last-child { border-right: 0; }
@@ -543,3 +562,8 @@ a { color: inherit; text-decoration: none; }
   .asset-group-row th small { display: block; margin: 3px 0 0; }
   .change-panel, .source-panel { padding: 23px; }
 }
+
+.allocation-details { margin-top: 10px; color: var(--paper-muted); font-size: 10px; line-height: 1.8; }
+.allocation-details summary { cursor: pointer; }
+.allocation-details time { margin-left: 6px; font-variant-numeric: tabular-nums; }
+.allocation-details p { margin: 8px 0 0; }

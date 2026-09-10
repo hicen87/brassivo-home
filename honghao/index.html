@@ -15,9 +15,9 @@
     <meta property="og:description" content="区分长期配置、短期交易、原文判断与推导，持续记录资产方向及证伪条件。" />
     <meta property="og:url" content="https://brassivo.com/honghao/" />
     <title>宏观资产方向跟踪 · Brassivo Research</title>
-    <link rel="stylesheet" href="styles.css?v=20260903a" />
-    <script src="dashboard-data.js?v=20260907a" defer></script>
-    <script src="app.js?v=20260903a" defer></script>
+    <link rel="stylesheet" href="styles.css?v=20260910allocation" />
+    <script src="dashboard-data.js?v=20260910allocation" defer></script>
+    <script src="app.js?v=20260910allocation" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#asset-ledger">跳到资产台账</a>
@@ -84,6 +84,29 @@
             </div>
             <div class="compass-legend" id="direction-legend"></div>
           </div>
+          <section class="capital-allocation" aria-labelledby="allocation-title">
+            <div class="allocation-heading">
+              <h3 id="allocation-title">资金配比</h3>
+              <span id="allocation-basis"></span>
+            </div>
+            <div class="allocation-values">
+              <div><span><i class="allocation-dot stocks" aria-hidden="true"></i>股票</span><strong id="allocation-stocks">—</strong></div>
+              <div><span><i class="allocation-dot cash" aria-hidden="true"></i>现金</span><strong id="allocation-cash">—</strong></div>
+            </div>
+            <div class="allocation-bar" id="allocation-bar" role="img" aria-label="资金配比待设置" hidden>
+              <span class="allocation-segment stocks" id="allocation-stock-segment"></span>
+              <span class="allocation-segment cash" id="allocation-cash-segment"></span>
+            </div>
+            <p class="allocation-scope">现金含短期国债等债券</p>
+            <p class="allocation-note" id="allocation-note"></p>
+            <details class="allocation-details">
+              <summary>推导依据与调整条件 <time id="allocation-date"></time></summary>
+              <p id="allocation-method"></p>
+              <p id="allocation-increase"></p>
+              <p id="allocation-decrease"></p>
+              <p id="allocation-scope-note"></p>
+            </details>
+          </section>
           <div class="metric-grid">
             <div class="metric"><span>有效方向</span><strong id="metric-active">0</strong></div>
             <div class="metric"><span>重点信号</span><strong id="metric-priority">0</strong></div>
