@@ -9,7 +9,7 @@
   <meta name="description" content="Brassivo EPS 盈利预期修正与趋势延续跟踪页。">
   <link rel="canonical" href="https://brassivo.com/eps/">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="styles.css?v=20260904a">
+  <link rel="stylesheet" href="styles.css?v=20260910nav">
   <script defer src="sort.js?v=20260904a"></script>
   <script defer src="app.js?v=20260904a"></script>
 </head>
@@ -20,8 +20,19 @@
         <img src="/favicon.svg" alt="">
         <span>BRASSIVO <b>RESEARCH</b></span>
       </a>
+      <nav class="research-nav" aria-label="全站研究导航">
+        <a href="https://brassivo.com">首页</a>
+        <a href="https://brassivo.com/honghao/">宏观观点</a>
+        <a href="https://brassivo.com/eps/" aria-current="page">EPS修正</a>
+        <a href="https://investment.brassivo.com">全球流动性</a>
+        <a href="https://stocks.brassivo.com/sectors.html">美股板块</a>
+        <a href="https://china.brassivo.com/sectors.html">中国板块</a>
+        <a href="https://stocks.brassivo.com">美股个股</a>
+        <a href="https://china.brassivo.com">中国个股</a>
+      </nav>
       <span class="private-mark">LIVE LEDGER</span>
     </header>
+    <script>requestAnimationFrame(()=>{const n=document.querySelector('nav[aria-label="全站研究导航"]'),c=n?.querySelector('[aria-current="page"]');if(n&&c)n.scrollLeft=Math.max(0,c.offsetLeft-(n.clientWidth-c.offsetWidth)/2)})</script>
 
     <main>
       <section id="dashboard" class="dashboard" aria-labelledby="dashboard-title">

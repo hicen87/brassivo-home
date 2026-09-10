@@ -53,14 +53,23 @@ select:focus-visible {
   display: flex;
   align-items: center;
   gap: 14px;
+  position: sticky;
+  top: 0;
+  z-index: 20;
   border-bottom: 1px solid rgba(185, 192, 202, 0.75);
+  background: rgba(246, 247, 249, 0.92);
+  backdrop-filter: blur(16px);
 }
 
-.brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; }
+.brand { display: inline-flex; flex: none; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; }
 .brand img { width: 30px; height: 30px; }
 .brand span { font-size: 15px; font-weight: 800; letter-spacing: 0.12em; }
 .brand b { color: var(--brass); }
-.private-mark { padding: 4px 9px; border: 1px solid var(--line-strong); border-radius: 999px; color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: 0.12em; }
+.research-nav { display: flex; align-items: center; justify-content: flex-end; gap: 2px; min-width: 0; margin-left: auto; overflow-x: auto; scrollbar-width: thin; }
+.research-nav a { flex: none; padding: 6px 8px; border-radius: 5px; color: var(--muted); text-decoration: none; white-space: nowrap; font-size: 12px; font-weight: 600; }
+.research-nav a:hover { color: var(--ink); background: var(--paper); }
+.research-nav a[aria-current="page"] { color: var(--brass); background: var(--brass-soft); }
+.private-mark { flex: none; padding: 4px 9px; border: 1px solid var(--line-strong); border-radius: 999px; color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: 0.12em; }
 .eyebrow { display: block; color: var(--brass); font: 700 11px/1.4 "SFMono-Regular", Consolas, monospace; letter-spacing: 0.14em; }
 .dashboard-hero h1 { margin: 14px 0 20px; font-family: "Iowan Old Style", "Songti SC", Georgia, serif; font-weight: 600; letter-spacing: -0.04em; }
 
@@ -152,7 +161,10 @@ footer a { color: inherit; }
 
 @media (max-width: 720px) {
   .page-shell { width: min(100% - 28px, 1180px); }
-  .site-header { height: 68px; }
+  .site-header { height: 68px; gap: 8px; }
+  .brand span { display: none; }
+  .research-nav { justify-content: flex-start; }
+  .research-nav a { font-size: 11px; padding-inline: 7px; }
   .private-mark { display: none; }
   .dashboard { padding: 48px 0 66px; }
   .dashboard-hero h1 { font-size: 47px; }

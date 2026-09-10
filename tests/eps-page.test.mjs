@@ -24,6 +24,18 @@ test("EPS page is a public dashboard shell with no embedded portfolio data", () 
   assert.doesNotMatch(html, /dashboard-data|eps-data|\.json["']/i);
   assert.doesNotMatch(html, /<script[^>]+type=["']application\/ld\+json/i);
   assert.match(html, /<script defer src="sort\.js\?v=20260904a"><\/script>\s*<script defer src="app\.js\?v=20260904a"><\/script>/);
+  const researchNav = html.match(/<nav class="research-nav"[\s\S]*?<\/nav>/)?.[0] || "";
+  for (const href of [
+    "https://brassivo.com",
+    "https://brassivo.com/honghao/",
+    "https://brassivo.com/eps/",
+    "https://investment.brassivo.com",
+    "https://stocks.brassivo.com/sectors.html",
+    "https://china.brassivo.com/sectors.html",
+    "https://stocks.brassivo.com",
+    "https://china.brassivo.com"
+  ]) assert.match(researchNav, new RegExp(`href=["']${href.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}["']`));
+  assert.equal((researchNav.match(/aria-current="page"/g) || []).length, 1);
 });
 
 test("EPS app loads public data with no-store requests", () => {

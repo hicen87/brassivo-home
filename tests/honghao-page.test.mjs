@@ -101,11 +101,23 @@ test("macro view page is direct-file compatible and has public metadata", () => 
     assert.match(html, new RegExp(`id=["']${id}["']`));
   }
   assert.match(html, /https:\/\/brassivo\.com\/honghao\//);
-  assert.match(html, /styles\.css\?v=20260910allocation/);
+  assert.match(html, /styles\.css\?v=20260910nav/);
   assert.match(html, /dashboard-data\.js\?v=20260910allocation/);
   assert.match(html, /app\.js\?v=20260910allocation/);
   assert.match(html, /<meta name="color-scheme" content="light"/);
   assert.match(html, /<meta name="theme-color" content="#f6f7f9"/);
+  const researchNav = html.match(/<nav class="research-nav"[\s\S]*?<\/nav>/)?.[0] || "";
+  for (const href of [
+    "https://brassivo.com",
+    "https://brassivo.com/honghao/",
+    "https://brassivo.com/eps/",
+    "https://investment.brassivo.com",
+    "https://stocks.brassivo.com/sectors.html",
+    "https://china.brassivo.com/sectors.html",
+    "https://stocks.brassivo.com",
+    "https://china.brassivo.com"
+  ]) assert.match(researchNav, new RegExp(`href=["']${href.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}["']`));
+  assert.equal((researchNav.match(/aria-current="page"/g) || []).length, 1);
   assert.doesNotMatch(html, /洪灏资产方向跟踪台账\.md|\.pdf|\.jpg/);
   assert.doesNotMatch(html, /HONG HAO|Hong Hao|洪灏/);
   assert.doesNotMatch(app, /\bfetch\s*\(|source\.path|target=["']_blank["']/);
