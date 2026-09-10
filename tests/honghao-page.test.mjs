@@ -18,13 +18,13 @@ const data = context.window.HONG_HAO_DASHBOARD_DATA;
 
 test("public page contains the verified baseline", () => {
   assert.equal(data.meta.baselineDate, "2026-09-01");
-  assert.equal(data.meta.latestSourceDate, "2026-09-02");
-  assert.equal(data.assets.length, 15);
-  assert.equal(data.sources.length, 7);
+  assert.equal(data.meta.latestSourceDate, "2026-09-07");
+  assert.equal(data.assets.length, 21);
+  assert.equal(data.sources.length, 8);
   assert.equal(data.rotation.filter((step) => step.state === "current").length, 1);
   assert.equal(data.rotation.find((step) => step.state === "current").id, "agriculture");
   assert.equal(data.rotation.find((step) => step.state === "current").stage, "结构主线");
-  assert.equal(data.changes[0].date, "2026-09-02");
+  assert.equal(data.changes[0].date, "2026-09-07");
   assert.equal(data.changes.at(-1).date, "2026-08-31");
 });
 
@@ -52,9 +52,9 @@ test("asset records are complete, unique, and traceable", () => {
 
 test("turning-point signals are explicit and limited to qualified changes", () => {
   const candidates = data.changes.filter((change) => change.turningPoint);
-  assert.equal(candidates.length, 1);
-  assert.equal(candidates[0].asset, "贵金属及矿业股");
-  assert.equal(candidates[0].turningPoint.side, "top");
+  assert.equal(candidates.length, 3);
+  assert.equal(candidates[0].asset, "美国半导体硬件 / 费城半导体");
+  assert.equal(candidates[0].turningPoint.side, "bottom");
 
   const html = read("honghao/index.html");
   const app = read("honghao/app.js");
@@ -76,7 +76,7 @@ test("assets follow the horizon groups and direction priority", () => {
 
   assert.deepEqual(
     horizonOrder.map((group) => sorted.filter((asset) => horizonGroup(asset) === group).length),
-    [9, 5, 1]
+    [13, 7, 1]
   );
   assert.equal(sorted[0].id, "usd");
   assert.equal(sorted.at(-1).id, "precious-long");
@@ -102,7 +102,7 @@ test("macro view page is direct-file compatible and has public metadata", () => 
   }
   assert.match(html, /https:\/\/brassivo\.com\/honghao\//);
   assert.match(html, /styles\.css\?v=20260903a/);
-  assert.match(html, /dashboard-data\.js\?v=20260903a/);
+  assert.match(html, /dashboard-data\.js\?v=20260907a/);
   assert.match(html, /app\.js\?v=20260903a/);
   assert.match(html, /<meta name="color-scheme" content="light"/);
   assert.match(html, /<meta name="theme-color" content="#f6f7f9"/);
