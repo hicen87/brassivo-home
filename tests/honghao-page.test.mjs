@@ -18,13 +18,13 @@ const data = context.window.HONG_HAO_DASHBOARD_DATA;
 
 test("public page contains the verified baseline", () => {
   assert.equal(data.meta.baselineDate, "2026-09-01");
-  assert.equal(data.meta.latestSourceDate, "2026-09-07");
-  assert.equal(data.assets.length, 21);
-  assert.equal(data.sources.length, 8);
+  assert.equal(data.meta.latestSourceDate, "2026-09-14");
+  assert.equal(data.assets.length, 26);
+  assert.equal(data.sources.length, 9);
   assert.equal(data.rotation.filter((step) => step.state === "current").length, 1);
   assert.equal(data.rotation.find((step) => step.state === "current").id, "agriculture");
   assert.equal(data.rotation.find((step) => step.state === "current").stage, "结构主线");
-  assert.equal(data.changes[0].date, "2026-09-07");
+  assert.equal(data.changes[0].date, "2026-09-14");
   assert.equal(data.changes.at(-1).date, "2026-08-31");
 });
 
@@ -76,7 +76,7 @@ test("assets follow the horizon groups and direction priority", () => {
 
   assert.deepEqual(
     horizonOrder.map((group) => sorted.filter((asset) => horizonGroup(asset) === group).length),
-    [13, 7, 1]
+    [13, 12, 1]
   );
   assert.equal(sorted[0].id, "usd");
   assert.equal(sorted.at(-1).id, "precious-long");
@@ -102,7 +102,7 @@ test("macro view page is direct-file compatible and has public metadata", () => 
   }
   assert.match(html, /https:\/\/brassivo\.com\/honghao\//);
   assert.match(html, /styles\.css\?v=20260910epsheader/);
-  assert.match(html, /dashboard-data\.js\?v=20260910allocation/);
+  assert.match(html, /dashboard-data\.js\?v=20260914/);
   assert.match(html, /app\.js\?v=20260910allocation/);
   assert.match(html, /<meta name="color-scheme" content="light"/);
   assert.match(html, /<meta name="theme-color" content="#f6f7f9"/);
@@ -157,7 +157,8 @@ test("allocation is a sourced inference, separate from direction counts", () => 
   assert.ok(a.stocks >= 0 && a.stocks <= 100 && a.cash >= 0 && a.cash <= 100);
   assert.match(a.basis, /文章推导/);
   assert.match(a.note, /非原文明确/);
-  assert.equal(a.asOf, data.meta.latestSourceDate);
+  assert.equal(a.asOf, "2026-09-07");
+  assert.ok(a.asOf <= data.meta.latestSourceDate);
   assert.ok(a.method && a.increaseCondition && a.decreaseCondition);
   for (const ref of a.sourceRefs) assert.ok(data.sources.some(s => s.id === ref));
 });
