@@ -12,7 +12,18 @@
     return Array.from({ length: 4 }, (_, index) => numericTrend(stock.estimateRevisionTrend?.[index]));
   }
 
+  function scoreValue(stock) {
+    const number = Number(stock.score?.total);
+    return Number.isFinite(number) ? number : null;
+  }
+
   function compareStocks(left, right) {
+    const leftScore = scoreValue(left);
+    const rightScore = scoreValue(right);
+    if (leftScore === null && rightScore !== null) return 1;
+    if (leftScore !== null && rightScore === null) return -1;
+    if (leftScore !== null && leftScore !== rightScore) return rightScore - leftScore;
+
     const leftTrend = trendVector(left);
     const rightTrend = trendVector(right);
     for (let index = 0; index < leftTrend.length; index += 1) {
@@ -39,5 +50,5 @@
       .map(([market, marketStocks]) => ({ market, stocks: [...marketStocks].sort(compareStocks) }));
   }
 
-  root.EPSSort = Object.freeze({ groupAndSortStocks, trendVector });
+  root.EPSSort = Object.freeze({ groupAndSortStocks, scoreValue, trendVector });
 })(typeof window !== "undefined" ? window : globalThis);

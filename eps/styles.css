@@ -100,6 +100,7 @@ select:focus-visible {
 .result-count { display: flex; align-items: baseline; gap: 5px; height: 43px; padding: 8px 12px; color: var(--muted); white-space: nowrap; }
 .result-count strong { color: var(--ink); font-size: 22px; }
 .result-count span { font-size: 12px; }
+.score-note { margin: -4px 0 22px; padding: 10px 12px; border-left: 3px solid var(--brass); color: var(--muted); background: rgba(255, 255, 255, 0.68); font-size: 11px; }
 
 .stock-list { display: grid; gap: 38px; }
 .market-group { display: grid; gap: 14px; }
@@ -113,8 +114,13 @@ select:focus-visible {
 .stock-card.has-down { border-left-color: var(--down); }
 .stock-head { display: flex; align-items: flex-start; gap: 14px; padding: 18px 20px 15px; border-bottom: 1px solid var(--line); }
 .stock-identity { min-width: 0; }
+.stock-title-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .stock-identity h2 { margin: 0; font-family: "Iowan Old Style", "Songti SC", Georgia, serif; font-size: 27px; line-height: 1.1; }
 .stock-identity p { margin: 4px 0 0; color: var(--muted); font: 600 12px/1.4 "SFMono-Regular", Consolas, monospace; letter-spacing: 0.06em; }
+.score-badge { display: inline-flex; align-items: baseline; gap: 3px; padding: 3px 8px; border: 1px solid rgba(199, 123, 47, 0.45); border-radius: 999px; color: var(--brass); background: var(--brass-soft); font-family: "SFMono-Regular", Consolas, monospace; }
+.score-badge small { color: var(--muted); font-size: 9px; font-weight: 700; }
+.score-badge strong { font-size: 14px; line-height: 1; }
+.score-badge span { font-size: 9px; font-weight: 700; }
 .stock-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-left: auto; }
 .stock-tags span { padding: 3px 8px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: 10px; font-weight: 700; }
 .stock-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
@@ -172,6 +178,8 @@ footer a { color: inherit; }
   .toolbar { grid-template-columns: 1fr 130px; }
   .result-count { grid-column: 1 / -1; height: auto; padding: 0; }
   .stock-head { padding: 16px; }
+  .stock-title-row { gap: 8px; }
+  .score-badge { padding-inline: 7px; }
   .market-group-head { grid-template-columns: 1fr auto; }
   .market-group-head > span { grid-column: 1 / -1; }
   .stock-tags { display: none; }

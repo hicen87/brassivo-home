@@ -23,7 +23,9 @@ test("EPS page is a public dashboard shell with no embedded portfolio data", () 
   assert.doesNotMatch(html, /NVDA|AAPL|腾讯控股|中际旭创|招商银行/);
   assert.doesNotMatch(html, /dashboard-data|eps-data|\.json["']/i);
   assert.doesNotMatch(html, /<script[^>]+type=["']application\/ld\+json/i);
-  assert.match(html, /<script defer src="sort\.js\?v=20260904a"><\/script>\s*<script defer src="app\.js\?v=20260904a"><\/script>/);
+  assert.match(html, /<link rel="stylesheet" href="styles\.css\?v=20260916score">/);
+  assert.match(html, /<script defer src="sort\.js\?v=20260916score"><\/script>\s*<script defer src="app\.js\?v=20260916score"><\/script>/);
+  assert.match(html, /Magnitude 40% · Agreement 30% · Upside\/ESP 20% · Surprise 10%/);
   const researchNav = html.match(/<nav class="research-nav"[\s\S]*?<\/nav>/)?.[0] || "";
   for (const href of [
     "https://brassivo.com",
@@ -47,11 +49,13 @@ test("EPS app loads public data with no-store requests", () => {
   assert.match(app, /function escapeHTML\(/);
   assert.match(app, /function renderStocks\(/);
   assert.match(app, /groupAndSortStocks/);
+  assert.match(app, /score-badge/);
+  assert.match(app, /scoreMethodLabel/);
   assert.match(app, /market-group/);
   assert.doesNotMatch(app, /综合趋势|简单平均/);
   assert.match(app, /estimateRevisionTrend/);
   assert.match(app, /Trend of estimate revision/);
-  assert.match(app, /Trend of Estimate Revision 由强到弱/);
+  assert.match(app, /加权总分由高到低/);
   assert.match(app, /function applyFilters\(/);
   assert.match(app, /\/eps\/image\//);
   assert.match(app, /data-screenshot-src/);
@@ -71,29 +75,31 @@ test("EPS styles support readable desktop and mobile layouts", () => {
   assert.match(css, /\.change-screenshot/);
   assert.match(css, /\.estimate-trend/);
   assert.match(css, /\.market-group-head/);
+  assert.match(css, /\.score-badge/);
+  assert.match(css, /\.score-note/);
   assert.match(css, /@media\s*\(max-width:\s*720px\)/);
   assert.match(css, /prefers-reduced-motion/);
   assert.match(css, /:focus-visible/);
 });
 
-test("EPS stocks are grouped by market and ranked by raw trend values from Q1 to F2", () => {
+test("EPS stocks are grouped by market and ranked by weighted score", () => {
   const context = { window: {} };
   vm.runInNewContext(read("eps/sort.js"), context);
-  const { groupAndSortStocks, trendVector } = context.window.EPSSort;
+  const { groupAndSortStocks, scoreValue, trendVector } = context.window.EPSSort;
   const stocks = [
-    { symbol: "US-Q2-WEAK", market: "US", estimateRevisionTrend: ["4%", "1%", "100%", "100%"] },
-    { symbol: "A-STRONG", market: "A", estimateRevisionTrend: ["20%", "20%", "20%", "20%"] },
+    { symbol: "US-LOW", market: "US", score: { total: 20 }, estimateRevisionTrend: ["100%", "100%", "100%", "100%"] },
+    { symbol: "A-TOP", market: "A", score: { total: 95 }, estimateRevisionTrend: ["20%", "20%", "20%", "20%"] },
     { symbol: "US-MISSING", market: "US", estimateRevisionTrend: ["--", "--", "--", "--"] },
-    { symbol: "HK-ONE", market: "HK", estimateRevisionTrend: ["1%", "1%", "1%", "1%"] },
-    { symbol: "US-Q1-STRONG", market: "US", estimateRevisionTrend: ["5%", "-100%", "-100%", "-100%"] },
-    { symbol: "US-Q2-STRONG", market: "US", estimateRevisionTrend: ["4%", "2%", "-100%", "-100%"] }
+    { symbol: "HK-ONE", market: "HK", score: { total: 50 }, estimateRevisionTrend: ["1%", "1%", "1%", "1%"] },
+    { symbol: "US-TOP", market: "US", score: { total: 90 }, estimateRevisionTrend: ["5%", "-100%", "-100%", "-100%"] },
+    { symbol: "US-MID", market: "US", score: { total: 60 }, estimateRevisionTrend: ["4%", "2%", "-100%", "-100%"] }
   ];
 
   assert.deepEqual(Array.from(trendVector(stocks[4])), [5, -100, -100, -100]);
-  assert.equal(context.window.EPSSort.trendStrength, undefined);
+  assert.equal(scoreValue(stocks[4]), 90);
   const groups = JSON.parse(JSON.stringify(groupAndSortStocks(stocks)));
   assert.deepEqual(groups.map((group) => group.market), ["US", "A", "HK"]);
-  assert.deepEqual(groups[0].stocks.map((stock) => stock.symbol), ["US-Q1-STRONG", "US-Q2-STRONG", "US-Q2-WEAK", "US-MISSING"]);
+  assert.deepEqual(groups[0].stocks.map((stock) => stock.symbol), ["US-TOP", "US-MID", "US-LOW", "US-MISSING"]);
 });
 
 test("homepage and public indexes link to the public EPS module", () => {

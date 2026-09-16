@@ -62,6 +62,21 @@
     return number > 0 ? "up" : "down";
   }
 
+  function scoreLabel(stock) {
+    const score = Number(stock.score?.total);
+    return Number.isFinite(score) ? score.toFixed(1) : "—";
+  }
+
+  function scoreRank(stock, fallbackRank) {
+    const rank = Number(stock.score?.rank);
+    return Number.isInteger(rank) && rank > 0 ? rank : fallbackRank;
+  }
+
+  function scoreMethodLabel(market) {
+    if (market === "US") return "加权总分由高到低 · Magnitude 40% · Agreement 30% · Upside/ESP 20% · Surprise 10%";
+    return "加权总分由高到低 · Magnitude 40% · Agreement 30%（按可用权重归一）";
+  }
+
   function renderChanges(stock) {
     const changes = stock.recentChanges;
     if (!changes.length) return '<div class="change-block"><span class="muted">尚无可延续的真实变化</span></div>';
@@ -97,12 +112,18 @@
     });
   }
 
-  function renderStock(stock) {
+  function renderStock(stock, rank) {
+    const marketRank = scoreRank(stock, rank);
     return `
       <article class="stock-card ${stockTone(stock)}">
         <header class="stock-head">
           <div class="stock-identity">
-            <h2>${escapeHTML(stock.name)}</h2>
+            <div class="stock-title-row">
+              <h2>${escapeHTML(stock.name)}</h2>
+              <span class="score-badge" aria-label="${escapeHTML(stock.name)} 市场排名第 ${marketRank}，加权得分 ${scoreLabel(stock)} 分">
+                <small>#${marketRank}</small><strong>${scoreLabel(stock)}</strong><span>分</span>
+              </span>
+            </div>
             <p>${escapeHTML(stock.symbol)} · BASELINE ${escapeHTML(stock.baselineDate)}</p>
           </div>
           <div class="stock-tags">
@@ -139,9 +160,9 @@
         <header class="market-group-head">
           <span>${escapeHTML(marketEnglishLabel(group.market))}</span>
           <h2 id="market-group-${escapeHTML(group.market)}">${escapeHTML(marketLabel(group.market))}</h2>
-          <small>${group.stocks.length} 只 · Trend of Estimate Revision 由强到弱（Q1 → Q2 → F1 → F2）</small>
+          <small>${group.stocks.length} 只 · ${escapeHTML(scoreMethodLabel(group.market))}</small>
         </header>
-        <div class="market-stock-list">${group.stocks.map(renderStock).join("")}</div>
+        <div class="market-stock-list">${group.stocks.map((stock, index) => renderStock(stock, index + 1)).join("")}</div>
       </section>
     `).join("");
     bindScreenshotLoaders();
