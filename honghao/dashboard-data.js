@@ -7,7 +7,7 @@
       englishTitle: "MACRO / VIEW LEDGER",
       baselineDate: "2026-09-01",
       latestSourceDate: "2026-09-17",
-      posture: "加息路径清晰：短期消化紧缩，中期交易增长",
+      posture: "加息落地：短期震荡，中期看增长",
       postureNote: "9月17日文章把首次加息后的短期波动与中长期方向分开：未来约3个月仍是紧缩消化期；若经济不衰退、加息次数受控，科技、能源、黄金及估值已压缩的中港股票存在修复与布局机会。未触及资产沿用旧日期。",
       disclaimer: "本页面为Brassivo Research对公开宏观资料的二次整理，不代表原作者，不构成投资建议，也不包含实时行情。"
     },
