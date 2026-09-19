@@ -29,7 +29,7 @@ test("EPS page is a public dashboard shell with no embedded portfolio data", () 
   const researchNav = html.match(/<nav class="research-nav"[\s\S]*?<\/nav>/)?.[0] || "";
   for (const href of [
     "https://brassivo.com",
-    "https://brassivo.com/honghao/",
+    "https://brassivo.com/macro/",
     "https://brassivo.com/eps/",
     "https://investment.brassivo.com",
     "https://stocks.brassivo.com/sectors.html",
@@ -108,7 +108,7 @@ test("homepage and public indexes link to the public EPS module", () => {
   const llms = read("llms.txt");
 
   const firstModule = homepage.match(/<div class="grid">\s*<a class="card wide" href="([^"]+)"/);
-  assert.equal(firstModule?.[1], "/honghao/");
+  assert.equal(firstModule?.[1], "/macro/");
   assert.match(homepage, /href=["']\/eps\/["']/);
   assert.match(homepage, /EPS Margin Tracker/);
   assert.match(homepage, /a\[href=["']\/eps\/["']\]/);

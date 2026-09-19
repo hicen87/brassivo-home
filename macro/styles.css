@@ -108,7 +108,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .site-header {
-  width: min(1180px, calc(100% - 48px));
+  width: min(1380px, calc(100% - 64px));
   height: 82px;
   margin: 0 auto;
   position: sticky;
@@ -506,7 +506,7 @@ a { color: inherit; text-decoration: none; }
 
 @media (max-width: 780px) {
   .shell { width: min(100% - 32px, 680px); }
-  .site-header { width: min(100% - 28px, 1180px); height: 68px; gap: 8px; }
+  .site-header { width: min(100% - 32px, 680px); height: 68px; gap: 8px; }
   .site-header .brand span { display: none; }
   .research-nav a { font-size: 11px; padding-inline: 7px; }
   .section-nav { justify-content: flex-start; padding-inline: 16px; }

@@ -7,10 +7,10 @@ import { fileURLToPath } from "node:url";
 
 const testDir = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(testDir, "..");
-const pageDir = path.join(root, "honghao");
+const pageDir = path.join(root, "macro");
 const read = (relativePath) => fs.readFileSync(path.join(root, relativePath), "utf8");
 
-const dataCode = read("honghao/dashboard-data.js");
+const dataCode = read("macro/dashboard-data.js");
 const context = { window: {} };
 vm.createContext(context);
 vm.runInContext(dataCode, context);
@@ -58,8 +58,8 @@ test("turning-point signals are explicit and limited to qualified changes", () =
   assert.equal(candidates[1].asset, "贵金属及矿业股");
   assert.equal(candidates[1].turningPoint.side, "bottom");
 
-  const html = read("honghao/index.html");
-  const app = read("honghao/app.js");
+  const html = read("macro/index.html");
+  const app = read("macro/app.js");
   assert.match(html, /标有“拐点”的记录/);
   assert.match(app, /change\.turningPoint \? " is-turning-point"/);
   assert.match(app, /turning-point-badge/);
@@ -95,15 +95,15 @@ test("public dataset exposes source metadata but no private file paths", () => {
 });
 
 test("macro view page is direct-file compatible and has public metadata", () => {
-  const html = read("honghao/index.html");
-  const app = read("honghao/app.js");
-  const css = read("honghao/styles.css");
+  const html = read("macro/index.html");
+  const app = read("macro/app.js");
+  const css = read("macro/styles.css");
 
   for (const id of ["overview", "rotation", "asset-ledger", "observations", "change-log", "sources"]) {
     assert.match(html, new RegExp(`id=["']${id}["']`));
   }
-  assert.match(html, /https:\/\/brassivo\.com\/honghao\//);
-  assert.match(html, /styles\.css\?v=20260910epsheader/);
+  assert.match(html, /https:\/\/brassivo\.com\/macro\//);
+  assert.match(html, /styles\.css\?v=20260919headerwidth/);
   assert.match(html, /dashboard-data\.js\?v=20260919/);
   assert.match(html, /app\.js\?v=20260910allocation/);
   assert.match(html, /<meta name="color-scheme" content="light"/);
@@ -111,7 +111,7 @@ test("macro view page is direct-file compatible and has public metadata", () => 
   const researchNav = html.match(/<nav class="research-nav"[\s\S]*?<\/nav>/)?.[0] || "";
   for (const href of [
     "https://brassivo.com",
-    "https://brassivo.com/honghao/",
+    "https://brassivo.com/macro/",
     "https://brassivo.com/eps/",
     "https://investment.brassivo.com",
     "https://stocks.brassivo.com/sectors.html",
@@ -130,9 +130,16 @@ test("macro view page is direct-file compatible and has public metadata", () => 
   assert.match(css, /--ink:\s*#f6f7f9/);
   assert.match(css, /--dot:\s*rgba\(20, 40, 80, 0\.09\)/);
   assert.match(css, /body::after[\s\S]*radial-gradient\(circle, var\(--glow\)/);
-  assert.match(css, /\.site-header\s*\{[\s\S]*?width:\s*min\(1180px, calc\(100% - 48px\)\);[\s\S]*?height:\s*82px;[\s\S]*?background:\s*rgba\(246, 247, 249, \.92\)/);
+  assert.match(css, /\.site-header\s*\{[\s\S]*?width:\s*min\(1380px, calc\(100% - 64px\)\);[\s\S]*?height:\s*82px;[\s\S]*?background:\s*rgba\(246, 247, 249, \.92\)/);
   assert.match(css, /\.research-nav a\[aria-current="page"\]\s*\{[^}]*color:\s*#c77b2f;[^}]*background:\s*#f2e2cf;/);
   assert.match(css, /@media \(max-width: 780px\)[\s\S]*?\.site-header\s*\{[^}]*height:\s*68px;/);
+});
+
+test("legacy macro URL redirects to the renamed public route", () => {
+  const legacy = read("honghao/index.html");
+  assert.match(legacy, /url=\/macro\//i);
+  assert.match(legacy, /href=["']\/macro\/["']/);
+  assert.doesNotMatch(legacy, /dashboard-data\.js|app\.js/);
 });
 
 test("homepage, structured data, sitemap, and llms index the new page", () => {
@@ -140,9 +147,9 @@ test("homepage, structured data, sitemap, and llms index the new page", () => {
   const sitemap = read("sitemap.xml");
   const llms = read("llms.txt");
 
-  assert.match(homepage, /href=["']\/honghao\/["']/);
-  assert.match(homepage, /a\[href=["']\/honghao\/["']\]/);
-  assert.match(sitemap, /https:\/\/brassivo\.com\/honghao\//);
+  assert.match(homepage, /href=["']\/macro\/["']/);
+  assert.match(homepage, /a\[href=["']\/macro\/["']\]/);
+  assert.match(sitemap, /https:\/\/brassivo\.com\/macro\//);
   assert.match(homepage, /Macro View Ledger/);
   assert.doesNotMatch(homepage, /Hong Hao|HONG HAO|洪灏/);
   assert.match(llms, /Macro View Ledger/);
@@ -150,7 +157,7 @@ test("homepage, structured data, sitemap, and llms index the new page", () => {
   const jsonLdMatch = homepage.match(/<script type="application\/ld\+json">\s*([\s\S]*?)\s*<\/script>/);
   assert.ok(jsonLdMatch, "homepage JSON-LD is missing");
   const jsonLd = JSON.parse(jsonLdMatch[1]);
-  assert.ok(jsonLd.hasPart.some((part) => part.url === "https://brassivo.com/honghao/"));
+  assert.ok(jsonLd.hasPart.some((part) => part.url === "https://brassivo.com/macro/"));
 });
 
 test("allocation is a sourced inference, separate from direction counts", () => {
