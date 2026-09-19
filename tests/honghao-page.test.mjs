@@ -18,13 +18,13 @@ const data = context.window.HONG_HAO_DASHBOARD_DATA;
 
 test("public page contains the verified baseline", () => {
   assert.equal(data.meta.baselineDate, "2026-09-01");
-  assert.equal(data.meta.latestSourceDate, "2026-09-14");
+  assert.equal(data.meta.latestSourceDate, "2026-09-17");
   assert.equal(data.assets.length, 26);
-  assert.equal(data.sources.length, 9);
+  assert.equal(data.sources.length, 10);
   assert.equal(data.rotation.filter((step) => step.state === "current").length, 1);
   assert.equal(data.rotation.find((step) => step.state === "current").id, "agriculture");
   assert.equal(data.rotation.find((step) => step.state === "current").stage, "结构主线");
-  assert.equal(data.changes[0].date, "2026-09-14");
+  assert.equal(data.changes[0].date, "2026-09-17");
   assert.equal(data.changes.at(-1).date, "2026-08-31");
 });
 
@@ -52,9 +52,11 @@ test("asset records are complete, unique, and traceable", () => {
 
 test("turning-point signals are explicit and limited to qualified changes", () => {
   const candidates = data.changes.filter((change) => change.turningPoint);
-  assert.equal(candidates.length, 3);
-  assert.equal(candidates[0].asset, "美国半导体硬件 / 费城半导体");
+  assert.equal(candidates.length, 5);
+  assert.equal(candidates[0].asset, "港股 / 高估值成长");
   assert.equal(candidates[0].turningPoint.side, "bottom");
+  assert.equal(candidates[1].asset, "贵金属及矿业股");
+  assert.equal(candidates[1].turningPoint.side, "bottom");
 
   const html = read("honghao/index.html");
   const app = read("honghao/app.js");
@@ -102,7 +104,7 @@ test("macro view page is direct-file compatible and has public metadata", () => 
   }
   assert.match(html, /https:\/\/brassivo\.com\/honghao\//);
   assert.match(html, /styles\.css\?v=20260910epsheader/);
-  assert.match(html, /dashboard-data\.js\?v=20260914/);
+  assert.match(html, /dashboard-data\.js\?v=20260917/);
   assert.match(html, /app\.js\?v=20260910allocation/);
   assert.match(html, /<meta name="color-scheme" content="light"/);
   assert.match(html, /<meta name="theme-color" content="#f6f7f9"/);
