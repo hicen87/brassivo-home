@@ -104,7 +104,7 @@ test("macro view page is direct-file compatible and has public metadata", () => 
   }
   assert.match(html, /https:\/\/brassivo\.com\/honghao\//);
   assert.match(html, /styles\.css\?v=20260910epsheader/);
-  assert.match(html, /dashboard-data\.js\?v=20260917/);
+  assert.match(html, /dashboard-data\.js\?v=20260919/);
   assert.match(html, /app\.js\?v=20260910allocation/);
   assert.match(html, /<meta name="color-scheme" content="light"/);
   assert.match(html, /<meta name="theme-color" content="#f6f7f9"/);
