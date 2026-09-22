@@ -18,13 +18,13 @@ const data = context.window.HONG_HAO_DASHBOARD_DATA;
 
 test("public page contains the verified baseline", () => {
   assert.equal(data.meta.baselineDate, "2026-09-01");
-  assert.equal(data.meta.latestSourceDate, "2026-09-17");
+  assert.equal(data.meta.latestSourceDate, "2026-09-22");
   assert.equal(data.assets.length, 26);
-  assert.equal(data.sources.length, 10);
+  assert.equal(data.sources.length, 11);
   assert.equal(data.rotation.filter((step) => step.state === "current").length, 1);
   assert.equal(data.rotation.find((step) => step.state === "current").id, "agriculture");
   assert.equal(data.rotation.find((step) => step.state === "current").stage, "结构主线");
-  assert.equal(data.changes[0].date, "2026-09-17");
+  assert.equal(data.changes[0].date, "2026-09-22");
   assert.equal(data.changes.at(-1).date, "2026-08-31");
 });
 
@@ -80,7 +80,7 @@ test("assets follow the horizon groups and direction priority", () => {
     horizonOrder.map((group) => sorted.filter((asset) => horizonGroup(asset) === group).length),
     [13, 12, 1]
   );
-  assert.equal(sorted[0].id, "usd");
+  assert.equal(sorted[0].id, "hong-kong-equity");
   assert.equal(sorted.at(-1).id, "precious-long");
 });
 
@@ -104,7 +104,7 @@ test("macro view page is direct-file compatible and has public metadata", () => 
   }
   assert.match(html, /https:\/\/brassivo\.com\/macro\//);
   assert.match(html, /styles\.css\?v=20260919headerwidth/);
-  assert.match(html, /dashboard-data\.js\?v=20260919/);
+  assert.match(html, /dashboard-data\.js\?v=20260922/);
   assert.match(html, /app\.js\?v=20260910allocation/);
   assert.match(html, /<meta name="color-scheme" content="light"/);
   assert.match(html, /<meta name="theme-color" content="#f6f7f9"/);
