@@ -313,7 +313,21 @@ a { color: inherit; text-decoration: none; }
 .metric span { color: var(--paper-muted); font-size: 9px; letter-spacing: .06em; white-space: nowrap; }
 .metric strong { color: var(--paper); font-family: Georgia, serif; font-size: 25px; font-weight: 400; }
 
-.rotation-section, .ledger-section, .observation-section { padding-block: 92px; border-top: 1px solid var(--line); }
+.bloomberg-section, .rotation-section, .ledger-section, .observation-section { padding-block: 92px; border-top: 1px solid var(--line); }
+.bloomberg-content { border: 1px solid var(--line-strong); background: rgba(255,255,255,.7); }
+.bloomberg-source { padding: 30px 34px; border-bottom: 1px solid var(--line); }
+.bloomberg-source > span { color: var(--gold-bright); font-size: 11px; letter-spacing: .1em; font-weight: 700; }
+.bloomberg-source h3 { margin: 12px 0; font-family: var(--display); font-size: clamp(23px, 2.4vw, 32px); font-weight: 500; }
+.bloomberg-source p { max-width: 900px; margin: 0 0 16px; color: var(--paper-muted); }
+.bloomberg-source a { color: var(--gold-bright); font-size: 13px; text-decoration: underline; text-underline-offset: 3px; }
+.bloomberg-signals { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1px; background: var(--line); }
+.bloomberg-signal { padding: 24px 30px; background: var(--ink-raised); }
+.bloomberg-signal > span { font-size: 11px; font-weight: 700; color: var(--jade-bright); }
+.bloomberg-signal.negative > span { color: var(--vermilion); }
+.bloomberg-signal h4 { margin: 9px 0; font-size: 18px; }
+.bloomberg-signal p { margin: 0; color: var(--paper-muted); font-size: 13px; }
+.bloomberg-signal small { display: block; margin-top: 12px; font-size: 11px; color: var(--paper-muted); }
+.bloomberg-footnote, .bloomberg-unavailable { margin: 0; padding: 14px 30px; font-size: 11px; color: var(--paper-muted); }
 .section-heading { display: flex; justify-content: space-between; align-items: end; gap: 40px; margin-bottom: 42px; }
 .section-heading h2, .panel-heading h2 { margin: 9px 0 0; font-family: var(--display); font-size: clamp(32px, 3.4vw, 48px); font-weight: 500; letter-spacing: -.03em; }
 .section-heading p { max-width: 460px; margin: 0; color: var(--paper-muted); font-size: 13px; }
@@ -516,7 +530,9 @@ a { color: inherit; text-decoration: none; }
   .hero-instrument { max-width: 520px; }
   .section-heading { display: block; }
   .section-heading p { margin-top: 16px; }
-  .rotation-section, .ledger-section, .observation-section { padding-block: 70px; }
+  .bloomberg-section, .rotation-section, .ledger-section, .observation-section { padding-block: 70px; }
+  .bloomberg-signals { grid-template-columns: 1fr; }
+  .bloomberg-source, .bloomberg-signal { padding: 22px; }
   .rotation-track { grid-template-columns: 1fr 1fr; }
   .rotation-step { min-height: 210px; }
   .rotation-step:nth-child(2) { border-right: 0; }

@@ -147,6 +147,37 @@
     `).join("");
   }
 
+  function renderBloombergDaily() {
+    const item = window.BLOOMBERG_MARKETS_DAILY;
+    const target = $("#bloomberg-content");
+    if (!target) return;
+    if (!item) {
+      target.innerHTML = '<p class="bloomberg-unavailable">本期 Bloomberg Markets Daily 尚未核验，暂无可发布的短期判断。</p>';
+      return;
+    }
+    const cards = (items, label, tone) => items.map((entry) => `
+      <article class="bloomberg-signal ${tone}">
+        <span>${label} · Brassivo 推演</span>
+        <h4>${escapeHTML(entry.title)}</h4>
+        <p>${escapeHTML(entry.reason)}</p>
+        <small>验证条件：${escapeHTML(entry.condition)}</small>
+      </article>
+    `).join("");
+    target.innerHTML = `
+      <div class="bloomberg-source">
+        <span>Bloomberg Markets Daily · <time datetime="${escapeHTML(item.issueDate)}">${escapeHTML(item.issueDate)}</time></span>
+        <h3>${escapeHTML(item.headline)}</h3>
+        <p>${escapeHTML(item.bloombergTake)}</p>
+        <a href="${escapeHTML(item.sourceUrl)}" rel="noopener noreferrer">查看 Bloomberg 原刊 ↗</a>
+      </div>
+      <div class="bloomberg-signals">
+        ${cards(item.bullish, "短期利多", "positive")}
+        ${cards(item.bearish, "短期利空", "negative")}
+      </div>
+      <p class="bloomberg-footnote">以上判断基于邮件信息的条件推演，未经实时行情确认，不改变上方策略基线与资金配比。</p>
+    `;
+  }
+
   function renderAssetTable() {
     const assets = filteredAssets();
     $("#filtered-count").textContent = assets.length;
@@ -354,6 +385,7 @@
     renderMeta();
     renderCompass();
     renderAllocation();
+    renderBloombergDaily();
     renderRotation();
     renderAssetTable();
     renderObservations();

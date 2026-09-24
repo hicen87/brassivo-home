@@ -17,6 +17,7 @@
     <title>宏观资产方向跟踪 · Brassivo Research</title>
     <link rel="stylesheet" href="styles.css?v=20260919headerwidth" />
     <script src="dashboard-data.js?v=20260922" defer></script>
+    <script src="bloomberg-daily.js?v=20260923" defer></script>
     <script src="app.js?v=20260910allocation" defer></script>
   </head>
   <body>
@@ -45,6 +46,7 @@
     <script>requestAnimationFrame(()=>{const n=document.querySelector('nav[aria-label="全站研究导航"]'),c=n?.querySelector('[aria-current="page"]');if(n&&c)n.scrollLeft=Math.max(0,c.offsetLeft-(n.clientWidth-c.offsetWidth)/2)})</script>
     <nav class="section-nav" aria-label="本页目录">
       <a href="#overview">总览</a>
+      <a href="#bloomberg-daily">彭博</a>
       <a href="#rotation">轮动</a>
       <a href="#asset-ledger">资产</a>
       <a href="#sources">资料</a>
@@ -117,6 +119,17 @@
             <div class="metric"><span>资料文件</span><strong id="metric-sources">0</strong></div>
           </div>
         </div>
+      </section>
+
+      <section class="bloomberg-section shell" id="bloomberg-daily" aria-labelledby="bloomberg-title">
+        <div class="section-heading reveal">
+          <div>
+            <span class="section-index">BLOOMBERG / MARKETS DAILY</span>
+            <h2 id="bloomberg-title">彭博市场观察</h2>
+          </div>
+          <p>Bloomberg 邮件解读与 Brassivo 短期判断分别标注。邮件日期以原刊期为准；利多与利空均为待验证推演。</p>
+        </div>
+        <div id="bloomberg-content" class="bloomberg-content" aria-live="polite"></div>
       </section>
 
       <section class="rotation-section shell" id="rotation" aria-labelledby="rotation-title">
