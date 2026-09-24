@@ -342,6 +342,16 @@ a { color: inherit; text-decoration: none; }
 .media-focus-matrix article > span { display: block; color: var(--gold-bright); font-size: 11px; font-weight: 700; line-height: 1.5; }
 .media-focus-matrix article strong { display: block; margin-top: 9px; color: var(--paper); font-size: 16px; }
 .media-focus-matrix article p { margin: 7px 0 0; color: var(--paper-muted); font-size: 12px; line-height: 1.75; }
+.media-focus-current { margin: 1px 0 0; padding: 24px 30px; background: #fffaf1; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.media-focus-current-top { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 18px; }
+.media-focus-current-top span { color: var(--gold-bright); font-size: 10px; font-weight: 700; letter-spacing: .1em; }
+.media-focus-current-top strong { color: var(--ink); font-size: 18px; }
+.media-focus-current p { margin: 10px 0 0; color: var(--paper-muted); font-size: 13px; line-height: 1.8; }
+.media-focus-current p b { color: var(--ink); }
+.media-focus-current a { color: var(--gold-bright); text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
+.media-focus-current .media-focus-current-reading { margin-top: 14px; color: var(--ink); font-weight: 600; }
+.media-focus-current.is-pending { background: #f4f6f8; }
+.media-focus-current.is-pending .media-focus-current-top strong { color: var(--paper-muted); }
 .bloomberg-source { padding: 30px 34px; border-bottom: 1px solid var(--line); }
 .bloomberg-source > span { color: var(--gold-bright); font-size: 11px; letter-spacing: .1em; font-weight: 700; }
 .bloomberg-source h3 { margin: 12px 0; font-family: var(--display); font-size: clamp(23px, 2.4vw, 32px); font-weight: 500; }

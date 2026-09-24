@@ -18,6 +18,10 @@ test("Bloomberg summary has a dated source and separate conditional judgments", 
   assert.match(item.publishedAt, /^\d{4}-\d{2}-\d{2}T/);
   assert.ok(item.sourceUrl.startsWith(`https://www.bloomberg.com/news/newsletters/${item.issueDate}/`));
   assert.ok(item.bloombergTake.includes("Bloomberg"));
+  assert.ok(item.marketCheck.asOf <= item.issueDate);
+  assert.match(item.marketCheck.mediaBias, /偏空|偏多|中性/);
+  assert.ok(item.marketCheck.verdict && item.marketCheck.interpretation && item.marketCheck.marketSummary);
+  assert.equal(new URL(item.marketCheck.sourceUrl).hostname, "www.fidelity.com");
   for (const side of ["bullish", "bearish"]) {
     assert.ok(item[side].length > 0);
     for (const entry of item[side]) assert.ok(entry.title && entry.reason && entry.condition);
@@ -30,6 +34,7 @@ test("public macro page renders the Bloomberg section without private mail data"
   assert.match(html, /<h2 id="bloomberg-title">主流媒体焦点<\/h2>/);
   assert.match(app, /renderBloombergDaily\(\);/);
   assert.match(app, /media-focus-grid/);
+  assert.match(app, /media-focus-current/);
   assert.match(app, /Brassivo 推演/);
   assert.doesNotMatch(js, /\/Users\/|gmail\.com|mail\.google\.com|@news\.bloomberg\.com|Content-Type:|Message-ID:/i);
   assert.ok(js.length < 12000, "public file should be a compact original summary");
