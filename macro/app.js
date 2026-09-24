@@ -168,6 +168,13 @@
         ${sourceCard(item.mediaFocus?.barrons, "Barron’s", "个股 / 公司", "media-focus-barrons")}
         ${sourceCard(item.mediaFocus?.wsj, "The Wall Street Journal", "首页 / 头条", "media-focus-wsj")}
       </div>
+      <div class="media-focus-judgment-heading"><span>HOW TO READ / EXPECTATION × PRICE</span><strong>先看预期，再看市场怎么走</strong><p>把媒体对整体市场的偏多或偏空预期，与同一观察期的主要市场走势配对；市场表现需结合实际行情判断。</p></div>
+      <div class="media-focus-matrix" aria-label="媒体预期与市场表现的交叉判读">
+        <article><span>媒体偏多 × 市场不涨</span><strong>留意利多出尽</strong><p>预期偏多却缺乏上涨动能，短期可能涨不动；观察涨幅、成交与市场广度是否转弱。</p></article>
+        <article><span>媒体偏空 × 价格跌不动</span><strong>留意筑底可能</strong><p>利空下价格仍有支撑，可能接近阶段性底部；需等价格企稳或反转信号确认。</p></article>
+        <article><span>媒体偏多 × 价格上涨</span><strong>顺势解读</strong><p>市场走势与偏多预期一致，观察上涨能否延续及扩散。</p></article>
+        <article><span>媒体偏空 × 价格下跌</span><strong>顺势解读</strong><p>市场走势与偏空预期一致，观察下跌压力和风险是否继续扩散。</p></article>
+      </div>
       <div class="media-focus-judgment-heading"><span>BRASSIVO / CONDITIONAL VIEW</span><strong>短期条件判断</strong><p>以下仅基于 Bloomberg 这期邮件的事实独立推演，不是三家媒体的共同观点。</p></div>
       <div class="bloomberg-signals">
         ${cards(item.bullish, "短期利多", "positive")}
