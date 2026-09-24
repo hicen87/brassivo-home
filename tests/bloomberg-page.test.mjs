@@ -26,9 +26,27 @@ test("Bloomberg summary has a dated source and separate conditional judgments", 
 
 test("public macro page renders the Bloomberg section without private mail data", () => {
   assert.match(html, /id="bloomberg-daily"/);
-  assert.match(html, new RegExp(`bloomberg-daily\\.js\\?v=${item.issueDate.replaceAll("-", "")}`));
+  assert.match(html, new RegExp(`bloomberg-daily\\.js\\?v=${item.issueDate.replaceAll("-", "")}-[a-f0-9]{8}`));
+  assert.match(html, /<h2 id="bloomberg-title">主流媒体焦点<\/h2>/);
   assert.match(app, /renderBloombergDaily\(\);/);
+  assert.match(app, /media-focus-grid/);
   assert.match(app, /Brassivo 推演/);
   assert.doesNotMatch(js, /\/Users\/|gmail\.com|mail\.google\.com|@news\.bloomberg\.com|Content-Type:|Message-ID:/i);
-  assert.ok(js.length < 5000, "public file should be a compact original summary");
+  assert.ok(js.length < 12000, "public file should be a compact original summary");
+});
+
+test("Barron's and WSJ homepage snapshots are dated, attributed, and use clean source URLs", () => {
+  for (const [name, host] of [["barrons", "www.barrons.com"], ["wsj", "www.wsj.com"]]) {
+    const focus = item.mediaFocus[name];
+    assert.match(focus.captureDate, /^\d{4}-\d{2}-\d{2}$/);
+    assert.equal(focus.capturedAt.slice(0, 10), focus.captureDate);
+    assert.ok(focus.summary.length > 20);
+    assert.ok(focus.stories.length >= 2);
+    for (const story of focus.stories) {
+      const url = new URL(story.url);
+      assert.equal(url.hostname, host);
+      assert.equal(url.search, "");
+      assert.ok(story.title && story.summary);
+    }
+  }
 });

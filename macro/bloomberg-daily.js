@@ -37,5 +37,51 @@ window.BLOOMBERG_MARKETS_DAILY = {
       "condition": "若订单、利润率或 AI 威胁增长不及预期，估值可能压缩；持续超预期则否定该判断。"
     }
   ],
-  "sourceUrl": "https://www.bloomberg.com/news/newsletters/2026-09-24/all-the-reasons-why-bond-yields-keep-going-up"
+  "sourceUrl": "https://www.bloomberg.com/news/newsletters/2026-09-24/all-the-reasons-why-bond-yields-keep-going-up",
+  "mediaFocus": {
+    "barrons": {
+      "captureDate": "2026-09-24",
+      "capturedAt": "2026-09-24T21:48:00+08:00",
+      "summary": "Barron’s 首页焦点转向 AI 代理对个股护城河的冲击与财报兑现：Meta Muse 可能削弱依赖消费者惯性的商业模式；Darden 面临食品和人工成本压力；Everpure 则把 AI 数据中心需求转化为增长预期。这是首页报道重点，不是三只股票的买卖建议。",
+      "stories": [
+        {
+          "title": "Meta Muse 冲击依赖消费惯性的公司",
+          "summary": "Barron’s 关注 AI 个人代理是否改变消费者选购与续约路径，进而影响相关公司商业模式。",
+          "url": "https://www.barrons.com/articles/consumer-inertia-stocks-meta-muse-f0da965d"
+        },
+        {
+          "title": "Darden 财报显露成本压力",
+          "summary": "首页报道指出食品及人工成本上升拖累这家 Olive Garden 母公司的季度盈利。",
+          "url": "https://www.barrons.com/articles/darden-olive-garden-earnings-stock-price-103a66b9"
+        },
+        {
+          "title": "Everpure 受益于 AI 存储需求",
+          "summary": "公司预计后续收入增长提速；报道聚焦超大规模客户需求，但目标价仍属分析师预测。",
+          "url": "https://www.barrons.com/articles/everpure-earnings-stock-price-85ae0168"
+        }
+      ]
+    },
+    "wsj": {
+      "captureDate": "2026-09-24",
+      "capturedAt": "2026-09-24T21:48:00+08:00",
+      "summary": "《华尔街日报》首页头条把长期美债收益率上行与 AI 基建扩张并置：债券重定价压制全球股市；数据中心支出创造就业与财富，也可能推高通胀并挤出住房投资。报道是当时首页快照，不代表实时行情。",
+      "stories": [
+        {
+          "title": "长期美债收益率触及 2004 年以来高位",
+          "summary": "首页实时报道强调政府债收益率上升，给全球股票带来压力。",
+          "url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-09-24-2026"
+        },
+        {
+          "title": "债市遭遇多重压力",
+          "summary": "报道将基准美债收益率上升与一日内的剧烈重定价联系起来。",
+          "url": "https://www.wsj.com/finance/investing/a-perfect-storm-is-raging-in-the-bond-market-43d9b44b"
+        },
+        {
+          "title": "AI 建设成为美国经济大规模押注",
+          "summary": "数据中心投资一面带动就业和资本市场，一面增加通胀及其他投资被挤出的风险。",
+          "url": "https://www.wsj.com/economy/the-ai-build-out-is-becoming-the-biggest-economic-bet-in-u-s-history-c60716dd"
+        }
+      ]
+    }
+  }
 };

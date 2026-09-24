@@ -15,10 +15,10 @@
     <meta property="og:description" content="区分长期配置、短期交易、原文判断与推导，持续记录资产方向及证伪条件。" />
     <meta property="og:url" content="https://brassivo.com/macro/" />
     <title>宏观资产方向跟踪 · Brassivo Research</title>
-    <link rel="stylesheet" href="styles.css?v=20260919headerwidth" />
+    <link rel="stylesheet" href="styles.css?v=20260924mediafocus" />
     <script src="dashboard-data.js?v=20260922" defer></script>
-    <script src="bloomberg-daily.js?v=20260924" defer></script>
-    <script src="app.js?v=20260910allocation" defer></script>
+    <script src="bloomberg-daily.js?v=20260924-57c1e7e8" defer></script>
+    <script src="app.js?v=20260924mediafocus" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#asset-ledger">跳到资产台账</a>
@@ -46,7 +46,7 @@
     <script>requestAnimationFrame(()=>{const n=document.querySelector('nav[aria-label="全站研究导航"]'),c=n?.querySelector('[aria-current="page"]');if(n&&c)n.scrollLeft=Math.max(0,c.offsetLeft-(n.clientWidth-c.offsetWidth)/2)})</script>
     <nav class="section-nav" aria-label="本页目录">
       <a href="#overview">总览</a>
-      <a href="#bloomberg-daily">彭博</a>
+      <a href="#bloomberg-daily">主流媒体焦点</a>
       <a href="#rotation">轮动</a>
       <a href="#asset-ledger">资产</a>
       <a href="#sources">资料</a>
@@ -124,10 +124,10 @@
       <section class="bloomberg-section shell" id="bloomberg-daily" aria-labelledby="bloomberg-title">
         <div class="section-heading reveal">
           <div>
-            <span class="section-index">BLOOMBERG / MARKETS DAILY</span>
-            <h2 id="bloomberg-title">彭博市场观察</h2>
+            <span class="section-index">BLOOMBERG / BARRON'S / THE WALL STREET JOURNAL</span>
+            <h2 id="bloomberg-title">主流媒体焦点</h2>
           </div>
-          <p>Bloomberg 邮件解读与 Brassivo 短期判断分别标注。邮件日期以原刊期为准；利多与利空均为待验证推演。</p>
+          <p>Bloomberg 看宏观波动，Barron’s 看个股，华尔街日报看首页头条。各来源独立标注刊期或抓取时间；媒体报道与 Brassivo 推演分开展示。</p>
         </div>
         <div id="bloomberg-content" class="bloomberg-content" aria-live="polite"></div>
       </section>

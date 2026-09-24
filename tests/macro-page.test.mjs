@@ -103,9 +103,9 @@ test("macro view page is direct-file compatible and has public metadata", () => 
     assert.match(html, new RegExp(`id=["']${id}["']`));
   }
   assert.match(html, /https:\/\/brassivo\.com\/macro\//);
-  assert.match(html, /styles\.css\?v=20260919headerwidth/);
+  assert.match(html, /styles\.css\?v=20260924mediafocus/);
   assert.match(html, /dashboard-data\.js\?v=20260922/);
-  assert.match(html, /app\.js\?v=20260910allocation/);
+  assert.match(html, /app\.js\?v=20260924mediafocus/);
   assert.match(html, /<meta name="color-scheme" content="light"/);
   assert.match(html, /<meta name="theme-color" content="#f6f7f9"/);
   const researchNav = html.match(/<nav class="research-nav"[\s\S]*?<\/nav>/)?.[0] || "";
