@@ -38,16 +38,6 @@ window.BLOOMBERG_MARKETS_DAILY = {
     }
   ],
   "sourceUrl": "https://www.bloomberg.com/news/newsletters/2026-09-24/all-the-reasons-why-bond-yields-keep-going-up",
-  "marketCheck": {
-    "asOf": "2026-09-23",
-    "mediaBias": "整体偏空",
-    "mediaBasis": "Bloomberg 与 WSJ 聚焦收益率上行、债券重定价及其对风险资产的压力；Bloomberg 当期没有给出统一指数涨跌预测，此倾向是 Brassivo 对报道焦点的归纳。",
-    "marketSummary": "最新完整交易日（9月23日）：道指下跌0.66%，标普500下跌0.74%，纳指下跌1.10%；10年期美债收益率升至2007年以来高位。",
-    "verdict": "顺势解读：偏空焦点与股指下跌同向",
-    "interpretation": "利率压力已反映在主要股指下跌中，符合“媒体偏空、价格下跌”。目前是利空兑现的顺势表现，没有出现“利空下跌不动”的底部背离。",
-    "sourceLabel": "Reuters 市场收盘摘要（Fidelity）",
-    "sourceUrl": "https://www.fidelity.com/news/article/us-markets/202609231600RTRSNEWSCOMBINED_L6N45F140_1"
-  },
   "mediaFocus": {
     "barrons": {
       "captureDate": "2026-09-24",

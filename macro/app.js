@@ -149,19 +149,6 @@
         <small>验证条件：${escapeHTML(entry.condition)}</small>
       </article>
     `).join("");
-    const marketCheck = item.marketCheck;
-    const currentJudgment = marketCheck ? `
-      <section class="media-focus-current" aria-labelledby="media-focus-current-title">
-        <h3 class="sr-only" id="media-focus-current-title">当日交叉判断</h3>
-        <div class="media-focus-current-top"><span>DAILY CROSS-CHECK · 行情截至 ${escapeHTML(marketCheck.asOf)}</span><strong>${escapeHTML(marketCheck.verdict)}</strong></div>
-        <p><b>媒体焦点：${escapeHTML(marketCheck.mediaBias)}</b>　${escapeHTML(marketCheck.mediaBasis)}</p>
-        <p><b>市场表现：</b>${escapeHTML(marketCheck.marketSummary)} <a href="${escapeHTML(marketCheck.sourceUrl)}" rel="noopener noreferrer">${escapeHTML(marketCheck.sourceLabel)} ↗</a></p>
-        <p class="media-focus-current-reading">${escapeHTML(marketCheck.interpretation)}</p>
-      </section>` : `
-      <section class="media-focus-current is-pending" aria-label="当日交叉判断待核验">
-        <div class="media-focus-current-top"><span>DAILY CROSS-CHECK</span><strong>当日判断待核验</strong></div>
-        <p>尚未同时核实媒体焦点与最新完整交易日行情，本期暂不归入四种情形。</p>
-      </section>`;
     const sourceCard = (focus, name, scope, className) => focus ? `
       <article class="media-focus-card ${className}">
         <div class="media-focus-meta"><span>${name} <em>${scope}</em></span><time datetime="${escapeHTML(focus.capturedAt)}">首页抓取 ${escapeHTML(focus.capturedAt.slice(0, 16).replace('T', ' '))}</time></div>
@@ -181,7 +168,6 @@
         ${sourceCard(item.mediaFocus?.barrons, "Barron’s", "个股 / 公司", "media-focus-barrons")}
         ${sourceCard(item.mediaFocus?.wsj, "The Wall Street Journal", "首页 / 头条", "media-focus-wsj")}
       </div>
-      ${currentJudgment}
       <div class="media-focus-judgment-heading"><span>HOW TO READ / EXPECTATION × PRICE</span><strong>先看预期，再看市场怎么走</strong><p>把媒体对整体市场的偏多或偏空预期，与同一观察期的主要市场走势配对；市场表现需结合实际行情判断。</p></div>
       <div class="media-focus-matrix" aria-label="媒体预期与市场表现的交叉判读">
         <article><span>媒体偏多 × 市场不涨</span><strong>留意利多出尽</strong><p>预期偏多却缺乏上涨动能，短期可能涨不动；观察涨幅、成交与市场广度是否转弱。</p></article>
