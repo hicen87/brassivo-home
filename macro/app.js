@@ -133,20 +133,6 @@
     }
   }
 
-  function renderRotation() {
-    $("#rotation-track").innerHTML = data.rotation.map((step, index) => `
-      <article class="rotation-step ${escapeHTML(step.state)}" data-order="${String(index + 1).padStart(2, "0")}">
-        <div class="step-meta">
-          <span>STAGE ${String(index + 1).padStart(2, "0")}</span>
-          <span>${escapeHTML(step.stage)}</span>
-        </div>
-        <h3>${escapeHTML(step.label)}</h3>
-        <p>${escapeHTML(step.note)}</p>
-        ${step.state === "current" ? '<span class="current-flag">CURRENT FOCUS</span>' : ""}
-      </article>
-    `).join("");
-  }
-
   function renderBloombergDaily() {
     const item = window.BLOOMBERG_MARKETS_DAILY;
     const target = $("#bloomberg-content");
@@ -277,16 +263,6 @@
     `;
   }
 
-  function renderObservations() {
-    $("#observation-grid").innerHTML = data.observations.map((item) => `
-      <article class="observation-card reveal">
-        <h3>${escapeHTML(item.market)}</h3>
-        <p>${escapeHTML(item.observation)}</p>
-        <p class="handling">${escapeHTML(item.handling)}</p>
-      </article>
-    `).join("");
-  }
-
   function renderChanges() {
     $("#change-list").innerHTML = data.changes.map((change) => `
       <article class="change-entry${change.turningPoint ? " is-turning-point" : ""}">
@@ -399,9 +375,7 @@
     renderCompass();
     renderAllocation();
     renderBloombergDaily();
-    renderRotation();
     renderAssetTable();
-    renderObservations();
     renderChanges();
     renderSources();
     bindEvents();

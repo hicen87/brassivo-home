@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="styles.css?v=20260924mediafocus" />
     <script src="dashboard-data.js?v=20260922" defer></script>
     <script src="bloomberg-daily.js?v=20260924-57c1e7e8" defer></script>
-    <script src="app.js?v=20260924mediafocus" defer></script>
+    <script src="app.js?v=20260924hidepanels" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#asset-ledger">跳到资产台账</a>
@@ -47,7 +47,6 @@
     <nav class="section-nav" aria-label="本页目录">
       <a href="#overview">总览</a>
       <a href="#bloomberg-daily">主流媒体焦点</a>
-      <a href="#rotation">轮动</a>
       <a href="#asset-ledger">资产</a>
       <a href="#sources">资料</a>
     </nav>
@@ -132,21 +131,10 @@
         <div id="bloomberg-content" class="bloomberg-content" aria-live="polite"></div>
       </section>
 
-      <section class="rotation-section shell" id="rotation" aria-labelledby="rotation-title">
-        <div class="section-heading reveal">
-          <div>
-            <span class="section-index">01 / ROTATION</span>
-            <h2 id="rotation-title">商品轮动走到哪一棒？</h2>
-          </div>
-          <p>轮动顺序来自8月31日纪要；粮食安全保留中长期结构逻辑，短期拥挤风险单独观察。</p>
-        </div>
-        <div class="rotation-track reveal reveal-delay-one" id="rotation-track"></div>
-      </section>
-
       <section class="ledger-section shell" id="asset-ledger" aria-labelledby="ledger-title">
         <div class="section-heading reveal">
           <div>
-            <span class="section-index">02 / ASSET LEDGER</span>
+            <span class="section-index">01 / ASSET LEDGER</span>
             <h2 id="ledger-title">资产方向台账</h2>
           </div>
           <p>点击资产查看动作、依据和反转条件；筛选不会改变原始数据。</p>
@@ -213,21 +201,10 @@
         </div>
       </section>
 
-      <section class="observation-section shell" id="observations" aria-labelledby="observation-title">
-        <div class="section-heading reveal">
-          <div>
-            <span class="section-index">03 / MARKET TAPE</span>
-            <h2 id="observation-title">当日市场观察</h2>
-          </div>
-          <p>只记录当日异动，不自动升级为配置建议。</p>
-        </div>
-        <div class="observation-grid" id="observation-grid"></div>
-      </section>
-
       <section class="archive-section shell">
         <div class="change-panel reveal" id="change-log">
           <div class="panel-heading">
-            <span class="section-index">04 / CHANGE LOG</span>
+            <span class="section-index">02 / CHANGE LOG</span>
             <h2>方向变更</h2>
           </div>
           <p class="change-note">标有“拐点”的记录，表示观点发出时价格处于顶部或底部候选区，反转尚未完全走出。</p>
@@ -236,7 +213,7 @@
 
         <div class="source-panel reveal reveal-delay-one" id="sources">
           <div class="panel-heading">
-            <span class="section-index">05 / SOURCES</span>
+            <span class="section-index">03 / SOURCES</span>
             <h2>原始资料</h2>
           </div>
           <p class="source-note">仅公开资料标题、日期和证据编号；原始PDF与截图不在本站公开。</p>

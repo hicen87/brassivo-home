@@ -99,13 +99,15 @@ test("macro view page is direct-file compatible and has public metadata", () => 
   const app = read("macro/app.js");
   const css = read("macro/styles.css");
 
-  for (const id of ["overview", "rotation", "asset-ledger", "observations", "change-log", "sources"]) {
+  for (const id of ["overview", "asset-ledger", "change-log", "sources"]) {
     assert.match(html, new RegExp(`id=["']${id}["']`));
   }
+  assert.doesNotMatch(html, /id="(?:rotation|observations)"|href="#rotation"|商品轮动走到哪一棒|当日市场观察/);
+  assert.doesNotMatch(app, /renderRotation|renderObservations|#rotation-track|#observation-grid/);
   assert.match(html, /https:\/\/brassivo\.com\/macro\//);
   assert.match(html, /styles\.css\?v=20260924mediafocus/);
   assert.match(html, /dashboard-data\.js\?v=20260922/);
-  assert.match(html, /app\.js\?v=20260924mediafocus/);
+  assert.match(html, /app\.js\?v=20260924hidepanels/);
   assert.match(html, /<meta name="color-scheme" content="light"/);
   assert.match(html, /<meta name="theme-color" content="#f6f7f9"/);
   const researchNav = html.match(/<nav class="research-nav"[\s\S]*?<\/nav>/)?.[0] || "";
