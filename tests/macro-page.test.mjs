@@ -20,7 +20,7 @@ test("public page contains the verified baseline", () => {
   assert.equal(data.meta.baselineDate, "2026-09-01");
   assert.equal(data.meta.latestSourceDate, "2026-09-24");
   assert.equal(data.assets.length, 26);
-  assert.equal(data.sources.length, 12);
+  assert.equal(data.sources.length, 11);
   assert.equal(data.sources.map((source) => source.date).join(","), [...data.sources.map((source) => source.date)].sort((a, b) => b.localeCompare(a)).join(","));
   assert.equal(data.sources[0].id, "20260924-S1");
   assert.equal(data.rotation.filter((step) => step.state === "current").length, 1);
@@ -109,7 +109,7 @@ test("macro view page is direct-file compatible and has public metadata", () => 
   assert.match(html, /https:\/\/brassivo\.com\/macro\//);
   assert.match(html, /styles\.css\?v=20260925readable-two-sources/);
   assert.match(html, /主流媒体每日焦点/);
-  assert.match(html, /dashboard-data\.js\?v=20260925sources-desc/);
+  assert.match(html, /dashboard-data\.js\?v=20260925dedupe-g2/);
   const archiveStart = html.indexOf('<section class="archive-section');
   const ledgerStart = html.indexOf('<section class="ledger-section');
   assert.ok(archiveStart < ledgerStart && ledgerStart < html.indexOf('<footer'));
