@@ -340,10 +340,14 @@ a { color: inherit; text-decoration: none; }
 .media-focus-stories a:hover, .media-focus-stories a:focus-visible { color: var(--gold-bright); text-decoration: underline; text-underline-offset: 3px; }
 .media-focus-stories a span { color: var(--gold-bright); }
 .media-focus-stories p { margin: 7px 0 0; color: var(--paper-muted); font-size: var(--type-body); line-height: 1.7; }
-.media-focus-judgment-heading { padding: 25px 30px 20px; border-top: 1px solid var(--line); }
+.media-focus-judgment-heading { position: relative; display: block; padding: 20px 58px 20px 30px; border-top: 1px solid var(--line); cursor: pointer; list-style: none; }
+.media-focus-judgment-heading::-webkit-details-marker { display: none; }
+.media-focus-judgment-heading::after { content: "⌄"; position: absolute; right: 30px; top: 50%; transform: translateY(-50%); color: var(--gold-bright); font-size: 24px; line-height: 1; }
+.media-focus-judgment[open] .media-focus-judgment-heading::after { transform: translateY(-50%) rotate(180deg); }
+.media-focus-judgment-heading:hover, .media-focus-judgment-heading:focus-visible { background: rgba(168,95,22,.06); }
 .media-focus-judgment-heading span { display: block; color: var(--gold-bright); font-size: var(--type-meta); font-weight: 700; letter-spacing: .1em; }
 .media-focus-judgment-heading strong { display: block; margin-top: 5px; font-family: var(--display); font-size: var(--type-card-title); font-weight: 500; }
-.media-focus-judgment-heading p { margin: 6px 0 0; color: var(--paper-muted); font-size: var(--type-control); }
+.media-focus-judgment-note { margin: 0; padding: 0 30px 20px; color: var(--paper-muted); font-size: var(--type-control); }
 .bloomberg-source { padding: 30px 34px; border-bottom: 1px solid var(--line); }
 .bloomberg-source > span { color: var(--gold-bright); font-size: var(--type-meta); letter-spacing: .1em; font-weight: 700; }
 .bloomberg-source h3 { margin: 12px 0; font-family: var(--display); font-size: var(--type-card-title); font-weight: 500; line-height: 1.4; }
@@ -574,6 +578,9 @@ a { color: inherit; text-decoration: none; }
   .bloomberg-signals { grid-template-columns: 1fr; }
   .media-focus-grid { grid-template-columns: 1fr; }
   .media-focus-card { padding: 23px; }
+  .media-focus-judgment-heading { padding-inline: 22px 50px; }
+  .media-focus-judgment-heading::after { right: 22px; }
+  .media-focus-judgment-note { padding-inline: 22px; }
   .bloomberg-source, .bloomberg-signal { padding: 22px; }
   .rotation-track { grid-template-columns: 1fr 1fr; }
   .rotation-step { min-height: 210px; }

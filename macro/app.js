@@ -168,12 +168,15 @@
         ${sourceCard(item.mediaFocus?.barrons, "Barron’s", "个股 / 公司", "media-focus-barrons")}
         ${sourceCard(item.mediaFocus?.wsj, "The Wall Street Journal", "首页 / 头条", "media-focus-wsj")}
       </div>
-      <div class="media-focus-judgment-heading"><span>BRASSIVO / CONDITIONAL VIEW</span><strong>短期条件判断</strong><p>以下仅基于 Bloomberg 这期邮件的事实独立推演，不是三家媒体的共同观点。</p></div>
-      <div class="bloomberg-signals">
-        ${cards(item.bullish, "短期利多", "positive")}
-        ${cards(item.bearish, "短期利空", "negative")}
-      </div>
-      <p class="bloomberg-footnote">三家媒体内容均为各自刊期或首页抓取时点的摘要，不是实时行情；条件判断不自动改变策略基线、资金配比或 EPS 基线。</p>
+      <details class="media-focus-judgment">
+        <summary class="media-focus-judgment-heading"><span>BRASSIVO / CONDITIONAL VIEW</span><strong>短期条件判断</strong></summary>
+        <p class="media-focus-judgment-note">以下仅基于 Bloomberg 这期邮件的事实独立推演，不是三家媒体的共同观点。</p>
+        <div class="bloomberg-signals">
+          ${cards(item.bullish, "短期利多", "positive")}
+          ${cards(item.bearish, "短期利空", "negative")}
+        </div>
+        <p class="bloomberg-footnote">三家媒体内容均为各自刊期或首页抓取时点的摘要，不是实时行情；条件判断不自动改变策略基线、资金配比或 EPS 基线。</p>
+      </details>
     `;
   }
 

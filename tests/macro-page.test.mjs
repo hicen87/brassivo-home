@@ -107,7 +107,7 @@ test("macro view page is direct-file compatible and has public metadata", () => 
   assert.doesNotMatch(html, /id="(?:rotation|observations)"|href="#rotation"|商品轮动走到哪一棒|当日市场观察/);
   assert.doesNotMatch(app, /renderRotation|renderObservations|#rotation-track|#observation-grid/);
   assert.match(html, /https:\/\/brassivo\.com\/macro\//);
-  assert.match(html, /styles\.css\?v=20260925readable-two-sources/);
+  assert.match(html, /styles\.css\?v=20260925collapse-conditional/);
   assert.match(html, /主流媒体每日焦点/);
   assert.match(html, /dashboard-data\.js\?v=20260925dedupe-g2/);
   const archiveStart = html.indexOf('<section class="archive-section');
@@ -117,7 +117,7 @@ test("macro view page is direct-file compatible and has public metadata", () => 
   assert.match(app, /方向变更摘要.*依据本文提炼/);
   assert.match(app, /changesBySource/);
   assert.match(css, /\.source-list\s*\{[^}]*grid-template-columns:\s*1fr/);
-  assert.match(html, /app\.js\?v=20260925readable-two-sources/);
+  assert.match(html, /app\.js\?v=20260925collapse-conditional/);
   assert.doesNotMatch(app, /HOW TO READ \/ EXPECTATION|先看预期，再看市场怎么走|media-focus-matrix|媒体偏多 × 市场不涨|媒体偏空 × 价格跌不动/);
   assert.doesNotMatch(css, /media-focus-matrix/);
   assert.match(html, /<meta name="color-scheme" content="light"/);
