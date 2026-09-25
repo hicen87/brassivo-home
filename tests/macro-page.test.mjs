@@ -62,7 +62,7 @@ test("turning-point signals are explicit and limited to qualified changes", () =
 
   const html = read("macro/index.html");
   const app = read("macro/app.js");
-  assert.match(html, /标有“拐点”的记录/);
+  assert.match(html, /由该资料提炼的方向变更/);
   assert.match(app, /change\.turningPoint \? " is-turning-point"/);
   assert.match(app, /turning-point-badge/);
 });
@@ -101,22 +101,23 @@ test("macro view page is direct-file compatible and has public metadata", () => 
   const app = read("macro/app.js");
   const css = read("macro/styles.css");
 
-  for (const id of ["overview", "asset-ledger", "change-log", "sources"]) {
+  for (const id of ["overview", "asset-ledger", "sources"]) {
     assert.match(html, new RegExp(`id=["']${id}["']`));
   }
   assert.doesNotMatch(html, /id="(?:rotation|observations)"|href="#rotation"|商品轮动走到哪一棒|当日市场观察/);
   assert.doesNotMatch(app, /renderRotation|renderObservations|#rotation-track|#observation-grid/);
   assert.match(html, /https:\/\/brassivo\.com\/macro\//);
-  assert.match(html, /styles\.css\?v=20260924titlesize-framework/);
+  assert.match(html, /styles\.css\?v=20260925compact-source-ledger/);
   assert.match(html, /主流媒体每日焦点/);
   assert.match(html, /dashboard-data\.js\?v=20260925sources-desc/);
-  assert.ok(html.indexOf('id="change-log"') < html.indexOf('id="asset-ledger"'));
   const archiveStart = html.indexOf('<section class="archive-section');
-  const archiveEnd = html.indexOf('</section>', archiveStart);
   const ledgerStart = html.indexOf('<section class="ledger-section');
   assert.ok(archiveStart < ledgerStart && ledgerStart < html.indexOf('<footer'));
-  assert.match(css, /\.archive-section\s*\{[^}]*grid-template-columns:\s*1fr/);
-  assert.match(html, /app\.js\?v=20260925nomatrix/);
+  assert.match(html, /id="sources" aria-labelledby="sources-title"/);
+  assert.match(app, /方向变更摘要.*依据本文提炼/);
+  assert.match(app, /changesBySource/);
+  assert.match(css, /\.source-list\s*\{[^}]*grid-template-columns:\s*repeat\(2/);
+  assert.match(html, /app\.js\?v=20260925source-ledger/);
   assert.doesNotMatch(app, /HOW TO READ \/ EXPECTATION|先看预期，再看市场怎么走|media-focus-matrix|媒体偏多 × 市场不涨|媒体偏空 × 价格跌不动/);
   assert.doesNotMatch(css, /media-focus-matrix/);
   assert.match(html, /<meta name="color-scheme" content="light"/);

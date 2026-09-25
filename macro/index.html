@@ -15,10 +15,10 @@
     <meta property="og:description" content="区分长期配置、短期交易、原文判断与推导，持续记录资产方向及证伪条件。" />
     <meta property="og:url" content="https://brassivo.com/macro/" />
     <title>宏观资产方向跟踪 · Brassivo Research</title>
-    <link rel="stylesheet" href="styles.css?v=20260924titlesize-framework" />
+    <link rel="stylesheet" href="styles.css?v=20260925compact-source-ledger" />
     <script src="dashboard-data.js?v=20260925sources-desc" defer></script>
     <script src="bloomberg-daily.js?v=20260924-57c1e7e8" defer></script>
-    <script src="app.js?v=20260925nomatrix" defer></script>
+    <script src="app.js?v=20260925source-ledger" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#asset-ledger">跳到资产台账</a>
@@ -48,7 +48,7 @@
       <a href="#overview">总览</a>
       <a href="#bloomberg-daily">主流媒体每日焦点</a>
       <a href="#asset-ledger">资产</a>
-      <a href="#sources">资料</a>
+      <a href="#sources">资料与方向变更</a>
     </nav>
 
     <main>
@@ -131,22 +131,13 @@
         <div id="bloomberg-content" class="bloomberg-content" aria-live="polite"></div>
       </section>
 
-      <section class="archive-section shell">
-        <div class="change-panel reveal" id="change-log">
+      <section class="archive-section shell" id="sources" aria-labelledby="sources-title">
+        <div class="source-panel reveal">
           <div class="panel-heading">
-            <span class="section-index">02 / CHANGE LOG</span>
-            <h2>方向变更</h2>
+            <span class="section-index">02 / SOURCES &amp; CHANGE LOG</span>
+            <h2 id="sources-title">原始资料与方向变更</h2>
           </div>
-          <p class="change-note">标有“拐点”的记录，表示观点发出时价格处于顶部或底部候选区，反转尚未完全走出。</p>
-          <div id="change-list"></div>
-        </div>
-
-        <div class="source-panel reveal reveal-delay-one" id="sources">
-          <div class="panel-heading">
-            <span class="section-index">03 / SOURCES</span>
-            <h2>原始资料</h2>
-          </div>
-          <p class="source-note">仅公开资料标题、日期和证据编号；原始PDF与截图不在本站公开。</p>
+          <p class="source-note">按文章列出资料日期、标题与用途，并摘录由该资料提炼的方向变更；原始PDF与截图不在本站公开。</p>
           <div class="source-list" id="source-list"></div>
         </div>
       </section>

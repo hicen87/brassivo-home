@@ -263,34 +263,44 @@
     `;
   }
 
-  function renderChanges() {
-    $("#change-list").innerHTML = data.changes.map((change) => `
-      <article class="change-entry${change.turningPoint ? " is-turning-point" : ""}">
-        <div class="change-meta">
-          <time>${escapeHTML(change.date)}</time>
-          ${change.turningPoint ? `
-            <span class="turning-point-badge" aria-label="拐点信号：${escapeHTML(change.turningPoint.label)}">
-              <span class="turning-point-mark" aria-hidden="true">↺</span>
-              拐点 · ${escapeHTML(change.turningPoint.label)}
-            </span>
-          ` : ""}
-        </div>
-        <h3>${escapeHTML(change.asset)} · ${escapeHTML(change.to)}</h3>
-        <p>${escapeHTML(change.reason)}</p>
-        ${change.turningPoint ? `
-          <p class="turning-point-context"><b>价格位置</b>${escapeHTML(change.turningPoint.priceContext)}</p>
-        ` : ""}
-      </article>
-    `).join("");
-  }
-
   function renderSources() {
+    const changesBySource = new Map(data.sources.map((source) => [source.id, []]));
+    for (const change of data.changes) {
+      for (const id of new Set(change.sources || [])) changesBySource.get(id)?.push(change);
+    }
     $("#source-list").innerHTML = data.sources.map((source) => `
       <article class="source-card">
-        <span class="source-id">${escapeHTML(source.id)} · ${escapeHTML(source.type)}</span>
+        <div class="source-card-heading">
+          <span class="source-id">${escapeHTML(source.id)} · ${escapeHTML(source.type)}</span>
+          <time datetime="${escapeHTML(source.date)}">${escapeHTML(source.date)}</time>
+        </div>
         <h3>${escapeHTML(source.title)}</h3>
-        <p>${escapeHTML(source.role)}</p>
-        <span class="source-footer"><time>${escapeHTML(source.date)}</time><b>证据索引</b></span>
+        <details class="source-role">
+          <summary>资料提要</summary>
+          <p>${escapeHTML(source.role)}</p>
+        </details>
+        <div class="source-derived">
+          <h4>方向变更摘要 · 依据本文提炼</h4>
+          ${changesBySource.get(source.id)?.length
+            ? changesBySource.get(source.id).map((change) => `
+              <article class="source-change-entry${change.turningPoint ? " is-turning-point" : ""}">
+                <div class="source-change-heading">
+                  <strong>${escapeHTML(change.asset)} · ${escapeHTML(change.to)}</strong>
+                  ${change.turningPoint ? `
+                    <span class="turning-point-badge" aria-label="拐点信号：${escapeHTML(change.turningPoint.label)}">
+                      <span class="turning-point-mark" aria-hidden="true">↺</span>
+                      拐点 · ${escapeHTML(change.turningPoint.label)}
+                    </span>
+                  ` : ""}
+                </div>
+                <p>${escapeHTML(change.reason)}</p>
+                ${change.turningPoint ? `
+                  <p class="turning-point-context"><b>价格位置</b>${escapeHTML(change.turningPoint.priceContext)}</p>
+                ` : ""}
+              </article>
+            `).join("")
+            : '<p class="source-no-change">该资料未单独形成方向变更。</p>'}
+        </div>
       </article>
     `).join("");
   }
@@ -376,7 +386,6 @@
     renderAllocation();
     renderBloombergDaily();
     renderAssetTable();
-    renderChanges();
     renderSources();
     bindEvents();
   }
