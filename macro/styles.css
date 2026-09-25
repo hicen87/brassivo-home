@@ -467,7 +467,7 @@ a { color: inherit; text-decoration: none; }
 .panel-heading h2 { font-size: 32px; }
 .turning-point-badge { display: inline-flex; align-items: center; gap: 5px; padding: 3px 8px; color: var(--vermilion); border: 1px solid rgba(211,95,76,.42); background: rgba(211,95,76,.08); font-size: 9px; font-weight: 700; letter-spacing: .08em; }
 .turning-point-mark { font-family: Georgia, serif; font-size: 13px; line-height: 1; }
-.source-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 20px; align-items: start; }
+.source-list { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 20px; }
 .source-card { display: flex; flex-direction: column; padding: 16px 18px; border: 1px solid var(--line); transition: border-color .2s ease, transform .2s ease, background .2s ease; }
 .source-note { margin: 10px 0 0; color: var(--paper-muted); font-size: 11px; line-height: 1.6; }
 .source-card-heading { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 12px; }
@@ -540,7 +540,6 @@ a { color: inherit; text-decoration: none; }
   .observation-card { border-bottom: 1px solid var(--line); }
   .observation-card:nth-child(3) { border-right: 0; }
   .observation-card:nth-child(n+4) { border-bottom: 0; }
-  .source-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 780px) {
@@ -555,7 +554,6 @@ a { color: inherit; text-decoration: none; }
   .hero-instrument { max-width: 520px; }
   .section-heading { display: block; }
   .section-heading p { margin-top: 16px; }
-  .source-list { grid-template-columns: 1fr; }
   .bloomberg-section, .rotation-section, .ledger-section, .observation-section { padding-block: 48px; }
   .bloomberg-signals { grid-template-columns: 1fr; }
   .media-focus-grid { grid-template-columns: 1fr; }
