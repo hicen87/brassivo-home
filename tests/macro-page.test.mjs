@@ -18,13 +18,13 @@ const data = context.window.HONG_HAO_DASHBOARD_DATA;
 
 test("public page contains the verified baseline", () => {
   assert.equal(data.meta.baselineDate, "2026-09-01");
-  assert.equal(data.meta.latestSourceDate, "2026-09-22");
+  assert.equal(data.meta.latestSourceDate, "2026-09-24");
   assert.equal(data.assets.length, 26);
-  assert.equal(data.sources.length, 11);
+  assert.equal(data.sources.length, 12);
   assert.equal(data.rotation.filter((step) => step.state === "current").length, 1);
   assert.equal(data.rotation.find((step) => step.state === "current").id, "agriculture");
   assert.equal(data.rotation.find((step) => step.state === "current").stage, "结构主线");
-  assert.equal(data.changes[0].date, "2026-09-22");
+  assert.equal(data.changes[0].date, "2026-09-24");
   assert.equal(data.changes.at(-1).date, "2026-08-31");
 });
 
@@ -106,7 +106,7 @@ test("macro view page is direct-file compatible and has public metadata", () => 
   assert.doesNotMatch(app, /renderRotation|renderObservations|#rotation-track|#observation-grid/);
   assert.match(html, /https:\/\/brassivo\.com\/macro\//);
   assert.match(html, /styles\.css\?v=20260924titlesize-framework/);
-  assert.match(html, /dashboard-data\.js\?v=20260922/);
+  assert.match(html, /dashboard-data\.js\?v=20260924/);
   assert.match(html, /app\.js\?v=20260925nomatrix/);
   assert.doesNotMatch(app, /HOW TO READ \/ EXPECTATION|先看预期，再看市场怎么走|media-focus-matrix|媒体偏多 × 市场不涨|媒体偏空 × 价格跌不动/);
   assert.doesNotMatch(css, /media-focus-matrix/);
