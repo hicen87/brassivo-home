@@ -82,8 +82,7 @@
       if (node.nodeValue !== source) node.nodeValue = source;
       return;
     }
-    let result = source;
-    for (const [zh, en] of translations) result = result.replaceAll(zh, en);
+    const result = translations.get(source) ?? source;
     if (result !== node.nodeValue) node.nodeValue = result;
   }
 
@@ -99,8 +98,7 @@
         if (!values) { values = {}; originals.set(element, values); }
         if (!(key in values)) values[key] = element.getAttribute(attribute);
         const source = values[key];
-        let result = source;
-        if (language === "en") for (const [zh, en] of translations) result = result.replaceAll(zh, en);
+        const result = language === "en" ? (translations.get(source) ?? source) : source;
         if (element.getAttribute(attribute) !== result) element.setAttribute(attribute, result);
       }
     }
