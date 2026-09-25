@@ -268,7 +268,9 @@
     for (const change of data.changes) {
       for (const id of new Set(change.sources || [])) changesBySource.get(id)?.push(change);
     }
-    $("#source-list").innerHTML = data.sources.map((source) => `
+    const sourceCards = [...data.sources]
+      .sort((a, b) => b.date.localeCompare(a.date))
+      .map((source) => `
       <article class="source-card">
         <div class="source-card-heading">
           <span class="source-id">${escapeHTML(source.id)} · ${escapeHTML(source.type)}</span>
@@ -302,7 +304,18 @@
             : '<p class="source-no-change">该资料未单独形成方向变更。</p>'}
         </div>
       </article>
-    `).join("");
+    `);
+    const recentCards = sourceCards.slice(0, 2).join("");
+    const historyCards = sourceCards.slice(2);
+    $("#source-list").innerHTML = recentCards + (historyCards.length ? `
+      <details class="source-history">
+        <summary>
+          <span class="source-history-closed">展开历史文章（${historyCards.length} 篇）</span>
+          <span class="source-history-open">收起历史文章（${historyCards.length} 篇）</span>
+        </summary>
+        <div class="source-history-list">${historyCards.join("")}</div>
+      </details>
+    ` : "");
   }
 
   function showToast(message) {
