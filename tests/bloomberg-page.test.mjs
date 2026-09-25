@@ -49,3 +49,20 @@ test("Barron's and WSJ homepage snapshots are dated, attributed, and use clean s
     }
   }
 });
+
+test("AIHOT ranking is a dated 48-hour snapshot with clean story links", () => {
+  const hot = item.mediaFocus.aihot;
+  assert.equal(hot.sourceUrl, "https://aihot.news/hot");
+  assert.equal(hot.windowHours, 48);
+  assert.equal(hot.capturedAt.slice(0, 10), hot.captureDate);
+  assert.ok(Date.parse(hot.boardUpdatedAt) <= Date.parse(hot.capturedAt));
+  assert.ok(hot.stories.length >= 1 && hot.stories.length <= 10);
+  for (const [index, story] of hot.stories.entries()) {
+    assert.equal(story.rank, index + 1);
+    assert.ok(story.title.length > 10);
+    assert.ok(Number.isInteger(story.heat));
+    assert.match(story.url, /^https:\/\/aihot\.news\/story\/[0-9a-f-]{36}$/);
+  }
+  assert.match(app, /标题为聚合站的事件描述/);
+  assert.match(html, /媒体焦点与 AI 热榜/);
+});

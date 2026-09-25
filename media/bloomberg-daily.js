@@ -83,6 +83,75 @@ window.BLOOMBERG_MARKETS_DAILY = {
           "url": "https://www.wsj.com/finance/investing/cracks-in-oracles-ai-data-center-build-out-appear-in-massive-new-mexico-project-effb51c2"
         }
       ]
+    },
+    "aihot": {
+      "captureDate": "2026-09-25",
+      "capturedAt": "2026-09-25T23:30:54+08:00",
+      "boardUpdatedAt": "2026-09-25T23:25:00+08:00",
+      "windowHours": 48,
+      "sourceUrl": "https://aihot.news/hot",
+      "stories": [
+        {
+          "rank": 1,
+          "title": "Google 计划于10月1日发射搭载 TPUs 的 AI 卫星，测试其在太空环境中的表现",
+          "heat": 65,
+          "url": "https://aihot.news/story/c0aa666b-4c8a-4237-be11-a28dce74a056"
+        },
+        {
+          "rank": 2,
+          "title": "Anthropic分享早期研究结果：Claude自主发现与CRISPR样重复阵列相关的新型酶系统ART",
+          "heat": 63,
+          "url": "https://aihot.news/story/6855fb20-dfb5-4fe3-a445-5e7543efbe7d"
+        },
+        {
+          "rank": 3,
+          "title": "Google发布Gemini 3.8 Flash TTS语音合成模型",
+          "heat": 38,
+          "url": "https://aihot.news/story/f988c06b-7a45-4585-aada-09da3acf77f5"
+        },
+        {
+          "rank": 4,
+          "title": "OpenAI 一款 AI 智能体 6 月未经授权侵入澳大利亚政府网站，访问公共和非公共文件",
+          "heat": 37,
+          "url": "https://aihot.news/story/9f73773d-3f40-4dbd-9b87-b38f81028034"
+        },
+        {
+          "rank": 5,
+          "title": "Agora-2 现可让最多20个人类与智能体实时共享一个模拟世界",
+          "heat": 33,
+          "url": "https://aihot.news/story/2cfbeec9-9070-40a2-9bfe-d11790f131da"
+        },
+        {
+          "rank": 6,
+          "title": "宣布 Copilot 迄今最大更新，将 Autopilot、Code、Home 和 Office 整合在一起，并可在 Teams 中调用 Copilot",
+          "heat": 27,
+          "url": "https://aihot.news/story/daf72428-b3c4-48c0-b747-daf3aa963abc"
+        },
+        {
+          "rank": 7,
+          "title": "ChatGPT Voice升级为运行GPT-6 Astra、Sol、Luna模型并首次可访问邮件、日历和Slack插件",
+          "heat": 26,
+          "url": "https://aihot.news/story/3a89b70e-44a4-4f8d-889d-6c1130cb2604"
+        },
+        {
+          "rank": 8,
+          "title": "Meta在Connect大会发布AI可穿戴设备Muse Charm，尚未发货，计划12月假期前发货",
+          "heat": 25,
+          "url": "https://aihot.news/story/a72a72ae-3d5e-4f22-a44c-8b2dc78db09a"
+        },
+        {
+          "rank": 9,
+          "title": "Claude Code Cloud sessions 正式结束研究预览并可用",
+          "heat": 22,
+          "url": "https://aihot.news/story/901dceca-2116-43f9-a96d-d18705a1c5cd"
+        },
+        {
+          "rank": 10,
+          "title": "Meta Muse agent 正在准备集成 Telegram 和 Messenger，并可能集成 Signal",
+          "heat": 22,
+          "url": "https://aihot.news/story/2533395b-5694-4a49-b0f1-06fd37e66637"
+        }
+      ]
     }
   }
 };
