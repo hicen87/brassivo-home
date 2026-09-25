@@ -107,8 +107,12 @@ test("homepage and public indexes link to the public EPS module", () => {
   const sitemap = read("sitemap.xml");
   const llms = read("llms.txt");
 
-  const firstModule = homepage.match(/<div class="grid">\s*<a class="card wide" href="([^"]+)"/);
-  assert.equal(firstModule?.[1], "/macro/");
+  const homepageLinks = [...homepage.matchAll(/<a class="card" href="([^"]+)"/g)].map((match) => match[1]);
+  assert.deepEqual(homepageLinks, [
+    "/media/", "/macro/", "/eps/", "https://investment.brassivo.com",
+    "https://stocks.brassivo.com/sectors.html", "https://china.brassivo.com/sectors.html",
+    "https://stocks.brassivo.com", "https://china.brassivo.com"
+  ]);
   assert.match(homepage, /href=["']\/eps\/["']/);
   assert.match(homepage, /EPS Margin Tracker/);
   assert.match(homepage, /a\[href=["']\/eps\/["']\]/);
