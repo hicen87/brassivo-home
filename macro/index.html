@@ -9,17 +9,17 @@
     <meta name="robots" content="index,follow" />
     <link rel="canonical" href="https://brassivo.com/macro/" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <script defer src="https://brassivo.com/research-i18n.js?v=29897bb"></script>
+    <script defer src="https://brassivo.com/research-i18n.js?v=20260925media-page"></script>
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Brassivo Research" />
     <meta property="og:title" content="宏观资产方向跟踪 · Brassivo Research" />
     <meta property="og:description" content="区分长期配置、短期交易、原文判断与推导，持续记录资产方向及证伪条件。" />
     <meta property="og:url" content="https://brassivo.com/macro/" />
     <title>宏观资产方向跟踪 · Brassivo Research</title>
-    <link rel="stylesheet" href="styles.css?v=20260925collapse-conditional" />
+    <script>if (location.hash === "#bloomberg-daily") location.replace("/media/");</script>
+    <link rel="stylesheet" href="styles.css?v=20260925media-extracted" />
     <script src="dashboard-data.js?v=20260925dedupe-g2" defer></script>
-    <script src="bloomberg-daily.js?v=20260924-57c1e7e8" defer></script>
-    <script src="app.js?v=20260925collapse-conditional" defer></script>
+    <script src="app.js?v=20260925media-extracted" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#asset-ledger">跳到资产台账</a>
@@ -35,6 +35,7 @@
       <nav class="research-nav" aria-label="全站研究导航">
         <a href="https://brassivo.com">首页</a>
         <a href="https://brassivo.com/macro/" aria-current="page">宏观观点</a>
+        <a href="https://brassivo.com/media/">媒体焦点</a>
         <a href="https://brassivo.com/eps/">EPS修正</a>
         <a href="https://investment.brassivo.com">全球流动性</a>
         <a href="https://stocks.brassivo.com/sectors.html">美股板块</a>
@@ -47,7 +48,6 @@
     <script>requestAnimationFrame(()=>{const n=document.querySelector('nav[aria-label="全站研究导航"]'),c=n?.querySelector('[aria-current="page"]');if(n&&c)n.scrollLeft=Math.max(0,c.offsetLeft-(n.clientWidth-c.offsetWidth)/2)})</script>
     <nav class="section-nav" aria-label="本页目录">
       <a href="#overview">总览</a>
-      <a href="#bloomberg-daily">主流媒体每日焦点</a>
       <a href="#asset-ledger">资产</a>
       <a href="#sources">资料与方向变更</a>
     </nav>
@@ -119,17 +119,6 @@
             <div class="metric"><span>资料文件</span><strong id="metric-sources">0</strong></div>
           </div>
         </div>
-      </section>
-
-      <section class="bloomberg-section shell" id="bloomberg-daily" aria-labelledby="bloomberg-title">
-        <div class="section-heading reveal">
-          <div>
-            <span class="section-index">BLOOMBERG / BARRON'S / THE WALL STREET JOURNAL</span>
-            <h2 id="bloomberg-title">主流媒体每日焦点</h2>
-          </div>
-          <p>汇总主流媒体的市场与公司焦点，并将本研究的条件判断单独列出；媒体报道不等于交易建议。</p>
-        </div>
-        <div id="bloomberg-content" class="bloomberg-content" aria-live="polite"></div>
       </section>
 
       <section class="archive-section shell" id="sources" aria-labelledby="sources-title">

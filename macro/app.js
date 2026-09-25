@@ -133,53 +133,6 @@
     }
   }
 
-  function renderBloombergDaily() {
-    const item = window.BLOOMBERG_MARKETS_DAILY;
-    const target = $("#bloomberg-content");
-    if (!target) return;
-    if (!item) {
-      target.innerHTML = '<p class="bloomberg-unavailable">主流媒体焦点尚未核验，暂无可发布的内容。</p>';
-      return;
-    }
-    const cards = (items, label, tone) => items.map((entry) => `
-      <article class="bloomberg-signal ${tone}">
-        <span>${label} · Brassivo 推演</span>
-        <h4>${escapeHTML(entry.title)}</h4>
-        <p>${escapeHTML(entry.reason)}</p>
-        <small>验证条件：${escapeHTML(entry.condition)}</small>
-      </article>
-    `).join("");
-    const sourceCard = (focus, name, scope, className) => focus ? `
-      <article class="media-focus-card ${className}">
-        <div class="media-focus-meta"><span>${name} <em>${scope}</em></span><time datetime="${escapeHTML(focus.capturedAt)}">首页抓取 ${escapeHTML(focus.capturedAt.slice(0, 16).replace('T', ' '))}</time></div>
-        <p class="media-focus-summary">${escapeHTML(focus.summary)}</p>
-        <ol class="media-focus-stories">${focus.stories.map((story) => `
-          <li><a href="${escapeHTML(story.url)}" rel="noopener noreferrer"><strong>${escapeHTML(story.title)}</strong><span aria-hidden="true">↗</span></a><p>${escapeHTML(story.summary)}</p></li>
-        `).join("")}</ol>
-      </article>` : `<article class="media-focus-card ${className} media-focus-missing"><strong>${name}</strong><p>本期首页内容尚未核验，保留待更新状态。</p></article>`;
-    target.innerHTML = `
-      <div class="media-focus-grid">
-        <article class="media-focus-card media-focus-bloomberg">
-          <div class="media-focus-meta"><span>Bloomberg <em>宏观 / 短期波动</em></span><time datetime="${escapeHTML(item.issueDate)}">原刊 ${escapeHTML(item.issueDate)}</time></div>
-          <h3>${escapeHTML(item.headline)}</h3>
-          <p class="media-focus-summary">${escapeHTML(item.bloombergTake)}</p>
-          <a class="media-focus-link" href="${escapeHTML(item.sourceUrl)}" rel="noopener noreferrer">查看 Markets Daily 原刊 ↗</a>
-        </article>
-        ${sourceCard(item.mediaFocus?.barrons, "Barron’s", "个股 / 公司", "media-focus-barrons")}
-        ${sourceCard(item.mediaFocus?.wsj, "The Wall Street Journal", "首页 / 头条", "media-focus-wsj")}
-      </div>
-      <details class="media-focus-judgment">
-        <summary class="media-focus-judgment-heading"><span>BRASSIVO / CONDITIONAL VIEW</span><strong>短期条件判断</strong></summary>
-        <p class="media-focus-judgment-note">以下仅基于 Bloomberg 这期邮件的事实独立推演，不是三家媒体的共同观点。</p>
-        <div class="bloomberg-signals">
-          ${cards(item.bullish, "短期利多", "positive")}
-          ${cards(item.bearish, "短期利空", "negative")}
-        </div>
-        <p class="bloomberg-footnote">三家媒体内容均为各自刊期或首页抓取时点的摘要，不是实时行情；条件判断不自动改变策略基线、资金配比或 EPS 基线。</p>
-      </details>
-    `;
-  }
-
   function renderAssetTable() {
     const assets = filteredAssets();
     $("#filtered-count").textContent = assets.length;
@@ -400,7 +353,6 @@
     renderMeta();
     renderCompass();
     renderAllocation();
-    renderBloombergDaily();
     renderAssetTable();
     renderSources();
     bindEvents();
