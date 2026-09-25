@@ -10,6 +10,7 @@
   }
 
   document.querySelector("#issue-date").textContent = data.issueDate;
+  const newsletter = data.newsletter === "Morning Briefing Asia" ? "Morning Briefing Asia" : "Markets Daily";
   const storyCard = (focus, name, scope, kind) => focus ? `
     <article class="source-card ${kind}">
       <div class="source-meta"><span>${name}</span><small>${scope}</small></div>
@@ -30,7 +31,7 @@
         <div class="source-date"><span>原刊</span><time datetime="${escapeHTML(data.issueDate)}">${escapeHTML(data.issueDate)}</time></div>
         <h3>${escapeHTML(data.headline)}</h3>
         <p class="source-summary">${escapeHTML(data.bloombergTake)}</p>
-        <a class="original-link" href="${escapeHTML(data.sourceUrl)}" rel="noopener noreferrer" target="_blank">查看 Markets Daily 原刊 ↗</a>
+        <a class="original-link" href="${escapeHTML(data.sourceUrl)}" rel="noopener noreferrer" target="_blank">查看 ${newsletter} 原刊 ↗</a>
       </article>
       ${storyCard(data.mediaFocus?.barrons, "Barron’s", "公司 / 个股", "barrons")}
       ${storyCard(data.mediaFocus?.wsj, "The Wall Street Journal", "首页 / 头条", "wsj")}

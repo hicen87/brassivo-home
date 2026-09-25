@@ -23,6 +23,7 @@
     "宏观 / 短期波动": "Macro / short-term moves",
     "首页 / 头条": "Front page / headlines",
     "查看 Markets Daily 原刊 ↗": "View the original Markets Daily ↗",
+    "查看 Morning Briefing Asia 原刊 ↗": "View the original Morning Briefing Asia ↗",
     "以下仅基于 Bloomberg 这期邮件的事实独立推演，不是三家媒体的共同观点。": "The following views are independent analysis based on this Bloomberg issue, not a shared view of the three publishers.",
     "短期利多 · Brassivo 推演": "Short-term upside · Brassivo analysis",
     "短期利空 · Brassivo 推演": "Short-term downside · Brassivo analysis",
