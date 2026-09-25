@@ -27,7 +27,7 @@ test("Bloomberg summary has a dated source and separate conditional judgments", 
 test("public macro page renders the Bloomberg section without private mail data", () => {
   assert.match(html, /id="bloomberg-daily"/);
   assert.match(html, new RegExp(`bloomberg-daily\\.js\\?v=${item.issueDate.replaceAll("-", "")}-[a-f0-9]{8}`));
-  assert.match(html, /<h2 id="bloomberg-title">主流媒体焦点<\/h2>/);
+  assert.match(html, /<h2 id="bloomberg-title">主流媒体每日焦点<\/h2>/);
   assert.match(app, /renderBloombergDaily\(\);/);
   assert.match(app, /media-focus-grid/);
   assert.match(app, /Brassivo 推演/);

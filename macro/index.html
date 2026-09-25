@@ -16,7 +16,7 @@
     <meta property="og:url" content="https://brassivo.com/macro/" />
     <title>宏观资产方向跟踪 · Brassivo Research</title>
     <link rel="stylesheet" href="styles.css?v=20260924titlesize-framework" />
-    <script src="dashboard-data.js?v=20260924sources" defer></script>
+    <script src="dashboard-data.js?v=20260925sources-desc" defer></script>
     <script src="bloomberg-daily.js?v=20260924-57c1e7e8" defer></script>
     <script src="app.js?v=20260925nomatrix" defer></script>
   </head>
@@ -46,7 +46,7 @@
     <script>requestAnimationFrame(()=>{const n=document.querySelector('nav[aria-label="全站研究导航"]'),c=n?.querySelector('[aria-current="page"]');if(n&&c)n.scrollLeft=Math.max(0,c.offsetLeft-(n.clientWidth-c.offsetWidth)/2)})</script>
     <nav class="section-nav" aria-label="本页目录">
       <a href="#overview">总览</a>
-      <a href="#bloomberg-daily">主流媒体焦点</a>
+      <a href="#bloomberg-daily">主流媒体每日焦点</a>
       <a href="#asset-ledger">资产</a>
       <a href="#sources">资料</a>
     </nav>
@@ -124,11 +124,31 @@
         <div class="section-heading reveal">
           <div>
             <span class="section-index">BLOOMBERG / BARRON'S / THE WALL STREET JOURNAL</span>
-            <h2 id="bloomberg-title">主流媒体焦点</h2>
+            <h2 id="bloomberg-title">主流媒体每日焦点</h2>
           </div>
           <p>汇总主流媒体的市场与公司焦点，并将本研究的条件判断单独列出；媒体报道不等于交易建议。</p>
         </div>
         <div id="bloomberg-content" class="bloomberg-content" aria-live="polite"></div>
+      </section>
+
+      <section class="archive-section shell">
+        <div class="change-panel reveal" id="change-log">
+          <div class="panel-heading">
+            <span class="section-index">02 / CHANGE LOG</span>
+            <h2>方向变更</h2>
+          </div>
+          <p class="change-note">标有“拐点”的记录，表示观点发出时价格处于顶部或底部候选区，反转尚未完全走出。</p>
+          <div id="change-list"></div>
+        </div>
+
+        <div class="source-panel reveal reveal-delay-one" id="sources">
+          <div class="panel-heading">
+            <span class="section-index">03 / SOURCES</span>
+            <h2>原始资料</h2>
+          </div>
+          <p class="source-note">仅公开资料标题、日期和证据编号；原始PDF与截图不在本站公开。</p>
+          <div class="source-list" id="source-list"></div>
+        </div>
       </section>
 
       <section class="ledger-section shell" id="asset-ledger" aria-labelledby="ledger-title">
@@ -198,26 +218,6 @@
           </div>
 
           <aside class="asset-detail" id="asset-detail" aria-live="polite" aria-label="资产详情"></aside>
-        </div>
-      </section>
-
-      <section class="archive-section shell">
-        <div class="change-panel reveal" id="change-log">
-          <div class="panel-heading">
-            <span class="section-index">02 / CHANGE LOG</span>
-            <h2>方向变更</h2>
-          </div>
-          <p class="change-note">标有“拐点”的记录，表示观点发出时价格处于顶部或底部候选区，反转尚未完全走出。</p>
-          <div id="change-list"></div>
-        </div>
-
-        <div class="source-panel reveal reveal-delay-one" id="sources">
-          <div class="panel-heading">
-            <span class="section-index">03 / SOURCES</span>
-            <h2>原始资料</h2>
-          </div>
-          <p class="source-note">仅公开资料标题、日期和证据编号；原始PDF与截图不在本站公开。</p>
-          <div class="source-list" id="source-list"></div>
         </div>
       </section>
     </main>

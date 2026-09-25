@@ -21,6 +21,8 @@ test("public page contains the verified baseline", () => {
   assert.equal(data.meta.latestSourceDate, "2026-09-24");
   assert.equal(data.assets.length, 26);
   assert.equal(data.sources.length, 12);
+  assert.equal(data.sources.map((source) => source.date).join(","), [...data.sources.map((source) => source.date)].sort((a, b) => b.localeCompare(a)).join(","));
+  assert.equal(data.sources[0].id, "20260924-S1");
   assert.equal(data.rotation.filter((step) => step.state === "current").length, 1);
   assert.equal(data.rotation.find((step) => step.state === "current").id, "agriculture");
   assert.equal(data.rotation.find((step) => step.state === "current").stage, "结构主线");
@@ -106,7 +108,14 @@ test("macro view page is direct-file compatible and has public metadata", () => 
   assert.doesNotMatch(app, /renderRotation|renderObservations|#rotation-track|#observation-grid/);
   assert.match(html, /https:\/\/brassivo\.com\/macro\//);
   assert.match(html, /styles\.css\?v=20260924titlesize-framework/);
-  assert.match(html, /dashboard-data\.js\?v=20260924sources/);
+  assert.match(html, /主流媒体每日焦点/);
+  assert.match(html, /dashboard-data\.js\?v=20260925sources-desc/);
+  assert.ok(html.indexOf('id="change-log"') < html.indexOf('id="asset-ledger"'));
+  const archiveStart = html.indexOf('<section class="archive-section');
+  const archiveEnd = html.indexOf('</section>', archiveStart);
+  const ledgerStart = html.indexOf('<section class="ledger-section');
+  assert.ok(archiveStart < ledgerStart && ledgerStart < html.indexOf('<footer'));
+  assert.match(css, /\.archive-section\s*\{[^}]*grid-template-columns:\s*1fr/);
   assert.match(html, /app\.js\?v=20260925nomatrix/);
   assert.doesNotMatch(app, /HOW TO READ \/ EXPECTATION|先看预期，再看市场怎么走|media-focus-matrix|媒体偏多 × 市场不涨|媒体偏空 × 价格跌不动/);
   assert.doesNotMatch(css, /media-focus-matrix/);
