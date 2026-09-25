@@ -337,11 +337,6 @@ a { color: inherit; text-decoration: none; }
 .media-focus-judgment-heading span { display: block; color: var(--gold-bright); font-size: 10px; font-weight: 700; letter-spacing: .1em; }
 .media-focus-judgment-heading strong { display: block; margin-top: 5px; font-family: var(--display); font-size: 22px; font-weight: 500; }
 .media-focus-judgment-heading p { margin: 6px 0 0; color: var(--paper-muted); font-size: 12px; }
-.media-focus-matrix { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--line); }
-.media-focus-matrix article { padding: 20px 22px 22px; background: var(--ink-raised); }
-.media-focus-matrix article > span { display: block; color: var(--gold-bright); font-size: 11px; font-weight: 700; line-height: 1.5; }
-.media-focus-matrix article strong { display: block; margin-top: 9px; color: var(--paper); font-size: 16px; }
-.media-focus-matrix article p { margin: 7px 0 0; color: var(--paper-muted); font-size: 12px; line-height: 1.75; }
 .bloomberg-source { padding: 30px 34px; border-bottom: 1px solid var(--line); }
 .bloomberg-source > span { color: var(--gold-bright); font-size: 11px; letter-spacing: .1em; font-weight: 700; }
 .bloomberg-source h3 { margin: 12px 0; font-family: var(--display); font-size: clamp(23px, 2.4vw, 32px); font-weight: 500; }
@@ -543,7 +538,6 @@ a { color: inherit; text-decoration: none; }
   .observation-card:nth-child(3) { border-right: 0; }
   .observation-card:nth-child(n+4) { border-bottom: 0; }
   .source-list { grid-template-columns: 1fr; }
-  .media-focus-matrix { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 780px) {
@@ -561,7 +555,6 @@ a { color: inherit; text-decoration: none; }
   .bloomberg-section, .rotation-section, .ledger-section, .observation-section { padding-block: 70px; }
   .bloomberg-signals { grid-template-columns: 1fr; }
   .media-focus-grid { grid-template-columns: 1fr; }
-  .media-focus-matrix { grid-template-columns: 1fr; }
   .media-focus-card { padding: 23px; }
   .bloomberg-source, .bloomberg-signal { padding: 22px; }
   .rotation-track { grid-template-columns: 1fr 1fr; }

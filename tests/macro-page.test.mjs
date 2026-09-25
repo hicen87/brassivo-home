@@ -107,13 +107,9 @@ test("macro view page is direct-file compatible and has public metadata", () => 
   assert.match(html, /https:\/\/brassivo\.com\/macro\//);
   assert.match(html, /styles\.css\?v=20260924titlesize-framework/);
   assert.match(html, /dashboard-data\.js\?v=20260922/);
-  assert.match(html, /app\.js\?v=20260924mediaframework/);
-  for (const judgment of [
-    "媒体偏多 × 市场不涨",
-    "媒体偏空 × 价格跌不动",
-    "媒体偏多 × 价格上涨",
-    "媒体偏空 × 价格下跌"
-  ]) assert.ok(app.includes(judgment), `missing media and price judgment: ${judgment}`);
+  assert.match(html, /app\.js\?v=20260925nomatrix/);
+  assert.doesNotMatch(app, /HOW TO READ \/ EXPECTATION|先看预期，再看市场怎么走|media-focus-matrix|媒体偏多 × 市场不涨|媒体偏空 × 价格跌不动/);
+  assert.doesNotMatch(css, /media-focus-matrix/);
   assert.match(html, /<meta name="color-scheme" content="light"/);
   assert.match(html, /<meta name="theme-color" content="#f6f7f9"/);
   const researchNav = html.match(/<nav class="research-nav"[\s\S]*?<\/nav>/)?.[0] || "";
