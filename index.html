@@ -19,72 +19,35 @@
 </script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" fdata-cf-beacon='{"token": "3be817e4a2314134a9e291596330cb26"}'></script>
 <style>
-  :root{
-    --bg:#f6f7f9; --card:#fff; --line:#d8dce3;
-    --txt:#15181e; --mut:#3e4552; --hi:#0b0d12; --warm:#e0913a; --cool:#3a9b78;
-  }
+  :root{--bg:#f7f7f5;--card:#fff;--line:#dcdedc;--txt:#1d2428;--mut:#536067;--accent:#9b602f}
   *{box-sizing:border-box}
-  body{margin:0;min-height:100vh;background:var(--bg);color:var(--txt);
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.65;position:relative}
-  /* 静态点阵网格 + Hero 单点极慢光晕：纯CSS、固定层、不参与滚动、不拦截点击 */
-  body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
-    background-image:radial-gradient(circle at 1px 1px, var(--dot) 1px, transparent 0);
-    background-size:26px 26px;
-    -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 42%,transparent 78%);
-    mask-image:linear-gradient(180deg,#000 0%,#000 42%,transparent 78%);}
-  body::after{content:"";position:fixed;top:-18vmax;left:50%;width:60vmax;height:60vmax;z-index:-1;
-    pointer-events:none;transform:translateX(-50%);border-radius:50%;
-    background:radial-gradient(circle, var(--glow) 0%, transparent 66%);
-    opacity:.55;animation:bg-breathe 14s ease-in-out infinite;}
-  :root{--dot:rgba(20,40,80,.09); --glow:rgba(224,145,58,.14);}
-  @keyframes bg-breathe{0%,100%{opacity:.42;transform:translateX(-50%) scale(1)}50%{opacity:.62;transform:translateX(-50%) scale(1.08)}}
-  @media(prefers-reduced-motion:reduce){body::after{animation:none}}
-  .wrap{max-width:1200px;margin:0 auto;padding:0 24px 48px}
-  header{display:flex;align-items:center;gap:10px;padding:20px 0 6px}
-  header img{width:30px;height:30px;border-radius:7px}
-  header .bname{font-size:17.5px;font-weight:800;letter-spacing:.12em;color:var(--hi)}
-  header .bname span{color:var(--warm)}
-  header button{cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--mut);font-size:14px;padding:4px 10px;border-radius:6px}
-  header button:first-of-type{margin-left:auto}
-  .hero{padding:34px 0 8px}
-  .hero h1{font-size:35.5px;line-height:1.3;font-weight:700;margin:0 0 10px;color:var(--hi);letter-spacing:.01em}
-  .hero h1 b{color:var(--warm);font-weight:700}
-  .hero .sub{color:var(--mut);font-size:17px;max-width:640px}
-  .badges{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 4px}
-  .badges span{font-size:13.5px;color:var(--mut);border:1px solid var(--line);border-radius:20px;padding:3px 12px;background:var(--card)}
-  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
-  .grid .card.wide{grid-column:1/-1}
-  @media(max-width:640px){.grid{grid-template-columns:1fr}}
-  a.card{display:block;background:var(--card);border:1px solid var(--line);border-radius:14px;
-    padding:20px 22px;text-decoration:none;color:var(--txt);transition:border-color .15s, transform .15s}
-  a.card:hover{border-color:var(--warm);transform:translateY(-2px)}
-  .card h2{margin:0 0 6px;font-size:19.5px;color:var(--hi)}
-  .card p{margin:0;font-size:15px;color:var(--mut);line-height:1.65}
-  .tag{display:inline-block;font-size:12.5px;font-weight:600;padding:2px 10px;border-radius:20px;
-    border:1px solid var(--line);color:var(--mut);margin-bottom:10px;letter-spacing:.05em}
-  .go{float:right;color:var(--warm);font-size:15.5px;margin-top:1px}
-  .meth{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:14px}
-  .meth div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
-  .meth h3{margin:0 0 6px;font-size:16px;color:var(--hi)}
-  .meth p{margin:0;font-size:14px;color:var(--mut)}
-  h2.sect{font-size:16.5px;font-weight:700;color:var(--hi);margin:36px 0 4px;letter-spacing:.06em;text-transform:uppercase}
-  h2.sect small{color:var(--mut);font-weight:400;font-size:13px;letter-spacing:0;text-transform:none;margin-left:8px}
-  .price{background:var(--card);border:1.5px solid var(--warm);border-radius:14px;padding:22px 24px;margin-top:14px}
-  .price .pnum{font-size:30.5px;color:var(--hi);font-weight:800}
-  .price .pnum small{font-size:14px;font-weight:400;color:var(--mut)}
-  .price .annual{color:var(--warm);font-weight:700;font-size:16.5px}
-  .price ul{margin:10px 0;padding-left:18px;font-size:15px;color:var(--mut)}
-  .price li{margin:3px 0}
-  .flow{font-size:14px;color:var(--mut);border-top:1px dashed var(--line);padding-top:10px;margin-top:12px}
-  .flow b{color:var(--hi)}
-  form.line{display:flex;gap:8px;margin-top:12px}
-  form.line input{flex:1;padding:10px 12px;border-radius:8px;border:1px solid var(--line);background:transparent;color:var(--txt);font-size:15.5px;min-width:0}
-  form.line button{padding:10px 18px;border-radius:8px;border:none;background:var(--warm);color:#fff;font-weight:600;font-size:15.5px;cursor:pointer;white-space:nowrap}
-  form.line button.k{background:var(--cool)}
-  .msg{margin-top:8px;font-size:14px;color:var(--mut)}
-  details summary{cursor:pointer;font-size:15px;color:var(--mut);margin-top:12px}
-  .foot{color:var(--mut);font-size:13.5px;margin-top:40px;padding-top:16px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
-  @media(max-width:640px){.hero h1{font-size:27px}}
+  body{margin:0;background:var(--bg);color:var(--txt);font-family:"PingFang SC","Noto Sans CJK SC","Microsoft YaHei",sans-serif;line-height:1.55}
+  .wrap{max-width:1120px;margin:auto;padding:0 28px 40px}
+  header{display:flex;align-items:center;gap:10px;padding:24px 0;border-bottom:1px solid var(--line)}
+  header img{width:28px;height:28px;border-radius:6px}
+  .bname{font-family:Georgia,serif;font-size:17px;font-weight:700;letter-spacing:.08em}
+  .bname span{color:var(--accent)}
+  header button{margin-left:auto;cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--txt);font-size:13px;padding:5px 11px;border-radius:5px}
+  header button:focus-visible,a.card:focus-visible,.foot a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  .hero{padding:48px 0 38px;border-bottom:1px solid var(--line)}
+  .eyebrow{margin:0 0 12px;color:var(--accent);font:700 12px Georgia,serif;letter-spacing:.16em;text-transform:uppercase}
+  .hero h1{max-width:850px;margin:0;font-size:clamp(29px,4vw,46px);font-weight:650;line-height:1.26;letter-spacing:-.025em}
+  .hero .sub{max-width:700px;margin:18px 0 0;color:var(--mut);font-size:16px;line-height:1.7}
+  .section-head{display:flex;align-items:baseline;justify-content:space-between;gap:20px;margin:29px 0 15px}
+  .sect{margin:0;font-size:17px;letter-spacing:.01em}
+  .section-note{margin:0;color:var(--mut);font-size:13px}
+  .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  a.card{display:block;min-width:0;min-height:145px;padding:19px 21px;background:var(--card);border:1px solid var(--line);border-radius:8px;text-decoration:none;color:var(--txt);transition:border-color .15s,box-shadow .15s}
+  a.card:hover{border-color:var(--accent);box-shadow:0 5px 18px rgba(30,35,38,.06)}
+  .card-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+  .tag{color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase}
+  .go{color:var(--accent);font-size:18px;line-height:1}
+  .card h3{margin:11px 0 5px;font-size:19px;line-height:1.3;font-weight:650}
+  .card p{margin:0;color:var(--mut);font-size:14px;line-height:1.55}
+  .foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:32px;padding-top:18px;border-top:1px solid var(--line);color:var(--mut);font-size:12px}
+  .foot a{color:inherit;text-decoration:none}
+  .foot a:hover{text-decoration:underline}
+  @media(max-width:640px){.wrap{padding:0 18px 28px}header{padding:17px 0}.bname{font-size:14px}.hero{padding:34px 0 28px}.hero .sub{font-size:14px;margin-top:14px}.section-head{display:block;margin-top:24px}.section-note{margin-top:3px}.grid{grid-template-columns:1fr;gap:9px}a.card{min-height:0;padding:16px 17px}.card h3{font-size:18px}.foot{margin-top:25px}}
 </style>
 </head>
 <body>
@@ -95,99 +58,84 @@
     <button id="langbtn" onclick="toggleLang()">EN</button>
   </header>
 
+  <main>
   <div class="hero">
-    <h1>全球流动性 × 供应链瓶颈<br>每周自动更新的<b>可证伪</b>投研系统</h1>
-    <p class="sub">宏观层判断「水位」，个股层寻找「瓶颈」，两层交叉验证、互为约束。数据管道全自动（FRED / 央行 / 行情源），每一条结论都附带触发即执行的可证伪条款——观点错了会被规则强制纠正，而不是靠嘴硬。它首先是作者自用的实盘决策工具，其次才是一份对外分享的研究。</p>
-    <div class="badges"><span>每周日自动更新</span><span>数据管道全自动</span><span>结论可证伪</span><span>宏观×个股交叉验证</span></div>
+    <p class="eyebrow">Brassivo Research</p>
+    <h1>从宏观流动性到产业链选股</h1>
+    <p class="sub">跟踪宏观、盈利预期与产业链瓶颈。各页提供数据来源或判断依据，便于独立核对。</p>
   </div>
 
-  <h2 class="sect">Research Modules <small>研究模块</small></h2>
+  <div class="section-head"><h2 class="sect">研究看板</h2><p class="section-note">8 个入口 · 免费访问</p></div>
   <div class="grid">
-    <a class="card wide" href="/media/">
-      <span class="tag">MEDIA · 每日焦点</span><span class="go">进入 →</span>
-      <h2>主流媒体每日焦点</h2>
-      <p>分别阅读 Bloomberg、Barron’s 与《华尔街日报》的刊期或首页焦点；短期条件判断单独标识，按需展开。</p>
+    <a class="card" href="/media/">
+      <div class="card-top"><span class="tag">每日焦点</span><span class="go" aria-hidden="true">↗</span></div>
+      <h3>主流媒体每日焦点</h3>
+      <p>Bloomberg、Barron’s 与《华尔街日报》摘要及刊期。</p>
     </a>
-    <a class="card wide" href="/macro/">
-      <span class="tag">MACRO · 资产方向跟踪</span><span class="go">进入 →</span>
-      <h2>Macro View Ledger</h2>
-      <p>按时间视角、证据等级与反转条件，整理公开文章中的资产方向、依据和调整记录。</p>
+    <a class="card" href="/macro/">
+      <div class="card-top"><span class="tag">宏观观点</span><span class="go" aria-hidden="true">↗</span></div>
+      <h3>Macro View Ledger</h3>
+      <p>按时间视角梳理资产方向、证据和调整记录。</p>
     </a>
-    <a class="card wide" href="/eps/">
-      <span class="tag">EQUITY · 盈利修正 · PUBLIC</span><span class="go">进入 →</span>
-      <h2>EPS Margin Tracker</h2>
-      <p>工作日跟踪美股 Zacks Rank Factors 与 A股 / 港股 Normalized EPS Trend，区分今日真实变化与最近趋势延续。</p>
+    <a class="card" href="/eps/">
+      <div class="card-top"><span class="tag">盈利修正</span><span class="go" aria-hidden="true">↗</span></div>
+      <h3>EPS Margin Tracker</h3>
+      <p>跟踪美股、A股与港股的盈利预期变化。</p>
     </a>
-    <a class="card wide" href="https://investment.brassivo.com">
-      <span class="tag">MACRO · 宏观</span><span class="go">进入 →</span>
-      <h2>Global Liquidity</h2>
-      <p>G3/G4 央行流动性同比、美元净流动性周频（WALCL−TGA−RRP）、五层周期定位与大类资产配置立场。</p>
+    <a class="card" href="https://investment.brassivo.com">
+      <div class="card-top"><span class="tag">全球流动性</span><span class="go" aria-hidden="true">↗</span></div>
+      <h3>Global Liquidity</h3>
+      <p>跟踪央行流动性、周期定位与资产配置。</p>
     </a>
     <a class="card" href="https://stocks.brassivo.com/sectors.html">
-      <span class="tag">EQUITY · 美股板块</span><span class="go">进入 →</span>
-      <h2>US Sectors</h2>
-      <p>美股 11 个 GICS 板块表现潜力表：与个股选股表同一打分框架的上层视图，板块 Forward PE 与盈利修正每周刷新。</p>
+      <div class="card-top"><span class="tag">美股板块</span><span class="go" aria-hidden="true">↗</span></div>
+      <h3>US Sectors</h3>
+      <p>比较 11 个 GICS 板块的估值与盈利修正。</p>
     </a>
     <a class="card" href="https://china.brassivo.com/sectors.html">
-      <span class="tag">EQUITY · 中国板块</span><span class="go">进入 →</span>
-      <h2>China Sectors</h2>
-      <p>A股 / 港股 12 个大板块表现潜力表：同一打分框架的上层视图，申万估值分位与 2026E 一致预测每周刷新。</p>
+      <div class="card-top"><span class="tag">中国板块</span><span class="go" aria-hidden="true">↗</span></div>
+      <h3>China Sectors</h3>
+      <p>比较 A股与港股 12 个大板块的估值与预期。</p>
     </a>
     <a class="card" href="https://stocks.brassivo.com">
-      <span class="tag">EQUITY · 全球个股</span><span class="go">进入 →</span>
-      <h2>Global Stocks</h2>
-      <p>全球 AI 产业链 15 个环节按「质量 × 定价未充分程度」排序，含操作分层、仓位档与可证伪条款。</p>
+      <div class="card-top"><span class="tag">全球个股</span><span class="go" aria-hidden="true">↗</span></div>
+      <h3>Global Stocks</h3>
+      <p>按质量与定价水平筛选 AI 产业链公司。</p>
     </a>
     <a class="card" href="https://china.brassivo.com">
-      <span class="tag">EQUITY · 中国个股</span><span class="go">进入 →</span>
-      <h2>China Stocks</h2>
-      <p>A股 / 港股 / 中概科技股：中国 AI 与半导体供应链瓶颈环节排序选股，同一框架 + 国产替代与管制约束。</p>
+      <div class="card-top"><span class="tag">中国个股</span><span class="go" aria-hidden="true">↗</span></div>
+      <h3>China Stocks</h3>
+      <p>筛选 A股、港股与中概股中的供应链瓶颈公司。</p>
     </a>
   </div>
-
-  <h2 class="sect">Methodology <small>方法论</small></h2>
-  <div class="meth">
-    <div><h3>数据管道全自动</h3><p>FRED、各国央行、行情源每周定时拉取重算，杜绝手抄与「拍脑袋」数字；未核实的数字宁可不写。</p></div>
-    <div><h3>结论可证伪</h3><p>每张表附 10 条可证伪条款：触发即 48 小时内机械执行减仓/清零，纪律高于观点。</p></div>
-    <div><h3>宏观×个股交叉验证</h3><p>流动性档位决定总敞口，供应链瓶颈决定标的；两层互为约束，防止单边叙事。</p></div>
-  </div>
-
-  <h2 class="sect" id="access-heading">Open Access <small>免费访问</small></h2>
-  <div class="price">
-    <span class="tag" id="access-tag" style="color:var(--warm);border-color:var(--warm)">全站免费开放</span>
-    <h2 style="font-size:20px;margin:6px 0;color:var(--hi)">自由浏览全部研究看板</h2>
-    <p style="font-size:15px;color:var(--mut);margin:0 0 10px">所有研究内容均可直接访问，无需注册、付费或激活 Key。</p>
-  </div>
-
-  <div class="foot"><span id="ft1">仅为个人研究参考，非投资建议</span><span><a href="/admin.html" style="color:inherit;opacity:.6" id="ft3">管理员入口</a> · © Brassivo Research</span></div>
+  </main>
+  <div class="foot"><span id="ft1">仅供研究参考，非投资建议。</span><span><a href="/admin.html" id="ft3">管理员入口</a> · © Brassivo Research</span></div>
 </div>
 <script>
 // ---- 中英切换（默认中文，cookie 记忆）----
 var I18N=[
-  ['.hero h1','全球流动性 × 供应链瓶颈<br>每周自动更新的<b>可证伪</b>投研系统','Global Liquidity × Supply-Chain Bottlenecks<br>A weekly-updated, <b>falsifiable</b> research system'],
-  ['.hero .sub','宏观层判断「水位」，个股层寻找「瓶颈」，两层交叉验证、互为约束。数据管道全自动（FRED / 央行 / 行情源），每一条结论都附带触发即执行的可证伪条款——观点错了会被规则强制纠正，而不是靠嘴硬。它首先是作者自用的实盘决策工具，其次才是一份对外分享的研究。','The macro layer reads the liquidity tide; the equity layer hunts supply-chain bottlenecks. The two cross-validate and constrain each other. Data pipelines are fully automated (FRED / central banks / market feeds), and every conclusion carries falsifiable triggers executed mechanically — wrong views get corrected by rules, not rhetoric. Built first as the author\'s own live trading tool, shared second.'],
-  ['.badges','<span>每周日自动更新</span><span>数据管道全自动</span><span>结论可证伪</span><span>宏观×个股交叉验证</span>','<span>Auto-updated every Sunday</span><span>Automated data pipelines</span><span>Falsifiable conclusions</span><span>Macro × equity cross-check</span>'],
-  ['h2.sect:first-of-type small','研究模块','Research modules'],
-  ['a[href="/macro/"] .tag','MACRO · 资产方向跟踪','MACRO · ASSET DIRECTION'],
-  ['a[href="/macro/"] p','按时间视角、证据等级与反转条件，整理公开文章中的资产方向、依据和调整记录。','Tracks asset direction, evidence and changes from public articles by time horizon and reversal condition.'],
-  ['a[href="/media/"] .tag','MEDIA · 每日焦点','MEDIA · DAILY FOCUS'],
-  ['a[href="/media/"] h2','主流媒体每日焦点','Daily Media Focus'],
-  ['a[href="/media/"] p','分别阅读 Bloomberg、Barron’s 与《华尔街日报》的刊期或首页焦点；短期条件判断单独标识，按需展开。','Read dated Bloomberg, Barron’s and Wall Street Journal highlights. Independent short-term judgments are labeled and expandable.'],
-  ['a[href="/eps/"] .tag','EQUITY · 盈利修正','EQUITY · EARNINGS REVISION'],
-  ['a[href="/eps/"] p','工作日跟踪美股 Zacks Rank Factors 与 A股 / 港股 Normalized EPS Trend，区分今日真实变化与最近趋势延续。','Tracks US Zacks Rank Factors and normalized EPS trends for China and Hong Kong stocks on weekdays, separating new changes from continuing trends.'],
-  ['a[href*="investment"] p','G3/G4 央行流动性同比、美元净流动性周频（WALCL−TGA−RRP）、五层周期定位与大类资产配置立场。','G3/G4 central-bank liquidity YoY, weekly USD net liquidity (WALCL−TGA−RRP), five-layer cycle positioning and asset-allocation stance.'],
-  ['a[href*="stocks.brassivo"] p','全球 AI 产业链 15 个环节按「质量 × 定价未充分程度」排序，含操作分层、仓位档与可证伪条款。','15 global AI supply-chain segments ranked by quality × mispricing, with action tiers, position bands and falsifiable clauses.'],
-  ['a[href*="sectors"] p','美股 11 个 GICS 板块表现潜力表：与个股选股表同一打分框架的上层视图，板块 Forward PE 与盈利修正每周刷新。','All 11 US GICS sectors ranked with the same scoring framework as the stock table — a top-down view with sector forward P/E and earnings revisions refreshed weekly.'],
-  ['a[href*="china.brassivo.com/sectors"] p','A股 / 港股 12 个大板块表现潜力表：同一打分框架的上层视图，申万估值分位与 2026E 一致预测每周刷新。','All 12 major China sectors (A-shares/HK) ranked with the same scoring framework — a top-down view with SW valuation percentiles and 2026E consensus refreshed weekly.'],
-  ['a[href*="china"] p','A股 / 港股 / 中概科技股：中国 AI 与半导体供应链瓶颈环节排序选股，同一框架 + 国产替代与管制约束。','China tech across A-shares / HK / ADRs: AI & semiconductor bottleneck segments, same framework plus localization and export-control constraints.'],
-  ['.meth div:nth-child(1)','<h3>数据管道全自动</h3><p>FRED、各国央行、行情源每周定时拉取重算，杜绝手抄与「拍脑袋」数字；未核实的数字宁可不写。</p>','<h3>Automated pipelines</h3><p>FRED, central banks and market feeds are pulled and recomputed on schedule — no hand-copied or made-up numbers; unverified figures are omitted.</p>'],
-  ['.meth div:nth-child(2)','<h3>结论可证伪</h3><p>每张表附 10 条可证伪条款：触发即 48 小时内机械执行减仓/清零，纪律高于观点。</p>','<h3>Falsifiable by design</h3><p>Every board ships with 10 falsifiable clauses: once triggered, positions are cut mechanically within 48 hours. Discipline beats opinion.</p>'],
-  ['.meth div:nth-child(3)','<h3>宏观×个股交叉验证</h3><p>流动性档位决定总敞口，供应链瓶颈决定标的；两层互为约束，防止单边叙事。</p>','<h3>Macro × equity cross-check</h3><p>Liquidity regime sets total exposure; supply-chain bottlenecks pick the names. Each layer constrains the other against one-sided narratives.</p>'],
-  ['#access-heading','Open Access <small>免费访问</small>','Open Access <small>Free access</small>'],
-  ['#access-tag','全站免费开放','FREE ACCESS'],
-  ['.price h2','自由浏览全部研究看板','Explore every research dashboard'],
-  ['.price > p','所有研究内容均可直接访问，无需注册、付费或激活 Key。','All research is freely accessible. No registration, payment, or activation key required.'],
-  ['#ft1','仅为个人研究参考，非投资建议','Personal research only. Not investment advice.'],
+  ['.hero h1','从宏观流动性到产业链选股','From macro liquidity to supply-chain investing'],
+  ['.hero .sub','跟踪宏观、盈利预期与产业链瓶颈。各页提供数据来源或判断依据，便于独立核对。','Follow macro trends, earnings expectations and supply-chain bottlenecks. Each page provides sources or reasoning for independent review.'],
+  ['.sect','研究看板','Research dashboards'],
+  ['.section-note','8 个入口 · 免费访问','8 dashboards · Free access'],
+  ['a[href="/media/"] .tag','每日焦点','Daily focus'],
+  ['a[href="/media/"] h3','主流媒体每日焦点','Daily Media Focus'],
+  ['a[href="/media/"] p','Bloomberg、Barron’s 与《华尔街日报》摘要及刊期。','Dated highlights from Bloomberg, Barron’s and The Wall Street Journal.'],
+  ['a[href="/macro/"] .tag','宏观观点','Macro views'],
+  ['a[href="/macro/"] p','按时间视角梳理资产方向、证据和调整记录。','Asset direction, evidence and changes by time horizon.'],
+  ['a[href="/eps/"] .tag','盈利修正','Earnings revisions'],
+  ['a[href="/eps/"] p','跟踪美股、A股与港股的盈利预期变化。','Tracks earnings expectation changes in US, mainland China and Hong Kong stocks.'],
+  ['a[href="https://investment.brassivo.com"] .tag','全球流动性','Global liquidity'],
+  ['a[href="https://investment.brassivo.com"] p','跟踪央行流动性、周期定位与资产配置。','Central-bank liquidity, cycle positioning and asset allocation.'],
+  ['a[href="https://stocks.brassivo.com/sectors.html"] .tag','美股板块','US sectors'],
+  ['a[href="https://stocks.brassivo.com/sectors.html"] p','比较 11 个 GICS 板块的估值与盈利修正。','Compares valuations and earnings revisions across 11 GICS sectors.'],
+  ['a[href="https://china.brassivo.com/sectors.html"] .tag','中国板块','China sectors'],
+  ['a[href="https://china.brassivo.com/sectors.html"] p','比较 A股与港股 12 个大板块的估值与预期。','Compares valuations and expectations across 12 A-share and Hong Kong sectors.'],
+  ['a[href="https://stocks.brassivo.com"] .tag','全球个股','Global stocks'],
+  ['a[href="https://stocks.brassivo.com"] p','按质量与定价水平筛选 AI 产业链公司。','Screens AI supply-chain companies by quality and valuation.'],
+  ['a[href="https://china.brassivo.com"] .tag','中国个股','China stocks'],
+  ['a[href="https://china.brassivo.com"] p','筛选 A股、港股与中概股中的供应链瓶颈公司。','Screens supply-chain bottleneck companies across A-shares, Hong Kong and Chinese ADRs.'],
+  ['#ft1','仅供研究参考，非投资建议。','For research only. Not investment advice.'],
   ['#ft3','管理员入口','Admin']
 ];
 function applyLang(l){
