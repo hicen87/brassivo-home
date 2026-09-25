@@ -106,7 +106,7 @@ test("macro view page is direct-file compatible and has public metadata", () => 
   assert.doesNotMatch(app, /renderRotation|renderObservations|#rotation-track|#observation-grid/);
   assert.match(html, /https:\/\/brassivo\.com\/macro\//);
   assert.match(html, /styles\.css\?v=20260924titlesize-framework/);
-  assert.match(html, /dashboard-data\.js\?v=20260924/);
+  assert.match(html, /dashboard-data\.js\?v=20260924sources/);
   assert.match(html, /app\.js\?v=20260925nomatrix/);
   assert.doesNotMatch(app, /HOW TO READ \/ EXPECTATION|先看预期，再看市场怎么走|media-focus-matrix|媒体偏多 × 市场不涨|媒体偏空 × 价格跌不动/);
   assert.doesNotMatch(css, /media-focus-matrix/);
