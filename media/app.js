@@ -29,7 +29,7 @@
       <div class="source-meta"><span>AIHOT · AI 热点榜</span><small>过去 48 小时 / 讨论热度</small></div>
       <div class="hot-times"><span>榜单更新 <time datetime="${escapeHTML(hot.boardUpdatedAt)}">${escapeHTML(hot.boardUpdatedAt.slice(0, 16).replace("T", " "))}</time></span><span>抓取 <time datetime="${escapeHTML(hot.capturedAt)}">${escapeHTML(hot.capturedAt.slice(0, 16).replace("T", " "))}</time></span></div>
       <p class="hot-note">按 AIHOT 页面显示的热度排序。标题为聚合站的事件描述，热度不是事件真实性或市场影响的评分。</p>
-      <ol class="hot-list">${hot.stories.map((story) => `
+      <ol class="hot-list" style="--hot-rows:${Math.ceil(hot.stories.length / 2)}">${hot.stories.map((story) => `
         <li><span class="hot-rank">${String(story.rank).padStart(2, "0")}</span><a href="${escapeHTML(story.url)}" rel="noopener noreferrer" target="_blank">${escapeHTML(story.title)}<span aria-hidden="true">↗</span></a><small><span>热度</span> ${escapeHTML(story.heat)}</small></li>
       `).join("")}</ol>
       <a class="original-link" href="${escapeHTML(hot.sourceUrl)}" rel="noopener noreferrer" target="_blank">查看 AIHOT 完整榜单 ↗</a>
