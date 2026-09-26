@@ -49,7 +49,7 @@
     const verdict = notable ? "相对大盘波动明显，值得研究；新闻影响待核验" : !eventObserved ? "新闻时点待核验，暂不确认定价影响" : "单日相对波动有限，继续观察";
     const verdictEN = notable ? "Notable move versus the market; worth investigating, news impact unconfirmed" : !eventObserved ? "News timing unverified; pricing impact unconfirmed" : "Limited relative move over one session; keep watching";
     const sources = quote.sources.map((source, index) => `<a class="market-source" href="${escapeHTML(source)}" target="_blank" rel="noopener noreferrer"><span>${index ? "行情复核" : "行情来源"}</span> ↗</a>`).join(" ");
-    return `<div class="market-summary${notable ? " notable" : ""}"><p><span>股价观察</span> · <strong>${company}</strong> · ${bilingual(move, `${quote.sessionDate} US close ${signed(pct)}%`)}${bilingual(against, sameWindow ? `; versus S&P 500 ${signed(relative)} percentage points` : "; market comparison unverified")}</p><p class="market-verdict">${bilingual(verdict, verdictEN)}</p><div class="market-links">${sources} ${mapping}</div></div>`;
+    return `<div class="market-summary${notable ? " notable" : ""}"><p><span>股价观察</span> · <strong>${company}</strong> · <span>${bilingual(move, `${quote.sessionDate} US close ${signed(pct)}%`)}</span><span>${bilingual(against, sameWindow ? `; versus S&P 500 ${signed(relative)} percentage points` : "; market comparison unverified")}</span></p><p class="market-verdict">${bilingual(verdict, verdictEN)}</p><div class="market-links">${sources} ${mapping}</div></div>`;
   };
   const hotCard = hot ? `
     <article class="source-card aihot">
