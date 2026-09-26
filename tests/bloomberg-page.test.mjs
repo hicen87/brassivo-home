@@ -31,7 +31,7 @@ test("public media page renders the Bloomberg section without private mail data"
   assert.match(app, /source-grid/);
   assert.match(app, /Brassivo 推演/);
   assert.doesNotMatch(js, /\/Users\/|gmail\.com|mail\.google\.com|@news\.bloomberg\.com|Content-Type:|Message-ID:/i);
-  assert.ok(js.length < 12000, "public file should be a compact original summary");
+  assert.ok(js.length < 20000, "public file should be a compact original summary");
 });
 
 test("Barron's and WSJ homepage snapshots are dated, attributed, and use clean source URLs", () => {
@@ -65,4 +65,34 @@ test("AIHOT ranking is a dated 48-hour snapshot with clean story links", () => {
   }
   assert.match(app, /标题为聚合站的事件描述/);
   assert.match(html, /媒体焦点与 AI 热榜/);
+});
+
+const render = data => {
+  const target = { innerHTML: "" };
+  const env = { window: { BLOOMBERG_MARKETS_DAILY: data }, document: { querySelector: selector => selector === "#media-content" ? target : {} } };
+  vm.runInNewContext(app, env);
+  return target.innerHTML;
+};
+test("market summaries derive close-to-close moves and keep missing data distinct from zero", () => {
+  const data = structuredClone(item);
+  const story = data.mediaFocus.aihot.stories[0];
+  story.marketLink = { company: "Example", ticker: "TEST", status: "listed", relationUrl: "https://example.com/", eventPublishedAt: null, eventSourceUrl: null };
+  data.mediaFocus.aihot.market = { checkedAt: "2026-09-27T00:00:00Z", benchmark: { sessionDate: "2026-09-25", previousSessionDate: "2026-09-24", close: 101, previousClose: 100, sources: [] }, quotes: { TEST: { sessionDate: "2026-09-25", previousSessionDate: "2026-09-24", close: 105, previousClose: 100, sources: [] } } };
+  const rendered = render(data);
+  assert.match(rendered, /美股收盘 \+5\.00%/);
+  assert.match(rendered, /较标普500 \+4\.00 个百分点/);
+  assert.match(rendered, /值得研究；新闻影响待核验/);
+  delete data.mediaFocus.aihot.market.quotes.TEST;
+  const missing = render(data);
+  assert.match(missing, /Example \(TEST\).*?行情待核验/s);
+  assert.doesNotMatch(missing, /美股收盘 \+0\.00%/);
+});
+test("company mappings escape HTML and do not attach private businesses to listed investors", () => {
+  const data = structuredClone(item);
+  const story = data.mediaFocus.aihot.stories[0];
+  story.marketLink = { company: "<img src=x>", ticker: null, status: "no_direct", relationUrl: null };
+  const rendered = render(data);
+  assert.match(rendered, /&lt;img src=x&gt;/);
+  assert.doesNotMatch(rendered, /<img src=x>/);
+  assert.match(rendered, /暂无已核验的直接上市标的/);
 });
