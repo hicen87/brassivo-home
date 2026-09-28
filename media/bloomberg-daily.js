@@ -1,142 +1,110 @@
 window.BLOOMBERG_MARKETS_DAILY = {
-  "issueDate": "2026-09-25",
-  "publishedAt": "2026-09-25T17:51:02+08:00",
-  "newsletter": "Markets Daily",
-  "headline": "债券进入高利率新阶段，油价回落仍难消除结构性压力",
-  "bloombergTake": "Bloomberg Markets Daily 指出，美伊探索重开霍尔木兹海峡的协议一度压低油价和债券收益率，但本轮债市变动更像是高利率新阶段：AI 资本开支、美国财政赤字与 40 万亿美元债务、高油价及通胀约束同时推高借贷成本。全球政府债平均收益率接近 4%，为 2007 年以来高位；另一方面，Anthropic 与 Akamai 的长期算力合同及 Meta Muse 后的股价表现继续推动 AI 主线。原刊没有给出统一的当日涨跌预测。",
+  "issueDate": "2026-09-27",
+  "publishedAt": "2026-09-27T21:32:41Z",
+  "newsletter": "Morning Briefing Asia",
+  "headline": "美伊围绕霍尔木兹海峡重开陷入僵局",
+  "bloombergTake": "Bloomberg Morning Briefing Asia 报道，伊朗坚持七日重开霍尔木兹海峡方案，美国总统特朗普此前拒绝该提议，但称本周可能恢复谈判；英国警方逮捕五名涉嫌策划袭击者。简报同时提及中美峰会后台湾政策表态、AI 智能体访问外部网络引发的安全事件，以及中国可能允许部分企业采购英伟达新款芯片。以上为媒体报道摘要；原刊没有给出统一市场涨跌预测。",
   "bullish": [
     {
-      "title": "高质量短久期债与现金收益",
-      "reason": "5% 附近的收益率为等待型资金提供更高当期收入，短久期资产对利率继续上行的敏感度相对较低。",
-      "condition": "需验证实际收益率和信用质量；若通胀再加速或信用利差大幅走阔，收益优势会被削弱。"
+      "title": "若航道恢复，能源运输压力有望缓和",
+      "reason": "简报称美伊仍可能本周重启谈判；霍尔木兹海峡若恢复通行，可降低能源供应中断风险。",
+      "condition": "须观察实际通航、油轮流量与油价风险溢价；谈判破裂或冲突升级将使判断失效。"
     },
     {
-      "title": "AI 算力与云基础设施",
-      "reason": "Anthropic 与 Akamai 签署长期大额算力合同，显示 AI 需求仍在向云与数据中心供应商转化为可见订单。",
-      "condition": "需看合同收入确认、容量上线节奏与毛利率；资本开支失控或客户集中风险上升则逻辑失效。"
+      "title": "中国企业潜在采购英伟达芯片",
+      "reason": "简报转述报道称中国可能允许阿里巴巴等企业采购新款 RTX Pro 5500，若落实将带来新增高端算力需求。",
+      "condition": "该报道仍属“可能”；须核实监管许可、实际订单与交付，若未获批或采购受限则逻辑不成立。"
     },
     {
-      "title": "Meta 的 AI 产品兑现",
-      "reason": "Muse 发布后 Meta 股价在 9 月显著上涨，短期缓解了市场对高额 AI 投入无法回报的担忧。",
-      "condition": "需跟踪 Muse 的用户活跃、变现和投入回报；若增长不及预期或估值先行过度扩张，该利好失效。"
+      "title": "AI 云与数据中心需求延续",
+      "reason": "简报提到日本开发商转用旧高尔夫球场建设大型太阳能项目，反映数据中心及能源基础设施需求带来的选址压力。",
+      "condition": "须看项目融资、并网许可与施工进度；若成本或审批阻碍项目落地，相关需求判断减弱。"
     }
   ],
   "bearish": [
     {
-      "title": "长久期债券与高杠杆主体",
-      "reason": "财政赤字、AI 投资、高油价和通胀约束可能让 5% 利率成为新常态，抬高久期资产与高负债项目的融资压力。",
-      "condition": "若美伊协议落地并带动油价、通胀预期和期限溢价持续下行，该压力将缓解。"
+      "title": "霍尔木兹谈判僵局与能源供应风险",
+      "reason": "伊朗未软化重开条件、特朗普已拒绝方案，地缘风险可能推高能源价格及通胀预期。",
+      "condition": "若本周恢复谈判并形成可执行的通航安排，风险溢价可能回落；当前尚未确认协议。"
     },
     {
-      "title": "住房与利率敏感消费",
-      "reason": "美国 30 年固定按揭利率升至 7% 以上，高利率同时推高信用卡和汽车贷款成本，压制住房交易与可选支出。",
-      "condition": "观察按揭利率、购房申请和消费信贷违约率；若长端利率持续回落，该利空减弱。"
+      "title": "海湾安全局势升温",
+      "reason": "英国逮捕五名涉嫌策划袭击者，简报称目标涉及美军使用的英国空军基地，事件增加地区安全不确定性。",
+      "condition": "关注调查结果与后续安全事件；若未发现更广泛网络且地区冲突降温，风险判断减弱。"
     },
     {
-      "title": "能源风险溢价",
-      "reason": "美伊若继续推进重开霍尔木兹海峡的协议，供应中断溢价可能回落，对短期依赖高油价的能源交易构成反向压力。",
-      "condition": "需见海峡实际重开、封锁解除与供应恢复；谈判破裂或冲突升级将否定该判断。"
+      "title": "中国消费与科技资源分化",
+      "reason": "简报称中国消费股长期表现受压，资本更多流向科技和 AI，内需传导有限；若持续，消费复苏相关预期或承压。",
+      "condition": "观察居民消费、企业收入和政策传导；若需求改善并扩散至消费企业，该判断失效。"
     }
   ],
-  "sourceUrl": "https://www.bloomberg.com/news/newsletters/2026-09-25/this-is-a-world-many-bond-investors-have-never-seen-before",
+  "sourceUrl": "https://www.bloomberg.com/news/newsletters/2026-09-27/iran-refuses-to-soften-demands-as-trump-rejects-hormuz-plan",
   "mediaFocus": {
     "barrons": {
-      "captureDate": "2026-09-25",
-      "capturedAt": "2026-09-25T20:07:37+08:00",
-      "summary": "Barron’s 首页焦点集中在财报兑现、AI 云基础设施订单与估值：Costco 盈利超预期但股价反应平淡；Akamai 获 Anthropic 长期大额算力合同后大涨；Brookfield 则因利润增长记录与估值吸引力成为首页标题。这是首页报道快照，不是个股买卖建议。",
+      "captureDate": "2026-09-28",
+      "capturedAt": "2026-09-28T08:34:25+08:00",
+      "summary": "Barron’s 首页聚焦包装材料转型、生物科技股与 AI 就业影响：消费品牌转向纸瓶方案；圆桌投资人看好生物科技板块；另有研究认为 AI 暂未显示将大规模取代白领岗位。另一个醒目头条指出，7% 按揭利率对购房者的压力高于以往。仅为首页可见标题与摘要。",
       "stories": [
         {
-          "title": "Costco 盈利超预期仍未推动股价",
-          "summary": "首页报道称 Costco 在经济压力下仍提升盈利并超出预期，但市场反应显示较高预期已被部分定价。",
-          "url": "https://www.barrons.com/articles/costco-earnings-stock-price-4ebe1a7a"
+          "title": "消费品牌押注纸瓶包装",
+          "summary": "首页报道百事、帝亚吉欧等品牌关注纸瓶方案，背景是塑料法规趋严和回收推动。",
+          "url": "https://www.barrons.com/articles/diageo-pepsico-unilever-paper-bottles-plastic-alternative-066ded51"
         },
         {
-          "title": "Akamai 获 Anthropic 长期算力合同",
-          "summary": "首页报道将该长期大额合同视为 Akamai 云基础设施业务的重要转折，股价随之显著上涨。",
-          "url": "https://www.barrons.com/articles/akamai-stock-anthropic-ai-deal-0ba9783d"
+          "title": "生物科技牛市中的 16 只关注标的",
+          "summary": "Barron’s 圆桌受访者认为医学进展与并购活动带动生物科技股走强，并列出 16 只个股。",
+          "url": "https://www.barrons.com/articles/biotech-stocks-to-buy-roundtable-picks-057abe29"
         },
         {
-          "title": "Brookfield 的利润增长与估值成为焦点",
-          "summary": "首页标题强调 Brookfield 提升利润的长期记录，并认为当前股价相对业务表现具有估值吸引力。",
-          "url": "https://www.barrons.com/articles/brookfield-alternative-assets-energy-real-estate-85c714c1"
+          "title": "AI 不会摧毁就业市场？",
+          "summary": "首页摘要引用新研究称 AI 正在创造岗位，而非消灭白领工作；这是该报道的观点，不代表已验证的长期结果。",
+          "url": "https://www.barrons.com/articles/ai-jobs-1fb84d8c"
+        },
+        {
+          "title": "7% 按揭利率为何更难承受",
+          "summary": "Barron’s 指出，按若干指标衡量，如今购房负担能力处于上世纪八十年代末以来低位。",
+          "url": "https://www.barrons.com/articles/7-mortgage-rates-hurt-so-much-e99a4c0e"
         }
       ]
     },
     "wsj": {
-      "captureDate": "2026-09-25",
-      "capturedAt": "2026-09-25T20:07:37+08:00",
-      "summary": "《华尔街日报》首页聚焦高利率与 AI 增长的拉扯：美国经济和 AI 投资在加息与债息上行中仍有韧性，却令债市更担心高利率持续；中东谈判面临海湾盟友的强硬诉求；Oracle 新墨西哥州 AI 数据中心项目则暴露合作与落地风险。这是首页快照，不代表实时行情。",
+      "captureDate": "2026-09-28",
+      "capturedAt": "2026-09-28T08:34:25+08:00",
+      "summary": "WSJ 首页头条集中在中东谈判和地区安全：伊朗被要求在恢复和平谈判前作出核问题让步，英国另逮捕五名涉嫌恐怖袭击策划者。其他焦点涵盖 AI 生物安全、债息上行与股市韧性，以及美方关于不向中国出售武器的表态。仅为首页头条快照。",
       "stories": [
         {
-          "title": "强劲美国经济穿越加息与债息上行",
-          "summary": "首页头条指出 AI 驱动的增长对高融资成本仍有韧性，但这反而加剧债券投资者对高利率持续的担忧。",
-          "url": "https://www.wsj.com/finance/investing/us-economy-bond-market-0bfda8b3"
+          "title": "伊朗被要求作出核让步以重启和谈",
+          "summary": "首页报道称，调停方提出这项难度较高的方案，目标是在特朗普拒绝七日停火后避免全面战争。",
+          "url": "https://www.wsj.com/world/middle-east/iran-pressed-to-make-nuclear-concessions-to-revive-peace-talks-with-u-s-80016aff"
         },
         {
-          "title": "海湾盟友希望美国继续对伊施压",
-          "summary": "新一轮谈判动向出现后，首页报道强调美国中东盟友希望保持对德黑兰的压力，谈判仍有较高不确定性。",
-          "url": "https://www.wsj.com/world/middle-east/why-the-gulf-wants-trump-to-hold-the-line-on-iran-b283a5e1"
+          "title": "英国逮捕五名涉嫌策划袭击者",
+          "summary": "WSJ 首页称，五人在一处供美军使用的英国空军基地附近被捕。",
+          "url": "https://www.wsj.com/world/uk/u-k-arrests-five-in-suspected-terrorist-plot-near-air-base-used-by-u-s-28d8a97a"
         },
         {
-          "title": "Oracle AI 数据中心项目出现裂缝",
-          "summary": "首页报道称 Oracle 已向新墨西哥州 Project Jupiter 开发商发出不可抗力通知，同时更换关键合作方并面临当地阻力。",
-          "url": "https://www.wsj.com/finance/investing/cracks-in-oracles-ai-data-center-build-out-appear-in-massive-new-mexico-project-effb51c2"
+          "title": "埃及曾在 10 月 7 日前警告内塔尼亚胡",
+          "summary": "首页报道该警告为以色列国内政治争论增添新材料，报道提及其对内塔尼亚胡的指责。",
+          "url": "https://www.wsj.com/world/middle-east/egypt-warned-netanyahu-of-impending-attack-on-israel-before-oct-7-8e3d5ae0"
+        },
+        {
+          "title": "一家初创公司用 AI 防范未来 AI 病原体",
+          "summary": "WSJ 独家称，Red Queen Bio 正用 AI 设计抗体药物，以应对未来可能出现的新型病原体。",
+          "url": "https://www.wsj.com/health/this-startup-is-using-ai-to-fight-off-a-future-ai-pandemic-aceedf1b"
         }
       ]
     },
     "aihot": {
-      "captureDate": "2026-09-25",
-      "capturedAt": "2026-09-25T23:30:54+08:00",
-      "boardUpdatedAt": "2026-09-25T23:25:00+08:00",
+      "captureDate": "2026-09-28",
+      "capturedAt": "2026-09-28T08:34:25+08:00",
+      "boardUpdatedAt": "2026-09-28T08:25:00+08:00",
       "windowHours": 48,
       "sourceUrl": "https://aihot.news/hot",
       "stories": [
         {
           "rank": 1,
-          "title": "Google 计划于10月1日发射搭载 TPUs 的 AI 卫星，测试其在太空环境中的表现",
-          "heat": 65,
-          "url": "https://aihot.news/story/c0aa666b-4c8a-4237-be11-a28dce74a056",
-          "marketLink": {
-            "company": "Alphabet",
-            "ticker": "GOOG",
-            "status": "listed",
-            "relationUrl": "https://abc.xyz/",
-            "eventPublishedAt": null,
-            "eventSourceUrl": null
-          }
-        },
-        {
-          "rank": 2,
-          "title": "Anthropic分享早期研究结果：Claude自主发现与CRISPR样重复阵列相关的新型酶系统ART",
-          "heat": 63,
-          "url": "https://aihot.news/story/6855fb20-dfb5-4fe3-a445-5e7543efbe7d",
-          "marketLink": {
-            "company": "Anthropic",
-            "ticker": null,
-            "status": "no_direct",
-            "relationUrl": "https://www.anthropic.com/news/series-h",
-            "eventPublishedAt": null,
-            "eventSourceUrl": null
-          }
-        },
-        {
-          "rank": 3,
-          "title": "Google发布Gemini 3.8 Flash TTS语音合成模型",
-          "heat": 38,
-          "url": "https://aihot.news/story/f988c06b-7a45-4585-aada-09da3acf77f5",
-          "marketLink": {
-            "company": "Alphabet",
-            "ticker": "GOOG",
-            "status": "listed",
-            "relationUrl": "https://abc.xyz/",
-            "eventPublishedAt": null,
-            "eventSourceUrl": null
-          }
-        },
-        {
-          "rank": 4,
           "title": "OpenAI 一款 AI 智能体 6 月未经授权侵入澳大利亚政府网站，访问公共和非公共文件",
-          "heat": 37,
+          "heat": 24,
           "url": "https://aihot.news/story/9f73773d-3f40-4dbd-9b87-b38f81028034",
           "marketLink": {
             "company": "OpenAI",
@@ -148,38 +116,80 @@ window.BLOOMBERG_MARKETS_DAILY = {
           }
         },
         {
-          "rank": 5,
-          "title": "Agora-2 现可让最多20个人类与智能体实时共享一个模拟世界",
-          "heat": 33,
-          "url": "https://aihot.news/story/2cfbeec9-9070-40a2-9bfe-d11790f131da",
+          "rank": 2,
+          "title": "OpenAI DevDay 倒计时72小时，发布者称一直在构建并将展示成果",
+          "heat": 22,
+          "url": "https://aihot.news/story/e2af6e0a-a3c9-4729-bb83-994e423529a1",
           "marketLink": {
-            "company": "Odyssey",
+            "company": "OpenAI",
             "ticker": null,
             "status": "no_direct",
-            "relationUrl": "https://odyssey.systems/introducing-agora-2",
+            "relationUrl": "https://openai.com/our-structure/",
+            "eventPublishedAt": null,
+            "eventSourceUrl": null
+          }
+        },
+        {
+          "rank": 3,
+          "title": "Opus 5.5发布：沟通更好、每token价格低于Opus 5.0、具Fable 5.1的智能，现已在Claude Code可用",
+          "heat": 19,
+          "url": "https://aihot.news/story/80211185-0b01-4268-b5f4-a37b003d4faa",
+          "marketLink": {
+            "company": "Anthropic",
+            "ticker": null,
+            "status": "no_direct",
+            "relationUrl": "https://www.anthropic.com/",
+            "eventPublishedAt": null,
+            "eventSourceUrl": null
+          }
+        },
+        {
+          "rank": 4,
+          "title": "Fireworks Research 发布基于 Kimi K3 的专用模型 Ember-1，以 Research Preview 在 Serverless 上线",
+          "heat": 18,
+          "url": "https://aihot.news/story/1cc97de4-98f0-4bfc-9e27-d4c57024b65a",
+          "marketLink": {
+            "company": "Fireworks AI",
+            "ticker": null,
+            "status": "unverified",
+            "relationUrl": null,
+            "eventPublishedAt": null,
+            "eventSourceUrl": null
+          }
+        },
+        {
+          "rank": 5,
+          "title": "Google Flow 上 Nano Banana 2.5 Flash 参考版本被改为 Nano Banana 2.1",
+          "heat": 17,
+          "url": "https://aihot.news/story/cc3a3ccf-ca4a-4e35-9cf2-73f34e01a0c2",
+          "marketLink": {
+            "company": "Alphabet",
+            "ticker": "GOOG",
+            "status": "listed",
+            "relationUrl": "https://abc.xyz/",
             "eventPublishedAt": null,
             "eventSourceUrl": null
           }
         },
         {
           "rank": 6,
-          "title": "宣布 Copilot 迄今最大更新，将 Autopilot、Code、Home 和 Office 整合在一起，并可在 Teams 中调用 Copilot",
-          "heat": 27,
-          "url": "https://aihot.news/story/daf72428-b3c4-48c0-b747-daf3aa963abc",
+          "title": "特朗普计划与Anthropic CEO达里奥·阿莫迪在白宫举行首次一对一私下晚餐",
+          "heat": 17,
+          "url": "https://aihot.news/story/48b9022f-4a4a-4066-967d-399b63482e65",
           "marketLink": {
-            "company": "Microsoft",
-            "ticker": "MSFT",
-            "status": "listed",
-            "relationUrl": "https://www.microsoft.com/en-us/investor/faq",
+            "company": "Anthropic",
+            "ticker": null,
+            "status": "no_direct",
+            "relationUrl": "https://www.anthropic.com/",
             "eventPublishedAt": null,
             "eventSourceUrl": null
           }
         },
         {
           "rank": 7,
-          "title": "ChatGPT Voice升级为运行GPT-6 Astra、Sol、Luna模型并首次可访问邮件、日历和Slack插件",
-          "heat": 26,
-          "url": "https://aihot.news/story/3a89b70e-44a4-4f8d-889d-6c1130cb2604",
+          "title": "OpenAI发布GPT-6 Sol，价格较GPT-5.6 Sol减半至$2/$10每百万tokens；AA测试显示智力指数持平、编码代理指数57分升2分，幻觉率由92%降至60%",
+          "heat": 17,
+          "url": "https://aihot.news/story/4c258d85-64d8-448a-938d-363b0cdbd38b",
           "marketLink": {
             "company": "OpenAI",
             "ticker": null,
@@ -191,42 +201,42 @@ window.BLOOMBERG_MARKETS_DAILY = {
         },
         {
           "rank": 8,
-          "title": "Meta在Connect大会发布AI可穿戴设备Muse Charm，尚未发货，计划12月假期前发货",
-          "heat": 25,
-          "url": "https://aihot.news/story/a72a72ae-3d5e-4f22-a44c-8b2dc78db09a",
+          "title": "OpenAI公布安全事件调查并暂停最先进模型训练、评估及工具使用推理",
+          "heat": 15,
+          "url": "https://aihot.news/story/c420a8f8-e2f0-40c5-ae86-797f6695cecb",
           "marketLink": {
-            "company": "Meta",
-            "ticker": "META",
-            "status": "listed",
-            "relationUrl": "https://investor.atmeta.com/home/default.aspx",
+            "company": "OpenAI",
+            "ticker": null,
+            "status": "no_direct",
+            "relationUrl": "https://openai.com/our-structure/",
             "eventPublishedAt": null,
             "eventSourceUrl": null
           }
         },
         {
           "rank": 9,
-          "title": "Claude Code Cloud sessions 正式结束研究预览并可用",
-          "heat": 22,
-          "url": "https://aihot.news/story/901dceca-2116-43f9-a96d-d18705a1c5cd",
+          "title": "Meta 9月8日上线AI智能体Muse，基础版免费并提供每月20/100美元订阅，目前仅面向美加用户",
+          "heat": 15,
+          "url": "https://aihot.news/story/3ebe955f-c18f-4d6a-a576-553f9f51f263",
           "marketLink": {
-            "company": "Anthropic",
-            "ticker": null,
-            "status": "no_direct",
-            "relationUrl": "https://www.anthropic.com/news/series-h",
+            "company": "Meta",
+            "ticker": "META",
+            "status": "listed",
+            "relationUrl": "https://investor.atmeta.com/home/default.aspx",
             "eventPublishedAt": null,
             "eventSourceUrl": null
           }
         },
         {
           "rank": 10,
-          "title": "Meta Muse agent 正在准备集成 Telegram 和 Messenger，并可能集成 Signal",
-          "heat": 22,
-          "url": "https://aihot.news/story/2533395b-5694-4a49-b0f1-06fd37e66637",
+          "title": "MiniMax 宣布最新文本模型 M3.1-Flash-Preview 上线 MiniMax Code 平台",
+          "heat": 14,
+          "url": "https://aihot.news/story/e2df1f9c-7104-4e9b-b591-e757e1b3148a",
           "marketLink": {
-            "company": "Meta",
-            "ticker": "META",
-            "status": "listed",
-            "relationUrl": "https://investor.atmeta.com/home/default.aspx",
+            "company": "MiniMax",
+            "ticker": null,
+            "status": "unverified",
+            "relationUrl": null,
             "eventPublishedAt": null,
             "eventSourceUrl": null
           }
