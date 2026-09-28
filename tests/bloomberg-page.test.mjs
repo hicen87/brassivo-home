@@ -96,3 +96,16 @@ test("company mappings escape HTML and do not attach private businesses to liste
   assert.doesNotMatch(rendered, /<img src=x>/);
   assert.match(rendered, /暂无已核验的直接上市标的/);
 });
+
+test("indirect beneficiaries stay separate from direct company prices and escape content", () => {
+  const data = structuredClone(item);
+  const story = data.mediaFocus.aihot.stories[1];
+  story.marketLink = { company: "OpenAI", ticker: null, status: "no_direct", relationUrl: null };
+  story.readThrough = { checkedAt: "2026-09-28T09:00:00+08:00", note: "<script>unsafe</script>", candidates: [{ company: "NVIDIA", ticker: "NVDA", exchange: "NASDAQ", direction: "潜在利好", exposure: "GPU supply", condition: "Requires incremental orders", sourceUrl: "https://example.com/" }] };
+  const rendered = render(data);
+  assert.match(rendered, /产业链推演 · 条件性/);
+  assert.match(rendered, /NVIDIA \(NVDA · NASDAQ\)/);
+  assert.match(rendered, /Requires incremental orders/);
+  assert.match(rendered, /&lt;script&gt;unsafe&lt;\/script&gt;/);
+  assert.doesNotMatch(rendered, /OpenAI \(NVDA\)|<script>unsafe/);
+});

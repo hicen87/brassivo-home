@@ -79,6 +79,11 @@
   const hot = data.mediaFocus?.aihot;
   const signed = value => `${value >= 0 ? "+" : ""}${value.toFixed(2)}`;
   const change = quote => (quote.close / quote.previousClose - 1) * 100;
+  const readThrough = story => {
+    const view = story.readThrough;
+    if (!view) return "";
+    return `<details class="read-through"><summary><span class="read-through-label">产业链推演 · 条件性</span><strong>${view.candidates.length ? view.candidates.map(candidate => escapeHTML(candidate.ticker)).join(" / ") : ""}</strong><span>${view.candidates.length ? translated(view.candidates[0].direction) : "传导待确认"}</span></summary><p>${translated(view.note)}</p>${view.candidates.map(candidate => `<div class="read-through-candidate"><p><strong>${escapeHTML(candidate.company)} (${escapeHTML(candidate.ticker)} · ${escapeHTML(candidate.exchange)})</strong> · <span>${translated(candidate.direction)}</span></p><p>${translated(candidate.exposure)}</p><p><span>验证条件：</span>${translated(candidate.condition)}</p><a class="market-source" href="${escapeHTML(candidate.sourceUrl)}" target="_blank" rel="noopener noreferrer"><span>合作依据</span> ↗</a></div>`).join("")}<small><span>推演核验 </span>${escapeHTML(view.checkedAt.slice(0, 16).replace("T", " "))}</small></details>`;
+  };
   const marketSummary = story => {
     const link = story.marketLink;
     if (!link) return '<p class="market-summary"><span>股价观察</span> · <span>上市公司关联待核验</span></p>';
@@ -107,7 +112,7 @@
       <p class="hot-note">按 AIHOT 页面显示的热度排序。标题为聚合站的事件描述，热度不是事件真实性或市场影响的评分。</p>
       <p class="market-note">股价观察用于筛选研究线索：比较最近完整交易日与前一交易日收盘，涨跌同时受大盘和其他消息影响，不代表这条新闻已影响定价。</p>
       <ol class="hot-list">${hot.stories.map((story) => `
-        <li><span class="hot-rank">${String(story.rank).padStart(2, "0")}</span><div class="hot-story"><a href="${escapeHTML(story.url)}" rel="noopener noreferrer" target="_blank">${translated(story.title)}<span aria-hidden="true">↗</span></a>${marketSummary(story)}</div><small><span>热度</span> ${escapeHTML(story.heat)}</small></li>
+        <li><span class="hot-rank">${String(story.rank).padStart(2, "0")}</span><div class="hot-story"><a href="${escapeHTML(story.url)}" rel="noopener noreferrer" target="_blank">${translated(story.title)}<span aria-hidden="true">↗</span></a>${marketSummary(story)}${readThrough(story)}</div><small><span>热度</span> ${escapeHTML(story.heat)}</small></li>
       `).join("")}</ol>
       ${hot.market ? `<p class="market-meta"><span>行情核验 </span>${escapeHTML(hot.market.checkedAt)} · ${hot.market.benchmark.sources.map(source => `<a href="${escapeHTML(source)}" target="_blank" rel="noopener noreferrer"><span>大盘来源</span> ↗</a>`).join(" / ")}</p>` : ""}
       <a class="original-link" href="${escapeHTML(hot.sourceUrl)}" rel="noopener noreferrer" target="_blank">查看 AIHOT 完整榜单 ↗</a>
@@ -121,6 +126,7 @@
         <div class="source-date"><span>原刊</span><time datetime="${escapeHTML(data.issueDate)}">${escapeHTML(data.issueDate)}</time></div>
         <h3>${translated(data.headline)}</h3>
         <p class="source-summary">${translated(data.bloombergTake)}</p>
+        ${data.bloombergStories?.length ? `<ol class="story-list bloomberg-stories">${data.bloombergStories.map(story => `<li><strong>${translated(story.title)}</strong><p>${translated(story.summary)}</p></li>`).join("")}</ol>` : ""}
         <a class="original-link" href="${escapeHTML(data.sourceUrl)}" rel="noopener noreferrer" target="_blank">查看 ${newsletter} 原刊 ↗</a>
       </article>
       ${storyCard(data.mediaFocus?.wsj, "The Wall Street Journal", "宏观 / 政策与经济", "wsj")}

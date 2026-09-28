@@ -42,8 +42,8 @@ window.BLOOMBERG_MARKETS_DAILY = {
   "mediaFocus": {
     "barrons": {
       "captureDate": "2026-09-28",
-      "capturedAt": "2026-09-28T08:34:25+08:00",
-      "summary": "Barron’s 首页聚焦包装材料转型、生物科技股与 AI 就业影响：消费品牌转向纸瓶方案；圆桌投资人看好生物科技板块；另有研究认为 AI 暂未显示将大规模取代白领岗位。另一个醒目头条指出，7% 按揭利率对购房者的压力高于以往。仅为首页可见标题与摘要。",
+      "capturedAt": "2026-09-28T09:02:10+08:00",
+      "summary": "按 Barron’s 首页展示顺序收录 12 条焦点，涵盖包装转型、生物科技、AI、投资产品、公司动态与本周财报。仅归纳首页可见标题和摘要；首页未提供细节的条目保留标题层面的信息。",
       "stories": [
         {
           "title": "消费品牌押注纸瓶包装",
@@ -53,7 +53,7 @@ window.BLOOMBERG_MARKETS_DAILY = {
         {
           "title": "生物科技牛市中的 16 只关注标的",
           "summary": "Barron’s 圆桌受访者认为医学进展与并购活动带动生物科技股走强，并列出 16 只个股。",
-          "url": "https://www.barrons.com/articles/biotech-stocks-to-buy-roundtable-picks-057abe29"
+          "url": "https://www.barrons.com/articles/biotech-healthcare-stocks-roundtable-057abe29"
         },
         {
           "title": "AI 不会摧毁就业市场？",
@@ -64,6 +64,46 @@ window.BLOOMBERG_MARKETS_DAILY = {
           "title": "7% 按揭利率为何更难承受",
           "summary": "Barron’s 指出，按若干指标衡量，如今购房负担能力处于上世纪八十年代末以来低位。",
           "url": "https://www.barrons.com/articles/7-mortgage-rates-hurt-so-much-e99a4c0e"
+        },
+        {
+          "title": "“债券界巴菲特”谈动荡市场",
+          "summary": "首页列出 Dan Fuss 对动荡市场的看法；首页未展示具体建议，详见原文。",
+          "url": "https://www.barrons.com/articles/dan-fuss-buffett-of-bonds-50ac83e7"
+        },
+        {
+          "title": "借助新 AI ETF 关注 Anthropic 相关机会",
+          "summary": "首页介绍一只主动管理 ETF，其重要持仓包括博通等芯片公司和亚马逊等云服务商；这不等同于直接持有 Anthropic。",
+          "url": "https://www.barrons.com/articles/anthropic-ipo-etf-ai-stocks-f40be6bc"
+        },
+        {
+          "title": "特朗普拒绝霍尔木兹方案后，伊朗仍未让步",
+          "summary": "首页实时报道标题称，伊朗在最新霍尔木兹提议被特朗普拒绝后仍未退让。",
+          "url": "https://www.barrons.com/livecoverage/sunday0927"
+        },
+        {
+          "title": "SpaceX 星舰周一发射，本次测试有何不同",
+          "summary": "首页列出星舰周一发射及本次测试差异的报道；具体测试安排须以原文为准。",
+          "url": "https://www.barrons.com/articles/spacex-starship-launch-test-ai-ac01e343"
+        },
+        {
+          "title": "万圣节消费预计创新高，优惠仍是重点",
+          "summary": "首页标题称万圣节支出预计创纪录，同时消费者仍重视优惠；首页未列出详细预测数据。",
+          "url": "https://www.barrons.com/articles/halloween-spending-bargain-mondelez-hershey-walmart-ef33aa36"
+        },
+        {
+          "title": "本周关注就业、通胀及耐克、美光等公司",
+          "summary": "首页本周前瞻列出就业与通胀数据，以及 Nike、CarMax、Micron 等公司的相关事项。",
+          "url": "https://www.barrons.com/articles/jobs-inflation-nike-carmax-micron-and-more-to-watch-this-week-3e16a952"
+        },
+        {
+          "title": "就业与通胀数据公布前，股指期货走弱",
+          "summary": "首页标题报道股指期货在就业和通胀数据公布前下滑；这里只保留该报道时点的描述。",
+          "url": "https://www.barrons.com/articles/stock-futures-trading-sunday-oil-fba93c0a"
+        },
+        {
+          "title": "麦当劳加码 AI 与门店改造",
+          "summary": "首页标题聚焦麦当劳对 AI 和门店改造的投入，并强调核心餐品体验；首页未展示投资规模。",
+          "url": "https://www.barrons.com/articles/mcdonalds-stock-ai-growth-restaurants-19e4906c"
         }
       ]
     },
@@ -113,6 +153,30 @@ window.BLOOMBERG_MARKETS_DAILY = {
             "relationUrl": "https://openai.com/our-structure/",
             "eventPublishedAt": null,
             "eventSourceUrl": null
+          },
+          "readThrough": {
+            "checkedAt": "2026-09-28T09:04:00+08:00",
+            "note": "安全事件首先指向部署与合规风险，不能直接判为半导体利好。",
+            "candidates": [
+              {
+                "company": "NVIDIA",
+                "ticker": "NVDA",
+                "exchange": "NASDAQ",
+                "exposure": "官方已披露与 OpenAI 的训练及推理算力合作。",
+                "direction": "风险观察",
+                "condition": "须核验暂停范围、持续时间及订单交付；既有合同继续履行时，负面传导可能有限。",
+                "sourceUrl": "https://openai.com/index/scaling-ai-for-everyone/"
+              },
+              {
+                "company": "AMD",
+                "ticker": "AMD",
+                "exchange": "NASDAQ",
+                "exposure": "官方已披露与 OpenAI 的多代 GPU 部署合作。",
+                "direction": "风险观察",
+                "condition": "须核验暂停范围、持续时间及订单交付；既有合同继续履行时，负面传导可能有限。",
+                "sourceUrl": "https://openai.com/index/openai-amd-strategic-partnership/"
+              }
+            ]
           }
         },
         {
@@ -127,6 +191,30 @@ window.BLOOMBERG_MARKETS_DAILY = {
             "relationUrl": "https://openai.com/our-structure/",
             "eventPublishedAt": null,
             "eventSourceUrl": null
+          },
+          "readThrough": {
+            "checkedAt": "2026-09-28T09:04:00+08:00",
+            "note": "开发者活动仍是预告；若新产品拉动付费调用并转为算力采购，GPU 供应商才可能间接受益。",
+            "candidates": [
+              {
+                "company": "NVIDIA",
+                "ticker": "NVDA",
+                "exchange": "NASDAQ",
+                "exposure": "官方已披露与 OpenAI 的训练及推理算力合作。",
+                "direction": "潜在利好",
+                "condition": "须看到调用量、GPU 采购或交付增长；仅有发布预告或降价，不确认新增收益。",
+                "sourceUrl": "https://openai.com/index/scaling-ai-for-everyone/"
+              },
+              {
+                "company": "AMD",
+                "ticker": "AMD",
+                "exchange": "NASDAQ",
+                "exposure": "官方已披露与 OpenAI 的多代 GPU 部署合作。",
+                "direction": "潜在利好",
+                "condition": "须看到调用量、GPU 采购或交付增长；仅有发布预告或降价，不确认新增收益。",
+                "sourceUrl": "https://openai.com/index/openai-amd-strategic-partnership/"
+              }
+            ]
           }
         },
         {
@@ -141,6 +229,30 @@ window.BLOOMBERG_MARKETS_DAILY = {
             "relationUrl": "https://www.anthropic.com/",
             "eventPublishedAt": null,
             "eventSourceUrl": null
+          },
+          "readThrough": {
+            "checkedAt": "2026-09-28T09:04:00+08:00",
+            "note": "若模型使用增长转为云用量和新增算力订单，云与芯片供应链可能受益；单位推理效率提升也可能降低单次调用的算力需求。",
+            "candidates": [
+              {
+                "company": "Amazon",
+                "ticker": "AMZN",
+                "exchange": "NASDAQ",
+                "exposure": "Anthropic 官方称 Amazon 是主要训练及云合作方，使用 Trainium。",
+                "direction": "潜在利好",
+                "condition": "须核验云用量、算力订单及供应商份额增长；效率提高或转用其他平台可能削弱传导。",
+                "sourceUrl": "https://www.anthropic.com/news/expanding-our-use-of-google-cloud-tpus-and-services"
+              },
+              {
+                "company": "Alphabet",
+                "ticker": "GOOG",
+                "exchange": "NASDAQ",
+                "exposure": "Anthropic 官方确认使用 Google Cloud TPU。",
+                "direction": "潜在利好",
+                "condition": "须核验云用量、算力订单及供应商份额增长；效率提高或转用其他平台可能削弱传导。",
+                "sourceUrl": "https://www.anthropic.com/news/expanding-our-use-of-google-cloud-tpus-and-services"
+              }
+            ]
           }
         },
         {
@@ -155,6 +267,21 @@ window.BLOOMBERG_MARKETS_DAILY = {
             "relationUrl": null,
             "eventPublishedAt": null,
             "eventSourceUrl": null
+          },
+          "readThrough": {
+            "checkedAt": "2026-09-28T09:04:00+08:00",
+            "note": "Fireworks 官网确认使用 NVIDIA GPU；新模型上线能否带来增量采购，仍需看实际调用和扩容。",
+            "candidates": [
+              {
+                "company": "NVIDIA",
+                "ticker": "NVDA",
+                "exchange": "NASDAQ",
+                "exposure": "Fireworks 官方列出其使用的 NVIDIA GPU 与推理服务合作。",
+                "direction": "潜在利好",
+                "condition": "须看到调用增长转为新增 GPU 扩容；若仅提升效率或使用现有容量，采购受益可能有限。",
+                "sourceUrl": "https://fireworks.ai/partners/nvidia"
+              }
+            ]
           }
         },
         {
@@ -183,6 +310,11 @@ window.BLOOMBERG_MARKETS_DAILY = {
             "relationUrl": "https://www.anthropic.com/",
             "eventPublishedAt": null,
             "eventSourceUrl": null
+          },
+          "readThrough": {
+            "checkedAt": "2026-09-28T09:04:00+08:00",
+            "note": "政策会面本身未显示新增算力合同，暂不据此列受益股。",
+            "candidates": []
           }
         },
         {
@@ -197,6 +329,30 @@ window.BLOOMBERG_MARKETS_DAILY = {
             "relationUrl": "https://openai.com/our-structure/",
             "eventPublishedAt": null,
             "eventSourceUrl": null
+          },
+          "readThrough": {
+            "checkedAt": "2026-09-28T09:04:00+08:00",
+            "note": "模型降价可能刺激调用量，也可能压低单位收入；须看总算力消耗与新增订单是否增长。",
+            "candidates": [
+              {
+                "company": "NVIDIA",
+                "ticker": "NVDA",
+                "exchange": "NASDAQ",
+                "exposure": "官方已披露与 OpenAI 的训练及推理算力合作。",
+                "direction": "潜在利好",
+                "condition": "须看到调用量、GPU 采购或交付增长；仅有发布预告或降价，不确认新增收益。",
+                "sourceUrl": "https://openai.com/index/scaling-ai-for-everyone/"
+              },
+              {
+                "company": "AMD",
+                "ticker": "AMD",
+                "exchange": "NASDAQ",
+                "exposure": "官方已披露与 OpenAI 的多代 GPU 部署合作。",
+                "direction": "潜在利好",
+                "condition": "须看到调用量、GPU 采购或交付增长；仅有发布预告或降价，不确认新增收益。",
+                "sourceUrl": "https://openai.com/index/openai-amd-strategic-partnership/"
+              }
+            ]
           }
         },
         {
@@ -211,6 +367,30 @@ window.BLOOMBERG_MARKETS_DAILY = {
             "relationUrl": "https://openai.com/our-structure/",
             "eventPublishedAt": null,
             "eventSourceUrl": null
+          },
+          "readThrough": {
+            "checkedAt": "2026-09-28T09:04:00+08:00",
+            "note": "若训练暂停或部署收紧持续，相关 GPU 交付节奏可能承压；不是已确认的订单取消。",
+            "candidates": [
+              {
+                "company": "NVIDIA",
+                "ticker": "NVDA",
+                "exchange": "NASDAQ",
+                "exposure": "官方已披露与 OpenAI 的训练及推理算力合作。",
+                "direction": "风险观察",
+                "condition": "须核验暂停范围、持续时间及订单交付；既有合同继续履行时，负面传导可能有限。",
+                "sourceUrl": "https://openai.com/index/scaling-ai-for-everyone/"
+              },
+              {
+                "company": "AMD",
+                "ticker": "AMD",
+                "exchange": "NASDAQ",
+                "exposure": "官方已披露与 OpenAI 的多代 GPU 部署合作。",
+                "direction": "风险观察",
+                "condition": "须核验暂停范围、持续时间及订单交付；既有合同继续履行时，负面传导可能有限。",
+                "sourceUrl": "https://openai.com/index/openai-amd-strategic-partnership/"
+              }
+            ]
           }
         },
         {
@@ -239,6 +419,11 @@ window.BLOOMBERG_MARKETS_DAILY = {
             "relationUrl": null,
             "eventPublishedAt": null,
             "eventSourceUrl": null
+          },
+          "readThrough": {
+            "checkedAt": "2026-09-28T09:04:00+08:00",
+            "note": "直接公司与供应链关系待核验，暂不列出受益股。",
+            "candidates": []
           }
         }
       ],
@@ -288,5 +473,23 @@ window.BLOOMBERG_MARKETS_DAILY = {
         }
       }
     }
-  }
+  },
+  "bloombergStories": [
+    {
+      "title": "中国消费与科技资金流向分化",
+      "summary": "简报称中国消费股长期表现承压，资金更多流向科技和 AI，向内需的传导仍有限。"
+    },
+    {
+      "title": "日本能源项目回应数据中心需求",
+      "summary": "简报提到，日本开发商正在把旧高尔夫球场转为大型太阳能项目，数据中心与能源基础设施需求增加了选址压力。"
+    },
+    {
+      "title": "中国企业采购新款英伟达芯片仍待确认",
+      "summary": "简报转述中国可能允许阿里巴巴等企业采购 RTX Pro 5500 的报道；这一事项仍属可能，尚不能视为已获许可或已完成订单。"
+    },
+    {
+      "title": "英国空军基地附近发生安全事件",
+      "summary": "简报称英国警方逮捕五名涉嫌策划袭击者，目标涉及美军使用的英国空军基地；这属于当期安全事件报道。"
+    }
+  ]
 };
