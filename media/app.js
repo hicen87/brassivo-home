@@ -106,7 +106,7 @@
       <div class="hot-times"><span>榜单更新 <time datetime="${escapeHTML(hot.boardUpdatedAt)}">${escapeHTML(hot.boardUpdatedAt.slice(0, 16).replace("T", " "))}</time></span><span>抓取 <time datetime="${escapeHTML(hot.capturedAt)}">${escapeHTML(hot.capturedAt.slice(0, 16).replace("T", " "))}</time></span></div>
       <p class="hot-note">按 AIHOT 页面显示的热度排序。标题为聚合站的事件描述，热度不是事件真实性或市场影响的评分。</p>
       <p class="market-note">股价观察用于筛选研究线索：比较最近完整交易日与前一交易日收盘，涨跌同时受大盘和其他消息影响，不代表这条新闻已影响定价。</p>
-      <ol class="hot-list" style="--hot-rows:${Math.ceil(hot.stories.length / 2)}">${hot.stories.map((story) => `
+      <ol class="hot-list">${hot.stories.map((story) => `
         <li><span class="hot-rank">${String(story.rank).padStart(2, "0")}</span><div class="hot-story"><a href="${escapeHTML(story.url)}" rel="noopener noreferrer" target="_blank">${translated(story.title)}<span aria-hidden="true">↗</span></a>${marketSummary(story)}</div><small><span>热度</span> ${escapeHTML(story.heat)}</small></li>
       `).join("")}</ol>
       ${hot.market ? `<p class="market-meta"><span>行情核验 </span>${escapeHTML(hot.market.checkedAt)} · ${hot.market.benchmark.sources.map(source => `<a href="${escapeHTML(source)}" target="_blank" rel="noopener noreferrer"><span>大盘来源</span> ↗</a>`).join(" / ")}</p>` : ""}
@@ -114,6 +114,7 @@
     </article>` : "";
 
   target.innerHTML = `
+    <div class="source-group"><h3 class="group-title">宏观焦点</h3>
     <div class="source-grid">
       <article class="source-card bloomberg">
         <div class="source-meta"><span>Bloomberg</span><small>宏观 / 短期波动</small></div>
@@ -122,10 +123,13 @@
         <p class="source-summary">${translated(data.bloombergTake)}</p>
         <a class="original-link" href="${escapeHTML(data.sourceUrl)}" rel="noopener noreferrer" target="_blank">查看 ${newsletter} 原刊 ↗</a>
       </article>
+      ${storyCard(data.mediaFocus?.wsj, "The Wall Street Journal", "宏观 / 政策与经济", "wsj")}
+    </div></div>
+    <div class="source-group"><h3 class="group-title">公司与产业</h3>
+    <div class="source-grid">
       ${storyCard(data.mediaFocus?.barrons, "Barron’s", "公司 / 个股", "barrons")}
-      ${storyCard(data.mediaFocus?.wsj, "The Wall Street Journal", "首页 / 头条", "wsj")}
       ${hotCard}
-    </div>
+    </div></div>
     <details class="judgments">
       <summary><span>02 / BRASSIVO CONDITIONAL VIEW</span><strong>短期条件判断</strong><small>展开查看利多、利空与验证条件</small></summary>
       <p class="judgment-note">以下仅基于 Bloomberg 这期邮件的事实独立推演，不是其他来源的共同观点。</p>

@@ -5,6 +5,8 @@
   // Extend this dictionary when page content changes; this file never calls a translator.
   const translations = new Map(Object.entries({
     "首页": "Home",
+    "历史看板": "Archive boards",
+    "历史研究看板": "Archived research boards",
     "宏观观点": "Macro Views",
     "媒体焦点": "Media Focus",
     "主流媒体每日焦点": "Daily Media Focus",
@@ -12,6 +14,10 @@
     "每日焦点": "Daily focus",
     "三家媒体焦点": "Three media sources",
     "媒体焦点与 AI 热榜": "Media focus and AI trends",
+    "宏观焦点": "Macro focus",
+    "公司与产业": "Companies and industries",
+    "宏观 / 政策与经济": "Macro / policy and economy",
+    "Bloomberg 与《华尔街日报》聚焦宏观、政策与经济；Barron’s 与 AIHOT 关注公司、个股与 AI 产业动态。每个来源保留自己的时间与原站链接。": "Bloomberg and The Wall Street Journal focus on macro, policy and the economy; Barron’s and AIHOT cover companies, stocks and AI industry developments. Each source keeps its own timestamp and original links.",
     "阅读说明": "How to read",
     "Bloomberg 原刊": "Bloomberg issue",
     "原刊": "Issue date",
@@ -176,6 +182,47 @@
     }
   }
 
+  function installArchiveNav() {
+    const nav = document.querySelector("header.site-header .research-nav");
+    if (!nav || nav.querySelector(".archive-nav")) return;
+    const archived = [...nav.querySelectorAll(":scope > a")].filter(link => {
+      const host = new URL(link.href).hostname;
+      return ["investment.brassivo.com", "stocks.brassivo.com", "china.brassivo.com"].includes(host);
+    });
+    if (!archived.length) return;
+    const style = document.createElement("style");
+    style.textContent = `
+      .site-header .research-nav{overflow:visible;align-items:center}
+      .archive-nav{position:relative;flex:none;font:inherit}
+      .archive-nav>summary{display:flex;align-items:center;gap:6px;padding:9px 10px;border-radius:5px;list-style:none;cursor:pointer;color:#59616d;font-size:12px;font-weight:600;white-space:nowrap}
+      .archive-nav>summary::-webkit-details-marker{display:none}
+      .archive-nav>summary::after{content:"⌄";font-size:14px;line-height:1}
+      .archive-nav[open]>summary,.archive-nav>summary:hover{background:#fff;color:#a65b1f}
+      .archive-nav.has-current>summary{color:#a65b1f;box-shadow:inset 0 -2px #a65b1f}
+      .archive-nav .archive-panel{position:absolute;top:100%;right:0;z-index:100;min-width:180px;padding:8px;background:#fff;border:1px solid #d9dee7;border-radius:6px;box-shadow:0 12px 28px rgba(23,28,36,.12)}
+      .archive-nav .archive-panel a{display:block;margin:0;padding:9px 12px;text-align:left;line-height:1.5;font-size:12px}
+      .archive-nav .archive-panel a:hover{background:#f6f7f9}
+      @media(max-width:720px){header.site-header{display:flex;flex-wrap:wrap;height:auto!important;min-height:68px;padding-block:12px;gap:8px}header.site-header>.brassivo-language-toggle{position:static;margin-left:auto}header.site-header .research-nav{order:3;width:100%;margin:0;justify-content:flex-start;flex-wrap:wrap;gap:2px}header.site-header .research-nav>a,header.site-header .archive-nav>summary{padding:7px;font-size:11px}}
+    `;
+    document.head.append(style);
+    const group = document.createElement("details");
+    group.className = "archive-nav";
+    if (archived.some(link => link.hasAttribute("aria-current"))) group.classList.add("has-current");
+    const summary = document.createElement("summary");
+    summary.textContent = "历史看板";
+    const panel = document.createElement("div");
+    panel.className = "archive-panel";
+    panel.setAttribute("aria-label", "历史研究看板");
+    panel.append(...archived);
+    group.append(summary, panel);
+    nav.append(group);
+    group.addEventListener("pointerenter", event => { if (event.pointerType === "mouse" && matchMedia("(hover: hover) and (min-width: 721px)").matches) group.open = true; });
+    group.addEventListener("pointerleave", event => { if (event.pointerType === "mouse" && matchMedia("(hover: hover) and (min-width: 721px)").matches && !group.contains(document.activeElement)) group.open = false; });
+    group.addEventListener("focusout", event => { if (!group.contains(event.relatedTarget)) group.open = false; });
+    group.addEventListener("keydown", event => { if (event.key === "Escape") { group.open = false; summary.focus(); } });
+    document.addEventListener("click", event => { if (!group.contains(event.target)) group.open = false; });
+  }
+
   function installButton() {
     const header = document.querySelector("header.site-header");
     if (!header || document.getElementById("brassivo-language-toggle")) return;
@@ -206,6 +253,7 @@
   };
 
   function start() {
+    installArchiveNav();
     installButton();
     apply(readPreference());
     new MutationObserver((records) => {
