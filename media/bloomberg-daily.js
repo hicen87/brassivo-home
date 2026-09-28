@@ -104,13 +104,38 @@ window.BLOOMBERG_MARKETS_DAILY = {
     },
     "wsj": {
       "captureDate": "2026-09-28",
-      "capturedAt": "2026-09-28T20:07:56+08:00",
-      "summary": "WSJ 首页宏观焦点包括美国政策对利率与通胀的影响、伊朗谈判与地区安全、国债收益率，以及关键矿产供应链政策。以下只概括首页标题和可见简介。",
+      "capturedAt": "2026-09-28T21:21:19+08:00",
+      "summary": "按 WSJ 首页展示顺序筛选 8 条宏观、政策与经济焦点，涵盖利率与通胀、制裁与地缘风险、工业投资、国防产能及能源。摘要依据首页可见标题和简介；专栏观点单独注明。",
       "stories": [
+        {
+          "title": "投资人士讨论收益率上行与债券交易",
+          "summary": "首页摘要提到，BlackRock 的 Rick Rieder 认为债券存在机会，Ray Dalio 则建议谨慎。",
+          "url": "https://www.wsj.com/finance/investing/investors-trade-bond-yields-treasuries-60ee83f9"
+        },
         {
           "title": "特朗普政策反噬，利率与通胀走高",
           "summary": "WSJ 首页称，总统自身议程削弱了控制经济与赤字的承诺，并推高利率和通胀。",
           "url": "https://www.wsj.com/economy/trump-economy-inflation-jobs-724e4da8"
+        },
+        {
+          "title": "参议院调查关注伊朗使用 USDT 的制裁风险",
+          "summary": "据首页引述的参议院民主党调查，与伊朗有关而受制裁的钱包大量使用 Tether 的 USDT 稳定币；报道聚焦制裁执行与数字资产监管。",
+          "url": "https://www.wsj.com/finance/currencies/senate-investigation-finds-rampant-use-of-tethers-stablecoin-by-iranian-regime-ce652e22"
+        },
+        {
+          "title": "英国调查基地附近疑似恐怖袭击与伊朗关联",
+          "summary": "调查人员称，五名二十多岁的英国公民在费尔福德基地附近被捕；该基地部署美军与 B-1 轰炸机，可能的伊朗关联仍在调查。",
+          "url": "https://www.wsj.com/world/u-k-probes-possible-iran-link-to-suspected-terror-plot-at-base-hosting-u-s-forces-b2328fb2"
+        },
+        {
+          "title": "特朗普拟公布 150 亿美元艾奥瓦钢铁项目",
+          "summary": "首页称，特朗普将公布一项计划中的 150 亿美元钢铁项目；报道将宣布时点与共和党面临艰难中期选举的背景联系起来，项目尚属计划。",
+          "url": "https://www.wsj.com/politics/trump-to-unveil-planned-15-billion-iowa-steel-project-051bc7d8"
+        },
+        {
+          "title": "国防企业扩充导弹产能，长期投入不足制约补库",
+          "summary": "首页称，军工企业正加快提高导弹产量，但关键工厂此前受到合同安排不稳定和投入不足影响，美国武器库存补充面临产能约束。",
+          "url": "https://www.wsj.com/politics/national-security/defense-firms-are-rushing-to-boost-missile-output-its-coming-too-late-ea6dd7ea"
         },
         {
           "title": "伊朗被施压作出核让步以恢复和谈",
@@ -118,24 +143,9 @@ window.BLOOMBERG_MARKETS_DAILY = {
           "url": "https://www.wsj.com/world/middle-east/iran-pressed-to-make-nuclear-concessions-to-revive-peace-talks-with-u-s-80016aff"
         },
         {
-          "title": "英国调查基地附近疑似恐怖袭击与伊朗关联",
-          "summary": "调查人员称，五名英国公民在供美军使用的费尔福德基地附近被捕。",
-          "url": "https://www.wsj.com/world/u-k-probes-possible-iran-link-to-suspected-terror-plot-at-base-hosting-u-s-forces-b2328fb2"
-        },
-        {
-          "title": "投资人士讨论收益率上行与债券交易",
-          "summary": "首页摘要提到，BlackRock 的 Rick Rieder 认为债券存在机会，Ray Dalio 则建议谨慎。",
-          "url": "https://www.wsj.com/finance/investing/investors-trade-bond-yields-treasuries-60ee83f9"
-        },
-        {
-          "title": "伊朗停火提案遭拒，油价与收益率走高",
-          "summary": "WSJ 实时市场页面将油价、收益率上涨与谈判僵局并列，股指期货走低。",
-          "url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-09-28-2026"
-        },
-        {
-          "title": "美国推动削弱中国关键矿产控制力",
-          "summary": "首页称，美方正推动建立不依赖中国的军事与工业投入品供应链，该举措开始见效。",
-          "url": "https://www.wsj.com/politics/national-security/china-critical-minerals-supply-chain-charts-fbe4eb85"
+          "title": "WSJ 专栏：美国压力或推动加拿大能源复兴",
+          "summary": "Heard on the Street 专栏认为，美国贸易压力与中东战争可能促使加拿大能源产业迎来新机会；这是专栏的条件性观点，并非已实现的增长。",
+          "url": "https://www.wsj.com/business/energy-oil/u-s-pressure-is-awakening-an-energy-giant-in-canada-162bd958"
         }
       ]
     },
