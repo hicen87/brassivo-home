@@ -1,242 +1,237 @@
 window.BLOOMBERG_MARKETS_DAILY = {
   "issueDate": "2026-09-28",
-  "publishedAt": "2026-09-28T18:02:16+08:00",
-  "newsletter": "Markets Daily",
-  "headline": "美国国债市场逼近经济预警信号",
-  "bloombergTake": "Bloomberg Markets Daily 报道，美国 10 年期与 2 年期国债收益率利差上周盘中一度收窄至 0.17 个百分点；若转为倒挂，可能反映市场担忧紧缩压制经济，但该指标此前也曾失准。简报还称，伊朗提议被拒后油价上涨、国债抛售重启；美中公布约 600 亿美元商品的关税下调细节；本周美国 PCE 通胀与就业数据可能影响下月利率预期。以上为媒体报道摘要，原刊未给出统一市场涨跌预测。",
+  "publishedAt": "2026-09-28T21:42:53+00:00",
+  "newsletter": "Morning Briefing Asia",
+  "headline": "美伊谈判僵局加深美债抛售，中国研究稳增长措施",
+  "bloombergTake": "Bloomberg Morning Briefing Asia 报道，美伊谈判僵局令能源冲击难解，美债抛售加深，10年期收益率触及19年高位；沙特跨国管道恢复约一半流量后油价收窄涨幅。中国研究稳楼市、扩内需与就业支持；软银以创纪录高收益债融资押注AI。以上为原刊快照，非实时行情；简报未给出统一市场涨跌预测。",
   "bullish": [
     {
-      "title": "若贸易关税下调落地，相关成本压力或缓和",
-      "reason": "简报称美中公布约 600 亿美元商品的关税下调方案，覆盖中国玩具和美国煤炭。",
-      "condition": "需核实实施清单、时间和贸易流量；若执行延后、范围缩小或谈判再度恶化，判断失效。"
+      "title": "中国政策若落地，内需预期或改善",
+      "reason": "国务院研究稳楼市、内需与就业措施，可能缓和消费和地产压力。",
+      "condition": "核对具体措施、实施规模和销售就业数据；若仅停留表态或需求继续走弱，判断失效。"
     },
     {
-      "title": "若通胀数据缓和，利率预期可能降温",
-      "reason": "本周 PCE 与就业数据将影响市场对美联储下月行动的判断；较温和数据可能缓和紧缩预期。",
-      "condition": "数据尚未公布；观察核心 PCE、就业与债券收益率，若价格压力加速或就业仍强则逻辑减弱。"
+      "title": "沙特管道修复或缓和供给冲击",
+      "reason": "简报称管道已恢复约一半流量，油价收窄涨幅。",
+      "condition": "观察实际出口与运输持续性；再遇停运、冲突升级或油价风险溢价上升，判断减弱。"
     }
   ],
   "bearish": [
     {
-      "title": "收益率曲线逼近倒挂，经济担忧升温",
-      "reason": "10 年与 2 年期利差曾缩至 0.17 个百分点；倒挂历史上领先多次衰退，但不能单独确认衰退。",
-      "condition": "观察利差是否持续倒挂及就业、消费和企业数据；若增长保持韧性、利差回升，风险判断减弱。"
+      "title": "高收益率继续压制融资与估值",
+      "reason": "10年期美债收益率触及19年高位，能源冲击使通胀担忧持续。",
+      "condition": "观察收益率、通胀与信用利差；若谈判缓和且融资成本回落，风险减弱。"
     },
     {
-      "title": "油价上涨与国债抛售叠加",
-      "reason": "伊朗重开霍尔木兹方案遭拒后油价上行，简报称美国国债抛售重启，可能同时推高通胀与融资压力。",
-      "condition": "关注实际通航、原油供应及长短端收益率；若谈判缓和、油价回落且收益率稳定，该判断失效。"
-    },
-    {
-      "title": "AI 股票情绪反复，资本开支验证临近",
-      "reason": "简报称资金近两周在 AI 恐慌与乐观之间大幅摆动，市场将关注美光业绩对算力投资预期的验证。",
-      "condition": "对照美光业绩、管理层展望和后续订单；若需求与利润兑现则风险减弱，若指引下修则压力加大。"
+      "title": "AI扩张依赖高成本融资",
+      "reason": "软银创纪录发债，最长年期收益率9.75%，显示AI融资成本与执行压力。",
+      "condition": "核对现金流、债务服务及投资回报；若经营收入覆盖投入与利息，风险减弱，否则压力可能增加。"
     }
   ],
-  "sourceUrl": "https://www.bloomberg.com/news/newsletters/2026-09-28/bonds-are-on-the-cusp-of-sending-a-distress-signal-on-economy",
+  "sourceUrl": "https://www.bloomberg.com/news/newsletters/2026-09-28/treasuries-sink-as-us-iran-talks-fail-to-assuage-inflation-fears",
   "mediaFocus": {
     "barrons": {
-      "captureDate": "2026-09-28",
-      "capturedAt": "2026-09-28T20:07:56+08:00",
-      "summary": "按已连接浏览器中 Barron’s 首页展示顺序收录 12 条公司与市场焦点；只依据标题和可见简介归纳，首页未展示正文细节的条目不作延伸。",
+      "captureDate": "2026-09-29",
+      "capturedAt": "2026-09-29T08:36:20+08:00",
+      "summary": "按首页展示顺序筛选12条公司与市场焦点，去除重复；摘要仅使用可见标题和简介，投资观点注明，未展示细节不作延伸。",
       "stories": [
         {
-          "title": "纸瓶将进入商店货架，可持续包装替代方案逐步落地",
-          "summary": "首页称，塑料监管趋严与回收推动正在带动纸瓶替代方案；具体产品和商业进展以原文为准。",
-          "url": "https://www.barrons.com/articles/diageo-pepsico-unilever-paper-bottles-plastic-alternative-066ded51"
+          "title": "五只科技股掩盖市场疲弱",
+          "summary": "首页称大型科技股承担市场主要支撑，部分华尔街人士担忧集中度。",
+          "url": "https://www.barrons.com/articles/stocks-bear-market-s-p-500-tech-c40e9348"
         },
         {
-          "title": "生物科技新一轮牛市的 16 个关注标的",
-          "summary": "首页简介称，医学进展与并购活动提振生物科技股，并列出圆桌专家关注的 16 个标的。",
+          "title": "OpenAI取消最新模型发布的报道",
+          "summary": "首页展示模型发布取消的报道，未展示完整原因与技术细节。",
+          "url": "https://www.barrons.com/articles/openai-devday-2026-meta-muse-54f3d24f"
+        },
+        {
+          "title": "AMD拟以82亿美元收购World Labs",
+          "summary": "首页标题披露收购金额；交易进度与条件须看原文。",
+          "url": "https://www.barrons.com/articles/amd-acquire-ai-company-world-labs-8382f763"
+        },
+        {
+          "title": "Summit Therapeutics获20亿美元投资后上涨",
+          "summary": "仅据首页标题归纳投资与股价表现，财务及交易细节未展示。",
+          "url": "https://www.barrons.com/articles/summit-therapeutics-stock-astrazeneca-cancer-drug-d070fe4d"
+        },
+        {
+          "title": "Muse竞争者估值达100亿美元",
+          "summary": "首页称Instinct通过短信和电话提供服务，与Muse的应用模式不同。",
+          "url": "https://www.barrons.com/articles/meta-muse-rival-10b-valuation-ai-agent-778c97c3"
+        },
+        {
+          "title": "滑雪客减少，Vail Resorts承压",
+          "summary": "首页标题聚焦滑雪客减少的经营压力，财报细节未展示。",
+          "url": "https://www.barrons.com/articles/vail-resorts-earnings-stock-price-520210bc"
+        },
+        {
+          "title": "Jefferies投行业务收入创新高，股价仍跌",
+          "summary": "仅据首页标题呈现收入与股价背离，未推导下跌原因。",
+          "url": "https://www.barrons.com/articles/jefferies-earnings-stock-price-d2522cd1"
+        },
+        {
+          "title": "生物科技圆桌关注16个标的",
+          "summary": "圆桌观点认为医学进展与并购提振生物科技；进一步上涨是受访者判断。",
           "url": "https://www.barrons.com/articles/biotech-healthcare-stocks-roundtable-057abe29"
         },
         {
-          "title": "AI 不会带来就业末日，至少目前还没有",
-          "summary": "首页展示该观点文章，摘要强调目前尚未出现所担忧的就业末日；更多依据未在首页展示。",
-          "url": "https://www.barrons.com/articles/ai-jobs-1fb84d8c"
+          "title": "Ralph Lauren在零售回调后估值受关注",
+          "summary": "首页股票观点认为股价便宜；估值依据未展示，不作买入结论。",
+          "url": "https://www.barrons.com/articles/ralph-lauren-stock-looks-cheap-amid-consumer-discretionary-rout-chart-technicals-240893cf"
         },
         {
-          "title": "按揭利率接近 7%，住房负担能力承压",
-          "summary": "首页展示房贷利率上行与住房负担能力压力，并附有互动图表；未据此推断后续利率方向。",
-          "url": "https://www.barrons.com/articles/7-mortgage-rates-hurt-so-much-e99a4c0e"
+          "title": "GE Aerospace大幅回调后趋稳",
+          "summary": "仅据首页标题记录走势描述，未展示订单与基本面细节。",
+          "url": "https://www.barrons.com/articles/ge-aerospace-stock-stabilizes-after-pullback-chart-of-the-day-c527c0f5"
         },
         {
-          "title": "债券界的‘巴菲特’仍未退休，并给出投资建议",
-          "summary": "首页展示资深债券投资者 Dan Fuss 的观点与建议；具体配置细节以原文为准。",
-          "url": "https://www.barrons.com/articles/dan-fuss-buffett-of-bonds-50ac83e7"
-        },
-        {
-          "title": "Anthropic 相关 ETF 持有大量博通与亚马逊股票",
-          "summary": "首页简介称，一只 Anthropic 相关 ETF 持有较多 Broadcom 与 Amazon；持仓及关联以原文为准。",
-          "url": "https://www.barrons.com/articles/anthropic-ipo-etf-ai-stocks-f40be6bc"
-        },
-        {
-          "title": "麦当劳借助 AI 与门店改造推动增长",
-          "summary": "首页聚焦麦当劳的 AI 应用和餐厅改造计划；具体营收贡献未在首页展示。",
-          "url": "https://www.barrons.com/articles/mcdonalds-stock-ai-growth-restaurants-19e4906c"
-        },
-        {
-          "title": "11 只适合市场波动期关注的股息股",
-          "summary": "首页简介称，市场波动与 AI 涨势可能见顶的担忧提升了防御性收益关注；列出专家推荐的股息股。",
-          "url": "https://www.barrons.com/advisor/articles/top-dividend-stocks-morgan-stanley-starbucks-nvidia-e1def427"
-        },
-        {
-          "title": "Brookfield 盈利增长记录突出，估值受到关注",
-          "summary": "首页称这家另类资产管理公司当前估值约为近期资产价值估算的 55%。",
+          "title": "Brookfield盈利记录与资产估值受关注",
+          "summary": "首页称估值约为近期资产价值估算的55%；这是报道的估值比较。",
           "url": "https://www.barrons.com/articles/buy-brookfield-stock-price-pick-alternative-assets-energy-real-estate-85c714c1"
         },
         {
-          "title": "SPS Commerce 为零售业管理供应链软件",
-          "summary": "首页股票精选将 SPS Commerce 列为关注标的；估值和增长依据未在首页展示。",
+          "title": "SPS Commerce零售供应链软件获关注",
+          "summary": "首页股票精选讨论其供应链软件；上涨空间属于文章观点，细节未展示。",
           "url": "https://www.barrons.com/articles/buy-sps-commerce-stock-price-pick-ea269322"
-        },
-        {
-          "title": "EchoStar 资产价值或高于市值，SpaceX 是额外因素",
-          "summary": "首页股票精选提及 EchoStar 的资产价值与 SpaceX 关联；具体估值分析未在首页展示。",
-          "url": "https://www.barrons.com/articles/buy-echostar-stock-greater-than-sum-of-parts-with-spacex-kicker-9aabdf80"
-        },
-        {
-          "title": "Costco 盈利超预期仍未提振股价",
-          "summary": "首页称 Costco 会员收入增速连续第三季放缓；会费收入同比增长 7.3% 至 15 亿美元。",
-          "url": "https://www.barrons.com/articles/costco-earnings-stock-price-4ebe1a7a"
         }
       ]
     },
     "wsj": {
-      "captureDate": "2026-09-28",
-      "capturedAt": "2026-09-28T21:21:19+08:00",
-      "summary": "按 WSJ 首页展示顺序筛选 8 条宏观、政策与经济焦点，涵盖利率与通胀、制裁与地缘风险、工业投资、国防产能及能源。摘要依据首页可见标题和简介；专栏观点单独注明。",
+      "captureDate": "2026-09-29",
+      "capturedAt": "2026-09-29T08:36:20+08:00",
+      "summary": "按首页展示顺序筛选8条政策、监管、地缘与能源焦点；仅归纳可见标题和简介，债券机会是受访者观点，快照不代表实时行情。",
       "stories": [
         {
-          "title": "投资人士讨论收益率上行与债券交易",
-          "summary": "首页摘要提到，BlackRock 的 Rick Rieder 认为债券存在机会，Ray Dalio 则建议谨慎。",
-          "url": "https://www.wsj.com/finance/investing/investors-trade-bond-yields-treasuries-60ee83f9"
-        },
-        {
-          "title": "特朗普政策反噬，利率与通胀走高",
-          "summary": "WSJ 首页称，总统自身议程削弱了控制经济与赤字的承诺，并推高利率和通胀。",
-          "url": "https://www.wsj.com/economy/trump-economy-inflation-jobs-724e4da8"
-        },
-        {
-          "title": "参议院调查关注伊朗使用 USDT 的制裁风险",
-          "summary": "据首页引述的参议院民主党调查，与伊朗有关而受制裁的钱包大量使用 Tether 的 USDT 稳定币；报道聚焦制裁执行与数字资产监管。",
-          "url": "https://www.wsj.com/finance/currencies/senate-investigation-finds-rampant-use-of-tethers-stablecoin-by-iranian-regime-ce652e22"
-        },
-        {
-          "title": "英国调查基地附近疑似恐怖袭击与伊朗关联",
-          "summary": "调查人员称，五名二十多岁的英国公民在费尔福德基地附近被捕；该基地部署美军与 B-1 轰炸机，可能的伊朗关联仍在调查。",
+          "title": "英国释放美军基地附近袭击案嫌疑人",
+          "summary": "首页称调查人员仍核查伊朗或伊斯兰组织是否策划；释放不代表所有疑点已厘清。",
           "url": "https://www.wsj.com/world/u-k-probes-possible-iran-link-to-suspected-terror-plot-at-base-hosting-u-s-forces-b2328fb2"
         },
         {
-          "title": "特朗普拟公布 150 亿美元艾奥瓦钢铁项目",
-          "summary": "首页称，特朗普将公布一项计划中的 150 亿美元钢铁项目；报道将宣布时点与共和党面临艰难中期选举的背景联系起来，项目尚属计划。",
-          "url": "https://www.wsj.com/politics/trump-to-unveil-planned-15-billion-iowa-steel-project-051bc7d8"
+          "title": "美国财政部限制部分ETF避税操作",
+          "summary": "首页称政府拟封堵部分“351转换交易”，并提示另一些操作存在问题。",
+          "url": "https://www.wsj.com/personal-finance/taxes/treasury-takes-aim-at-tax-avoiding-investment-strategies-b178ca40"
         },
         {
-          "title": "国防企业扩充导弹产能，长期投入不足制约补库",
-          "summary": "首页称，军工企业正加快提高导弹产量，但关键工厂此前受到合同安排不稳定和投入不足影响，美国武器库存补充面临产能约束。",
-          "url": "https://www.wsj.com/politics/national-security/defense-firms-are-rushing-to-boost-missile-output-its-coming-too-late-ea6dd7ea"
+          "title": "大法官Alito回避气候诉讼",
+          "summary": "首页称其决定不参与相关最高法院案件，改变了此前不回避的立场；结果尚未确定。",
+          "url": "https://www.wsj.com/us-news/law/justice-alito-wont-participate-in-supreme-court-case-on-climate-change-ef0235e7"
         },
         {
-          "title": "伊朗被施压作出核让步以恢复和谈",
-          "summary": "调停方提出较难实现的方案，试图在特朗普拒绝七日停火后避免全面战争。",
-          "url": "https://www.wsj.com/world/middle-east/iran-pressed-to-make-nuclear-concessions-to-revive-peace-talks-with-u-s-80016aff"
+          "title": "朝鲜战俘移交公开引发外交争议",
+          "summary": "首页称乌克兰公布两名战俘位置，引发原以为信息不应公开的韩国不满。",
+          "url": "https://www.wsj.com/world/asia/a-secretive-north-korean-pow-handover-becomes-publicand-controversial-228d9223"
         },
         {
-          "title": "WSJ 专栏：美国压力或推动加拿大能源复兴",
-          "summary": "Heard on the Street 专栏认为，美国贸易压力与中东战争可能促使加拿大能源产业迎来新机会；这是专栏的条件性观点，并非已实现的增长。",
-          "url": "https://www.wsj.com/business/energy-oil/u-s-pressure-is-awakening-an-energy-giant-in-canada-162bd958"
+          "title": "沙特恢复红海石油出口",
+          "summary": "首页引述知情人士称管道流量约每日350万桶，关注能源供应恢复。",
+          "url": "https://www.wsj.com/world/middle-east/saudi-arabia-resumes-oil-exports-via-east-west-pipeline-after-repairs-sources-say-314c9ae8"
+        },
+        {
+          "title": "美国放宽汽车燃油经济性标准",
+          "summary": "首页称2031车型年平均标准由每加仑50.4英里降至34.5英里，涉及汽车监管与能源需求。",
+          "url": "https://www.wsj.com/business/autos/trump-administration-ends-tougher-fuel-economy-rules-013c4633"
+        },
+        {
+          "title": "投资人士讨论收益率上升与债券机会",
+          "summary": "首页引述Rick Rieder看好机会、Ray Dalio建议谨慎；这是受访者观点。",
+          "url": "https://www.wsj.com/finance/investing/investors-trade-bond-yields-treasuries-60ee83f9"
+        },
+        {
+          "title": "美国推动关键矿产供应链多元化",
+          "summary": "首页称政府为军工和工业原料建立脱离中国的供应链，部分措施开始见效；具体规模未展示。",
+          "url": "https://www.wsj.com/politics/national-security/china-critical-minerals-supply-chain-charts-fbe4eb85"
         }
       ]
     },
     "aihot": {
-      "captureDate": "2026-09-28",
-      "capturedAt": "2026-09-28T20:07:56+08:00",
-      "boardUpdatedAt": "2026-09-28T20:00:00+08:00",
+      "captureDate": "2026-09-29",
+      "capturedAt": "2026-09-29T08:36:12+08:00",
+      "boardUpdatedAt": "2026-09-29T08:35:00+08:00",
       "windowHours": 48,
       "sourceUrl": "https://aihot.news/hot",
       "stories": [
         {
           "rank": 1,
-          "title": "英伟达发布 AI 智能体安全平台",
-          "heat": 28,
-          "url": "https://aihot.news/story/544ba953-229b-425f-886a-3ebb39176d94",
+          "title": "Anthropic 发布 Claude Sonnet 5.5，AA 智能指数升至第 2",
+          "heat": 569,
+          "url": "https://aihot.news/story/94903954-cf87-48d8-89a6-eff5deefeaa0",
           "marketLink": {
-            "company": "NVIDIA",
-            "ticker": "NVDA",
-            "status": "listed",
-            "relationUrl": "https://investor.nvidia.com/investor-resources/faqs/",
+            "company": "Anthropic",
+            "ticker": null,
+            "status": "no_direct",
+            "relationUrl": "https://www.anthropic.com/company",
             "eventPublishedAt": null,
             "eventSourceUrl": null
           },
           "readThrough": {
-            "checkedAt": "2026-09-28T20:07:56+08:00",
-            "note": "这是英伟达自身的安全平台发布；合作采用尚不等于新增订单或收入，需观察客户部署、付费与后续采购。",
-            "candidates": []
+            "checkedAt": "2026-09-29T08:36:20+08:00",
+            "note": "模型升级可能改变云调用需求；效率提高也可能降低单次算力消耗，新增采购尚待验证。",
+            "candidates": [
+              {
+                "company": "Amazon",
+                "ticker": "AMZN",
+                "exchange": "NASDAQ",
+                "direction": "方向待确认",
+                "exposure": "官方说明AWS为主要训练与云伙伴，Claude新增调用可能传导至Trainium及云服务。",
+                "condition": "核对新增付费调用和云用量；若效率提升抵消调用增长或需求转向其他平台，增量采购逻辑失效。",
+                "sourceUrl": "https://www.anthropic.com/news/expanding-our-use-of-google-cloud-tpus-and-services"
+              },
+              {
+                "company": "Alphabet (Class C)",
+                "ticker": "GOOG",
+                "exchange": "NASDAQ",
+                "direction": "方向待确认",
+                "exposure": "Anthropic官方确认使用Google Cloud TPU，新增推理需求可能增加相关云用量。",
+                "condition": "需核对平台份额、实际调用和计费收入；降价及效率提高可能压低单位收入与算力需求。",
+                "sourceUrl": "https://www.anthropic.com/news/expanding-our-use-of-google-cloud-tpus-and-services"
+              }
+            ]
           }
         },
         {
           "rank": 2,
-          "title": "吉利千里浩瀚辅助驾驶搭载量突破 100 万辆",
-          "heat": 27,
-          "url": "https://aihot.news/story/d3f8ab90-c15d-414a-8d41-7e4942cfa8c1",
+          "title": "AMD 82亿美元收购World Labs并任命李飞飞",
+          "heat": 396,
+          "url": "https://aihot.news/story/1c691309-370b-4623-bb83-012b0804c3d1",
           "marketLink": {
-            "company": "Geely Automobile Holdings",
-            "ticker": "0175.HK",
+            "company": "AMD",
+            "ticker": "AMD",
             "status": "listed",
-            "relationUrl": "https://www.hkexnews.hk/listedco/listconews/sehk/2022/0901/2022090101987.pdf",
+            "relationUrl": "https://ir.amd.com/news-events/press-releases/detail/1299/amd-to-acquire-world-labs-to-advance-the-future-of-ai-compute",
             "eventPublishedAt": null,
             "eventSourceUrl": null
           },
           "readThrough": {
-            "checkedAt": "2026-09-28T20:07:56+08:00",
-            "note": "系统搭载规模扩大，但不能直接推出软件收入或利润同步增长；观察付费率、车型覆盖、成本和实际交付。",
+            "checkedAt": "2026-09-29T08:36:20+08:00",
+            "note": "收购尚待交割，关注整合、模型采用与盈利兑现；不另挂供应商作为直接主体。",
             "candidates": []
           }
         },
         {
           "rank": 3,
-          "title": "黄仁勋与辛顿就 AI 风险公开交锋",
-          "heat": 27,
-          "url": "https://aihot.news/story/33efed2b-ba50-467b-8d26-ff85834439b8",
+          "title": "NVIDIA 发布开放智能体安全平台 OpenShell 与 Sentry",
+          "heat": 329,
+          "url": "https://aihot.news/story/5e2816ac-db96-4268-b76c-57b6f4b18bbd",
           "marketLink": {
             "company": "NVIDIA",
             "ticker": "NVDA",
             "status": "listed",
-            "relationUrl": "https://investor.nvidia.com/investor-resources/faqs/",
+            "relationUrl": "https://investor.nvidia.com/home/default.aspx",
             "eventPublishedAt": null,
             "eventSourceUrl": null
           },
           "readThrough": {
-            "checkedAt": "2026-09-28T20:07:56+08:00",
-            "note": "公开观点分歧没有披露订单、监管变化或算力采购，不能据此推导行业收入；后续以产品采用和具体政策为验证。",
+            "checkedAt": "2026-09-29T08:36:20+08:00",
+            "note": "安全平台可能提升企业采用信心；须核对付费部署与收入，开源发布不等于新增硬件订单。",
             "candidates": []
           }
         },
         {
           "rank": 4,
-          "title": "米哈游谈 AI 大模型投入与发展目标",
-          "heat": 26,
-          "url": "https://aihot.news/story/0d0b4cab-3039-48cb-8e83-3cc4c52088f3",
-          "marketLink": {
-            "company": "miHoYo",
-            "ticker": null,
-            "status": "no_direct",
-            "relationUrl": "https://www.mihoyo.com/",
-            "eventPublishedAt": null,
-            "eventSourceUrl": null
-          },
-          "readThrough": {
-            "checkedAt": "2026-09-28T20:07:56+08:00",
-            "note": "管理层投入意愿并非已落地模型或采购。当前未核验到可解释的公开上市供应链关系，暂不列间接候选。",
-            "candidates": []
-          }
-        },
-        {
-          "rank": 5,
-          "title": "OpenAI 智能体曾未经授权访问澳大利亚政府网站文件",
-          "heat": 20,
-          "url": "https://aihot.news/story/9f73773d-3f40-4dbd-9b87-b38f81028034",
+          "title": "OpenAI 常驻助手 \"o\" 曝光，DevDay 将揭晓",
+          "heat": 187,
+          "url": "https://aihot.news/story/6777f755-4a86-4835-8310-bb09b1c204ed",
           "marketLink": {
             "company": "OpenAI",
             "ticker": null,
@@ -246,75 +241,113 @@ window.BLOOMBERG_MARKETS_DAILY = {
             "eventSourceUrl": null
           },
           "readThrough": {
-            "checkedAt": "2026-09-28T20:07:56+08:00",
-            "note": "安全事件指向部署与合规风险，尚无足够证据将其传导到某家上市供应商的订单或利润，暂不列候选。",
+            "checkedAt": "2026-09-29T08:36:20+08:00",
+            "note": "助手名称和发布安排仍属榜单描述；预告不等于订单，暂无独立核验的供应传导。",
+            "candidates": []
+          }
+        },
+        {
+          "rank": 5,
+          "title": "Meta 启动企业平台，聘 MongoDB CEO 掌舵",
+          "heat": 186,
+          "url": "https://aihot.news/story/4db031a4-9d64-48bb-b738-2632a974b6b1",
+          "marketLink": {
+            "company": "Meta Platforms",
+            "ticker": "META",
+            "status": "listed",
+            "relationUrl": "https://investor.atmeta.com/home/default.aspx",
+            "eventPublishedAt": null,
+            "eventSourceUrl": null
+          },
+          "readThrough": {
+            "checkedAt": "2026-09-29T08:36:20+08:00",
+            "note": "企业产品可能扩展收入来源；须观察付费客户、调用量与利润，管理层变动本身不确认收入。",
             "candidates": []
           }
         },
         {
           "rank": 6,
-          "title": "16 岁研究员借助 AI 发现微软 Titan 平台漏洞",
-          "heat": 20,
-          "url": "https://aihot.news/story/156763ac-7baf-4bbf-b16f-58e3b972c9eb",
+          "title": "Manus 发布 2.0 系列产品与更新",
+          "heat": 166,
+          "url": "https://aihot.news/story/c389aba2-5149-45a8-a66b-56a88fc3ff3e",
           "marketLink": {
-            "company": "Microsoft",
-            "ticker": "MSFT",
-            "status": "listed",
-            "relationUrl": "https://www.microsoft.com/en-us/Investor/",
+            "company": "Manus",
+            "ticker": null,
+            "status": "unverified",
+            "relationUrl": "https://manus.im/",
             "eventPublishedAt": null,
             "eventSourceUrl": null
           },
           "readThrough": {
-            "checkedAt": "2026-09-28T20:07:56+08:00",
-            "note": "这是微软平台安全事件，直接主体为微软；漏洞修复或赏金本身不构成新增收入或供应商需求，观察修复与客户影响。",
+            "checkedAt": "2026-09-29T08:36:20+08:00",
+            "note": "公司归属待核验；产品更新不证明云采购增加，暂不列间接标的。",
             "candidates": []
           }
         },
         {
           "rank": 7,
-          "title": "Google Android Dev Summit 2026 首次提及 Android 18",
-          "heat": 20,
-          "url": "https://aihot.news/story/77197baf-1b06-4a6d-b4b7-23b458daf25a",
+          "title": "英伟达追加1500亿美元股票回购授权",
+          "heat": 147,
+          "url": "https://aihot.news/story/a563a4a6-531a-4363-a380-f7a084033119",
           "marketLink": {
-            "company": "Alphabet",
-            "ticker": "GOOG",
+            "company": "NVIDIA",
+            "ticker": "NVDA",
             "status": "listed",
-            "relationUrl": "https://abc.xyz/investor/",
+            "relationUrl": "https://investor.nvidia.com/home/default.aspx",
             "eventPublishedAt": null,
             "eventSourceUrl": null
           },
           "readThrough": {
-            "checkedAt": "2026-09-28T20:07:56+08:00",
-            "note": "大会议程预告不等于新功能订单或变现。观察官方发布、开发者采用及服务收入；具体硬件传导暂不清楚。",
+            "checkedAt": "2026-09-29T08:36:20+08:00",
+            "note": "回购授权不等于已执行回购；关注实际购买、现金流与资本开支，暂无独立供应链传导。",
             "candidates": []
           }
         },
         {
           "rank": 8,
-          "title": "酷派发布 699 元起 AI 智能眼镜",
-          "heat": 20,
-          "url": "https://aihot.news/story/de2e2434-4cc5-417a-9d24-863c9e7d57fc",
+          "title": "OpenAI因安全问题推迟发布Astra 6.1模型",
+          "heat": 133,
+          "url": "https://aihot.news/story/bcce8a38-0067-4cfa-a9dc-0f44abe05876",
           "marketLink": {
-            "company": "Coolpad Group",
-            "ticker": "02369.HK",
-            "status": "listed",
-            "relationUrl": "https://www.hkexnews.hk/listedco/listconews/sehk/2025/0227/2025022700147.htm",
+            "company": "OpenAI",
+            "ticker": null,
+            "status": "no_direct",
+            "relationUrl": "https://openai.com/our-structure/",
             "eventPublishedAt": null,
             "eventSourceUrl": null
           },
           "readThrough": {
-            "checkedAt": "2026-09-28T20:07:56+08:00",
-            "note": "产品发布提供公司直接观察线索，但起售价和功能不证明销量、毛利或持续需求；观察预售转化、发货与后续财报。",
+            "checkedAt": "2026-09-29T08:36:20+08:00",
+            "note": "安全问题或延迟部署与算力需求，也可能增加防护投入；方向待确认，暂不列间接标的。",
             "candidates": []
           }
         },
         {
           "rank": 9,
-          "title": "极摩客发布搭载 AMD 芯片的桌面 AI 超算",
-          "heat": 19,
-          "url": "https://aihot.news/story/0427191f-2308-49df-91ce-92343a90873b",
+          "title": "可灵预告新消息，Kling 4.0 定档十月",
+          "heat": 107,
+          "url": "https://aihot.news/story/8030c7ab-b8e1-4004-b6bc-7217fb97eb5b",
           "marketLink": {
-            "company": "GMKtec",
+            "company": "Kuaishou Technology",
+            "ticker": "01024.HK",
+            "status": "listed",
+            "relationUrl": "https://ir.kuaishou.com/news-releases/news-release-details/kuaishou-unveils-proprietary-video-generation-model-kling",
+            "eventPublishedAt": null,
+            "eventSourceUrl": null
+          },
+          "readThrough": {
+            "checkedAt": "2026-09-29T08:36:20+08:00",
+            "note": "预告不等于新增收入；观察付费订阅、留存及推理成本，不从通用AI概念列供应商。",
+            "candidates": []
+          }
+        },
+        {
+          "rank": 10,
+          "title": "荣耀 Magic9 系列发布：双 3D 识别与价格公布",
+          "heat": 103,
+          "url": "https://aihot.news/story/3b057035-a905-4635-a393-a67c4d351649",
+          "marketLink": {
+            "company": "HONOR",
             "ticker": null,
             "status": "unverified",
             "relationUrl": null,
@@ -322,82 +355,53 @@ window.BLOOMBERG_MARKETS_DAILY = {
             "eventSourceUrl": null
           },
           "readThrough": {
-            "checkedAt": "2026-09-28T20:07:56+08:00",
-            "note": "热榜描述该型号采用 AMD Ryzen AI Max+ PRO 495；若实际出货，AMD 或有处理器销售机会，但尚未核实出货规模，方向待确认。",
-            "candidates": [
-              {
-                "company": "AMD",
-                "ticker": "AMD",
-                "exchange": "NASDAQ",
-                "exposure": "榜单所述 GMKtec 型号采用 AMD Ryzen AI Max+ PRO 495；若成为实际出货配置，AMD 可能获得对应处理器销售。",
-                "direction": "方向待确认",
-                "condition": "须独立核验该型号实际装配、AMD 供货关系及出货量；预约和参数宣称不代表芯片订单规模或利润贡献。",
-                "sourceUrl": "https://www.amd.com/en/products/processors/laptop/ryzen-pro/ai-max-pro-400-series/amd-ryzen-ai-max-plus-pro-495.html"
-              }
-            ]
-          }
-        },
-        {
-          "rank": 10,
-          "title": "微软澄清 Windows 11 缩略图缓存隐私传言",
-          "heat": 19,
-          "url": "https://aihot.news/story/2222426d-68cd-4b02-bffb-8bd07a911b0f",
-          "marketLink": {
-            "company": "Microsoft",
-            "ticker": "MSFT",
-            "status": "listed",
-            "relationUrl": "https://www.microsoft.com/en-us/Investor/",
-            "eventPublishedAt": null,
-            "eventSourceUrl": null
-          },
-          "readThrough": {
-            "checkedAt": "2026-09-28T20:07:56+08:00",
-            "note": "这是微软对隐私传言的说明，暂无可识别的营收或供应链传导；后续关注官方技术说明与安全更新。",
+            "checkedAt": "2026-09-29T08:36:20+08:00",
+            "note": "上市关联及实际芯片供货未独立核验；不按品牌或型号描述推导供应商订单。",
             "candidates": []
           }
         }
       ],
       "market": {
-        "checkedAt": "2026-09-26T16:13:41+00:00",
+        "checkedAt": "2026-09-29T08:36:20+08:00",
         "benchmark": {
-          "sessionDate": "2026-09-25",
-          "previousSessionDate": "2026-09-24",
-          "close": 7743.41,
-          "previousClose": 7704.13,
+          "sessionDate": "2026-09-28",
+          "previousSessionDate": "2026-09-25",
+          "close": 7683.69,
+          "previousClose": 7743.41,
           "sources": [
-            "https://es.finance.yahoo.com/quote/%5ESPX/history/",
-            "https://equibles.com/economicdata/sp500"
+            "https://finance.yahoo.com/quote/%5ESPX/history/",
+            "https://www.wsj.com/market-data/quotes/index/SPX/historical-prices"
           ]
         },
         "quotes": {
-          "GOOG": {
-            "sessionDate": "2026-09-25",
-            "previousSessionDate": "2026-09-24",
-            "close": 341.08,
-            "previousClose": 339.01,
+          "NVDA": {
+            "sessionDate": "2026-09-28",
+            "previousSessionDate": "2026-09-25",
+            "close": 228.86,
+            "previousClose": 225.07,
             "sources": [
-              "https://stockanalysis.com/stocks/goog/history/",
-              "https://finance.yahoo.com/quote/GOOG/history/"
+              "https://stockanalysis.com/stocks/nvda/history/",
+              "https://finance.yahoo.com/quote/NVDA/history/"
             ]
           },
-          "MSFT": {
-            "sessionDate": "2026-09-25",
-            "previousSessionDate": "2026-09-24",
-            "close": 516.17,
-            "previousClose": 497.93,
+          "AMD": {
+            "sessionDate": "2026-09-28",
+            "previousSessionDate": "2026-09-25",
+            "close": 607.87,
+            "previousClose": 630.63,
             "sources": [
-              "https://stockanalysis.com/stocks/msft/history/",
-              "https://www.marketbeat.com/stocks/NASDAQ/MSFT/"
+              "https://stockanalysis.com/stocks/amd/history/",
+              "https://finance.yahoo.com/quote/AMD/history/"
             ]
           },
           "META": {
-            "sessionDate": "2026-09-25",
-            "previousSessionDate": "2026-09-24",
-            "close": 751.66,
-            "previousClose": 777.59,
+            "sessionDate": "2026-09-28",
+            "previousSessionDate": "2026-09-25",
+            "close": 715.62,
+            "previousClose": 751.66,
             "sources": [
               "https://stockanalysis.com/stocks/meta/history/",
-              "https://www.trading212.com/trading-instruments/invest/META.US"
+              "https://finance.yahoo.com/quote/META/history/"
             ]
           }
         }
@@ -406,24 +410,24 @@ window.BLOOMBERG_MARKETS_DAILY = {
   },
   "bloombergStories": [
     {
-      "title": "美债收益率曲线接近倒挂",
-      "summary": "10 年与 2 年期利差盘中曾收窄至 0.17 个百分点；倒挂历史上领先多次衰退，但近年预测表现并非始终可靠。"
+      "title": "美债收益率触及19年高位",
+      "summary": "简报称美伊谈判僵局加深债券抛售，能源冲击延续与通胀担忧影响市场。"
     },
     {
-      "title": "伊朗提案被拒后油价与债券收益率走高",
-      "summary": "简报称美国拒绝伊朗重开霍尔木兹海峡提案后，油价上涨，国债抛售重启，风险资产期货走弱。"
+      "title": "沙特管道恢复约半数流量",
+      "summary": "沙特跨国管道修复后恢复约一半流量，油价收窄涨幅；这不等于霍尔木兹航道全面恢复。"
     },
     {
-      "title": "美中公布商品关税下调细节",
-      "summary": "双方公布约 600 亿美元商品的关税下调安排，包括中国玩具和美国煤炭；简报未称全部措施已完成实施。"
+      "title": "中国研究楼市、内需与就业支持",
+      "summary": "简报转述新华社称，国务院研究稳楼市、扩内需、促就业措施，并提出更好使用财政和货币工具。"
     },
     {
-      "title": "本周通胀与就业数据影响利率预期",
-      "summary": "市场关注周三美国 PCE 通胀与周五就业报告，以判断下月美联储利率行动预期。"
+      "title": "软银创纪录高收益债为AI融资",
+      "summary": "软银发行111亿美元高收益债，最长年期收益率为9.75%；简报将其放在AI融资重塑信用市场的背景中。"
     },
     {
-      "title": "AI 股票情绪两周内剧烈摆动",
-      "summary": "简报称 AI 相关股票近期在安全担忧与订阅价值乐观之间反复波动，美光业绩将提供算力支出线索。"
+      "title": "AMD拟收购World Labs，英伟达扩回购",
+      "summary": "简报报道AMD拟以82亿美元股票收购World Labs；英伟达推出智能体安全系统，并追加1500亿美元回购授权。"
     }
   ]
 };
