@@ -1,99 +1,99 @@
 window.BLOOMBERG_MARKETS_DAILY = {
-  "issueDate": "2026-09-29",
-  "publishedAt": "2026-09-29T21:35:35+00:00",
-  "newsletter": "Morning Briefing Asia",
-  "headline": "OpenAI拟IPO前融资300亿美元，30年期美债收益率创2002年新高",
-  "bloombergTake": "Bloomberg Morning Briefing Asia 报道，OpenAI计划在IPO前以约1.4万亿美元估值融资至少300亿美元，CEO阿尔特曼称投资者对解决安全问题保持耐心，特朗普则在会晤后表态反对联邦AI安全监管；30年期美债收益率升至5.57%创2002年新高，联储威廉姆斯称年内或再加息。以上为原刊快照，非实时行情；简报未给出统一市场涨跌预测。",
+  "issueDate": "2026-09-30",
+  "publishedAt": "2026-09-30T10:08:19+00:00",
+  "newsletter": "Markets Daily",
+  "headline": "美债收益率飙升提振美元走强，美股与美债在PCE数据及美光财报前上扬",
+  "bloombergTake": "Bloomberg Markets Daily 报道，美联储对抗通胀的努力推动长端美债收益率持续攀升，30年期国债收益率创2002年以来新高，外溢效应推动美元指数本月上涨1.9%，创6月以来最大单月涨幅；伊朗战事使能源价格处于高位，但中东原油供应正恢复至战前98%水平。美股与美债在关键PCE通胀数据与美光财报发布前夕小幅上扬。以上为原刊快照，非实时行情；简报未给出统一市场涨跌预测。",
   "bullish": [
     {
-      "title": "前沿AI与终端研发投入预期延续",
-      "reason": "OpenAI大额融资意向与苹果工程提速，反映前沿模型与消费硬件研发投入持续加码。",
-      "condition": "核对实际融资交割、估值水平及研发转化；若监管阻力增大或资本开支缩减，判断失效。"
+      "condition": "观察非农就业及PCE数据；若通胀超预期导致加息预期失控或引发资产无序抛售，判断失效。",
+      "reason": "美债收益率攀升与美元强势展现出对全球配置资金的吸引力，资金持续流入美国资产。",
+      "title": "高息资产吸引跨国资金回流美元"
     },
     {
-      "title": "国内定向支持措施释放托底信号",
-      "reason": "基建科技定向贷款与房贷利息补贴政策推出，释放针对性稳增长与支持内需信号。",
-      "condition": "观察信贷实际投放节奏与地产销售企稳迹象；若政策效果未显或需求继续下滑，判断失效。"
+      "condition": "核对霍尔木兹海峡实际通航船只数据与布伦特油价；若地缘冲突再次升级导致封锁，判断失效。",
+      "reason": "摩根大通与高盛测算中东原油流动已回升至战前水平的98%，能源供给端极端断供风险缓解。",
+      "title": "原油供给瓶颈呈现边际改善预期"
     }
   ],
   "bearish": [
     {
-      "title": "长端收益率突破压制风险资产估值",
-      "reason": "30年期美债收益率触及5.57%，高利率预期及联储加息预期延续使无风险折现率高企。",
-      "condition": "跟踪通胀数据、劳动力市场与长端利率；若国债买盘回流且收益率大幅回落，估值压力减轻。"
+      "condition": "跟踪美联储官员表态与长期通胀预期；若降息预期重燃且美债长端回落，估值压力缓解。",
+      "reason": "30年期美债收益率处于多年高位，贴现率上升对高杠杆及长久期成长股估值构成持续压制。",
+      "title": "长端无风险利率高企压制高估值资产"
     },
     {
-      "title": "市场不确定性阻碍企业上市与估值兑现",
-      "reason": "Oura推迟上市及投资者对高估值承接力存疑，反映一级向二级传导存在流动性折价。",
-      "condition": "观察后续IPO定价、认购倍数与破发率；若风险偏好恢复且新股溢价回升，压力缓解。"
+      "condition": "观察主要非美央行外汇干预及利差变动；若美元冲高回落，外部流动性紧缩压力减轻。",
+      "reason": "美元指数月度大涨1.9%创近期新高，非美货币与新兴市场面临资金外流和输入型通胀挑战。",
+      "title": "强势美元加剧非美市场资本外流与汇率承压"
     }
   ],
-  "sourceUrl": "https://www.bloomberg.com/news/newsletters/2026-09-29/openai-targets-30-billion-in-new-funding-round-ahead-of-ipo",
+  "sourceUrl": "https://www.bloomberg.com/news/newsletters/2026-09-30/surge-in-bond-yields-is-spilling-over-to-the-dollar",
   "mediaFocus": {
     "barrons": {
       "captureDate": "2026-09-30",
-      "capturedAt": "2026-09-30T08:32:00+08:00",
+      "capturedAt": "2026-09-30T20:30:00+08:00",
       "summary": "按首页展示顺序筛选12条公司与市场焦点，去除重复；摘要仅使用可见标题和简介，投资观点注明，未展示细节不作延伸。",
       "stories": [
         {
-          "title": "AI末日警告与市场高位并存下的投资思考",
-          "summary": "探讨在AI生存风险争论与科技股高位估值交织下，投资机构在风险与回报之间的平衡策略。",
-          "url": "https://www.barrons.com/articles/ai-stocks-existential-risk-anthropic-investing-d17c05e6"
+          "title": "圣路易斯联储穆萨莱姆警告政策指引模糊恐引发市场波动",
+          "summary": "美联储通胀指标显示上月通胀放缓，但决策层面临继续收紧政策的压力。",
+          "url": "https://www.barrons.com/articles/federal-reserve-alberto-musalem-kevin-warsh-03150b66"
         },
         {
-          "title": "纳微半导体受军方芯片项目关注再获青睐",
-          "summary": "报道称纳微半导体在功率器件及军工芯片应用领域出现新业务进展，股价重受市场关注。",
-          "url": "https://www.barrons.com/articles/navitas-stock-price-army-project-chips-9d906efe"
+          "title": "超长端美债或成逆向配置标的",
+          "summary": "20至30年期国债在权益市场收益回落时可提供具备竞争力的无风险回报。",
+          "url": "https://www.barrons.com/articles/long-term-treasuries-could-be-a-good-contrarian-bet-4247cc19"
         },
         {
-          "title": "英伟达巨额股票回购展现AI核心盈利地位",
-          "summary": "首页称芯片巨头的大规模回购计划反映其在AI产业链顶端的现金流统治力，其他厂商仍需巨资追赶。",
-          "url": "https://www.barrons.com/articles/nvidia-buyback-ai-stock-b4000b02"
+          "title": "全美五分之一房产卖家9月降价创2018年以来新高",
+          "summary": "部分房价指标仍在攀升，但更多微观成交数据显现房地产市场承压弱化。",
+          "url": "https://www.barrons.com/articles/home-prices-cuts-mortgage-rates-5148554e"
         },
         {
-          "title": "退休规划中的蒙特卡洛模拟测评与资金安全",
-          "summary": "介绍理财规划中利用概率模拟测算退休资产耗尽风险的方法，建议平衡收益目标与现金流安全。",
-          "url": "https://www.barrons.com/articles/monte-carlo-score-retirement-040e95c1"
-        },
-        {
-          "title": "机构看好金融软件服务商SS&C估值重估",
-          "summary": "首页股票观点认为基金行政与金融软件服务商SS&C具备潜在上涨空间；投资观点仅供参考。",
+          "title": "机构建议关注金融软件服务商SS&C估值重估",
+          "summary": "首页观点称基金行政与金融软件服务商具备27%的潜在上涨空间；投资观点仅供参考。",
           "url": "https://www.barrons.com/articles/buy-ssc-technologies-ssnc-stock-614c68f4"
         },
         {
-          "title": "铀能公司盘中冲高回落，亏损超预期引发分歧",
-          "summary": "Uranium Energy公布财报显示核能需求虽增长但净亏损扩大，股价急涨后遭遇获利回吐。",
+          "title": "捷普四季度业绩超预期但股价逆势走低",
+          "summary": "捷普公布好于预期的第四财季及财年盈利，但由于指引偏谨慎股价仍收跌。",
+          "url": "https://www.barrons.com/articles/jabil-earnings-stock-price-bbd35003"
+        },
+        {
+          "title": "铀能公司业绩冲高回落8%后转跌",
+          "summary": "公司公布核电需求增长但季度亏损超预期，盘中拉升后迅速掉头向下。",
           "url": "https://www.barrons.com/articles/uranium-energy-earnings-stock-price-c09fdfb1"
         },
         {
-          "title": "嘉年华邮轮营收创新高超分析师预期",
-          "summary": "邮轮巨头公布三季度营收达84亿美元创历史新高，强劲预订与票价支撑股价上涨。",
-          "url": "https://www.barrons.com/articles/carnival-earnings-stock-price-5b5cfd58"
+          "title": "莫德纳、波音与Robinhood等活跃标的透视当前市场",
+          "summary": "首页盘点驱动今日市场波动的核心个股表现与行业动向。",
+          "url": "https://www.barrons.com/articles/stock-movers-81984569"
         },
         {
-          "title": "秋季学院休闲服饰风潮利好两家服饰标的",
-          "summary": "零售观点探讨拉夫劳伦与Deckers在换季服饰及鞋类消费趋势中的品牌定价力。",
-          "url": "https://www.barrons.com/articles/ralph-lauren-deckers-outdoor-stock-price-4d781e4f"
+          "title": "特朗普格陵兰协议聚焦北极安全但稀土开采仍存挑战",
+          "summary": "报道分析北极防务与战略矿产协议落地情况，指出稀土商业化开采面临环境与技术门槛。",
+          "url": "https://www.barrons.com/articles/trump-greenland-deal-minerals-rare-earths-mining-4074db6f"
         },
         {
-          "title": "苹果与多只异动股解析今日美股盘面",
-          "summary": "梳理高管调整、科技AI动态、邮轮财报与商业航天等多重事件对跨行业重点个股走势的影响。",
-          "url": "https://www.barrons.com/articles/stock-movers-45e4999c"
+          "title": "台积电拟在美投资2650亿美元并可能进一步扩产",
+          "summary": "首页报道芯片制造巨头在美设厂与供应链建设规划，投资总额可能继续提高。",
+          "url": "https://www.barrons.com/articles/taiwan-semi-stock-us-hub-acf4515d"
         },
         {
-          "title": "美债收益率走高压制美股，鸽派言论难挡高利率",
-          "summary": "分析指出尽管有联储官员发表温和讲话，长端美债收益率上升仍对美股成长股估值构成直接压制。",
-          "url": "https://www.barrons.com/articles/bond-yields-depress-stocks-despite-dovish-fed-president-comments-20631f1e"
-        },
-        {
-          "title": "中美经贸与AI会晤进展引发投资者不同解读",
-          "summary": "报道讨论中美双边会晤对于关税预期、半导体合作及关键产业供应链的长期复杂影响。",
+          "title": "特朗普评价中美会晤富有成效",
+          "summary": "首页报道高层双边会谈进展与市场关切的贸易、科技及AI议题动向。",
           "url": "https://www.barrons.com/articles/trump-xi-meeting-trade-markets-ai-55279ad3"
         },
         {
-          "title": "Meta因Muse大涨后估值步入精细验证期",
-          "summary": "深度分析指出Meta在AI大涨后估值已充分反映初期预期，后续走势需依赖广告变现与API实际营收。",
+          "title": "Meta因Muse AI暴涨后估值步入考验期",
+          "summary": "深度分析称初期AI催化的估值拉升已过，后续需检验商业化变现与资本开支回报。",
           "url": "https://www.barrons.com/articles/meta-stock-sell-muse-rally-f5cbec05"
+        },
+        {
+          "title": "医疗创新驱动生物科技新牛市：专家团16只精选标的",
+          "summary": "并购重组活跃与技术突破带动板块走强，专业医疗投资人看好后续行情。",
+          "url": "https://www.barrons.com/articles/biotech-healthcare-stocks-roundtable-057abe29"
         }
       ]
     },
@@ -410,24 +410,28 @@ window.BLOOMBERG_MARKETS_DAILY = {
   },
   "bloombergStories": [
     {
-      "title": "OpenAI拟以1.4万亿美元估值融资300亿",
-      "summary": "简报称OpenAI在筹备IPO之际寻求新一轮大规模融资，阿尔特曼称投资者对公司解决安全关切保持耐心。"
+      "title": "美股与美债在关键数据前夕上扬",
+      "summary": "市场静待美联储青睐的PCE通胀指标出炉以及美光科技盘后财报，三大期指与国债窄幅走高。"
     },
     {
-      "title": "30年期美债收益率升至5.57%创24年新高",
-      "summary": "美债抛售延续，30年期收益率达2002年以来最高水平；联储官员威廉姆斯称年内或仍有一次加息。"
+      "title": "中东原油运输量恢复至战前98%",
+      "summary": "高盛与摩根大通预估显示中东原油海运量正恢复至战前水平附近，国际油价高位震荡。"
     },
     {
-      "title": "苹果新CEO特纳斯拟推行架构重组",
-      "summary": "前硬件主管上任后拟精简组织、加快产品研发周期并扩充设备品类，强化工程研发重心。"
+      "title": "特朗普表态支持独立机构审计AI系统安全",
+      "summary": "特朗普政策立场出现调整，公开支持采用独立第三方审计师对前沿AI系统进行安全性评估。"
     },
     {
-      "title": "智能穿戴Oura因估值推迟赴美上市",
-      "summary": "简报报道受市场波动及部分投资者对目标估值分歧影响，智能指环公司Oura推迟上市计划。"
+      "title": "波音击败诺斯罗普斩获美海军新一代战机合同",
+      "summary": "波音获得美国海军下一代舰载机生产合同以替代现役F/A-18，诺斯罗普·格鲁曼竞标落败。"
     },
     {
-      "title": "中国扩定向信贷并予首套房贷利息补贴",
-      "summary": "简报报道中国扩大对基建与高科技领域定向借款，并向符合条件的首套房贷推出利息补贴以稳增长。"
+      "title": "强势美元创6月以来最大月度涨幅",
+      "summary": "彭博美元即期指数本月上涨1.9%，高企的美债收益率与联储强硬立场持续吸引资金买入美元。"
+    },
+    {
+      "title": "Robinhood计划推出美股周末交易功能",
+      "summary": "散户经纪商Robinhood拟开通股票全周末交易与永续合约，开创现代美股市场先河。"
     }
   ]
 };
