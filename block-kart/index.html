@@ -114,6 +114,16 @@ tr.me td{background:rgba(255,201,60,.14)}
   .center{top:22%}
 }
 @media (prefers-reduced-motion:reduce){.center{transition:none}}
+
+/* Readable learning questions, including long answers on small screens. */
+#quizOv .dialog{width:min(680px,100%);gap:16px;padding:24px}
+#quizOv h2{font-size:36px}
+#quizQuestion{font-size:22px;line-height:1.6;margin:4px 0;overflow-wrap:anywhere}
+#quizChoices button{font-size:20px;min-height:56px;line-height:1.5}
+#quizFeedback,#quizExplanation{font-size:18px;line-height:1.65;overflow-wrap:anywhere}
+#quizOv .keys{font-size:15px;line-height:1.65}
+#quizContinue{font-size:20px}
+@media(max-width:600px){#quizOv .dialog{padding:18px;gap:12px}#quizOv h2{font-size:32px}#quizQuestion{font-size:20px}#quizChoices button{font-size:18px}#quizFeedback,#quizExplanation{font-size:17px}#quizOv .keys{font-size:14px}}
 </style>
 
 </head>
