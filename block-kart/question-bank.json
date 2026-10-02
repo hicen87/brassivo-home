@@ -1,5 +1,5 @@
 {
-  "version": "20261002-mvp",
+  "version": "20261002-mvp-no-local",
   "region": "浙江小学学习场景",
   "notice": "原创入门练习，非官方题库；低年级英语为启蒙拓展。各科年级难度仅作练习分组，不代表学校教材进度。",
   "subjects": {
@@ -13,8 +13,7 @@
     "pe": "体育与健康",
     "labor": "劳动",
     "it": "信息科技",
-    "practice": "综合实践",
-    "local": "浙江地方知识"
+    "practice": "综合实践"
   },
   "questions": [
     {
@@ -856,90 +855,6 @@
         "随机选一个观点"
       ],
       "explanation": "正确答案：收集到的证据"
-    },
-    {
-      "id": "local-1-1",
-      "grade": 1,
-      "subject": "local",
-      "text": "浙江的省会是？",
-      "answer": "杭州",
-      "options": [
-        "杭州",
-        "宁波",
-        "温州",
-        "绍兴"
-      ],
-      "explanation": "正确答案：杭州"
-    },
-    {
-      "id": "local-2-1",
-      "grade": 2,
-      "subject": "local",
-      "text": "西湖位于哪座城市？",
-      "answer": "杭州",
-      "options": [
-        "杭州",
-        "嘉兴",
-        "金华",
-        "台州"
-      ],
-      "explanation": "正确答案：杭州"
-    },
-    {
-      "id": "local-3-1",
-      "grade": 3,
-      "subject": "local",
-      "text": "钱塘江涌潮与哪种现象有关？",
-      "answer": "潮汐",
-      "options": [
-        "潮汐",
-        "火山喷发",
-        "沙尘暴",
-        "极光"
-      ],
-      "explanation": "正确答案：潮汐"
-    },
-    {
-      "id": "local-4-1",
-      "grade": 4,
-      "subject": "local",
-      "text": "京杭大运河的“杭”指哪里？",
-      "answer": "杭州",
-      "options": [
-        "杭州",
-        "湖州",
-        "衢州",
-        "丽水"
-      ],
-      "explanation": "正确答案：杭州"
-    },
-    {
-      "id": "local-5-1",
-      "grade": 5,
-      "subject": "local",
-      "text": "良渚古城遗址位于哪个省？",
-      "answer": "浙江",
-      "options": [
-        "浙江",
-        "广东",
-        "四川",
-        "辽宁"
-      ],
-      "explanation": "正确答案：浙江"
-    },
-    {
-      "id": "local-6-1",
-      "grade": 6,
-      "subject": "local",
-      "text": "浙江东面临近哪片海？",
-      "answer": "东海",
-      "options": [
-        "东海",
-        "渤海",
-        "黄海北部",
-        "地中海"
-      ],
-      "explanation": "正确答案：东海"
     },
     {
       "id": "math-1-1",
