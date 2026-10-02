@@ -129,14 +129,18 @@
 
 ## Execution status
 
-Implementation complete locally. 98 site tests and local D1 integration passed. Worker/Pages rollout pending; do not publish frontend before compatible backend. Task 10 still requires real iPad heat/handfeel confirmation. Task 21 implements metrics and a decision gate, not live multiplayer.
+Implementation complete locally. 100 site tests and local D1 integration passed. Worker/Pages rollout pending; do not publish frontend before compatible backend. Task 10 still requires real iPad heat/handfeel confirmation. Task 21 implements metrics and a decision gate, not live multiplayer.
 
 ## Local acceptance evidence
 
-- 98/98 Node tests passed; game subset 70/70.
+- 100/100 Node tests passed; game subset 72/72.
 - Local disposable D1 verified auth, issued questions, server grading, elapsed/lap validation, idempotent finish, mode/version boards, scores, reports, metrics and CORS.
 - Browser completed one-lap incorrect/correct flow and full six-lap study race: 7 quizzes, no road boxes, 100 point cap, final answer gives XP without extra equipment; wrong review and training verified.
 - Mobile 390x844 verified large stacked answer choices, fixed slots and sequential use without releasing held throttle, scale stayed 1 on double tap.
 - Grade shards/answer manifest match canonical bank. Build dry-run 1358.50 KiB, gzip 443.14 KiB.
 - Fixed missing friend-code status display, stale wrong-question resolution, legacy-score join, and a score-script loading failure; six-lap rerun passed.
 - Resource checks are desktop only; actual iPad heat/handfeel and real-player return data remain outstanding.
+
+## Release preparation 2026-10-03
+
+Explicit module globals and startup exception recovery verified in the browser. Cloudflare authorization restored with user confirmation; production D1 SQL exported to private backup. Worker S2 health verified; Pages acceptance status is maintained in the private maintenance record.
