@@ -134,7 +134,7 @@ tr.me td{background:rgba(255,201,60,.14)}
   <p class="best" id="bestTxt"></p>
   <p id="cloudStatus" class="keys">游客模式：登录后可保存云端成绩。<a href="/game/">登录 / 排行榜</a></p>
   <button id="startBtn" class="big">开始比赛</button>
-  <p class="keys"><b>电脑</b>：W/↑ 油门 · S/↓ 刹车/倒车 · A D/← → 转向 · 空格 漂移 · E 道具 · 学霸模式 1/2/3 使用对应道具 · P 暂停<br>
+  <p class="keys"><b>电脑</b>：W/↑ 油门 · S/↓ 刹车/倒车 · A D/← → 转向 · 空格 漂移 · E 道具 · 学霸模式 I/O/P 使用对应道具 · Esc 暂停<br>
   <b>手机/平板</b>：默认倾斜转向（可切换摇杆）（自动油门）· 右侧 漂移 / 道具 / 刹车<br>
   <b>手柄</b>：左摇杆转向 · RT 油门 · LT 刹车 · RB 漂移 · X 道具<br>
   漂移时间越长火花越亮：蓝 → 橙 → 紫，松开即加速。倒数到"1"时踩油门可起步冲刺。</p>
@@ -667,7 +667,7 @@ window.addEventListener('keydown', e => {
   if (['Space', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.code)) e.preventDefault();
   if (G.state === 'race' || G.state === 'countdown') {
     if (e.code === 'KeyE' || e.code === 'KeyX' || e.code === 'Enter' || e.code === 'KeyJ') itemEdge = true;
-    if (e.code === 'KeyP' || e.code === 'Escape') togglePause();
+    if (e.code === 'Escape') togglePause();
   }
   if (G.touch && !coarse) { G.touch = false; $('#touch').hidden = true; }
 });
@@ -703,7 +703,7 @@ $('#tItem').addEventListener('pointerdown', e => { e.preventDefault(); itemEdge 
 $('#itemSlot').addEventListener('pointerdown', e => { e.preventDefault(); itemEdge = true; });
 window.addEventListener('touchstart', () => { if (!G.touch) { G.touch = true; if (G.state !== 'menu') $('#touch').hidden = false; } }, { passive: true });
 let itemChoice=0;
-window.addEventListener('keydown',e=>{if(G.study&&!G.paused&&G.state==='race'&&/^Digit[123]$/.test(e.code)){itemChoice=Number(e.code.slice(-1))-1;itemEdge=true;}});
+window.addEventListener('keydown',e=>{if(G.study&&!G.paused&&G.state==='race'&&['KeyI','KeyO','KeyP'].includes(e.code)){itemChoice=['KeyI','KeyO','KeyP'].indexOf(e.code);itemEdge=true;}});
 let padItemPrev = false;
 function readInput() {
   let thr = (keys.KeyW || keys.ArrowUp) ? 1 : 0, brk = !!(keys.KeyS || keys.ArrowDown);
