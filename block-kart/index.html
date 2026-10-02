@@ -187,7 +187,7 @@ tr.me td{background:rgba(255,201,60,.14)}
 </div>
 
 <div id="accountOv" class="overlay" hidden style="z-index:110"><div class="dialog panel" style="max-height:85vh;overflow:auto"><h2>玩家账号</h2><p id="accountStatus"></p><form id="authForm"><label>账号<input id="username" autocomplete="username" required minlength="3" maxlength="20" pattern="[a-zA-Z0-9_]{3,20}"></label><label>密码<input id="password" type="password" autocomplete="current-password" required minlength="8" maxlength="128"></label><button class="big" value="login">登录</button><button class="alt" value="register">注册并登录</button></form><button id="logout" class="alt" hidden>退出登录</button><button class="alt" onclick="document.getElementById('accountOv').hidden=true">关闭</button></div></div>
-<div id="boardOv" class="overlay" hidden style="z-index:110"><div class="dialog panel" style="max-height:85vh;overflow:auto"><h2>游戏排行榜</h2><p class="keys">准确率 × 600 分；每圈 50 分（最多 300）；每次有效击倒 20 分（最多 100）。普通模式不计答题分。</p><div id="boardFilters" style="display:grid;grid-template-columns:1fr 1fr;gap:8px"></div><p id="boardStatus"></p><table><thead><tr><th>排名</th><th>玩家</th><th>综合分</th><th>答题 / 圈数 / 击倒</th></tr></thead><tbody id="boardRows"></tbody></table><button id="refreshBoard" class="alt">刷新</button><button class="alt" onclick="document.getElementById('boardOv').hidden=true">返回游戏</button></div></div>
+<div id="boardOv" class="overlay" hidden style="z-index:110"><div class="dialog panel" style="max-height:85vh;overflow:auto"><h2>游戏排行榜</h2><p class="keys">满分100分：准确率 × 60 分；每圈 5 分（最多 30）；每次有效击倒 2 分（最多 10）。普通模式不计答题分。</p><div id="boardFilters" style="display:grid;grid-template-columns:1fr 1fr;gap:8px"></div><p id="boardStatus"></p><table><thead><tr><th>排名</th><th>玩家</th><th>综合分 / 100</th><th>答题 / 圈数 / 击倒</th></tr></thead><tbody id="boardRows"></tbody></table><button id="refreshBoard" class="alt">刷新</button><button class="alt" onclick="document.getElementById('boardOv').hidden=true">返回游戏</button></div></div>
 <div id="playLock" class="overlay" hidden style="z-index:999"><div class="dialog panel"><h2>休息时间</h2><p>已累计游玩 30 分钟，请休息 30 分钟。</p><p id="playLockTime" role="timer" style="font-size:36px;color:#ffe36a"></p><p>倒计时结束后可以继续游戏，刷新页面仍保留锁定。</p></div></div>
 <div id="toast" class="toast" hidden></div>
 
@@ -198,8 +198,8 @@ tr.me td{background:rgba(255,201,60,.14)}
 <script src="api.js"></script>
 <script src="play-limit.js"></script>
 <script src="touch-guard.js?v=20261002"></script>
-<script src="score.js"></script>
-<script src="game-account.js"></script>
+<script src="score.js?v=100point-v1"></script>
+<script src="game-account.js?v=100point-v1"></script>
 <script>
 (() => {
 'use strict';
@@ -1049,7 +1049,7 @@ function showResults() {
   if (prev == null || mine < prev) { store.set(key, mine); bestMsg = prev == null ? `首个纪录 ${fmt(mine)}` : `新纪录！${fmt(mine)}（原 ${fmt(prev)}）`; }
   else bestMsg = `本赛道最佳 ${fmt(prev)}`;
   const score=KartScore.calculate({correct:G.studyStats.correct,total:G.studyStats.total,laps:LAPS,hits:G.player.hits||0});
-  $('#resScore').textContent=`综合评分 ${score.points} 分 · 答题 ${score.accuracy} 分（${G.studyStats.correct}/${G.studyStats.total}）· 完成 ${LAPS} 圈 ${score.laps} 分 · 有效击倒 ${G.player.hits||0} 次 ${score.hits} 分`;
+  $('#resScore').textContent=`综合评分 ${score.points} / 100 分 · 答题 ${score.accuracy} 分（${G.studyStats.correct}/${G.studyStats.total}）· 完成 ${LAPS} 圈 ${score.laps} 分 · 有效击倒 ${G.player.hits||0} 次 ${score.hits} 分`;
   $('#resBest').textContent = `${TRACKS[G.trackIdx].name} · ${DIFFS[G.diff].name} · ${bestMsg}`;
   saveCloudScore(mine);
   const body = $('#resBody'); body.textContent = '';
