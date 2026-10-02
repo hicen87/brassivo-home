@@ -2,7 +2,9 @@
 import json
 from pathlib import Path
 p=Path(__file__).resolve().parents[1]/'block-kart/question-bank.json'
-b=json.loads(p.read_text()); b['questions']=[q for q in b['questions'] if not q['id'].startswith('thinking-')]
+b=json.loads(p.read_text())
+if 'diverse' in b.get('version',''):raise SystemExit('当前题库请使用 tools/expand-question-bank.py；禁止v5脚本覆盖多样化题库。')
+b['questions']=[q for q in b['questions'] if not q['id'].startswith('thinking-')]
 def add(g,s,text,answer,wrong,reason,topic):
     opts=[str(answer)]+list(map(str,wrong)); assert len(set(opts))==4,(text,opts)
     b['questions'].append(dict(id=f'thinking-{s}-{g}-{sum(q["id"].startswith(f"thinking-{s}-{g}-") for q in b["questions"])+1}',grade=g,subject=s,text=text,answer=str(answer),options=opts,explanation=reason,difficulty='thinking',topic=topic))
