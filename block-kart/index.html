@@ -45,6 +45,7 @@ button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 .bar i{display:block;height:100%;background:var(--green)}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .seg{display:flex;gap:4px;flex-wrap:wrap}
+#quizChoices{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}#quizChoices.vertical{grid-template-columns:1fr}#quizChoices button{white-space:normal;overflow-wrap:anywhere;min-width:0;height:auto;min-height:48px;padding:12px;text-align:center;line-height:1.45}#quizOv .dialog{max-height:90dvh;overflow-y:auto}@media(max-width:600px){#quizChoices{grid-template-columns:1fr}}
 .seg button{flex:1;min-width:0;white-space:nowrap;background:#232a3c;border:3px solid var(--line);border-radius:4px;padding:6px 4px;font-size:13px;box-shadow:0 3px 0 var(--line)}
 .seg button[aria-pressed="true"]{border-color:var(--gold);background:#2f3750;color:var(--gold)}
 .big{font-family:var(--disp);font-size:24px;letter-spacing:4px;background:var(--gold);color:#3a2604;border:3px solid var(--line);border-radius:6px;padding:12px;box-shadow:0 6px 0 var(--gold-d),0 6px 0 3px var(--line)}
@@ -133,7 +134,8 @@ tr.me td{background:rgba(255,201,60,.14)}
   <section><label class="keys"><input id="studyMode" type="checkbox"> 学习学霸模式</label><p class="keys">开局驶过起跑线及每圈通过终点线后答题：答对随机补满空道具格，答错不获得道具，随后继续行驶。学霸模式没有路上盲盒；答题时全场暂停。</p><div class="row2"><label class="keys">年级<select id="studyGrade" style="width:100%;padding:8px"><option value="1">一年级</option><option value="2">二年级</option><option value="3">三年级</option><option value="4">四年级</option><option value="5">五年级</option><option value="6">六年级</option></select></label><label class="keys">题库<select id="studySubject" style="width:100%;padding:8px"><option value="all">综合随机</option><option value="math">数学</option><option value="chinese">语文</option><option value="english">英语</option><option value="science">科学</option><option value="ethics">道德与法治</option><option value="music">音乐</option><option value="art">美术</option><option value="pe">体育与健康</option><option value="labor">劳动</option><option value="it">信息科技</option><option value="practice">综合实践</option></select></label></div><p class="keys">题库随年级切换；英语、信息科技从三年级起显示。</p></section>
   <details id="controlSettings"><summary style="cursor:pointer;font-weight:bold;color:var(--gold)">控制设置</summary><label class="keys">手机 / 平板转向<select id="controlMenu" style="width:100%;padding:8px"><option value="tilt">重力控制（默认）</option><option value="joystick">模拟摇杆</option></select></label><button id="calibrateMenu" class="alt">校准重力中心</button><p class="keys">保持设备在舒服的姿势，左右倾斜转向。点击开始时按设备提示允许运动传感器；无传感器时使用摇杆。</p></details>
   <p class="best" id="bestTxt"></p>
-  <p id="cloudStatus" class="keys">游客模式：登录后可保存云端成绩。<a href="/game/">登录 / 排行榜</a></p>
+  <p id="cloudStatus" class="keys">游客模式：登录后可保存云端成绩。</p>
+  <div style="display:flex;gap:8px"><button id="accountBtn" class="alt">注册 / 登录</button><button id="leaderboardBtn" class="alt">游戏排行榜</button></div><p class="keys">累计游玩 30 分钟后锁定 30 分钟，请合理安排休息。</p>
   <button id="startBtn" class="big">开始比赛</button>
 
 </div>
@@ -141,7 +143,7 @@ tr.me td{background:rgba(255,201,60,.14)}
 <details id="menuHelp" class="panel menu-help"><summary>操作说明</summary>  <p class="keys"><b>电脑</b>：W/↑ 油门 · S/↓ 刹车/倒车 · A D/← → 转向 · 空格 漂移 · E 道具 · 学霸模式 I/O/P 使用对应道具 · Esc 暂停<br>
   <b>手机/平板</b>：默认倾斜转向（可切换摇杆）（自动油门）· 右侧 漂移 / 道具 / 刹车<br>
   <b>手柄</b>：左摇杆转向 · RT 油门 · LT 刹车 · RB 漂移 · X 道具<br>
-  漂移时间越长火花越亮：蓝 → 橙 → 紫，松开即加速。倒数到"1"时踩油门可起步冲刺。</p></details>
+  道具：火箭加速；果冻块设陷阱；追踪弹攻击；护盾抵挡一次攻击（8秒）；闪电攻击24米内对手；冰冻弹击倒并减速3秒。<br>漂移时间越长火花越亮：蓝 → 橙 → 紫，松开即加速。倒数到"1"时踩油门可起步冲刺。</p></details>
 <div id="quizOv" style="z-index:100" class="overlay" role="dialog" aria-modal="true" aria-labelledby="quizTitle" hidden><div class="dialog panel"><h2 id="quizTitle" tabindex="-1" style="outline:none">终点答题</h2><p id="quizQuestion"></p><div id="quizChoices" class="seg"></div><p class="keys">答对随机补满空道具格；答错不获得道具，不惩罚驾驶。</p></div></div>
 <div id="hud" hidden>
   <div class="hud-tl">
@@ -174,20 +176,27 @@ tr.me td{background:rgba(255,201,60,.14)}
 <div id="resultOv" class="overlay" hidden>
   <div class="dialog panel">
     <h2 id="resTitle">比赛结束</h2>
-    <p class="best" id="resBest"></p>
+    <p class="best" id="resBest"></p><p id="resScore"></p>
     <table><tbody id="resBody"></tbody></table>
     <button id="againBtn" class="big">再来一局</button>
+    <button class="alt" onclick="document.getElementById('leaderboardBtn').click()">查看排行榜</button>
     <button id="menuBtn" class="alt">返回菜单</button>
   </div>
 </div>
 
+<div id="accountOv" class="overlay" hidden style="z-index:110"><div class="dialog panel" style="max-height:85vh;overflow:auto"><h2>玩家账号</h2><p id="accountStatus"></p><form id="authForm"><label>账号<input id="username" autocomplete="username" required minlength="3" maxlength="20" pattern="[a-zA-Z0-9_]{3,20}"></label><label>密码<input id="password" type="password" autocomplete="current-password" required minlength="8" maxlength="128"></label><button class="big" value="login">登录</button><button class="alt" value="register">注册并登录</button></form><button id="logout" class="alt" hidden>退出登录</button><button class="alt" onclick="document.getElementById('accountOv').hidden=true">关闭</button></div></div>
+<div id="boardOv" class="overlay" hidden style="z-index:110"><div class="dialog panel" style="max-height:85vh;overflow:auto"><h2>游戏排行榜</h2><p class="keys">准确率 × 600 分；每圈 50 分（最多 300）；每次有效击倒 20 分（最多 100）。普通模式不计答题分。</p><div id="boardFilters" style="display:grid;grid-template-columns:1fr 1fr;gap:8px"></div><p id="boardStatus"></p><table><thead><tr><th>排名</th><th>玩家</th><th>综合分</th><th>答题 / 圈数 / 击倒</th></tr></thead><tbody id="boardRows"></tbody></table><button id="refreshBoard" class="alt">刷新</button><button class="alt" onclick="document.getElementById('boardOv').hidden=true">返回游戏</button></div></div>
+<div id="playLock" class="overlay" hidden style="z-index:999"><div class="dialog panel"><h2>休息时间</h2><p>已累计游玩 30 分钟，请休息 30 分钟。</p><p id="playLockTime" role="timer" style="font-size:36px;color:#ffe36a"></p><p>倒计时结束后可以继续游戏，刷新页面仍保留锁定。</p></div></div>
 <div id="toast" class="toast" hidden></div>
 
 <script src="vendor/three.min.js"></script>
 <script src="subjects.js?v=grade-20261002"></script>
-<script src="learning.js?v=random-v2-20261002"></script>
+<script src="learning.js?v=expanded-v3-20261002"></script>
 <script src="tilt.js?v=20261002"></script>
 <script src="api.js"></script>
+<script src="play-limit.js"></script>
+<script src="score.js"></script>
+<script src="game-account.js"></script>
 <script>
 (() => {
 'use strict';
@@ -232,7 +241,7 @@ const DIFFS = [
 ];
 const QUALS = ['low', 'mid', 'high'];
 const QNAMES = { low: '流畅', mid: '均衡', high: '精美' };
-const ITEM_NAMES = { turbo: '火箭', jelly: '果冻块', missile: '追踪弹' };
+const ITEM_NAMES = { turbo: '火箭', jelly: '果冻块', missile: '追踪弹',shield:'护盾',lightning:'闪电',ice:'冰冻弹' };
 
 /* ================= device & quality ================= */
 const coarse = matchMedia('(pointer: coarse)').matches || 'ontouchstart' in window;
@@ -326,6 +335,9 @@ function faceCanvas(ch, scale = 1) {
 }
 function pix(draw) { const c = document.createElement('canvas'); c.width = 16; c.height = 16; const g = c.getContext('2d'); draw((x, y, w, h, col) => { g.fillStyle = col; g.fillRect(x, y, w, h); }); return c.toDataURL(); }
 const ICONS = {
+ shield:pix(r=>{r(3,2,10,8,'#47aaff');r(5,10,6,3,'#47aaff');r(7,13,2,2,'#47aaff');r(6,4,4,7,'#d5f5ff');}),
+ lightning:pix(r=>{r(8,1,5,3,'#ffec52');r(6,4,5,3,'#ffec52');r(4,7,8,3,'#ffec52');r(7,10,3,3,'#ffec52');r(5,13,3,2,'#ffec52');}),
+ ice:pix(r=>{r(7,1,2,14,'#6cddff');r(1,7,14,2,'#6cddff');r(3,3,2,2,'#ddfaff');r(11,3,2,2,'#ddfaff');r(3,11,2,2,'#ddfaff');r(11,11,2,2,'#ddfaff');r(5,5,6,6,'#b1edff');}),
   turbo: pix(r => { r(6, 1, 4, 2, '#e8412c'); r(5, 3, 6, 7, '#d6dbe4'); r(6, 4, 4, 2, '#5aa9ff'); r(3, 8, 2, 3, '#e8412c'); r(11, 8, 2, 3, '#e8412c'); r(6, 10, 4, 2, '#7d8594'); r(6, 12, 4, 2, '#ffb02e'); r(7, 14, 2, 2, '#fff06a'); }),
   jelly: pix(r => { r(2, 3, 12, 11, '#1f6b2a'); r(3, 4, 10, 9, '#4fd26a'); r(4, 5, 3, 2, '#c8ffd2'); r(5, 8, 2, 2, '#15171c'); r(9, 8, 2, 2, '#15171c'); r(6, 11, 4, 1, '#1f6b2a'); }),
   missile: pix(r => { r(2, 6, 10, 4, '#e8412c'); r(12, 7, 2, 2, '#e8412c'); r(14, 7, 1, 2, '#ffd24a'); r(4, 6, 1, 4, '#ffffff'); r(2, 3, 3, 3, '#9aa3b2'); r(2, 10, 3, 3, '#9aa3b2'); r(0, 7, 2, 2, '#ffb02e'); })
@@ -575,7 +587,7 @@ function makeKartMesh(ch) {
 function makeKart(ci, isPlayer) {
   const ch = CHARS[ci]; const mesh = makeKartMesh(ch); scene.add(mesh.g);
   return { ch, ci, isPlayer, ...mesh, x: 0, z: 0, y: 0, vy: 0, heading: 0, speed: 0, idx: 0, lat: 0, along: 0,
-    drifting: false, driftDir: 0, driftCharge: 0, driftHeld: false, boostT: 0, spinT: 0, spinA: 0, item: null, itemQueue: [], rollT: 0, finished: false, finishT: 0,
+    drifting: false, driftDir: 0, driftCharge: 0, driftHeld: false, boostT: 0, spinT: 0, spinA: 0, hits:0, shieldT:0,freezeT:0, item: null, itemQueue: [], rollT: 0, finished: false, finishT: 0,
     aiLat: 0, aiLatGoal: 0, aiLatT: 0, aiItemT: 2, aiDriftT: 0, aiMul: 1, skill: 1, wrongT: 0, wallT: 0, lastLap: 1, visYaw: 0, hopHeld: false };
 }
 function clearKarts() { for (const k of G.karts) scene.remove(k.g); G.karts = []; }
@@ -664,6 +676,7 @@ function sfx(type) {
 /* ================= input ================= */
 const keys = {}; let itemEdge = false;
 window.addEventListener('keydown', e => {
+  if(e.target?.closest?.('input,textarea,select'))return;
   if (e.repeat) { if (['Space', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.code)) e.preventDefault(); return; }
   keys[e.code] = true;
   if (['Space', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.code)) e.preventDefault();
@@ -705,7 +718,7 @@ $('#tItem').addEventListener('pointerdown', e => { e.preventDefault(); itemEdge 
 $('#itemSlot').addEventListener('pointerdown', e => { e.preventDefault(); itemEdge = true; });
 window.addEventListener('touchstart', () => { if (!G.touch) { G.touch = true; if (G.state !== 'menu') $('#touch').hidden = false; } }, { passive: true });
 let itemChoice=0;
-window.addEventListener('keydown',e=>{if(G.study&&!G.paused&&G.state==='race'&&['KeyI','KeyO','KeyP'].includes(e.code)){itemChoice=['KeyI','KeyO','KeyP'].indexOf(e.code);itemEdge=true;}});
+window.addEventListener('keydown',e=>{if(!e.repeat&&G.study&&!G.paused&&G.state==='race'&&['KeyI','KeyO','KeyP'].includes(e.code)){itemChoice=['KeyI','KeyO','KeyP'].indexOf(e.code);itemEdge=true;}});
 let padItemPrev = false;
 function readInput() {
   let thr = (keys.KeyW || keys.ArrowUp) ? 1 : 0, brk = !!(keys.KeyS || keys.ArrowDown);
@@ -728,14 +741,14 @@ function readInput() {
 function rankOf(k) { return G.order.indexOf(k); }
 function pickItem(rank) {
   const r = rank / (G.karts.length - 1);
-  const w = { turbo: 1 + r * 3, missile: 0.3 + r * 2.2, jelly: 2.6 - r * 2 };
-  let s = w.turbo + w.missile + w.jelly, x = Math.random() * s;
-  for (const k of ['turbo', 'missile', 'jelly']) { x -= w[k]; if (x <= 0) return k; }
+  const w = { turbo: 1 + r * 3, missile: 0.3 + r * 2.2, jelly: 2.6 - r * 2,shield:1.4,lightning:0.5+r,ice:0.8+r };
+  let s = Object.values(w).reduce((a,b)=>a+b,0), x = Math.random() * s;
+  for (const k of Object.keys(w)) { x -= w[k]; if (x <= 0) return k; }
   return 'turbo';
 }
 async function saveCloudScore(seconds) {
   const id=G.cloudRun; if(!id)return; G.cloudRun=null;
-  const b={runId:id,ms:Math.round(seconds*1000),correct:G.studyStats.correct,total:G.studyStats.total};
+  const b={runId:id,ms:Math.round(seconds*1000),correct:G.studyStats.correct,total:G.studyStats.total,laps:LAPS,hits:G.player.hits||0};
   const label=$('#resBest');label.textContent+=' · 正在保存云端成绩…';
   try{await GameAPI.call('/finish',b);label.textContent=label.textContent.replace('正在保存云端成绩…','云端已保存');}
   catch(e){label.textContent=label.textContent.replace('正在保存云端成绩…','云端保存失败：'+e.message);}
@@ -746,7 +759,7 @@ function studyCheckpoint(k, done=()=>{}) {
   if (quizPending) return;
   const q = KartLearning.question(G.grade,G.subject); quizPending = {k,q}; G.paused = true;
   $('#quizTitle').textContent='终点答题';engineSound(false,0,false); $('#quizQuestion').textContent = `${G.grade}年级 · ${q.subjectName}：${q.text}`;
-  const choices = $('#quizChoices'); choices.textContent = '';
+  const choices = $('#quizChoices'); choices.textContent = '';choices.classList.toggle('vertical',q.options.some(x=>String(x).length>6));
   q.options.forEach(answer => { const b = document.createElement('button'); b.textContent = answer; b.onclick = () => {
     if (!quizPending) return;
     clearQuiz(); G.paused = false;
@@ -754,17 +767,17 @@ function studyCheckpoint(k, done=()=>{}) {
     G.studyStats.total++;
     const correct=answer===q.answer;
     if(correct)G.studyStats.correct++;
-    toast(correct?(heldItems(k).length===3?'答对了！道具格已满，保留现有道具':'答对了！随机补满空道具格'):'答错了！'+q.explanation+'；不获得道具，继续加油',3500);
+    toast(correct?(heldItems(k).every(Boolean)?'答对了！道具格已满，保留现有道具':'答对了！随机补满空道具格'):'答错了！'+q.explanation+'；不获得道具，继续加油',3500);
     const finish=()=>{done();$('#pauseBtn').focus();};
     if(correct)awardStudyItems(k,3,finish);else finish();
   };choices.appendChild(b); });
   $('#quizOv').hidden = false; $('#quizTitle').focus({preventScroll:true});
 }
-function heldItems(k){return [...(k.item?[k.item]:[]),...(k.itemQueue||[])];}
+function heldItems(k){return [k.item||null,k.itemQueue?.[0]||null,k.itemQueue?.[1]||null];}
 function setItems(k,items){k.item=items[0]||null;k.itemQueue=items.slice(1);k.rollT=0;}
 function awardStudyItems(k,count,done=()=>{}){
-  const items=heldItems(k);const added=Math.min(count,Math.max(0,3-items.length));
-  for(let i=0;i<added;i++)items.push(pickItem(rankOf(k)));
+  const items=heldItems(k);let added=0;
+  for(let i=0;i<3 && added<count;i++)if(!items[i]){items[i]=pickItem(rankOf(k));added++;}
   setItems(k,items);if(!k.isPlayer)k.aiItemT=1+Math.random()*4;else if(added)sfx('item');done();
 }
 function studyLapGate(k) {
@@ -778,24 +791,29 @@ function studyLapGate(k) {
 }
 function giveItem(k) { if (k.item || k.rollT > 0) return; k.rollT = k.isPlayer ? 1.1 : 0.8; if (k.isPlayer) sfx('item'); }
 function useItem(k,index=0) {
-  const items=heldItems(k);if(!items[index])return;const [it]=items.splice(index,1);setItems(k,items);
+  const items=heldItems(k);if(!items[index])return;const it=items[index];items[index]=null;setItems(k,items);
   const fx = Math.sin(k.heading), fz = Math.cos(k.heading);
   if (it === 'turbo') { k.boostT = Math.max(k.boostT, 1.6); if (k.isPlayer) sfx('boost'); }
+  else if(it==='shield'){k.shieldT=8;if(k.isPlayer)toast('护盾：8秒内抵挡一次攻击',2000);sfx('item');}
+  else if(it==='lightning'){let n=0;for(const target of G.karts){if(target!==k&&!target.finished&&(target.x-k.x)**2+(target.z-k.z)**2<24**2){const before=k.hits||0;hitKart(target,k);if((k.hits||0)>before)n++;}}if(k.isPlayer)toast('闪电击倒 '+n+' 位对手',2000);sfx('fire');for(let i=0;i<20;i++)emit(k.x,k.y+2,k.z,(Math.random()-.5)*24,6,(Math.random()-.5)*24,0xffee55,.8,.6);}
   else if (it === 'jelly') {
     const m = new THREE.Mesh(boxGeo, lam(0x4fd26a)); m.scale.setScalar(1.8); m.castShadow = true;
     const x = k.x - fx * 4, z = k.z - fz * 4; m.position.set(x, 0.9, z); world.group.add(m);
     world.jellies.push({ m, x, z, arm: 0.5, owner: k });
     if (world.jellies.length > 16) { const o = world.jellies.shift(); world.group.remove(o.m); }
-  } else if (it === 'missile') {
+  } else if ((it === 'missile'||it==='ice')) {
     const r = rankOf(k), target = r > 0 ? G.order[r - 1] : null;
-    const g = new THREE.Group(); box(g, 0.8, 0.8, 2.2, 0, 0, 0, lam(0xe8412c)); box(g, 1.6, 0.15, 0.5, 0, 0, -0.9, lam(0x9aa3b2)); box(g, 0.2, 0.2, 0.3, 0, 0, 1.2, lam(0xffd24a));
+    const g = new THREE.Group(); box(g, 0.8, 0.8, 2.2, 0, 0, 0, lam(it==='ice'?0x6cddff:0xe8412c)); box(g, 1.6, 0.15, 0.5, 0, 0, -0.9, lam(0x9aa3b2)); box(g, 0.2, 0.2, 0.3, 0, 0, 1.2, lam(0xffd24a));
     g.position.set(k.x + fx * 3, 1.2, k.z + fz * 3); world.group.add(g);
-    world.missiles.push({ g, x: g.position.x, z: g.position.z, h: k.heading, idx: k.idx, target, owner: k, life: 9 });
+    world.missiles.push({ g, x: g.position.x, z: g.position.z, h: k.heading, idx: k.idx, target, owner: k, ice:it==='ice',life: 9 });
     if (k.isPlayer) sfx('fire');
   }
 }
-function hitKart(k) {
-  if (k.spinT > 0) return;
+function hitKart(k,owner,ice=false) {
+  if (k.spinT > 0||k.finished) return;
+  if(k.shieldT>0){k.shieldT=0;if(k.isPlayer)toast('护盾挡住了攻击',1500);return;}
+  if(ice)k.freezeT=3;
+  if(owner && owner!==k)owner.hits=(owner.hits||0)+1;
   k.spinT = 1.25; k.spinA = 0; k.drifting = false; k.driftCharge = 0; k.boostT = 0; k.vy = 7; k.speed *= 0.35;
   for (let i = 0; i < 14; i++) emit(k.x, k.y + 2.5, k.z, (Math.random() - 0.5) * 12, 4 + Math.random() * 6, (Math.random() - 0.5) * 12, i % 2 ? 0xffe36a : 0xffffff, 0.6, 0.8);
   if (k.isPlayer) { sfx('hit'); G.shake = 0.5; flash('被击中！', 'warn', 900); }
@@ -832,11 +850,14 @@ function aiInput(k, dt) {
 const NOIN = { thr: 0, brk: false, steer: 0, drift: false, item: false };
 function updateKart(k, inp, dt) {
   const tr = G.tr, N = tr.N, st = k.ch;
+  if(k.shieldT>0){k.shieldT=Math.max(0,k.shieldT-dt);if(Math.random()<dt*12)emit(k.x,k.y+2,k.z,0,2,0,0x47aaff,.5,.8);}
+  if(k.freezeT>0)k.freezeT=Math.max(0,k.freezeT-dt);
   if (k.studySpin > 0) { k.studySpin = Math.max(0,k.studySpin-dt); k.spinT=k.studySpin; k.spinA+=dt*14; k.speed=0; if (!k.studySpin) k.spinA=0; return; }
   if (k.rollT > 0) { k.rollT -= dt; if (k.rollT <= 0) { k.item = pickItem(rankOf(k)); if (k.isPlayer) sfx('item'); else k.aiItemT = 1 + Math.random() * 4; } }
-  if (inp.item && k.item && k.spinT <= 0) useItem(k,inp.choice||0);
+  if (inp.item && k.spinT <= 0) useItem(k,inp.choice||0);
   if (k.spinT > 0) { k.spinT -= dt; k.spinA += dt * 14; inp = NOIN; if (k.spinT <= 0) k.spinA = 0; }
   let maxS = BASE * DIFFS[G.diff].scale * st.spd * (k.isPlayer ? 1 : k.aiMul);
+  if(k.freezeT>0)maxS*=.55;
   const spAbs = Math.abs(k.speed);
   const offroad = Math.abs(k.lat) > ROAD + 0.8;
   if (k.boostT > 0) { k.boostT -= dt; maxS *= 1.34; } else if (offroad) maxS *= 0.55;
@@ -926,7 +947,7 @@ function interactions(dt) {
     for (const k of ks) {
       if (j.arm > 0 && k === j.owner) continue;
       const dx = k.x - j.x, dz = k.z - j.z;
-      if (dx * dx + dz * dz < 5.3) { hitKart(k); world.group.remove(j.m); world.jellies.splice(i, 1); break; }
+      if (dx * dx + dz * dz < 5.3) { hitKart(k,j.owner); world.group.remove(j.m); world.jellies.splice(i, 1); break; }
     }
   }
   const tr = G.tr, N = tr.N;
@@ -942,7 +963,7 @@ function interactions(dt) {
     m.g.position.set(m.x, 1.2, m.z); m.g.rotation.y = m.h;
     if (Math.random() < 0.8) emit(m.x - Math.sin(m.h) * 1.4, 1.2, m.z - Math.cos(m.h) * 1.4, 0, 0.5, 0, 0xdddddd, 0.5, 0.4);
     let hit = false;
-    for (const k of ks) { if (k === m.owner && m.life > 8.3) continue; const dx = k.x - m.x, dz = k.z - m.z; if (dx * dx + dz * dz < 6) { hitKart(k); hit = true; break; } }
+    for (const k of ks) { if (k === m.owner && m.life > 8.3) continue; const dx = k.x - m.x, dz = k.z - m.z; if (dx * dx + dz * dz < 6) { hitKart(k,m.owner,m.ice); hit = true; break; } }
     if (hit || m.life <= 0) { world.group.remove(m.g); world.missiles.splice(i, 1); }
   }
 }
@@ -972,6 +993,7 @@ function buildWorldIfNeeded() {
   world.missiles.forEach(m => world.group.remove(m.g)); world.missiles = [];
 }
 async function startRace() {
+  if(KartPlayLimit.tick(false).locked)return;
   if(G.starting)return;G.starting=true;$('#menu').inert=true;
   await enableTouchControl();
   if(G.study){try{await KartLearning.load();}catch(e){toast('题库加载失败，请重试',2500);G.starting=false;$('#menu').inert=false;return;}}
@@ -1027,6 +1049,8 @@ function showResults() {
   let bestMsg = '';
   if (prev == null || mine < prev) { store.set(key, mine); bestMsg = prev == null ? `首个纪录 ${fmt(mine)}` : `新纪录！${fmt(mine)}（原 ${fmt(prev)}）`; }
   else bestMsg = `本赛道最佳 ${fmt(prev)}`;
+  const score=KartScore.calculate({correct:G.studyStats.correct,total:G.studyStats.total,laps:LAPS,hits:G.player.hits||0});
+  $('#resScore').textContent=`综合评分 ${score.points} 分 · 答题 ${score.accuracy} 分（${G.studyStats.correct}/${G.studyStats.total}）· 完成 ${LAPS} 圈 ${score.laps} 分 · 有效击倒 ${G.player.hits||0} 次 ${score.hits} 分`;
   $('#resBest').textContent = `${TRACKS[G.trackIdx].name} · ${DIFFS[G.diff].name} · ${bestMsg}`;
   saveCloudScore(mine);
   const body = $('#resBody'); body.textContent = '';
@@ -1104,7 +1128,7 @@ function updateHud(dt) {
   hud.time.textContent = fmt(G.raceTime);
   hud.spd.textContent = Math.round(Math.abs(p.speed) * 3.2);
   if (p.rollT > 0) {
-    rollIconT -= dt; if (rollIconT <= 0) { rollIconT = 0.07; const ks = Object.keys(ICONS); hud.img.src = ICONS[ks[Math.floor(Math.random() * 3)]]; hud.img.hidden = false; }
+    rollIconT -= dt; if (rollIconT <= 0) { rollIconT = 0.07; const ks = Object.keys(ICONS); hud.img.src = ICONS[ks[Math.floor(Math.random() * ks.length)]]; hud.img.hidden = false; }
     hud.slot.classList.add('rolling'); lastItem = 'roll';
   } else if (p.item !== lastItem) {
     lastItem = p.item; hud.slot.classList.remove('rolling');
@@ -1112,7 +1136,7 @@ function updateHud(dt) {
   }
   hud.slot.hidden=G.study;const slots=$('#studyItems');slots.hidden=!G.study;
   const items=heldItems(p),signature=items.join(',');if(slots.dataset.items!==signature){slots.dataset.items=signature;slots.textContent='';for(let i=0;i<3;i++){const shortcut=['I','O','P'][i];const b=document.createElement('button');b.className='slot';b.style.padding='4px';b.disabled=!items[i];b.setAttribute('aria-label',items[i]?`快捷键${shortcut}：${ITEM_NAMES[items[i]]}`:`空道具格，快捷键${shortcut}`);if(items[i]){const img=document.createElement('img');img.src=ICONS[items[i]];img.alt=ITEM_NAMES[items[i]];b.appendChild(img);}else b.textContent=shortcut;if(items[i]){const label=document.createElement('span');label.textContent=shortcut;label.style.cssText='position:absolute;right:3px;bottom:1px;color:#ffe36a;font-size:12px;line-height:14px;text-shadow:1px 1px #000';b.appendChild(label);}b.onpointerdown=e=>{e.preventDefault();itemChoice=i;itemEdge=true;};slots.appendChild(b);}}
-  const count=(p.item?1:0)+(p.itemQueue?.length||0);const badge=$('#itemCount');badge.hidden=!G.study||!count;badge.textContent='×'+count;badge.setAttribute('aria-label','剩余'+count+'个道具');
+  const count=heldItems(p).filter(Boolean).length;const badge=$('#itemCount');badge.hidden=!G.study||!count;badge.textContent='×'+count;badge.setAttribute('aria-label','剩余'+count+'个道具');
   if (G.frameCount % 3 === 0) drawMinimap();
 }
 
@@ -1121,6 +1145,13 @@ let last = performance.now(); G.frameCount = 0;
 function frame(now) {
   requestAnimationFrame(frame);
   let dt = Math.min(0.05, (now - last) / 1000); last = now; G.time += dt; G.frameCount++;
+  const limit=KartPlayLimit.tick(G.state==='race'||G.state==='countdown');
+  $('#playLock').hidden=!limit.locked;
+  if(limit.locked){
+    if(!G.limitPaused){G.limitPaused=true;G.limitWasPaused=G.paused;G.paused=true;engineSound(false,0,false);}
+    const seconds=Math.ceil(limit.remaining/1000);$('#playLockTime').textContent=String(Math.floor(seconds/60)).padStart(2,'0')+':'+String(seconds%60).padStart(2,'0');return;
+  }
+  if(G.limitPaused){G.limitPaused=false;if(G.state==='race'||G.state==='countdown'){G.paused=true;if(!quizPending)$('#pauseOv').hidden=false;}else G.paused=G.limitWasPaused;}
   if (document.hidden) return;
   G.frameAvg = lerp(G.frameAvg, dt * 1000, 0.05);
   if (G.state === 'menu') {
@@ -1245,6 +1276,7 @@ setMuteTxt();
 muteBtn.onclick = () => { AU.muted = !AU.muted; store.set('muted', AU.muted); setMuteTxt(); };
 
 /* ================= boot ================= */
+window.addEventListener('kart-account',e=>{G.cloudUser=e.detail;$('#cloudStatus').textContent=e.detail?'已登录：'+e.detail.username+' · 完赛自动保存云端成绩':'游客可比赛，登录后保存成绩';});
 const authReady=GameAPI.call('/me').then(r=>{G.cloudUser=r.user;if(r.user)$('#cloudStatus').textContent='已登录：'+r.user.username+' · 完赛自动保存云端成绩';}).catch(()=>{$('#cloudStatus').textContent='账号服务暂时不可用，本机游玩不受影响';});
 $('#menuHelp').open=innerWidth>=900;
 applyQuality();

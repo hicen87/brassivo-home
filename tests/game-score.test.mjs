@@ -1,0 +1,3 @@
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import vm from 'node:vm';
+const scope={};vm.createContext(scope);vm.runInContext(fs.readFileSync(new URL('../block-kart/score.js',import.meta.url),'utf8'),scope);
+test('composite score weights accuracy, laps, and effective hits with caps',()=>{const score=scope.KartScore.calculate;assert.equal(score({correct:7,total:7,laps:6,hits:5}).points,1000);assert.equal(score({correct:1,total:2,laps:6,hits:2}).points,640);assert.equal(score({correct:0,total:0,laps:6,hits:100}).points,400);assert.equal(score({correct:1,total:2,laps:3,hits:1}).points,470);});

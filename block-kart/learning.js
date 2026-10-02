@@ -1,6 +1,6 @@
 (function(root){
   let bank=null;const histories=new Map();
-  async function load(){if(!bank){const r=await fetch('question-bank.json?v=20261002-random-v2',{signal:AbortSignal.timeout(8000)});if(!r.ok)throw Error('题库加载失败');bank=await r.json();}return bank;}
+  async function load(){if(!bank){const r=await fetch('question-bank.json?v=20261002-expanded-v3',{signal:AbortSignal.timeout(8000)});if(!r.ok)throw Error('题库加载失败');bank=await r.json();}return bank;}
   function question(grade=1,subject='all',random=Math.random){
     if(!bank)throw Error('题库尚未加载');
     const allowed=KartSubjects.available(grade);

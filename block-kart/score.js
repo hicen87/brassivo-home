@@ -1,0 +1,1 @@
+globalThis.KartScore={calculate({correct=0,total=0,laps=0,hits=0}){const accuracy=Math.round((total?correct/total:0)*600),lapPoints=Math.min(6,Math.max(0,laps))*50,hitPoints=Math.min(5,Math.max(0,hits))*20;return {accuracy,laps:lapPoints,hits:hitPoints,points:accuracy+lapPoints+hitPoints};}};
