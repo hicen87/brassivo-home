@@ -1,0 +1,1953 @@
+{
+  "version": "20261002-mvp",
+  "region": "浙江小学学习场景",
+  "notice": "原创入门练习，非官方题库；低年级英语为启蒙拓展。各科年级难度仅作练习分组，不代表学校教材进度。",
+  "subjects": {
+    "math": "数学",
+    "english": "英语",
+    "chinese": "语文",
+    "science": "科学",
+    "ethics": "道德与法治",
+    "music": "音乐",
+    "art": "美术",
+    "pe": "体育与健康",
+    "labor": "劳动",
+    "it": "信息科技",
+    "practice": "综合实践",
+    "local": "浙江地方知识"
+  },
+  "questions": [
+    {
+      "id": "chinese-1-1",
+      "grade": 1,
+      "subject": "chinese",
+      "text": "“山”的拼音是？",
+      "answer": "shān",
+      "options": [
+        "shān",
+        "sān",
+        "shǎn",
+        "sàn"
+      ],
+      "explanation": "正确答案：shān"
+    },
+    {
+      "id": "chinese-2-1",
+      "grade": 2,
+      "subject": "chinese",
+      "text": "“明”由哪两个字组成？",
+      "answer": "日和月",
+      "options": [
+        "日和月",
+        "日和木",
+        "月和水",
+        "木和口"
+      ],
+      "explanation": "正确答案：日和月"
+    },
+    {
+      "id": "chinese-3-1",
+      "grade": 3,
+      "subject": "chinese",
+      "text": "“亡羊补牢”告诉我们什么？",
+      "answer": "发现错误及时补救",
+      "options": [
+        "发现错误及时补救",
+        "犯错后不用改",
+        "羊不会丢失",
+        "只要等待"
+      ],
+      "explanation": "正确答案：发现错误及时补救"
+    },
+    {
+      "id": "chinese-4-1",
+      "grade": 4,
+      "subject": "chinese",
+      "text": "“接天莲叶无穷碧”描写的是？",
+      "answer": "荷叶",
+      "options": [
+        "荷叶",
+        "枫叶",
+        "松针",
+        "竹笋"
+      ],
+      "explanation": "正确答案：荷叶"
+    },
+    {
+      "id": "chinese-5-1",
+      "grade": 5,
+      "subject": "chinese",
+      "text": "“慈母手中线，游子身上衣”表达什么？",
+      "answer": "母爱",
+      "options": [
+        "母爱",
+        "乡村丰收",
+        "朋友竞争",
+        "山河壮丽"
+      ],
+      "explanation": "正确答案：母爱"
+    },
+    {
+      "id": "chinese-6-1",
+      "grade": 6,
+      "subject": "chinese",
+      "text": "“托物言志”是指？",
+      "answer": "借事物表达志向",
+      "options": [
+        "借事物表达志向",
+        "只记录物品价格",
+        "完全不写事物",
+        "只写对话"
+      ],
+      "explanation": "正确答案：借事物表达志向"
+    },
+    {
+      "id": "english-1-1",
+      "grade": 1,
+      "subject": "english",
+      "text": "“hello”常用于？",
+      "answer": "打招呼",
+      "options": [
+        "打招呼",
+        "道别",
+        "道歉",
+        "报数"
+      ],
+      "explanation": "正确答案：打招呼"
+    },
+    {
+      "id": "english-2-1",
+      "grade": 2,
+      "subject": "english",
+      "text": "“three”表示几？",
+      "answer": "3",
+      "options": [
+        "3",
+        "2",
+        "4",
+        "5"
+      ],
+      "explanation": "正确答案：3"
+    },
+    {
+      "id": "english-3-1",
+      "grade": 3,
+      "subject": "english",
+      "text": "“pencil”的中文是？",
+      "answer": "铅笔",
+      "options": [
+        "铅笔",
+        "书包",
+        "橡皮",
+        "尺子"
+      ],
+      "explanation": "正确答案：铅笔"
+    },
+    {
+      "id": "english-4-1",
+      "grade": 4,
+      "subject": "english",
+      "text": "“It is sunny.” 表示？",
+      "answer": "天气晴朗",
+      "options": [
+        "天气晴朗",
+        "正在下雪",
+        "天气寒冷",
+        "正在下雨"
+      ],
+      "explanation": "正确答案：天气晴朗"
+    },
+    {
+      "id": "english-5-1",
+      "grade": 5,
+      "subject": "english",
+      "text": "“She ___ reading.” 应填？",
+      "answer": "is",
+      "options": [
+        "is",
+        "are",
+        "am",
+        "be"
+      ],
+      "explanation": "正确答案：is"
+    },
+    {
+      "id": "english-6-1",
+      "grade": 6,
+      "subject": "english",
+      "text": "“I went to Hangzhou yesterday.” 使用什么时态？",
+      "answer": "一般过去时",
+      "options": [
+        "一般过去时",
+        "一般现在时",
+        "一般将来时",
+        "现在进行时"
+      ],
+      "explanation": "正确答案：一般过去时"
+    },
+    {
+      "id": "science-1-1",
+      "grade": 1,
+      "subject": "science",
+      "text": "观察树叶颜色主要用什么？",
+      "answer": "眼睛",
+      "options": [
+        "眼睛",
+        "耳朵",
+        "鼻子",
+        "舌头"
+      ],
+      "explanation": "正确答案：眼睛"
+    },
+    {
+      "id": "science-2-1",
+      "grade": 2,
+      "subject": "science",
+      "text": "冰融化后变成什么？",
+      "answer": "水",
+      "options": [
+        "水",
+        "沙子",
+        "石头",
+        "铁"
+      ],
+      "explanation": "正确答案：水"
+    },
+    {
+      "id": "science-3-1",
+      "grade": 3,
+      "subject": "science",
+      "text": "测量温度常用什么？",
+      "answer": "温度计",
+      "options": [
+        "温度计",
+        "量筒",
+        "尺子",
+        "天平"
+      ],
+      "explanation": "正确答案：温度计"
+    },
+    {
+      "id": "science-4-1",
+      "grade": 4,
+      "subject": "science",
+      "text": "声音由物体的什么产生？",
+      "answer": "振动",
+      "options": [
+        "振动",
+        "颜色",
+        "重量",
+        "形状"
+      ],
+      "explanation": "正确答案：振动"
+    },
+    {
+      "id": "science-5-1",
+      "grade": 5,
+      "subject": "science",
+      "text": "植物进行光合作用通常需要？",
+      "answer": "光",
+      "options": [
+        "光",
+        "只有声音",
+        "只有沙子",
+        "完全黑暗"
+      ],
+      "explanation": "正确答案：光"
+    },
+    {
+      "id": "science-6-1",
+      "grade": 6,
+      "subject": "science",
+      "text": "月球本身会发出可见光吗？",
+      "answer": "不会，主要反射太阳光",
+      "options": [
+        "不会，主要反射太阳光",
+        "会，像太阳一样",
+        "只在满月自己发光",
+        "只在冬天自己发光"
+      ],
+      "explanation": "正确答案：不会，主要反射太阳光"
+    },
+    {
+      "id": "ethics-1-1",
+      "grade": 1,
+      "subject": "ethics",
+      "text": "过马路遇到红灯应该？",
+      "answer": "停下等待",
+      "options": [
+        "停下等待",
+        "立即冲过去",
+        "在路中间玩",
+        "闭眼走"
+      ],
+      "explanation": "正确答案：停下等待"
+    },
+    {
+      "id": "ethics-2-1",
+      "grade": 2,
+      "subject": "ethics",
+      "text": "借用同学的东西应该先？",
+      "answer": "征得同意",
+      "options": [
+        "征得同意",
+        "直接拿走",
+        "藏起来",
+        "弄坏再还"
+      ],
+      "explanation": "正确答案：征得同意"
+    },
+    {
+      "id": "ethics-3-1",
+      "grade": 3,
+      "subject": "ethics",
+      "text": "发现同学被欺负时，安全的做法是？",
+      "answer": "向老师求助",
+      "options": [
+        "向老师求助",
+        "跟着欺负",
+        "起哄拍视频",
+        "假装没有看见"
+      ],
+      "explanation": "正确答案：向老师求助"
+    },
+    {
+      "id": "ethics-4-1",
+      "grade": 4,
+      "subject": "ethics",
+      "text": "公共图书馆里应该？",
+      "answer": "轻声交流",
+      "options": [
+        "轻声交流",
+        "大声喊叫",
+        "撕书页",
+        "乱扔垃圾"
+      ],
+      "explanation": "正确答案：轻声交流"
+    },
+    {
+      "id": "ethics-5-1",
+      "grade": 5,
+      "subject": "ethics",
+      "text": "个人信息应该怎样处理？",
+      "answer": "谨慎保护",
+      "options": [
+        "谨慎保护",
+        "随便发给陌生人",
+        "公开家庭住址",
+        "分享账号密码"
+      ],
+      "explanation": "正确答案：谨慎保护"
+    },
+    {
+      "id": "ethics-6-1",
+      "grade": 6,
+      "subject": "ethics",
+      "text": "宪法在我国法律体系中具有？",
+      "answer": "最高法律效力",
+      "options": [
+        "最高法律效力",
+        "只在学校适用",
+        "只规定体育规则",
+        "与法律无关"
+      ],
+      "explanation": "正确答案：最高法律效力"
+    },
+    {
+      "id": "music-1-1",
+      "grade": 1,
+      "subject": "music",
+      "text": "跟着歌曲打拍子主要练习？",
+      "answer": "节奏感",
+      "options": [
+        "节奏感",
+        "跑步速度",
+        "画画构图",
+        "背乘法表"
+      ],
+      "explanation": "正确答案：节奏感"
+    },
+    {
+      "id": "music-2-1",
+      "grade": 2,
+      "subject": "music",
+      "text": "唱歌时正确的做法是？",
+      "answer": "自然发声",
+      "options": [
+        "自然发声",
+        "一直大喊",
+        "憋气唱歌",
+        "咬紧牙齿"
+      ],
+      "explanation": "正确答案：自然发声"
+    },
+    {
+      "id": "music-3-1",
+      "grade": 3,
+      "subject": "music",
+      "text": "“do、re、mi”属于？",
+      "answer": "唱名",
+      "options": [
+        "唱名",
+        "颜色名",
+        "地名",
+        "月份"
+      ],
+      "explanation": "正确答案：唱名"
+    },
+    {
+      "id": "music-4-1",
+      "grade": 4,
+      "subject": "music",
+      "text": "四分音符在以四分音符为一拍时是多少拍？",
+      "answer": "1拍",
+      "options": [
+        "1拍",
+        "2拍",
+        "3拍",
+        "4拍"
+      ],
+      "explanation": "正确答案：1拍"
+    },
+    {
+      "id": "music-5-1",
+      "grade": 5,
+      "subject": "music",
+      "text": "合唱时应该？",
+      "answer": "听同伴并协调声音",
+      "options": [
+        "听同伴并协调声音",
+        "只求比别人响",
+        "任意改变节拍",
+        "不看指挥"
+      ],
+      "explanation": "正确答案：听同伴并协调声音"
+    },
+    {
+      "id": "music-6-1",
+      "grade": 6,
+      "subject": "music",
+      "text": "歌曲速度变快通常意味着？",
+      "answer": "单位时间内拍数增加",
+      "options": [
+        "单位时间内拍数增加",
+        "音高必然升高",
+        "音量必然降低",
+        "歌词一定变多"
+      ],
+      "explanation": "正确答案：单位时间内拍数增加"
+    },
+    {
+      "id": "art-1-1",
+      "grade": 1,
+      "subject": "art",
+      "text": "哪一种是常见绘画工具？",
+      "answer": "画笔",
+      "options": [
+        "画笔",
+        "饭勺",
+        "牙刷杯",
+        "雨伞"
+      ],
+      "explanation": "正确答案：画笔"
+    },
+    {
+      "id": "art-2-1",
+      "grade": 2,
+      "subject": "art",
+      "text": "红、黄、蓝属于传统绘画色彩中的？",
+      "answer": "三原色",
+      "options": [
+        "三原色",
+        "三种灰色",
+        "三种透明色",
+        "三种黑色"
+      ],
+      "explanation": "正确答案：三原色"
+    },
+    {
+      "id": "art-3-1",
+      "grade": 3,
+      "subject": "art",
+      "text": "红色和黄色颜料混合通常得到？",
+      "answer": "橙色",
+      "options": [
+        "橙色",
+        "蓝色",
+        "紫色",
+        "黑色"
+      ],
+      "explanation": "正确答案：橙色"
+    },
+    {
+      "id": "art-4-1",
+      "grade": 4,
+      "subject": "art",
+      "text": "画面中主体突出通常要注意？",
+      "answer": "构图",
+      "options": [
+        "构图",
+        "纸张价格",
+        "画笔包装",
+        "桌子高度"
+      ],
+      "explanation": "正确答案：构图"
+    },
+    {
+      "id": "art-5-1",
+      "grade": 5,
+      "subject": "art",
+      "text": "表现物体远近，常用的方法是？",
+      "answer": "近大远小",
+      "options": [
+        "近大远小",
+        "远大近小",
+        "所有物体一样大",
+        "只画文字"
+      ],
+      "explanation": "正确答案：近大远小"
+    },
+    {
+      "id": "art-6-1",
+      "grade": 6,
+      "subject": "art",
+      "text": "版画通常通过什么形成作品？",
+      "answer": "制版并印制",
+      "options": [
+        "制版并印制",
+        "只用嘴吹",
+        "只剪照片",
+        "直接唱歌"
+      ],
+      "explanation": "正确答案：制版并印制"
+    },
+    {
+      "id": "pe-1-1",
+      "grade": 1,
+      "subject": "pe",
+      "text": "运动前通常应该？",
+      "answer": "做热身",
+      "options": [
+        "做热身",
+        "立即冲刺",
+        "吃很多零食",
+        "不系鞋带"
+      ],
+      "explanation": "正确答案：做热身"
+    },
+    {
+      "id": "pe-2-1",
+      "grade": 2,
+      "subject": "pe",
+      "text": "跳绳后感到疲劳应该？",
+      "answer": "适当休息",
+      "options": [
+        "适当休息",
+        "继续拼命跳",
+        "憋气站立",
+        "不喝水"
+      ],
+      "explanation": "正确答案：适当休息"
+    },
+    {
+      "id": "pe-3-1",
+      "grade": 3,
+      "subject": "pe",
+      "text": "运动中扭伤了应该？",
+      "answer": "停止运动并求助",
+      "options": [
+        "停止运动并求助",
+        "继续奔跑",
+        "用力揉搓到疼",
+        "隐瞒伤情"
+      ],
+      "explanation": "正确答案：停止运动并求助"
+    },
+    {
+      "id": "pe-4-1",
+      "grade": 4,
+      "subject": "pe",
+      "text": "体育比赛中应该遵守？",
+      "answer": "规则",
+      "options": [
+        "规则",
+        "只看输赢",
+        "可以推搡",
+        "可以随意作弊"
+      ],
+      "explanation": "正确答案：规则"
+    },
+    {
+      "id": "pe-5-1",
+      "grade": 5,
+      "subject": "pe",
+      "text": "跑步呼吸应尽量？",
+      "answer": "有节奏",
+      "options": [
+        "有节奏",
+        "一直憋气",
+        "只在终点呼吸",
+        "越乱越好"
+      ],
+      "explanation": "正确答案：有节奏"
+    },
+    {
+      "id": "pe-6-1",
+      "grade": 6,
+      "subject": "pe",
+      "text": "选择锻炼强度应考虑？",
+      "answer": "自身身体状况",
+      "options": [
+        "自身身体状况",
+        "只看他人速度",
+        "只看衣服颜色",
+        "越极端越好"
+      ],
+      "explanation": "正确答案：自身身体状况"
+    },
+    {
+      "id": "labor-1-1",
+      "grade": 1,
+      "subject": "labor",
+      "text": "整理书包时应当？",
+      "answer": "按类别摆放",
+      "options": [
+        "按类别摆放",
+        "把书揉成团",
+        "丢掉所有文具",
+        "装得越乱越好"
+      ],
+      "explanation": "正确答案：按类别摆放"
+    },
+    {
+      "id": "labor-2-1",
+      "grade": 2,
+      "subject": "labor",
+      "text": "洗手时应使用？",
+      "answer": "流动清水和洗手液或肥皂",
+      "options": [
+        "流动清水和洗手液或肥皂",
+        "颜料",
+        "机油",
+        "沙子"
+      ],
+      "explanation": "正确答案：流动清水和洗手液或肥皂"
+    },
+    {
+      "id": "labor-3-1",
+      "grade": 3,
+      "subject": "labor",
+      "text": "做简单家务时应当？",
+      "answer": "注意安全",
+      "options": [
+        "注意安全",
+        "触摸裸露电线",
+        "玩打火机",
+        "攀爬窗外"
+      ],
+      "explanation": "正确答案：注意安全"
+    },
+    {
+      "id": "labor-4-1",
+      "grade": 4,
+      "subject": "labor",
+      "text": "清洁电器前通常应先？",
+      "answer": "断开电源",
+      "options": [
+        "断开电源",
+        "向插座喷水",
+        "用湿手插电",
+        "拆开带电线路"
+      ],
+      "explanation": "正确答案：断开电源"
+    },
+    {
+      "id": "labor-5-1",
+      "grade": 5,
+      "subject": "labor",
+      "text": "食物储存应该注意？",
+      "answer": "保质期和储存条件",
+      "options": [
+        "保质期和储存条件",
+        "只看包装颜色",
+        "越久越好",
+        "所有食物都放太阳下"
+      ],
+      "explanation": "正确答案：保质期和储存条件"
+    },
+    {
+      "id": "labor-6-1",
+      "grade": 6,
+      "subject": "labor",
+      "text": "劳动分工时应该？",
+      "answer": "协商合作",
+      "options": [
+        "协商合作",
+        "把任务都推给别人",
+        "只挑最轻松的",
+        "不完成自己的任务"
+      ],
+      "explanation": "正确答案：协商合作"
+    },
+    {
+      "id": "it-1-1",
+      "grade": 1,
+      "subject": "it",
+      "text": "使用电子设备应注意？",
+      "answer": "适当休息保护眼睛",
+      "options": [
+        "适当休息保护眼睛",
+        "整夜不停看",
+        "离屏幕越近越好",
+        "完全不眨眼"
+      ],
+      "explanation": "正确答案：适当休息保护眼睛"
+    },
+    {
+      "id": "it-2-1",
+      "grade": 2,
+      "subject": "it",
+      "text": "收到陌生人索要密码的消息应该？",
+      "answer": "不提供并求助家长",
+      "options": [
+        "不提供并求助家长",
+        "立即发送",
+        "发到群里",
+        "告诉全部朋友"
+      ],
+      "explanation": "正确答案：不提供并求助家长"
+    },
+    {
+      "id": "it-3-1",
+      "grade": 3,
+      "subject": "it",
+      "text": "账号密码应该？",
+      "answer": "不与他人分享",
+      "options": [
+        "不与他人分享",
+        "写在公开评论区",
+        "与用户名完全一样",
+        "随意转发"
+      ],
+      "explanation": "正确答案：不与他人分享"
+    },
+    {
+      "id": "it-4-1",
+      "grade": 4,
+      "subject": "it",
+      "text": "文件分类整理的好处是？",
+      "answer": "便于查找",
+      "options": [
+        "便于查找",
+        "使文件一定变大",
+        "使电脑不需电",
+        "使所有数据消失"
+      ],
+      "explanation": "正确答案：便于查找"
+    },
+    {
+      "id": "it-5-1",
+      "grade": 5,
+      "subject": "it",
+      "text": "算法可以理解为？",
+      "answer": "解决问题的步骤",
+      "options": [
+        "解决问题的步骤",
+        "一种颜料",
+        "电脑的重量",
+        "所有网页的名字"
+      ],
+      "explanation": "正确答案：解决问题的步骤"
+    },
+    {
+      "id": "it-6-1",
+      "grade": 6,
+      "subject": "it",
+      "text": "网络资料可信度应如何判断？",
+      "answer": "核对来源和证据",
+      "options": [
+        "核对来源和证据",
+        "只看转发数量",
+        "只看标题夸张程度",
+        "只看图片颜色"
+      ],
+      "explanation": "正确答案：核对来源和证据"
+    },
+    {
+      "id": "practice-1-1",
+      "grade": 1,
+      "subject": "practice",
+      "text": "小组活动中应该？",
+      "answer": "轮流表达并倾听",
+      "options": [
+        "轮流表达并倾听",
+        "不让别人说话",
+        "只喊自己的意见",
+        "随意离开"
+      ],
+      "explanation": "正确答案：轮流表达并倾听"
+    },
+    {
+      "id": "practice-2-1",
+      "grade": 2,
+      "subject": "practice",
+      "text": "观察校园植物应当？",
+      "answer": "记录看到的特点",
+      "options": [
+        "记录看到的特点",
+        "随意拔掉植物",
+        "编造结果",
+        "只看一次就不记录"
+      ],
+      "explanation": "正确答案：记录看到的特点"
+    },
+    {
+      "id": "practice-3-1",
+      "grade": 3,
+      "subject": "practice",
+      "text": "调查时记录数据应该？",
+      "answer": "真实准确",
+      "options": [
+        "真实准确",
+        "只写想要的结果",
+        "复制别人的答案",
+        "随意改数"
+      ],
+      "explanation": "正确答案：真实准确"
+    },
+    {
+      "id": "practice-4-1",
+      "grade": 4,
+      "subject": "practice",
+      "text": "设计小实验时，要比较一种因素，通常应？",
+      "answer": "尽量控制其他条件相同",
+      "options": [
+        "尽量控制其他条件相同",
+        "同时改变所有条件",
+        "不记录结果",
+        "只猜结论"
+      ],
+      "explanation": "正确答案：尽量控制其他条件相同"
+    },
+    {
+      "id": "practice-5-1",
+      "grade": 5,
+      "subject": "practice",
+      "text": "采访他人前应该？",
+      "answer": "说明目的并征得同意",
+      "options": [
+        "说明目的并征得同意",
+        "偷偷录音并公开",
+        "强迫回答",
+        "冒用身份"
+      ],
+      "explanation": "正确答案：说明目的并征得同意"
+    },
+    {
+      "id": "practice-6-1",
+      "grade": 6,
+      "subject": "practice",
+      "text": "研究结论应该主要依据？",
+      "answer": "收集到的证据",
+      "options": [
+        "收集到的证据",
+        "自己的愿望",
+        "最响亮的说法",
+        "随机选一个观点"
+      ],
+      "explanation": "正确答案：收集到的证据"
+    },
+    {
+      "id": "local-1-1",
+      "grade": 1,
+      "subject": "local",
+      "text": "浙江的省会是？",
+      "answer": "杭州",
+      "options": [
+        "杭州",
+        "宁波",
+        "温州",
+        "绍兴"
+      ],
+      "explanation": "正确答案：杭州"
+    },
+    {
+      "id": "local-2-1",
+      "grade": 2,
+      "subject": "local",
+      "text": "西湖位于哪座城市？",
+      "answer": "杭州",
+      "options": [
+        "杭州",
+        "嘉兴",
+        "金华",
+        "台州"
+      ],
+      "explanation": "正确答案：杭州"
+    },
+    {
+      "id": "local-3-1",
+      "grade": 3,
+      "subject": "local",
+      "text": "钱塘江涌潮与哪种现象有关？",
+      "answer": "潮汐",
+      "options": [
+        "潮汐",
+        "火山喷发",
+        "沙尘暴",
+        "极光"
+      ],
+      "explanation": "正确答案：潮汐"
+    },
+    {
+      "id": "local-4-1",
+      "grade": 4,
+      "subject": "local",
+      "text": "京杭大运河的“杭”指哪里？",
+      "answer": "杭州",
+      "options": [
+        "杭州",
+        "湖州",
+        "衢州",
+        "丽水"
+      ],
+      "explanation": "正确答案：杭州"
+    },
+    {
+      "id": "local-5-1",
+      "grade": 5,
+      "subject": "local",
+      "text": "良渚古城遗址位于哪个省？",
+      "answer": "浙江",
+      "options": [
+        "浙江",
+        "广东",
+        "四川",
+        "辽宁"
+      ],
+      "explanation": "正确答案：浙江"
+    },
+    {
+      "id": "local-6-1",
+      "grade": 6,
+      "subject": "local",
+      "text": "浙江东面临近哪片海？",
+      "answer": "东海",
+      "options": [
+        "东海",
+        "渤海",
+        "黄海北部",
+        "地中海"
+      ],
+      "explanation": "正确答案：东海"
+    },
+    {
+      "id": "math-1-1",
+      "grade": 1,
+      "subject": "math",
+      "text": "1 + 1 = ?",
+      "answer": "2",
+      "options": [
+        "2",
+        "3",
+        "5",
+        "1"
+      ],
+      "explanation": "正确答案：2"
+    },
+    {
+      "id": "math-1-2",
+      "grade": 1,
+      "subject": "math",
+      "text": "2 + 2 = ?",
+      "answer": "4",
+      "options": [
+        "4",
+        "5",
+        "7",
+        "3"
+      ],
+      "explanation": "正确答案：4"
+    },
+    {
+      "id": "math-1-3",
+      "grade": 1,
+      "subject": "math",
+      "text": "3 + 3 = ?",
+      "answer": "6",
+      "options": [
+        "6",
+        "7",
+        "9",
+        "5"
+      ],
+      "explanation": "正确答案：6"
+    },
+    {
+      "id": "math-1-4",
+      "grade": 1,
+      "subject": "math",
+      "text": "4 + 4 = ?",
+      "answer": "8",
+      "options": [
+        "8",
+        "9",
+        "11",
+        "7"
+      ],
+      "explanation": "正确答案：8"
+    },
+    {
+      "id": "math-1-5",
+      "grade": 1,
+      "subject": "math",
+      "text": "5 + 5 = ?",
+      "answer": "10",
+      "options": [
+        "10",
+        "11",
+        "13",
+        "9"
+      ],
+      "explanation": "正确答案：10"
+    },
+    {
+      "id": "math-1-6",
+      "grade": 1,
+      "subject": "math",
+      "text": "6 + 1 = ?",
+      "answer": "7",
+      "options": [
+        "7",
+        "8",
+        "10",
+        "6"
+      ],
+      "explanation": "正确答案：7"
+    },
+    {
+      "id": "math-1-7",
+      "grade": 1,
+      "subject": "math",
+      "text": "7 + 2 = ?",
+      "answer": "9",
+      "options": [
+        "9",
+        "10",
+        "12",
+        "8"
+      ],
+      "explanation": "正确答案：9"
+    },
+    {
+      "id": "math-1-8",
+      "grade": 1,
+      "subject": "math",
+      "text": "8 + 3 = ?",
+      "answer": "11",
+      "options": [
+        "11",
+        "12",
+        "14",
+        "10"
+      ],
+      "explanation": "正确答案：11"
+    },
+    {
+      "id": "math-1-9",
+      "grade": 1,
+      "subject": "math",
+      "text": "9 + 4 = ?",
+      "answer": "13",
+      "options": [
+        "13",
+        "14",
+        "16",
+        "12"
+      ],
+      "explanation": "正确答案：13"
+    },
+    {
+      "id": "math-1-10",
+      "grade": 1,
+      "subject": "math",
+      "text": "1 + 5 = ?",
+      "answer": "6",
+      "options": [
+        "6",
+        "7",
+        "9",
+        "5"
+      ],
+      "explanation": "正确答案：6"
+    },
+    {
+      "id": "math-1-11",
+      "grade": 1,
+      "subject": "math",
+      "text": "2 + 1 = ?",
+      "answer": "3",
+      "options": [
+        "3",
+        "4",
+        "6",
+        "2"
+      ],
+      "explanation": "正确答案：3"
+    },
+    {
+      "id": "math-1-12",
+      "grade": 1,
+      "subject": "math",
+      "text": "3 + 2 = ?",
+      "answer": "5",
+      "options": [
+        "5",
+        "6",
+        "8",
+        "4"
+      ],
+      "explanation": "正确答案：5"
+    },
+    {
+      "id": "math-2-1",
+      "grade": 2,
+      "subject": "math",
+      "text": "2 × 2 = ?",
+      "answer": "4",
+      "options": [
+        "4",
+        "5",
+        "7",
+        "3"
+      ],
+      "explanation": "正确答案：4"
+    },
+    {
+      "id": "math-2-2",
+      "grade": 2,
+      "subject": "math",
+      "text": "3 × 3 = ?",
+      "answer": "9",
+      "options": [
+        "9",
+        "10",
+        "12",
+        "8"
+      ],
+      "explanation": "正确答案：9"
+    },
+    {
+      "id": "math-2-3",
+      "grade": 2,
+      "subject": "math",
+      "text": "4 × 4 = ?",
+      "answer": "16",
+      "options": [
+        "16",
+        "17",
+        "19",
+        "15"
+      ],
+      "explanation": "正确答案：16"
+    },
+    {
+      "id": "math-2-4",
+      "grade": 2,
+      "subject": "math",
+      "text": "5 × 5 = ?",
+      "answer": "25",
+      "options": [
+        "25",
+        "26",
+        "28",
+        "24"
+      ],
+      "explanation": "正确答案：25"
+    },
+    {
+      "id": "math-2-5",
+      "grade": 2,
+      "subject": "math",
+      "text": "6 × 6 = ?",
+      "answer": "36",
+      "options": [
+        "36",
+        "37",
+        "39",
+        "35"
+      ],
+      "explanation": "正确答案：36"
+    },
+    {
+      "id": "math-2-6",
+      "grade": 2,
+      "subject": "math",
+      "text": "7 × 7 = ?",
+      "answer": "49",
+      "options": [
+        "49",
+        "50",
+        "52",
+        "48"
+      ],
+      "explanation": "正确答案：49"
+    },
+    {
+      "id": "math-2-7",
+      "grade": 2,
+      "subject": "math",
+      "text": "8 × 8 = ?",
+      "answer": "64",
+      "options": [
+        "64",
+        "65",
+        "67",
+        "63"
+      ],
+      "explanation": "正确答案：64"
+    },
+    {
+      "id": "math-2-8",
+      "grade": 2,
+      "subject": "math",
+      "text": "9 × 2 = ?",
+      "answer": "18",
+      "options": [
+        "18",
+        "19",
+        "21",
+        "17"
+      ],
+      "explanation": "正确答案：18"
+    },
+    {
+      "id": "math-2-9",
+      "grade": 2,
+      "subject": "math",
+      "text": "2 × 3 = ?",
+      "answer": "6",
+      "options": [
+        "6",
+        "7",
+        "9",
+        "5"
+      ],
+      "explanation": "正确答案：6"
+    },
+    {
+      "id": "math-2-10",
+      "grade": 2,
+      "subject": "math",
+      "text": "3 × 4 = ?",
+      "answer": "12",
+      "options": [
+        "12",
+        "13",
+        "15",
+        "11"
+      ],
+      "explanation": "正确答案：12"
+    },
+    {
+      "id": "math-2-11",
+      "grade": 2,
+      "subject": "math",
+      "text": "4 × 5 = ?",
+      "answer": "20",
+      "options": [
+        "20",
+        "21",
+        "23",
+        "19"
+      ],
+      "explanation": "正确答案：20"
+    },
+    {
+      "id": "math-2-12",
+      "grade": 2,
+      "subject": "math",
+      "text": "5 × 6 = ?",
+      "answer": "30",
+      "options": [
+        "30",
+        "31",
+        "33",
+        "29"
+      ],
+      "explanation": "正确答案：30"
+    },
+    {
+      "id": "math-3-1",
+      "grade": 3,
+      "subject": "math",
+      "text": "12 ÷ 3 = ?",
+      "answer": "4",
+      "options": [
+        "4",
+        "5",
+        "7",
+        "3"
+      ],
+      "explanation": "正确答案：4"
+    },
+    {
+      "id": "math-3-2",
+      "grade": 3,
+      "subject": "math",
+      "text": "15 ÷ 3 = ?",
+      "answer": "5",
+      "options": [
+        "5",
+        "6",
+        "8",
+        "4"
+      ],
+      "explanation": "正确答案：5"
+    },
+    {
+      "id": "math-3-3",
+      "grade": 3,
+      "subject": "math",
+      "text": "18 ÷ 3 = ?",
+      "answer": "6",
+      "options": [
+        "6",
+        "7",
+        "9",
+        "5"
+      ],
+      "explanation": "正确答案：6"
+    },
+    {
+      "id": "math-3-4",
+      "grade": 3,
+      "subject": "math",
+      "text": "21 ÷ 3 = ?",
+      "answer": "7",
+      "options": [
+        "7",
+        "8",
+        "10",
+        "6"
+      ],
+      "explanation": "正确答案：7"
+    },
+    {
+      "id": "math-3-5",
+      "grade": 3,
+      "subject": "math",
+      "text": "24 ÷ 3 = ?",
+      "answer": "8",
+      "options": [
+        "8",
+        "9",
+        "11",
+        "7"
+      ],
+      "explanation": "正确答案：8"
+    },
+    {
+      "id": "math-3-6",
+      "grade": 3,
+      "subject": "math",
+      "text": "27 ÷ 3 = ?",
+      "answer": "9",
+      "options": [
+        "9",
+        "10",
+        "12",
+        "8"
+      ],
+      "explanation": "正确答案：9"
+    },
+    {
+      "id": "math-3-7",
+      "grade": 3,
+      "subject": "math",
+      "text": "30 ÷ 3 = ?",
+      "answer": "10",
+      "options": [
+        "10",
+        "11",
+        "13",
+        "9"
+      ],
+      "explanation": "正确答案：10"
+    },
+    {
+      "id": "math-3-8",
+      "grade": 3,
+      "subject": "math",
+      "text": "33 ÷ 3 = ?",
+      "answer": "11",
+      "options": [
+        "11",
+        "12",
+        "14",
+        "10"
+      ],
+      "explanation": "正确答案：11"
+    },
+    {
+      "id": "math-3-9",
+      "grade": 3,
+      "subject": "math",
+      "text": "36 ÷ 3 = ?",
+      "answer": "12",
+      "options": [
+        "12",
+        "13",
+        "15",
+        "11"
+      ],
+      "explanation": "正确答案：12"
+    },
+    {
+      "id": "math-3-10",
+      "grade": 3,
+      "subject": "math",
+      "text": "39 ÷ 3 = ?",
+      "answer": "13",
+      "options": [
+        "13",
+        "14",
+        "16",
+        "12"
+      ],
+      "explanation": "正确答案：13"
+    },
+    {
+      "id": "math-3-11",
+      "grade": 3,
+      "subject": "math",
+      "text": "42 ÷ 3 = ?",
+      "answer": "14",
+      "options": [
+        "14",
+        "15",
+        "17",
+        "13"
+      ],
+      "explanation": "正确答案：14"
+    },
+    {
+      "id": "math-3-12",
+      "grade": 3,
+      "subject": "math",
+      "text": "45 ÷ 3 = ?",
+      "answer": "15",
+      "options": [
+        "15",
+        "16",
+        "18",
+        "14"
+      ],
+      "explanation": "正确答案：15"
+    },
+    {
+      "id": "math-4-1",
+      "grade": 4,
+      "subject": "math",
+      "text": "(12 + 5) × 3 = ?",
+      "answer": "51",
+      "options": [
+        "51",
+        "52",
+        "54",
+        "50"
+      ],
+      "explanation": "正确答案：51"
+    },
+    {
+      "id": "math-4-2",
+      "grade": 4,
+      "subject": "math",
+      "text": "(13 + 5) × 3 = ?",
+      "answer": "54",
+      "options": [
+        "54",
+        "55",
+        "57",
+        "53"
+      ],
+      "explanation": "正确答案：54"
+    },
+    {
+      "id": "math-4-3",
+      "grade": 4,
+      "subject": "math",
+      "text": "(14 + 5) × 3 = ?",
+      "answer": "57",
+      "options": [
+        "57",
+        "58",
+        "60",
+        "56"
+      ],
+      "explanation": "正确答案：57"
+    },
+    {
+      "id": "math-4-4",
+      "grade": 4,
+      "subject": "math",
+      "text": "(15 + 5) × 3 = ?",
+      "answer": "60",
+      "options": [
+        "60",
+        "61",
+        "63",
+        "59"
+      ],
+      "explanation": "正确答案：60"
+    },
+    {
+      "id": "math-4-5",
+      "grade": 4,
+      "subject": "math",
+      "text": "(16 + 5) × 3 = ?",
+      "answer": "63",
+      "options": [
+        "63",
+        "64",
+        "66",
+        "62"
+      ],
+      "explanation": "正确答案：63"
+    },
+    {
+      "id": "math-4-6",
+      "grade": 4,
+      "subject": "math",
+      "text": "(17 + 5) × 3 = ?",
+      "answer": "66",
+      "options": [
+        "66",
+        "67",
+        "69",
+        "65"
+      ],
+      "explanation": "正确答案：66"
+    },
+    {
+      "id": "math-4-7",
+      "grade": 4,
+      "subject": "math",
+      "text": "(18 + 5) × 3 = ?",
+      "answer": "69",
+      "options": [
+        "69",
+        "70",
+        "72",
+        "68"
+      ],
+      "explanation": "正确答案：69"
+    },
+    {
+      "id": "math-4-8",
+      "grade": 4,
+      "subject": "math",
+      "text": "(19 + 5) × 3 = ?",
+      "answer": "72",
+      "options": [
+        "72",
+        "73",
+        "75",
+        "71"
+      ],
+      "explanation": "正确答案：72"
+    },
+    {
+      "id": "math-4-9",
+      "grade": 4,
+      "subject": "math",
+      "text": "(20 + 5) × 3 = ?",
+      "answer": "75",
+      "options": [
+        "75",
+        "76",
+        "78",
+        "74"
+      ],
+      "explanation": "正确答案：75"
+    },
+    {
+      "id": "math-4-10",
+      "grade": 4,
+      "subject": "math",
+      "text": "(21 + 5) × 3 = ?",
+      "answer": "78",
+      "options": [
+        "78",
+        "79",
+        "81",
+        "77"
+      ],
+      "explanation": "正确答案：78"
+    },
+    {
+      "id": "math-4-11",
+      "grade": 4,
+      "subject": "math",
+      "text": "(22 + 5) × 3 = ?",
+      "answer": "81",
+      "options": [
+        "81",
+        "82",
+        "84",
+        "80"
+      ],
+      "explanation": "正确答案：81"
+    },
+    {
+      "id": "math-4-12",
+      "grade": 4,
+      "subject": "math",
+      "text": "(23 + 5) × 3 = ?",
+      "answer": "84",
+      "options": [
+        "84",
+        "85",
+        "87",
+        "83"
+      ],
+      "explanation": "正确答案：84"
+    },
+    {
+      "id": "math-5-1",
+      "grade": 5,
+      "subject": "math",
+      "text": "长方形长 10 厘米，宽 2 厘米，面积是多少平方厘米？",
+      "answer": "20",
+      "options": [
+        "20",
+        "21",
+        "23",
+        "19"
+      ],
+      "explanation": "正确答案：20"
+    },
+    {
+      "id": "math-5-2",
+      "grade": 5,
+      "subject": "math",
+      "text": "长方形长 11 厘米，宽 2 厘米，面积是多少平方厘米？",
+      "answer": "22",
+      "options": [
+        "22",
+        "23",
+        "25",
+        "21"
+      ],
+      "explanation": "正确答案：22"
+    },
+    {
+      "id": "math-5-3",
+      "grade": 5,
+      "subject": "math",
+      "text": "长方形长 12 厘米，宽 2 厘米，面积是多少平方厘米？",
+      "answer": "24",
+      "options": [
+        "24",
+        "25",
+        "27",
+        "23"
+      ],
+      "explanation": "正确答案：24"
+    },
+    {
+      "id": "math-5-4",
+      "grade": 5,
+      "subject": "math",
+      "text": "长方形长 13 厘米，宽 2 厘米，面积是多少平方厘米？",
+      "answer": "26",
+      "options": [
+        "26",
+        "27",
+        "29",
+        "25"
+      ],
+      "explanation": "正确答案：26"
+    },
+    {
+      "id": "math-5-5",
+      "grade": 5,
+      "subject": "math",
+      "text": "长方形长 14 厘米，宽 2 厘米，面积是多少平方厘米？",
+      "answer": "28",
+      "options": [
+        "28",
+        "29",
+        "31",
+        "27"
+      ],
+      "explanation": "正确答案：28"
+    },
+    {
+      "id": "math-5-6",
+      "grade": 5,
+      "subject": "math",
+      "text": "长方形长 15 厘米，宽 2 厘米，面积是多少平方厘米？",
+      "answer": "30",
+      "options": [
+        "30",
+        "31",
+        "33",
+        "29"
+      ],
+      "explanation": "正确答案：30"
+    },
+    {
+      "id": "math-5-7",
+      "grade": 5,
+      "subject": "math",
+      "text": "长方形长 16 厘米，宽 2 厘米，面积是多少平方厘米？",
+      "answer": "32",
+      "options": [
+        "32",
+        "33",
+        "35",
+        "31"
+      ],
+      "explanation": "正确答案：32"
+    },
+    {
+      "id": "math-5-8",
+      "grade": 5,
+      "subject": "math",
+      "text": "长方形长 17 厘米，宽 2 厘米，面积是多少平方厘米？",
+      "answer": "34",
+      "options": [
+        "34",
+        "35",
+        "37",
+        "33"
+      ],
+      "explanation": "正确答案：34"
+    },
+    {
+      "id": "math-5-9",
+      "grade": 5,
+      "subject": "math",
+      "text": "长方形长 18 厘米，宽 2 厘米，面积是多少平方厘米？",
+      "answer": "36",
+      "options": [
+        "36",
+        "37",
+        "39",
+        "35"
+      ],
+      "explanation": "正确答案：36"
+    },
+    {
+      "id": "math-5-10",
+      "grade": 5,
+      "subject": "math",
+      "text": "长方形长 19 厘米，宽 2 厘米，面积是多少平方厘米？",
+      "answer": "38",
+      "options": [
+        "38",
+        "39",
+        "41",
+        "37"
+      ],
+      "explanation": "正确答案：38"
+    },
+    {
+      "id": "math-5-11",
+      "grade": 5,
+      "subject": "math",
+      "text": "长方形长 20 厘米，宽 2 厘米，面积是多少平方厘米？",
+      "answer": "40",
+      "options": [
+        "40",
+        "41",
+        "43",
+        "39"
+      ],
+      "explanation": "正确答案：40"
+    },
+    {
+      "id": "math-5-12",
+      "grade": 5,
+      "subject": "math",
+      "text": "长方形长 21 厘米，宽 2 厘米，面积是多少平方厘米？",
+      "answer": "42",
+      "options": [
+        "42",
+        "43",
+        "45",
+        "41"
+      ],
+      "explanation": "正确答案：42"
+    },
+    {
+      "id": "math-6-1",
+      "grade": 6,
+      "subject": "math",
+      "text": "10 的 20% 是多少？",
+      "answer": "2",
+      "options": [
+        "2",
+        "3",
+        "5",
+        "1"
+      ],
+      "explanation": "正确答案：2"
+    },
+    {
+      "id": "math-6-2",
+      "grade": 6,
+      "subject": "math",
+      "text": "20 的 20% 是多少？",
+      "answer": "4",
+      "options": [
+        "4",
+        "5",
+        "7",
+        "3"
+      ],
+      "explanation": "正确答案：4"
+    },
+    {
+      "id": "math-6-3",
+      "grade": 6,
+      "subject": "math",
+      "text": "30 的 20% 是多少？",
+      "answer": "6",
+      "options": [
+        "6",
+        "7",
+        "9",
+        "5"
+      ],
+      "explanation": "正确答案：6"
+    },
+    {
+      "id": "math-6-4",
+      "grade": 6,
+      "subject": "math",
+      "text": "40 的 20% 是多少？",
+      "answer": "8",
+      "options": [
+        "8",
+        "9",
+        "11",
+        "7"
+      ],
+      "explanation": "正确答案：8"
+    },
+    {
+      "id": "math-6-5",
+      "grade": 6,
+      "subject": "math",
+      "text": "50 的 20% 是多少？",
+      "answer": "10",
+      "options": [
+        "10",
+        "11",
+        "13",
+        "9"
+      ],
+      "explanation": "正确答案：10"
+    },
+    {
+      "id": "math-6-6",
+      "grade": 6,
+      "subject": "math",
+      "text": "60 的 20% 是多少？",
+      "answer": "12",
+      "options": [
+        "12",
+        "13",
+        "15",
+        "11"
+      ],
+      "explanation": "正确答案：12"
+    },
+    {
+      "id": "math-6-7",
+      "grade": 6,
+      "subject": "math",
+      "text": "70 的 20% 是多少？",
+      "answer": "14",
+      "options": [
+        "14",
+        "15",
+        "17",
+        "13"
+      ],
+      "explanation": "正确答案：14"
+    },
+    {
+      "id": "math-6-8",
+      "grade": 6,
+      "subject": "math",
+      "text": "80 的 20% 是多少？",
+      "answer": "16",
+      "options": [
+        "16",
+        "17",
+        "19",
+        "15"
+      ],
+      "explanation": "正确答案：16"
+    },
+    {
+      "id": "math-6-9",
+      "grade": 6,
+      "subject": "math",
+      "text": "90 的 20% 是多少？",
+      "answer": "18",
+      "options": [
+        "18",
+        "19",
+        "21",
+        "17"
+      ],
+      "explanation": "正确答案：18"
+    },
+    {
+      "id": "math-6-10",
+      "grade": 6,
+      "subject": "math",
+      "text": "100 的 20% 是多少？",
+      "answer": "20",
+      "options": [
+        "20",
+        "21",
+        "23",
+        "19"
+      ],
+      "explanation": "正确答案：20"
+    },
+    {
+      "id": "math-6-11",
+      "grade": 6,
+      "subject": "math",
+      "text": "110 的 20% 是多少？",
+      "answer": "22",
+      "options": [
+        "22",
+        "23",
+        "25",
+        "21"
+      ],
+      "explanation": "正确答案：22"
+    },
+    {
+      "id": "math-6-12",
+      "grade": 6,
+      "subject": "math",
+      "text": "120 的 20% 是多少？",
+      "answer": "24",
+      "options": [
+        "24",
+        "25",
+        "27",
+        "23"
+      ],
+      "explanation": "正确答案：24"
+    }
+  ]
+}

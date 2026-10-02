@@ -1,0 +1,1 @@
+window.GameAPI={base:'https://game-api.brassivo.com',async call(path,body){const r=await fetch(this.base+path,{method:body===undefined?'GET':'POST',credentials:'include',headers:body===undefined?{}:{'Content-Type':'application/json'},body:body===undefined?undefined:JSON.stringify(body)});const data=await r.json();if(!r.ok||!data.ok)throw Error(data.error||'请求失败');return data;}};
