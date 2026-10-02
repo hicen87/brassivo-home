@@ -1,10 +1,12 @@
 # 方块飞车（Block Kart）维护文档
 
 方块风格卡丁车网页游戏，玩法参考卡丁车竞速：6 台车、3 圈、漂移攒火花加速、道具箱、AI 对手。
-手机 / 平板 / 电脑 / 手柄均可玩。纯静态网页，无后端。
+手机 / 平板 / 电脑 / 手柄均可玩。游戏前端为静态网页；账号与云端排行榜使用独立 Cloudflare Worker + D1。
 
 ## 文件
-- `index.html`：全部游戏代码（HTML+CSS+JS 单文件，约 70KB）
+- `index.html`：游戏主逻辑（HTML+CSS+JS）
+- `api.js`：云端 API 客户端；独立部署时可游客游玩
+- `learning.js` / `question-bank.json`：选择题抽取与题库
 - `vendor/three.min.js`：Three.js r149（本地托管，国内访问不依赖 CDN）
 
 ## 部署到自己的域名
@@ -12,7 +14,7 @@
 - 国内：阿里云 OSS / 腾讯云 COS 开启静态网站托管，绑定已备案域名
 - 海外：Cloudflare Pages / Vercel / GitHub Pages，直接拖文件夹
 本地预览：在本目录运行 `npx serve` 或 `python -m http.server`，浏览器打开 http://localhost:8000
-（直接双击 index.html 也能玩）
+（普通竞速可直接打开；学霸题库需要 HTTP 服务）
 
 ## 操作
 - 电脑：W/↑ 油门，S/↓ 刹车倒车，A D/← → 转向，空格 漂移，E 道具，P 暂停
