@@ -142,7 +142,7 @@ tr.me td{background:rgba(255,201,60,.14)}
     <div><h2>难度</h2><div id="diffList" class="seg"></div></div>
     <div><h2>画质</h2><div id="qList" class="seg"></div></div>
   </section>
-  <section><label class="keys"><input id="studyMode" type="checkbox"> 学习学霸模式</label><p class="keys">开局驶过起跑线及每圈通过终点线后答题：答对随机补满空道具格，答错不获得道具，随后继续行驶。学霸模式没有路上盲盒；答题时全场暂停。</p><div class="row2"><label class="keys">年级<select id="studyGrade" style="width:100%;padding:8px"><option value="1">一年级</option><option value="2">二年级</option><option value="3">三年级</option><option value="4">四年级</option><option value="5">五年级</option><option value="6">六年级</option></select></label><label class="keys">题库<select id="studySubject" style="width:100%;padding:8px"><option value="all">综合随机</option><option value="math">数学</option><option value="olympiad">奥数</option><option value="chinese">语文</option><option value="english">英语</option><option value="science">科学</option><option value="ethics">道德与法治</option><option value="music">音乐</option><option value="art">美术</option><option value="pe">体育与健康</option><option value="labor">劳动</option><option value="it">信息科技</option><option value="practice">综合实践</option></select></label></div><p class="keys">默认使用年级内思考题，答后可阅读解析再继续。题库随年级切换；英语、信息科技从三年级起显示。奥数为独立拓展题库，综合随机抽取常规学科。</p></section>
+  <section><label class="keys"><input id="studyMode" type="checkbox"> 学习学霸模式</label><p class="keys">开局驶过起跑线及每圈通过终点线后答题：答对随机补满空道具格，答错不获得道具，随后继续行驶。学霸模式没有路上盲盒；答题时全场暂停。</p><div class="row2"><label class="keys">年级<select id="studyGrade" style="width:100%;padding:8px"><option value="1">一年级</option><option value="2">二年级</option><option value="3">三年级</option><option value="4">四年级</option><option value="5">五年级</option><option value="6">六年级</option></select></label><label class="keys">题库<select id="studySubject" style="width:100%;padding:8px"><option value="all">综合随机</option><option value="math">数学</option><option value="olympiad">奥数</option><option value="chinese">语文</option><option value="english">英语</option><option value="science">科学</option><option value="ethics">道德与法治</option><option value="music">音乐</option><option value="art">美术</option><option value="pe">体育与健康</option><option value="labor">劳动</option><option value="it">信息科技</option><option value="practice">综合实践</option></select></label></div><p class="keys">默认使用年级内思考题，答对直接继续比赛，答错阅读解析后点击继续。题库随年级切换；英语、信息科技从三年级起显示。奥数为独立拓展题库，综合随机抽取常规学科。</p></section>
   <details id="musicSettings"><summary style="cursor:pointer;font-weight:bold;color:var(--gold)">背景音乐</summary><label class="keys" style="display:block;margin:12px 0"><input id="musicEnabled" type="checkbox"> 播放随机节奏音乐</label><label class="keys" style="display:block">音乐音量 <output id="musicVolumeLabel">35%</output><input id="musicVolume" type="range" min="0" max="100" step="5" style="display:block;width:100%;min-height:44px"></label><p class="keys">像素冲刺 · 霓虹弯道 · 晴空飞车。比赛中随机播放，答题或暂停时音乐暂停。</p></details>
   <details id="controlSettings"><summary style="cursor:pointer;font-weight:bold;color:var(--gold)">控制设置</summary><label class="keys">手机 / 平板转向<select id="controlMenu" style="width:100%;padding:8px"><option value="tilt">重力控制</option><option value="buttons">左右方向键</option></select></label><button id="calibrateMenu" class="alt">校准重力中心</button><p class="keys">iPad 默认左右方向键，右下角按住加速。也可选择重力转向：左右倾斜控制方向；手机默认重力转向。无传感器时使用方向键。</p></details>
   <p class="best" id="bestTxt"></p>
@@ -232,7 +232,7 @@ const store = {
 };
 
 /* ================= constants & data ================= */
-const B = 3, ROAD = 14, WALL = 21, LAPS = 6, BASE = 42, ACC = 24;
+const B = 3, ROAD = 14, WALL = 21, LAPS = 6, BASE = 300 / 3.2 / 1.15 / 1.06, ACC = 24;
 const TRACKS = [
   { name: '青草环线', sub: '湖泊 · 橡树林', seed: 11, hill: 5, water: true, capH: 5, deco: 'oak', fence: 0xe8c34a,
     pts: [[0,-120],[90,-110],[150,-50],[140,30],[80,60],[60,120],[-10,140],[-80,110],[-140,40],[-130,-50],[-70,-100]],
@@ -779,17 +779,18 @@ function studyCheckpoint(k, done=()=>{}) {
     Object.keys(keys).forEach(key => keys[key] = false); T.steer=0;T.brake=false;T.left=false;T.right=false;T.throttle=false;itemEdge=false;
     G.studyStats.total++;
     const correct=answer===q.answer;
-    if(correct)G.studyStats.correct++;
-    $('#quizFeedback').textContent=correct?'答对了！点击继续后补满空道具格。':'这次答错了，不获得道具。正确答案：'+q.answer;
-    $('#quizExplanation').textContent='解题思路：'+q.explanation;
-    $('#quizReview').hidden=false;
-    $('#quizContinue').onclick=()=>{
+    const resume=()=>{
       if(!quizPending)return;
       clearQuiz();G.paused=false;
       Object.keys(keys).forEach(key => keys[key] = false);T.steer=0;T.brake=false;T.left=false;T.right=false;T.throttle=false;itemEdge=false;
       const finish=()=>{done();$('#pauseBtn').focus();};
       if(correct)awardStudyItems(k,3,finish);else finish();
     };
+    if(correct){G.studyStats.correct++;resume();return;}
+    $('#quizFeedback').textContent='这次答错了，不获得道具。正确答案：'+q.answer;
+    $('#quizExplanation').textContent='解题思路：'+q.explanation;
+    $('#quizReview').hidden=false;
+    $('#quizContinue').onclick=resume;
   };choices.appendChild(b); });
   $('#quizOv').hidden = false; $('#quizTitle').focus({preventScroll:true});
 }
@@ -881,6 +882,7 @@ function updateKart(k, inp, dt) {
   const spAbs = Math.abs(k.speed);
   const offroad = Math.abs(k.lat) > ROAD + 0.8;
   if (k.boostT > 0) { k.boostT -= dt; maxS *= 1.34; } else if (offroad) maxS *= 0.55;
+  maxS = Math.min(300 / 3.2, maxS);
   const acc = ACC * st.acc * DIFFS[G.diff].scale;
   if (k.boostT > 0) k.speed = Math.min(maxS, k.speed + acc * 3.5 * dt);
   else if (inp.thr > 0 && !inp.brk) {
