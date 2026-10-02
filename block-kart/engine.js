@@ -34,7 +34,7 @@
     let current={gear:1,rpm:1100,shift:null,cut:false,load:0};
     function update(input,time=ctx.currentTime){
       if(!input.on||input.muted){master.gain.setTargetAtTime(0,time,.055);return current;}
-      current=state.update(input,time);
+      current=input.snapshot||state.update(input,time);
       const {rpm,cut,load,shift}=current;
       for(const o of voices)o.frequency.setTargetAtTime(rpm/120,time,shift?.015:.055);
       bass.frequency.setTargetAtTime(rpm/60,time,.045);

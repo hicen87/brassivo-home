@@ -209,7 +209,8 @@ tr.me td{background:rgba(255,201,60,.14)}
 <script src="api.js?v=auth-v2"></script>
 <script src="play-limit.js"></script>
 <script src="touch-guard.js?v=20261002"></script>
-<script src="engine.js?v=sport-v1"></script>
+<script src="engine.js?v=shiftfx-v2"></script>
+<script src="shift-effects.js?v=shiftfx-v1"></script>
 <script src="music.js?v=rhythm-v1"></script>
 <script src="score.js?v=100point-v1"></script>
 <script src="account-form.js?v=auth-v2"></script>
@@ -654,6 +655,7 @@ function updateParticles(dt) {
 
 /* ================= audio ================= */
 const AU = { ctx: null, eng: null, muted: store.get('muted', false) };
+const DRIVE=KartEngine.model();let driveState={gear:1,rpm:1100,shift:null,cut:false,load:0};
 const MUSIC=KartMusicFactory();
 const musicPrefs={enabled:store.get('musicEnabled',true),volume:store.get('musicVolume',.35)};MUSIC.settings(musicPrefs);
 function syncMusic(){if(!document.hidden&&!AU.muted&&G.state==='race'&&!G.paused&&!G.player?.finished&&!G.limitPaused)MUSIC.start();else MUSIC.stop();}
@@ -671,8 +673,8 @@ function audioInit() {
   } catch (e) {}
 }
 function engineSound(on, speed, boost, throttle=0, neutral=false) {
-  if (!AU.eng) return;
-  AU.eng.update({on,speed,boost,throttle,neutral,muted:AU.muted});
+  if(on){driveState=DRIVE.update({speed,boost,throttle,neutral},performance.now()/1000);if(G.state==='race'&&!G.paused)KartShiftEffects.emit(G.player,driveState.shift,emit);}
+  AU.eng?.update({on,speed,boost,throttle,neutral,muted:AU.muted,snapshot:driveState});
 }
 
 function sfx(type) {
@@ -1028,7 +1030,7 @@ async function startRace() {
   setupRace();
   $('#menu').hidden = true;$('#startBtn').hidden=true;$('#menuHelp').hidden=true; $('#resultOv').hidden = true; $('#pauseOv').hidden = true;
   $('#hud').hidden = false; $('#touch').hidden = !G.touch;
-  MUSIC.newRace();AU.eng?.reset();
+  MUSIC.newRace();AU.eng?.reset();DRIVE.reset();driveState={gear:1,rpm:1100,shift:null,cut:false,load:0};
   G.state = 'countdown'; G.countdown = 3; G.lastCount = 4; G.raceTime = 0; G.paused = false; G.thrPress = null; G.finishT = 0;
   G.starting=false;$('#menu').inert=false;
   G.camInit = true; G.slowT = 0;
@@ -1146,7 +1148,7 @@ function updateHud(dt) {
   const lt = `${lap}/${LAPS}`; if (lt !== lastLapTxt) { lastLapTxt = lt; hud.lap.textContent = lt; }
   hud.time.textContent = fmt(G.raceTime);
   hud.spd.textContent = Math.round(Math.abs(p.speed) * 3.2);
-  if(AU.eng){const e=AU.eng.status();$('#engineReadout').textContent=`${typeof e.gear==='number'?'D'+e.gear:e.gear} · ${Math.round(e.rpm/50)*50} RPM`;}
+  {const e=driveState;$('#engineReadout').textContent=`${typeof e.gear==='number'?'D'+e.gear:e.gear} · ${Math.round(e.rpm/50)*50} RPM`;}
   if (p.rollT > 0) {
     rollIconT -= dt; if (rollIconT <= 0) { rollIconT = 0.07; const ks = Object.keys(ICONS); hud.img.src = ICONS[ks[Math.floor(Math.random() * ks.length)]]; hud.img.hidden = false; }
     hud.slot.classList.add('rolling'); lastItem = 'roll';
@@ -1307,7 +1309,7 @@ applyQuality();
 setupRace();
 renderMenu();
 requestAnimationFrame(frame);
-window.__bk = { G, TRACKS, startRace, toMenu, keys, world: () => world, music:MUSIC, engine:()=>AU.eng };
+window.__bk = { G, TRACKS, startRace, toMenu, keys, world: () => world, music:MUSIC, engine:()=>AU.eng, gear:()=>driveState };
 })();
 </script>
 
