@@ -1,7 +1,7 @@
 {
-  "version": "20261002-mvp-no-local",
+  "version": "20261002-grade-subjects",
   "region": "浙江小学学习场景",
-  "notice": "原创入门练习，非官方题库；低年级英语为启蒙拓展。各科年级难度仅作练习分组，不代表学校教材进度。",
+  "notice": "原创入门练习，非官方题库；各科年级难度仅作练习分组，不代表学校教材进度。英语、信息科技从三年级起提供。",
   "subjects": {
     "math": "数学",
     "english": "英语",
@@ -99,34 +99,6 @@
         "只写对话"
       ],
       "explanation": "正确答案：借事物表达志向"
-    },
-    {
-      "id": "english-1-1",
-      "grade": 1,
-      "subject": "english",
-      "text": "“hello”常用于？",
-      "answer": "打招呼",
-      "options": [
-        "打招呼",
-        "道别",
-        "道歉",
-        "报数"
-      ],
-      "explanation": "正确答案：打招呼"
-    },
-    {
-      "id": "english-2-1",
-      "grade": 2,
-      "subject": "english",
-      "text": "“three”表示几？",
-      "answer": "3",
-      "options": [
-        "3",
-        "2",
-        "4",
-        "5"
-      ],
-      "explanation": "正确答案：3"
     },
     {
       "id": "english-3-1",
@@ -687,34 +659,6 @@
         "不完成自己的任务"
       ],
       "explanation": "正确答案：协商合作"
-    },
-    {
-      "id": "it-1-1",
-      "grade": 1,
-      "subject": "it",
-      "text": "使用电子设备应注意？",
-      "answer": "适当休息保护眼睛",
-      "options": [
-        "适当休息保护眼睛",
-        "整夜不停看",
-        "离屏幕越近越好",
-        "完全不眨眼"
-      ],
-      "explanation": "正确答案：适当休息保护眼睛"
-    },
-    {
-      "id": "it-2-1",
-      "grade": 2,
-      "subject": "it",
-      "text": "收到陌生人索要密码的消息应该？",
-      "answer": "不提供并求助家长",
-      "options": [
-        "不提供并求助家长",
-        "立即发送",
-        "发到群里",
-        "告诉全部朋友"
-      ],
-      "explanation": "正确答案：不提供并求助家长"
     },
     {
       "id": "it-3-1",

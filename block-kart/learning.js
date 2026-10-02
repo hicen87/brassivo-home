@@ -1,9 +1,10 @@
 (function(root){
   let bank=null, recent=[];
-  async function load(){if(!bank){const r=await fetch('question-bank.json?v=20261002-no-local',{signal:AbortSignal.timeout(8000)});if(!r.ok)throw Error('题库加载失败');bank=await r.json();}return bank;}
+  async function load(){if(!bank){const r=await fetch('question-bank.json?v=20261002-grade-subjects',{signal:AbortSignal.timeout(8000)});if(!r.ok)throw Error('题库加载失败');bank=await r.json();}return bank;}
   function question(grade=1,subject='all',random=Math.random){
     if(!bank)throw Error('题库尚未加载');
-    let pool=bank.questions.filter(q=>q.grade===Number(grade)&&(subject==='all'||q.subject===subject));
+    const allowed=KartSubjects.available(grade);
+    let pool=bank.questions.filter(q=>q.grade===Number(grade)&&allowed.includes(q.subject)&&(subject==='all'||q.subject===subject));
     if(!pool.length)throw Error('该题库暂时没有题目');
     let fresh=pool.filter(q=>!recent.includes(q.id));if(!fresh.length){recent=[];fresh=pool;}
     const q=fresh[Math.floor(random()*fresh.length)];recent.push(q.id);if(recent.length>30)recent.shift();
