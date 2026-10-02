@@ -10,6 +10,7 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=ZCOOL+KuaiLe&display=swap">
+<link rel="stylesheet" href="experience.css?v=kart-s2-20261002">
 <style>
 :root{
   --ink:#10131c; --panel:rgba(22,27,40,.9); --panel-solid:#161b28; --line:#0b0d14;
@@ -142,7 +143,7 @@ tr.me td{background:rgba(255,201,60,.14)}
   <div>
     <a href="/game/" style="color:var(--mut);text-decoration:none;font-size:12px">← game · 游戏目录</a>
 <h1>方块飞车</h1>
-    <p class="tag">6 台方块卡丁车 · 漂移攒火花 · 道具乱斗 · 6 圈定胜负</p>
+    <p class="tag">6 台方块卡丁车 · 漂移攒火花 · 道具乱斗 · 默认6圈定胜负</p>
   </div>
   <section><h2>赛道</h2><div id="trackList" class="opts"></div></section>
   <section><h2>车手</h2><div id="charList" class="opts chars"></div></section>
@@ -161,7 +162,7 @@ tr.me td{background:rgba(255,201,60,.14)}
 </div>
 
 <details id="menuHelp" class="panel menu-help"><summary>操作说明</summary>  <p class="keys"><b>电脑</b>：W/↑ 油门 · S/↓ 刹车/倒车 · A D/← → 转向 · 空格 漂移 · E 道具 · 学霸模式 I/O/P 使用对应道具 · Esc 暂停<br>
-  <b>手机/平板</b>：iPad 默认左右方向键，按住右下角加速；手机默认倾斜转向（自动油门），可切换方向键 · 右侧 加速 / 道具 / 刹车（道具按从左到右使用，自动跳过空格）<br>
+  <b>手机/平板</b>：iPad 默认左右方向键，按住右下角加速；手机默认倾斜转向（自动油门），可切换方向键 · 左侧道具 · 右侧加速 / 刹车（道具按从左到右使用，自动跳过空格）<br>
   <b>手柄</b>：左摇杆转向 · RT 油门 · LT 刹车 · RB 漂移 · X 道具<br>
   道具（8种等概率）：果冻块设陷阱；追踪弹攻击；护盾抵挡一次攻击（8秒）；闪电攻击24米内对手；冰冻弹击倒并减速3秒；弹簧跳跃腾空躲陷阱；巨型车6秒撞倒对手；笑脸烟雾18米范围减速3秒。<br>漂移时间越长火花越亮：蓝 → 橙 → 紫，松开即加速。倒数到"1"时踩油门可起步冲刺。</p></details>
 <button id="startBtn" class="big">开始比赛 →</button>
@@ -207,23 +208,28 @@ tr.me td{background:rgba(255,201,60,.14)}
 </div>
 
 <div id="accountOv" class="overlay" hidden style="z-index:110"><div class="dialog panel" style="max-height:85vh;overflow:auto"><h2>玩家账号</h2><p id="accountStatus" role="status" aria-live="polite"></p><p class="keys">账号：3–20位英文字母、数字或下划线；密码：8–128位。账号名称会出现在排行榜。</p><form id="authForm"><label>账号<input id="username" autocomplete="username" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="例如 kart_player" required minlength="3" maxlength="20" pattern="[a-zA-Z0-9_]{3,20}"></label><label>密码<input id="password" placeholder="至少8位密码" type="password" autocomplete="current-password" required minlength="8" maxlength="128"></label><button class="big" value="login">登录</button><button class="alt" value="register">注册并登录</button></form><button id="logout" class="alt" hidden>退出登录</button><button class="alt" onclick="document.getElementById('accountOv').hidden=true">关闭</button></div></div>
-<div id="boardOv" class="overlay" hidden style="z-index:110"><div class="dialog panel" style="max-height:85vh;overflow:auto"><h2>游戏排行榜</h2><p class="keys">满分100分：准确率 × 60 分；每圈 5 分（最多 30）；每次有效击倒 2 分（最多 10）。普通模式不计答题分。</p><div id="boardFilters" style="display:grid;grid-template-columns:1fr 1fr;gap:8px"></div><p id="boardStatus"></p><table><thead><tr><th>排名</th><th>玩家</th><th>综合分 / 100</th><th>答题 / 圈数 / 击倒</th></tr></thead><tbody id="boardRows"></tbody></table><button id="refreshBoard" class="alt">刷新</button><button class="alt" onclick="document.getElementById('boardOv').hidden=true">返回游戏</button></div></div>
+<div id="boardOv" class="overlay" hidden style="z-index:110"><div class="dialog panel" style="max-height:85vh;overflow:auto"><h2>游戏排行榜</h2><p class="keys">满分100分：准确率 × 60 分；每圈 5 分（最多 30）；每次有效击倒 2 分（最多 10）。普通模式不计答题分。</p><div id="boardFilters" style="display:grid;grid-template-columns:1fr 1fr;gap:8px"></div><p id="boardStatus"></p><table><thead><tr><th>排名</th><th>玩家</th><th>综合分 / 100</th><th>用时 / 答题 / 圈数 / 击倒</th></tr></thead><tbody id="boardRows"></tbody></table><button id="refreshBoard" class="alt">刷新</button><button class="alt" onclick="document.getElementById('boardOv').hidden=true">返回游戏</button></div></div>
 <div id="playLock" class="overlay" hidden style="z-index:999"><div class="dialog panel"><h2>休息时间</h2><p>已累计游玩 30 分钟，请休息 30 分钟。</p><p id="playLockTime" role="timer" style="font-size:36px;color:#ffe36a"></p><p>倒计时结束后可以继续游戏，刷新页面仍保留锁定。</p><details id="playAdmin"><summary style="cursor:pointer;color:var(--gold)">管理员解除休息</summary><form id="playUnlockForm" style="display:grid;gap:12px;margin-top:12px" novalidate><label>管理员密码<input id="playAdminPin" type="password" inputmode="numeric" autocomplete="off" maxlength="6" style="display:block;width:100%;padding:12px;font-size:20px;margin-top:8px" placeholder="输入管理员密码"></label><button id="playUnlockBtn" type="submit">解除本次休息</button><p id="playUnlockStatus" role="status" aria-live="polite" class="keys"></p></form></details></div></div>
 <div id="toast" class="toast" hidden></div>
 
 <script src="vendor/three.min.js"></script>
 <script src="subjects.js?v=olympiad-v4-20261002"></script>
-<script src="learning.js?v=readable-v7-20261002"></script>
+<script src="season.js?v=kart-s2-20261002"></script>
+<script src="learning.js?v=kart-s2-20261002"></script>
 <script src="tilt.js?v=20261002"></script>
 <script src="api.js?v=auth-v2"></script>
-<script src="play-limit.js?v=admin-unlock-20261002"></script>
+<script src="play-limit.js?v=kart-s2-20261002"></script>
 <script src="touch-guard.js?v=20261002"></script>
 <script src="engine.js?v=shiftfx-v2"></script>
 <script src="shift-effects.js?v=shiftfx-v1"></script>
 <script src="music.js?v=rhythm-v1"></script>
-<script src="score.js?v=100point-v1"></script>
+<script src="score.js?v=kart-s2-20261002"></script>
 <script src="account-form.js?v=auth-v2"></script>
-<script src="game-account.js?v=professional-20261002"></script>
+<script src="game-account.js?v=kart-s2-20261002"></script>
+<script src="reliable-save.js?v=kart-s2-20261002"></script>
+<script src="progression.js?v=kart-s2-20261002"></script>
+<script src="telemetry.js?v=kart-s2-20261002"></script>
+<script src="experience.js?v=kart-s2-20261002"></script>
 <script>
 (() => {
 'use strict';
@@ -241,15 +247,16 @@ const store = {
 };
 
 /* ================= constants & data ================= */
-const B = 3, ROAD = 14, WALL = 21, LAPS = 6, BASE = 170 / 3.2 / 1.15 / 1.06, ACC = 24;
+let LAPS = 6;
+const B = 3, ROAD = 14, WALL = 21, BASE = 170 / 3.2 / 1.15 / 1.06, ACC = 24;
 const TRACKS = [
-  { name: '青草环线', sub: '湖泊 · 橡树林', seed: 11, hill: 5, water: true, capH: 5, deco: 'oak', fence: 0xe8c34a,
+  { name: '青草环线', sub: '连贯长弯 · 出弯加速', seed: 11, hill: 5, water: true, capH: 5, deco: 'oak', fence: 0xe8c34a,
     pts: [[0,-120],[90,-110],[150,-50],[140,30],[80,60],[60,120],[-10,140],[-80,110],[-140,40],[-130,-50],[-70,-100]],
     col: { road: 0x7f838c, curbA: 0xd9453b, curbB: 0xf0f0f0, ground: 0x62b043, shoulder: 0x86c255, side: 0x8a5a33, high: 0x9aa0a6, water: 0x3f86d8, far: 0x4f9a37, sky: 0x8fd0f7, fog: 0xc8e8fb, sun: 0xfff4dd } },
-  { name: '赤砂峡谷', sub: '台地 · 仙人掌', seed: 23, hill: 8, water: false, capH: 4, deco: 'cactus', fence: 0x9b6a3a,
+  { name: '赤砂峡谷', sub: '连续反向弯 · 提前走线', seed: 23, hill: 8, water: false, capH: 4, deco: 'cactus', fence: 0x9b6a3a,
     pts: [[0,-150],[100,-140],[160,-80],[110,-20],[170,40],[140,120],[50,110],[0,160],[-90,140],[-150,70],[-100,10],[-160,-60],[-100,-130]],
     col: { road: 0x8a7868, curbA: 0xe0a030, curbB: 0x5a3a28, ground: 0xe0b56a, shoulder: 0xd2a058, side: 0xc0703a, high: 0xa9542c, water: 0x3f86d8, far: 0xd6a55e, sky: 0xf3c08c, fog: 0xf6d6ab, sun: 0xffe0b0 } },
-  { name: '雪峰回廊', sub: '冰湖 · 松林', seed: 37, hill: 7, water: true, capH: 3, deco: 'pine', fence: 0x9fd8f2,
+  { name: '雪峰回廊', sub: '长短弯交替 · 控制节奏', seed: 37, hill: 7, water: true, capH: 3, deco: 'pine', fence: 0x9fd8f2,
     pts: [[0,-130],[80,-140],[140,-90],[150,0],[100,70],[130,130],[40,150],[-40,110],[-110,140],[-150,60],[-120,-20],[-140,-90],[-70,-130]],
     col: { road: 0x6c7886, curbA: 0x2f7fd8, curbB: 0xf5f7fa, ground: 0xeef3f9, shoulder: 0xdce6ef, side: 0x8a939e, high: 0xffffff, water: 0xa6dcf2, far: 0xe3ebf4, sky: 0xa3bddd, fog: 0xdfe8f3, sun: 0xfff2e6 } }
 ];
@@ -427,7 +434,9 @@ let world = null;
 function disposeWorld() {
   if (!world) return;
   scene.remove(world.group);
-  world.group.traverse(o => { if (o.geometry && o.geometry !== boxGeo) o.geometry.dispose(); });
+  const geometries=new Set(),materials=new Set(world.ownedMaterials||[]),shared=new Set(Object.values(matCache));
+  world.group.traverse(o=>{if(o.geometry&&o.geometry!==boxGeo)geometries.add(o.geometry);if(o.isInstancedMesh&&typeof o.dispose==='function')o.dispose();for(const m of Array.isArray(o.material)?o.material:[o.material])if(m&&!shared.has(m))materials.add(m);});
+  geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());
   world = null;
 }
 function buildWorld(ti) {
@@ -580,14 +589,17 @@ function buildWorld(ti) {
   }
   const pads = [];
   const padMat = new THREE.MeshBasicMaterial({ map: padTex, transparent: true, depthWrite: false });
-  for (const f of [0.33, 0.6, 0.88]) {
+  for (const f of [[0.27,0.58,0.86],[0.22,0.53,0.81],[0.31,0.64,0.9]][ti]) {
     const k = Math.floor(f * N), l = (rng() - 0.5) * 9;
     const x = px[k] + (-tr.tz[k]) * l, z = pz[k] + tr.tx[k] * l;
     const g = new THREE.Group(); g.position.set(x, 0.06, z); g.rotation.y = tr.th[k]; group.add(g);
     const m = new THREE.Mesh(new THREE.PlaneGeometry(5, 7), padMat); m.rotation.x = -Math.PI / 2; m.rotation.z = Math.PI; g.add(m);
     pads.push({ x, z, k, l, tx: tr.tx[k], tz: tr.tz[k] });
   }
-  world = { group, tr, boxes, pads, jellies: [], missiles: [], minimap: null };
+  const guide=new THREE.Group();group.add(guide);
+  for(let k=0;k<N;k+=8){const ahead=(k+20)%N,curv=wrapAng(tr.th[ahead]-tr.th[k]);if(Math.abs(curv)<.15)continue;const l=Math.sign(curv)*-6;const m=new THREE.Mesh(boxGeo,lam(0xffd54a));m.scale.set(.5,.025,2);m.position.set(px[k]-tr.tz[k]*l,.08,pz[k]+tr.tx[k]*l);m.rotation.y=tr.th[k];guide.add(m);}
+  guide.visible=G.mode==='practice';
+  world = { group, tr, boxes, pads,guide,ownedMaterials:[boxMat,gemMat,padMat],jellies: [], missiles: [], minimap: null };
   G.tr = tr;
   buildMinimap();
 }
@@ -603,6 +615,7 @@ const shieldMaterial = new THREE.ShaderMaterial({
 const smileCanvas=document.createElement('canvas');smileCanvas.width=64;smileCanvas.height=64;
 const smileCtx=smileCanvas.getContext('2d');smileCtx.fillStyle='#ffe45b';smileCtx.beginPath();smileCtx.arc(32,32,29,0,Math.PI*2);smileCtx.fill();smileCtx.fillStyle='#292238';smileCtx.fillRect(18,19,6,10);smileCtx.fillRect(40,19,6,10);smileCtx.strokeStyle='#292238';smileCtx.lineWidth=5;smileCtx.beginPath();smileCtx.arc(32,33,16,0.15,Math.PI-0.15);smileCtx.stroke();
 const smileMaterial=new THREE.SpriteMaterial({map:new THREE.CanvasTexture(smileCanvas),transparent:true,depthWrite:false});
+const faceMaterials=new Map();
 function makeKartMesh(ch) {
   const g = new THREE.Group(), body = new THREE.Group(); g.add(body);
   const cm = lam(ch.color), dark = lam(0x2a2d34), tire = lam(0x18181c), metal = lam(0xb8bec8), shirt = lam(ch.shirt);
@@ -616,9 +629,9 @@ function makeKartMesh(ch) {
   box(body, 1.1, 1.0, 0.8, 0, 1.5, -0.4, shirt);
   box(body, 0.3, 0.3, 1.0, -0.65, 1.55, 0.15, shirt); box(body, 0.3, 0.3, 1.0, 0.65, 1.55, 0.15, shirt);
   box(body, 0.9, 0.18, 0.18, 0, 1.45, 0.7, dark);
-  const ftex = new THREE.CanvasTexture(faceCanvas(ch)); ftex.magFilter = THREE.NearestFilter;
+  if(!faceMaterials.has(ch.name)){const ftex=new THREE.CanvasTexture(faceCanvas(ch));ftex.magFilter=THREE.NearestFilter;faceMaterials.set(ch.name,new THREE.MeshLambertMaterial({map:ftex}));}
   const side = lam(new THREE.Color(ch.head).getHex());
-  const head = new THREE.Mesh(boxGeo, [side, side, side, side, new THREE.MeshLambertMaterial({ map: ftex }), side]);
+  const head = new THREE.Mesh(boxGeo, [side, side, side, side, faceMaterials.get(ch.name), side]);
   head.scale.setScalar(1.25); head.position.set(0, 2.65, -0.35); head.castShadow = true; body.add(head);
   if (ch.extra === 'bee') { box(body, 0.15, 0.7, 0.15, -0.35, 3.55, -0.2, dark); box(body, 0.15, 0.7, 0.15, 0.35, 3.55, -0.2, dark); box(body, 0.9, 0.5, 0.1, 0, 2.7, -1.05, lam(0xe8f4ff)); }
   if (ch.extra === 'ice') { box(body, 0.5, 0.6, 0.5, 0, 3.55, -0.35, lam(0xdff6ff)); }
@@ -632,7 +645,7 @@ function makeKartMesh(ch) {
   return { g, body, wheels, shield, smile };
 }
 function makeKart(ci, isPlayer) {
-  const ch = CHARS[ci]; const mesh = makeKartMesh(ch); scene.add(mesh.g);
+  const ch = CHARS[ci]; const mesh = makeKartMesh(ch);if(isPlayer){const paint=globalThis.KartExperience?.paint();if(paint!=null)mesh.body.traverse(o=>{if(o.material===lam(ch.color))o.material=lam(paint);});}scene.add(mesh.g);
   return { ch, ci, isPlayer, ...mesh, x: 0, z: 0, y: 0, vy: 0, heading: 0, speed: 0, idx: 0, lat: 0, along: 0,
     drifting: false, driftDir: 0, driftCharge: 0, driftHeld: false, boostT: 0, spinT: 0, spinA: 0, hits:0, shieldT:0,freezeT:0,giantT:0,smokeT:0, item: null, itemQueue: [], rollT: 0, finished: false, finishT: 0,
     aiLat: 0, aiLatGoal: 0, aiLatT: 0, aiItemT: 2, aiDriftT: 0, skill: 1, wrongT: 0, wallT: 0, lastLap: 1, visYaw: 0, hopHeld: false };
@@ -646,7 +659,7 @@ function placeGrid(order) {
     k.x = tr.px[s] + (-tr.tz[s]) * l; k.z = tr.pz[s] + tr.tx[s] * l; k.heading = tr.th[s];
     k.idx = s; k.along = -back; k.speed = 0; k.y = 0; k.vy = 0;
     k.studySpin=0; k.drifting = false; k.driftCharge = 0; k.boostT = 0; k.spinT = 0; k.item = null; k.rollT = 0; k.finished = false; k.lastLap = 1; k.wrongT = 0;
-    k.aiLat = l; k.aiLatGoal = l; k.aiItemT = 3 + Math.random() * 4; k.skill = 0.97 + Math.random() * 0.05;
+    k.aiLat = l; k.aiLatGoal = l; k.aiItemT = 3 + (G.aiRandom||Math.random)() * 4; k.skill = 0.97 + (G.aiRandom||Math.random)() * 0.05;
     syncKartMesh(k, 0);
   });
 }
@@ -764,7 +777,7 @@ window.addEventListener('touchstart', () => { if (!G.touch) { G.touch = true; if
 let itemChoice=0;
 window.addEventListener('keydown',e=>{if(!e.repeat&&G.study&&!G.paused&&G.state==='race'&&['KeyI','KeyO','KeyP'].includes(e.code)){itemChoice=['KeyI','KeyO','KeyP'].indexOf(e.code);itemEdge=true;}});
 let padItemPrev = false;
-function readInput() {
+function readInput(dt=0) {
   let thr = (keys.KeyW || keys.ArrowUp) ? 1 : 0, brk = !!(keys.KeyS || keys.ArrowDown);
   let steer = ((keys.KeyD || keys.ArrowRight) ? 1 : 0) - ((keys.KeyA || keys.ArrowLeft) ? 1 : 0);
   let drift = !!(keys.Space || keys.ShiftLeft || keys.ShiftRight || keys.KeyK);
@@ -777,6 +790,7 @@ function readInput() {
     if (b(7) || b(0)) thr = 1; if (b(6) || b(1)) brk = true; if (b(5) || b(4)) drift = true;
     const it = b(2) || b(3); if (it && !padItemPrev) itemEdge = true; padItemPrev = it;
   }
+  if(G.assistDrift&&G.state==='race'&&!G.paused&&thr&&!brk&&Math.abs(steer)>.35){const sign=Math.sign(steer);if(G.assistSign!==sign){G.assistElapsed=0;G.assistSign=sign;}G.assistElapsed+=dt;if(G.assistElapsed>.45)drift=true;}else{G.assistElapsed=0;G.assistSign=0;}
   const item = itemEdge; itemEdge = false;
   const choice=itemChoice;itemChoice=0;return { thr, brk, steer: clamp(steer, -1, 1), drift, item, choice };
 }
@@ -785,20 +799,18 @@ function readInput() {
 function rankOf(k) { return G.order.indexOf(k); }
 function pickItem(rank) {
   const types=Object.keys(ITEM_NAMES);
-  return types[Math.min(types.length-1,Math.floor(Math.random()*types.length))];
+  return types[Math.min(types.length-1,Math.floor((typeof G!=='undefined'&&G.gameRandom?G.gameRandom():Math.random())*types.length))];
 }
 async function saveCloudScore(seconds) {
-  const id=G.cloudRun; if(!id)return; G.cloudRun=null;
-  const b={runId:id,ms:Math.round(seconds*1000),correct:G.studyStats.correct,total:G.studyStats.total,laps:LAPS,hits:G.player.hits||0};
-  const label=$('#resBest');label.textContent+=' · 正在保存云端成绩…';
-  try{await GameAPI.call('/finish',b);label.textContent=label.textContent.replace('正在保存云端成绩…','云端已保存');}
-  catch(e){label.textContent=label.textContent.replace('正在保存云端成绩…','云端保存失败：'+e.message);}
+  const id=G.cloudRun;if(!id)return;G.cloudRun=null;
+  const b={runId:id,rules:KartSeason.RULES,ms:Math.round(seconds*1000),answers:(G.answerLog||[]).map(x=>({id:x.q.id,answer:x.answer})),lapTimes:G.lapTimes.map(t=>Math.round(t*1000)),laps:LAPS,hits:G.player.hits||0};
+  await KartExperience.save(b);
 }
 let quizPending = null;
 function clearQuiz() { quizPending = null; $('#quizOv').hidden = true; }
 function studyCheckpoint(k, done=()=>{}) {
   if (quizPending) return;
-  const q = KartLearning.question(G.grade,G.subject); quizPending = {k,q}; G.paused = true;
+  const n=G.studyStats.total;const q=G.questionIds?.[n]?KartLearning.byId(G.questionIds[n],KartSeason.rng((G.seed||0)+n)):KartLearning.question(G.grade,G.subject); quizPending = {k,q,opened:performance.now()}; G.paused = true;
   $('#quizTitle').textContent='终点答题';engineSound(false,0,false);MUSIC.stop(); $('#quizQuestion').textContent = `${G.grade}年级 · ${q.subjectName}：${q.text}`;
   $('#quizReview').hidden=true;$('#quizContinue').onclick=null;
   const choices = $('#quizChoices'); choices.textContent = '';choices.classList.toggle('vertical',q.options.some(x=>String(x).length>6));
@@ -808,13 +820,13 @@ function studyCheckpoint(k, done=()=>{}) {
     for(const choice of choices.children)choice.disabled=true;
     Object.keys(keys).forEach(key => keys[key] = false); T.steer=0;T.brake=false;T.left=false;T.right=false;T.throttle=false;itemEdge=false;
     G.studyStats.total++;
-    const correct=answer===q.answer;
+    const correct=answer===q.answer;globalThis.KartExperience?.answer(q,answer,Math.round(performance.now()-quizPending.opened));
     const resume=()=>{
       if(!quizPending)return;
       clearQuiz();G.paused=false;
       Object.keys(keys).forEach(key => keys[key] = false);T.steer=0;T.brake=false;T.left=false;T.right=false;T.throttle=false;itemEdge=false;
       const finish=()=>{done();$('#pauseBtn').focus();};
-      if(correct)awardStudyItems(k,3,finish);else finish();
+      if(correct&&(k.studyLap??0)<LAPS)awardStudyItems(k,3,finish);else finish();
     };
     if(correct){G.studyStats.correct++;resume();return;}
     $('#quizFeedback').textContent='这次答错了，不获得道具。正确答案：'+q.answer;
@@ -836,13 +848,13 @@ function studyLapGate(k) {
   const completed=Math.min(LAPS,Math.floor(k.along/G.tr.N));
   if(completed<0 || completed<=(k.studyLap??-1)) return false;
   k.studyLap=completed;
-  if(!k.isPlayer){awardStudyItems(k,1);return false;}
+  if(!k.isPlayer){if(completed<LAPS)awardStudyItems(k,1);return false;}
   studyCheckpoint(k,()=>{if(completed===LAPS){k.finished=true;k.finishT=G.raceTime;computeOrder();finishPlayer();}});
   return true;
 }
 function giveItem(k) { if (k.item || k.rollT > 0) return; k.rollT = k.isPlayer ? 1.1 : 0.8; if (k.isPlayer) sfx('item'); }
 function useItem(k,index=0) {
-  const items=heldItems(k);if(index===-1)index=items.findIndex(Boolean);if(!items[index])return;const it=items[index];items[index]=null;setItems(k,items);
+  const items=heldItems(k);if(index===-1)index=items.findIndex(Boolean);if(!items[index])return;const it=items[index];if(k.isPlayer)globalThis.KartExperience?.progress.event('item_use');items[index]=null;setItems(k,items);
   const fx = Math.sin(k.heading), fz = Math.cos(k.heading);
   if(it==='spring'){k.vy=Math.max(k.vy,12);if(k.isPlayer)toast('弹簧跳跃！腾空躲过地面陷阱',1600);sfx('boost');for(let i=0;i<12;i++)emit(k.x,k.y+.3,k.z,(Math.random()-.5)*8,4,(Math.random()-.5)*8,0xee77ff,.5,.6);}
   else if(it==='giant'){k.giantT=6;k.giantTargets=new Set();if(k.isPlayer)toast('巨型车！6秒内撞倒对手',1800);sfx('item');}
@@ -859,14 +871,14 @@ function useItem(k,index=0) {
     const g = new THREE.Group(); box(g, 0.8, 0.8, 2.2, 0, 0, 0, lam(it==='ice'?0x6cddff:0xe8412c)); box(g, 1.6, 0.15, 0.5, 0, 0, -0.9, lam(0x9aa3b2)); box(g, 0.2, 0.2, 0.3, 0, 0, 1.2, lam(0xffd24a));
     g.position.set(k.x + fx * 3, 1.2, k.z + fz * 3); world.group.add(g);
     world.missiles.push({ g, x: g.position.x, z: g.position.z, h: k.heading, idx: k.idx, target, owner: k, ice:it==='ice',life: 9 });
-    if (k.isPlayer) sfx('fire');
+    if (k.isPlayer){sfx('fire');toast(target?'锁定 '+target.ch.name:'向前发射，注意没有锁定目标',1600);}
   }
 }
 function hitKart(k,owner,ice=false) {
-  if (k.spinT > 0||k.finished) return;
-  if(k.shieldT>0){k.shieldT=0;if(k.isPlayer)toast('护盾挡住了攻击',1500);return;}
+  if (k.spinT > 0||k.finished){if(owner?.isPlayer)toast('对手已避开，未计有效击倒',1200);return;}
+  if(k.shieldT>0){k.shieldT=0;if(k.isPlayer)toast('护盾挡住了攻击',1500);if(owner?.isPlayer)toast('攻击被对手护盾挡住',1500);return;}
   if(ice)k.freezeT=3;
-  if(owner && owner!==k)owner.hits=(owner.hits||0)+1;
+  if(owner && owner!==k){owner.hits=(owner.hits||0)+1;if(owner.isPlayer)toast('有效击倒 '+k.ch.name,1500);}
   k.spinT = 1.25; k.spinA = 0; k.drifting = false; k.driftCharge = 0; k.boostT = 0; k.vy = 7; k.speed *= 0.35;
   for (let i = 0; i < 14; i++) emit(k.x, k.y + 2.5, k.z, (Math.random() - 0.5) * 12, 4 + Math.random() * 6, (Math.random() - 0.5) * 12, i % 2 ? 0xffe36a : 0xffffff, 0.6, 0.8);
   if (k.isPlayer) { sfx('hit'); G.shake = 0.5; flash('被击中！', 'warn', 900); }
@@ -875,7 +887,7 @@ function aiInput(k, dt) {
   const ability=DIFFS[G.diff].ai*k.skill;
   const tr = G.tr, N = tr.N;
   k.aiLatT -= dt;
-  if (k.aiLatT <= 0) { k.aiLatT = 1.2 + Math.random() * 2.2; k.aiLatGoal = (Math.random() - 0.5) * 12 / ability; }
+  if (k.aiLatT <= 0) { k.aiLatT = 1.2 + (G.aiRandom||Math.random)() * 2.2; k.aiLatGoal = ((G.aiRandom||Math.random)() - 0.5) * 12 / ability; }
   if (!G.study && !k.item && k.rollT <= 0) {
     for (const b of world.boxes) {
       let dk = b.k - k.idx; if (dk < 0) dk += N;
@@ -890,14 +902,18 @@ function aiInput(k, dt) {
   const curv = wrapAng(tr.th[(k.idx + 22) % N] - tr.th[k.idx]);
   let drift = false;
   if (k.aiDriftT > 0) { k.aiDriftT -= dt; drift = true; if (k.drifting) steer = clamp(steer * 0.8 + k.driftDir * 0.25, -1, 1); }
-  else if (Math.abs(curv) > 0.55 && k.speed > BASE * 0.62 && Math.random() < dt * 2.5 * ability) { k.aiDriftT = 0.9 + Math.random() * 1.5; drift = true; steer = -Math.sign(curv); }
+  else if (Math.abs(curv) > 0.55 && k.speed > BASE * 0.62 && (G.aiRandom||Math.random)() < dt * 2.5 * ability) { k.aiDriftT = 0.9 + (G.aiRandom||Math.random)() * 1.5; drift = true; steer = -Math.sign(curv); }
   let brk = Math.abs(diff) > 1.3 && k.speed > 18;
-  if (k.item) {
-    k.aiItemT -= dt;
-    if (k.aiItemT <= 0) {
-      const r = rankOf(k);
-      if (['spring','giant','smoke','shield','lightning','ice'].includes(k.item) || (k.item === 'missile' && r > 0) || (k.item === 'jelly' && r < G.karts.length - 1) || k.aiItemT < -6) { useItem(k); k.aiItemT = (2 + Math.random() * 5) / ability; }
+  k.aiItemT-=dt;
+  if(k.aiItemT<=0){
+    const items=heldItems(k),near=G.karts.filter(t=>t!==k&&!t.finished&&Math.hypot(t.x-k.x,t.z-k.z)<24),incoming=world.missiles.some(m=>m.target===k&&m.life>0),trap=world.jellies.some(j=>Math.hypot(j.x-k.x,j.z-k.z)<12);
+    let chosen=-1;
+    for(let i=0;i<items.length;i++){const it=items[i];if(!it)continue;
+      if(it==='shield'&&k.shieldT<=0&&(incoming||near.some(t=>t.giantT>0))){chosen=i;break;}
+      if(it==='spring'&&trap&&k.y<.5){chosen=i;break;}
+      if(it==='lightning'&&near.some(t=>t.spinT<=0&&t.shieldT<=0)||it==='smoke'&&near.some(t=>Math.hypot(t.x-k.x,t.z-k.z)<18)||it==='giant'&&near.some(t=>Math.hypot(t.x-k.x,t.z-k.z)<12)||['missile','ice'].includes(it)&&rankOf(k)>0||it==='jelly'&&G.karts.some(t=>t!==k&&t.along<k.along&&Math.hypot(t.x-k.x,t.z-k.z)<20))chosen=i;
     }
+    if(chosen>=0){useItem(k,chosen);k.aiItemT=(.8+(G.aiRandom||Math.random)()*2)/ability;}else k.aiItemT=.15/ability;
   }
   return { thr: brk ? 0 : 1, brk, steer, drift, item: false };
 }
@@ -1048,20 +1064,26 @@ function setupRace() {
 let builtTrack = -1, builtQual = null, builtStudy=null;
 function buildWorldIfNeeded() {
   if (builtTrack !== G.trackIdx || builtQual !== G.qual || builtStudy!==G.study) { buildWorld(G.trackIdx); builtTrack = G.trackIdx; builtQual = G.qual;builtStudy=G.study; }
+  if(world.guide)world.guide.visible=G.mode==='practice';
   world.boxes.forEach(b => { b.off = 0; b.g.visible=!G.study;b.g.scale.setScalar(1); });
   world.jellies.forEach(j => world.group.remove(j.m)); world.jellies = [];
   world.missiles.forEach(m => world.group.remove(m.g)); world.missiles = [];
 }
 async function startRace() {
   if(KartPlayLimit.tick(false).locked)return;
-  if(G.starting)return;G.starting=true;$('#menu').inert=true;
+  if(G.starting)return;G.starting=true;['menu','resultOv','pauseOv'].forEach(id=>$('#'+id).inert=true);$('#startBtn').disabled=true;$('#startBtn').textContent=G.study?'正在加载题库…':'准备比赛…';
   await enableTouchControl();
-  if(G.study){try{await KartLearning.load();}catch(e){toast('题库加载失败，请重试',2500);G.starting=false;$('#menu').inert=false;return;}}
+  if(G.study){try{await KartLearning.load(G.grade);}catch(e){toast('题库加载失败，请重试',2500);G.starting=false;['menu','resultOv','pauseOv'].forEach(id=>$('#'+id).inert=false);$('#startBtn').disabled=false;$('#startBtn').textContent='开始比赛 →';return;}}
   await authReady;
+  LAPS=KartSeason.laps(G.mode||'race');G.seed=G.challenge?.seed??crypto.getRandomValues(new Uint32Array(1))[0];
+  G.gameRandom=KartSeason.rng(G.seed);G.aiRandom=KartSeason.rng(G.seed^0xabcdef);
+  KartExperience.begin();
+  G.questionIds=G.study?(['weekly','friend'].includes(G.mode)?KartLearning.playlist(G.grade,G.subject,LAPS+1,G.seed):Array.from({length:LAPS+1},()=>KartLearning.question(G.grade,G.subject).id)):[];
+  if(G.study&&!['weekly','friend'].includes(G.mode)){const due=KartExperience.due(G.grade,G.subject);if(due.length){const q=due[0].q;if(!G.questionIds.includes(q.id))G.questionIds[0]=q.id;}}
   clearQuiz(); G.studyStats={total:0,correct:0}; G.cloudRun=null;
-  if(G.cloudUser){
+  if(G.cloudUser&&G.mode!=='practice'){
     $('#startBtn').disabled=true;
-    try{G.cloudRun=(await GameAPI.call('/runs',{laps:LAPS,track:G.trackIdx,diff:G.diff,study:G.study,grade:G.grade,subject:G.subject})).runId;$('#cloudStatus').textContent='本场成绩将在完成后保存到云端';}
+    try{const run=await GameAPI.call('/runs',{rules:KartSeason.RULES,trackVersion:KartSeason.TRACKS,bank:KartSeason.BANK,mode:G.mode||'race',seed:G.seed,questionIds:G.questionIds,laps:LAPS,track:G.trackIdx,diff:G.diff,study:G.study,grade:G.grade,subject:G.subject});G.cloudRun=run.runId;G.cloudRunUser=G.cloudUser.username;G.questionIds=run.questionIds;$('#cloudStatus').textContent='本场成绩将在完成后保存到云端';}
     catch(e){$('#cloudStatus').textContent='云端不可用，本场只保存本机成绩';}
     finally{$('#startBtn').disabled=false;}
   }
@@ -1072,12 +1094,12 @@ async function startRace() {
   $('#hud').hidden = false; $('#touch').hidden = !G.touch;
   MUSIC.newRace();AU.eng?.reset();DRIVE.reset();driveState={gear:1,rpm:1100,shift:null,cut:false,load:0};
   G.state = 'countdown'; G.countdown = 3; G.lastCount = 4; G.raceTime = 0; G.paused = false; G.thrPress = null; G.finishT = 0;
-  G.starting=false;$('#menu').inert=false;
+  G.starting=false;['menu','resultOv','pauseOv'].forEach(id=>$('#'+id).inert=false);$('#startBtn').disabled=false;$('#startBtn').textContent='开始比赛 →';
   G.camInit = true; G.slowT = 0;
   if (coarse && innerWidth < innerHeight) toast('横屏游玩视野更好', 2600);
 }
 function toMenu() {
-  clearQuiz();
+  KartExperience.exit();clearQuiz();
   G.state = 'menu'; G.paused = false;MUSIC.stop();
   $('#hud').hidden = true; $('#touch').hidden = true; $('#pauseOv').hidden = true; $('#resultOv').hidden = true; $('#menu').hidden = false;$('#startBtn').hidden=false;$('#menuHelp').hidden=false;
   engineSound(false, 0, false);
@@ -1106,13 +1128,15 @@ function showResults() {
   const list = G.karts.slice().sort((a, b) => a.finishT - b.finishT);
   const rank = list.indexOf(G.player) + 1;
   $('#resTitle').textContent = rank === 1 ? '冠军！' : `第 ${rank} 名`;
-  const key = 'best_wide_' + G.trackIdx + '_' + G.diff + (G.study ? '_study_'+G.grade+'_'+G.subject : ''), prev = store.get(key, null), mine = G.player.finishT;
+  const key = 'best_'+KartSeason.key({mode:G.mode,track:G.trackIdx,diff:G.diff,study:G.study,grade:G.grade,subject:G.subject,seed:G.seed}),prev=store.get(key,null),mine=G.player.finishT;
+  const bestLap=G.lapTimes.length?Math.min(...G.lapTimes):null,previousLap=store.get(key+'_lap',null);if(bestLap&&(previousLap==null||bestLap<previousLap))store.set(key+'_lap',bestLap);
   let bestMsg = '';
   if (prev == null || mine < prev) { store.set(key, mine); bestMsg = prev == null ? `首个纪录 ${fmt(mine)}` : `新纪录！${fmt(mine)}（原 ${fmt(prev)}）`; }
   else bestMsg = `本赛道最佳 ${fmt(prev)}`;
   const score=KartScore.calculate({correct:G.studyStats.correct,total:G.studyStats.total,laps:LAPS,hits:G.player.hits||0});
-  $('#resScore').textContent=`综合评分 ${score.points} / 100 分 · 答题 ${score.accuracy} 分（${G.studyStats.correct}/${G.studyStats.total}）· 完成 ${LAPS} 圈 ${score.laps} 分 · 有效击倒 ${G.player.hits||0} 次 ${score.hits} 分`;
+  $('#resScore').textContent=`${G.study?'学习综合分':'综合分（普通模式不计答题分）'} ${score.points} / 100 分 · 答题 ${score.accuracy} 分（${G.studyStats.correct}/${G.studyStats.total}）· 完成 ${LAPS} 圈 ${score.laps} 分 · 有效击倒 ${G.player.hits||0} 次 ${score.hits} 分`;
   $('#resBest').textContent = `${TRACKS[G.trackIdx].name} · ${DIFFS[G.diff].name} · ${bestMsg}`;
+  KartExperience.end(rank,mine,prev,bestLap,previousLap);
   saveCloudScore(mine);
   const body = $('#resBody'); body.textContent = '';
   list.forEach((k, i) => {
@@ -1191,7 +1215,7 @@ function updateMissileWarning(){
   if($('#missileWarningText').textContent!==text)$('#missileWarningText').textContent=text;
 }
 function updateHud(dt) {
-  updateMissileWarning();
+  updateMissileWarning();KartExperience.tick(dt);
   const p = G.player, r = rankOf(p) + 1;
   if (r !== lastPos) { lastPos = r; hud.pos.innerHTML = `${r}<small>/${G.karts.length}</small>`; }
   const lap = clamp(Math.floor(Math.max(0, p.along) / G.tr.N) + 1, 1, LAPS);
@@ -1208,6 +1232,7 @@ function updateHud(dt) {
   }
   hud.slot.hidden=G.study;const slots=$('#studyItems');slots.hidden=!G.study;
   const items=heldItems(p),signature=items.join(',');if(slots.dataset.items!==signature){slots.dataset.items=signature;slots.textContent='';for(let i=0;i<3;i++){const shortcut=['I','O','P'][i];const b=document.createElement('button');b.className='slot';b.style.padding='4px';b.disabled=!items[i];b.setAttribute('aria-label',items[i]?`快捷键${shortcut}：${ITEM_NAMES[items[i]]}`:`空道具格，快捷键${shortcut}`);if(items[i]){const img=document.createElement('img');img.src=ICONS[items[i]];img.alt=ITEM_NAMES[items[i]];b.appendChild(img);}else b.textContent=shortcut;if(items[i]){const label=document.createElement('span');label.textContent=shortcut;label.style.cssText='position:absolute;right:3px;bottom:1px;color:#ffe36a;font-size:12px;line-height:14px;text-shadow:1px 1px #000';b.appendChild(label);}b.onpointerdown=e=>{e.preventDefault();itemChoice=i;itemEdge=true;};slots.appendChild(b);}}
+  if(G.study){const incoming=!$('#missileWarning').hidden;Array.from(slots.children).forEach((b,i)=>b.classList.toggle('ready-shield',incoming&&items[i]==='shield'));}
   const count=heldItems(p).filter(Boolean).length;const badge=$('#itemCount');badge.hidden=!G.study||!count;badge.textContent='×'+count;badge.setAttribute('aria-label','剩余'+count+'个道具');
   if (G.frameCount % 3 === 0) drawMinimap();
 }
@@ -1256,7 +1281,7 @@ function animateWorld(dt) {
 function step(dt) {
   const p = G.player;
   if (G.state === 'countdown') {
-    const inp = readInput();
+    const inp = readInput(dt);
     if (inp.thr && G.thrPress === null) G.thrPress = G.countdown;
     G.countdown -= dt;
     const n = Math.ceil(G.countdown);
@@ -1266,7 +1291,7 @@ function step(dt) {
     if (G.countdown <= 0) {
       G.state = 'race'; flash('出发！', '', 800); sfx('go');
       if (G.thrPress !== null && G.thrPress <= 1.05 && G.thrPress > 0) { p.boostT = 1.1; sfx('boost'); }
-      for (const k of G.karts) if (!k.isPlayer && Math.random() < 0.45) k.boostT = 0.9;
+      for (const k of G.karts) if (!k.isPlayer && (G.aiRandom||Math.random)() < 0.45) k.boostT = 0.9;
     }
     return;
   }
@@ -1274,10 +1299,11 @@ function step(dt) {
   const tr = G.tr, total = LAPS * tr.N;
   for (const k of G.karts) {
     let inp;
-    if (k.isPlayer && !k.finished && !G.autopilot) inp = readInput();
+    if (k.isPlayer && !k.finished && !G.autopilot) inp = readInput(dt);
     else inp = aiInput(k, dt);
     if(k.isPlayer)k.audioThrottle=inp.thr;
     updateKart(k, inp, dt);
+    if(k.isPlayer){const completed=Math.min(LAPS,Math.floor(k.along/tr.N));if(completed>G.lapTimes.length){G.lapTimes.push(G.raceTime-G.lastLapTime);G.lastLapTime=G.raceTime;}}
     if(studyLapGate(k)){syncKartMesh(k,dt);return;}
     if (!k.finished && k.along >= total) {
       k.finished = true; k.finishT = G.raceTime;
@@ -1316,7 +1342,7 @@ fetch('question-bank-counts.json?v=20261002-readable-v7',{signal:AbortSignal.tim
 function renderMenu() {
   const tl = $('#trackList'); tl.textContent = '';
   TRACKS.forEach((t, i) => {
-    const b = document.createElement('button'); b.className = 'opt'; b.id = 'track' + i; b.setAttribute('aria-pressed', i === G.trackIdx);
+    const b = document.createElement('button'); b.className = 'opt'; b.id = 'track' + i; b.setAttribute('aria-pressed', i === G.trackIdx);b.disabled=['weekly','friend'].includes(G.mode);
     const sp = document.createElement('span'); sp.textContent = t.name; const sm = document.createElement('small'); sm.textContent = t.sub;
     b.append(trackThumb(t), sp, sm);
     b.onclick = () => { G.trackIdx = i; setupRace(); renderMenu(); };
@@ -1329,16 +1355,16 @@ function renderMenu() {
     b.append(img, sp); b.onclick = () => { G.charIdx = i; setupRace(); renderMenu(); };
     cl.appendChild(b);
   });
-  $('#studyMode').checked=G.study;
+  $('#studyMode').checked=G.study;$('#studyMode').disabled=$('#studySubject').disabled=['weekly','friend'].includes(G.mode);$('#studyGrade').disabled=G.mode==='friend';
   $('#studyGrade').value=G.grade;G.subject=KartSubjects.populate($('#studySubject'),G.grade,G.subject);store.set('subject',G.subject);updateBankInfo();
   const dl = $('#diffList'); dl.textContent = '';
-  DIFFS.forEach((d, i) => { const b = document.createElement('button'); b.id = 'diff' + i; b.textContent = d.name; b.setAttribute('aria-pressed', i === G.diff); b.onclick = () => { G.diff = i; renderMenu(); }; dl.appendChild(b); });
+  DIFFS.forEach((d, i) => { const b = document.createElement('button'); b.id = 'diff' + i; b.textContent = d.name; b.setAttribute('aria-pressed', i === G.diff);b.disabled=['weekly','friend'].includes(G.mode); b.onclick = () => { G.diff = i; renderMenu(); }; dl.appendChild(b); });
   const ql = $('#qList'); ql.textContent = '';
   QUALS.forEach(q => { const b = document.createElement('button'); b.id = 'q' + q; b.textContent = QNAMES[q]; b.setAttribute('aria-pressed', q === G.qualSel); b.onclick = () => { G.qualSel = q; store.set('qual', q); G.qual = q; applyQuality(); setupRace(); renderMenu(); }; ql.appendChild(b); });
-  const best = store.get('best_wide_' + G.trackIdx + '_' + G.diff + (G.study ? '_study_'+G.grade+'_'+G.subject : ''), null);
+  const best=store.get('best_'+KartSeason.key({mode:G.mode,track:G.trackIdx,diff:G.diff,study:G.study,grade:G.grade,subject:G.subject,seed:G.seed}),null);
   $('#bestTxt').innerHTML = best == null ? `${TRACKS[G.trackIdx].name} · ${DIFFS[G.diff].name}：还没有纪录` : `${TRACKS[G.trackIdx].name} · ${DIFFS[G.diff].name} 最佳：<b>${fmt(best)}</b>`;
 }
-$('#studyGrade').onchange=e=>{G.grade=Number(e.target.value);store.set('grade',G.grade);renderMenu();};
+$('#studyGrade').onchange=e=>{G.grade=Number(e.target.value);store.set('grade',G.grade);if(G.mode==='weekly'){KartExperience.weeklyGrade(G.grade);return;}renderMenu();};
 $('#studySubject').onchange=e=>{G.subject=e.target.value;store.set('subject',G.subject);renderMenu();};
 $('#studyMode').onchange=e=>{G.study=e.target.checked;store.set('study',G.study);setupRace();renderMenu();};
 let playUnlockBusy=false;
@@ -1377,7 +1403,8 @@ applyQuality();
 setupRace();
 renderMenu();
 requestAnimationFrame(frame);
-window.__bk = { G, TRACKS, startRace, toMenu, keys, world: () => world, music:MUSIC, engine:()=>AU.eng, gear:()=>driveState };
+window.__bk = { G, TRACKS, startRace, toMenu, keys, world: () => world, music:MUSIC, engine:()=>AU.eng, gear:()=>driveState,refreshMenu(){setupRace();renderMenu();},currentQuiz:()=>quizPending?.q,fmt,showResults,step,heldItems,useItem,renderer };
+KartExperience.mount();
 })();
 </script>
 

@@ -1,10 +1,10 @@
 (function(root){
-  let bank=null;const histories=new Map(),gradeRecent=new Map(),pools=new Map(),vectors=new Map();
+  let bank=null;const loaded=new Map();const histories=new Map(),gradeRecent=new Map(),pools=new Map(),vectors=new Map();
   const BANK_VERSION='20261002-readable-v7';
   const VERSION='20261002-diverse-v6',STORAGE='bk_question_history_v6';
   function restore(){try{const saved=JSON.parse(root.localStorage.getItem(STORAGE)||'null');if(saved?.version!==VERSION)return;for(const [k,v] of Object.entries(saved.histories||{}))if(Array.isArray(v.ids)&&Array.isArray(v.recent))histories.set(k,v);for(const [g,v] of Object.entries(saved.gradeRecent||{}))if(Array.isArray(v))gradeRecent.set(g,v);}catch(_){}}
   function save(){try{root.localStorage.setItem(STORAGE,JSON.stringify({version:VERSION,histories:Object.fromEntries(histories),gradeRecent:Object.fromEntries(gradeRecent)}));}catch(_){}}
-  async function load(){if(!bank){const r=await fetch('question-bank.json?v='+BANK_VERSION,{signal:AbortSignal.timeout(20000)});if(!r.ok)throw Error('题库加载失败');bank=await r.json();restore();}return bank;}
+  async function load(grade){const key=grade?Number(grade):0;if(!loaded.has(key)){const r=await fetch((key?'questions/grade-'+key+'.json':'question-bank.json')+'?v='+BANK_VERSION,{signal:AbortSignal.timeout(20000)});if(!r.ok)throw Error('题库加载失败');loaded.set(key,await r.json());restore();}if(bank!==loaded.get(key)){bank=loaded.get(key);pools.clear();}return bank;}
   function pool(grade,subject){
     const key=Number(grade)+':'+subject;if(pools.has(key))return pools.get(key);
     const allowed=KartSubjects.available(grade);
@@ -43,5 +43,7 @@
     return {...q,options,subjectName:bank.subjects[q.subject]};
   }
   function poolInfo(grade=1,subject='all'){if(!bank)return {count:0,topics:0};const items=pool(grade,subject);return {count:items.length,topics:new Set(items.map(q=>q.family||q.id)).size};}
-  root.KartLearning={load,question,poolInfo};
+  function byId(id,random=Math.random){const q=bank?.questions.find(q=>q.id===id);if(!q)throw Error('挑战题目不存在，请重新加载');const options=q.options.slice();for(let i=options.length-1;i>0;i--){const j=Math.floor(random()*(i+1));[options[i],options[j]]=[options[j],options[i]];}return {...q,options,subjectName:bank.subjects[q.subject]};}
+  function playlist(grade,subject,count,seed){const items=pool(grade,subject).slice(),random=root.KartSeason.rng(seed),used=new Set(),out=[];while(out.length<count&&items.length){const novel=items.filter(q=>!used.has(q.family||q.id));const choices=novel.length?novel:items;const q=choices[Math.floor(random()*choices.length)];out.push(q.id);used.add(q.family||q.id);items.splice(items.indexOf(q),1);}return out;}
+  root.KartLearning={load,question,poolInfo,byId,playlist};
 })(typeof window==='undefined'?globalThis:window);
