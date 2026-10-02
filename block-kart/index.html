@@ -167,7 +167,7 @@ tr.me td{background:rgba(255,201,60,.14)}
   <div class="hud-tc"><div id="studyItems" hidden style="display:flex;gap:8px"></div><div id="itemSlot" class="slot"><img id="itemImg" alt="" hidden><span id="itemCount" hidden style="position:absolute;bottom:-8px;right:-8px;background:#ffe36a;color:#17232b;border:2px solid #17232b;border-radius:8px;padding:1px 5px;font-size:14px;line-height:20px"></span></div></div>
   <div class="hud-tr"><div class="pos" id="posTxt">6<small>/6</small></div><button id="pauseBtn" class="icon-btn" aria-label="暂停">II</button></div>
   <div id="center" class="center"></div>
-  <div class="speedo"><span id="spdTxt">0</span><small>KM/H</small></div>
+  <div class="speedo"><span id="spdTxt">0</span><small>KM/H</small><small id="engineReadout" style="display:block;font-size:12px;letter-spacing:1px;color:#a9b2c6">D1 · 1100 RPM</small></div>
 </div>
 
 <div id="touch" hidden>
@@ -209,6 +209,7 @@ tr.me td{background:rgba(255,201,60,.14)}
 <script src="api.js?v=auth-v2"></script>
 <script src="play-limit.js"></script>
 <script src="touch-guard.js?v=20261002"></script>
+<script src="engine.js?v=sport-v1"></script>
 <script src="music.js?v=rhythm-v1"></script>
 <script src="score.js?v=100point-v1"></script>
 <script src="account-form.js?v=auth-v2"></script>
@@ -660,23 +661,20 @@ $('#musicEnabled').checked=musicPrefs.enabled;$('#musicVolume').value=musicPrefs
 $('#musicVolumeLabel').textContent=Math.round(musicPrefs.volume*100)+'%';
 $('#musicEnabled').onchange=()=>{audioInit();musicPrefs.enabled=$('#musicEnabled').checked;store.set('musicEnabled',musicPrefs.enabled);MUSIC.settings(musicPrefs);syncMusic();};
 $('#musicVolume').oninput=()=>{audioInit();musicPrefs.volume=Number($('#musicVolume').value)/100;$('#musicVolumeLabel').textContent=Math.round(musicPrefs.volume*100)+'%';store.set('musicVolume',musicPrefs.volume);MUSIC.settings(musicPrefs);syncMusic();};
-document.addEventListener('visibilitychange',syncMusic);
+document.addEventListener('visibilitychange',()=>{syncMusic();if(document.hidden)engineSound(false,0,false);});
 function audioInit() {
   try {
     if (AU.ctx) { if (AU.ctx.state === 'suspended') AU.ctx.resume(); return; }
     const C = window.AudioContext || window.webkitAudioContext; if (!C) return;
     AU.ctx = new C();MUSIC.attach(AU.ctx);
-    const o = AU.ctx.createOscillator(); o.type = 'sawtooth';
-    const f = AU.ctx.createBiquadFilter(); f.type = 'lowpass'; f.frequency.value = 520;
-    const g = AU.ctx.createGain(); g.gain.value = 0;
-    o.connect(f); f.connect(g); g.connect(AU.ctx.destination); o.start(); AU.eng = { o, g };
+    AU.eng=KartEngine.create(AU.ctx);
   } catch (e) {}
 }
-function engineSound(on, speed, boost) {
-  if (!AU.eng) return; const t = AU.ctx.currentTime;
-  AU.eng.o.frequency.setTargetAtTime(48 + Math.abs(speed) * 2.6 + (boost ? 45 : 0), t, 0.06);
-  AU.eng.g.gain.setTargetAtTime(on && !AU.muted ? 0.045 : 0, t, 0.12);
+function engineSound(on, speed, boost, throttle=0, neutral=false) {
+  if (!AU.eng) return;
+  AU.eng.update({on,speed,boost,throttle,neutral,muted:AU.muted});
 }
+
 function sfx(type) {
   if (!AU.ctx || AU.muted) return;
   try {
@@ -1030,7 +1028,7 @@ async function startRace() {
   setupRace();
   $('#menu').hidden = true;$('#startBtn').hidden=true;$('#menuHelp').hidden=true; $('#resultOv').hidden = true; $('#pauseOv').hidden = true;
   $('#hud').hidden = false; $('#touch').hidden = !G.touch;
-  MUSIC.newRace();
+  MUSIC.newRace();AU.eng?.reset();
   G.state = 'countdown'; G.countdown = 3; G.lastCount = 4; G.raceTime = 0; G.paused = false; G.thrPress = null; G.finishT = 0;
   G.starting=false;$('#menu').inert=false;
   G.camInit = true; G.slowT = 0;
@@ -1148,6 +1146,7 @@ function updateHud(dt) {
   const lt = `${lap}/${LAPS}`; if (lt !== lastLapTxt) { lastLapTxt = lt; hud.lap.textContent = lt; }
   hud.time.textContent = fmt(G.raceTime);
   hud.spd.textContent = Math.round(Math.abs(p.speed) * 3.2);
+  if(AU.eng){const e=AU.eng.status();$('#engineReadout').textContent=`${typeof e.gear==='number'?'D'+e.gear:e.gear} · ${Math.round(e.rpm/50)*50} RPM`;}
   if (p.rollT > 0) {
     rollIconT -= dt; if (rollIconT <= 0) { rollIconT = 0.07; const ks = Object.keys(ICONS); hud.img.src = ICONS[ks[Math.floor(Math.random() * ks.length)]]; hud.img.hidden = false; }
     hud.slot.classList.add('rolling'); lastItem = 'roll';
@@ -1209,7 +1208,7 @@ function step(dt) {
     const n = Math.ceil(G.countdown);
     if (n !== G.lastCount && n > 0) { G.lastCount = n; flash(String(n), '', 900); sfx('beep'); }
     for (const k of G.karts) syncKartMesh(k, dt);
-    engineSound(true, inp.thr ? 20 : 0, false);
+    engineSound(true, 0, false, inp.thr, true);
     if (G.countdown <= 0) {
       G.state = 'race'; flash('出发！', '', 800); sfx('go');
       if (G.thrPress !== null && G.thrPress <= 1.05 && G.thrPress > 0) { p.boostT = 1.1; sfx('boost'); }
@@ -1224,6 +1223,7 @@ function step(dt) {
     let inp;
     if (k.isPlayer && !k.finished && !G.autopilot) inp = readInput();
     else inp = aiInput(k, dt);
+    if(k.isPlayer)k.audioThrottle=inp.thr;
     updateKart(k, inp, dt);
     if(studyLapGate(k)){syncKartMesh(k,dt);return;}
     if (!k.finished && k.along >= total) {
@@ -1239,7 +1239,7 @@ function step(dt) {
   interactions(dt);
   for (const k of G.karts) syncKartMesh(k, dt);
   computeOrder();
-  engineSound(!p.finished, p.speed, p.boostT > 0);
+  engineSound(!p.finished, p.speed, p.boostT > 0, p.audioThrottle||0);
   if (G.finishT > 0) { G.finishT -= dt; if (G.finishT <= 0) showResults(); }
 }
 
@@ -1295,7 +1295,7 @@ $('#menuBtn').onclick = toMenu;
 const muteBtn = $('#muteBtn');
 const setMuteTxt = () => muteBtn.textContent = '声音：' + (AU.muted ? '关' : '开');
 setMuteTxt();
-muteBtn.onclick = () => { AU.muted = !AU.muted; store.set('muted', AU.muted); setMuteTxt();syncMusic(); };
+muteBtn.onclick = () => { AU.muted = !AU.muted; store.set('muted', AU.muted); setMuteTxt();syncMusic();if(AU.muted)engineSound(false,0,false); };
 
 /* ================= boot ================= */
 let authRevision=0;
@@ -1307,7 +1307,7 @@ applyQuality();
 setupRace();
 renderMenu();
 requestAnimationFrame(frame);
-window.__bk = { G, TRACKS, startRace, toMenu, keys, world: () => world, music:MUSIC };
+window.__bk = { G, TRACKS, startRace, toMenu, keys, world: () => world, music:MUSIC, engine:()=>AU.eng };
 })();
 </script>
 
