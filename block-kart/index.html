@@ -1096,12 +1096,12 @@ function updateCamera(dt) {
   camera.fov = lerp(camera.fov, fov, Math.min(1, dt * 4)); camera.updateProjectionMatrix();
   sun.position.set(p.x + 40, 80, p.z + 28); sun.target.position.set(p.x, 0, p.z);
 }
-function menuCamera() {
-  const p=G.player,fx=Math.sin(p.heading),fz=Math.cos(p.heading);
-  camera.position.set(p.x-fx*9.5,p.y+4.4,p.z-fz*9.5);
-  camera.lookAt(p.x+fx*5,p.y+1.6,p.z+fz*5);
-  camera.fov=G.baseFov;camera.updateProjectionMatrix();
-  sun.position.set(p.x+40,80,p.z+28);sun.target.position.set(p.x,0,p.z);
+function menuCamera(t) {
+  const tr = G.tr, k = tr.N - 12, cx = tr.px[k], cz = tr.pz[k], a = t * 0.18;
+  camera.position.set(cx + Math.sin(a) * 26, 10 + Math.sin(t * 0.3) * 2, cz + Math.cos(a) * 26);
+  camera.lookAt(cx, 1.5, cz);
+  camera.fov = G.baseFov; camera.updateProjectionMatrix();
+  sun.position.set(cx + 40, 80, cz + 28); sun.target.position.set(cx, 0, cz);
 }
 
 /* ================= HUD ================= */
@@ -1142,7 +1142,7 @@ function frame(now) {
   if (document.hidden) return;
   G.frameAvg = lerp(G.frameAvg, dt * 1000, 0.05);
   if (G.state === 'menu') {
-    menuCamera();
+    menuCamera(G.time);
     for (const k of G.karts) { k.body.rotation.y = 0; k.g.visible = true; }
     animateWorld(dt);
     updateParticles(dt);
@@ -1177,7 +1177,7 @@ function step(dt) {
     engineSound(true, inp.thr ? 20 : 0, false);
     if (G.countdown <= 0) {
       G.state = 'race'; flash('出发！', '', 800); sfx('go');
-      if (G.thrPress !== null) { if (G.thrPress <= 1.05 && G.thrPress > 0) { p.boostT = 1.1; sfx('boost'); } else if (G.thrPress > 2.2) { p.spinT = 0.7; p.spinA = 0; } }
+      if (G.thrPress !== null && G.thrPress <= 1.05 && G.thrPress > 0) { p.boostT = 1.1; sfx('boost'); }
       for (const k of G.karts) if (!k.isPlayer && Math.random() < 0.45) k.boostT = 0.9;
     }
     return;
