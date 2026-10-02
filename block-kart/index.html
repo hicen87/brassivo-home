@@ -96,6 +96,7 @@ tr.me td{background:rgba(255,201,60,.14)}
 .face{width:22px;height:22px;image-rendering:pixelated;vertical-align:middle;margin-right:6px}
 .toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 16px);transform:translateX(-50%);background:var(--panel);border:3px solid var(--line);border-radius:6px;padding:8px 14px;font-size:13px;max-width:calc(100% - 32px);box-sizing:border-box;text-align:center}
 @media (max-width:600px){.hud-tc{top:calc(env(safe-area-inset-top,0px) + 86px)}#studyItems .slot{width:52px;height:52px}#studyItems .slot img{width:38px;height:38px}}
+.menu-help{position:fixed;right:16px;top:16px;z-index:45;width:320px;max-width:calc(100% - 32px);padding:16px;box-sizing:border-box}.menu-help summary{cursor:pointer;font-weight:bold;color:var(--gold)}.menu-help:not([open]){width:auto}.menu-help .keys{line-height:1.9;margin-bottom:0}
 @media (max-width:440px){.row2{grid-template-columns:1fr}}
 @media (max-width:760px){
   #menu{width:calc(100% - 32px);padding:16px}
@@ -134,12 +135,13 @@ tr.me td{background:rgba(255,201,60,.14)}
   <p class="best" id="bestTxt"></p>
   <p id="cloudStatus" class="keys">游客模式：登录后可保存云端成绩。<a href="/game/">登录 / 排行榜</a></p>
   <button id="startBtn" class="big">开始比赛</button>
-  <p class="keys"><b>电脑</b>：W/↑ 油门 · S/↓ 刹车/倒车 · A D/← → 转向 · 空格 漂移 · E 道具 · 学霸模式 I/O/P 使用对应道具 · Esc 暂停<br>
-  <b>手机/平板</b>：默认倾斜转向（可切换摇杆）（自动油门）· 右侧 漂移 / 道具 / 刹车<br>
-  <b>手柄</b>：左摇杆转向 · RT 油门 · LT 刹车 · RB 漂移 · X 道具<br>
-  漂移时间越长火花越亮：蓝 → 橙 → 紫，松开即加速。倒数到"1"时踩油门可起步冲刺。</p>
+
 </div>
 
+<details id="menuHelp" class="panel menu-help"><summary>操作说明</summary>  <p class="keys"><b>电脑</b>：W/↑ 油门 · S/↓ 刹车/倒车 · A D/← → 转向 · 空格 漂移 · E 道具 · 学霸模式 I/O/P 使用对应道具 · Esc 暂停<br>
+  <b>手机/平板</b>：默认倾斜转向（可切换摇杆）（自动油门）· 右侧 漂移 / 道具 / 刹车<br>
+  <b>手柄</b>：左摇杆转向 · RT 油门 · LT 刹车 · RB 漂移 · X 道具<br>
+  漂移时间越长火花越亮：蓝 → 橙 → 紫，松开即加速。倒数到"1"时踩油门可起步冲刺。</p></details>
 <div id="quizOv" style="z-index:100" class="overlay" role="dialog" aria-modal="true" aria-labelledby="quizTitle" hidden><div class="dialog panel"><h2 id="quizTitle" tabindex="-1" style="outline:none">终点答题</h2><p id="quizQuestion"></p><div id="quizChoices" class="seg"></div><p class="keys">答对随机补满空道具格；答错不获得道具，不惩罚驾驶。</p></div></div>
 <div id="hud" hidden>
   <div class="hud-tl">
@@ -984,7 +986,7 @@ async function startRace() {
   audioInit();
   store.set('track', G.trackIdx); store.set('char', G.charIdx); store.set('diff', G.diff);
   setupRace();
-  $('#menu').hidden = true; $('#resultOv').hidden = true; $('#pauseOv').hidden = true;
+  $('#menu').hidden = true;$('#menuHelp').hidden=true; $('#resultOv').hidden = true; $('#pauseOv').hidden = true;
   $('#hud').hidden = false; $('#touch').hidden = !G.touch;
   G.state = 'countdown'; G.countdown = 3; G.lastCount = 4; G.raceTime = 0; G.paused = false; G.thrPress = null; G.finishT = 0;
   G.starting=false;$('#menu').inert=false;
@@ -994,7 +996,7 @@ async function startRace() {
 function toMenu() {
   clearQuiz();
   G.state = 'menu'; G.paused = false;
-  $('#hud').hidden = true; $('#touch').hidden = true; $('#pauseOv').hidden = true; $('#resultOv').hidden = true; $('#menu').hidden = false;
+  $('#hud').hidden = true; $('#touch').hidden = true; $('#pauseOv').hidden = true; $('#resultOv').hidden = true; $('#menu').hidden = false;$('#menuHelp').hidden=false;
   engineSound(false, 0, false);
   setupRace(); G.state = 'menu'; renderMenu();
 }
@@ -1244,6 +1246,7 @@ muteBtn.onclick = () => { AU.muted = !AU.muted; store.set('muted', AU.muted); se
 
 /* ================= boot ================= */
 const authReady=GameAPI.call('/me').then(r=>{G.cloudUser=r.user;if(r.user)$('#cloudStatus').textContent='已登录：'+r.user.username+' · 完赛自动保存云端成绩';}).catch(()=>{$('#cloudStatus').textContent='账号服务暂时不可用，本机游玩不受影响';});
+$('#menuHelp').open=innerWidth>=900;
 applyQuality();
 setupRace();
 renderMenu();
