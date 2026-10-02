@@ -199,7 +199,7 @@ tr.me td{background:rgba(255,201,60,.14)}
 
 <div id="accountOv" class="overlay" hidden style="z-index:110"><div class="dialog panel" style="max-height:85vh;overflow:auto"><h2>玩家账号</h2><p id="accountStatus" role="status" aria-live="polite"></p><p class="keys">账号：3–20位英文字母、数字或下划线；密码：8–128位。账号名称会出现在排行榜。</p><form id="authForm"><label>账号<input id="username" autocomplete="username" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="例如 kart_player" required minlength="3" maxlength="20" pattern="[a-zA-Z0-9_]{3,20}"></label><label>密码<input id="password" placeholder="至少8位密码" type="password" autocomplete="current-password" required minlength="8" maxlength="128"></label><button class="big" value="login">登录</button><button class="alt" value="register">注册并登录</button></form><button id="logout" class="alt" hidden>退出登录</button><button class="alt" onclick="document.getElementById('accountOv').hidden=true">关闭</button></div></div>
 <div id="boardOv" class="overlay" hidden style="z-index:110"><div class="dialog panel" style="max-height:85vh;overflow:auto"><h2>游戏排行榜</h2><p class="keys">满分100分：准确率 × 60 分；每圈 5 分（最多 30）；每次有效击倒 2 分（最多 10）。普通模式不计答题分。</p><div id="boardFilters" style="display:grid;grid-template-columns:1fr 1fr;gap:8px"></div><p id="boardStatus"></p><table><thead><tr><th>排名</th><th>玩家</th><th>综合分 / 100</th><th>答题 / 圈数 / 击倒</th></tr></thead><tbody id="boardRows"></tbody></table><button id="refreshBoard" class="alt">刷新</button><button class="alt" onclick="document.getElementById('boardOv').hidden=true">返回游戏</button></div></div>
-<div id="playLock" class="overlay" hidden style="z-index:999"><div class="dialog panel"><h2>休息时间</h2><p>已累计游玩 30 分钟，请休息 30 分钟。</p><p id="playLockTime" role="timer" style="font-size:36px;color:#ffe36a"></p><p>倒计时结束后可以继续游戏，刷新页面仍保留锁定。</p></div></div>
+<div id="playLock" class="overlay" hidden style="z-index:999"><div class="dialog panel"><h2>休息时间</h2><p>已累计游玩 30 分钟，请休息 30 分钟。</p><p id="playLockTime" role="timer" style="font-size:36px;color:#ffe36a"></p><p>倒计时结束后可以继续游戏，刷新页面仍保留锁定。</p><details id="playAdmin"><summary style="cursor:pointer;color:var(--gold)">管理员解除休息</summary><form id="playUnlockForm" style="display:grid;gap:12px;margin-top:12px" novalidate><label>管理员密码<input id="playAdminPin" type="password" inputmode="numeric" autocomplete="off" maxlength="6" style="display:block;width:100%;padding:12px;font-size:20px;margin-top:8px" placeholder="输入管理员密码"></label><button id="playUnlockBtn" type="submit">解除本次休息</button><p id="playUnlockStatus" role="status" aria-live="polite" class="keys"></p></form></details></div></div>
 <div id="toast" class="toast" hidden></div>
 
 <script src="vendor/three.min.js"></script>
@@ -207,7 +207,7 @@ tr.me td{background:rgba(255,201,60,.14)}
 <script src="learning.js?v=diverse-v6-20261002"></script>
 <script src="tilt.js?v=20261002"></script>
 <script src="api.js?v=auth-v2"></script>
-<script src="play-limit.js"></script>
+<script src="play-limit.js?v=admin-unlock-20261002"></script>
 <script src="touch-guard.js?v=20261002"></script>
 <script src="engine.js?v=shiftfx-v2"></script>
 <script src="shift-effects.js?v=shiftfx-v1"></script>
@@ -1296,6 +1296,20 @@ function renderMenu() {
 $('#studyGrade').onchange=e=>{G.grade=Number(e.target.value);store.set('grade',G.grade);renderMenu();};
 $('#studySubject').onchange=e=>{G.subject=e.target.value;store.set('subject',G.subject);renderMenu();};
 $('#studyMode').onchange=e=>{G.study=e.target.checked;store.set('study',G.study);setupRace();renderMenu();};
+let playUnlockBusy=false;
+$('#playUnlockForm').onsubmit=async e=>{
+  e.preventDefault();if(playUnlockBusy)return;
+  playUnlockBusy=true;$('#playUnlockBtn').disabled=true;$('#playUnlockStatus').textContent='正在验证…';
+  const pin=$('#playAdminPin').value.trim();$('#playAdminPin').value='';
+  try{
+    if(await KartPlayLimit.unlock(pin)){
+      $('#playUnlockStatus').textContent='';$('#playAdmin').open=false;$('#playLock').hidden=true;
+      Object.keys(keys).forEach(key=>keys[key]=false);T.steer=0;T.brake=false;T.left=false;T.right=false;T.throttle=false;itemEdge=false;
+      requestAnimationFrame(()=>{if(quizPending)$('#quizTitle').focus({preventScroll:true});else if(G.state==='race'||G.state==='countdown')$('#resumeBtn').focus();else $('#startBtn').focus();});
+    }else{$('#playUnlockStatus').textContent='密码不正确，请重新输入。';$('#playAdminPin').focus();}
+  }catch(_){$('#playUnlockStatus').textContent='暂时无法验证，请重试。';}
+  finally{playUnlockBusy=false;$('#playUnlockBtn').disabled=false;}
+};
 $('#startBtn').onclick = startRace;
 $('#pauseBtn').onclick = () => togglePause();
 $('#resumeBtn').onclick = () => togglePause();
