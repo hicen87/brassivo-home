@@ -204,7 +204,7 @@ tr.me td{background:rgba(255,201,60,.14)}
 
 <script src="vendor/three.min.js"></script>
 <script src="subjects.js?v=olympiad-v4-20261002"></script>
-<script src="learning.js?v=diverse-v6-20261002"></script>
+<script src="learning.js?v=readable-v7-20261002"></script>
 <script src="tilt.js?v=20261002"></script>
 <script src="api.js?v=auth-v2"></script>
 <script src="play-limit.js?v=admin-unlock-20261002"></script>
@@ -1263,7 +1263,7 @@ function updateBankInfo(){
   if(!count&&bankCounts){count=G.subject==='all'?Object.entries(bankCounts.pools).filter(([key])=>key.startsWith(G.grade+':')&&!key.endsWith(':olympiad')).reduce((sum,[,n])=>sum+n,0):bankCounts.pools[G.grade+':'+G.subject]||0;}
   $('#studyBankInfo').textContent=count?`当前题库 ${count} 道 · 随机选项 · 近期相似题避让`:'正在读取题库数量…';
 }
-fetch('question-bank-counts.json?v=20261002-diverse-v6',{signal:AbortSignal.timeout(10000)}).then(r=>{if(!r.ok)throw Error();return r.json();}).then(data=>{bankCounts=data;updateBankInfo();}).catch(()=>{$('#studyBankInfo').textContent='每个年级可选科目均不少于100道题';});
+fetch('question-bank-counts.json?v=20261002-readable-v7',{signal:AbortSignal.timeout(10000)}).then(r=>{if(!r.ok)throw Error();return r.json();}).then(data=>{bankCounts=data;updateBankInfo();}).catch(()=>{$('#studyBankInfo').textContent='每个年级可选科目均不少于100道题';});
 function renderMenu() {
   const tl = $('#trackList'); tl.textContent = '';
   TRACKS.forEach((t, i) => {

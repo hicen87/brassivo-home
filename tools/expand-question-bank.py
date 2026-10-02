@@ -5,6 +5,7 @@ Source is ChinaTextbookStudyFree release v1.2.0-assets, MIT licensed original qu
 import json,re,sys,zipfile,hashlib,difflib
 from pathlib import Path
 from collections import defaultdict,Counter
+from question_text import normalize,VERSION
 ROOT=Path(__file__).resolve().parents[1];p=ROOT/'block-kart/question-bank.json'
 b=json.loads(p.read_text());legacy=json.loads((ROOT/'tools/question-content/legacy.json').read_text())['questions']
 groups=defaultdict(list)
@@ -12,6 +13,9 @@ def norm(t):
  t=re.sub(r'\d+(?:\.\d+)?|\s|[，。！？：、,.!?;:＿_（）()]','',t)
  return re.sub(r'小[明红华丽刚军]|Tom|Amy|Mike|Sarah|John|Chen Jie|Lucy|Lily|Sam|Ben','',t,flags=re.I).lower()
 def accept(q):
+ try:q=normalize(q)
+ except AssertionError as err:
+  print("Rejected unreadable question",q.get("id"),str(err),file=sys.stderr);return False
  if not q.get('explanation') or len(q['options'])!=4 or len(set(q['options']))!=4 or q['options'].count(q['answer'])!=1:return False
  n=norm(q['text']);pool=groups[q['grade'],q['subject']]
  if any(difflib.SequenceMatcher(None,n,x['_norm']).ratio()>.8 for x in pool):return False
@@ -65,7 +69,7 @@ for key,pool in sorted(groups.items()):
  for q in pool:
   q.pop('_norm',None);q['family']=q.get('topic') or norm(q['text'])
   questions.append(q)
-b['questions']=questions;b['version']='20261002-diverse-v6'
+b['questions']=questions;b['version']=VERSION
 b['notice']='分年级复习选择题，含MIT授权开源原创题与Brassivo原创场景题；并非浙江官方题库，教材进度因学校而异。英语、信息科技从三年级起提供。'
 b['sources']=[{'name':'ChinaTextbookStudyFree','url':'https://github.com/wuwangzhang1216/ChinaTextbookStudyFree','release':'v1.2.0-assets','license':'MIT','archiveSha256':hashlib.sha256(Path(sys.argv[1]).read_bytes()).hexdigest(),'notice':'来源项目声明为AI原创，非教材原题；筛除缺图、缺上下文、多选及近似题。'},{'name':'Brassivo','license':'project license','notice':'独立编写的原创场景、知识点与判断题，不用名字/数值替换扩充。'}]
 for g in range(1,7):

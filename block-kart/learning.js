@@ -1,9 +1,10 @@
 (function(root){
   let bank=null;const histories=new Map(),gradeRecent=new Map(),pools=new Map(),vectors=new Map();
+  const BANK_VERSION='20261002-readable-v7';
   const VERSION='20261002-diverse-v6',STORAGE='bk_question_history_v6';
   function restore(){try{const saved=JSON.parse(root.localStorage.getItem(STORAGE)||'null');if(saved?.version!==VERSION)return;for(const [k,v] of Object.entries(saved.histories||{}))if(Array.isArray(v.ids)&&Array.isArray(v.recent))histories.set(k,v);for(const [g,v] of Object.entries(saved.gradeRecent||{}))if(Array.isArray(v))gradeRecent.set(g,v);}catch(_){}}
   function save(){try{root.localStorage.setItem(STORAGE,JSON.stringify({version:VERSION,histories:Object.fromEntries(histories),gradeRecent:Object.fromEntries(gradeRecent)}));}catch(_){}}
-  async function load(){if(!bank){const r=await fetch('question-bank.json?v='+VERSION,{signal:AbortSignal.timeout(20000)});if(!r.ok)throw Error('题库加载失败');bank=await r.json();restore();}return bank;}
+  async function load(){if(!bank){const r=await fetch('question-bank.json?v='+BANK_VERSION,{signal:AbortSignal.timeout(20000)});if(!r.ok)throw Error('题库加载失败');bank=await r.json();restore();}return bank;}
   function pool(grade,subject){
     const key=Number(grade)+':'+subject;if(pools.has(key))return pools.get(key);
     const allowed=KartSubjects.available(grade);
