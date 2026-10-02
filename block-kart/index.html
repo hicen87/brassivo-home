@@ -1096,12 +1096,12 @@ function updateCamera(dt) {
   camera.fov = lerp(camera.fov, fov, Math.min(1, dt * 4)); camera.updateProjectionMatrix();
   sun.position.set(p.x + 40, 80, p.z + 28); sun.target.position.set(p.x, 0, p.z);
 }
-function menuCamera(t) {
-  const tr = G.tr, k = tr.N - 12, cx = tr.px[k], cz = tr.pz[k], a = t * 0.18;
-  camera.position.set(cx + Math.sin(a) * 26, 10 + Math.sin(t * 0.3) * 2, cz + Math.cos(a) * 26);
-  camera.lookAt(cx, 1.5, cz);
-  camera.fov = G.baseFov; camera.updateProjectionMatrix();
-  sun.position.set(cx + 40, 80, cz + 28); sun.target.position.set(cx, 0, cz);
+function menuCamera() {
+  const p=G.player,fx=Math.sin(p.heading),fz=Math.cos(p.heading);
+  camera.position.set(p.x-fx*9.5,p.y+4.4,p.z-fz*9.5);
+  camera.lookAt(p.x+fx*5,p.y+1.6,p.z+fz*5);
+  camera.fov=G.baseFov;camera.updateProjectionMatrix();
+  sun.position.set(p.x+40,80,p.z+28);sun.target.position.set(p.x,0,p.z);
 }
 
 /* ================= HUD ================= */
@@ -1142,7 +1142,7 @@ function frame(now) {
   if (document.hidden) return;
   G.frameAvg = lerp(G.frameAvg, dt * 1000, 0.05);
   if (G.state === 'menu') {
-    menuCamera(G.time);
+    menuCamera();
     for (const k of G.karts) { k.body.rotation.y = 0; k.g.visible = true; }
     animateWorld(dt);
     updateParticles(dt);
