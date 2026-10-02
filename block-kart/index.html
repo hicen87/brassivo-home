@@ -121,7 +121,7 @@ tr.me td{background:rgba(255,201,60,.14)}
   <div>
     <a href="/game/" style="color:var(--mut);text-decoration:none;font-size:12px">← game · 游戏目录</a>
 <h1>方块飞车</h1>
-    <p class="tag">6 台方块卡丁车 · 漂移攒火花 · 道具乱斗 · 3 圈定胜负</p>
+    <p class="tag">6 台方块卡丁车 · 漂移攒火花 · 道具乱斗 · 6 圈定胜负</p>
   </div>
   <section><h2>赛道</h2><div id="trackList" class="opts"></div></section>
   <section><h2>车手</h2><div id="charList" class="opts chars"></div><div id="charStats"></div></section>
@@ -143,7 +143,7 @@ tr.me td{background:rgba(255,201,60,.14)}
 <div id="quizOv" style="z-index:100" class="overlay" role="dialog" aria-modal="true" aria-labelledby="quizTitle" hidden><div class="dialog panel"><h2 id="quizTitle" tabindex="-1" style="outline:none">终点答题</h2><p id="quizQuestion"></p><div id="quizChoices" class="seg"></div><p class="keys">答对随机补满空道具格；答错不获得道具，不惩罚驾驶。</p></div></div>
 <div id="hud" hidden>
   <div class="hud-tl">
-    <div class="chip">圈 <b id="lapTxt">1/3</b></div>
+    <div class="chip">圈 <b id="lapTxt">1/6</b></div>
     <div class="chip" id="timeTxt">0:00.00</div>
     <canvas id="mini" width="160" height="160"></canvas>
   </div>
@@ -203,7 +203,7 @@ const store = {
 };
 
 /* ================= constants & data ================= */
-const B = 3, ROAD = 14, WALL = 21, LAPS = 3, BASE = 42, ACC = 24;
+const B = 3, ROAD = 14, WALL = 21, LAPS = 6, BASE = 42, ACC = 24;
 const TRACKS = [
   { name: '青草环线', sub: '湖泊 · 橡树林', seed: 11, hill: 5, water: true, capH: 5, deco: 'oak', fence: 0xe8c34a,
     pts: [[0,-120],[90,-110],[150,-50],[140,30],[80,60],[60,120],[-10,140],[-80,110],[-140,40],[-130,-50],[-70,-100]],
@@ -977,7 +977,7 @@ async function startRace() {
   clearQuiz(); G.studyStats={total:0,correct:0}; G.cloudRun=null;
   if(G.cloudUser){
     $('#startBtn').disabled=true;
-    try{G.cloudRun=(await GameAPI.call('/runs',{track:G.trackIdx,diff:G.diff,study:G.study,grade:G.grade,subject:G.subject})).runId;$('#cloudStatus').textContent='本场成绩将在完成后保存到云端';}
+    try{G.cloudRun=(await GameAPI.call('/runs',{laps:LAPS,track:G.trackIdx,diff:G.diff,study:G.study,grade:G.grade,subject:G.subject})).runId;$('#cloudStatus').textContent='本场成绩将在完成后保存到云端';}
     catch(e){$('#cloudStatus').textContent='云端不可用，本场只保存本机成绩';}
     finally{$('#startBtn').disabled=false;}
   }

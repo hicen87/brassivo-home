@@ -1,4 +1,4 @@
-const VERSION='wide-v1';
+const VERSION='six-laps-v1';
 const SUBJECTS=['all','math','english','chinese','science','ethics','music','art','pe','labor','it','practice','local'];
 const enc=new TextEncoder();
 const hex=b=>Array.from(new Uint8Array(b),x=>x.toString(16).padStart(2,'0')).join('');
@@ -60,11 +60,11 @@ export default {async fetch(req,env){
   }
   if(path==='/scores'&&req.method==='GET'){if(!me)return reply({ok:false,error:'请先登录'},401);const r=await env.DB.prepare('SELECT track,diff,study,grade,subject,MIN(ms) AS ms FROM game_scores WHERE user_id=? AND version=? GROUP BY track,diff,study,grade,subject ORDER BY ms LIMIT 200').bind(me.id,VERSION).all();return reply({ok:true,rows:r.results});}
   if(path==='/runs'&&req.method==='POST'){
-   if(!me)return reply({ok:false,error:'请先登录'},401);const c=config(await req.json()),id=crypto.randomUUID();await env.DB.prepare('INSERT INTO game_runs(id,user_id,track,diff,study,grade,subject,started) VALUES(?,?,?,?,?,?,?,?)').bind(id,me.id,c.track,c.diff,c.study,c.grade,c.subject,now).run();return reply({ok:true,runId:id});
+   if(!me)return reply({ok:false,error:'请先登录'},401);const body=await req.json();if(body.laps!==6)return reply({ok:false,error:'请刷新到6圈新版再开始比赛'},400);const c=config(body),id='6lap-'+crypto.randomUUID();await env.DB.prepare('INSERT INTO game_runs(id,user_id,track,diff,study,grade,subject,started) VALUES(?,?,?,?,?,?,?,?)').bind(id,me.id,c.track,c.diff,c.study,c.grade,c.subject,now).run();return reply({ok:true,runId:id});
   }
   if(path==='/finish'&&req.method==='POST'){
    if(!me)return reply({ok:false,error:'请先登录'},401);const b=await req.json(),r=await env.DB.prepare('SELECT * FROM game_runs WHERE id=? AND user_id=?').bind(b.runId,me.id).first();
-   if(!r||r.used)return reply({ok:false,error:'比赛无效或已提交'},409);
+   if(!r||r.used||!r.id.startsWith('6lap-'))return reply({ok:false,error:'比赛无效或已提交'},409);
    if(!Number.isInteger(b.ms)||b.ms<20000||b.ms>3600000||b.ms>now-r.started+1500||now-r.started>7200000)return reply({ok:false,error:'成绩时间无效'},400);
    const total=b.total,correct=b.correct;if(!Number.isInteger(total)||!Number.isInteger(correct)||total<0||total>500||correct<0||correct>total||(!r.study&&(total!==0||correct!==0)))return reply({ok:false,error:'答题统计无效'},400);
    const result=await env.DB.batch([
