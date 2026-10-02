@@ -139,7 +139,7 @@ tr.me td{background:rgba(255,201,60,.14)}
   漂移时间越长火花越亮：蓝 → 橙 → 紫，松开即加速。倒数到"1"时踩油门可起步冲刺。</p>
 </div>
 
-<div id="quizOv" style="z-index:100" class="overlay" role="dialog" aria-modal="true" aria-labelledby="quizTitle" hidden><div class="dialog panel"><h2 id="quizTitle">终点答题</h2><p id="quizQuestion"></p><div id="quizChoices" class="seg"></div><p class="keys">答对获得3个随机道具；答错获得1个道具，不惩罚驾驶。</p></div></div>
+<div id="quizOv" style="z-index:100" class="overlay" role="dialog" aria-modal="true" aria-labelledby="quizTitle" hidden><div class="dialog panel"><h2 id="quizTitle" tabindex="-1" style="outline:none">终点答题</h2><p id="quizQuestion"></p><div id="quizChoices" class="seg"></div><p class="keys">答对获得3个随机道具；答错获得1个道具，不惩罚驾驶。</p></div></div>
 <div id="hud" hidden>
   <div class="hud-tl">
     <div class="chip">圈 <b id="lapTxt">1/3</b></div>
@@ -753,7 +753,7 @@ function studyCheckpoint(k, done=()=>{}) {
     toast(correct?'答对了！获得3个随机道具':'答错了！'+q.explanation+'；获得1个随机道具，继续加油',3500);
     done();$('#pauseBtn').focus();
   };choices.appendChild(b); });
-  $('#quizOv').hidden = false; choices.firstElementChild.focus();
+  $('#quizOv').hidden = false; $('#quizTitle').focus({preventScroll:true});
 }
 function awardStudyItems(k,count){
   k.itemQueue ||= [];
