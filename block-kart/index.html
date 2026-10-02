@@ -230,7 +230,7 @@ function autoQuality() {
   return m >= 700 ? 'mid' : 'low';
 }
 const G = {
-  state: 'menu', paused: false, trackIdx: store.get('track', 0), charIdx: store.get('char', 0), diff: store.get('diff', 1),
+  state: 'menu', paused: false, trackIdx: store.get('track', 0), charIdx: store.get('char', 0), diff: store.get('diff', 2),
   qualSel: store.get('qual', 'auto'), qual: 'high', karts: [], player: null, tr: null, raceTime: 0, countdown: 0,
   touch: coarse, time: 0, finishT: 0, shake: 0, frameAvg: 16, slowT: 0
 };
