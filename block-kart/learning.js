@@ -1,10 +1,11 @@
 (function(root){
   let bank=null;const histories=new Map();
-  async function load(){if(!bank){const r=await fetch('question-bank.json?v=20261002-olympiad-v4',{signal:AbortSignal.timeout(8000)});if(!r.ok)throw Error('题库加载失败');bank=await r.json();}return bank;}
+  async function load(){if(!bank){const r=await fetch('question-bank.json?v=20261002-thinking-v5',{signal:AbortSignal.timeout(8000)});if(!r.ok)throw Error('题库加载失败');bank=await r.json();}return bank;}
   function question(grade=1,subject='all',random=Math.random){
     if(!bank)throw Error('题库尚未加载');
     const allowed=KartSubjects.available(grade);
     let pool=bank.questions.filter(q=>q.grade===Number(grade)&&allowed.includes(q.subject)&&(subject==='all'?q.subject!=='olympiad':q.subject===subject));
+    const thinking=pool.filter(q=>q.difficulty==='thinking');if(thinking.length)pool=thinking;
     if(!pool.length)throw Error('该题库暂时没有题目');
     const key=Number(grade)+':'+subject;let recent=histories.get(key)||[];
     let fresh=pool.filter(q=>!recent.includes(q.id));
