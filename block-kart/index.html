@@ -141,7 +141,7 @@ tr.me td{background:rgba(255,201,60,.14)}
 </div>
 
 <details id="menuHelp" class="panel menu-help"><summary>操作说明</summary>  <p class="keys"><b>电脑</b>：W/↑ 油门 · S/↓ 刹车/倒车 · A D/← → 转向 · 空格 漂移 · E 道具 · 学霸模式 I/O/P 使用对应道具 · Esc 暂停<br>
-  <b>手机/平板</b>：默认倾斜转向（可切换摇杆）（自动油门）· 右侧 漂移 / 道具 / 刹车<br>
+  <b>手机/平板</b>：默认倾斜转向（可切换摇杆）（自动油门）· 右侧 漂移 / 道具 / 刹车（道具按从左到右使用，自动跳过空格）<br>
   <b>手柄</b>：左摇杆转向 · RT 油门 · LT 刹车 · RB 漂移 · X 道具<br>
   道具：火箭加速；果冻块设陷阱；追踪弹攻击；护盾抵挡一次攻击（8秒）；闪电攻击24米内对手；冰冻弹击倒并减速3秒。<br>漂移时间越长火花越亮：蓝 → 橙 → 紫，松开即加速。倒数到"1"时踩油门可起步冲刺。</p></details>
 <div id="quizOv" style="z-index:100" class="overlay" role="dialog" aria-modal="true" aria-labelledby="quizTitle" hidden><div class="dialog panel"><h2 id="quizTitle" tabindex="-1" style="outline:none">终点答题</h2><p id="quizQuestion"></p><div id="quizChoices" class="seg"></div><p class="keys">答对随机补满空道具格；答错不获得道具，不惩罚驾驶。</p></div></div>
@@ -714,7 +714,7 @@ function holdBtn(el, key) {
   el.addEventListener('pointerup', up); el.addEventListener('pointercancel', up);
 }
 holdBtn($('#tDrift'), 'drift'); holdBtn($('#tBrake'), 'brake');
-$('#tItem').addEventListener('pointerdown', e => { e.preventDefault(); itemEdge = true; });
+$('#tItem').addEventListener('pointerdown', e => { e.preventDefault(); itemChoice=-1;itemEdge = true; });
 $('#itemSlot').addEventListener('pointerdown', e => { e.preventDefault(); itemEdge = true; });
 window.addEventListener('touchstart', () => { if (!G.touch) { G.touch = true; if (G.state !== 'menu') $('#touch').hidden = false; } }, { passive: true });
 let itemChoice=0;
@@ -791,7 +791,7 @@ function studyLapGate(k) {
 }
 function giveItem(k) { if (k.item || k.rollT > 0) return; k.rollT = k.isPlayer ? 1.1 : 0.8; if (k.isPlayer) sfx('item'); }
 function useItem(k,index=0) {
-  const items=heldItems(k);if(!items[index])return;const it=items[index];items[index]=null;setItems(k,items);
+  const items=heldItems(k);if(index===-1)index=items.findIndex(Boolean);if(!items[index])return;const it=items[index];items[index]=null;setItems(k,items);
   const fx = Math.sin(k.heading), fz = Math.cos(k.heading);
   if (it === 'turbo') { k.boostT = Math.max(k.boostT, 1.6); if (k.isPlayer) sfx('boost'); }
   else if(it==='shield'){k.shieldT=8;if(k.isPlayer)toast('护盾：8秒内抵挡一次攻击',2000);sfx('item');}
