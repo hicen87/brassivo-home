@@ -16,3 +16,10 @@ test('AI opponents are stronger in all three difficulties while respecting the 2
   const ai=run(false);assert(ai>run(false,true));assert(ai>run(true));assert(ai<=200+1e-8);
  }
 });
+test('all six car styles share acceleration, top speed, handling and collision weight',()=>{
+ const scope={G:{diff:2,tr:{N:100}},Math,emit(){},useItem(){},sfx(){}};vm.createContext(scope);
+ vm.runInContext(html.slice(html.indexOf('const B = 3,'),html.indexOf('/* ================= device & quality'))+html.slice(html.indexOf('const NOIN ='),html.indexOf('  // drift & steering'))+'}',scope);
+ const cars=vm.runInContext('CHARS',scope),samples=[];
+ for(const ch of cars){scope.k={ch,isPlayer:true,speed:0,lat:0,boostT:0,spinT:0,rollT:0};const speeds=[];for(let i=0;i<3600;i++){vm.runInContext('updateKart(k,{thr:1,brk:false},1/60)',scope);if(i===59||i===3599)speeds.push(scope.k.speed);}samples.push(speeds);assert.equal(ch.hnd,1);assert.equal(ch.w,1);}
+ assert.equal(cars.length,6);for(const sample of samples)assert.deepEqual(sample,samples[0]);assert.equal(new Set(cars.map(c=>c.color)).size,6);assert(!html.includes('id="charStats"'));
+});

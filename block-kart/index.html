@@ -41,9 +41,6 @@ button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 .chars{grid-template-columns:repeat(6,1fr)}
 .chars .opt{padding:4px}
 .chars img{width:40px}
-#charStats{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;align-items:center;margin-top:10px;font-size:12px;color:var(--mut)}
-.bar{height:8px;background:#2a3146;border:2px solid var(--line)}
-.bar i{display:block;height:100%;background:var(--green)}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .seg{display:flex;gap:4px;flex-wrap:wrap}
 #quizChoices{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}#quizChoices.vertical{grid-template-columns:1fr}#quizChoices button{white-space:normal;overflow-wrap:anywhere;min-width:0;height:auto;min-height:48px;padding:12px;text-align:center;line-height:1.45}#quizOv .dialog{max-height:90dvh;overflow-y:auto}@media(max-width:600px){#quizChoices{grid-template-columns:1fr}}
@@ -148,7 +145,7 @@ tr.me td{background:rgba(255,201,60,.14)}
     <p class="tag">6 台方块卡丁车 · 漂移攒火花 · 道具乱斗 · 6 圈定胜负</p>
   </div>
   <section><h2>赛道</h2><div id="trackList" class="opts"></div></section>
-  <section><h2>车手</h2><div id="charList" class="opts chars"></div><div id="charStats"></div></section>
+  <section><h2>车手</h2><div id="charList" class="opts chars"></div></section>
   <section class="row2">
     <div><h2>难度</h2><div id="diffList" class="seg"></div></div>
     <div><h2>画质</h2><div id="qList" class="seg"></div></div>
@@ -256,14 +253,15 @@ const TRACKS = [
     pts: [[0,-130],[80,-140],[140,-90],[150,0],[100,70],[130,130],[40,150],[-40,110],[-110,140],[-150,60],[-120,-20],[-140,-90],[-70,-130]],
     col: { road: 0x6c7886, curbA: 0x2f7fd8, curbB: 0xf5f7fa, ground: 0xeef3f9, shoulder: 0xdce6ef, side: 0x8a939e, high: 0xffffff, water: 0xa6dcf2, far: 0xe3ebf4, sky: 0xa3bddd, fog: 0xdfe8f3, sun: 0xfff2e6 } }
 ];
+const KART_STATS = Object.freeze({spd:1.06,acc:1,hnd:1,w:1});
 const CHARS = [
-  { name: '阿砖', color: 0xc8553d, shirt: 0x3a6ea5, head: '#c8553d', spd: 1.0, acc: 0.9, hnd: 0.9, w: 1.25, extra: 'brick' },
-  { name: '蜜蜜', color: 0xf2c230, shirt: 0x2b2b2b, head: '#f2c230', spd: 0.93, acc: 1.1, hnd: 1.05, w: 0.85, extra: 'bee' },
-  { name: '冰豆', color: 0x6cc6ee, shirt: 0xffffff, head: '#8fd9f5', spd: 0.96, acc: 1.0, hnd: 1.12, w: 0.95, extra: 'ice' },
-  { name: '苔苔', color: 0x4f9a3c, shirt: 0x6b4a2b, head: '#5aa846', spd: 1.03, acc: 0.9, hnd: 0.95, w: 1.15, extra: 'moss' },
-  { name: '炭炭', color: 0x3a3d46, shirt: 0xe0662b, head: '#3a3d46', spd: 1.06, acc: 0.86, hnd: 0.86, w: 1.3, extra: 'coal' },
-  { name: '樱樱', color: 0xee7fb0, shirt: 0xfff0f6, head: '#f59cc2', spd: 0.95, acc: 1.06, hnd: 1.02, w: 0.9, extra: 'petal' }
-];
+  { name: '阿砖', color: 0xc8553d, shirt: 0x3a6ea5, head: '#c8553d', extra: 'brick' },
+  { name: '蜜蜜', color: 0xf2c230, shirt: 0x2b2b2b, head: '#f2c230', extra: 'bee' },
+  { name: '冰豆', color: 0x6cc6ee, shirt: 0xffffff, head: '#8fd9f5', extra: 'ice' },
+  { name: '苔苔', color: 0x4f9a3c, shirt: 0x6b4a2b, head: '#5aa846', extra: 'moss' },
+  { name: '炭炭', color: 0x3a3d46, shirt: 0xe0662b, head: '#3a3d46', extra: 'coal' },
+  { name: '樱樱', color: 0xee7fb0, shirt: 0xfff0f6, head: '#f59cc2', extra: 'petal' }
+].map(ch=>({...ch,...KART_STATS}));
 const DIFFS = [
   { name: '休闲', scale: 0.85, ai: 0.88 * 1.5 },
   { name: '标准', scale: 1.0, ai: 0.96 * 1.5 },
@@ -1330,10 +1328,6 @@ function renderMenu() {
     const img = document.createElement('img'); img.src = FACE_URLS[i]; img.alt = ''; const sp = document.createElement('span'); sp.textContent = c.name;
     b.append(img, sp); b.onclick = () => { G.charIdx = i; setupRace(); renderMenu(); };
     cl.appendChild(b);
-  });
-  const ch = CHARS[G.charIdx], cs = $('#charStats'); cs.textContent = '';
-  [['极速', ch.spd, 0.9, 1.08], ['加速', ch.acc, 0.84, 1.12], ['操控', ch.hnd, 0.84, 1.14], ['重量', ch.w, 0.8, 1.32]].forEach(([n, v, a, b]) => {
-    const l = document.createElement('span'); l.textContent = n; const bar = document.createElement('div'); bar.className = 'bar'; const i_ = document.createElement('i'); i_.style.width = Math.round(15 + 85 * (v - a) / (b - a)) + '%'; bar.appendChild(i_); cs.append(l, bar);
   });
   $('#studyMode').checked=G.study;
   $('#studyGrade').value=G.grade;G.subject=KartSubjects.populate($('#studySubject'),G.grade,G.subject);store.set('subject',G.subject);updateBankInfo();
