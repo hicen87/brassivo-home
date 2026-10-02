@@ -1,3 +1,4 @@
+var KartProgressFactory;
 (function(root){
 'use strict';
 const KEY='bk_learning_progress_v2';
@@ -14,5 +15,5 @@ function create(storage,clock=Date.now){
  const cosmetics=[{id:'classic',name:'原色',xp:0,color:null},{id:'sky',name:'晴空蓝',xp:100,color:0x56b8eb},{id:'pink',name:'樱花粉',xp:300,color:0xed83b4},{id:'gold',name:'冠军金',xp:600,color:0xecc14f}];
  return {read,answer,finish,event,due,cosmetics,title:s=>s.xp>=600?'复习达人':s.xp>=300?'弯道学者':s.xp>=100?'学习车手':'新车手',report(q,reason){const s=read();const id=root.crypto?.randomUUID?.()||String(clock());s.reports.push({id,questionId:q.id,reason,bank:root.KartSeason.BANK});s.reports=s.reports.slice(-20);if(!write(s))throw Error('本机反馈保存失败，请检查存储空间');return id;},removeReport(id){const s=read();s.reports=s.reports.filter(x=>x.id!==id);write(s);}};
 }
-root.KartProgressFactory=create;
+KartProgressFactory=root.KartProgressFactory=create;
 })(globalThis);

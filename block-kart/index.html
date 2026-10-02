@@ -214,7 +214,7 @@ tr.me td{background:rgba(255,201,60,.14)}
 
 <script src="vendor/three.min.js"></script>
 <script src="subjects.js?v=olympiad-v4-20261002"></script>
-<script src="season.js?v=kart-s2-20261002"></script>
+<script src="season.js?v=kart-s2-startfix-20261002"></script>
 <script src="learning.js?v=kart-s2-20261002"></script>
 <script src="tilt.js?v=20261002"></script>
 <script src="api.js?v=auth-v2"></script>
@@ -226,10 +226,10 @@ tr.me td{background:rgba(255,201,60,.14)}
 <script src="score.js?v=kart-s2-20261002"></script>
 <script src="account-form.js?v=auth-v2"></script>
 <script src="game-account.js?v=kart-s2-20261002"></script>
-<script src="reliable-save.js?v=kart-s2-20261002"></script>
-<script src="progression.js?v=kart-s2-20261002"></script>
-<script src="telemetry.js?v=kart-s2-20261002"></script>
-<script src="experience.js?v=kart-s2-20261002"></script>
+<script src="reliable-save.js?v=kart-s2-startfix-20261002"></script>
+<script src="progression.js?v=kart-s2-startfix-20261002"></script>
+<script src="telemetry.js?v=kart-s2-startfix-20261002"></script>
+<script src="experience.js?v=kart-s2-startfix-20261002"></script>
 <script>
 (() => {
 'use strict';
@@ -1072,6 +1072,7 @@ function buildWorldIfNeeded() {
 async function startRace() {
   if(KartPlayLimit.tick(false).locked)return;
   if(G.starting)return;G.starting=true;['menu','resultOv','pauseOv'].forEach(id=>$('#'+id).inert=true);$('#startBtn').disabled=true;$('#startBtn').textContent=G.study?'正在加载题库…':'准备比赛…';
+  try {
   await enableTouchControl();
   if(G.study){try{await KartLearning.load(G.grade);}catch(e){toast('题库加载失败，请重试',2500);G.starting=false;['menu','resultOv','pauseOv'].forEach(id=>$('#'+id).inert=false);$('#startBtn').disabled=false;$('#startBtn').textContent='开始比赛 →';return;}}
   await authReady;
@@ -1097,6 +1098,11 @@ async function startRace() {
   G.starting=false;['menu','resultOv','pauseOv'].forEach(id=>$('#'+id).inert=false);$('#startBtn').disabled=false;$('#startBtn').textContent='开始比赛 →';
   G.camInit = true; G.slowT = 0;
   if (coarse && innerWidth < innerHeight) toast('横屏游玩视野更好', 2600);
+  } catch(e) {
+    console.error('比赛启动失败',e);toast('比赛启动失败，请刷新后重试',3500);
+  } finally {
+    G.starting=false;['menu','resultOv','pauseOv'].forEach(id=>$('#'+id).inert=false);$('#startBtn').disabled=false;$('#startBtn').textContent='开始比赛 →';
+  }
 }
 function toMenu() {
   KartExperience.exit();clearQuiz();

@@ -1,3 +1,4 @@
+var KartSaveFactory;
 (function(root){
 'use strict';
 function create(storage,api,clock=Date.now){
@@ -11,5 +12,5 @@ function create(storage,api,clock=Date.now){
  }}finally{busy=false;}const pending=read().filter(x=>x.username===username).length;return {saved,pending,error};}
  return {enqueue,flush,read};
 }
-root.KartSaveFactory=create;
+KartSaveFactory=root.KartSaveFactory=create;
 })(globalThis);
