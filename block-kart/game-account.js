@@ -1,9 +1,7 @@
 (()=>{
 const $=id=>document.getElementById(id),api=GameAPI;
-function user(u){$('authForm').hidden=!!u;$('logout').hidden=!u;$('accountStatus').textContent=u?'已登录：'+u.username:'新玩家请注册账号，已有账号可以直接登录。';window.dispatchEvent(new CustomEvent('kart-account',{detail:u}));}
-$('accountBtn').onclick=async()=>{$('accountOv').hidden=false;try{user((await api.call('/me')).user);}catch(e){$('accountStatus').textContent=e.message;}};
-$('authForm').onsubmit=async e=>{e.preventDefault();const b=e.submitter;const buttons=[...$('authForm').querySelectorAll('button')];buttons.forEach(x=>x.disabled=true);try{user((await api.call(b.value==='register'?'/register':'/login',{username:$('username').value,password:$('password').value})).user);$('password').value='';}catch(e){$('accountStatus').textContent=e.message;}finally{buttons.forEach(x=>x.disabled=false);}};
-$('logout').onclick=async()=>{try{await api.call('/logout',{});user(null);}catch(e){$('accountStatus').textContent=e.message;}};
+const account=GameAccount.mount({onUser:u=>window.dispatchEvent(new CustomEvent('kart-account',{detail:u}))});
+$('accountBtn').onclick=()=>{$('accountOv').hidden=false;account.refresh();};
 const filters=[['boardTrack','赛道',['青草环线','赤砂峡谷','雪峰回廊']],['boardDiff','难度',['休闲','标准','极速']],['boardMode','模式',['普通模式','学霸模式']],['boardGrade','年级',['一年级','二年级','三年级','四年级','五年级','六年级']],['boardSubject','题库',[]]];
 for(const [id,name,options] of filters){const label=document.createElement('label');label.textContent=name;const select=document.createElement('select');select.id=id;select.style.cssText='display:block;width:100%;padding:8px';options.forEach((text,i)=>{const o=document.createElement('option');o.value=id==='boardGrade'?i+1:i;o.textContent=text;select.append(o);});label.append(select);$('boardFilters').append(label);select.onchange=board;}
 $('boardDiff').value='1';let sequence=0;

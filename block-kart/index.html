@@ -197,7 +197,7 @@ tr.me td{background:rgba(255,201,60,.14)}
   </div>
 </div>
 
-<div id="accountOv" class="overlay" hidden style="z-index:110"><div class="dialog panel" style="max-height:85vh;overflow:auto"><h2>玩家账号</h2><p id="accountStatus"></p><form id="authForm"><label>账号<input id="username" autocomplete="username" required minlength="3" maxlength="20" pattern="[a-zA-Z0-9_]{3,20}"></label><label>密码<input id="password" type="password" autocomplete="current-password" required minlength="8" maxlength="128"></label><button class="big" value="login">登录</button><button class="alt" value="register">注册并登录</button></form><button id="logout" class="alt" hidden>退出登录</button><button class="alt" onclick="document.getElementById('accountOv').hidden=true">关闭</button></div></div>
+<div id="accountOv" class="overlay" hidden style="z-index:110"><div class="dialog panel" style="max-height:85vh;overflow:auto"><h2>玩家账号</h2><p id="accountStatus" role="status" aria-live="polite"></p><p class="keys">账号：3–20位英文字母、数字或下划线；密码：8–128位。账号名称会出现在排行榜。</p><form id="authForm"><label>账号<input id="username" autocomplete="username" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="例如 kart_player" required minlength="3" maxlength="20" pattern="[a-zA-Z0-9_]{3,20}"></label><label>密码<input id="password" placeholder="至少8位密码" type="password" autocomplete="current-password" required minlength="8" maxlength="128"></label><button class="big" value="login">登录</button><button class="alt" value="register">注册并登录</button></form><button id="logout" class="alt" hidden>退出登录</button><button class="alt" onclick="document.getElementById('accountOv').hidden=true">关闭</button></div></div>
 <div id="boardOv" class="overlay" hidden style="z-index:110"><div class="dialog panel" style="max-height:85vh;overflow:auto"><h2>游戏排行榜</h2><p class="keys">满分100分：准确率 × 60 分；每圈 5 分（最多 30）；每次有效击倒 2 分（最多 10）。普通模式不计答题分。</p><div id="boardFilters" style="display:grid;grid-template-columns:1fr 1fr;gap:8px"></div><p id="boardStatus"></p><table><thead><tr><th>排名</th><th>玩家</th><th>综合分 / 100</th><th>答题 / 圈数 / 击倒</th></tr></thead><tbody id="boardRows"></tbody></table><button id="refreshBoard" class="alt">刷新</button><button class="alt" onclick="document.getElementById('boardOv').hidden=true">返回游戏</button></div></div>
 <div id="playLock" class="overlay" hidden style="z-index:999"><div class="dialog panel"><h2>休息时间</h2><p>已累计游玩 30 分钟，请休息 30 分钟。</p><p id="playLockTime" role="timer" style="font-size:36px;color:#ffe36a"></p><p>倒计时结束后可以继续游戏，刷新页面仍保留锁定。</p></div></div>
 <div id="toast" class="toast" hidden></div>
@@ -206,12 +206,13 @@ tr.me td{background:rgba(255,201,60,.14)}
 <script src="subjects.js?v=olympiad-v4-20261002"></script>
 <script src="learning.js?v=thinking-v5-20261002"></script>
 <script src="tilt.js?v=20261002"></script>
-<script src="api.js"></script>
+<script src="api.js?v=auth-v2"></script>
 <script src="play-limit.js"></script>
 <script src="touch-guard.js?v=20261002"></script>
 <script src="music.js?v=rhythm-v1"></script>
 <script src="score.js?v=100point-v1"></script>
-<script src="game-account.js?v=100point-v1"></script>
+<script src="account-form.js?v=auth-v2"></script>
+<script src="game-account.js?v=auth-v2"></script>
 <script>
 (() => {
 'use strict';
@@ -1297,8 +1298,10 @@ setMuteTxt();
 muteBtn.onclick = () => { AU.muted = !AU.muted; store.set('muted', AU.muted); setMuteTxt();syncMusic(); };
 
 /* ================= boot ================= */
-window.addEventListener('kart-account',e=>{G.cloudUser=e.detail;$('#cloudStatus').textContent=e.detail?'已登录：'+e.detail.username+' · 完赛自动保存云端成绩':'游客可比赛，登录后保存成绩';});
-const authReady=GameAPI.call('/me').then(r=>{G.cloudUser=r.user;if(r.user)$('#cloudStatus').textContent='已登录：'+r.user.username+' · 完赛自动保存云端成绩';}).catch(()=>{$('#cloudStatus').textContent='账号服务暂时不可用，本机游玩不受影响';});
+let authRevision=0;
+window.addEventListener('kart-account',e=>{authRevision++;G.cloudUser=e.detail;$('#cloudStatus').textContent=e.detail?'已登录：'+e.detail.username+' · 完赛自动保存云端成绩':'游客可比赛，登录后保存成绩';});
+const bootAuthRevision=authRevision;
+const authReady=GameAPI.call('/me').then(r=>{if(authRevision!==bootAuthRevision)return;G.cloudUser=r.user;if(r.user)$('#cloudStatus').textContent='已登录：'+r.user.username+' · 完赛自动保存云端成绩';}).catch(()=>{if(authRevision===bootAuthRevision)$('#cloudStatus').textContent='账号服务暂时不可用，本机游玩不受影响';});
 $('#menuHelp').open=innerWidth>=900;
 applyQuality();
 setupRace();
