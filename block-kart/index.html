@@ -951,6 +951,7 @@ function buildWorldIfNeeded() {
 async function startRace() {
   if(G.starting)return;G.starting=true;$('#menu').inert=true;
   if(G.study){try{await KartLearning.load();}catch(e){toast('题库加载失败，请重试',2500);G.starting=false;$('#menu').inert=false;return;}}
+  await authReady;
   clearQuiz(); G.studyStats={total:0,correct:0}; G.cloudRun=null;
   if(G.cloudUser){
     $('#startBtn').disabled=true;
@@ -1220,7 +1221,7 @@ setMuteTxt();
 muteBtn.onclick = () => { AU.muted = !AU.muted; store.set('muted', AU.muted); setMuteTxt(); };
 
 /* ================= boot ================= */
-GameAPI.call('/me').then(r=>{G.cloudUser=r.user;if(r.user)$('#cloudStatus').textContent='已登录：'+r.user.username+' · 完赛自动保存云端成绩';}).catch(()=>{$('#cloudStatus').textContent='账号服务暂时不可用，本机游玩不受影响';});
+const authReady=GameAPI.call('/me').then(r=>{G.cloudUser=r.user;if(r.user)$('#cloudStatus').textContent='已登录：'+r.user.username+' · 完赛自动保存云端成绩';}).catch(()=>{$('#cloudStatus').textContent='账号服务暂时不可用，本机游玩不受影响';});
 applyQuality();
 setupRace();
 renderMenu();
