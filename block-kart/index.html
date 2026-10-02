@@ -56,8 +56,9 @@ button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 .keys b{color:var(--txt);font-weight:600}
 .best{font-size:12px;color:var(--mut);margin:0}
 .best b{font-family:var(--pix);color:var(--gold);font-weight:400}
-#startBtn{position:fixed;right:calc(env(safe-area-inset-right,0px) + 20px);bottom:calc(env(safe-area-inset-bottom,0px) + 24px);z-index:20;min-width:200px;min-height:58px}
-@media(max-width:760px){#menu{bottom:calc(env(safe-area-inset-bottom,0px) + 112px)}#startBtn{right:calc(env(safe-area-inset-right,0px) + 16px);bottom:calc(env(safe-area-inset-bottom,0px) + 20px);font-size:22px;min-width:190px}}
+#startBtn{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:20;min-width:200px;min-height:58px}
+#startBtn:active{transform:translate(-50%,calc(-50% + 4px))}
+@media(max-width:760px){#menu{bottom:calc(env(safe-area-inset-bottom,0px) + 112px)}#startBtn{font-size:22px;min-width:190px}}
 /* ---------- hud ---------- */
 #hud{position:fixed;inset:0;pointer-events:none;font-family:var(--pix)}
 .hud-tl{position:absolute;top:calc(env(safe-area-inset-top,0px) + 12px);left:calc(env(safe-area-inset-left,0px) + 12px);display:flex;flex-direction:column;gap:6px}
