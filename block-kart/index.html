@@ -128,6 +128,7 @@ tr.me td{background:rgba(255,201,60,.14)}
     <div><h2>难度</h2><div id="diffList" class="seg"></div></div>
     <div><h2>画质</h2><div id="qList" class="seg"></div></div>
   </section>
+  <section><h2><label for="aiFactor">AI 对手系数 <output id="aiFactorValue">1.00</output></label></h2><input id="aiFactor" type="range" min="0.70" max="1.30" step="0.05" value="1" style="width:100%;accent-color:var(--gold)"><p class="keys">0.70 更轻松 · 1.00 默认 · 1.30 更具挑战；只影响 AI 速度。</p></section>
   <p class="best" id="bestTxt"></p>
   <button id="startBtn" class="big">开始比赛</button>
   <p class="keys"><b>电脑</b>：W/↑ 油门 · S/↓ 刹车/倒车 · A D/← → 转向 · 空格 漂移 · E 道具 · P 暂停<br>
@@ -193,7 +194,7 @@ const store = {
 };
 
 /* ================= constants & data ================= */
-const B = 3, ROAD = 10, WALL = 17, LAPS = 3, BASE = 42, ACC = 24;
+const B = 3, ROAD = 14, WALL = 21, LAPS = 3, BASE = 42, ACC = 24;
 const TRACKS = [
   { name: '青草环线', sub: '湖泊 · 橡树林', seed: 11, hill: 5, water: true, capH: 5, deco: 'oak', fence: 0xe8c34a,
     pts: [[0,-120],[90,-110],[150,-50],[140,30],[80,60],[60,120],[-10,140],[-80,110],[-140,40],[-130,-50],[-70,-100]],
@@ -230,7 +231,7 @@ function autoQuality() {
   return m >= 700 ? 'mid' : 'low';
 }
 const G = {
-  state: 'menu', paused: false, trackIdx: store.get('track', 0), charIdx: store.get('char', 0), diff: store.get('diff', 1),
+  state: 'menu', paused: false, trackIdx: store.get('track', 0), charIdx: store.get('char', 0), diff: store.get('diff', 1), aiFactor: clamp(Number(store.get('aiFactor', 1)) || 1, 0.70, 1.30),
   qualSel: store.get('qual', 'auto'), qual: 'high', karts: [], player: null, tr: null, raceTime: 0, countdown: 0,
   touch: coarse, time: 0, finishT: 0, shake: 0, frameAvg: 16, slowT: 0
 };
@@ -952,7 +953,7 @@ function showResults() {
   const list = G.karts.slice().sort((a, b) => a.finishT - b.finishT);
   const rank = list.indexOf(G.player) + 1;
   $('#resTitle').textContent = rank === 1 ? '冠军！' : `第 ${rank} 名`;
-  const key = 'best_' + G.trackIdx + '_' + G.diff, prev = store.get(key, null), mine = G.player.finishT;
+  const key = 'best_wide_' + G.trackIdx + '_' + G.diff + '_' + G.aiFactor.toFixed(2), prev = store.get(key, null), mine = G.player.finishT;
   let bestMsg = '';
   if (prev == null || mine < prev) { store.set(key, mine); bestMsg = prev == null ? `首个纪录 ${fmt(mine)}` : `新纪录！${fmt(mine)}（原 ${fmt(prev)}）`; }
   else bestMsg = `本赛道最佳 ${fmt(prev)}`;
@@ -1096,7 +1097,7 @@ function step(dt) {
   G.raceTime += dt;
   const tr = G.tr, total = LAPS * tr.N;
   for (const k of G.karts) {
-    if (!k.isPlayer) k.aiMul = DIFFS[G.diff].ai * k.skill * (1 + clamp((p.along - k.along) / (tr.N * 0.12), -1, 1) * 0.085);
+    if (!k.isPlayer) k.aiMul = DIFFS[G.diff].ai * G.aiFactor * k.skill * (1 + clamp((p.along - k.along) / (tr.N * 0.12), -1, 1) * 0.085);
     let inp;
     if (k.isPlayer && !k.finished && !G.autopilot) inp = readInput();
     else inp = aiInput(k, dt);
@@ -1148,13 +1149,16 @@ function renderMenu() {
   [['极速', ch.spd, 0.9, 1.08], ['加速', ch.acc, 0.84, 1.12], ['操控', ch.hnd, 0.84, 1.14], ['重量', ch.w, 0.8, 1.32]].forEach(([n, v, a, b]) => {
     const l = document.createElement('span'); l.textContent = n; const bar = document.createElement('div'); bar.className = 'bar'; const i_ = document.createElement('i'); i_.style.width = Math.round(15 + 85 * (v - a) / (b - a)) + '%'; bar.appendChild(i_); cs.append(l, bar);
   });
+  $('#aiFactor').value = G.aiFactor;
+  $('#aiFactorValue').textContent = G.aiFactor.toFixed(2);
   const dl = $('#diffList'); dl.textContent = '';
   DIFFS.forEach((d, i) => { const b = document.createElement('button'); b.id = 'diff' + i; b.textContent = d.name; b.setAttribute('aria-pressed', i === G.diff); b.onclick = () => { G.diff = i; renderMenu(); }; dl.appendChild(b); });
   const ql = $('#qList'); ql.textContent = '';
   QUALS.forEach(q => { const b = document.createElement('button'); b.id = 'q' + q; b.textContent = QNAMES[q]; b.setAttribute('aria-pressed', q === G.qualSel); b.onclick = () => { G.qualSel = q; store.set('qual', q); G.qual = q === 'auto' ? autoQuality() : q; applyQuality(); setupRace(); renderMenu(); }; ql.appendChild(b); });
-  const best = store.get('best_' + G.trackIdx + '_' + G.diff, null);
+  const best = store.get('best_wide_' + G.trackIdx + '_' + G.diff + '_' + G.aiFactor.toFixed(2), null);
   $('#bestTxt').innerHTML = best == null ? `${TRACKS[G.trackIdx].name} · ${DIFFS[G.diff].name}：还没有纪录` : `${TRACKS[G.trackIdx].name} · ${DIFFS[G.diff].name} 最佳：<b>${fmt(best)}</b>`;
 }
+$('#aiFactor').oninput = e => { G.aiFactor = clamp(Number(e.target.value), 0.70, 1.30); store.set('aiFactor', G.aiFactor); renderMenu(); };
 $('#startBtn').onclick = startRace;
 $('#pauseBtn').onclick = () => togglePause();
 $('#resumeBtn').onclick = () => togglePause();
