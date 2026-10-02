@@ -1,5 +1,5 @@
 {
-  "version": "20261002-expanded-v3",
+  "version": "20261002-olympiad-v4",
   "region": "浙江小学学习场景",
   "notice": "原创分年级复习选择题，非浙江官方题库；基础知识跨年级复习，年级分组不代表学校具体教材进度。英语、信息科技从三年级起提供。",
   "subjects": {
@@ -13,7 +13,8 @@
     "pe": "体育与健康",
     "labor": "劳动",
     "it": "信息科技",
-    "practice": "综合实践"
+    "practice": "综合实践",
+    "olympiad": "奥数"
   },
   "questions": [
     {
@@ -25075,6 +25076,3462 @@
         "变成石头的形状"
       ],
       "explanation": "水没有固定形状，盛在容器中会呈现容器内部的形状。"
+    },
+    {
+      "id": "olympiad-1-找规律-1",
+      "grade": 1,
+      "subject": "olympiad",
+      "topic": "找规律",
+      "text": "按规律接着填：1、3、5、7、？",
+      "answer": "9",
+      "options": [
+        "9",
+        "10",
+        "11",
+        "8"
+      ],
+      "explanation": "相邻两个数每次增加2，下一个数是9。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-1-排队-1",
+      "grade": 1,
+      "subject": "olympiad",
+      "topic": "排队",
+      "text": "排队时，小明从前面数第2，从后面数第4。一共有几人？",
+      "answer": "5",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "4"
+      ],
+      "explanation": "前面数和后面数都包含小明，人数是2+4-1=5。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-1-阶梯积木-1",
+      "grade": 1,
+      "subject": "olympiad",
+      "topic": "阶梯积木",
+      "text": "积木第一层1块，第二层2块，每层多1块，共3层。用了几块？",
+      "answer": "6",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "5"
+      ],
+      "explanation": "把1到3相加，得到6块。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-1-重叠计数-1",
+      "grade": 1,
+      "subject": "olympiad",
+      "topic": "重叠计数",
+      "text": "4个小朋友喜欢红色，3个喜欢蓝色，其中1个两种都喜欢。至少喜欢一种的有几人？",
+      "answer": "6",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "5"
+      ],
+      "explanation": "两种都喜欢的人被算了两次，所以要减去1：4+3-1=6。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-1-配对-1",
+      "grade": 1,
+      "subject": "olympiad",
+      "topic": "配对",
+      "text": "每个盒子放2个球，3个盒子正好放满。需要几个球？",
+      "answer": "6",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "5"
+      ],
+      "explanation": "把2相加3次，共6个球。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-1-年龄比较-1",
+      "grade": 1,
+      "subject": "olympiad",
+      "topic": "年龄比较",
+      "text": "小红3岁，小明比她大2岁。小明几岁？",
+      "answer": "5",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "4"
+      ],
+      "explanation": "比小红大2岁，就是3+2=5岁。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-1-数字拼摆-1",
+      "grade": 1,
+      "subject": "olympiad",
+      "topic": "数字拼摆",
+      "text": "从数字1、2、3中选两个不同数字，能组成的最大两位数是？",
+      "answer": "32",
+      "options": [
+        "32",
+        "33",
+        "34",
+        "31"
+      ],
+      "explanation": "把最大的数字3放十位，把第二大的数字2放个位，得到32。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-1-间隔-1",
+      "grade": 1,
+      "subject": "olympiad",
+      "topic": "间隔",
+      "text": "小路两端都放花盆，相邻两盆之间有一个空位，共3个空位。花盆有几盆？",
+      "answer": "4",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "3"
+      ],
+      "explanation": "从第一盆开始，每增加一个空位就增加一盆，所以是3+1=4盆。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-1-位置-1",
+      "grade": 1,
+      "subject": "olympiad",
+      "topic": "位置",
+      "text": "一排有5个座位，小华坐在从左数第2个。他的右边有几个座位？",
+      "answer": "3",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "2"
+      ],
+      "explanation": "除去左边第1个和小华自己的座位，右边还有5-2=3个。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-2-鸡兔同笼-1",
+      "grade": 2,
+      "subject": "olympiad",
+      "topic": "鸡兔同笼",
+      "text": "鸡和兔一共4只，共10条腿。兔子有几只？",
+      "answer": "1",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "0"
+      ],
+      "explanation": "先当成全是鸡，有8条腿，多出2条腿；每只兔比鸡多2条腿，所以有1只兔。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-2-和差-1",
+      "grade": 2,
+      "subject": "olympiad",
+      "topic": "和差",
+      "text": "两盒球共14个，大盒比小盒多4个。小盒有几个球？",
+      "answer": "5",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "4"
+      ],
+      "explanation": "先去掉多的4个，再平均分两盒：(14-4)÷2=5。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-2-周期-1",
+      "grade": 2,
+      "subject": "olympiad",
+      "topic": "周期",
+      "text": "旗子按红、黄、蓝重复排，第8面旗的颜色编号是多少？红=1，黄=2，蓝=3。",
+      "answer": "2",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "1"
+      ],
+      "explanation": "每3面为一组，第8面对应组内第2个。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-2-握手-1",
+      "grade": 2,
+      "subject": "olympiad",
+      "topic": "握手",
+      "text": "3人见面，每两个人只握一次手，一共握几次？",
+      "answer": "3",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "2"
+      ],
+      "explanation": "每人握2次，算时每次握手被算了两遍，所以3×2÷2=3。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-2-拼正方形-1",
+      "grade": 2,
+      "subject": "olympiad",
+      "topic": "拼正方形",
+      "text": "用小棒横着连摆3个正方形，相邻两格共用一条边。最少用几根小棒？",
+      "answer": "10",
+      "options": [
+        "10",
+        "11",
+        "12",
+        "9"
+      ],
+      "explanation": "第一个用4根，以后每个增加3根：4+3×2=10。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-2-两种搭配-1",
+      "grade": 2,
+      "subject": "olympiad",
+      "topic": "两种搭配",
+      "text": "有4种上衣、2种裤子，每次各选一种。共有几种搭配？",
+      "answer": "8",
+      "options": [
+        "8",
+        "9",
+        "10",
+        "7"
+      ],
+      "explanation": "每件上衣可以搭配2条裤子，共4×2=8种。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-2-腿数-1",
+      "grade": 2,
+      "subject": "olympiad",
+      "topic": "腿数",
+      "text": "5只小鸟站在树上，飞走2只，剩下的小鸟一共有几条腿？",
+      "answer": "6",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "5"
+      ],
+      "explanation": "剩下3只，每只2条腿，共6条。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-2-两端栽树-1",
+      "grade": 2,
+      "subject": "olympiad",
+      "topic": "两端栽树",
+      "text": "一条长12米的小路，每隔3米栽一棵树，两端都栽。共栽几棵？",
+      "answer": "5",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "4"
+      ],
+      "explanation": "有12÷3=4个间隔，两端都栽，棵数比间隔多1，共5棵。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-2-重叠计数-1",
+      "grade": 2,
+      "subject": "olympiad",
+      "topic": "重叠计数",
+      "text": "6人参加跳绳，5人参加跑步，其中2人两项都参加。参加至少一项的共几人？",
+      "answer": "9",
+      "options": [
+        "9",
+        "10",
+        "11",
+        "8"
+      ],
+      "explanation": "两项都参加的2人重复计数，要减去：6+5-2=9。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-3-年龄差-1",
+      "grade": 3,
+      "subject": "olympiad",
+      "topic": "年龄差",
+      "text": "小明今年7岁，姐姐14岁。4年后，姐姐比小明大几岁？",
+      "answer": "7",
+      "options": [
+        "7",
+        "8",
+        "9",
+        "6"
+      ],
+      "explanation": "两人年龄都增加4，年龄差始终不变：14-7=7。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-3-和差-1",
+      "grade": 3,
+      "subject": "olympiad",
+      "topic": "和差",
+      "text": "两数的和是18，差是6，较大的数是多少？",
+      "answer": "12",
+      "options": [
+        "12",
+        "13",
+        "14",
+        "11"
+      ],
+      "explanation": "大数=（和+差）÷2=(18+6)÷2=12。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-3-连续数求和-1",
+      "grade": 3,
+      "subject": "olympiad",
+      "topic": "连续数求和",
+      "text": "1+2+3+…+5等于多少？",
+      "answer": "15",
+      "options": [
+        "15",
+        "16",
+        "17",
+        "14"
+      ],
+      "explanation": "首尾配对，每对和为6，总和=5×6÷2=15。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-3-长方形-1",
+      "grade": 3,
+      "subject": "olympiad",
+      "topic": "长方形",
+      "text": "长方形周长24厘米，长比宽多4厘米。宽是多少厘米？",
+      "answer": "4",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "3"
+      ],
+      "explanation": "长与宽之和为12，宽=(12-4)÷2=4。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-3-鸡兔同笼-1",
+      "grade": 3,
+      "subject": "olympiad",
+      "topic": "鸡兔同笼",
+      "text": "鸡兔共7只，腿共20条。鸡有几只？",
+      "answer": "4",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "3"
+      ],
+      "explanation": "兔子有(20-2×7)÷2=3只，所以鸡有7-3=4只。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-3-余数-1",
+      "grade": 3,
+      "subject": "olympiad",
+      "topic": "余数",
+      "text": "26个苹果，每盒放4个，最多装满几盒？",
+      "answer": "6",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "5"
+      ],
+      "explanation": "26÷4=6余2，可以装满6盒。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-3-数线段-1",
+      "grade": 3,
+      "subject": "olympiad",
+      "topic": "数线段",
+      "text": "同一直线上标出4个不同的点，每两个点确定一条线段。共有几条线段？",
+      "answer": "6",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "5"
+      ],
+      "explanation": "选两个不同的点，交换顺序还是同一条线段，共4×3÷2=6条。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-3-方阵-1",
+      "grade": 3,
+      "subject": "olympiad",
+      "topic": "方阵",
+      "text": "实心方阵每行5人，一共5行。共多少人？",
+      "answer": "25",
+      "options": [
+        "25",
+        "26",
+        "27",
+        "24"
+      ],
+      "explanation": "每行5人，5行共5×5=25人。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-3-等差规律-1",
+      "grade": 3,
+      "subject": "olympiad",
+      "topic": "等差规律",
+      "text": "数列3、6、9、12…的第5个数是多少？",
+      "answer": "15",
+      "options": [
+        "15",
+        "16",
+        "17",
+        "14"
+      ],
+      "explanation": "从第1个到第5个增加4次，每次3，所以3+4×3=15。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-4-相遇-1",
+      "grade": 4,
+      "subject": "olympiad",
+      "topic": "相遇",
+      "text": "两人从相距30米的两端同时相向走，速度为每分钟4米和6米。几分钟后相遇？",
+      "answer": "3",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "2"
+      ],
+      "explanation": "每分钟一共接近10米，时间=30÷10=3分钟。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-4-平均数-1",
+      "grade": 4,
+      "subject": "olympiad",
+      "topic": "平均数",
+      "text": "三个数平均数为11，其中两个都是10，第三个是多少？",
+      "answer": "13",
+      "options": [
+        "13",
+        "14",
+        "15",
+        "12"
+      ],
+      "explanation": "总和为11×3=33，第三个=33-2×10=13。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-4-数正方形-1",
+      "grade": 4,
+      "subject": "olympiad",
+      "topic": "数正方形",
+      "text": "4行4列的小正方形方格中，边长为2个小格的正方形有几个？",
+      "answer": "9",
+      "options": [
+        "9",
+        "10",
+        "11",
+        "8"
+      ],
+      "explanation": "左上角可以有3行、3列位置，共3×3=9个。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-4-环形栽树-1",
+      "grade": 4,
+      "subject": "olympiad",
+      "topic": "环形栽树",
+      "text": "圆形花坛周长16米，每隔4米栽一棵。共栽几棵？",
+      "answer": "4",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "3"
+      ],
+      "explanation": "封闭圆周的棵数等于间隔数：16÷4=4，不另外加1。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-4-倒推-1",
+      "grade": 4,
+      "subject": "olympiad",
+      "topic": "倒推",
+      "text": "一个数先乘3再加5，得到23。原来的数是多少？",
+      "answer": "6",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "5"
+      ],
+      "explanation": "倒过来先减5再除以3：(23-5)÷3=6。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-4-等差求和-1",
+      "grade": 4,
+      "subject": "olympiad",
+      "topic": "等差求和",
+      "text": "3+5+7+9等于多少？",
+      "answer": "24",
+      "options": [
+        "24",
+        "25",
+        "26",
+        "23"
+      ],
+      "explanation": "首尾一对、中间一对，每对和为12，合计24。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-4-容斥-1",
+      "grade": 4,
+      "subject": "olympiad",
+      "topic": "容斥",
+      "text": "9人会下棋，7人会游泳，4人两项都会。至少会一项的有几人？",
+      "answer": "12",
+      "options": [
+        "12",
+        "13",
+        "14",
+        "11"
+      ],
+      "explanation": "两项都会的4人重复计数，人数=9+7-4=12。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-4-盈亏-1",
+      "grade": 4,
+      "subject": "olympiad",
+      "topic": "盈亏",
+      "text": "给每人3个糖还剩1个，给每人4个糖还差2个。有几人？",
+      "answer": "3",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "2"
+      ],
+      "explanation": "两种分法共相差1+2=3个，每人相差1个，因此有3人。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-4-数字规律-1",
+      "grade": 4,
+      "subject": "olympiad",
+      "topic": "数字规律",
+      "text": "两位数44的十位和个位交换，数值变化了多少？",
+      "answer": "0",
+      "options": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "explanation": "两个数字相同，交换后仍为44，变化量为0。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-5-分数应用-1",
+      "grade": 5,
+      "subject": "olympiad",
+      "topic": "分数应用",
+      "text": "一袋球拿走三分之一后，还剩24个。原来有几个？",
+      "answer": "36",
+      "options": [
+        "36",
+        "37",
+        "38",
+        "35"
+      ],
+      "explanation": "剩下的是总数的三分之二，原有24÷2×3=36个。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-5-抽屉原理-1",
+      "grade": 5,
+      "subject": "olympiad",
+      "topic": "抽屉原理",
+      "text": "袋里有3种颜色的球，每种很多。不看颜色至少取几个，才能保证有2个同色？",
+      "answer": "4",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "3"
+      ],
+      "explanation": "最不利情况先取到每种颜色1个，共3个；再取1个一定重复，共4个。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-5-工程-1",
+      "grade": 5,
+      "subject": "olympiad",
+      "topic": "工程",
+      "text": "甲独做一项工作要6天，乙要12天。两人合作要几天？",
+      "answer": "4",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "3"
+      ],
+      "explanation": "把工作总量看成12份，甲每天2份，乙每天1份，合作每天3份，需要12÷3=4天。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-5-数长方形-1",
+      "grade": 5,
+      "subject": "olympiad",
+      "topic": "数长方形",
+      "text": "一个3行、4列的方格图，共有多少个长方形（包含正方形）？",
+      "answer": "60",
+      "options": [
+        "60",
+        "61",
+        "62",
+        "59"
+      ],
+      "explanation": "选两条横线有6种，选两条竖线有10种，两者相乘。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-5-周长面积-1",
+      "grade": 5,
+      "subject": "olympiad",
+      "topic": "周长面积",
+      "text": "正方形边长增加1厘米，面积增加11平方厘米。原边长几厘米？",
+      "answer": "5",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "4"
+      ],
+      "explanation": "(边长+1)²-边长²=2×边长+1，所以边长=(11-1)÷2=5。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-5-最小公倍数-1",
+      "grade": 5,
+      "subject": "olympiad",
+      "topic": "最小公倍数",
+      "text": "两个提示灯分别每3秒、4秒亮一次。现在同时亮，至少几秒后又同时亮？",
+      "answer": "12",
+      "options": [
+        "12",
+        "13",
+        "14",
+        "11"
+      ],
+      "explanation": "下一次同时亮的时间是3和4的最小公倍数，即12秒。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-5-分数人数-1",
+      "grade": 5,
+      "subject": "olympiad",
+      "topic": "分数人数",
+      "text": "班里20人，男生占四分之三。女生有几人？",
+      "answer": "5",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "4"
+      ],
+      "explanation": "女生占四分之一：20÷4=5人。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-5-环形追及-1",
+      "grade": 5,
+      "subject": "olympiad",
+      "topic": "环形追及",
+      "text": "圆形跑道一圈36米，两人同时同地同向跑，速度每秒8米和4米。快者首次追上慢者要几秒？",
+      "answer": "9",
+      "options": [
+        "9",
+        "10",
+        "11",
+        "8"
+      ],
+      "explanation": "快者要多跑一整圈，相对速度为8-4=4米/秒，时间=36÷4=9秒。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-5-因数计数-1",
+      "grade": 5,
+      "subject": "olympiad",
+      "topic": "因数计数",
+      "text": "32有几个正因数？",
+      "answer": "6",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "5"
+      ],
+      "explanation": "32=2的5次方，正因数是2的0次方到5次方，共6个。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-6-比例分配-1",
+      "grade": 6,
+      "subject": "olympiad",
+      "topic": "比例分配",
+      "text": "甲乙人数比是2:3，共20人。乙有几人？",
+      "answer": "12",
+      "options": [
+        "12",
+        "13",
+        "14",
+        "11"
+      ],
+      "explanation": "共2+3=5份，每份20÷5=4人，乙有3×4=12人。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-6-年龄倍数-1",
+      "grade": 6,
+      "subject": "olympiad",
+      "topic": "年龄倍数",
+      "text": "弟弟9岁，哥哥27岁。几年后哥哥年龄是弟弟的2倍？",
+      "answer": "9",
+      "options": [
+        "9",
+        "10",
+        "11",
+        "8"
+      ],
+      "explanation": "设经过x年：27+x=2×(9+x)，得到x=9年。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-6-浓度-1",
+      "grade": 6,
+      "subject": "olympiad",
+      "topic": "浓度",
+      "text": "60克盐水含盐12克，再加60克水，盐水含盐百分数是多少？（填百分号前的数）",
+      "answer": "10",
+      "options": [
+        "10",
+        "11",
+        "12",
+        "9"
+      ],
+      "explanation": "盐仍为12克，总质量为120克，浓度=12÷120×100%=10%。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-6-合作效率-1",
+      "grade": 6,
+      "subject": "olympiad",
+      "topic": "合作效率",
+      "text": "甲独做要9小时，乙独做要18小时，两人一起做要几小时？",
+      "answer": "6",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "5"
+      ],
+      "explanation": "工作量看成18份，甲每小时2份，乙1份，合作时间=18÷3=6小时。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-6-至少保证-1",
+      "grade": 6,
+      "subject": "olympiad",
+      "topic": "至少保证",
+      "text": "把球放入4个盒子，至少放多少个球，才能保证有一个盒子里至少3个？",
+      "answer": "9",
+      "options": [
+        "9",
+        "10",
+        "11",
+        "8"
+      ],
+      "explanation": "最不利情况每盒先放2个，共8个；再放1个必有一盒达到3个，共9个。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-6-整除-1",
+      "grade": 6,
+      "subject": "olympiad",
+      "topic": "整除",
+      "text": "一个正整数能同时被5和7整除。这样的最小正整数是多少？",
+      "answer": "35",
+      "options": [
+        "35",
+        "36",
+        "37",
+        "34"
+      ],
+      "explanation": "求5与7的最小公倍数，得到35。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-6-追及-1",
+      "grade": 6,
+      "subject": "olympiad",
+      "topic": "追及",
+      "text": "甲每分钟9米，乙每分钟6米，乙在前面45米，两人同向走。甲几分钟能追上乙？",
+      "answer": "15",
+      "options": [
+        "15",
+        "16",
+        "17",
+        "14"
+      ],
+      "explanation": "每分钟缩短距离3米，追及时间=45÷3=15分钟。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-6-组合-1",
+      "grade": 6,
+      "subject": "olympiad",
+      "topic": "组合",
+      "text": "有7个不同的点，任意两点连一条线段，共能连几条线段？",
+      "answer": "21",
+      "options": [
+        "21",
+        "22",
+        "23",
+        "20"
+      ],
+      "explanation": "每个点连到其他6个点，但每条线段算了两次：7×6÷2=21。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-6-三集合容斥-1",
+      "grade": 6,
+      "subject": "olympiad",
+      "topic": "三集合容斥",
+      "text": "A组11人、B组13人、C组10人；AB共同3人、AC共同2人、BC共同4人（三项都含三组共同的1人）。至少参加一组的共几人？",
+      "answer": "26",
+      "options": [
+        "26",
+        "27",
+        "28",
+        "25"
+      ],
+      "explanation": "总人数=11+13+10-3-2-4+1=26。三组都参加的人需最后加回一次。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-1-找规律-2",
+      "grade": 1,
+      "subject": "olympiad",
+      "topic": "找规律",
+      "text": "按规律接着填：2、5、8、11、？",
+      "answer": "14",
+      "options": [
+        "14",
+        "15",
+        "16",
+        "13"
+      ],
+      "explanation": "相邻两个数每次增加3，下一个数是14。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-1-排队-2",
+      "grade": 1,
+      "subject": "olympiad",
+      "topic": "排队",
+      "text": "排队时，小明从前面数第3，从后面数第4。一共有几人？",
+      "answer": "6",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "5"
+      ],
+      "explanation": "前面数和后面数都包含小明，人数是3+4-1=6。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-1-阶梯积木-2",
+      "grade": 1,
+      "subject": "olympiad",
+      "topic": "阶梯积木",
+      "text": "积木第一层1块，第二层2块，每层多1块，共4层。用了几块？",
+      "answer": "10",
+      "options": [
+        "10",
+        "11",
+        "12",
+        "9"
+      ],
+      "explanation": "把1到4相加，得到10块。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-1-重叠计数-2",
+      "grade": 1,
+      "subject": "olympiad",
+      "topic": "重叠计数",
+      "text": "5个小朋友喜欢红色，4个喜欢蓝色，其中2个两种都喜欢。至少喜欢一种的有几人？",
+      "answer": "7",
+      "options": [
+        "7",
+        "8",
+        "9",
+        "6"
+      ],
+      "explanation": "两种都喜欢的人被算了两次，所以要减去2：5+4-2=7。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-1-配对-2",
+      "grade": 1,
+      "subject": "olympiad",
+      "topic": "配对",
+      "text": "每个盒子放2个球，4个盒子正好放满。需要几个球？",
+      "answer": "8",
+      "options": [
+        "8",
+        "9",
+        "10",
+        "7"
+      ],
+      "explanation": "把2相加4次，共8个球。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-1-年龄比较-2",
+      "grade": 1,
+      "subject": "olympiad",
+      "topic": "年龄比较",
+      "text": "小红4岁，小明比她大3岁。小明几岁？",
+      "answer": "7",
+      "options": [
+        "7",
+        "8",
+        "9",
+        "6"
+      ],
+      "explanation": "比小红大3岁，就是4+3=7岁。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-1-数字拼摆-2",
+      "grade": 1,
+      "subject": "olympiad",
+      "topic": "数字拼摆",
+      "text": "从数字2、3、4中选两个不同数字，能组成的最大两位数是？",
+      "answer": "43",
+      "options": [
+        "43",
+        "44",
+        "45",
+        "42"
+      ],
+      "explanation": "把最大的数字4放十位，把第二大的数字3放个位，得到43。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-1-间隔-2",
+      "grade": 1,
+      "subject": "olympiad",
+      "topic": "间隔",
+      "text": "小路两端都放花盆，相邻两盆之间有一个空位，共4个空位。花盆有几盆？",
+      "answer": "5",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "4"
+      ],
+      "explanation": "从第一盆开始，每增加一个空位就增加一盆，所以是4+1=5盆。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-1-位置-2",
+      "grade": 1,
+      "subject": "olympiad",
+      "topic": "位置",
+      "text": "一排有6个座位，小华坐在从左数第2个。他的右边有几个座位？",
+      "answer": "4",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "3"
+      ],
+      "explanation": "除去左边第1个和小华自己的座位，右边还有6-2=4个。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-2-鸡兔同笼-2",
+      "grade": 2,
+      "subject": "olympiad",
+      "topic": "鸡兔同笼",
+      "text": "鸡和兔一共6只，共16条腿。兔子有几只？",
+      "answer": "2",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "1"
+      ],
+      "explanation": "先当成全是鸡，有12条腿，多出4条腿；每只兔比鸡多2条腿，所以有2只兔。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-2-和差-2",
+      "grade": 2,
+      "subject": "olympiad",
+      "topic": "和差",
+      "text": "两盒球共16个，大盒比小盒多4个。小盒有几个球？",
+      "answer": "6",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "5"
+      ],
+      "explanation": "先去掉多的4个，再平均分两盒：(16-4)÷2=6。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-2-周期-2",
+      "grade": 2,
+      "subject": "olympiad",
+      "topic": "周期",
+      "text": "旗子按红、黄、蓝重复排，第11面旗的颜色编号是多少？红=1，黄=2，蓝=3。",
+      "answer": "2",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "1"
+      ],
+      "explanation": "每3面为一组，第11面对应组内第2个。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-2-握手-2",
+      "grade": 2,
+      "subject": "olympiad",
+      "topic": "握手",
+      "text": "4人见面，每两个人只握一次手，一共握几次？",
+      "answer": "6",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "5"
+      ],
+      "explanation": "每人握3次，算时每次握手被算了两遍，所以4×3÷2=6。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-2-拼正方形-2",
+      "grade": 2,
+      "subject": "olympiad",
+      "topic": "拼正方形",
+      "text": "用小棒横着连摆4个正方形，相邻两格共用一条边。最少用几根小棒？",
+      "answer": "13",
+      "options": [
+        "13",
+        "14",
+        "15",
+        "12"
+      ],
+      "explanation": "第一个用4根，以后每个增加3根：4+3×3=13。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-2-两种搭配-2",
+      "grade": 2,
+      "subject": "olympiad",
+      "topic": "两种搭配",
+      "text": "有5种上衣、2种裤子，每次各选一种。共有几种搭配？",
+      "answer": "10",
+      "options": [
+        "10",
+        "11",
+        "12",
+        "9"
+      ],
+      "explanation": "每件上衣可以搭配2条裤子，共5×2=10种。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-2-腿数-2",
+      "grade": 2,
+      "subject": "olympiad",
+      "topic": "腿数",
+      "text": "6只小鸟站在树上，飞走3只，剩下的小鸟一共有几条腿？",
+      "answer": "6",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "5"
+      ],
+      "explanation": "剩下3只，每只2条腿，共6条。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-2-两端栽树-2",
+      "grade": 2,
+      "subject": "olympiad",
+      "topic": "两端栽树",
+      "text": "一条长15米的小路，每隔3米栽一棵树，两端都栽。共栽几棵？",
+      "answer": "6",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "5"
+      ],
+      "explanation": "有15÷3=5个间隔，两端都栽，棵数比间隔多1，共6棵。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-2-重叠计数-2",
+      "grade": 2,
+      "subject": "olympiad",
+      "topic": "重叠计数",
+      "text": "7人参加跳绳，6人参加跑步，其中2人两项都参加。参加至少一项的共几人？",
+      "answer": "11",
+      "options": [
+        "11",
+        "12",
+        "13",
+        "10"
+      ],
+      "explanation": "两项都参加的2人重复计数，要减去：7+6-2=11。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-3-年龄差-2",
+      "grade": 3,
+      "subject": "olympiad",
+      "topic": "年龄差",
+      "text": "小明今年8岁，姐姐16岁。4年后，姐姐比小明大几岁？",
+      "answer": "8",
+      "options": [
+        "8",
+        "9",
+        "10",
+        "7"
+      ],
+      "explanation": "两人年龄都增加4，年龄差始终不变：16-8=8。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-3-和差-2",
+      "grade": 3,
+      "subject": "olympiad",
+      "topic": "和差",
+      "text": "两数的和是20，差是6，较大的数是多少？",
+      "answer": "13",
+      "options": [
+        "13",
+        "14",
+        "15",
+        "12"
+      ],
+      "explanation": "大数=（和+差）÷2=(20+6)÷2=13。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-3-连续数求和-2",
+      "grade": 3,
+      "subject": "olympiad",
+      "topic": "连续数求和",
+      "text": "1+2+3+…+6等于多少？",
+      "answer": "21",
+      "options": [
+        "21",
+        "22",
+        "23",
+        "20"
+      ],
+      "explanation": "首尾配对，每对和为7，总和=6×7÷2=21。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-3-长方形-2",
+      "grade": 3,
+      "subject": "olympiad",
+      "topic": "长方形",
+      "text": "长方形周长28厘米，长比宽多4厘米。宽是多少厘米？",
+      "answer": "5",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "4"
+      ],
+      "explanation": "长与宽之和为14，宽=(14-4)÷2=5。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-3-鸡兔同笼-2",
+      "grade": 3,
+      "subject": "olympiad",
+      "topic": "鸡兔同笼",
+      "text": "鸡兔共9只，腿共26条。鸡有几只？",
+      "answer": "5",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "4"
+      ],
+      "explanation": "兔子有(26-2×9)÷2=4只，所以鸡有9-4=5只。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-3-余数-2",
+      "grade": 3,
+      "subject": "olympiad",
+      "topic": "余数",
+      "text": "30个苹果，每盒放4个，最多装满几盒？",
+      "answer": "7",
+      "options": [
+        "7",
+        "8",
+        "9",
+        "6"
+      ],
+      "explanation": "30÷4=7余2，可以装满7盒。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-3-数线段-2",
+      "grade": 3,
+      "subject": "olympiad",
+      "topic": "数线段",
+      "text": "同一直线上标出5个不同的点，每两个点确定一条线段。共有几条线段？",
+      "answer": "10",
+      "options": [
+        "10",
+        "11",
+        "12",
+        "9"
+      ],
+      "explanation": "选两个不同的点，交换顺序还是同一条线段，共5×4÷2=10条。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-3-方阵-2",
+      "grade": 3,
+      "subject": "olympiad",
+      "topic": "方阵",
+      "text": "实心方阵每行6人，一共6行。共多少人？",
+      "answer": "36",
+      "options": [
+        "36",
+        "37",
+        "38",
+        "35"
+      ],
+      "explanation": "每行6人，6行共6×6=36人。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-3-等差规律-2",
+      "grade": 3,
+      "subject": "olympiad",
+      "topic": "等差规律",
+      "text": "数列4、7、10、13…的第5个数是多少？",
+      "answer": "16",
+      "options": [
+        "16",
+        "17",
+        "18",
+        "15"
+      ],
+      "explanation": "从第1个到第5个增加4次，每次3，所以4+4×3=16。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-4-相遇-2",
+      "grade": 4,
+      "subject": "olympiad",
+      "topic": "相遇",
+      "text": "两人从相距36米的两端同时相向走，速度为每分钟5米和7米。几分钟后相遇？",
+      "answer": "3",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "2"
+      ],
+      "explanation": "每分钟一共接近12米，时间=36÷12=3分钟。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-4-平均数-2",
+      "grade": 4,
+      "subject": "olympiad",
+      "topic": "平均数",
+      "text": "三个数平均数为12，其中两个都是11，第三个是多少？",
+      "answer": "14",
+      "options": [
+        "14",
+        "15",
+        "16",
+        "13"
+      ],
+      "explanation": "总和为12×3=36，第三个=36-2×11=14。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-4-数正方形-2",
+      "grade": 4,
+      "subject": "olympiad",
+      "topic": "数正方形",
+      "text": "5行5列的小正方形方格中，边长为2个小格的正方形有几个？",
+      "answer": "16",
+      "options": [
+        "16",
+        "17",
+        "18",
+        "15"
+      ],
+      "explanation": "左上角可以有4行、4列位置，共4×4=16个。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-4-环形栽树-2",
+      "grade": 4,
+      "subject": "olympiad",
+      "topic": "环形栽树",
+      "text": "圆形花坛周长20米，每隔5米栽一棵。共栽几棵？",
+      "answer": "4",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "3"
+      ],
+      "explanation": "封闭圆周的棵数等于间隔数：20÷5=4，不另外加1。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-4-倒推-2",
+      "grade": 4,
+      "subject": "olympiad",
+      "topic": "倒推",
+      "text": "一个数先乘3再加5，得到26。原来的数是多少？",
+      "answer": "7",
+      "options": [
+        "7",
+        "8",
+        "9",
+        "6"
+      ],
+      "explanation": "倒过来先减5再除以3：(26-5)÷3=7。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-4-等差求和-2",
+      "grade": 4,
+      "subject": "olympiad",
+      "topic": "等差求和",
+      "text": "4+6+8+10等于多少？",
+      "answer": "28",
+      "options": [
+        "28",
+        "29",
+        "30",
+        "27"
+      ],
+      "explanation": "首尾一对、中间一对，每对和为14，合计28。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-4-容斥-2",
+      "grade": 4,
+      "subject": "olympiad",
+      "topic": "容斥",
+      "text": "10人会下棋，8人会游泳，4人两项都会。至少会一项的有几人？",
+      "answer": "14",
+      "options": [
+        "14",
+        "15",
+        "16",
+        "13"
+      ],
+      "explanation": "两项都会的4人重复计数，人数=10+8-4=14。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-4-盈亏-2",
+      "grade": 4,
+      "subject": "olympiad",
+      "topic": "盈亏",
+      "text": "给每人3个糖还剩1个，给每人4个糖还差3个。有几人？",
+      "answer": "4",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "3"
+      ],
+      "explanation": "两种分法共相差1+3=4个，每人相差1个，因此有4人。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-4-数字规律-2",
+      "grade": 4,
+      "subject": "olympiad",
+      "topic": "数字规律",
+      "text": "两位数55的十位和个位交换，数值变化了多少？",
+      "answer": "0",
+      "options": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "explanation": "两个数字相同，交换后仍为55，变化量为0。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-5-分数应用-2",
+      "grade": 5,
+      "subject": "olympiad",
+      "topic": "分数应用",
+      "text": "一袋球拿走三分之一后，还剩32个。原来有几个？",
+      "answer": "48",
+      "options": [
+        "48",
+        "49",
+        "50",
+        "47"
+      ],
+      "explanation": "剩下的是总数的三分之二，原有32÷2×3=48个。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-5-抽屉原理-2",
+      "grade": 5,
+      "subject": "olympiad",
+      "topic": "抽屉原理",
+      "text": "袋里有4种颜色的球，每种很多。不看颜色至少取几个，才能保证有2个同色？",
+      "answer": "5",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "4"
+      ],
+      "explanation": "最不利情况先取到每种颜色1个，共4个；再取1个一定重复，共5个。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-5-工程-2",
+      "grade": 5,
+      "subject": "olympiad",
+      "topic": "工程",
+      "text": "甲独做一项工作要9天，乙要18天。两人合作要几天？",
+      "answer": "6",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "5"
+      ],
+      "explanation": "把工作总量看成18份，甲每天2份，乙每天1份，合作每天3份，需要18÷3=6天。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-5-数长方形-2",
+      "grade": 5,
+      "subject": "olympiad",
+      "topic": "数长方形",
+      "text": "一个4行、5列的方格图，共有多少个长方形（包含正方形）？",
+      "answer": "150",
+      "options": [
+        "150",
+        "151",
+        "152",
+        "149"
+      ],
+      "explanation": "选两条横线有10种，选两条竖线有15种，两者相乘。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-5-周长面积-2",
+      "grade": 5,
+      "subject": "olympiad",
+      "topic": "周长面积",
+      "text": "正方形边长增加1厘米，面积增加13平方厘米。原边长几厘米？",
+      "answer": "6",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "5"
+      ],
+      "explanation": "(边长+1)²-边长²=2×边长+1，所以边长=(13-1)÷2=6。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-5-最小公倍数-2",
+      "grade": 5,
+      "subject": "olympiad",
+      "topic": "最小公倍数",
+      "text": "两个提示灯分别每4秒、5秒亮一次。现在同时亮，至少几秒后又同时亮？",
+      "answer": "20",
+      "options": [
+        "20",
+        "21",
+        "22",
+        "19"
+      ],
+      "explanation": "下一次同时亮的时间是4和5的最小公倍数，即20秒。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-5-分数人数-2",
+      "grade": 5,
+      "subject": "olympiad",
+      "topic": "分数人数",
+      "text": "班里24人，男生占四分之三。女生有几人？",
+      "answer": "6",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "5"
+      ],
+      "explanation": "女生占四分之一：24÷4=6人。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-5-环形追及-2",
+      "grade": 5,
+      "subject": "olympiad",
+      "topic": "环形追及",
+      "text": "圆形跑道一圈48米，两人同时同地同向跑，速度每秒8米和4米。快者首次追上慢者要几秒？",
+      "answer": "12",
+      "options": [
+        "12",
+        "13",
+        "14",
+        "11"
+      ],
+      "explanation": "快者要多跑一整圈，相对速度为8-4=4米/秒，时间=48÷4=12秒。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-5-因数计数-2",
+      "grade": 5,
+      "subject": "olympiad",
+      "topic": "因数计数",
+      "text": "64有几个正因数？",
+      "answer": "7",
+      "options": [
+        "7",
+        "8",
+        "9",
+        "6"
+      ],
+      "explanation": "64=2的6次方，正因数是2的0次方到6次方，共7个。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-6-比例分配-2",
+      "grade": 6,
+      "subject": "olympiad",
+      "topic": "比例分配",
+      "text": "甲乙人数比是2:3，共25人。乙有几人？",
+      "answer": "15",
+      "options": [
+        "15",
+        "16",
+        "17",
+        "14"
+      ],
+      "explanation": "共2+3=5份，每份25÷5=5人，乙有3×5=15人。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-6-年龄倍数-2",
+      "grade": 6,
+      "subject": "olympiad",
+      "topic": "年龄倍数",
+      "text": "弟弟12岁，哥哥36岁。几年后哥哥年龄是弟弟的2倍？",
+      "answer": "12",
+      "options": [
+        "12",
+        "13",
+        "14",
+        "11"
+      ],
+      "explanation": "设经过x年：36+x=2×(12+x)，得到x=12年。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-6-浓度-2",
+      "grade": 6,
+      "subject": "olympiad",
+      "topic": "浓度",
+      "text": "80克盐水含盐16克，再加80克水，盐水含盐百分数是多少？（填百分号前的数）",
+      "answer": "10",
+      "options": [
+        "10",
+        "11",
+        "12",
+        "9"
+      ],
+      "explanation": "盐仍为16克，总质量为160克，浓度=16÷160×100%=10%。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-6-合作效率-2",
+      "grade": 6,
+      "subject": "olympiad",
+      "topic": "合作效率",
+      "text": "甲独做要12小时，乙独做要24小时，两人一起做要几小时？",
+      "answer": "8",
+      "options": [
+        "8",
+        "9",
+        "10",
+        "7"
+      ],
+      "explanation": "工作量看成24份，甲每小时2份，乙1份，合作时间=24÷3=8小时。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-6-至少保证-2",
+      "grade": 6,
+      "subject": "olympiad",
+      "topic": "至少保证",
+      "text": "把球放入5个盒子，至少放多少个球，才能保证有一个盒子里至少3个？",
+      "answer": "11",
+      "options": [
+        "11",
+        "12",
+        "13",
+        "10"
+      ],
+      "explanation": "最不利情况每盒先放2个，共10个；再放1个必有一盒达到3个，共11个。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-6-整除-2",
+      "grade": 6,
+      "subject": "olympiad",
+      "topic": "整除",
+      "text": "一个正整数能同时被6和8整除。这样的最小正整数是多少？",
+      "answer": "24",
+      "options": [
+        "24",
+        "25",
+        "26",
+        "23"
+      ],
+      "explanation": "求6与8的最小公倍数，得到24。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-6-追及-2",
+      "grade": 6,
+      "subject": "olympiad",
+      "topic": "追及",
+      "text": "甲每分钟12米，乙每分钟8米，乙在前面60米，两人同向走。甲几分钟能追上乙？",
+      "answer": "15",
+      "options": [
+        "15",
+        "16",
+        "17",
+        "14"
+      ],
+      "explanation": "每分钟缩短距离4米，追及时间=60÷4=15分钟。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-6-组合-2",
+      "grade": 6,
+      "subject": "olympiad",
+      "topic": "组合",
+      "text": "有8个不同的点，任意两点连一条线段，共能连几条线段？",
+      "answer": "28",
+      "options": [
+        "28",
+        "29",
+        "30",
+        "27"
+      ],
+      "explanation": "每个点连到其他7个点，但每条线段算了两次：8×7÷2=28。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-6-三集合容斥-2",
+      "grade": 6,
+      "subject": "olympiad",
+      "topic": "三集合容斥",
+      "text": "A组12人、B组14人、C组11人；AB共同3人、AC共同2人、BC共同4人（三项都含三组共同的1人）。至少参加一组的共几人？",
+      "answer": "29",
+      "options": [
+        "29",
+        "30",
+        "31",
+        "28"
+      ],
+      "explanation": "总人数=12+14+11-3-2-4+1=29。三组都参加的人需最后加回一次。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-1-找规律-3",
+      "grade": 1,
+      "subject": "olympiad",
+      "topic": "找规律",
+      "text": "按规律接着填：3、7、11、15、？",
+      "answer": "19",
+      "options": [
+        "19",
+        "20",
+        "21",
+        "18"
+      ],
+      "explanation": "相邻两个数每次增加4，下一个数是19。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-1-排队-3",
+      "grade": 1,
+      "subject": "olympiad",
+      "topic": "排队",
+      "text": "排队时，小明从前面数第4，从后面数第4。一共有几人？",
+      "answer": "7",
+      "options": [
+        "7",
+        "8",
+        "9",
+        "6"
+      ],
+      "explanation": "前面数和后面数都包含小明，人数是4+4-1=7。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-1-阶梯积木-3",
+      "grade": 1,
+      "subject": "olympiad",
+      "topic": "阶梯积木",
+      "text": "积木第一层1块，第二层2块，每层多1块，共5层。用了几块？",
+      "answer": "15",
+      "options": [
+        "15",
+        "16",
+        "17",
+        "14"
+      ],
+      "explanation": "把1到5相加，得到15块。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-1-重叠计数-3",
+      "grade": 1,
+      "subject": "olympiad",
+      "topic": "重叠计数",
+      "text": "6个小朋友喜欢红色，5个喜欢蓝色，其中3个两种都喜欢。至少喜欢一种的有几人？",
+      "answer": "8",
+      "options": [
+        "8",
+        "9",
+        "10",
+        "7"
+      ],
+      "explanation": "两种都喜欢的人被算了两次，所以要减去3：6+5-3=8。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-1-配对-3",
+      "grade": 1,
+      "subject": "olympiad",
+      "topic": "配对",
+      "text": "每个盒子放2个球，5个盒子正好放满。需要几个球？",
+      "answer": "10",
+      "options": [
+        "10",
+        "11",
+        "12",
+        "9"
+      ],
+      "explanation": "把2相加5次，共10个球。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-1-年龄比较-3",
+      "grade": 1,
+      "subject": "olympiad",
+      "topic": "年龄比较",
+      "text": "小红5岁，小明比她大4岁。小明几岁？",
+      "answer": "9",
+      "options": [
+        "9",
+        "10",
+        "11",
+        "8"
+      ],
+      "explanation": "比小红大4岁，就是5+4=9岁。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-1-数字拼摆-3",
+      "grade": 1,
+      "subject": "olympiad",
+      "topic": "数字拼摆",
+      "text": "从数字3、4、5中选两个不同数字，能组成的最大两位数是？",
+      "answer": "54",
+      "options": [
+        "54",
+        "55",
+        "56",
+        "53"
+      ],
+      "explanation": "把最大的数字5放十位，把第二大的数字4放个位，得到54。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-1-间隔-3",
+      "grade": 1,
+      "subject": "olympiad",
+      "topic": "间隔",
+      "text": "小路两端都放花盆，相邻两盆之间有一个空位，共5个空位。花盆有几盆？",
+      "answer": "6",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "5"
+      ],
+      "explanation": "从第一盆开始，每增加一个空位就增加一盆，所以是5+1=6盆。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-1-位置-3",
+      "grade": 1,
+      "subject": "olympiad",
+      "topic": "位置",
+      "text": "一排有7个座位，小华坐在从左数第2个。他的右边有几个座位？",
+      "answer": "5",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "4"
+      ],
+      "explanation": "除去左边第1个和小华自己的座位，右边还有7-2=5个。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-2-鸡兔同笼-3",
+      "grade": 2,
+      "subject": "olympiad",
+      "topic": "鸡兔同笼",
+      "text": "鸡和兔一共8只，共22条腿。兔子有几只？",
+      "answer": "3",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "2"
+      ],
+      "explanation": "先当成全是鸡，有16条腿，多出6条腿；每只兔比鸡多2条腿，所以有3只兔。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-2-和差-3",
+      "grade": 2,
+      "subject": "olympiad",
+      "topic": "和差",
+      "text": "两盒球共18个，大盒比小盒多4个。小盒有几个球？",
+      "answer": "7",
+      "options": [
+        "7",
+        "8",
+        "9",
+        "6"
+      ],
+      "explanation": "先去掉多的4个，再平均分两盒：(18-4)÷2=7。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-2-周期-3",
+      "grade": 2,
+      "subject": "olympiad",
+      "topic": "周期",
+      "text": "旗子按红、黄、蓝重复排，第14面旗的颜色编号是多少？红=1，黄=2，蓝=3。",
+      "answer": "2",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "1"
+      ],
+      "explanation": "每3面为一组，第14面对应组内第2个。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-2-握手-3",
+      "grade": 2,
+      "subject": "olympiad",
+      "topic": "握手",
+      "text": "5人见面，每两个人只握一次手，一共握几次？",
+      "answer": "10",
+      "options": [
+        "10",
+        "11",
+        "12",
+        "9"
+      ],
+      "explanation": "每人握4次，算时每次握手被算了两遍，所以5×4÷2=10。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-2-拼正方形-3",
+      "grade": 2,
+      "subject": "olympiad",
+      "topic": "拼正方形",
+      "text": "用小棒横着连摆5个正方形，相邻两格共用一条边。最少用几根小棒？",
+      "answer": "16",
+      "options": [
+        "16",
+        "17",
+        "18",
+        "15"
+      ],
+      "explanation": "第一个用4根，以后每个增加3根：4+3×4=16。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-2-两种搭配-3",
+      "grade": 2,
+      "subject": "olympiad",
+      "topic": "两种搭配",
+      "text": "有6种上衣、2种裤子，每次各选一种。共有几种搭配？",
+      "answer": "12",
+      "options": [
+        "12",
+        "13",
+        "14",
+        "11"
+      ],
+      "explanation": "每件上衣可以搭配2条裤子，共6×2=12种。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-2-腿数-3",
+      "grade": 2,
+      "subject": "olympiad",
+      "topic": "腿数",
+      "text": "7只小鸟站在树上，飞走4只，剩下的小鸟一共有几条腿？",
+      "answer": "6",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "5"
+      ],
+      "explanation": "剩下3只，每只2条腿，共6条。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-2-两端栽树-3",
+      "grade": 2,
+      "subject": "olympiad",
+      "topic": "两端栽树",
+      "text": "一条长18米的小路，每隔3米栽一棵树，两端都栽。共栽几棵？",
+      "answer": "7",
+      "options": [
+        "7",
+        "8",
+        "9",
+        "6"
+      ],
+      "explanation": "有18÷3=6个间隔，两端都栽，棵数比间隔多1，共7棵。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-2-重叠计数-3",
+      "grade": 2,
+      "subject": "olympiad",
+      "topic": "重叠计数",
+      "text": "8人参加跳绳，7人参加跑步，其中2人两项都参加。参加至少一项的共几人？",
+      "answer": "13",
+      "options": [
+        "13",
+        "14",
+        "15",
+        "12"
+      ],
+      "explanation": "两项都参加的2人重复计数，要减去：8+7-2=13。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-3-年龄差-3",
+      "grade": 3,
+      "subject": "olympiad",
+      "topic": "年龄差",
+      "text": "小明今年9岁，姐姐18岁。4年后，姐姐比小明大几岁？",
+      "answer": "9",
+      "options": [
+        "9",
+        "10",
+        "11",
+        "8"
+      ],
+      "explanation": "两人年龄都增加4，年龄差始终不变：18-9=9。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-3-和差-3",
+      "grade": 3,
+      "subject": "olympiad",
+      "topic": "和差",
+      "text": "两数的和是22，差是6，较大的数是多少？",
+      "answer": "14",
+      "options": [
+        "14",
+        "15",
+        "16",
+        "13"
+      ],
+      "explanation": "大数=（和+差）÷2=(22+6)÷2=14。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-3-连续数求和-3",
+      "grade": 3,
+      "subject": "olympiad",
+      "topic": "连续数求和",
+      "text": "1+2+3+…+7等于多少？",
+      "answer": "28",
+      "options": [
+        "28",
+        "29",
+        "30",
+        "27"
+      ],
+      "explanation": "首尾配对，每对和为8，总和=7×8÷2=28。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-3-长方形-3",
+      "grade": 3,
+      "subject": "olympiad",
+      "topic": "长方形",
+      "text": "长方形周长32厘米，长比宽多4厘米。宽是多少厘米？",
+      "answer": "6",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "5"
+      ],
+      "explanation": "长与宽之和为16，宽=(16-4)÷2=6。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-3-鸡兔同笼-3",
+      "grade": 3,
+      "subject": "olympiad",
+      "topic": "鸡兔同笼",
+      "text": "鸡兔共11只，腿共32条。鸡有几只？",
+      "answer": "6",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "5"
+      ],
+      "explanation": "兔子有(32-2×11)÷2=5只，所以鸡有11-5=6只。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-3-余数-3",
+      "grade": 3,
+      "subject": "olympiad",
+      "topic": "余数",
+      "text": "34个苹果，每盒放4个，最多装满几盒？",
+      "answer": "8",
+      "options": [
+        "8",
+        "9",
+        "10",
+        "7"
+      ],
+      "explanation": "34÷4=8余2，可以装满8盒。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-3-数线段-3",
+      "grade": 3,
+      "subject": "olympiad",
+      "topic": "数线段",
+      "text": "同一直线上标出6个不同的点，每两个点确定一条线段。共有几条线段？",
+      "answer": "15",
+      "options": [
+        "15",
+        "16",
+        "17",
+        "14"
+      ],
+      "explanation": "选两个不同的点，交换顺序还是同一条线段，共6×5÷2=15条。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-3-方阵-3",
+      "grade": 3,
+      "subject": "olympiad",
+      "topic": "方阵",
+      "text": "实心方阵每行7人，一共7行。共多少人？",
+      "answer": "49",
+      "options": [
+        "49",
+        "50",
+        "51",
+        "48"
+      ],
+      "explanation": "每行7人，7行共7×7=49人。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-3-等差规律-3",
+      "grade": 3,
+      "subject": "olympiad",
+      "topic": "等差规律",
+      "text": "数列5、8、11、14…的第5个数是多少？",
+      "answer": "17",
+      "options": [
+        "17",
+        "18",
+        "19",
+        "16"
+      ],
+      "explanation": "从第1个到第5个增加4次，每次3，所以5+4×3=17。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-4-相遇-3",
+      "grade": 4,
+      "subject": "olympiad",
+      "topic": "相遇",
+      "text": "两人从相距42米的两端同时相向走，速度为每分钟6米和8米。几分钟后相遇？",
+      "answer": "3",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "2"
+      ],
+      "explanation": "每分钟一共接近14米，时间=42÷14=3分钟。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-4-平均数-3",
+      "grade": 4,
+      "subject": "olympiad",
+      "topic": "平均数",
+      "text": "三个数平均数为13，其中两个都是12，第三个是多少？",
+      "answer": "15",
+      "options": [
+        "15",
+        "16",
+        "17",
+        "14"
+      ],
+      "explanation": "总和为13×3=39，第三个=39-2×12=15。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-4-数正方形-3",
+      "grade": 4,
+      "subject": "olympiad",
+      "topic": "数正方形",
+      "text": "6行6列的小正方形方格中，边长为2个小格的正方形有几个？",
+      "answer": "25",
+      "options": [
+        "25",
+        "26",
+        "27",
+        "24"
+      ],
+      "explanation": "左上角可以有5行、5列位置，共5×5=25个。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-4-环形栽树-3",
+      "grade": 4,
+      "subject": "olympiad",
+      "topic": "环形栽树",
+      "text": "圆形花坛周长24米，每隔6米栽一棵。共栽几棵？",
+      "answer": "4",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "3"
+      ],
+      "explanation": "封闭圆周的棵数等于间隔数：24÷6=4，不另外加1。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-4-倒推-3",
+      "grade": 4,
+      "subject": "olympiad",
+      "topic": "倒推",
+      "text": "一个数先乘3再加5，得到29。原来的数是多少？",
+      "answer": "8",
+      "options": [
+        "8",
+        "9",
+        "10",
+        "7"
+      ],
+      "explanation": "倒过来先减5再除以3：(29-5)÷3=8。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-4-等差求和-3",
+      "grade": 4,
+      "subject": "olympiad",
+      "topic": "等差求和",
+      "text": "5+7+9+11等于多少？",
+      "answer": "32",
+      "options": [
+        "32",
+        "33",
+        "34",
+        "31"
+      ],
+      "explanation": "首尾一对、中间一对，每对和为16，合计32。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-4-容斥-3",
+      "grade": 4,
+      "subject": "olympiad",
+      "topic": "容斥",
+      "text": "11人会下棋，9人会游泳，4人两项都会。至少会一项的有几人？",
+      "answer": "16",
+      "options": [
+        "16",
+        "17",
+        "18",
+        "15"
+      ],
+      "explanation": "两项都会的4人重复计数，人数=11+9-4=16。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-4-盈亏-3",
+      "grade": 4,
+      "subject": "olympiad",
+      "topic": "盈亏",
+      "text": "给每人3个糖还剩1个，给每人4个糖还差4个。有几人？",
+      "answer": "5",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "4"
+      ],
+      "explanation": "两种分法共相差1+4=5个，每人相差1个，因此有5人。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-4-数字规律-3",
+      "grade": 4,
+      "subject": "olympiad",
+      "topic": "数字规律",
+      "text": "两位数66的十位和个位交换，数值变化了多少？",
+      "answer": "0",
+      "options": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "explanation": "两个数字相同，交换后仍为66，变化量为0。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-5-分数应用-3",
+      "grade": 5,
+      "subject": "olympiad",
+      "topic": "分数应用",
+      "text": "一袋球拿走三分之一后，还剩40个。原来有几个？",
+      "answer": "60",
+      "options": [
+        "60",
+        "61",
+        "62",
+        "59"
+      ],
+      "explanation": "剩下的是总数的三分之二，原有40÷2×3=60个。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-5-抽屉原理-3",
+      "grade": 5,
+      "subject": "olympiad",
+      "topic": "抽屉原理",
+      "text": "袋里有5种颜色的球，每种很多。不看颜色至少取几个，才能保证有2个同色？",
+      "answer": "6",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "5"
+      ],
+      "explanation": "最不利情况先取到每种颜色1个，共5个；再取1个一定重复，共6个。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-5-工程-3",
+      "grade": 5,
+      "subject": "olympiad",
+      "topic": "工程",
+      "text": "甲独做一项工作要12天，乙要24天。两人合作要几天？",
+      "answer": "8",
+      "options": [
+        "8",
+        "9",
+        "10",
+        "7"
+      ],
+      "explanation": "把工作总量看成24份，甲每天2份，乙每天1份，合作每天3份，需要24÷3=8天。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-5-数长方形-3",
+      "grade": 5,
+      "subject": "olympiad",
+      "topic": "数长方形",
+      "text": "一个5行、6列的方格图，共有多少个长方形（包含正方形）？",
+      "answer": "315",
+      "options": [
+        "315",
+        "316",
+        "317",
+        "314"
+      ],
+      "explanation": "选两条横线有15种，选两条竖线有21种，两者相乘。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-5-周长面积-3",
+      "grade": 5,
+      "subject": "olympiad",
+      "topic": "周长面积",
+      "text": "正方形边长增加1厘米，面积增加15平方厘米。原边长几厘米？",
+      "answer": "7",
+      "options": [
+        "7",
+        "8",
+        "9",
+        "6"
+      ],
+      "explanation": "(边长+1)²-边长²=2×边长+1，所以边长=(15-1)÷2=7。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-5-最小公倍数-3",
+      "grade": 5,
+      "subject": "olympiad",
+      "topic": "最小公倍数",
+      "text": "两个提示灯分别每5秒、6秒亮一次。现在同时亮，至少几秒后又同时亮？",
+      "answer": "30",
+      "options": [
+        "30",
+        "31",
+        "32",
+        "29"
+      ],
+      "explanation": "下一次同时亮的时间是5和6的最小公倍数，即30秒。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-5-分数人数-3",
+      "grade": 5,
+      "subject": "olympiad",
+      "topic": "分数人数",
+      "text": "班里28人，男生占四分之三。女生有几人？",
+      "answer": "7",
+      "options": [
+        "7",
+        "8",
+        "9",
+        "6"
+      ],
+      "explanation": "女生占四分之一：28÷4=7人。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-5-环形追及-3",
+      "grade": 5,
+      "subject": "olympiad",
+      "topic": "环形追及",
+      "text": "圆形跑道一圈60米，两人同时同地同向跑，速度每秒8米和4米。快者首次追上慢者要几秒？",
+      "answer": "15",
+      "options": [
+        "15",
+        "16",
+        "17",
+        "14"
+      ],
+      "explanation": "快者要多跑一整圈，相对速度为8-4=4米/秒，时间=60÷4=15秒。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-5-因数计数-3",
+      "grade": 5,
+      "subject": "olympiad",
+      "topic": "因数计数",
+      "text": "128有几个正因数？",
+      "answer": "8",
+      "options": [
+        "8",
+        "9",
+        "10",
+        "7"
+      ],
+      "explanation": "128=2的7次方，正因数是2的0次方到7次方，共8个。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-6-比例分配-3",
+      "grade": 6,
+      "subject": "olympiad",
+      "topic": "比例分配",
+      "text": "甲乙人数比是2:3，共30人。乙有几人？",
+      "answer": "18",
+      "options": [
+        "18",
+        "19",
+        "20",
+        "17"
+      ],
+      "explanation": "共2+3=5份，每份30÷5=6人，乙有3×6=18人。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-6-年龄倍数-3",
+      "grade": 6,
+      "subject": "olympiad",
+      "topic": "年龄倍数",
+      "text": "弟弟15岁，哥哥45岁。几年后哥哥年龄是弟弟的2倍？",
+      "answer": "15",
+      "options": [
+        "15",
+        "16",
+        "17",
+        "14"
+      ],
+      "explanation": "设经过x年：45+x=2×(15+x)，得到x=15年。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-6-浓度-3",
+      "grade": 6,
+      "subject": "olympiad",
+      "topic": "浓度",
+      "text": "100克盐水含盐20克，再加100克水，盐水含盐百分数是多少？（填百分号前的数）",
+      "answer": "10",
+      "options": [
+        "10",
+        "11",
+        "12",
+        "9"
+      ],
+      "explanation": "盐仍为20克，总质量为200克，浓度=20÷200×100%=10%。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-6-合作效率-3",
+      "grade": 6,
+      "subject": "olympiad",
+      "topic": "合作效率",
+      "text": "甲独做要15小时，乙独做要30小时，两人一起做要几小时？",
+      "answer": "10",
+      "options": [
+        "10",
+        "11",
+        "12",
+        "9"
+      ],
+      "explanation": "工作量看成30份，甲每小时2份，乙1份，合作时间=30÷3=10小时。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-6-至少保证-3",
+      "grade": 6,
+      "subject": "olympiad",
+      "topic": "至少保证",
+      "text": "把球放入6个盒子，至少放多少个球，才能保证有一个盒子里至少3个？",
+      "answer": "13",
+      "options": [
+        "13",
+        "14",
+        "15",
+        "12"
+      ],
+      "explanation": "最不利情况每盒先放2个，共12个；再放1个必有一盒达到3个，共13个。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-6-整除-3",
+      "grade": 6,
+      "subject": "olympiad",
+      "topic": "整除",
+      "text": "一个正整数能同时被7和9整除。这样的最小正整数是多少？",
+      "answer": "63",
+      "options": [
+        "63",
+        "64",
+        "65",
+        "62"
+      ],
+      "explanation": "求7与9的最小公倍数，得到63。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-6-追及-3",
+      "grade": 6,
+      "subject": "olympiad",
+      "topic": "追及",
+      "text": "甲每分钟15米，乙每分钟10米，乙在前面75米，两人同向走。甲几分钟能追上乙？",
+      "answer": "15",
+      "options": [
+        "15",
+        "16",
+        "17",
+        "14"
+      ],
+      "explanation": "每分钟缩短距离5米，追及时间=75÷5=15分钟。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-6-组合-3",
+      "grade": 6,
+      "subject": "olympiad",
+      "topic": "组合",
+      "text": "有9个不同的点，任意两点连一条线段，共能连几条线段？",
+      "answer": "36",
+      "options": [
+        "36",
+        "37",
+        "38",
+        "35"
+      ],
+      "explanation": "每个点连到其他8个点，但每条线段算了两次：9×8÷2=36。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-6-三集合容斥-3",
+      "grade": 6,
+      "subject": "olympiad",
+      "topic": "三集合容斥",
+      "text": "A组13人、B组15人、C组12人；AB共同3人、AC共同2人、BC共同4人（三项都含三组共同的1人）。至少参加一组的共几人？",
+      "answer": "32",
+      "options": [
+        "32",
+        "33",
+        "34",
+        "31"
+      ],
+      "explanation": "总人数=13+15+12-3-2-4+1=32。三组都参加的人需最后加回一次。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-1-找规律-4",
+      "grade": 1,
+      "subject": "olympiad",
+      "topic": "找规律",
+      "text": "按规律接着填：4、9、14、19、？",
+      "answer": "24",
+      "options": [
+        "24",
+        "25",
+        "26",
+        "23"
+      ],
+      "explanation": "相邻两个数每次增加5，下一个数是24。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-1-排队-4",
+      "grade": 1,
+      "subject": "olympiad",
+      "topic": "排队",
+      "text": "排队时，小明从前面数第5，从后面数第4。一共有几人？",
+      "answer": "8",
+      "options": [
+        "8",
+        "9",
+        "10",
+        "7"
+      ],
+      "explanation": "前面数和后面数都包含小明，人数是5+4-1=8。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-1-阶梯积木-4",
+      "grade": 1,
+      "subject": "olympiad",
+      "topic": "阶梯积木",
+      "text": "积木第一层1块，第二层2块，每层多1块，共6层。用了几块？",
+      "answer": "21",
+      "options": [
+        "21",
+        "22",
+        "23",
+        "20"
+      ],
+      "explanation": "把1到6相加，得到21块。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-1-重叠计数-4",
+      "grade": 1,
+      "subject": "olympiad",
+      "topic": "重叠计数",
+      "text": "7个小朋友喜欢红色，6个喜欢蓝色，其中4个两种都喜欢。至少喜欢一种的有几人？",
+      "answer": "9",
+      "options": [
+        "9",
+        "10",
+        "11",
+        "8"
+      ],
+      "explanation": "两种都喜欢的人被算了两次，所以要减去4：7+6-4=9。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-1-配对-4",
+      "grade": 1,
+      "subject": "olympiad",
+      "topic": "配对",
+      "text": "每个盒子放2个球，6个盒子正好放满。需要几个球？",
+      "answer": "12",
+      "options": [
+        "12",
+        "13",
+        "14",
+        "11"
+      ],
+      "explanation": "把2相加6次，共12个球。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-1-年龄比较-4",
+      "grade": 1,
+      "subject": "olympiad",
+      "topic": "年龄比较",
+      "text": "小红6岁，小明比她大5岁。小明几岁？",
+      "answer": "11",
+      "options": [
+        "11",
+        "12",
+        "13",
+        "10"
+      ],
+      "explanation": "比小红大5岁，就是6+5=11岁。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-1-数字拼摆-4",
+      "grade": 1,
+      "subject": "olympiad",
+      "topic": "数字拼摆",
+      "text": "从数字4、5、6中选两个不同数字，能组成的最大两位数是？",
+      "answer": "65",
+      "options": [
+        "65",
+        "66",
+        "67",
+        "64"
+      ],
+      "explanation": "把最大的数字6放十位，把第二大的数字5放个位，得到65。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-1-间隔-4",
+      "grade": 1,
+      "subject": "olympiad",
+      "topic": "间隔",
+      "text": "小路两端都放花盆，相邻两盆之间有一个空位，共6个空位。花盆有几盆？",
+      "answer": "7",
+      "options": [
+        "7",
+        "8",
+        "9",
+        "6"
+      ],
+      "explanation": "从第一盆开始，每增加一个空位就增加一盆，所以是6+1=7盆。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-1-位置-4",
+      "grade": 1,
+      "subject": "olympiad",
+      "topic": "位置",
+      "text": "一排有8个座位，小华坐在从左数第2个。他的右边有几个座位？",
+      "answer": "6",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "5"
+      ],
+      "explanation": "除去左边第1个和小华自己的座位，右边还有8-2=6个。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-2-鸡兔同笼-4",
+      "grade": 2,
+      "subject": "olympiad",
+      "topic": "鸡兔同笼",
+      "text": "鸡和兔一共10只，共28条腿。兔子有几只？",
+      "answer": "4",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "3"
+      ],
+      "explanation": "先当成全是鸡，有20条腿，多出8条腿；每只兔比鸡多2条腿，所以有4只兔。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-2-和差-4",
+      "grade": 2,
+      "subject": "olympiad",
+      "topic": "和差",
+      "text": "两盒球共20个，大盒比小盒多4个。小盒有几个球？",
+      "answer": "8",
+      "options": [
+        "8",
+        "9",
+        "10",
+        "7"
+      ],
+      "explanation": "先去掉多的4个，再平均分两盒：(20-4)÷2=8。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-2-周期-4",
+      "grade": 2,
+      "subject": "olympiad",
+      "topic": "周期",
+      "text": "旗子按红、黄、蓝重复排，第17面旗的颜色编号是多少？红=1，黄=2，蓝=3。",
+      "answer": "2",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "1"
+      ],
+      "explanation": "每3面为一组，第17面对应组内第2个。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-2-握手-4",
+      "grade": 2,
+      "subject": "olympiad",
+      "topic": "握手",
+      "text": "6人见面，每两个人只握一次手，一共握几次？",
+      "answer": "15",
+      "options": [
+        "15",
+        "16",
+        "17",
+        "14"
+      ],
+      "explanation": "每人握5次，算时每次握手被算了两遍，所以6×5÷2=15。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-2-拼正方形-4",
+      "grade": 2,
+      "subject": "olympiad",
+      "topic": "拼正方形",
+      "text": "用小棒横着连摆6个正方形，相邻两格共用一条边。最少用几根小棒？",
+      "answer": "19",
+      "options": [
+        "19",
+        "20",
+        "21",
+        "18"
+      ],
+      "explanation": "第一个用4根，以后每个增加3根：4+3×5=19。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-2-两种搭配-4",
+      "grade": 2,
+      "subject": "olympiad",
+      "topic": "两种搭配",
+      "text": "有7种上衣、2种裤子，每次各选一种。共有几种搭配？",
+      "answer": "14",
+      "options": [
+        "14",
+        "15",
+        "16",
+        "13"
+      ],
+      "explanation": "每件上衣可以搭配2条裤子，共7×2=14种。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-2-腿数-4",
+      "grade": 2,
+      "subject": "olympiad",
+      "topic": "腿数",
+      "text": "8只小鸟站在树上，飞走5只，剩下的小鸟一共有几条腿？",
+      "answer": "6",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "5"
+      ],
+      "explanation": "剩下3只，每只2条腿，共6条。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-2-两端栽树-4",
+      "grade": 2,
+      "subject": "olympiad",
+      "topic": "两端栽树",
+      "text": "一条长21米的小路，每隔3米栽一棵树，两端都栽。共栽几棵？",
+      "answer": "8",
+      "options": [
+        "8",
+        "9",
+        "10",
+        "7"
+      ],
+      "explanation": "有21÷3=7个间隔，两端都栽，棵数比间隔多1，共8棵。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-2-重叠计数-4",
+      "grade": 2,
+      "subject": "olympiad",
+      "topic": "重叠计数",
+      "text": "9人参加跳绳，8人参加跑步，其中2人两项都参加。参加至少一项的共几人？",
+      "answer": "15",
+      "options": [
+        "15",
+        "16",
+        "17",
+        "14"
+      ],
+      "explanation": "两项都参加的2人重复计数，要减去：9+8-2=15。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-3-年龄差-4",
+      "grade": 3,
+      "subject": "olympiad",
+      "topic": "年龄差",
+      "text": "小明今年10岁，姐姐20岁。4年后，姐姐比小明大几岁？",
+      "answer": "10",
+      "options": [
+        "10",
+        "11",
+        "12",
+        "9"
+      ],
+      "explanation": "两人年龄都增加4，年龄差始终不变：20-10=10。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-3-和差-4",
+      "grade": 3,
+      "subject": "olympiad",
+      "topic": "和差",
+      "text": "两数的和是24，差是6，较大的数是多少？",
+      "answer": "15",
+      "options": [
+        "15",
+        "16",
+        "17",
+        "14"
+      ],
+      "explanation": "大数=（和+差）÷2=(24+6)÷2=15。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-3-连续数求和-4",
+      "grade": 3,
+      "subject": "olympiad",
+      "topic": "连续数求和",
+      "text": "1+2+3+…+8等于多少？",
+      "answer": "36",
+      "options": [
+        "36",
+        "37",
+        "38",
+        "35"
+      ],
+      "explanation": "首尾配对，每对和为9，总和=8×9÷2=36。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-3-长方形-4",
+      "grade": 3,
+      "subject": "olympiad",
+      "topic": "长方形",
+      "text": "长方形周长36厘米，长比宽多4厘米。宽是多少厘米？",
+      "answer": "7",
+      "options": [
+        "7",
+        "8",
+        "9",
+        "6"
+      ],
+      "explanation": "长与宽之和为18，宽=(18-4)÷2=7。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-3-鸡兔同笼-4",
+      "grade": 3,
+      "subject": "olympiad",
+      "topic": "鸡兔同笼",
+      "text": "鸡兔共13只，腿共38条。鸡有几只？",
+      "answer": "7",
+      "options": [
+        "7",
+        "8",
+        "9",
+        "6"
+      ],
+      "explanation": "兔子有(38-2×13)÷2=6只，所以鸡有13-6=7只。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-3-余数-4",
+      "grade": 3,
+      "subject": "olympiad",
+      "topic": "余数",
+      "text": "38个苹果，每盒放4个，最多装满几盒？",
+      "answer": "9",
+      "options": [
+        "9",
+        "10",
+        "11",
+        "8"
+      ],
+      "explanation": "38÷4=9余2，可以装满9盒。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-3-数线段-4",
+      "grade": 3,
+      "subject": "olympiad",
+      "topic": "数线段",
+      "text": "同一直线上标出7个不同的点，每两个点确定一条线段。共有几条线段？",
+      "answer": "21",
+      "options": [
+        "21",
+        "22",
+        "23",
+        "20"
+      ],
+      "explanation": "选两个不同的点，交换顺序还是同一条线段，共7×6÷2=21条。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-3-方阵-4",
+      "grade": 3,
+      "subject": "olympiad",
+      "topic": "方阵",
+      "text": "实心方阵每行8人，一共8行。共多少人？",
+      "answer": "64",
+      "options": [
+        "64",
+        "65",
+        "66",
+        "63"
+      ],
+      "explanation": "每行8人，8行共8×8=64人。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-3-等差规律-4",
+      "grade": 3,
+      "subject": "olympiad",
+      "topic": "等差规律",
+      "text": "数列6、9、12、15…的第5个数是多少？",
+      "answer": "18",
+      "options": [
+        "18",
+        "19",
+        "20",
+        "17"
+      ],
+      "explanation": "从第1个到第5个增加4次，每次3，所以6+4×3=18。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-4-相遇-4",
+      "grade": 4,
+      "subject": "olympiad",
+      "topic": "相遇",
+      "text": "两人从相距48米的两端同时相向走，速度为每分钟7米和9米。几分钟后相遇？",
+      "answer": "3",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "2"
+      ],
+      "explanation": "每分钟一共接近16米，时间=48÷16=3分钟。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-4-平均数-4",
+      "grade": 4,
+      "subject": "olympiad",
+      "topic": "平均数",
+      "text": "三个数平均数为14，其中两个都是13，第三个是多少？",
+      "answer": "16",
+      "options": [
+        "16",
+        "17",
+        "18",
+        "15"
+      ],
+      "explanation": "总和为14×3=42，第三个=42-2×13=16。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-4-数正方形-4",
+      "grade": 4,
+      "subject": "olympiad",
+      "topic": "数正方形",
+      "text": "7行7列的小正方形方格中，边长为2个小格的正方形有几个？",
+      "answer": "36",
+      "options": [
+        "36",
+        "37",
+        "38",
+        "35"
+      ],
+      "explanation": "左上角可以有6行、6列位置，共6×6=36个。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-4-环形栽树-4",
+      "grade": 4,
+      "subject": "olympiad",
+      "topic": "环形栽树",
+      "text": "圆形花坛周长28米，每隔7米栽一棵。共栽几棵？",
+      "answer": "4",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "3"
+      ],
+      "explanation": "封闭圆周的棵数等于间隔数：28÷7=4，不另外加1。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-4-倒推-4",
+      "grade": 4,
+      "subject": "olympiad",
+      "topic": "倒推",
+      "text": "一个数先乘3再加5，得到32。原来的数是多少？",
+      "answer": "9",
+      "options": [
+        "9",
+        "10",
+        "11",
+        "8"
+      ],
+      "explanation": "倒过来先减5再除以3：(32-5)÷3=9。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-4-等差求和-4",
+      "grade": 4,
+      "subject": "olympiad",
+      "topic": "等差求和",
+      "text": "6+8+10+12等于多少？",
+      "answer": "36",
+      "options": [
+        "36",
+        "37",
+        "38",
+        "35"
+      ],
+      "explanation": "首尾一对、中间一对，每对和为18，合计36。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-4-容斥-4",
+      "grade": 4,
+      "subject": "olympiad",
+      "topic": "容斥",
+      "text": "12人会下棋，10人会游泳，4人两项都会。至少会一项的有几人？",
+      "answer": "18",
+      "options": [
+        "18",
+        "19",
+        "20",
+        "17"
+      ],
+      "explanation": "两项都会的4人重复计数，人数=12+10-4=18。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-4-盈亏-4",
+      "grade": 4,
+      "subject": "olympiad",
+      "topic": "盈亏",
+      "text": "给每人3个糖还剩1个，给每人4个糖还差5个。有几人？",
+      "answer": "6",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "5"
+      ],
+      "explanation": "两种分法共相差1+5=6个，每人相差1个，因此有6人。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-4-数字规律-4",
+      "grade": 4,
+      "subject": "olympiad",
+      "topic": "数字规律",
+      "text": "两位数77的十位和个位交换，数值变化了多少？",
+      "answer": "0",
+      "options": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "explanation": "两个数字相同，交换后仍为77，变化量为0。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-5-分数应用-4",
+      "grade": 5,
+      "subject": "olympiad",
+      "topic": "分数应用",
+      "text": "一袋球拿走三分之一后，还剩48个。原来有几个？",
+      "answer": "72",
+      "options": [
+        "72",
+        "73",
+        "74",
+        "71"
+      ],
+      "explanation": "剩下的是总数的三分之二，原有48÷2×3=72个。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-5-抽屉原理-4",
+      "grade": 5,
+      "subject": "olympiad",
+      "topic": "抽屉原理",
+      "text": "袋里有6种颜色的球，每种很多。不看颜色至少取几个，才能保证有2个同色？",
+      "answer": "7",
+      "options": [
+        "7",
+        "8",
+        "9",
+        "6"
+      ],
+      "explanation": "最不利情况先取到每种颜色1个，共6个；再取1个一定重复，共7个。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-5-工程-4",
+      "grade": 5,
+      "subject": "olympiad",
+      "topic": "工程",
+      "text": "甲独做一项工作要15天，乙要30天。两人合作要几天？",
+      "answer": "10",
+      "options": [
+        "10",
+        "11",
+        "12",
+        "9"
+      ],
+      "explanation": "把工作总量看成30份，甲每天2份，乙每天1份，合作每天3份，需要30÷3=10天。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-5-数长方形-4",
+      "grade": 5,
+      "subject": "olympiad",
+      "topic": "数长方形",
+      "text": "一个6行、7列的方格图，共有多少个长方形（包含正方形）？",
+      "answer": "588",
+      "options": [
+        "588",
+        "589",
+        "590",
+        "587"
+      ],
+      "explanation": "选两条横线有21种，选两条竖线有28种，两者相乘。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-5-周长面积-4",
+      "grade": 5,
+      "subject": "olympiad",
+      "topic": "周长面积",
+      "text": "正方形边长增加1厘米，面积增加17平方厘米。原边长几厘米？",
+      "answer": "8",
+      "options": [
+        "8",
+        "9",
+        "10",
+        "7"
+      ],
+      "explanation": "(边长+1)²-边长²=2×边长+1，所以边长=(17-1)÷2=8。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-5-最小公倍数-4",
+      "grade": 5,
+      "subject": "olympiad",
+      "topic": "最小公倍数",
+      "text": "两个提示灯分别每6秒、7秒亮一次。现在同时亮，至少几秒后又同时亮？",
+      "answer": "42",
+      "options": [
+        "42",
+        "43",
+        "44",
+        "41"
+      ],
+      "explanation": "下一次同时亮的时间是6和7的最小公倍数，即42秒。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-5-分数人数-4",
+      "grade": 5,
+      "subject": "olympiad",
+      "topic": "分数人数",
+      "text": "班里32人，男生占四分之三。女生有几人？",
+      "answer": "8",
+      "options": [
+        "8",
+        "9",
+        "10",
+        "7"
+      ],
+      "explanation": "女生占四分之一：32÷4=8人。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-5-环形追及-4",
+      "grade": 5,
+      "subject": "olympiad",
+      "topic": "环形追及",
+      "text": "圆形跑道一圈72米，两人同时同地同向跑，速度每秒8米和4米。快者首次追上慢者要几秒？",
+      "answer": "18",
+      "options": [
+        "18",
+        "19",
+        "20",
+        "17"
+      ],
+      "explanation": "快者要多跑一整圈，相对速度为8-4=4米/秒，时间=72÷4=18秒。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-5-因数计数-4",
+      "grade": 5,
+      "subject": "olympiad",
+      "topic": "因数计数",
+      "text": "256有几个正因数？",
+      "answer": "9",
+      "options": [
+        "9",
+        "10",
+        "11",
+        "8"
+      ],
+      "explanation": "256=2的8次方，正因数是2的0次方到8次方，共9个。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-6-比例分配-4",
+      "grade": 6,
+      "subject": "olympiad",
+      "topic": "比例分配",
+      "text": "甲乙人数比是2:3，共35人。乙有几人？",
+      "answer": "21",
+      "options": [
+        "21",
+        "22",
+        "23",
+        "20"
+      ],
+      "explanation": "共2+3=5份，每份35÷5=7人，乙有3×7=21人。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-6-年龄倍数-4",
+      "grade": 6,
+      "subject": "olympiad",
+      "topic": "年龄倍数",
+      "text": "弟弟18岁，哥哥54岁。几年后哥哥年龄是弟弟的2倍？",
+      "answer": "18",
+      "options": [
+        "18",
+        "19",
+        "20",
+        "17"
+      ],
+      "explanation": "设经过x年：54+x=2×(18+x)，得到x=18年。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-6-浓度-4",
+      "grade": 6,
+      "subject": "olympiad",
+      "topic": "浓度",
+      "text": "120克盐水含盐24克，再加120克水，盐水含盐百分数是多少？（填百分号前的数）",
+      "answer": "10",
+      "options": [
+        "10",
+        "11",
+        "12",
+        "9"
+      ],
+      "explanation": "盐仍为24克，总质量为240克，浓度=24÷240×100%=10%。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-6-合作效率-4",
+      "grade": 6,
+      "subject": "olympiad",
+      "topic": "合作效率",
+      "text": "甲独做要18小时，乙独做要36小时，两人一起做要几小时？",
+      "answer": "12",
+      "options": [
+        "12",
+        "13",
+        "14",
+        "11"
+      ],
+      "explanation": "工作量看成36份，甲每小时2份，乙1份，合作时间=36÷3=12小时。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-6-至少保证-4",
+      "grade": 6,
+      "subject": "olympiad",
+      "topic": "至少保证",
+      "text": "把球放入7个盒子，至少放多少个球，才能保证有一个盒子里至少3个？",
+      "answer": "15",
+      "options": [
+        "15",
+        "16",
+        "17",
+        "14"
+      ],
+      "explanation": "最不利情况每盒先放2个，共14个；再放1个必有一盒达到3个，共15个。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-6-整除-4",
+      "grade": 6,
+      "subject": "olympiad",
+      "topic": "整除",
+      "text": "一个正整数能同时被8和10整除。这样的最小正整数是多少？",
+      "answer": "40",
+      "options": [
+        "40",
+        "41",
+        "42",
+        "39"
+      ],
+      "explanation": "求8与10的最小公倍数，得到40。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-6-追及-4",
+      "grade": 6,
+      "subject": "olympiad",
+      "topic": "追及",
+      "text": "甲每分钟18米，乙每分钟12米，乙在前面90米，两人同向走。甲几分钟能追上乙？",
+      "answer": "15",
+      "options": [
+        "15",
+        "16",
+        "17",
+        "14"
+      ],
+      "explanation": "每分钟缩短距离6米，追及时间=90÷6=15分钟。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-6-组合-4",
+      "grade": 6,
+      "subject": "olympiad",
+      "topic": "组合",
+      "text": "有10个不同的点，任意两点连一条线段，共能连几条线段？",
+      "answer": "45",
+      "options": [
+        "45",
+        "46",
+        "47",
+        "44"
+      ],
+      "explanation": "每个点连到其他9个点，但每条线段算了两次：10×9÷2=45。",
+      "sourceType": "original"
+    },
+    {
+      "id": "olympiad-6-三集合容斥-4",
+      "grade": 6,
+      "subject": "olympiad",
+      "topic": "三集合容斥",
+      "text": "A组14人、B组16人、C组13人；AB共同3人、AC共同2人、BC共同4人（三项都含三组共同的1人）。至少参加一组的共几人？",
+      "answer": "35",
+      "options": [
+        "35",
+        "36",
+        "37",
+        "34"
+      ],
+      "explanation": "总人数=14+16+13-3-2-4+1=35。三组都参加的人需最后加回一次。",
+      "sourceType": "original"
     }
   ],
   "sources": [

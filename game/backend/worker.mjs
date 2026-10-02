@@ -1,5 +1,5 @@
 const VERSION='composite-v1';
-const SUBJECTS=['all','math','english','chinese','science','ethics','music','art','pe','labor','it','practice','local'];
+const SUBJECTS=['all','math','olympiad','english','chinese','science','ethics','music','art','pe','labor','it','practice','local'];
 const enc=new TextEncoder();
 const hex=b=>Array.from(new Uint8Array(b),x=>x.toString(16).padStart(2,'0')).join('');
 async function sha(v){return hex(await crypto.subtle.digest('SHA-256',enc.encode(v)));}

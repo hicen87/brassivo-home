@@ -1,7 +1,7 @@
 (async()=>{
 const $=id=>document.getElementById(id),api=GameAPI;
 const tracks=['青草环线','赤砂峡谷','雪峰回廊'],diffs=['休闲','标准','极速'];
-const names={all:'综合',math:'数学',chinese:'语文',english:'英语',science:'科学',ethics:'道德与法治',music:'音乐',art:'美术',pe:'体育与健康',labor:'劳动',it:'信息科技',practice:'综合实践'};
+const names={all:'综合',math:'数学',olympiad:'奥数',chinese:'语文',english:'英语',science:'科学',ethics:'道德与法治',music:'音乐',art:'美术',pe:'体育与健康',labor:'劳动',it:'信息科技',practice:'综合实践'};
 const fmt=ms=>`${Math.floor(ms/60000)}:${((ms%60000)/1000).toFixed(2).padStart(5,'0')}`;
 let sequence=0;
 function status(text){$('accountStatus').textContent=text;}
