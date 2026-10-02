@@ -59,6 +59,16 @@ button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 #startBtn{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:20;min-width:200px;min-height:58px}
 #startBtn:active{transform:translate(-50%,calc(-50% + 4px))}
 @media(max-width:760px){#menu{bottom:calc(env(safe-area-inset-bottom,0px) + 112px)}#startBtn{font-size:22px;min-width:190px}}
+#playAdmin,#playUnlockForm,#playUnlockForm label{min-width:0;max-width:100%;box-sizing:border-box}
+#playUnlockForm{grid-template-columns:minmax(0,1fr)}
+#playAdminPin,#playUnlockBtn{width:100%;max-width:100%;min-width:0;box-sizing:border-box}
+#playUnlockStatus{overflow-wrap:anywhere}
+/* ---------- incoming missile warning ---------- */
+#missileWarning{position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 60px 12px rgba(255,35,55,.45);border:4px solid rgba(255,55,65,.75);box-sizing:border-box;animation:threatPulse 1.4s ease-in-out infinite;z-index:2}
+#missileWarning span{position:absolute;top:27%;left:50%;transform:translateX(-50%);max-width:85%;width:max-content;padding:10px 16px;background:rgba(65,8,18,.9);border:2px solid #ff6575;border-radius:8px;color:#fff1f3;font-size:20px;text-align:center;line-height:1.5;text-shadow:0 1px 2px #000}
+@keyframes threatPulse{0%,100%{opacity:.55}50%{opacity:1}}
+@media(prefers-reduced-motion:reduce){#missileWarning{animation:none}}
+@media(max-width:600px){#missileWarning span{font-size:16px;top:25%}}
 /* ---------- hud ---------- */
 #hud{position:fixed;inset:0;pointer-events:none;font-family:var(--pix)}
 .hud-tl{position:absolute;top:calc(env(safe-area-inset-top,0px) + 12px);left:calc(env(safe-area-inset-left,0px) + 12px);display:flex;flex-direction:column;gap:6px}
@@ -156,7 +166,7 @@ tr.me td{background:rgba(255,201,60,.14)}
 <details id="menuHelp" class="panel menu-help"><summary>操作说明</summary>  <p class="keys"><b>电脑</b>：W/↑ 油门 · S/↓ 刹车/倒车 · A D/← → 转向 · 空格 漂移 · E 道具 · 学霸模式 I/O/P 使用对应道具 · Esc 暂停<br>
   <b>手机/平板</b>：iPad 默认左右方向键，按住右下角加速；手机默认倾斜转向（自动油门），可切换方向键 · 右侧 加速 / 道具 / 刹车（道具按从左到右使用，自动跳过空格）<br>
   <b>手柄</b>：左摇杆转向 · RT 油门 · LT 刹车 · RB 漂移 · X 道具<br>
-  道具：火箭加速；果冻块设陷阱；追踪弹攻击；护盾抵挡一次攻击（8秒）；闪电攻击24米内对手；冰冻弹击倒并减速3秒。<br>漂移时间越长火花越亮：蓝 → 橙 → 紫，松开即加速。倒数到"1"时踩油门可起步冲刺。</p></details>
+  道具（8种等概率）：果冻块设陷阱；追踪弹攻击；护盾抵挡一次攻击（8秒）；闪电攻击24米内对手；冰冻弹击倒并减速3秒；弹簧跳跃腾空躲陷阱；巨型车6秒撞倒对手；笑脸烟雾18米范围减速3秒。<br>漂移时间越长火花越亮：蓝 → 橙 → 紫，松开即加速。倒数到"1"时踩油门可起步冲刺。</p></details>
 <button id="startBtn" class="big">开始比赛 →</button>
 <div id="quizOv" style="z-index:100" class="overlay" role="dialog" aria-modal="true" aria-labelledby="quizTitle" hidden><div class="dialog panel"><h2 id="quizTitle" tabindex="-1" style="outline:none">终点答题</h2><p id="quizQuestion"></p><p class="keys">比赛已暂停，不限答题时间。先理解条件，再作答。</p><div id="quizChoices" class="seg"></div><div id="quizReview" hidden><p id="quizFeedback" role="status"></p><p id="quizExplanation" style="white-space:pre-wrap;line-height:1.6"></p><button id="quizContinue" class="alt" style="min-height:48px;width:100%">继续比赛 →</button></div><p class="keys">答对随机补满空道具格；答错不获得道具，不惩罚驾驶。</p></div></div>
 <div id="hud" hidden>
@@ -167,6 +177,7 @@ tr.me td{background:rgba(255,201,60,.14)}
   </div>
   <div class="hud-tc"><div id="studyItems" hidden style="display:flex;gap:8px"></div><div id="itemSlot" class="slot"><img id="itemImg" alt="" hidden><span id="itemCount" hidden style="position:absolute;bottom:-8px;right:-8px;background:#ffe36a;color:#17232b;border:2px solid #17232b;border-radius:8px;padding:1px 5px;font-size:14px;line-height:20px"></span></div></div>
   <div class="hud-tr"><div class="pos" id="posTxt">6<small>/6</small></div><button id="pauseBtn" class="icon-btn" aria-label="暂停">II</button></div>
+  <div id="missileWarning" hidden role="status" aria-live="polite"><span id="missileWarningText"></span></div>
   <div id="center" class="center"></div>
   <div class="speedo"><span id="spdTxt">0</span><small>KM/H</small><small id="engineReadout" style="display:block;font-size:12px;letter-spacing:1px;color:#a9b2c6">D1 · 1100 RPM</small></div>
 </div>
@@ -260,7 +271,7 @@ const DIFFS = [
 ];
 const QUALS = ['low', 'mid', 'high'];
 const QNAMES = { low: '流畅', mid: '均衡', high: '精美' };
-const ITEM_NAMES = { turbo: '火箭', jelly: '果冻块', missile: '追踪弹',shield:'护盾',lightning:'闪电',ice:'冰冻弹' };
+const ITEM_NAMES = { jelly: '果冻块', missile: '追踪弹',shield:'护盾',lightning:'闪电',ice:'冰冻弹',spring:'弹簧跳跃',giant:'巨型车',smoke:'笑脸烟雾弹' };
 
 /* ================= device & quality ================= */
 const isIPad=/iPad/.test(navigator.userAgent)||(/Macintosh/.test(navigator.userAgent)&&navigator.maxTouchPoints>1);
@@ -355,10 +366,12 @@ function faceCanvas(ch, scale = 1) {
 }
 function pix(draw) { const c = document.createElement('canvas'); c.width = 16; c.height = 16; const g = c.getContext('2d'); draw((x, y, w, h, col) => { g.fillStyle = col; g.fillRect(x, y, w, h); }); return c.toDataURL(); }
 const ICONS = {
+ spring:pix(r=>{r(3,2,10,2,'#ec70ff');r(5,4,6,2,'#e9eeff');r(3,6,10,2,'#ec70ff');r(5,8,6,2,'#e9eeff');r(3,10,10,2,'#ec70ff');r(2,13,12,2,'#ffee55');}),
+ giant:pix(r=>{r(2,5,12,7,'#ff893e');r(4,2,8,4,'#ffcc55');r(1,11,4,4,'#252530');r(11,11,4,4,'#252530');r(5,6,2,2,'#ffffff');r(9,6,2,2,'#ffffff');}),
+ smoke:pix(r=>{r(3,1,10,14,'#ffe45b');r(1,3,14,10,'#ffe45b');r(4,5,2,3,'#252530');r(10,5,2,3,'#252530');r(4,10,2,2,'#252530');r(10,10,2,2,'#252530');r(6,12,4,1,'#252530');}),
  shield:pix(r=>{r(3,2,10,8,'#47aaff');r(5,10,6,3,'#47aaff');r(7,13,2,2,'#47aaff');r(6,4,4,7,'#d5f5ff');}),
  lightning:pix(r=>{r(8,1,5,3,'#ffec52');r(6,4,5,3,'#ffec52');r(4,7,8,3,'#ffec52');r(7,10,3,3,'#ffec52');r(5,13,3,2,'#ffec52');}),
  ice:pix(r=>{r(7,1,2,14,'#6cddff');r(1,7,14,2,'#6cddff');r(3,3,2,2,'#ddfaff');r(11,3,2,2,'#ddfaff');r(3,11,2,2,'#ddfaff');r(11,11,2,2,'#ddfaff');r(5,5,6,6,'#b1edff');}),
-  turbo: pix(r => { r(6, 1, 4, 2, '#e8412c'); r(5, 3, 6, 7, '#d6dbe4'); r(6, 4, 4, 2, '#5aa9ff'); r(3, 8, 2, 3, '#e8412c'); r(11, 8, 2, 3, '#e8412c'); r(6, 10, 4, 2, '#7d8594'); r(6, 12, 4, 2, '#ffb02e'); r(7, 14, 2, 2, '#fff06a'); }),
   jelly: pix(r => { r(2, 3, 12, 11, '#1f6b2a'); r(3, 4, 10, 9, '#4fd26a'); r(4, 5, 3, 2, '#c8ffd2'); r(5, 8, 2, 2, '#15171c'); r(9, 8, 2, 2, '#15171c'); r(6, 11, 4, 1, '#1f6b2a'); }),
   missile: pix(r => { r(2, 6, 10, 4, '#e8412c'); r(12, 7, 2, 2, '#e8412c'); r(14, 7, 1, 2, '#ffd24a'); r(4, 6, 1, 4, '#ffffff'); r(2, 3, 3, 3, '#9aa3b2'); r(2, 10, 3, 3, '#9aa3b2'); r(0, 7, 2, 2, '#ffb02e'); })
 };
@@ -384,10 +397,13 @@ function lam(c) { if (!matCache[c]) matCache[c] = new THREE.MeshLambertMaterial(
 function box(parent, w, h, d, x, y, z, mat) { const m = new THREE.Mesh(boxGeo, mat); m.scale.set(w, h, d); m.position.set(x, y, z); m.castShadow = true; parent.add(m); return m; }
 
 /* ================= track ================= */
+function trackCurve(def){return new THREE.CatmullRomCurve3(def.pts.map(p=>new THREE.Vector3(p[0],0,p[1])),true,'centripetal');}
+const TRACK_LENGTH = Math.max(...TRACKS.map(def=>trackCurve(def).getLength()))*1.5;
 function buildTrack(def) {
-  const pts = def.pts.map(p => new THREE.Vector3(p[0], 0, p[1]));
+  const factor=TRACK_LENGTH/trackCurve(def).getLength();
+  const pts = def.pts.map(p => new THREE.Vector3(p[0]*factor, 0, p[1]*factor));
   const curve = new THREE.CatmullRomCurve3(pts, true, 'centripetal');
-  const len = curve.getLength(); const N = Math.round(len / 2);
+  const len = TRACK_LENGTH; const N = Math.round(len / 2);
   const sp = curve.getSpacedPoints(N);
   const px = new Float32Array(N), pz = new Float32Array(N), tx = new Float32Array(N), tz = new Float32Array(N), th = new Float32Array(N);
   for (let i = 0; i < N; i++) { px[i] = sp[i].x; pz[i] = sp[i].z; }
@@ -579,6 +595,16 @@ function buildWorld(ti) {
 }
 
 /* ================= karts ================= */
+// Shared lightweight bubble shell: faint center, luminous curved rim.
+const shieldGeometry = new THREE.SphereGeometry(3.3,24,16);
+const shieldMaterial = new THREE.ShaderMaterial({
+  transparent:true,depthWrite:false,side:THREE.FrontSide,
+  vertexShader:`varying vec3 vNormal;varying vec3 vView;void main(){vec4 p=modelViewMatrix*vec4(position,1.0);vNormal=normalize(normalMatrix*normal);vView=-p.xyz;gl_Position=projectionMatrix*p;}`,
+  fragmentShader:`varying vec3 vNormal;varying vec3 vView;void main(){vec3 n=normalize(vNormal);float rim=pow(1.0-max(dot(n,normalize(vView)),0.0),2.0);float shine=pow(max(dot(n,normalize(vec3(-0.4,0.7,0.6))),0.0),32.0);vec3 color=mix(vec3(0.15,0.65,1.0),vec3(0.85,0.98,1.0),rim*0.6+shine*0.4);gl_FragColor=vec4(color,0.055+rim*0.58+shine*0.25);}`
+});
+const smileCanvas=document.createElement('canvas');smileCanvas.width=64;smileCanvas.height=64;
+const smileCtx=smileCanvas.getContext('2d');smileCtx.fillStyle='#ffe45b';smileCtx.beginPath();smileCtx.arc(32,32,29,0,Math.PI*2);smileCtx.fill();smileCtx.fillStyle='#292238';smileCtx.fillRect(18,19,6,10);smileCtx.fillRect(40,19,6,10);smileCtx.strokeStyle='#292238';smileCtx.lineWidth=5;smileCtx.beginPath();smileCtx.arc(32,33,16,0.15,Math.PI-0.15);smileCtx.stroke();
+const smileMaterial=new THREE.SpriteMaterial({map:new THREE.CanvasTexture(smileCanvas),transparent:true,depthWrite:false});
 function makeKartMesh(ch) {
   const g = new THREE.Group(), body = new THREE.Group(); g.add(body);
   const cm = lam(ch.color), dark = lam(0x2a2d34), tire = lam(0x18181c), metal = lam(0xb8bec8), shirt = lam(ch.shirt);
@@ -602,12 +628,15 @@ function makeKartMesh(ch) {
   if (ch.extra === 'coal') { box(body, 0.4, 0.4, 0.4, 0.3, 3.45, -0.4, lam(0xe0662b)); }
   if (ch.extra === 'petal') { box(body, 0.8, 0.25, 0.8, 0, 3.4, -0.35, lam(0xffd0e4)); box(body, 0.3, 0.3, 0.3, 0, 3.6, -0.35, lam(0xf2c230)); }
   if (ch.extra === 'brick') { box(body, 1.35, 0.2, 1.35, 0, 3.35, -0.35, lam(0x9c3a28)); }
-  return { g, body, wheels };
+  const shield = new THREE.Mesh(shieldGeometry,shieldMaterial);
+  shield.position.set(0,1.85,0.2);shield.scale.set(1,0.78,1.07);shield.visible=false;shield.renderOrder=3;g.add(shield);
+  const smile=new THREE.Sprite(smileMaterial);smile.position.set(0,5.1,0);smile.scale.set(2.3,2.3,1);smile.visible=false;g.add(smile);
+  return { g, body, wheels, shield, smile };
 }
 function makeKart(ci, isPlayer) {
   const ch = CHARS[ci]; const mesh = makeKartMesh(ch); scene.add(mesh.g);
   return { ch, ci, isPlayer, ...mesh, x: 0, z: 0, y: 0, vy: 0, heading: 0, speed: 0, idx: 0, lat: 0, along: 0,
-    drifting: false, driftDir: 0, driftCharge: 0, driftHeld: false, boostT: 0, spinT: 0, spinA: 0, hits:0, shieldT:0,freezeT:0, item: null, itemQueue: [], rollT: 0, finished: false, finishT: 0,
+    drifting: false, driftDir: 0, driftCharge: 0, driftHeld: false, boostT: 0, spinT: 0, spinA: 0, hits:0, shieldT:0,freezeT:0,giantT:0,smokeT:0, item: null, itemQueue: [], rollT: 0, finished: false, finishT: 0,
     aiLat: 0, aiLatGoal: 0, aiLatT: 0, aiItemT: 2, aiDriftT: 0, aiMul: 1, skill: 1, wrongT: 0, wallT: 0, lastLap: 1, visYaw: 0, hopHeld: false };
 }
 function clearKarts() { for (const k of G.karts) scene.remove(k.g); G.karts = []; }
@@ -625,6 +654,11 @@ function placeGrid(order) {
 }
 function syncKartMesh(k, dt) {
   k.g.position.set(k.x, k.y, k.z); k.g.rotation.y = k.heading;
+  k.body.scale.setScalar(k.giantT>0?1.45:1);
+  k.smile.visible=k.smokeT>0;k.smile.position.y=5.1+Math.sin(k.smokeT*6)*0.25;
+  k.shield.visible=k.shieldT>0;
+  const bubblePulse=(1+Math.sin(k.shieldT*3)*0.015)*(k.giantT>0?1.45:1);
+  k.shield.scale.set(bubblePulse,0.78*bubblePulse,1.07*bubblePulse);
   const targetYaw = k.drifting ? -k.driftDir * 0.42 : 0;
   k.visYaw = lerp(k.visYaw, targetYaw, Math.min(1, dt * 10));
   k.body.rotation.y = k.visYaw + (k.spinT > 0 ? k.spinA : 0);
@@ -752,11 +786,8 @@ function readInput() {
 /* ================= race logic ================= */
 function rankOf(k) { return G.order.indexOf(k); }
 function pickItem(rank) {
-  const r = rank / (G.karts.length - 1);
-  const w = { turbo: 1 + r * 3, missile: 0.3 + r * 2.2, jelly: 2.6 - r * 2,shield:1.4,lightning:0.5+r,ice:0.8+r };
-  let s = Object.values(w).reduce((a,b)=>a+b,0), x = Math.random() * s;
-  for (const k of Object.keys(w)) { x -= w[k]; if (x <= 0) return k; }
-  return 'turbo';
+  const types=Object.keys(ITEM_NAMES);
+  return types[Math.min(types.length-1,Math.floor(Math.random()*types.length))];
 }
 async function saveCloudScore(seconds) {
   const id=G.cloudRun; if(!id)return; G.cloudRun=null;
@@ -815,7 +846,9 @@ function giveItem(k) { if (k.item || k.rollT > 0) return; k.rollT = k.isPlayer ?
 function useItem(k,index=0) {
   const items=heldItems(k);if(index===-1)index=items.findIndex(Boolean);if(!items[index])return;const it=items[index];items[index]=null;setItems(k,items);
   const fx = Math.sin(k.heading), fz = Math.cos(k.heading);
-  if (it === 'turbo') { k.boostT = Math.max(k.boostT, 1.6); if (k.isPlayer) sfx('boost'); }
+  if(it==='spring'){k.vy=Math.max(k.vy,12);if(k.isPlayer)toast('弹簧跳跃！腾空躲过地面陷阱',1600);sfx('boost');for(let i=0;i<12;i++)emit(k.x,k.y+.3,k.z,(Math.random()-.5)*8,4,(Math.random()-.5)*8,0xee77ff,.5,.6);}
+  else if(it==='giant'){k.giantT=6;k.giantTargets=new Set();if(k.isPlayer)toast('巨型车！6秒内撞倒对手',1800);sfx('item');}
+  else if(it==='smoke'){let n=0;for(const target of G.karts){if(target===k||target.finished||(target.x-k.x)**2+(target.z-k.z)**2>18**2)continue;if(target.shieldT>0){target.shieldT=0;if(target.isPlayer)toast('护盾挡住了笑脸烟雾',1500);continue;}target.smokeT=3;n++;for(let i=0;i<12;i++)emit(target.x,target.y+3,target.z,(Math.random()-.5)*7,3,(Math.random()-.5)*7,0xd29aff,.9,1);if(target.isPlayer)toast('中了笑脸烟雾！3秒减速',1800);}if(k.isPlayer)toast('笑脸烟雾影响 '+n+' 位对手',1800);sfx('fire');}
   else if(it==='shield'){k.shieldT=8;if(k.isPlayer)toast('护盾：8秒内抵挡一次攻击',2000);sfx('item');}
   else if(it==='lightning'){let n=0;for(const target of G.karts){if(target!==k&&!target.finished&&(target.x-k.x)**2+(target.z-k.z)**2<24**2){const before=k.hits||0;hitKart(target,k);if((k.hits||0)>before)n++;}}if(k.isPlayer)toast('闪电击倒 '+n+' 位对手',2000);sfx('fire');for(let i=0;i<20;i++)emit(k.x,k.y+2,k.z,(Math.random()-.5)*24,6,(Math.random()-.5)*24,0xffee55,.8,.6);}
   else if (it === 'jelly') {
@@ -864,7 +897,7 @@ function aiInput(k, dt) {
     k.aiItemT -= dt;
     if (k.aiItemT <= 0) {
       const r = rankOf(k);
-      if (k.item === 'turbo' || (k.item === 'missile' && r > 0) || (k.item === 'jelly' && r < G.karts.length - 1) || k.aiItemT < -6) { useItem(k); k.aiItemT = 2 + Math.random() * 5; }
+      if (['spring','giant','smoke','shield','lightning','ice'].includes(k.item) || (k.item === 'missile' && r > 0) || (k.item === 'jelly' && r < G.karts.length - 1) || k.aiItemT < -6) { useItem(k); k.aiItemT = 2 + Math.random() * 5; }
     }
   }
   return { thr: brk ? 0 : 1, brk, steer, drift, item: false };
@@ -872,14 +905,17 @@ function aiInput(k, dt) {
 const NOIN = { thr: 0, brk: false, steer: 0, drift: false, item: false };
 function updateKart(k, inp, dt) {
   const tr = G.tr, N = tr.N, st = k.ch;
-  if(k.shieldT>0){k.shieldT=Math.max(0,k.shieldT-dt);if(Math.random()<dt*12)emit(k.x,k.y+2,k.z,0,2,0,0x47aaff,.5,.8);}
+  if(k.shieldT>0)k.shieldT=Math.max(0,k.shieldT-dt);
   if(k.freezeT>0)k.freezeT=Math.max(0,k.freezeT-dt);
+  if(k.giantT>0)k.giantT=Math.max(0,k.giantT-dt);
+  if(k.smokeT>0)k.smokeT=Math.max(0,k.smokeT-dt);
   if (k.studySpin > 0) { k.studySpin = Math.max(0,k.studySpin-dt); k.spinT=k.studySpin; k.spinA+=dt*14; k.speed=0; if (!k.studySpin) k.spinA=0; return; }
   if (k.rollT > 0) { k.rollT -= dt; if (k.rollT <= 0) { k.item = pickItem(rankOf(k)); if (k.isPlayer) sfx('item'); else k.aiItemT = 1 + Math.random() * 4; } }
   if (inp.item && k.spinT <= 0) useItem(k,inp.choice||0);
   if (k.spinT > 0) { k.spinT -= dt; k.spinA += dt * 14; inp = NOIN; if (k.spinT <= 0) k.spinA = 0; }
   let maxS = BASE * DIFFS[G.diff].scale * st.spd * (k.isPlayer ? 1 : k.aiMul);
   if(k.freezeT>0)maxS*=.55;
+  if(k.smokeT>0)maxS*=.7;
   const spAbs = Math.abs(k.speed);
   const offroad = Math.abs(k.lat) > ROAD + 0.8;
   if (k.boostT > 0) { k.boostT -= dt; maxS *= 1.34; } else if (offroad) maxS *= 0.55;
@@ -949,8 +985,10 @@ function interactions(dt) {
   const ks = G.karts;
   for (let i = 0; i < ks.length; i++) for (let j = i + 1; j < ks.length; j++) {
     const a = ks[i], b = ks[j], dx = b.x - a.x, dz = b.z - a.z, d2 = dx * dx + dz * dz;
-    if (d2 < 7.8 && d2 > 0.0001) {
-      const d = Math.sqrt(d2), o = (2.8 - d), nx = dx / d, nz = dz / d, wa = b.ch.w / (a.ch.w + b.ch.w), wb = 1 - wa;
+    const contact=(a.giantT>0||b.giantT>0)?3.8:2.8;
+    if(d2<contact*contact&&Math.abs(a.y-b.y)<2){const giant=a.giantT>0&&!(b.giantT>0)?a:b.giantT>0&&!(a.giantT>0)?b:null;if(giant){const victim=giant===a?b:a;giant.giantTargets??=new Set();if(!giant.giantTargets.has(victim)){giant.giantTargets.add(victim);hitKart(victim,giant);}}}
+    if (d2 < contact*contact && d2 > 0.0001) {
+      const d = Math.sqrt(d2), o = (contact - d), nx = dx / d, nz = dz / d, wa = b.ch.w / (a.ch.w + b.ch.w), wb = 1 - wa;
       a.x -= nx * o * wa; a.z -= nz * o * wa; b.x += nx * o * wb; b.z += nz * o * wb;
       if ((a.isPlayer || b.isPlayer) && o > 0.4) sfx('bump');
     }
@@ -970,7 +1008,7 @@ function interactions(dt) {
     for (const k of ks) {
       if (j.arm > 0 && k === j.owner) continue;
       const dx = k.x - j.x, dz = k.z - j.z;
-      if (dx * dx + dz * dz < 5.3) { hitKart(k,j.owner); world.group.remove(j.m); world.jellies.splice(i, 1); break; }
+      if (k.y<1.2 && dx * dx + dz * dz < 5.3) { hitKart(k,j.owner); world.group.remove(j.m); world.jellies.splice(i, 1); break; }
     }
   }
   const tr = G.tr, N = tr.N;
@@ -1144,7 +1182,17 @@ function menuCamera(t) {
 /* ================= HUD ================= */
 const hud = { lap: $('#lapTxt'), time: $('#timeTxt'), pos: $('#posTxt'), spd: $('#spdTxt'), img: $('#itemImg'), slot: $('#itemSlot') };
 let lastPos = -1, lastLapTxt = '', lastItem = 'x', rollIconT = 0;
+function updateMissileWarning(){
+  const warning=$('#missileWarning'),p=G.player;
+  const incoming=G.state==='race'&&!G.paused&&p&&!p.finished&&world.missiles.some(m=>m.target===p&&m.owner!==p&&m.life>0);
+  warning.hidden=!incoming;if(!incoming)return;
+  const slot=heldItems(p).indexOf('shield');
+  const protection=p.shieldT>0?'气泡护盾已开启':slot>=0?(!G.touch&&G.study?'按 '+['I','O','P'][slot]+' 开启护盾':!G.touch?'按 E 开启护盾':'使用道具按钮开启护盾（按格子顺序）'):'注意躲避！';
+  const text='⚠ 追踪弹来袭 · '+protection;
+  if($('#missileWarningText').textContent!==text)$('#missileWarningText').textContent=text;
+}
 function updateHud(dt) {
+  updateMissileWarning();
   const p = G.player, r = rankOf(p) + 1;
   if (r !== lastPos) { lastPos = r; hud.pos.innerHTML = `${r}<small>/${G.karts.length}</small>`; }
   const lap = clamp(Math.floor(Math.max(0, p.along) / G.tr.N) + 1, 1, LAPS);
@@ -1181,6 +1229,7 @@ function frame(now) {
   if (document.hidden) return;
   G.frameAvg = lerp(G.frameAvg, dt * 1000, 0.05);
   if (G.state === 'menu') {
+    $('#missileWarning').hidden=true;
     menuCamera(G.time);
     for (const k of G.karts) { k.body.rotation.y = 0; k.g.visible = true; }
     animateWorld(dt);
@@ -1196,6 +1245,7 @@ function frame(now) {
   animateWorld(G.paused ? 0 : dt);
   updateParticles(G.paused ? 0 : dt);
   if (G.player) { updateCamera(G.paused ? 0 : dt); if (G.state !== 'results') updateHud(dt); }
+  if(G.state==='results')$('#missileWarning').hidden=true;
   renderer.render(scene, camera);
 }
 function animateWorld(dt) {
