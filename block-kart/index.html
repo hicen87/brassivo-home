@@ -77,12 +77,10 @@ button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 .speedo small{font-size:12px;margin-left:4px;color:var(--mut)}
 /* ---------- touch ---------- */
 #touch{position:fixed;inset:0;pointer-events:none}
-#joyZone{position:absolute;left:0;bottom:0;width:48%;height:62%;pointer-events:auto}
-#joyBase{position:absolute;left:calc(env(safe-area-inset-left,0px) + 28px);bottom:calc(env(safe-area-inset-bottom,0px) + 28px);width:130px;height:130px;border-radius:50%;background:rgba(16,19,28,.35);border:3px solid rgba(255,255,255,.35)}
-#joyKnob{position:absolute;left:50%;top:50%;width:58px;height:58px;margin:-29px 0 0 -29px;border-radius:50%;background:rgba(255,255,255,.75);border:3px solid var(--line)}
+#directionPad{position:absolute;left:calc(env(safe-area-inset-left,0px) + 20px);bottom:calc(env(safe-area-inset-bottom,0px) + 28px);display:flex;gap:14px;pointer-events:auto}#directionPad button{width:76px;height:76px;background:var(--panel);border:3px solid var(--line);border-radius:12px;font-size:32px;touch-action:none}#directionPad button.on{background:#52617e}
 .tbtns{position:absolute;right:calc(env(safe-area-inset-right,0px) + 20px);bottom:calc(env(safe-area-inset-bottom,0px) + 22px);width:210px;height:190px;pointer-events:none}
 .tbtns button{position:absolute;pointer-events:auto;border:3px solid var(--line);border-radius:50%;font-family:var(--disp);box-shadow:0 4px 0 var(--line);touch-action:none}
-#tDrift{right:0;bottom:0;width:96px;height:96px;background:var(--gold);color:#3a2604;font-size:20px}
+#tAccel{right:0;bottom:0;width:96px;height:96px;background:var(--gold);color:#3a2604;font-size:20px}
 #tItem{right:104px;bottom:40px;width:74px;height:74px;background:#5aa9ff;color:#0a1d38;font-size:16px}
 #tBrake{right:18px;bottom:108px;width:64px;height:64px;background:#e6e9f0;color:#222;font-size:14px}
 .tbtns button.on{transform:translateY(3px);filter:brightness(1.15)}
@@ -133,7 +131,7 @@ tr.me td{background:rgba(255,201,60,.14)}
     <div><h2>画质</h2><div id="qList" class="seg"></div></div>
   </section>
   <section><label class="keys"><input id="studyMode" type="checkbox"> 学习学霸模式</label><p class="keys">开局驶过起跑线及每圈通过终点线后答题：答对随机补满空道具格，答错不获得道具，随后继续行驶。学霸模式没有路上盲盒；答题时全场暂停。</p><div class="row2"><label class="keys">年级<select id="studyGrade" style="width:100%;padding:8px"><option value="1">一年级</option><option value="2">二年级</option><option value="3">三年级</option><option value="4">四年级</option><option value="5">五年级</option><option value="6">六年级</option></select></label><label class="keys">题库<select id="studySubject" style="width:100%;padding:8px"><option value="all">综合随机</option><option value="math">数学</option><option value="chinese">语文</option><option value="english">英语</option><option value="science">科学</option><option value="ethics">道德与法治</option><option value="music">音乐</option><option value="art">美术</option><option value="pe">体育与健康</option><option value="labor">劳动</option><option value="it">信息科技</option><option value="practice">综合实践</option></select></label></div><p class="keys">题库随年级切换；英语、信息科技从三年级起显示。</p></section>
-  <details id="controlSettings"><summary style="cursor:pointer;font-weight:bold;color:var(--gold)">控制设置</summary><label class="keys">手机 / 平板转向<select id="controlMenu" style="width:100%;padding:8px"><option value="tilt">重力控制（默认）</option><option value="joystick">模拟摇杆</option></select></label><button id="calibrateMenu" class="alt">校准重力中心</button><p class="keys">保持设备在舒服的姿势，左右倾斜转向。点击开始时按设备提示允许运动传感器；无传感器时使用摇杆。</p></details>
+  <details id="controlSettings"><summary style="cursor:pointer;font-weight:bold;color:var(--gold)">控制设置</summary><label class="keys">手机 / 平板转向<select id="controlMenu" style="width:100%;padding:8px"><option value="tilt">重力控制</option><option value="buttons">左右方向键</option></select></label><button id="calibrateMenu" class="alt">校准重力中心</button><p class="keys">iPad 默认左右方向键，右下角按住加速。也可选择重力转向：左右倾斜控制方向；手机默认重力转向。无传感器时使用方向键。</p></details>
   <p class="best" id="bestTxt"></p>
   <p id="cloudStatus" class="keys">游客模式：登录后可保存云端成绩。</p>
   <div style="display:flex;gap:8px"><button id="accountBtn" class="alt">注册 / 登录</button><button id="leaderboardBtn" class="alt">游戏排行榜</button></div><p class="keys">累计游玩 30 分钟后锁定 30 分钟，请合理安排休息。</p>
@@ -142,7 +140,7 @@ tr.me td{background:rgba(255,201,60,.14)}
 </div>
 
 <details id="menuHelp" class="panel menu-help"><summary>操作说明</summary>  <p class="keys"><b>电脑</b>：W/↑ 油门 · S/↓ 刹车/倒车 · A D/← → 转向 · 空格 漂移 · E 道具 · 学霸模式 I/O/P 使用对应道具 · Esc 暂停<br>
-  <b>手机/平板</b>：默认倾斜转向（可切换摇杆）（自动油门）· 右侧 漂移 / 道具 / 刹车（道具按从左到右使用，自动跳过空格）<br>
+  <b>手机/平板</b>：iPad 默认左右方向键，按住右下角加速；手机默认倾斜转向（自动油门），可切换方向键 · 右侧 加速 / 道具 / 刹车（道具按从左到右使用，自动跳过空格）<br>
   <b>手柄</b>：左摇杆转向 · RT 油门 · LT 刹车 · RB 漂移 · X 道具<br>
   道具：火箭加速；果冻块设陷阱；追踪弹攻击；护盾抵挡一次攻击（8秒）；闪电攻击24米内对手；冰冻弹击倒并减速3秒。<br>漂移时间越长火花越亮：蓝 → 橙 → 紫，松开即加速。倒数到"1"时踩油门可起步冲刺。</p></details>
 <div id="quizOv" style="z-index:100" class="overlay" role="dialog" aria-modal="true" aria-labelledby="quizTitle" hidden><div class="dialog panel"><h2 id="quizTitle" tabindex="-1" style="outline:none">终点答题</h2><p id="quizQuestion"></p><div id="quizChoices" class="seg"></div><p class="keys">答对随机补满空道具格；答错不获得道具，不惩罚驾驶。</p></div></div>
@@ -159,8 +157,8 @@ tr.me td{background:rgba(255,201,60,.14)}
 </div>
 
 <div id="touch" hidden>
-  <div id="joyZone"><div id="joyBase"><div id="joyKnob"></div></div></div>
-  <div class="tbtns"><button id="tBrake">刹车</button><button id="tItem">道具</button><button id="tDrift">漂移</button></div>
+  <div id="directionPad"><button id="tLeft" aria-label="向左转">◀</button><button id="tRight" aria-label="向右转">▶</button></div>
+  <div class="tbtns"><button id="tBrake">刹车</button><button id="tItem">道具</button><button id="tAccel">加速</button></div>
 </div>
 
 <div id="pauseOv" class="overlay" hidden>
@@ -169,7 +167,7 @@ tr.me td{background:rgba(255,201,60,.14)}
     <button id="resumeBtn" class="big">继续</button>
     <button id="restartBtn" class="alt">重新开始</button>
     <button id="quitBtn" class="alt">返回菜单</button>
-    <label>触屏转向<select id="controlPause"><option value="tilt">重力控制</option><option value="joystick">模拟摇杆</option></select></label><button id="calibratePause" class="alt">校准重力中心</button>
+    <label>触屏转向<select id="controlPause"><option value="tilt">重力控制</option><option value="buttons">左右方向键</option></select></label><button id="calibratePause" class="alt">校准重力中心</button>
     <button id="muteBtn" class="alt">声音：开</button>
   </div>
 </div>
@@ -246,11 +244,12 @@ const QNAMES = { low: '流畅', mid: '均衡', high: '精美' };
 const ITEM_NAMES = { turbo: '火箭', jelly: '果冻块', missile: '追踪弹',shield:'护盾',lightning:'闪电',ice:'冰冻弹' };
 
 /* ================= device & quality ================= */
+const isIPad=/iPad/.test(navigator.userAgent)||(/Macintosh/.test(navigator.userAgent)&&navigator.maxTouchPoints>1);
 const coarse = matchMedia('(pointer: coarse)').matches || 'ontouchstart' in window;
 const G = {
   state: 'menu', paused: false, trackIdx: store.get('track', 0), charIdx: store.get('char', 0), diff: store.get('diff', 1), study: !!store.get('study', false), grade: store.get('grade',1), subject: store.get('subject','all')==='local'?'all':store.get('subject','all'), studyStats:{total:0,correct:0},
   qualSel: QUALS.includes(store.get('qual','low'))?store.get('qual','low'):'low', qual: 'low', karts: [], player: null, tr: null, raceTime: 0, countdown: 0,
-  control:store.get('control','tilt'),sessionControl:null,touch: coarse, time: 0, finishT: 0, shake: 0, frameAvg: 16, slowT: 0
+  control:isIPad?store.get('ipadControl','buttons'):(store.get('control','tilt')==='joystick'?'buttons':store.get('control','tilt')),sessionControl:null,touch: coarse, time: 0, finishT: 0, shake: 0, frameAvg: 16, slowT: 0
 };
 if (G.trackIdx >= TRACKS.length) G.trackIdx = 0;
 if (G.charIdx >= CHARS.length) G.charIdx = 0;
@@ -689,33 +688,19 @@ window.addEventListener('keydown', e => {
   if (G.touch && !coarse) { G.touch = false; $('#touch').hidden = true; }
 });
 window.addEventListener('keyup', e => { keys[e.code] = false; });
-window.addEventListener('blur', () => { for (const k in keys) keys[k] = false; if (G.state === 'race') togglePause(true); });
-const T = { steer: 0, brake: false, drift: false, joyId: null, jx: 0 };
-function syncTouchControls(){const mode=G.sessionControl||G.control;$('#joyZone').hidden=mode==='tilt';for(const id of ['controlMenu','controlPause'])$('#'+id).value=G.control;}
-async function enableTouchControl(){T.steer=0;T.joyBrake=false;T.joyId=null;G.sessionControl=G.control;if(G.control==='tilt'&&G.touch){if(!await KartTilt.enable()){G.sessionControl='joystick';toast('重力传感器未启用，本场使用模拟摇杆',3500);}}syncTouchControls();}
-for(const id of ['controlMenu','controlPause'])$('#'+id).onchange=async e=>{G.control=e.target.value;store.set('control',G.control);await enableTouchControl();};
+window.addEventListener('blur', () => { T.left=false;T.right=false;T.throttle=false;T.brake=false;for (const k in keys) keys[k] = false; if (G.state === 'race') togglePause(true); });
+const T = { steer:0,brake:false,left:false,right:false,throttle:false };
+function syncTouchControls(){const mode=G.sessionControl||G.control;$('#directionPad').hidden=mode==='tilt';for(const id of ['controlMenu','controlPause'])$('#'+id).value=G.control;}
+async function enableTouchControl(){T.steer=0;T.left=false;T.right=false;T.throttle=false;T.brake=false;G.sessionControl=G.control;if(G.control==='tilt'&&G.touch){if(!await KartTilt.enable()){G.sessionControl='buttons';toast('重力传感器未启用，本场使用左右方向键',3500);}}syncTouchControls();}
+for(const id of ['controlMenu','controlPause'])$('#'+id).onchange=async e=>{G.control=e.target.value;store.set(isIPad?'ipadControl':'control',G.control);await enableTouchControl();};
 for(const id of ['calibrateMenu','calibratePause'])$('#'+id).onclick=()=>{KartTilt.calibrate();toast('已校准：保持当前姿势作为转向中心',2000);};
 syncTouchControls();
-const joyZone = $('#joyZone'), joyBase = $('#joyBase'), joyKnob = $('#joyKnob');
-joyZone.addEventListener('pointerdown', e => {
-  e.preventDefault(); T.joyId = e.pointerId; joyZone.setPointerCapture(e.pointerId);
-  const r = joyBase.getBoundingClientRect(); T.jx = r.left + r.width / 2; T.jy = r.top + r.height / 2; moveJoy(e);
-  audioInit();
-});
-joyZone.addEventListener('pointermove', e => { if (e.pointerId === T.joyId) moveJoy(e); });
-const endJoy = e => { if (e.pointerId !== T.joyId) return; T.joyId = null; T.steer = 0; T.joyBrake = false; joyKnob.style.transform = ''; };
-joyZone.addEventListener('pointerup', endJoy); joyZone.addEventListener('pointercancel', endJoy);
-function moveJoy(e) {
-  const dx = clamp(e.clientX - T.jx, -60, 60), dy = clamp(e.clientY - T.jy, -60, 60);
-  T.steer = Math.abs(dx) < 6 ? 0 : dx / 60; T.joyBrake = dy > 42;
-  joyKnob.style.transform = `translate(${dx}px,${dy}px)`;
-}
 function holdBtn(el, key) {
   el.addEventListener('pointerdown', e => { e.preventDefault(); el.setPointerCapture(e.pointerId); T[key] = true; el.classList.add('on'); audioInit(); });
   const up = () => { T[key] = false; el.classList.remove('on'); };
-  el.addEventListener('pointerup', up); el.addEventListener('pointercancel', up);
+  el.addEventListener('pointerup', up); el.addEventListener('pointercancel', up);el.addEventListener('lostpointercapture',up);
 }
-holdBtn($('#tDrift'), 'drift'); holdBtn($('#tBrake'), 'brake');
+holdBtn($('#tLeft'),'left');holdBtn($('#tRight'),'right');holdBtn($('#tAccel'),'throttle');holdBtn($('#tBrake'), 'brake');
 $('#tItem').addEventListener('pointerdown', e => { e.preventDefault(); itemChoice=-1;itemEdge = true; });
 $('#itemSlot').addEventListener('pointerdown', e => { e.preventDefault(); itemEdge = true; });
 window.addEventListener('touchstart', () => { if (!G.touch) { G.touch = true; if (G.state !== 'menu') $('#touch').hidden = false; } }, { passive: true });
@@ -726,7 +711,7 @@ function readInput() {
   let thr = (keys.KeyW || keys.ArrowUp) ? 1 : 0, brk = !!(keys.KeyS || keys.ArrowDown);
   let steer = ((keys.KeyD || keys.ArrowRight) ? 1 : 0) - ((keys.KeyA || keys.ArrowLeft) ? 1 : 0);
   let drift = !!(keys.Space || keys.ShiftLeft || keys.ShiftRight || keys.KeyK);
-  if (G.touch) { if((G.sessionControl||G.control)==='tilt')steer=KartTilt.steer();else if (T.steer) steer = T.steer; if (T.brake || T.joyBrake) brk = true; else thr = 1; if (T.drift) drift = true; }
+  if (G.touch) { const tilt=(G.sessionControl||G.control)==='tilt';steer=tilt?KartTilt.steer():(Number(T.right)-Number(T.left));brk=brk||T.brake;thr=brk?0:(T.throttle||tilt?1:thr); }
   const pads = navigator.getGamepads ? navigator.getGamepads() : [];
   for (const gp of pads) {
     if (!gp) continue;
@@ -765,7 +750,7 @@ function studyCheckpoint(k, done=()=>{}) {
   q.options.forEach(answer => { const b = document.createElement('button'); b.textContent = answer; b.onclick = () => {
     if (!quizPending) return;
     clearQuiz(); G.paused = false;
-    Object.keys(keys).forEach(key => keys[key] = false); T.steer=0;T.brake=false;T.joyBrake=false;T.drift=false;itemEdge=false;
+    Object.keys(keys).forEach(key => keys[key] = false); T.steer=0;T.brake=false;T.left=false;T.right=false;T.throttle=false;itemEdge=false;
     G.studyStats.total++;
     const correct=answer===q.answer;
     if(correct)G.studyStats.correct++;
