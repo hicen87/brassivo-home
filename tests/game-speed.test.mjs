@@ -7,14 +7,15 @@ test('fastest kart cruises at 170 KM/H and boosts to 200 KM/H, with boosts cappe
  assert(Math.abs(run(2,0)-170)<1e-8);assert(Math.abs(run(2,1000)-200)<1e-8);assert(run(1,0)<170);assert(run(0,0)<run(1,0));assert(run(2,0,20)<100);
 });
 
-test('AI opponents are stronger in all three difficulties while respecting the 200 KM/H cap',()=>{
+test('player and AI have identical acceleration and limits in every difficulty and status',()=>{
  const scope={G:{diff:0,tr:{N:100}},Math,emit(){},useItem(){},sfx(){}};vm.createContext(scope);
  vm.runInContext(html.slice(html.indexOf('const B = 3,'),html.indexOf('/* ================= device & quality'))+html.slice(html.indexOf('const NOIN ='),html.indexOf('  // drift & steering'))+'}',scope);
- for(let diff=0;diff<3;diff++){
+ for(let diff=0;diff<3;diff++)for(const status of [{},{boostT:1000},{lat:20},{freezeT:1000},{smokeT:1000}]){
   scope.G.diff=diff;
-  const run=(isPlayer,old=false)=>{scope.k={ch:vm.runInContext('CHARS[4]',scope),isPlayer,speed:0,lat:0,boostT:0,spinT:0,rollT:0,aiMul:vm.runInContext('DIFFS[G.diff].ai',scope)/(old?1.5:1)};for(let i=0;i<3600;i++)vm.runInContext('updateKart(k,{thr:1,brk:false},1/60)',scope);return scope.k.speed*3.2;};
-  const ai=run(false);assert(ai>run(false,true));assert(ai>run(true));assert(ai<=200+1e-8);
+  const run=isPlayer=>{scope.k={ch:vm.runInContext('CHARS[4]',scope),isPlayer,speed:0,lat:0,boostT:0,spinT:0,rollT:0,aiMul:99,...status};const speeds=[];for(let i=0;i<3600;i++){vm.runInContext('updateKart(k,{thr:1,brk:false},1/60)',scope);if(i===59||i===3599)speeds.push(scope.k.speed*3.2);}return speeds;};
+  assert.deepEqual(run(false),run(true),JSON.stringify({diff,status}));
  }
+ assert(!html.includes('k.aiMul'));
 });
 test('all six car styles share acceleration, top speed, handling and collision weight',()=>{
  const scope={G:{diff:2,tr:{N:100}},Math,emit(){},useItem(){},sfx(){}};vm.createContext(scope);

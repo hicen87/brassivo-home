@@ -635,7 +635,7 @@ function makeKart(ci, isPlayer) {
   const ch = CHARS[ci]; const mesh = makeKartMesh(ch); scene.add(mesh.g);
   return { ch, ci, isPlayer, ...mesh, x: 0, z: 0, y: 0, vy: 0, heading: 0, speed: 0, idx: 0, lat: 0, along: 0,
     drifting: false, driftDir: 0, driftCharge: 0, driftHeld: false, boostT: 0, spinT: 0, spinA: 0, hits:0, shieldT:0,freezeT:0,giantT:0,smokeT:0, item: null, itemQueue: [], rollT: 0, finished: false, finishT: 0,
-    aiLat: 0, aiLatGoal: 0, aiLatT: 0, aiItemT: 2, aiDriftT: 0, aiMul: 1, skill: 1, wrongT: 0, wallT: 0, lastLap: 1, visYaw: 0, hopHeld: false };
+    aiLat: 0, aiLatGoal: 0, aiLatT: 0, aiItemT: 2, aiDriftT: 0, skill: 1, wrongT: 0, wallT: 0, lastLap: 1, visYaw: 0, hopHeld: false };
 }
 function clearKarts() { for (const k of G.karts) scene.remove(k.g); G.karts = []; }
 function placeGrid(order) {
@@ -872,16 +872,17 @@ function hitKart(k,owner,ice=false) {
   if (k.isPlayer) { sfx('hit'); G.shake = 0.5; flash('被击中！', 'warn', 900); }
 }
 function aiInput(k, dt) {
+  const ability=DIFFS[G.diff].ai*k.skill;
   const tr = G.tr, N = tr.N;
   k.aiLatT -= dt;
-  if (k.aiLatT <= 0) { k.aiLatT = 1.2 + Math.random() * 2.2; k.aiLatGoal = (Math.random() - 0.5) * 12; }
+  if (k.aiLatT <= 0) { k.aiLatT = 1.2 + Math.random() * 2.2; k.aiLatGoal = (Math.random() - 0.5) * 12 / ability; }
   if (!G.study && !k.item && k.rollT <= 0) {
     for (const b of world.boxes) {
       let dk = b.k - k.idx; if (dk < 0) dk += N;
       if (dk > 6 && dk < 30 && b.off <= 0 && Math.abs(b.l - k.aiLat) < 5) { k.aiLatGoal = b.l; break; }
     }
   }
-  k.aiLat = lerp(k.aiLat, k.aiLatGoal, Math.min(1, dt * 1.4));
+  k.aiLat = lerp(k.aiLat, k.aiLatGoal, Math.min(1, dt * 1.4 * ability));
   const look = Math.round(5 + Math.abs(k.speed) * 0.22), ti = (k.idx + look) % N;
   const tx = tr.px[ti] + (-tr.tz[ti]) * k.aiLat, tz = tr.pz[ti] + tr.tx[ti] * k.aiLat;
   const want = Math.atan2(tx - k.x, tz - k.z), diff = wrapAng(want - k.heading);
@@ -889,13 +890,13 @@ function aiInput(k, dt) {
   const curv = wrapAng(tr.th[(k.idx + 22) % N] - tr.th[k.idx]);
   let drift = false;
   if (k.aiDriftT > 0) { k.aiDriftT -= dt; drift = true; if (k.drifting) steer = clamp(steer * 0.8 + k.driftDir * 0.25, -1, 1); }
-  else if (Math.abs(curv) > 0.55 && k.speed > BASE * 0.62 && Math.random() < dt * 2.5) { k.aiDriftT = 0.9 + Math.random() * 1.5; drift = true; steer = -Math.sign(curv); }
+  else if (Math.abs(curv) > 0.55 && k.speed > BASE * 0.62 && Math.random() < dt * 2.5 * ability) { k.aiDriftT = 0.9 + Math.random() * 1.5; drift = true; steer = -Math.sign(curv); }
   let brk = Math.abs(diff) > 1.3 && k.speed > 18;
   if (k.item) {
     k.aiItemT -= dt;
     if (k.aiItemT <= 0) {
       const r = rankOf(k);
-      if (['spring','giant','smoke','shield','lightning','ice'].includes(k.item) || (k.item === 'missile' && r > 0) || (k.item === 'jelly' && r < G.karts.length - 1) || k.aiItemT < -6) { useItem(k); k.aiItemT = 2 + Math.random() * 5; }
+      if (['spring','giant','smoke','shield','lightning','ice'].includes(k.item) || (k.item === 'missile' && r > 0) || (k.item === 'jelly' && r < G.karts.length - 1) || k.aiItemT < -6) { useItem(k); k.aiItemT = (2 + Math.random() * 5) / ability; }
     }
   }
   return { thr: brk ? 0 : 1, brk, steer, drift, item: false };
@@ -911,7 +912,7 @@ function updateKart(k, inp, dt) {
   if (k.rollT > 0) { k.rollT -= dt; if (k.rollT <= 0) { k.item = pickItem(rankOf(k)); if (k.isPlayer) sfx('item'); else k.aiItemT = 1 + Math.random() * 4; } }
   if (inp.item && k.spinT <= 0) useItem(k,inp.choice||0);
   if (k.spinT > 0) { k.spinT -= dt; k.spinA += dt * 14; inp = NOIN; if (k.spinT <= 0) k.spinA = 0; }
-  let maxS = BASE * DIFFS[G.diff].scale * st.spd * (k.isPlayer ? 1 : k.aiMul);
+  let maxS = BASE * DIFFS[G.diff].scale * st.spd;
   if(k.freezeT>0)maxS*=.55;
   if(k.smokeT>0)maxS*=.7;
   const spAbs = Math.abs(k.speed);
@@ -1272,7 +1273,6 @@ function step(dt) {
   G.raceTime += dt;
   const tr = G.tr, total = LAPS * tr.N;
   for (const k of G.karts) {
-    if (!k.isPlayer) k.aiMul = DIFFS[G.diff].ai * k.skill * (1 + clamp((p.along - k.along) / (tr.N * 0.12), -1, 1) * 0.085);
     let inp;
     if (k.isPlayer && !k.finished && !G.autopilot) inp = readInput();
     else inp = aiInput(k, dt);
