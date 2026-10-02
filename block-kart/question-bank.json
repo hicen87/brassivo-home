@@ -1,5 +1,5 @@
 {
-  "version": "20261002-grade-subjects",
+  "version": "20261002-random-v2",
   "region": "浙江小学学习场景",
   "notice": "原创入门练习，非官方题库；各科年级难度仅作练习分组，不代表学校教材进度。英语、信息科技从三年级起提供。",
   "subjects": {
@@ -1807,6 +1807,3926 @@
         "23"
       ],
       "explanation": "正确答案：24"
+    },
+    {
+      "id": "chinese-1-2",
+      "grade": 1,
+      "subject": "chinese",
+      "text": "“日”的拼音是？",
+      "answer": "rì",
+      "options": [
+        "rì",
+        "rī",
+        "lì",
+        "yì"
+      ],
+      "explanation": "正确答案：rì"
+    },
+    {
+      "id": "chinese-1-3",
+      "grade": 1,
+      "subject": "chinese",
+      "text": "“月”共有几笔？",
+      "answer": "4笔",
+      "options": [
+        "4笔",
+        "3笔",
+        "5笔",
+        "6笔"
+      ],
+      "explanation": "正确答案：4笔"
+    },
+    {
+      "id": "chinese-1-4",
+      "grade": 1,
+      "subject": "chinese",
+      "text": "“上”的反义词是？",
+      "answer": "下",
+      "options": [
+        "下",
+        "大",
+        "多",
+        "长"
+      ],
+      "explanation": "正确答案：下"
+    },
+    {
+      "id": "chinese-1-5",
+      "grade": 1,
+      "subject": "chinese",
+      "text": "“大”的反义词是？",
+      "answer": "小",
+      "options": [
+        "小",
+        "高",
+        "远",
+        "多"
+      ],
+      "explanation": "正确答案：小"
+    },
+    {
+      "id": "chinese-1-6",
+      "grade": 1,
+      "subject": "chinese",
+      "text": "“口”共有几笔？",
+      "answer": "3笔",
+      "options": [
+        "3笔",
+        "2笔",
+        "4笔",
+        "5笔"
+      ],
+      "explanation": "正确答案：3笔"
+    },
+    {
+      "id": "science-1-2",
+      "grade": 1,
+      "subject": "science",
+      "text": "用哪个部位观察物体的颜色？",
+      "answer": "眼睛",
+      "options": [
+        "眼睛",
+        "耳朵",
+        "鼻子",
+        "舌头"
+      ],
+      "explanation": "正确答案：眼睛"
+    },
+    {
+      "id": "science-1-3",
+      "grade": 1,
+      "subject": "science",
+      "text": "听声音主要使用哪个器官？",
+      "answer": "耳朵",
+      "options": [
+        "耳朵",
+        "眼睛",
+        "鼻子",
+        "手掌"
+      ],
+      "explanation": "正确答案：耳朵"
+    },
+    {
+      "id": "science-1-4",
+      "grade": 1,
+      "subject": "science",
+      "text": "观察未知液体时应该怎么做？",
+      "answer": "不随意品尝",
+      "options": [
+        "不随意品尝",
+        "先喝一口",
+        "直接倒入口中",
+        "用手抓起"
+      ],
+      "explanation": "正确答案：不随意品尝"
+    },
+    {
+      "id": "science-1-5",
+      "grade": 1,
+      "subject": "science",
+      "text": "哪一种是植物？",
+      "answer": "向日葵",
+      "options": [
+        "向日葵",
+        "蝴蝶",
+        "蚂蚁",
+        "麻雀"
+      ],
+      "explanation": "正确答案：向日葵"
+    },
+    {
+      "id": "science-1-6",
+      "grade": 1,
+      "subject": "science",
+      "text": "植物一般用哪个部位吸收土壤里的水？",
+      "answer": "根",
+      "options": [
+        "根",
+        "花",
+        "果实",
+        "种子"
+      ],
+      "explanation": "正确答案：根"
+    },
+    {
+      "id": "ethics-1-2",
+      "grade": 1,
+      "subject": "ethics",
+      "text": "借了同学的东西，应该怎样做？",
+      "answer": "按约定归还",
+      "options": [
+        "按约定归还",
+        "据为己有",
+        "随意丢掉",
+        "转送别人"
+      ],
+      "explanation": "正确答案：按约定归还"
+    },
+    {
+      "id": "ethics-1-3",
+      "grade": 1,
+      "subject": "ethics",
+      "text": "发现自己做错了事，应该怎样做？",
+      "answer": "承认并改正",
+      "options": [
+        "承认并改正",
+        "一直隐瞒",
+        "责怪别人",
+        "拒绝沟通"
+      ],
+      "explanation": "正确答案：承认并改正"
+    },
+    {
+      "id": "ethics-1-4",
+      "grade": 1,
+      "subject": "ethics",
+      "text": "过马路时应怎样做？",
+      "answer": "遵守交通信号",
+      "options": [
+        "遵守交通信号",
+        "闯红灯",
+        "在车道追逐",
+        "闭眼奔跑"
+      ],
+      "explanation": "正确答案：遵守交通信号"
+    },
+    {
+      "id": "ethics-1-5",
+      "grade": 1,
+      "subject": "ethics",
+      "text": "公共场所排队时应该怎样做？",
+      "answer": "按顺序等待",
+      "options": [
+        "按顺序等待",
+        "插到最前",
+        "推挤别人",
+        "占多个位置"
+      ],
+      "explanation": "正确答案：按顺序等待"
+    },
+    {
+      "id": "ethics-1-6",
+      "grade": 1,
+      "subject": "ethics",
+      "text": "与同学意见不同，应该怎样沟通？",
+      "answer": "互相倾听",
+      "options": [
+        "互相倾听",
+        "大声辱骂",
+        "强迫对方",
+        "拒绝说话"
+      ],
+      "explanation": "正确答案：互相倾听"
+    },
+    {
+      "id": "music-1-2",
+      "grade": 1,
+      "subject": "music",
+      "text": "唱歌时怎样更有利于听清歌词？",
+      "answer": "吐字清楚",
+      "options": [
+        "吐字清楚",
+        "故意含糊",
+        "一直尖叫",
+        "随意吞字"
+      ],
+      "explanation": "正确答案：吐字清楚"
+    },
+    {
+      "id": "music-1-3",
+      "grade": 1,
+      "subject": "music",
+      "text": "哪种乐器属于打击乐器？",
+      "answer": "小鼓",
+      "options": [
+        "小鼓",
+        "小提琴",
+        "笛子",
+        "二胡"
+      ],
+      "explanation": "正确答案：小鼓"
+    },
+    {
+      "id": "music-1-4",
+      "grade": 1,
+      "subject": "music",
+      "text": "哪种乐器主要用弓拉奏？",
+      "answer": "小提琴",
+      "options": [
+        "小提琴",
+        "钢琴",
+        "鼓",
+        "笛子"
+      ],
+      "explanation": "正确答案：小提琴"
+    },
+    {
+      "id": "music-1-5",
+      "grade": 1,
+      "subject": "music",
+      "text": "欣赏演出时合适的做法是？",
+      "answer": "安静倾听",
+      "options": [
+        "安静倾听",
+        "大声聊天",
+        "抢夺乐器",
+        "随意打断"
+      ],
+      "explanation": "正确答案：安静倾听"
+    },
+    {
+      "id": "music-1-6",
+      "grade": 1,
+      "subject": "music",
+      "text": "简谱中“1”通常唱作什么？",
+      "answer": "do",
+      "options": [
+        "do",
+        "re",
+        "mi",
+        "sol"
+      ],
+      "explanation": "正确答案：do"
+    },
+    {
+      "id": "art-1-2",
+      "grade": 1,
+      "subject": "art",
+      "text": "绘画前观察物体主要是为了什么？",
+      "answer": "了解形状和颜色",
+      "options": [
+        "了解形状和颜色",
+        "让画纸变厚",
+        "让颜料消失",
+        "减少光线"
+      ],
+      "explanation": "正确答案：了解形状和颜色"
+    },
+    {
+      "id": "art-1-3",
+      "grade": 1,
+      "subject": "art",
+      "text": "红色与黄色颜料混合通常得到什么？",
+      "answer": "橙色",
+      "options": [
+        "橙色",
+        "绿色",
+        "紫色",
+        "黑色"
+      ],
+      "explanation": "正确答案：橙色"
+    },
+    {
+      "id": "art-1-4",
+      "grade": 1,
+      "subject": "art",
+      "text": "蓝色与黄色颜料混合通常得到什么？",
+      "answer": "绿色",
+      "options": [
+        "绿色",
+        "橙色",
+        "紫色",
+        "白色"
+      ],
+      "explanation": "正确答案：绿色"
+    },
+    {
+      "id": "art-1-5",
+      "grade": 1,
+      "subject": "art",
+      "text": "剪纸时应怎样使用剪刀？",
+      "answer": "注意安全并控制方向",
+      "options": [
+        "注意安全并控制方向",
+        "边跑边剪",
+        "对着别人挥舞",
+        "闭眼操作"
+      ],
+      "explanation": "正确答案：注意安全并控制方向"
+    },
+    {
+      "id": "art-1-6",
+      "grade": 1,
+      "subject": "art",
+      "text": "哪种线条是弯曲的？",
+      "answer": "曲线",
+      "options": [
+        "曲线",
+        "直线",
+        "水平直线",
+        "垂直直线"
+      ],
+      "explanation": "正确答案：曲线"
+    },
+    {
+      "id": "pe-1-2",
+      "grade": 1,
+      "subject": "pe",
+      "text": "运动前通常应该先做什么？",
+      "answer": "适当热身",
+      "options": [
+        "适当热身",
+        "立即剧烈冲刺",
+        "大量吃饭",
+        "一直憋气"
+      ],
+      "explanation": "正确答案：适当热身"
+    },
+    {
+      "id": "pe-1-3",
+      "grade": 1,
+      "subject": "pe",
+      "text": "运动中感到明显不适，应该怎样做？",
+      "answer": "停止并告诉老师",
+      "options": [
+        "停止并告诉老师",
+        "继续硬撑",
+        "偷偷离开不说",
+        "立刻比赛加倍"
+      ],
+      "explanation": "正确答案：停止并告诉老师"
+    },
+    {
+      "id": "pe-1-4",
+      "grade": 1,
+      "subject": "pe",
+      "text": "跑步时应怎样注意安全？",
+      "answer": "观察路线避免碰撞",
+      "options": [
+        "观察路线避免碰撞",
+        "闭眼奔跑",
+        "推倒同伴",
+        "故意逆行"
+      ],
+      "explanation": "正确答案：观察路线避免碰撞"
+    },
+    {
+      "id": "pe-1-5",
+      "grade": 1,
+      "subject": "pe",
+      "text": "体育比赛中应怎样对待规则？",
+      "answer": "遵守规则",
+      "options": [
+        "遵守规则",
+        "随意作弊",
+        "只在获胜时遵守",
+        "自己随时改规则"
+      ],
+      "explanation": "正确答案：遵守规则"
+    },
+    {
+      "id": "pe-1-6",
+      "grade": 1,
+      "subject": "pe",
+      "text": "接力跑传棒时应注意什么？",
+      "answer": "配合并安全交接",
+      "options": [
+        "配合并安全交接",
+        "用棒击打同学",
+        "随意抛向人群",
+        "抢别人的棒"
+      ],
+      "explanation": "正确答案：配合并安全交接"
+    },
+    {
+      "id": "labor-1-2",
+      "grade": 1,
+      "subject": "labor",
+      "text": "整理书包时更合适的做法是？",
+      "answer": "分类放好用品",
+      "options": [
+        "分类放好用品",
+        "把物品全丢掉",
+        "将水倒进去",
+        "只放玩具"
+      ],
+      "explanation": "正确答案：分类放好用品"
+    },
+    {
+      "id": "labor-1-3",
+      "grade": 1,
+      "subject": "labor",
+      "text": "扫地时垃圾应该怎样处理？",
+      "answer": "集中收集并分类投放",
+      "options": [
+        "集中收集并分类投放",
+        "扫到邻居家",
+        "吹向同学",
+        "倒进水池"
+      ],
+      "explanation": "正确答案：集中收集并分类投放"
+    },
+    {
+      "id": "labor-1-4",
+      "grade": 1,
+      "subject": "labor",
+      "text": "清洗蔬菜的主要目的是什么？",
+      "answer": "去除泥土和污物",
+      "options": [
+        "去除泥土和污物",
+        "让菜变成水果",
+        "增加沙子",
+        "改变植物种类"
+      ],
+      "explanation": "正确答案：去除泥土和污物"
+    },
+    {
+      "id": "labor-1-5",
+      "grade": 1,
+      "subject": "labor",
+      "text": "使用工具前应该先做什么？",
+      "answer": "了解使用方法和安全要求",
+      "options": [
+        "了解使用方法和安全要求",
+        "立即乱挥",
+        "拆掉所有保护部件",
+        "闭眼尝试"
+      ],
+      "explanation": "正确答案：了解使用方法和安全要求"
+    },
+    {
+      "id": "labor-1-6",
+      "grade": 1,
+      "subject": "labor",
+      "text": "给植物浇水应怎样做？",
+      "answer": "根据需要适量浇水",
+      "options": [
+        "根据需要适量浇水",
+        "一直浸泡所有植物",
+        "完全不浇",
+        "每天倒油"
+      ],
+      "explanation": "正确答案：根据需要适量浇水"
+    },
+    {
+      "id": "practice-1-2",
+      "grade": 1,
+      "subject": "practice",
+      "text": "开展调查前，首先应明确什么？",
+      "answer": "调查问题和目的",
+      "options": [
+        "调查问题和目的",
+        "只选喜欢的结论",
+        "随便填写答案",
+        "立即宣布结果"
+      ],
+      "explanation": "正确答案：调查问题和目的"
+    },
+    {
+      "id": "practice-1-3",
+      "grade": 1,
+      "subject": "practice",
+      "text": "记录观察结果时应怎样做？",
+      "answer": "如实记录",
+      "options": [
+        "如实记录",
+        "编造结果",
+        "只记有利内容",
+        "完全凭记忆猜测"
+      ],
+      "explanation": "正确答案：如实记录"
+    },
+    {
+      "id": "practice-1-4",
+      "grade": 1,
+      "subject": "practice",
+      "text": "小组讨论时，合适的做法是？",
+      "answer": "轮流表达并倾听",
+      "options": [
+        "轮流表达并倾听",
+        "打断所有人",
+        "不许别人说话",
+        "只接受一人的意见"
+      ],
+      "explanation": "正确答案：轮流表达并倾听"
+    },
+    {
+      "id": "practice-1-5",
+      "grade": 1,
+      "subject": "practice",
+      "text": "制作活动计划时应考虑什么？",
+      "answer": "任务、时间和分工",
+      "options": [
+        "任务、时间和分工",
+        "只考虑装饰颜色",
+        "只看谁声音大",
+        "完全不安排步骤"
+      ],
+      "explanation": "正确答案：任务、时间和分工"
+    },
+    {
+      "id": "practice-1-6",
+      "grade": 1,
+      "subject": "practice",
+      "text": "访问他人前，应该怎样做？",
+      "answer": "征得同意并礼貌提问",
+      "options": [
+        "征得同意并礼貌提问",
+        "强迫回答",
+        "公开对方隐私",
+        "随意录音不告知"
+      ],
+      "explanation": "正确答案：征得同意并礼貌提问"
+    },
+    {
+      "id": "chinese-2-2",
+      "grade": 2,
+      "subject": "chinese",
+      "text": "“快乐”的近义词是？",
+      "answer": "高兴",
+      "options": [
+        "高兴",
+        "难过",
+        "生气",
+        "疲劳"
+      ],
+      "explanation": "正确答案：高兴"
+    },
+    {
+      "id": "chinese-2-3",
+      "grade": 2,
+      "subject": "chinese",
+      "text": "“白”的反义词是？",
+      "answer": "黑",
+      "options": [
+        "黑",
+        "红",
+        "绿",
+        "蓝"
+      ],
+      "explanation": "正确答案：黑"
+    },
+    {
+      "id": "chinese-2-4",
+      "grade": 2,
+      "subject": "chinese",
+      "text": "哪一个词形容颜色？",
+      "answer": "雪白",
+      "options": [
+        "雪白",
+        "飞快",
+        "安静",
+        "仔细"
+      ],
+      "explanation": "正确答案：雪白"
+    },
+    {
+      "id": "chinese-2-5",
+      "grade": 2,
+      "subject": "chinese",
+      "text": "“清晨”指一天中的什么时候？",
+      "answer": "早上",
+      "options": [
+        "早上",
+        "中午",
+        "下午",
+        "深夜"
+      ],
+      "explanation": "正确答案：早上"
+    },
+    {
+      "id": "chinese-2-6",
+      "grade": 2,
+      "subject": "chinese",
+      "text": "“一（ ）书”应填哪个量词？",
+      "answer": "本",
+      "options": [
+        "本",
+        "条",
+        "棵",
+        "头"
+      ],
+      "explanation": "正确答案：本"
+    },
+    {
+      "id": "science-2-2",
+      "grade": 2,
+      "subject": "science",
+      "text": "冰受热融化后主要变成什么？",
+      "answer": "水",
+      "options": [
+        "水",
+        "沙子",
+        "石头",
+        "木头"
+      ],
+      "explanation": "正确答案：水"
+    },
+    {
+      "id": "science-2-3",
+      "grade": 2,
+      "subject": "science",
+      "text": "磁铁通常可以吸引哪种物品？",
+      "answer": "铁钉",
+      "options": [
+        "铁钉",
+        "木块",
+        "塑料尺",
+        "玻璃杯"
+      ],
+      "explanation": "正确答案：铁钉"
+    },
+    {
+      "id": "science-2-4",
+      "grade": 2,
+      "subject": "science",
+      "text": "太阳主要给地球带来什么？",
+      "answer": "光和热",
+      "options": [
+        "光和热",
+        "沙子",
+        "磁铁",
+        "塑料"
+      ],
+      "explanation": "正确答案：光和热"
+    },
+    {
+      "id": "science-2-5",
+      "grade": 2,
+      "subject": "science",
+      "text": "哪种材料通常更容易透光？",
+      "answer": "透明玻璃",
+      "options": [
+        "透明玻璃",
+        "木板",
+        "铁板",
+        "厚纸板"
+      ],
+      "explanation": "正确答案：透明玻璃"
+    },
+    {
+      "id": "science-2-6",
+      "grade": 2,
+      "subject": "science",
+      "text": "物体遮挡光线可能形成什么？",
+      "answer": "影子",
+      "options": [
+        "影子",
+        "味道",
+        "声音",
+        "雨水"
+      ],
+      "explanation": "正确答案：影子"
+    },
+    {
+      "id": "ethics-2-2",
+      "grade": 2,
+      "subject": "ethics",
+      "text": "公共场所排队时应该怎样做？",
+      "answer": "按顺序等待",
+      "options": [
+        "按顺序等待",
+        "插到最前",
+        "推挤别人",
+        "占多个位置"
+      ],
+      "explanation": "正确答案：按顺序等待"
+    },
+    {
+      "id": "ethics-2-3",
+      "grade": 2,
+      "subject": "ethics",
+      "text": "与同学意见不同，应该怎样沟通？",
+      "answer": "互相倾听",
+      "options": [
+        "互相倾听",
+        "大声辱骂",
+        "强迫对方",
+        "拒绝说话"
+      ],
+      "explanation": "正确答案：互相倾听"
+    },
+    {
+      "id": "ethics-2-4",
+      "grade": 2,
+      "subject": "ethics",
+      "text": "看到有人乱扔垃圾，合适的做法是？",
+      "answer": "友善提醒并正确分类",
+      "options": [
+        "友善提醒并正确分类",
+        "一起乱扔",
+        "嘲笑对方",
+        "把垃圾踢进河里"
+      ],
+      "explanation": "正确答案：友善提醒并正确分类"
+    },
+    {
+      "id": "ethics-2-5",
+      "grade": 2,
+      "subject": "ethics",
+      "text": "答应别人的事情应该怎样对待？",
+      "answer": "认真履行承诺",
+      "options": [
+        "认真履行承诺",
+        "随时忘记",
+        "假装没说过",
+        "让别人代替负责"
+      ],
+      "explanation": "正确答案：认真履行承诺"
+    },
+    {
+      "id": "ethics-2-6",
+      "grade": 2,
+      "subject": "ethics",
+      "text": "面对陌生人的可疑邀请，应该怎样做？",
+      "answer": "拒绝并告诉可信成人",
+      "options": [
+        "拒绝并告诉可信成人",
+        "直接跟走",
+        "保守秘密",
+        "交出家庭钥匙"
+      ],
+      "explanation": "正确答案：拒绝并告诉可信成人"
+    },
+    {
+      "id": "music-2-2",
+      "grade": 2,
+      "subject": "music",
+      "text": "欣赏演出时合适的做法是？",
+      "answer": "安静倾听",
+      "options": [
+        "安静倾听",
+        "大声聊天",
+        "抢夺乐器",
+        "随意打断"
+      ],
+      "explanation": "正确答案：安静倾听"
+    },
+    {
+      "id": "music-2-3",
+      "grade": 2,
+      "subject": "music",
+      "text": "简谱中“1”通常唱作什么？",
+      "answer": "do",
+      "options": [
+        "do",
+        "re",
+        "mi",
+        "sol"
+      ],
+      "explanation": "正确答案：do"
+    },
+    {
+      "id": "music-2-4",
+      "grade": 2,
+      "subject": "music",
+      "text": "简谱中“3”通常唱作什么？",
+      "answer": "mi",
+      "options": [
+        "mi",
+        "do",
+        "re",
+        "la"
+      ],
+      "explanation": "正确答案：mi"
+    },
+    {
+      "id": "music-2-5",
+      "grade": 2,
+      "subject": "music",
+      "text": "音乐的强弱主要指什么？",
+      "answer": "声音力度",
+      "options": [
+        "声音力度",
+        "歌曲长短",
+        "演出人数",
+        "服装颜色"
+      ],
+      "explanation": "正确答案：声音力度"
+    },
+    {
+      "id": "music-2-6",
+      "grade": 2,
+      "subject": "music",
+      "text": "“合唱”指什么？",
+      "answer": "多人共同演唱",
+      "options": [
+        "多人共同演唱",
+        "一个人独唱",
+        "只敲鼓",
+        "只弹钢琴"
+      ],
+      "explanation": "正确答案：多人共同演唱"
+    },
+    {
+      "id": "art-2-2",
+      "grade": 2,
+      "subject": "art",
+      "text": "剪纸时应怎样使用剪刀？",
+      "answer": "注意安全并控制方向",
+      "options": [
+        "注意安全并控制方向",
+        "边跑边剪",
+        "对着别人挥舞",
+        "闭眼操作"
+      ],
+      "explanation": "正确答案：注意安全并控制方向"
+    },
+    {
+      "id": "art-2-3",
+      "grade": 2,
+      "subject": "art",
+      "text": "哪种线条是弯曲的？",
+      "answer": "曲线",
+      "options": [
+        "曲线",
+        "直线",
+        "水平直线",
+        "垂直直线"
+      ],
+      "explanation": "正确答案：曲线"
+    },
+    {
+      "id": "art-2-4",
+      "grade": 2,
+      "subject": "art",
+      "text": "用泥塑表现物体属于哪种创作？",
+      "answer": "立体造型",
+      "options": [
+        "立体造型",
+        "朗读",
+        "合唱",
+        "测量温度"
+      ],
+      "explanation": "正确答案：立体造型"
+    },
+    {
+      "id": "art-2-5",
+      "grade": 2,
+      "subject": "art",
+      "text": "绘画中“构图”主要安排什么？",
+      "answer": "画面中物体的位置",
+      "options": [
+        "画面中物体的位置",
+        "画纸价格",
+        "水杯大小",
+        "工具品牌"
+      ],
+      "explanation": "正确答案：画面中物体的位置"
+    },
+    {
+      "id": "art-2-6",
+      "grade": 2,
+      "subject": "art",
+      "text": "哪组颜色通常给人温暖的感觉？",
+      "answer": "红、橙、黄",
+      "options": [
+        "红、橙、黄",
+        "蓝、青、紫",
+        "黑、灰、白",
+        "只有深蓝"
+      ],
+      "explanation": "正确答案：红、橙、黄"
+    },
+    {
+      "id": "pe-2-2",
+      "grade": 2,
+      "subject": "pe",
+      "text": "体育比赛中应怎样对待规则？",
+      "answer": "遵守规则",
+      "options": [
+        "遵守规则",
+        "随意作弊",
+        "只在获胜时遵守",
+        "自己随时改规则"
+      ],
+      "explanation": "正确答案：遵守规则"
+    },
+    {
+      "id": "pe-2-3",
+      "grade": 2,
+      "subject": "pe",
+      "text": "接力跑传棒时应注意什么？",
+      "answer": "配合并安全交接",
+      "options": [
+        "配合并安全交接",
+        "用棒击打同学",
+        "随意抛向人群",
+        "抢别人的棒"
+      ],
+      "explanation": "正确答案：配合并安全交接"
+    },
+    {
+      "id": "pe-2-4",
+      "grade": 2,
+      "subject": "pe",
+      "text": "运动后怎样恢复更合适？",
+      "answer": "适当放松和补水",
+      "options": [
+        "适当放松和补水",
+        "立即大量喝冰水",
+        "马上继续高强度运动",
+        "完全不休息"
+      ],
+      "explanation": "正确答案：适当放松和补水"
+    },
+    {
+      "id": "pe-2-5",
+      "grade": 2,
+      "subject": "pe",
+      "text": "跳绳时与同伴保持距离是为了什么？",
+      "answer": "避免碰撞和绊倒",
+      "options": [
+        "避免碰撞和绊倒",
+        "减少绳子长度",
+        "让声音变大",
+        "改变天气"
+      ],
+      "explanation": "正确答案：避免碰撞和绊倒"
+    },
+    {
+      "id": "pe-2-6",
+      "grade": 2,
+      "subject": "pe",
+      "text": "篮球传球前通常应注意什么？",
+      "answer": "观察队友位置",
+      "options": [
+        "观察队友位置",
+        "闭眼用力扔",
+        "瞄准观众",
+        "只看鞋子"
+      ],
+      "explanation": "正确答案：观察队友位置"
+    },
+    {
+      "id": "labor-2-2",
+      "grade": 2,
+      "subject": "labor",
+      "text": "使用工具前应该先做什么？",
+      "answer": "了解使用方法和安全要求",
+      "options": [
+        "了解使用方法和安全要求",
+        "立即乱挥",
+        "拆掉所有保护部件",
+        "闭眼尝试"
+      ],
+      "explanation": "正确答案：了解使用方法和安全要求"
+    },
+    {
+      "id": "labor-2-3",
+      "grade": 2,
+      "subject": "labor",
+      "text": "给植物浇水应怎样做？",
+      "answer": "根据需要适量浇水",
+      "options": [
+        "根据需要适量浇水",
+        "一直浸泡所有植物",
+        "完全不浇",
+        "每天倒油"
+      ],
+      "explanation": "正确答案：根据需要适量浇水"
+    },
+    {
+      "id": "labor-2-4",
+      "grade": 2,
+      "subject": "labor",
+      "text": "做饭时碰到热锅，应该怎样避免烫伤？",
+      "answer": "使用合适的防烫工具",
+      "options": [
+        "使用合适的防烫工具",
+        "直接徒手握紧",
+        "把脸凑近",
+        "用纸轻轻抓住热锅"
+      ],
+      "explanation": "正确答案：使用合适的防烫工具"
+    },
+    {
+      "id": "labor-2-5",
+      "grade": 2,
+      "subject": "labor",
+      "text": "完成家务后应该怎样收尾？",
+      "answer": "整理工具和清理现场",
+      "options": [
+        "整理工具和清理现场",
+        "把工具散落地上",
+        "让别人收拾全部",
+        "把垃圾藏起来"
+      ],
+      "explanation": "正确答案：整理工具和清理现场"
+    },
+    {
+      "id": "labor-2-6",
+      "grade": 2,
+      "subject": "labor",
+      "text": "洗手时怎样更有效清洁？",
+      "answer": "使用清水和洗手用品认真清洗",
+      "options": [
+        "使用清水和洗手用品认真清洗",
+        "只挥手",
+        "只擦衣服",
+        "用泥土搓洗"
+      ],
+      "explanation": "正确答案：使用清水和洗手用品认真清洗"
+    },
+    {
+      "id": "practice-2-2",
+      "grade": 2,
+      "subject": "practice",
+      "text": "制作活动计划时应考虑什么？",
+      "answer": "任务、时间和分工",
+      "options": [
+        "任务、时间和分工",
+        "只考虑装饰颜色",
+        "只看谁声音大",
+        "完全不安排步骤"
+      ],
+      "explanation": "正确答案：任务、时间和分工"
+    },
+    {
+      "id": "practice-2-3",
+      "grade": 2,
+      "subject": "practice",
+      "text": "访问他人前，应该怎样做？",
+      "answer": "征得同意并礼貌提问",
+      "options": [
+        "征得同意并礼貌提问",
+        "强迫回答",
+        "公开对方隐私",
+        "随意录音不告知"
+      ],
+      "explanation": "正确答案：征得同意并礼貌提问"
+    },
+    {
+      "id": "practice-2-4",
+      "grade": 2,
+      "subject": "practice",
+      "text": "比较两个方案时应该怎样做？",
+      "answer": "依据目标和实际条件比较",
+      "options": [
+        "依据目标和实际条件比较",
+        "只选名字最长的",
+        "完全随机决定",
+        "拒绝听取理由"
+      ],
+      "explanation": "正确答案：依据目标和实际条件比较"
+    },
+    {
+      "id": "practice-2-5",
+      "grade": 2,
+      "subject": "practice",
+      "text": "整理调查数据时，哪种方式便于比较？",
+      "answer": "制作表格",
+      "options": [
+        "制作表格",
+        "把记录全部撕掉",
+        "混在一起不分类",
+        "只保存一项"
+      ],
+      "explanation": "正确答案：制作表格"
+    },
+    {
+      "id": "practice-2-6",
+      "grade": 2,
+      "subject": "practice",
+      "text": "活动结束后的反思主要帮助我们什么？",
+      "answer": "总结经验并改进",
+      "options": [
+        "总结经验并改进",
+        "否定所有合作",
+        "掩盖问题",
+        "只责怪别人"
+      ],
+      "explanation": "正确答案：总结经验并改进"
+    },
+    {
+      "id": "english-3-2",
+      "grade": 3,
+      "subject": "english",
+      "text": "英语中“苹果”是哪个词？",
+      "answer": "apple",
+      "options": [
+        "apple",
+        "book",
+        "chair",
+        "cat"
+      ],
+      "explanation": "正确答案：apple"
+    },
+    {
+      "id": "english-3-3",
+      "grade": 3,
+      "subject": "english",
+      "text": "英语中“狗”是哪个词？",
+      "answer": "dog",
+      "options": [
+        "dog",
+        "cat",
+        "bird",
+        "fish"
+      ],
+      "explanation": "正确答案：dog"
+    },
+    {
+      "id": "english-3-4",
+      "grade": 3,
+      "subject": "english",
+      "text": "英语中“蓝色”是哪个词？",
+      "answer": "blue",
+      "options": [
+        "blue",
+        "red",
+        "green",
+        "yellow"
+      ],
+      "explanation": "正确答案：blue"
+    },
+    {
+      "id": "english-3-5",
+      "grade": 3,
+      "subject": "english",
+      "text": "英语中“谢谢”怎么说？",
+      "answer": "Thank you",
+      "options": [
+        "Thank you",
+        "Goodbye",
+        "Good night",
+        "Hello"
+      ],
+      "explanation": "正确答案：Thank you"
+    },
+    {
+      "id": "english-3-6",
+      "grade": 3,
+      "subject": "english",
+      "text": "英语中“书”是哪个词？",
+      "answer": "book",
+      "options": [
+        "book",
+        "pen",
+        "bag",
+        "desk"
+      ],
+      "explanation": "正确答案：book"
+    },
+    {
+      "id": "chinese-3-2",
+      "grade": 3,
+      "subject": "chinese",
+      "text": "“掩耳盗铃”中的“掩”是什么意思？",
+      "answer": "遮住",
+      "options": [
+        "遮住",
+        "打开",
+        "寻找",
+        "敲响"
+      ],
+      "explanation": "正确答案：遮住"
+    },
+    {
+      "id": "chinese-3-3",
+      "grade": 3,
+      "subject": "chinese",
+      "text": "哪句话使用了比喻？",
+      "answer": "月亮像小船",
+      "options": [
+        "月亮像小船",
+        "月亮升起来了",
+        "天上有月亮",
+        "月亮很亮"
+      ],
+      "explanation": "正确答案：月亮像小船"
+    },
+    {
+      "id": "chinese-3-4",
+      "grade": 3,
+      "subject": "chinese",
+      "text": "“认真”的反义词是？",
+      "answer": "马虎",
+      "options": [
+        "马虎",
+        "仔细",
+        "专心",
+        "用心"
+      ],
+      "explanation": "正确答案：马虎"
+    },
+    {
+      "id": "chinese-3-5",
+      "grade": 3,
+      "subject": "chinese",
+      "text": "“守株待兔”中的“株”指什么？",
+      "answer": "树桩",
+      "options": [
+        "树桩",
+        "花朵",
+        "河流",
+        "兔子"
+      ],
+      "explanation": "正确答案：树桩"
+    },
+    {
+      "id": "chinese-3-6",
+      "grade": 3,
+      "subject": "chinese",
+      "text": "“五颜六色”形容什么？",
+      "answer": "颜色丰富",
+      "options": [
+        "颜色丰富",
+        "声音响亮",
+        "路途遥远",
+        "速度很快"
+      ],
+      "explanation": "正确答案：颜色丰富"
+    },
+    {
+      "id": "science-3-2",
+      "grade": 3,
+      "subject": "science",
+      "text": "温度通常用什么工具测量？",
+      "answer": "温度计",
+      "options": [
+        "温度计",
+        "直尺",
+        "天平",
+        "秒表"
+      ],
+      "explanation": "正确答案：温度计"
+    },
+    {
+      "id": "science-3-3",
+      "grade": 3,
+      "subject": "science",
+      "text": "液态水变成水蒸气属于什么变化？",
+      "answer": "蒸发",
+      "options": [
+        "蒸发",
+        "凝固",
+        "融化",
+        "沉淀"
+      ],
+      "explanation": "正确答案：蒸发"
+    },
+    {
+      "id": "science-3-4",
+      "grade": 3,
+      "subject": "science",
+      "text": "测量液体体积常用什么工具？",
+      "answer": "量筒",
+      "options": [
+        "量筒",
+        "直尺",
+        "放大镜",
+        "指南针"
+      ],
+      "explanation": "正确答案：量筒"
+    },
+    {
+      "id": "science-3-5",
+      "grade": 3,
+      "subject": "science",
+      "text": "植物光合作用需要的重要条件是什么？",
+      "answer": "光照",
+      "options": [
+        "光照",
+        "完全黑暗",
+        "没有空气",
+        "没有水"
+      ],
+      "explanation": "正确答案：光照"
+    },
+    {
+      "id": "science-3-6",
+      "grade": 3,
+      "subject": "science",
+      "text": "风向标主要用于测量什么？",
+      "answer": "风向",
+      "options": [
+        "风向",
+        "温度",
+        "体重",
+        "时间"
+      ],
+      "explanation": "正确答案：风向"
+    },
+    {
+      "id": "ethics-3-2",
+      "grade": 3,
+      "subject": "ethics",
+      "text": "答应别人的事情应该怎样对待？",
+      "answer": "认真履行承诺",
+      "options": [
+        "认真履行承诺",
+        "随时忘记",
+        "假装没说过",
+        "让别人代替负责"
+      ],
+      "explanation": "正确答案：认真履行承诺"
+    },
+    {
+      "id": "ethics-3-3",
+      "grade": 3,
+      "subject": "ethics",
+      "text": "面对陌生人的可疑邀请，应该怎样做？",
+      "answer": "拒绝并告诉可信成人",
+      "options": [
+        "拒绝并告诉可信成人",
+        "直接跟走",
+        "保守秘密",
+        "交出家庭钥匙"
+      ],
+      "explanation": "正确答案：拒绝并告诉可信成人"
+    },
+    {
+      "id": "ethics-3-4",
+      "grade": 3,
+      "subject": "ethics",
+      "text": "班级共同事务应怎样决定？",
+      "answer": "听取大家意见",
+      "options": [
+        "听取大家意见",
+        "只听声音最大的人",
+        "不让别人发言",
+        "随便猜"
+      ],
+      "explanation": "正确答案：听取大家意见"
+    },
+    {
+      "id": "ethics-3-5",
+      "grade": 3,
+      "subject": "ethics",
+      "text": "遇到网络欺负应怎样做？",
+      "answer": "保存证据并寻求帮助",
+      "options": [
+        "保存证据并寻求帮助",
+        "继续互相辱骂",
+        "公开对方隐私",
+        "独自承受不求助"
+      ],
+      "explanation": "正确答案：保存证据并寻求帮助"
+    },
+    {
+      "id": "ethics-3-6",
+      "grade": 3,
+      "subject": "ethics",
+      "text": "借了同学的东西，应该怎样做？",
+      "answer": "按约定归还",
+      "options": [
+        "按约定归还",
+        "据为己有",
+        "随意丢掉",
+        "转送别人"
+      ],
+      "explanation": "正确答案：按约定归还"
+    },
+    {
+      "id": "music-3-2",
+      "grade": 3,
+      "subject": "music",
+      "text": "音乐的强弱主要指什么？",
+      "answer": "声音力度",
+      "options": [
+        "声音力度",
+        "歌曲长短",
+        "演出人数",
+        "服装颜色"
+      ],
+      "explanation": "正确答案：声音力度"
+    },
+    {
+      "id": "music-3-3",
+      "grade": 3,
+      "subject": "music",
+      "text": "“合唱”指什么？",
+      "answer": "多人共同演唱",
+      "options": [
+        "多人共同演唱",
+        "一个人独唱",
+        "只敲鼓",
+        "只弹钢琴"
+      ],
+      "explanation": "正确答案：多人共同演唱"
+    },
+    {
+      "id": "music-3-4",
+      "grade": 3,
+      "subject": "music",
+      "text": "节拍稳定时，拍手应怎样做？",
+      "answer": "跟随规律节拍",
+      "options": [
+        "跟随规律节拍",
+        "每次随意变化",
+        "完全不听音乐",
+        "越快越好"
+      ],
+      "explanation": "正确答案：跟随规律节拍"
+    },
+    {
+      "id": "music-3-5",
+      "grade": 3,
+      "subject": "music",
+      "text": "哪种乐器通过吹奏发声？",
+      "answer": "笛子",
+      "options": [
+        "笛子",
+        "钢琴",
+        "小鼓",
+        "二胡"
+      ],
+      "explanation": "正确答案：笛子"
+    },
+    {
+      "id": "music-3-6",
+      "grade": 3,
+      "subject": "music",
+      "text": "唱歌时怎样更有利于听清歌词？",
+      "answer": "吐字清楚",
+      "options": [
+        "吐字清楚",
+        "故意含糊",
+        "一直尖叫",
+        "随意吞字"
+      ],
+      "explanation": "正确答案：吐字清楚"
+    },
+    {
+      "id": "art-3-2",
+      "grade": 3,
+      "subject": "art",
+      "text": "绘画中“构图”主要安排什么？",
+      "answer": "画面中物体的位置",
+      "options": [
+        "画面中物体的位置",
+        "画纸价格",
+        "水杯大小",
+        "工具品牌"
+      ],
+      "explanation": "正确答案：画面中物体的位置"
+    },
+    {
+      "id": "art-3-3",
+      "grade": 3,
+      "subject": "art",
+      "text": "哪组颜色通常给人温暖的感觉？",
+      "answer": "红、橙、黄",
+      "options": [
+        "红、橙、黄",
+        "蓝、青、紫",
+        "黑、灰、白",
+        "只有深蓝"
+      ],
+      "explanation": "正确答案：红、橙、黄"
+    },
+    {
+      "id": "art-3-4",
+      "grade": 3,
+      "subject": "art",
+      "text": "欣赏作品时合适的做法是？",
+      "answer": "观察并表达自己的感受",
+      "options": [
+        "观察并表达自己的感受",
+        "直接撕毁",
+        "只嘲笑作者",
+        "拒绝观看"
+      ],
+      "explanation": "正确答案：观察并表达自己的感受"
+    },
+    {
+      "id": "art-3-5",
+      "grade": 3,
+      "subject": "art",
+      "text": "哪种工具常用于水彩画？",
+      "answer": "画笔",
+      "options": [
+        "画笔",
+        "螺丝刀",
+        "量筒",
+        "口哨"
+      ],
+      "explanation": "正确答案：画笔"
+    },
+    {
+      "id": "art-3-6",
+      "grade": 3,
+      "subject": "art",
+      "text": "绘画前观察物体主要是为了什么？",
+      "answer": "了解形状和颜色",
+      "options": [
+        "了解形状和颜色",
+        "让画纸变厚",
+        "让颜料消失",
+        "减少光线"
+      ],
+      "explanation": "正确答案：了解形状和颜色"
+    },
+    {
+      "id": "pe-3-2",
+      "grade": 3,
+      "subject": "pe",
+      "text": "跳绳时与同伴保持距离是为了什么？",
+      "answer": "避免碰撞和绊倒",
+      "options": [
+        "避免碰撞和绊倒",
+        "减少绳子长度",
+        "让声音变大",
+        "改变天气"
+      ],
+      "explanation": "正确答案：避免碰撞和绊倒"
+    },
+    {
+      "id": "pe-3-3",
+      "grade": 3,
+      "subject": "pe",
+      "text": "篮球传球前通常应注意什么？",
+      "answer": "观察队友位置",
+      "options": [
+        "观察队友位置",
+        "闭眼用力扔",
+        "瞄准观众",
+        "只看鞋子"
+      ],
+      "explanation": "正确答案：观察队友位置"
+    },
+    {
+      "id": "pe-3-4",
+      "grade": 3,
+      "subject": "pe",
+      "text": "体育合作活动中遇到失误，应怎样做？",
+      "answer": "鼓励队友并调整",
+      "options": [
+        "鼓励队友并调整",
+        "辱骂队友",
+        "故意放弃",
+        "推卸全部责任"
+      ],
+      "explanation": "正确答案：鼓励队友并调整"
+    },
+    {
+      "id": "pe-3-5",
+      "grade": 3,
+      "subject": "pe",
+      "text": "投掷活动时应怎样保证安全？",
+      "answer": "听从口令并确认区域无人",
+      "options": [
+        "听从口令并确认区域无人",
+        "朝人群投掷",
+        "随时乱扔",
+        "进入他人投掷区域"
+      ],
+      "explanation": "正确答案：听从口令并确认区域无人"
+    },
+    {
+      "id": "pe-3-6",
+      "grade": 3,
+      "subject": "pe",
+      "text": "运动前通常应该先做什么？",
+      "answer": "适当热身",
+      "options": [
+        "适当热身",
+        "立即剧烈冲刺",
+        "大量吃饭",
+        "一直憋气"
+      ],
+      "explanation": "正确答案：适当热身"
+    },
+    {
+      "id": "labor-3-2",
+      "grade": 3,
+      "subject": "labor",
+      "text": "完成家务后应该怎样收尾？",
+      "answer": "整理工具和清理现场",
+      "options": [
+        "整理工具和清理现场",
+        "把工具散落地上",
+        "让别人收拾全部",
+        "把垃圾藏起来"
+      ],
+      "explanation": "正确答案：整理工具和清理现场"
+    },
+    {
+      "id": "labor-3-3",
+      "grade": 3,
+      "subject": "labor",
+      "text": "洗手时怎样更有效清洁？",
+      "answer": "使用清水和洗手用品认真清洗",
+      "options": [
+        "使用清水和洗手用品认真清洗",
+        "只挥手",
+        "只擦衣服",
+        "用泥土搓洗"
+      ],
+      "explanation": "正确答案：使用清水和洗手用品认真清洗"
+    },
+    {
+      "id": "labor-3-4",
+      "grade": 3,
+      "subject": "labor",
+      "text": "发现电器电线破损时应怎样做？",
+      "answer": "停止使用并告诉成人",
+      "options": [
+        "停止使用并告诉成人",
+        "继续使用",
+        "用湿手摸",
+        "自行接触裸露导线"
+      ],
+      "explanation": "正确答案：停止使用并告诉成人"
+    },
+    {
+      "id": "labor-3-5",
+      "grade": 3,
+      "subject": "labor",
+      "text": "劳动合作时怎样更有效？",
+      "answer": "分工并互相配合",
+      "options": [
+        "分工并互相配合",
+        "只让一人做全部",
+        "争抢工具",
+        "拒绝交流"
+      ],
+      "explanation": "正确答案：分工并互相配合"
+    },
+    {
+      "id": "labor-3-6",
+      "grade": 3,
+      "subject": "labor",
+      "text": "整理书包时更合适的做法是？",
+      "answer": "分类放好用品",
+      "options": [
+        "分类放好用品",
+        "把物品全丢掉",
+        "将水倒进去",
+        "只放玩具"
+      ],
+      "explanation": "正确答案：分类放好用品"
+    },
+    {
+      "id": "it-3-2",
+      "grade": 3,
+      "subject": "it",
+      "text": "想知道一个任务如何完成，应怎样描述步骤？",
+      "answer": "按顺序清楚说明",
+      "options": [
+        "按顺序清楚说明",
+        "随机打乱",
+        "只写最后一步",
+        "完全省略条件"
+      ],
+      "explanation": "正确答案：按顺序清楚说明"
+    },
+    {
+      "id": "it-3-3",
+      "grade": 3,
+      "subject": "it",
+      "text": "哪些信息不应随意公开？",
+      "answer": "账号密码",
+      "options": [
+        "账号密码",
+        "公开天气预报",
+        "学校公开通知",
+        "公开图书目录"
+      ],
+      "explanation": "正确答案：账号密码"
+    },
+    {
+      "id": "it-3-4",
+      "grade": 3,
+      "subject": "it",
+      "text": "发现网上的信息可疑，应该怎样做？",
+      "answer": "核对可靠来源",
+      "options": [
+        "核对可靠来源",
+        "立即认定为真",
+        "只看转发次数",
+        "不经核实到处传播"
+      ],
+      "explanation": "正确答案：核对可靠来源"
+    },
+    {
+      "id": "it-3-5",
+      "grade": 3,
+      "subject": "it",
+      "text": "计算机中的“文件夹”主要用于什么？",
+      "answer": "分类组织文件",
+      "options": [
+        "分类组织文件",
+        "给电脑降温",
+        "增加声音",
+        "给屏幕染色"
+      ],
+      "explanation": "正确答案：分类组织文件"
+    },
+    {
+      "id": "it-3-6",
+      "grade": 3,
+      "subject": "it",
+      "text": "给账号设置密码时，哪种更合适？",
+      "answer": "使用难猜的较长组合",
+      "options": [
+        "使用难猜的较长组合",
+        "只用123456",
+        "把姓名直接当密码",
+        "与账号完全相同"
+      ],
+      "explanation": "正确答案：使用难猜的较长组合"
+    },
+    {
+      "id": "practice-3-2",
+      "grade": 3,
+      "subject": "practice",
+      "text": "整理调查数据时，哪种方式便于比较？",
+      "answer": "制作表格",
+      "options": [
+        "制作表格",
+        "把记录全部撕掉",
+        "混在一起不分类",
+        "只保存一项"
+      ],
+      "explanation": "正确答案：制作表格"
+    },
+    {
+      "id": "practice-3-3",
+      "grade": 3,
+      "subject": "practice",
+      "text": "活动结束后的反思主要帮助我们什么？",
+      "answer": "总结经验并改进",
+      "options": [
+        "总结经验并改进",
+        "否定所有合作",
+        "掩盖问题",
+        "只责怪别人"
+      ],
+      "explanation": "正确答案：总结经验并改进"
+    },
+    {
+      "id": "practice-3-4",
+      "grade": 3,
+      "subject": "practice",
+      "text": "实地观察时应怎样保证安全？",
+      "answer": "遵守要求并结伴行动",
+      "options": [
+        "遵守要求并结伴行动",
+        "擅自进入危险区域",
+        "离队不告知",
+        "追逐打闹"
+      ],
+      "explanation": "正确答案：遵守要求并结伴行动"
+    },
+    {
+      "id": "practice-3-5",
+      "grade": 3,
+      "subject": "practice",
+      "text": "判断活动是否达成目标，应该看什么？",
+      "answer": "实际结果与目标的对应情况",
+      "options": [
+        "实际结果与目标的对应情况",
+        "海报颜色",
+        "口号音量",
+        "谁先离开"
+      ],
+      "explanation": "正确答案：实际结果与目标的对应情况"
+    },
+    {
+      "id": "practice-3-6",
+      "grade": 3,
+      "subject": "practice",
+      "text": "开展调查前，首先应明确什么？",
+      "answer": "调查问题和目的",
+      "options": [
+        "调查问题和目的",
+        "只选喜欢的结论",
+        "随便填写答案",
+        "立即宣布结果"
+      ],
+      "explanation": "正确答案：调查问题和目的"
+    },
+    {
+      "id": "english-4-2",
+      "grade": 4,
+      "subject": "english",
+      "text": "“She ___ my friend.” 应填？",
+      "answer": "is",
+      "options": [
+        "is",
+        "am",
+        "are",
+        "be"
+      ],
+      "explanation": "正确答案：is"
+    },
+    {
+      "id": "english-4-3",
+      "grade": 4,
+      "subject": "english",
+      "text": "“I have two ___.” 应填？",
+      "answer": "books",
+      "options": [
+        "books",
+        "book",
+        "a book",
+        "booking"
+      ],
+      "explanation": "正确答案：books"
+    },
+    {
+      "id": "english-4-4",
+      "grade": 4,
+      "subject": "english",
+      "text": "“星期一”用英语怎么说？",
+      "answer": "Monday",
+      "options": [
+        "Monday",
+        "Tuesday",
+        "Friday",
+        "Sunday"
+      ],
+      "explanation": "正确答案：Monday"
+    },
+    {
+      "id": "english-4-5",
+      "grade": 4,
+      "subject": "english",
+      "text": "“在桌子下面”中“下面”用哪个词？",
+      "answer": "under",
+      "options": [
+        "under",
+        "on",
+        "in",
+        "near"
+      ],
+      "explanation": "正确答案：under"
+    },
+    {
+      "id": "english-4-6",
+      "grade": 4,
+      "subject": "english",
+      "text": "“What time is it?” 是在问什么？",
+      "answer": "现在几点",
+      "options": [
+        "现在几点",
+        "你是谁",
+        "你住哪里",
+        "你多大"
+      ],
+      "explanation": "正确答案：现在几点"
+    },
+    {
+      "id": "chinese-4-2",
+      "grade": 4,
+      "subject": "chinese",
+      "text": "“春眠不觉晓”的下一句是？",
+      "answer": "处处闻啼鸟",
+      "options": [
+        "处处闻啼鸟",
+        "低头思故乡",
+        "明月松间照",
+        "黄河入海流"
+      ],
+      "explanation": "正确答案：处处闻啼鸟"
+    },
+    {
+      "id": "chinese-4-3",
+      "grade": 4,
+      "subject": "chinese",
+      "text": "“举头望明月”的下一句是？",
+      "answer": "低头思故乡",
+      "options": [
+        "低头思故乡",
+        "春风花草香",
+        "处处闻啼鸟",
+        "白日依山尽"
+      ],
+      "explanation": "正确答案：低头思故乡"
+    },
+    {
+      "id": "chinese-4-4",
+      "grade": 4,
+      "subject": "chinese",
+      "text": "“温故而知新”中的“故”指什么？",
+      "answer": "学过的知识",
+      "options": [
+        "学过的知识",
+        "事故",
+        "故乡",
+        "故意"
+      ],
+      "explanation": "正确答案：学过的知识"
+    },
+    {
+      "id": "chinese-4-5",
+      "grade": 4,
+      "subject": "chinese",
+      "text": "“精卫填海”属于哪类故事？",
+      "answer": "神话",
+      "options": [
+        "神话",
+        "新闻",
+        "说明文",
+        "通知"
+      ],
+      "explanation": "正确答案：神话"
+    },
+    {
+      "id": "chinese-4-6",
+      "grade": 4,
+      "subject": "chinese",
+      "text": "“翠”字的部首是？",
+      "answer": "羽",
+      "options": [
+        "羽",
+        "木",
+        "水",
+        "口"
+      ],
+      "explanation": "正确答案：羽"
+    },
+    {
+      "id": "science-4-2",
+      "grade": 4,
+      "subject": "science",
+      "text": "声音主要由物体的什么产生？",
+      "answer": "振动",
+      "options": [
+        "振动",
+        "颜色",
+        "大小",
+        "气味"
+      ],
+      "explanation": "正确答案：振动"
+    },
+    {
+      "id": "science-4-3",
+      "grade": 4,
+      "subject": "science",
+      "text": "月球本身会像太阳一样发光吗？",
+      "answer": "不会，主要反射阳光",
+      "options": [
+        "不会，主要反射阳光",
+        "会，靠燃烧发光",
+        "会，靠电池发光",
+        "只在白天发光"
+      ],
+      "explanation": "正确答案：不会，主要反射阳光"
+    },
+    {
+      "id": "science-4-4",
+      "grade": 4,
+      "subject": "science",
+      "text": "地球绕太阳运动称为什么？",
+      "answer": "公转",
+      "options": [
+        "公转",
+        "倒转",
+        "振动",
+        "蒸发"
+      ],
+      "explanation": "正确答案：公转"
+    },
+    {
+      "id": "science-4-5",
+      "grade": 4,
+      "subject": "science",
+      "text": "哪种是常见导电材料？",
+      "answer": "铜",
+      "options": [
+        "铜",
+        "橡胶",
+        "干木头",
+        "塑料"
+      ],
+      "explanation": "正确答案：铜"
+    },
+    {
+      "id": "science-4-6",
+      "grade": 4,
+      "subject": "science",
+      "text": "串联电路的一处断开后通常怎样？",
+      "answer": "整个回路不通",
+      "options": [
+        "整个回路不通",
+        "所有灯更亮",
+        "产生更多电池",
+        "电线变长"
+      ],
+      "explanation": "正确答案：整个回路不通"
+    },
+    {
+      "id": "ethics-4-2",
+      "grade": 4,
+      "subject": "ethics",
+      "text": "遇到网络欺负应怎样做？",
+      "answer": "保存证据并寻求帮助",
+      "options": [
+        "保存证据并寻求帮助",
+        "继续互相辱骂",
+        "公开对方隐私",
+        "独自承受不求助"
+      ],
+      "explanation": "正确答案：保存证据并寻求帮助"
+    },
+    {
+      "id": "ethics-4-3",
+      "grade": 4,
+      "subject": "ethics",
+      "text": "借了同学的东西，应该怎样做？",
+      "answer": "按约定归还",
+      "options": [
+        "按约定归还",
+        "据为己有",
+        "随意丢掉",
+        "转送别人"
+      ],
+      "explanation": "正确答案：按约定归还"
+    },
+    {
+      "id": "ethics-4-4",
+      "grade": 4,
+      "subject": "ethics",
+      "text": "发现自己做错了事，应该怎样做？",
+      "answer": "承认并改正",
+      "options": [
+        "承认并改正",
+        "一直隐瞒",
+        "责怪别人",
+        "拒绝沟通"
+      ],
+      "explanation": "正确答案：承认并改正"
+    },
+    {
+      "id": "ethics-4-5",
+      "grade": 4,
+      "subject": "ethics",
+      "text": "过马路时应怎样做？",
+      "answer": "遵守交通信号",
+      "options": [
+        "遵守交通信号",
+        "闯红灯",
+        "在车道追逐",
+        "闭眼奔跑"
+      ],
+      "explanation": "正确答案：遵守交通信号"
+    },
+    {
+      "id": "ethics-4-6",
+      "grade": 4,
+      "subject": "ethics",
+      "text": "公共场所排队时应该怎样做？",
+      "answer": "按顺序等待",
+      "options": [
+        "按顺序等待",
+        "插到最前",
+        "推挤别人",
+        "占多个位置"
+      ],
+      "explanation": "正确答案：按顺序等待"
+    },
+    {
+      "id": "music-4-2",
+      "grade": 4,
+      "subject": "music",
+      "text": "哪种乐器通过吹奏发声？",
+      "answer": "笛子",
+      "options": [
+        "笛子",
+        "钢琴",
+        "小鼓",
+        "二胡"
+      ],
+      "explanation": "正确答案：笛子"
+    },
+    {
+      "id": "music-4-3",
+      "grade": 4,
+      "subject": "music",
+      "text": "唱歌时怎样更有利于听清歌词？",
+      "answer": "吐字清楚",
+      "options": [
+        "吐字清楚",
+        "故意含糊",
+        "一直尖叫",
+        "随意吞字"
+      ],
+      "explanation": "正确答案：吐字清楚"
+    },
+    {
+      "id": "music-4-4",
+      "grade": 4,
+      "subject": "music",
+      "text": "哪种乐器属于打击乐器？",
+      "answer": "小鼓",
+      "options": [
+        "小鼓",
+        "小提琴",
+        "笛子",
+        "二胡"
+      ],
+      "explanation": "正确答案：小鼓"
+    },
+    {
+      "id": "music-4-5",
+      "grade": 4,
+      "subject": "music",
+      "text": "哪种乐器主要用弓拉奏？",
+      "answer": "小提琴",
+      "options": [
+        "小提琴",
+        "钢琴",
+        "鼓",
+        "笛子"
+      ],
+      "explanation": "正确答案：小提琴"
+    },
+    {
+      "id": "music-4-6",
+      "grade": 4,
+      "subject": "music",
+      "text": "欣赏演出时合适的做法是？",
+      "answer": "安静倾听",
+      "options": [
+        "安静倾听",
+        "大声聊天",
+        "抢夺乐器",
+        "随意打断"
+      ],
+      "explanation": "正确答案：安静倾听"
+    },
+    {
+      "id": "art-4-2",
+      "grade": 4,
+      "subject": "art",
+      "text": "哪种工具常用于水彩画？",
+      "answer": "画笔",
+      "options": [
+        "画笔",
+        "螺丝刀",
+        "量筒",
+        "口哨"
+      ],
+      "explanation": "正确答案：画笔"
+    },
+    {
+      "id": "art-4-3",
+      "grade": 4,
+      "subject": "art",
+      "text": "绘画前观察物体主要是为了什么？",
+      "answer": "了解形状和颜色",
+      "options": [
+        "了解形状和颜色",
+        "让画纸变厚",
+        "让颜料消失",
+        "减少光线"
+      ],
+      "explanation": "正确答案：了解形状和颜色"
+    },
+    {
+      "id": "art-4-4",
+      "grade": 4,
+      "subject": "art",
+      "text": "红色与黄色颜料混合通常得到什么？",
+      "answer": "橙色",
+      "options": [
+        "橙色",
+        "绿色",
+        "紫色",
+        "黑色"
+      ],
+      "explanation": "正确答案：橙色"
+    },
+    {
+      "id": "art-4-5",
+      "grade": 4,
+      "subject": "art",
+      "text": "蓝色与黄色颜料混合通常得到什么？",
+      "answer": "绿色",
+      "options": [
+        "绿色",
+        "橙色",
+        "紫色",
+        "白色"
+      ],
+      "explanation": "正确答案：绿色"
+    },
+    {
+      "id": "art-4-6",
+      "grade": 4,
+      "subject": "art",
+      "text": "剪纸时应怎样使用剪刀？",
+      "answer": "注意安全并控制方向",
+      "options": [
+        "注意安全并控制方向",
+        "边跑边剪",
+        "对着别人挥舞",
+        "闭眼操作"
+      ],
+      "explanation": "正确答案：注意安全并控制方向"
+    },
+    {
+      "id": "pe-4-2",
+      "grade": 4,
+      "subject": "pe",
+      "text": "投掷活动时应怎样保证安全？",
+      "answer": "听从口令并确认区域无人",
+      "options": [
+        "听从口令并确认区域无人",
+        "朝人群投掷",
+        "随时乱扔",
+        "进入他人投掷区域"
+      ],
+      "explanation": "正确答案：听从口令并确认区域无人"
+    },
+    {
+      "id": "pe-4-3",
+      "grade": 4,
+      "subject": "pe",
+      "text": "运动前通常应该先做什么？",
+      "answer": "适当热身",
+      "options": [
+        "适当热身",
+        "立即剧烈冲刺",
+        "大量吃饭",
+        "一直憋气"
+      ],
+      "explanation": "正确答案：适当热身"
+    },
+    {
+      "id": "pe-4-4",
+      "grade": 4,
+      "subject": "pe",
+      "text": "运动中感到明显不适，应该怎样做？",
+      "answer": "停止并告诉老师",
+      "options": [
+        "停止并告诉老师",
+        "继续硬撑",
+        "偷偷离开不说",
+        "立刻比赛加倍"
+      ],
+      "explanation": "正确答案：停止并告诉老师"
+    },
+    {
+      "id": "pe-4-5",
+      "grade": 4,
+      "subject": "pe",
+      "text": "跑步时应怎样注意安全？",
+      "answer": "观察路线避免碰撞",
+      "options": [
+        "观察路线避免碰撞",
+        "闭眼奔跑",
+        "推倒同伴",
+        "故意逆行"
+      ],
+      "explanation": "正确答案：观察路线避免碰撞"
+    },
+    {
+      "id": "pe-4-6",
+      "grade": 4,
+      "subject": "pe",
+      "text": "体育比赛中应怎样对待规则？",
+      "answer": "遵守规则",
+      "options": [
+        "遵守规则",
+        "随意作弊",
+        "只在获胜时遵守",
+        "自己随时改规则"
+      ],
+      "explanation": "正确答案：遵守规则"
+    },
+    {
+      "id": "labor-4-2",
+      "grade": 4,
+      "subject": "labor",
+      "text": "劳动合作时怎样更有效？",
+      "answer": "分工并互相配合",
+      "options": [
+        "分工并互相配合",
+        "只让一人做全部",
+        "争抢工具",
+        "拒绝交流"
+      ],
+      "explanation": "正确答案：分工并互相配合"
+    },
+    {
+      "id": "labor-4-3",
+      "grade": 4,
+      "subject": "labor",
+      "text": "整理书包时更合适的做法是？",
+      "answer": "分类放好用品",
+      "options": [
+        "分类放好用品",
+        "把物品全丢掉",
+        "将水倒进去",
+        "只放玩具"
+      ],
+      "explanation": "正确答案：分类放好用品"
+    },
+    {
+      "id": "labor-4-4",
+      "grade": 4,
+      "subject": "labor",
+      "text": "扫地时垃圾应该怎样处理？",
+      "answer": "集中收集并分类投放",
+      "options": [
+        "集中收集并分类投放",
+        "扫到邻居家",
+        "吹向同学",
+        "倒进水池"
+      ],
+      "explanation": "正确答案：集中收集并分类投放"
+    },
+    {
+      "id": "labor-4-5",
+      "grade": 4,
+      "subject": "labor",
+      "text": "清洗蔬菜的主要目的是什么？",
+      "answer": "去除泥土和污物",
+      "options": [
+        "去除泥土和污物",
+        "让菜变成水果",
+        "增加沙子",
+        "改变植物种类"
+      ],
+      "explanation": "正确答案：去除泥土和污物"
+    },
+    {
+      "id": "labor-4-6",
+      "grade": 4,
+      "subject": "labor",
+      "text": "使用工具前应该先做什么？",
+      "answer": "了解使用方法和安全要求",
+      "options": [
+        "了解使用方法和安全要求",
+        "立即乱挥",
+        "拆掉所有保护部件",
+        "闭眼尝试"
+      ],
+      "explanation": "正确答案：了解使用方法和安全要求"
+    },
+    {
+      "id": "it-4-2",
+      "grade": 4,
+      "subject": "it",
+      "text": "计算机中的“文件夹”主要用于什么？",
+      "answer": "分类组织文件",
+      "options": [
+        "分类组织文件",
+        "给电脑降温",
+        "增加声音",
+        "给屏幕染色"
+      ],
+      "explanation": "正确答案：分类组织文件"
+    },
+    {
+      "id": "it-4-3",
+      "grade": 4,
+      "subject": "it",
+      "text": "给账号设置密码时，哪种更合适？",
+      "answer": "使用难猜的较长组合",
+      "options": [
+        "使用难猜的较长组合",
+        "只用123456",
+        "把姓名直接当密码",
+        "与账号完全相同"
+      ],
+      "explanation": "正确答案：使用难猜的较长组合"
+    },
+    {
+      "id": "it-4-4",
+      "grade": 4,
+      "subject": "it",
+      "text": "收到陌生链接时应该怎样做？",
+      "answer": "先核实来源，不随意打开",
+      "options": [
+        "先核实来源，不随意打开",
+        "立即输入密码",
+        "转发给全班",
+        "直接付款"
+      ],
+      "explanation": "正确答案：先核实来源，不随意打开"
+    },
+    {
+      "id": "it-4-5",
+      "grade": 4,
+      "subject": "it",
+      "text": "复制他人的作品时应注意什么？",
+      "answer": "尊重版权并注明来源",
+      "options": [
+        "尊重版权并注明来源",
+        "删掉作者名字据为己有",
+        "随意售卖",
+        "冒充原创"
+      ],
+      "explanation": "正确答案：尊重版权并注明来源"
+    },
+    {
+      "id": "it-4-6",
+      "grade": 4,
+      "subject": "it",
+      "text": "保存文件时使用清楚的文件名有什么帮助？",
+      "answer": "便于查找和整理",
+      "options": [
+        "便于查找和整理",
+        "让电脑永不损坏",
+        "增加屏幕亮度",
+        "自动提高网速"
+      ],
+      "explanation": "正确答案：便于查找和整理"
+    },
+    {
+      "id": "practice-4-2",
+      "grade": 4,
+      "subject": "practice",
+      "text": "判断活动是否达成目标，应该看什么？",
+      "answer": "实际结果与目标的对应情况",
+      "options": [
+        "实际结果与目标的对应情况",
+        "海报颜色",
+        "口号音量",
+        "谁先离开"
+      ],
+      "explanation": "正确答案：实际结果与目标的对应情况"
+    },
+    {
+      "id": "practice-4-3",
+      "grade": 4,
+      "subject": "practice",
+      "text": "开展调查前，首先应明确什么？",
+      "answer": "调查问题和目的",
+      "options": [
+        "调查问题和目的",
+        "只选喜欢的结论",
+        "随便填写答案",
+        "立即宣布结果"
+      ],
+      "explanation": "正确答案：调查问题和目的"
+    },
+    {
+      "id": "practice-4-4",
+      "grade": 4,
+      "subject": "practice",
+      "text": "记录观察结果时应怎样做？",
+      "answer": "如实记录",
+      "options": [
+        "如实记录",
+        "编造结果",
+        "只记有利内容",
+        "完全凭记忆猜测"
+      ],
+      "explanation": "正确答案：如实记录"
+    },
+    {
+      "id": "practice-4-5",
+      "grade": 4,
+      "subject": "practice",
+      "text": "小组讨论时，合适的做法是？",
+      "answer": "轮流表达并倾听",
+      "options": [
+        "轮流表达并倾听",
+        "打断所有人",
+        "不许别人说话",
+        "只接受一人的意见"
+      ],
+      "explanation": "正确答案：轮流表达并倾听"
+    },
+    {
+      "id": "practice-4-6",
+      "grade": 4,
+      "subject": "practice",
+      "text": "制作活动计划时应考虑什么？",
+      "answer": "任务、时间和分工",
+      "options": [
+        "任务、时间和分工",
+        "只考虑装饰颜色",
+        "只看谁声音大",
+        "完全不安排步骤"
+      ],
+      "explanation": "正确答案：任务、时间和分工"
+    },
+    {
+      "id": "english-5-2",
+      "grade": 5,
+      "subject": "english",
+      "text": "“He ___ football every Sunday.” 应填？",
+      "answer": "plays",
+      "options": [
+        "plays",
+        "play",
+        "playing",
+        "to play"
+      ],
+      "explanation": "正确答案：plays"
+    },
+    {
+      "id": "english-5-3",
+      "grade": 5,
+      "subject": "english",
+      "text": "“她的”用哪个英语词？",
+      "answer": "her",
+      "options": [
+        "her",
+        "his",
+        "my",
+        "our"
+      ],
+      "explanation": "正确答案：her"
+    },
+    {
+      "id": "english-5-4",
+      "grade": 5,
+      "subject": "english",
+      "text": "“I am ___ a book now.” 应填？",
+      "answer": "reading",
+      "options": [
+        "reading",
+        "read",
+        "reads",
+        "to read"
+      ],
+      "explanation": "正确答案：reading"
+    },
+    {
+      "id": "english-5-5",
+      "grade": 5,
+      "subject": "english",
+      "text": "“冬天”用英语怎么说？",
+      "answer": "winter",
+      "options": [
+        "winter",
+        "summer",
+        "spring",
+        "autumn"
+      ],
+      "explanation": "正确答案：winter"
+    },
+    {
+      "id": "english-5-6",
+      "grade": 5,
+      "subject": "english",
+      "text": "“There ___ some water.” 应填？",
+      "answer": "is",
+      "options": [
+        "is",
+        "are",
+        "am",
+        "be"
+      ],
+      "explanation": "正确答案：is"
+    },
+    {
+      "id": "chinese-5-2",
+      "grade": 5,
+      "subject": "chinese",
+      "text": "“莫等闲，白了少年头，空悲切”提醒我们什么？",
+      "answer": "珍惜时间",
+      "options": [
+        "珍惜时间",
+        "只重外表",
+        "等待机会",
+        "不用学习"
+      ],
+      "explanation": "正确答案：珍惜时间"
+    },
+    {
+      "id": "chinese-5-3",
+      "grade": 5,
+      "subject": "chinese",
+      "text": "哪句话使用了拟人？",
+      "answer": "小草向我点头",
+      "options": [
+        "小草向我点头",
+        "草地是绿色的",
+        "小草很柔软",
+        "草地上有水"
+      ],
+      "explanation": "正确答案：小草向我点头"
+    },
+    {
+      "id": "chinese-5-4",
+      "grade": 5,
+      "subject": "chinese",
+      "text": "“完璧归赵”的“璧”指什么？",
+      "answer": "玉器",
+      "options": [
+        "玉器",
+        "墙壁",
+        "衣服",
+        "书籍"
+      ],
+      "explanation": "正确答案：玉器"
+    },
+    {
+      "id": "chinese-5-5",
+      "grade": 5,
+      "subject": "chinese",
+      "text": "“画龙点睛”中的“睛”指什么？",
+      "answer": "眼睛",
+      "options": [
+        "眼睛",
+        "天气",
+        "金子",
+        "颜色"
+      ],
+      "explanation": "正确答案：眼睛"
+    },
+    {
+      "id": "chinese-5-6",
+      "grade": 5,
+      "subject": "chinese",
+      "text": "“负荆请罪”中的“请罪”是什么意思？",
+      "answer": "主动认错",
+      "options": [
+        "主动认错",
+        "邀请客人",
+        "请求礼物",
+        "外出旅行"
+      ],
+      "explanation": "正确答案：主动认错"
+    },
+    {
+      "id": "science-5-2",
+      "grade": 5,
+      "subject": "science",
+      "text": "食物链中，绿色植物通常是什么角色？",
+      "answer": "生产者",
+      "options": [
+        "生产者",
+        "消费者",
+        "捕食者",
+        "寄生者"
+      ],
+      "explanation": "正确答案：生产者"
+    },
+    {
+      "id": "science-5-3",
+      "grade": 5,
+      "subject": "science",
+      "text": "物体运动快慢可用什么量表示？",
+      "answer": "速度",
+      "options": [
+        "速度",
+        "颜色",
+        "气味",
+        "温度"
+      ],
+      "explanation": "正确答案：速度"
+    },
+    {
+      "id": "science-5-4",
+      "grade": 5,
+      "subject": "science",
+      "text": "滑轮、杠杆属于哪类工具？",
+      "answer": "简单机械",
+      "options": [
+        "简单机械",
+        "化学药品",
+        "测温工具",
+        "光学镜片"
+      ],
+      "explanation": "正确答案：简单机械"
+    },
+    {
+      "id": "science-5-5",
+      "grade": 5,
+      "subject": "science",
+      "text": "白光经过棱镜可以出现什么现象？",
+      "answer": "分成多种颜色的光",
+      "options": [
+        "分成多种颜色的光",
+        "变成沙子",
+        "变成声音",
+        "完全没有颜色"
+      ],
+      "explanation": "正确答案：分成多种颜色的光"
+    },
+    {
+      "id": "science-5-6",
+      "grade": 5,
+      "subject": "science",
+      "text": "减小接触面的粗糙程度通常会怎样影响摩擦？",
+      "answer": "减小摩擦",
+      "options": [
+        "减小摩擦",
+        "增大摩擦",
+        "使摩擦无限大",
+        "必然消除重力"
+      ],
+      "explanation": "正确答案：减小摩擦"
+    },
+    {
+      "id": "ethics-5-2",
+      "grade": 5,
+      "subject": "ethics",
+      "text": "过马路时应怎样做？",
+      "answer": "遵守交通信号",
+      "options": [
+        "遵守交通信号",
+        "闯红灯",
+        "在车道追逐",
+        "闭眼奔跑"
+      ],
+      "explanation": "正确答案：遵守交通信号"
+    },
+    {
+      "id": "ethics-5-3",
+      "grade": 5,
+      "subject": "ethics",
+      "text": "公共场所排队时应该怎样做？",
+      "answer": "按顺序等待",
+      "options": [
+        "按顺序等待",
+        "插到最前",
+        "推挤别人",
+        "占多个位置"
+      ],
+      "explanation": "正确答案：按顺序等待"
+    },
+    {
+      "id": "ethics-5-4",
+      "grade": 5,
+      "subject": "ethics",
+      "text": "与同学意见不同，应该怎样沟通？",
+      "answer": "互相倾听",
+      "options": [
+        "互相倾听",
+        "大声辱骂",
+        "强迫对方",
+        "拒绝说话"
+      ],
+      "explanation": "正确答案：互相倾听"
+    },
+    {
+      "id": "ethics-5-5",
+      "grade": 5,
+      "subject": "ethics",
+      "text": "看到有人乱扔垃圾，合适的做法是？",
+      "answer": "友善提醒并正确分类",
+      "options": [
+        "友善提醒并正确分类",
+        "一起乱扔",
+        "嘲笑对方",
+        "把垃圾踢进河里"
+      ],
+      "explanation": "正确答案：友善提醒并正确分类"
+    },
+    {
+      "id": "ethics-5-6",
+      "grade": 5,
+      "subject": "ethics",
+      "text": "答应别人的事情应该怎样对待？",
+      "answer": "认真履行承诺",
+      "options": [
+        "认真履行承诺",
+        "随时忘记",
+        "假装没说过",
+        "让别人代替负责"
+      ],
+      "explanation": "正确答案：认真履行承诺"
+    },
+    {
+      "id": "music-5-2",
+      "grade": 5,
+      "subject": "music",
+      "text": "哪种乐器主要用弓拉奏？",
+      "answer": "小提琴",
+      "options": [
+        "小提琴",
+        "钢琴",
+        "鼓",
+        "笛子"
+      ],
+      "explanation": "正确答案：小提琴"
+    },
+    {
+      "id": "music-5-3",
+      "grade": 5,
+      "subject": "music",
+      "text": "欣赏演出时合适的做法是？",
+      "answer": "安静倾听",
+      "options": [
+        "安静倾听",
+        "大声聊天",
+        "抢夺乐器",
+        "随意打断"
+      ],
+      "explanation": "正确答案：安静倾听"
+    },
+    {
+      "id": "music-5-4",
+      "grade": 5,
+      "subject": "music",
+      "text": "简谱中“1”通常唱作什么？",
+      "answer": "do",
+      "options": [
+        "do",
+        "re",
+        "mi",
+        "sol"
+      ],
+      "explanation": "正确答案：do"
+    },
+    {
+      "id": "music-5-5",
+      "grade": 5,
+      "subject": "music",
+      "text": "简谱中“3”通常唱作什么？",
+      "answer": "mi",
+      "options": [
+        "mi",
+        "do",
+        "re",
+        "la"
+      ],
+      "explanation": "正确答案：mi"
+    },
+    {
+      "id": "music-5-6",
+      "grade": 5,
+      "subject": "music",
+      "text": "音乐的强弱主要指什么？",
+      "answer": "声音力度",
+      "options": [
+        "声音力度",
+        "歌曲长短",
+        "演出人数",
+        "服装颜色"
+      ],
+      "explanation": "正确答案：声音力度"
+    },
+    {
+      "id": "art-5-2",
+      "grade": 5,
+      "subject": "art",
+      "text": "蓝色与黄色颜料混合通常得到什么？",
+      "answer": "绿色",
+      "options": [
+        "绿色",
+        "橙色",
+        "紫色",
+        "白色"
+      ],
+      "explanation": "正确答案：绿色"
+    },
+    {
+      "id": "art-5-3",
+      "grade": 5,
+      "subject": "art",
+      "text": "剪纸时应怎样使用剪刀？",
+      "answer": "注意安全并控制方向",
+      "options": [
+        "注意安全并控制方向",
+        "边跑边剪",
+        "对着别人挥舞",
+        "闭眼操作"
+      ],
+      "explanation": "正确答案：注意安全并控制方向"
+    },
+    {
+      "id": "art-5-4",
+      "grade": 5,
+      "subject": "art",
+      "text": "哪种线条是弯曲的？",
+      "answer": "曲线",
+      "options": [
+        "曲线",
+        "直线",
+        "水平直线",
+        "垂直直线"
+      ],
+      "explanation": "正确答案：曲线"
+    },
+    {
+      "id": "art-5-5",
+      "grade": 5,
+      "subject": "art",
+      "text": "用泥塑表现物体属于哪种创作？",
+      "answer": "立体造型",
+      "options": [
+        "立体造型",
+        "朗读",
+        "合唱",
+        "测量温度"
+      ],
+      "explanation": "正确答案：立体造型"
+    },
+    {
+      "id": "art-5-6",
+      "grade": 5,
+      "subject": "art",
+      "text": "绘画中“构图”主要安排什么？",
+      "answer": "画面中物体的位置",
+      "options": [
+        "画面中物体的位置",
+        "画纸价格",
+        "水杯大小",
+        "工具品牌"
+      ],
+      "explanation": "正确答案：画面中物体的位置"
+    },
+    {
+      "id": "pe-5-2",
+      "grade": 5,
+      "subject": "pe",
+      "text": "跑步时应怎样注意安全？",
+      "answer": "观察路线避免碰撞",
+      "options": [
+        "观察路线避免碰撞",
+        "闭眼奔跑",
+        "推倒同伴",
+        "故意逆行"
+      ],
+      "explanation": "正确答案：观察路线避免碰撞"
+    },
+    {
+      "id": "pe-5-3",
+      "grade": 5,
+      "subject": "pe",
+      "text": "体育比赛中应怎样对待规则？",
+      "answer": "遵守规则",
+      "options": [
+        "遵守规则",
+        "随意作弊",
+        "只在获胜时遵守",
+        "自己随时改规则"
+      ],
+      "explanation": "正确答案：遵守规则"
+    },
+    {
+      "id": "pe-5-4",
+      "grade": 5,
+      "subject": "pe",
+      "text": "接力跑传棒时应注意什么？",
+      "answer": "配合并安全交接",
+      "options": [
+        "配合并安全交接",
+        "用棒击打同学",
+        "随意抛向人群",
+        "抢别人的棒"
+      ],
+      "explanation": "正确答案：配合并安全交接"
+    },
+    {
+      "id": "pe-5-5",
+      "grade": 5,
+      "subject": "pe",
+      "text": "运动后怎样恢复更合适？",
+      "answer": "适当放松和补水",
+      "options": [
+        "适当放松和补水",
+        "立即大量喝冰水",
+        "马上继续高强度运动",
+        "完全不休息"
+      ],
+      "explanation": "正确答案：适当放松和补水"
+    },
+    {
+      "id": "pe-5-6",
+      "grade": 5,
+      "subject": "pe",
+      "text": "跳绳时与同伴保持距离是为了什么？",
+      "answer": "避免碰撞和绊倒",
+      "options": [
+        "避免碰撞和绊倒",
+        "减少绳子长度",
+        "让声音变大",
+        "改变天气"
+      ],
+      "explanation": "正确答案：避免碰撞和绊倒"
+    },
+    {
+      "id": "labor-5-2",
+      "grade": 5,
+      "subject": "labor",
+      "text": "清洗蔬菜的主要目的是什么？",
+      "answer": "去除泥土和污物",
+      "options": [
+        "去除泥土和污物",
+        "让菜变成水果",
+        "增加沙子",
+        "改变植物种类"
+      ],
+      "explanation": "正确答案：去除泥土和污物"
+    },
+    {
+      "id": "labor-5-3",
+      "grade": 5,
+      "subject": "labor",
+      "text": "使用工具前应该先做什么？",
+      "answer": "了解使用方法和安全要求",
+      "options": [
+        "了解使用方法和安全要求",
+        "立即乱挥",
+        "拆掉所有保护部件",
+        "闭眼尝试"
+      ],
+      "explanation": "正确答案：了解使用方法和安全要求"
+    },
+    {
+      "id": "labor-5-4",
+      "grade": 5,
+      "subject": "labor",
+      "text": "给植物浇水应怎样做？",
+      "answer": "根据需要适量浇水",
+      "options": [
+        "根据需要适量浇水",
+        "一直浸泡所有植物",
+        "完全不浇",
+        "每天倒油"
+      ],
+      "explanation": "正确答案：根据需要适量浇水"
+    },
+    {
+      "id": "labor-5-5",
+      "grade": 5,
+      "subject": "labor",
+      "text": "做饭时碰到热锅，应该怎样避免烫伤？",
+      "answer": "使用合适的防烫工具",
+      "options": [
+        "使用合适的防烫工具",
+        "直接徒手握紧",
+        "把脸凑近",
+        "用纸轻轻抓住热锅"
+      ],
+      "explanation": "正确答案：使用合适的防烫工具"
+    },
+    {
+      "id": "labor-5-6",
+      "grade": 5,
+      "subject": "labor",
+      "text": "完成家务后应该怎样收尾？",
+      "answer": "整理工具和清理现场",
+      "options": [
+        "整理工具和清理现场",
+        "把工具散落地上",
+        "让别人收拾全部",
+        "把垃圾藏起来"
+      ],
+      "explanation": "正确答案：整理工具和清理现场"
+    },
+    {
+      "id": "it-5-2",
+      "grade": 5,
+      "subject": "it",
+      "text": "复制他人的作品时应注意什么？",
+      "answer": "尊重版权并注明来源",
+      "options": [
+        "尊重版权并注明来源",
+        "删掉作者名字据为己有",
+        "随意售卖",
+        "冒充原创"
+      ],
+      "explanation": "正确答案：尊重版权并注明来源"
+    },
+    {
+      "id": "it-5-3",
+      "grade": 5,
+      "subject": "it",
+      "text": "保存文件时使用清楚的文件名有什么帮助？",
+      "answer": "便于查找和整理",
+      "options": [
+        "便于查找和整理",
+        "让电脑永不损坏",
+        "增加屏幕亮度",
+        "自动提高网速"
+      ],
+      "explanation": "正确答案：便于查找和整理"
+    },
+    {
+      "id": "it-5-4",
+      "grade": 5,
+      "subject": "it",
+      "text": "“输入—处理—输出”描述的是什么？",
+      "answer": "信息处理的基本过程",
+      "options": [
+        "信息处理的基本过程",
+        "体育比赛顺序",
+        "植物生长阶段",
+        "画画的颜色顺序"
+      ],
+      "explanation": "正确答案：信息处理的基本过程"
+    },
+    {
+      "id": "it-5-5",
+      "grade": 5,
+      "subject": "it",
+      "text": "算法中的“重复执行”通常对应什么结构？",
+      "answer": "循环",
+      "options": [
+        "循环",
+        "停止",
+        "删除",
+        "退出"
+      ],
+      "explanation": "正确答案：循环"
+    },
+    {
+      "id": "it-5-6",
+      "grade": 5,
+      "subject": "it",
+      "text": "想知道一个任务如何完成，应怎样描述步骤？",
+      "answer": "按顺序清楚说明",
+      "options": [
+        "按顺序清楚说明",
+        "随机打乱",
+        "只写最后一步",
+        "完全省略条件"
+      ],
+      "explanation": "正确答案：按顺序清楚说明"
+    },
+    {
+      "id": "practice-5-2",
+      "grade": 5,
+      "subject": "practice",
+      "text": "小组讨论时，合适的做法是？",
+      "answer": "轮流表达并倾听",
+      "options": [
+        "轮流表达并倾听",
+        "打断所有人",
+        "不许别人说话",
+        "只接受一人的意见"
+      ],
+      "explanation": "正确答案：轮流表达并倾听"
+    },
+    {
+      "id": "practice-5-3",
+      "grade": 5,
+      "subject": "practice",
+      "text": "制作活动计划时应考虑什么？",
+      "answer": "任务、时间和分工",
+      "options": [
+        "任务、时间和分工",
+        "只考虑装饰颜色",
+        "只看谁声音大",
+        "完全不安排步骤"
+      ],
+      "explanation": "正确答案：任务、时间和分工"
+    },
+    {
+      "id": "practice-5-4",
+      "grade": 5,
+      "subject": "practice",
+      "text": "访问他人前，应该怎样做？",
+      "answer": "征得同意并礼貌提问",
+      "options": [
+        "征得同意并礼貌提问",
+        "强迫回答",
+        "公开对方隐私",
+        "随意录音不告知"
+      ],
+      "explanation": "正确答案：征得同意并礼貌提问"
+    },
+    {
+      "id": "practice-5-5",
+      "grade": 5,
+      "subject": "practice",
+      "text": "比较两个方案时应该怎样做？",
+      "answer": "依据目标和实际条件比较",
+      "options": [
+        "依据目标和实际条件比较",
+        "只选名字最长的",
+        "完全随机决定",
+        "拒绝听取理由"
+      ],
+      "explanation": "正确答案：依据目标和实际条件比较"
+    },
+    {
+      "id": "practice-5-6",
+      "grade": 5,
+      "subject": "practice",
+      "text": "整理调查数据时，哪种方式便于比较？",
+      "answer": "制作表格",
+      "options": [
+        "制作表格",
+        "把记录全部撕掉",
+        "混在一起不分类",
+        "只保存一项"
+      ],
+      "explanation": "正确答案：制作表格"
+    },
+    {
+      "id": "english-6-2",
+      "grade": 6,
+      "subject": "english",
+      "text": "“昨天”用英语怎么说？",
+      "answer": "yesterday",
+      "options": [
+        "yesterday",
+        "tomorrow",
+        "today",
+        "now"
+      ],
+      "explanation": "正确答案：yesterday"
+    },
+    {
+      "id": "english-6-3",
+      "grade": 6,
+      "subject": "english",
+      "text": "“go”的过去式是？",
+      "answer": "went",
+      "options": [
+        "went",
+        "goed",
+        "going",
+        "goes"
+      ],
+      "explanation": "正确答案：went"
+    },
+    {
+      "id": "english-6-4",
+      "grade": 6,
+      "subject": "english",
+      "text": "“tall”的比较级是？",
+      "answer": "taller",
+      "options": [
+        "taller",
+        "tallest",
+        "more tall",
+        "talling"
+      ],
+      "explanation": "正确答案：taller"
+    },
+    {
+      "id": "english-6-5",
+      "grade": 6,
+      "subject": "english",
+      "text": "“We ___ a film last night.” 应填？",
+      "answer": "watched",
+      "options": [
+        "watched",
+        "watch",
+        "watching",
+        "watches"
+      ],
+      "explanation": "正确答案：watched"
+    },
+    {
+      "id": "english-6-6",
+      "grade": 6,
+      "subject": "english",
+      "text": "“What did you do?” 是在问什么？",
+      "answer": "你做了什么",
+      "options": [
+        "你做了什么",
+        "你叫什么",
+        "你在哪里",
+        "你有几个"
+      ],
+      "explanation": "正确答案：你做了什么"
+    },
+    {
+      "id": "chinese-6-2",
+      "grade": 6,
+      "subject": "chinese",
+      "text": "“伯牙绝弦”表达了怎样的情感？",
+      "answer": "对知音的怀念",
+      "options": [
+        "对知音的怀念",
+        "对食物的喜爱",
+        "对天气的担忧",
+        "对旅行的期待"
+      ],
+      "explanation": "正确答案：对知音的怀念"
+    },
+    {
+      "id": "chinese-6-3",
+      "grade": 6,
+      "subject": "chinese",
+      "text": "“留取丹心照汗青”中的“汗青”指什么？",
+      "answer": "史册",
+      "options": [
+        "史册",
+        "汗水",
+        "青色",
+        "竹林"
+      ],
+      "explanation": "正确答案：史册"
+    },
+    {
+      "id": "chinese-6-4",
+      "grade": 6,
+      "subject": "chinese",
+      "text": "“学而不思则罔”强调学习要结合什么？",
+      "answer": "思考",
+      "options": [
+        "思考",
+        "猜测",
+        "抄写次数",
+        "运气"
+      ],
+      "explanation": "正确答案：思考"
+    },
+    {
+      "id": "chinese-6-5",
+      "grade": 6,
+      "subject": "chinese",
+      "text": "“粉骨碎身浑不怕”出自哪首诗？",
+      "answer": "《石灰吟》",
+      "options": [
+        "《石灰吟》",
+        "《静夜思》",
+        "《春晓》",
+        "《咏鹅》"
+      ],
+      "explanation": "正确答案：《石灰吟》"
+    },
+    {
+      "id": "chinese-6-6",
+      "grade": 6,
+      "subject": "chinese",
+      "text": "说明文中列出准确数字，属于哪种说明方法？",
+      "answer": "列数字",
+      "options": [
+        "列数字",
+        "打比方",
+        "作比较",
+        "下定义"
+      ],
+      "explanation": "正确答案：列数字"
+    },
+    {
+      "id": "science-6-2",
+      "grade": 6,
+      "subject": "science",
+      "text": "地球自转主要造成什么现象？",
+      "answer": "昼夜交替",
+      "options": [
+        "昼夜交替",
+        "四季变化",
+        "火山喷发",
+        "海水变甜"
+      ],
+      "explanation": "正确答案：昼夜交替"
+    },
+    {
+      "id": "science-6-3",
+      "grade": 6,
+      "subject": "science",
+      "text": "电池在电路中主要提供什么？",
+      "answer": "电能",
+      "options": [
+        "电能",
+        "食物",
+        "空气",
+        "磁铁"
+      ],
+      "explanation": "正确答案：电能"
+    },
+    {
+      "id": "science-6-4",
+      "grade": 6,
+      "subject": "science",
+      "text": "生物的遗传信息主要由什么携带？",
+      "answer": "DNA",
+      "options": [
+        "DNA",
+        "水蒸气",
+        "岩石",
+        "阳光"
+      ],
+      "explanation": "正确答案：DNA"
+    },
+    {
+      "id": "science-6-5",
+      "grade": 6,
+      "subject": "science",
+      "text": "哪项有助于保护生物多样性？",
+      "answer": "保护自然栖息地",
+      "options": [
+        "保护自然栖息地",
+        "随意捕捉野生动物",
+        "大量破坏森林",
+        "把垃圾倒入河流"
+      ],
+      "explanation": "正确答案：保护自然栖息地"
+    },
+    {
+      "id": "science-6-6",
+      "grade": 6,
+      "subject": "science",
+      "text": "怎样让实验结论更可靠？",
+      "answer": "重复实验并记录",
+      "options": [
+        "重复实验并记录",
+        "只选喜欢的结果",
+        "不做记录",
+        "随意修改数据"
+      ],
+      "explanation": "正确答案：重复实验并记录"
+    },
+    {
+      "id": "ethics-6-2",
+      "grade": 6,
+      "subject": "ethics",
+      "text": "看到有人乱扔垃圾，合适的做法是？",
+      "answer": "友善提醒并正确分类",
+      "options": [
+        "友善提醒并正确分类",
+        "一起乱扔",
+        "嘲笑对方",
+        "把垃圾踢进河里"
+      ],
+      "explanation": "正确答案：友善提醒并正确分类"
+    },
+    {
+      "id": "ethics-6-3",
+      "grade": 6,
+      "subject": "ethics",
+      "text": "答应别人的事情应该怎样对待？",
+      "answer": "认真履行承诺",
+      "options": [
+        "认真履行承诺",
+        "随时忘记",
+        "假装没说过",
+        "让别人代替负责"
+      ],
+      "explanation": "正确答案：认真履行承诺"
+    },
+    {
+      "id": "ethics-6-4",
+      "grade": 6,
+      "subject": "ethics",
+      "text": "面对陌生人的可疑邀请，应该怎样做？",
+      "answer": "拒绝并告诉可信成人",
+      "options": [
+        "拒绝并告诉可信成人",
+        "直接跟走",
+        "保守秘密",
+        "交出家庭钥匙"
+      ],
+      "explanation": "正确答案：拒绝并告诉可信成人"
+    },
+    {
+      "id": "ethics-6-5",
+      "grade": 6,
+      "subject": "ethics",
+      "text": "班级共同事务应怎样决定？",
+      "answer": "听取大家意见",
+      "options": [
+        "听取大家意见",
+        "只听声音最大的人",
+        "不让别人发言",
+        "随便猜"
+      ],
+      "explanation": "正确答案：听取大家意见"
+    },
+    {
+      "id": "ethics-6-6",
+      "grade": 6,
+      "subject": "ethics",
+      "text": "遇到网络欺负应怎样做？",
+      "answer": "保存证据并寻求帮助",
+      "options": [
+        "保存证据并寻求帮助",
+        "继续互相辱骂",
+        "公开对方隐私",
+        "独自承受不求助"
+      ],
+      "explanation": "正确答案：保存证据并寻求帮助"
+    },
+    {
+      "id": "music-6-2",
+      "grade": 6,
+      "subject": "music",
+      "text": "简谱中“3”通常唱作什么？",
+      "answer": "mi",
+      "options": [
+        "mi",
+        "do",
+        "re",
+        "la"
+      ],
+      "explanation": "正确答案：mi"
+    },
+    {
+      "id": "music-6-3",
+      "grade": 6,
+      "subject": "music",
+      "text": "音乐的强弱主要指什么？",
+      "answer": "声音力度",
+      "options": [
+        "声音力度",
+        "歌曲长短",
+        "演出人数",
+        "服装颜色"
+      ],
+      "explanation": "正确答案：声音力度"
+    },
+    {
+      "id": "music-6-4",
+      "grade": 6,
+      "subject": "music",
+      "text": "“合唱”指什么？",
+      "answer": "多人共同演唱",
+      "options": [
+        "多人共同演唱",
+        "一个人独唱",
+        "只敲鼓",
+        "只弹钢琴"
+      ],
+      "explanation": "正确答案：多人共同演唱"
+    },
+    {
+      "id": "music-6-5",
+      "grade": 6,
+      "subject": "music",
+      "text": "节拍稳定时，拍手应怎样做？",
+      "answer": "跟随规律节拍",
+      "options": [
+        "跟随规律节拍",
+        "每次随意变化",
+        "完全不听音乐",
+        "越快越好"
+      ],
+      "explanation": "正确答案：跟随规律节拍"
+    },
+    {
+      "id": "music-6-6",
+      "grade": 6,
+      "subject": "music",
+      "text": "哪种乐器通过吹奏发声？",
+      "answer": "笛子",
+      "options": [
+        "笛子",
+        "钢琴",
+        "小鼓",
+        "二胡"
+      ],
+      "explanation": "正确答案：笛子"
+    },
+    {
+      "id": "art-6-2",
+      "grade": 6,
+      "subject": "art",
+      "text": "用泥塑表现物体属于哪种创作？",
+      "answer": "立体造型",
+      "options": [
+        "立体造型",
+        "朗读",
+        "合唱",
+        "测量温度"
+      ],
+      "explanation": "正确答案：立体造型"
+    },
+    {
+      "id": "art-6-3",
+      "grade": 6,
+      "subject": "art",
+      "text": "绘画中“构图”主要安排什么？",
+      "answer": "画面中物体的位置",
+      "options": [
+        "画面中物体的位置",
+        "画纸价格",
+        "水杯大小",
+        "工具品牌"
+      ],
+      "explanation": "正确答案：画面中物体的位置"
+    },
+    {
+      "id": "art-6-4",
+      "grade": 6,
+      "subject": "art",
+      "text": "哪组颜色通常给人温暖的感觉？",
+      "answer": "红、橙、黄",
+      "options": [
+        "红、橙、黄",
+        "蓝、青、紫",
+        "黑、灰、白",
+        "只有深蓝"
+      ],
+      "explanation": "正确答案：红、橙、黄"
+    },
+    {
+      "id": "art-6-5",
+      "grade": 6,
+      "subject": "art",
+      "text": "欣赏作品时合适的做法是？",
+      "answer": "观察并表达自己的感受",
+      "options": [
+        "观察并表达自己的感受",
+        "直接撕毁",
+        "只嘲笑作者",
+        "拒绝观看"
+      ],
+      "explanation": "正确答案：观察并表达自己的感受"
+    },
+    {
+      "id": "art-6-6",
+      "grade": 6,
+      "subject": "art",
+      "text": "哪种工具常用于水彩画？",
+      "answer": "画笔",
+      "options": [
+        "画笔",
+        "螺丝刀",
+        "量筒",
+        "口哨"
+      ],
+      "explanation": "正确答案：画笔"
+    },
+    {
+      "id": "pe-6-2",
+      "grade": 6,
+      "subject": "pe",
+      "text": "运动后怎样恢复更合适？",
+      "answer": "适当放松和补水",
+      "options": [
+        "适当放松和补水",
+        "立即大量喝冰水",
+        "马上继续高强度运动",
+        "完全不休息"
+      ],
+      "explanation": "正确答案：适当放松和补水"
+    },
+    {
+      "id": "pe-6-3",
+      "grade": 6,
+      "subject": "pe",
+      "text": "跳绳时与同伴保持距离是为了什么？",
+      "answer": "避免碰撞和绊倒",
+      "options": [
+        "避免碰撞和绊倒",
+        "减少绳子长度",
+        "让声音变大",
+        "改变天气"
+      ],
+      "explanation": "正确答案：避免碰撞和绊倒"
+    },
+    {
+      "id": "pe-6-4",
+      "grade": 6,
+      "subject": "pe",
+      "text": "篮球传球前通常应注意什么？",
+      "answer": "观察队友位置",
+      "options": [
+        "观察队友位置",
+        "闭眼用力扔",
+        "瞄准观众",
+        "只看鞋子"
+      ],
+      "explanation": "正确答案：观察队友位置"
+    },
+    {
+      "id": "pe-6-5",
+      "grade": 6,
+      "subject": "pe",
+      "text": "体育合作活动中遇到失误，应怎样做？",
+      "answer": "鼓励队友并调整",
+      "options": [
+        "鼓励队友并调整",
+        "辱骂队友",
+        "故意放弃",
+        "推卸全部责任"
+      ],
+      "explanation": "正确答案：鼓励队友并调整"
+    },
+    {
+      "id": "pe-6-6",
+      "grade": 6,
+      "subject": "pe",
+      "text": "投掷活动时应怎样保证安全？",
+      "answer": "听从口令并确认区域无人",
+      "options": [
+        "听从口令并确认区域无人",
+        "朝人群投掷",
+        "随时乱扔",
+        "进入他人投掷区域"
+      ],
+      "explanation": "正确答案：听从口令并确认区域无人"
+    },
+    {
+      "id": "labor-6-2",
+      "grade": 6,
+      "subject": "labor",
+      "text": "做饭时碰到热锅，应该怎样避免烫伤？",
+      "answer": "使用合适的防烫工具",
+      "options": [
+        "使用合适的防烫工具",
+        "直接徒手握紧",
+        "把脸凑近",
+        "用纸轻轻抓住热锅"
+      ],
+      "explanation": "正确答案：使用合适的防烫工具"
+    },
+    {
+      "id": "labor-6-3",
+      "grade": 6,
+      "subject": "labor",
+      "text": "完成家务后应该怎样收尾？",
+      "answer": "整理工具和清理现场",
+      "options": [
+        "整理工具和清理现场",
+        "把工具散落地上",
+        "让别人收拾全部",
+        "把垃圾藏起来"
+      ],
+      "explanation": "正确答案：整理工具和清理现场"
+    },
+    {
+      "id": "labor-6-4",
+      "grade": 6,
+      "subject": "labor",
+      "text": "洗手时怎样更有效清洁？",
+      "answer": "使用清水和洗手用品认真清洗",
+      "options": [
+        "使用清水和洗手用品认真清洗",
+        "只挥手",
+        "只擦衣服",
+        "用泥土搓洗"
+      ],
+      "explanation": "正确答案：使用清水和洗手用品认真清洗"
+    },
+    {
+      "id": "labor-6-5",
+      "grade": 6,
+      "subject": "labor",
+      "text": "发现电器电线破损时应怎样做？",
+      "answer": "停止使用并告诉成人",
+      "options": [
+        "停止使用并告诉成人",
+        "继续使用",
+        "用湿手摸",
+        "自行接触裸露导线"
+      ],
+      "explanation": "正确答案：停止使用并告诉成人"
+    },
+    {
+      "id": "labor-6-6",
+      "grade": 6,
+      "subject": "labor",
+      "text": "劳动合作时怎样更有效？",
+      "answer": "分工并互相配合",
+      "options": [
+        "分工并互相配合",
+        "只让一人做全部",
+        "争抢工具",
+        "拒绝交流"
+      ],
+      "explanation": "正确答案：分工并互相配合"
+    },
+    {
+      "id": "it-6-2",
+      "grade": 6,
+      "subject": "it",
+      "text": "算法中的“重复执行”通常对应什么结构？",
+      "answer": "循环",
+      "options": [
+        "循环",
+        "停止",
+        "删除",
+        "退出"
+      ],
+      "explanation": "正确答案：循环"
+    },
+    {
+      "id": "it-6-3",
+      "grade": 6,
+      "subject": "it",
+      "text": "想知道一个任务如何完成，应怎样描述步骤？",
+      "answer": "按顺序清楚说明",
+      "options": [
+        "按顺序清楚说明",
+        "随机打乱",
+        "只写最后一步",
+        "完全省略条件"
+      ],
+      "explanation": "正确答案：按顺序清楚说明"
+    },
+    {
+      "id": "it-6-4",
+      "grade": 6,
+      "subject": "it",
+      "text": "哪些信息不应随意公开？",
+      "answer": "账号密码",
+      "options": [
+        "账号密码",
+        "公开天气预报",
+        "学校公开通知",
+        "公开图书目录"
+      ],
+      "explanation": "正确答案：账号密码"
+    },
+    {
+      "id": "it-6-5",
+      "grade": 6,
+      "subject": "it",
+      "text": "发现网上的信息可疑，应该怎样做？",
+      "answer": "核对可靠来源",
+      "options": [
+        "核对可靠来源",
+        "立即认定为真",
+        "只看转发次数",
+        "不经核实到处传播"
+      ],
+      "explanation": "正确答案：核对可靠来源"
+    },
+    {
+      "id": "it-6-6",
+      "grade": 6,
+      "subject": "it",
+      "text": "计算机中的“文件夹”主要用于什么？",
+      "answer": "分类组织文件",
+      "options": [
+        "分类组织文件",
+        "给电脑降温",
+        "增加声音",
+        "给屏幕染色"
+      ],
+      "explanation": "正确答案：分类组织文件"
+    },
+    {
+      "id": "practice-6-2",
+      "grade": 6,
+      "subject": "practice",
+      "text": "比较两个方案时应该怎样做？",
+      "answer": "依据目标和实际条件比较",
+      "options": [
+        "依据目标和实际条件比较",
+        "只选名字最长的",
+        "完全随机决定",
+        "拒绝听取理由"
+      ],
+      "explanation": "正确答案：依据目标和实际条件比较"
+    },
+    {
+      "id": "practice-6-3",
+      "grade": 6,
+      "subject": "practice",
+      "text": "整理调查数据时，哪种方式便于比较？",
+      "answer": "制作表格",
+      "options": [
+        "制作表格",
+        "把记录全部撕掉",
+        "混在一起不分类",
+        "只保存一项"
+      ],
+      "explanation": "正确答案：制作表格"
+    },
+    {
+      "id": "practice-6-4",
+      "grade": 6,
+      "subject": "practice",
+      "text": "活动结束后的反思主要帮助我们什么？",
+      "answer": "总结经验并改进",
+      "options": [
+        "总结经验并改进",
+        "否定所有合作",
+        "掩盖问题",
+        "只责怪别人"
+      ],
+      "explanation": "正确答案：总结经验并改进"
+    },
+    {
+      "id": "practice-6-5",
+      "grade": 6,
+      "subject": "practice",
+      "text": "实地观察时应怎样保证安全？",
+      "answer": "遵守要求并结伴行动",
+      "options": [
+        "遵守要求并结伴行动",
+        "擅自进入危险区域",
+        "离队不告知",
+        "追逐打闹"
+      ],
+      "explanation": "正确答案：遵守要求并结伴行动"
+    },
+    {
+      "id": "practice-6-6",
+      "grade": 6,
+      "subject": "practice",
+      "text": "判断活动是否达成目标，应该看什么？",
+      "answer": "实际结果与目标的对应情况",
+      "options": [
+        "实际结果与目标的对应情况",
+        "海报颜色",
+        "口号音量",
+        "谁先离开"
+      ],
+      "explanation": "正确答案：实际结果与目标的对应情况"
     }
   ]
 }

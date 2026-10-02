@@ -180,7 +180,7 @@ tr.me td{background:rgba(255,201,60,.14)}
 
 <script src="vendor/three.min.js"></script>
 <script src="subjects.js?v=grade-20261002"></script>
-<script src="learning.js?v=grade-20261002"></script>
+<script src="learning.js?v=random-v2-20261002"></script>
 <script src="api.js"></script>
 <script>
 (() => {
@@ -224,25 +224,20 @@ const DIFFS = [
   { name: '标准', scale: 1.0, ai: 0.96 },
   { name: '极速', scale: 1.15, ai: 1.02 }
 ];
-const QUALS = ['auto', 'low', 'mid', 'high'];
-const QNAMES = { auto: '自动', low: '流畅', mid: '均衡', high: '精美' };
+const QUALS = ['low', 'mid', 'high'];
+const QNAMES = { low: '流畅', mid: '均衡', high: '精美' };
 const ITEM_NAMES = { turbo: '火箭', jelly: '果冻块', missile: '追踪弹' };
 
 /* ================= device & quality ================= */
 const coarse = matchMedia('(pointer: coarse)').matches || 'ontouchstart' in window;
-function autoQuality() {
-  if (!coarse) return 'high';
-  const m = Math.min(screen.width, screen.height);
-  return m >= 700 ? 'mid' : 'low';
-}
 const G = {
   state: 'menu', paused: false, trackIdx: store.get('track', 0), charIdx: store.get('char', 0), diff: store.get('diff', 1), study: !!store.get('study', false), grade: store.get('grade',1), subject: store.get('subject','all')==='local'?'all':store.get('subject','all'), studyStats:{total:0,correct:0},
-  qualSel: store.get('qual', 'auto'), qual: 'high', karts: [], player: null, tr: null, raceTime: 0, countdown: 0,
+  qualSel: QUALS.includes(store.get('qual','low'))?store.get('qual','low'):'low', qual: 'low', karts: [], player: null, tr: null, raceTime: 0, countdown: 0,
   touch: coarse, time: 0, finishT: 0, shake: 0, frameAvg: 16, slowT: 0
 };
 if (G.trackIdx >= TRACKS.length) G.trackIdx = 0;
 if (G.charIdx >= CHARS.length) G.charIdx = 0;
-G.qual = G.qualSel === 'auto' ? autoQuality() : G.qualSel;
+G.qual = G.qualSel;
 const QCFG = {
   low: { dpr: 1, shadow: 0, trees: 0.45, fog: [70, 230], aa: false },
   mid: { dpr: 1.5, shadow: 1024, trees: 0.75, fog: [90, 320], aa: true },
@@ -1108,11 +1103,7 @@ function frame(now) {
     const tdt = dt * (G.ts || 1), steps = Math.max(1, Math.ceil(tdt / 0.022)), h = tdt / steps;
     for (let s = 0; s < steps && !G.paused; s++) step(h);
     if (flashTimer > 0) { flashTimer -= dt; if (flashTimer <= 0) $('#center').textContent = ''; }
-    // auto downgrade
-    if (G.qualSel === 'auto' && G.state === 'race') {
-      if (G.frameAvg > 26) G.slowT += dt; else G.slowT = Math.max(0, G.slowT - dt);
-      if (G.slowT > 3 && G.qual !== 'low') { G.qual = G.qual === 'high' ? 'mid' : 'low'; G.slowT = 0; applyQuality(); toast('已自动降低画质以保持流畅', 2200); }
-    }
+
   }
   animateWorld(G.paused ? 0 : dt);
   updateParticles(G.paused ? 0 : dt);
@@ -1202,7 +1193,7 @@ function renderMenu() {
   const dl = $('#diffList'); dl.textContent = '';
   DIFFS.forEach((d, i) => { const b = document.createElement('button'); b.id = 'diff' + i; b.textContent = d.name; b.setAttribute('aria-pressed', i === G.diff); b.onclick = () => { G.diff = i; renderMenu(); }; dl.appendChild(b); });
   const ql = $('#qList'); ql.textContent = '';
-  QUALS.forEach(q => { const b = document.createElement('button'); b.id = 'q' + q; b.textContent = QNAMES[q]; b.setAttribute('aria-pressed', q === G.qualSel); b.onclick = () => { G.qualSel = q; store.set('qual', q); G.qual = q === 'auto' ? autoQuality() : q; applyQuality(); setupRace(); renderMenu(); }; ql.appendChild(b); });
+  QUALS.forEach(q => { const b = document.createElement('button'); b.id = 'q' + q; b.textContent = QNAMES[q]; b.setAttribute('aria-pressed', q === G.qualSel); b.onclick = () => { G.qualSel = q; store.set('qual', q); G.qual = q; applyQuality(); setupRace(); renderMenu(); }; ql.appendChild(b); });
   const best = store.get('best_wide_' + G.trackIdx + '_' + G.diff + (G.study ? '_study_'+G.grade+'_'+G.subject : ''), null);
   $('#bestTxt').innerHTML = best == null ? `${TRACKS[G.trackIdx].name} · ${DIFFS[G.diff].name}：还没有纪录` : `${TRACKS[G.trackIdx].name} · ${DIFFS[G.diff].name} 最佳：<b>${fmt(best)}</b>`;
 }
