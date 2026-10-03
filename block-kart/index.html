@@ -130,6 +130,14 @@ tr.me td{background:rgba(255,201,60,.14)}
 /* Readable learning questions, including long answers on small screens. */
 #quizOv .dialog{width:min(680px,100%);gap:16px;padding:24px}
 #quizOv h2{font-size:36px}
+#quizOv.reviewing .dialog{overflow:hidden;max-height:calc(100dvh - 32px)}
+#quizOv.reviewing #quizQuestion,#quizOv.reviewing #quizChoices,#quizOv.reviewing .keys{display:none}
+#quizOv.reviewing #quizTitle{flex-shrink:0;margin:0}
+#quizReview:not([hidden]){display:flex;flex-direction:column;gap:12px;min-height:0;overflow:hidden}
+#quizFeedback{flex-shrink:0;margin:0}
+#quizExplanation{min-height:0;overflow-y:auto;overscroll-behavior:contain;margin:0;padding-right:4px;touch-action:pan-y}
+#quizContinue{flex-shrink:0}
+@media(max-height:450px){#quizOv.reviewing .dialog{padding:16px;gap:10px}#quizOv.reviewing h2{font-size:26px}#quizReview:not([hidden]){gap:8px}#quizOv.reviewing #quizFeedback,#quizOv.reviewing #quizExplanation{font-size:16px;line-height:1.45}}
 #quizQuestion{font-size:22px;line-height:1.6;margin:4px 0;overflow-wrap:anywhere}
 #quizChoices button{font-size:20px;min-height:56px;line-height:1.5}
 #quizFeedback,#quizExplanation{font-size:18px;line-height:1.65;overflow-wrap:anywhere}
@@ -171,7 +179,7 @@ tr.me td{background:rgba(255,201,60,.14)}
   <b>手柄</b>：左摇杆转向 · RT 油门 · LT 刹车 · RB 漂移 · X 道具<br>
   道具（8种等概率）：果冻块设陷阱；追踪弹攻击；护盾抵挡一次攻击（8秒）；闪电攻击24米内对手；冰冻弹击倒并减速3秒；弹簧跳跃腾空躲陷阱；巨型车6秒撞倒对手；笑脸烟雾18米范围减速3秒。<br>漂移时间越长火花越亮：蓝 → 橙 → 紫，松开即加速。倒数到"1"时踩油门可起步冲刺。</p></details>
 <button id="startBtn" class="big">开始比赛 →</button>
-<div id="quizOv" style="z-index:100" class="overlay" role="dialog" aria-modal="true" aria-labelledby="quizTitle" hidden><div class="dialog panel"><h2 id="quizTitle" tabindex="-1" style="outline:none">终点答题</h2><p id="quizQuestion"></p><p class="keys">比赛已暂停，不限答题时间。先理解条件，再作答。</p><div id="quizChoices" class="seg"></div><div id="quizReview" hidden><p id="quizFeedback" role="status"></p><p id="quizExplanation" style="white-space:pre-wrap;line-height:1.6"></p><button id="quizContinue" class="alt" style="min-height:48px;width:100%">继续比赛 →</button></div><p class="keys">答对随机补满空道具格；答错不获得道具，不惩罚驾驶。</p></div></div>
+<div id="quizOv" style="z-index:100" class="overlay" role="dialog" aria-modal="true" aria-labelledby="quizTitle" hidden><div class="dialog panel"><h2 id="quizTitle" tabindex="-1" style="outline:none">终点答题</h2><p id="quizQuestion"></p><p class="keys">比赛已暂停，不限答题时间。先理解条件，再作答。</p><div id="quizChoices" class="seg"></div><div id="quizReview" hidden><p id="quizFeedback" role="status"></p><p id="quizExplanation" style="white-space:pre-wrap;line-height:1.6"></p><button id="quizContinue" class="alt" style="min-height:48px;width:100%">继续游戏 →</button></div><p class="keys">答对随机补满空道具格；答错不获得道具，不惩罚驾驶。</p></div></div>
 <div id="hud" hidden>
   <div class="hud-tl">
     <div class="chip">圈 <b id="lapTxt">1/6</b></div>
@@ -838,7 +846,7 @@ function studyCheckpoint(k, done=()=>{}, title='终点答题') {
   if (quizPending) return;
   const n=G.studyStats.total;const q=G.questionIds?.[n]?KartLearning.byId(G.questionIds[n],KartSeason.rng((G.seed||0)+n)):KartLearning.question(G.grade,G.subject); quizPending = {k,q,opened:performance.now()}; G.paused = true;resetInput();
   $('#quizTitle').textContent=title;engineSound(false,0,false);MUSIC.stop(); $('#quizQuestion').textContent = `${G.grade}年级 · ${q.subjectName}：${q.text}`;
-  $('#quizReview').hidden=true;$('#quizContinue').onclick=null;
+  $('#quizOv').classList.toggle('reviewing',false);$('#quizReview').hidden=true;$('#quizContinue').onclick=null;
   const choices = $('#quizChoices'); choices.textContent = '';choices.classList.toggle('vertical',q.options.some(x=>String(x).length>6));
   const submitAnswer = answer => {
     if (!quizPending || quizPending.answered) return;
@@ -855,10 +863,15 @@ function studyCheckpoint(k, done=()=>{}, title='终点答题') {
       if(correct&&(k.studyLap??0)<LAPS)awardStudyItems(k,3,finish);else finish();
     };
     if(correct){G.studyStats.correct++;resume();return;}
-    $('#quizFeedback').textContent='这次答错了，不获得道具。正确答案：'+q.answer;
+    KartEnglishTraining.stop();
+    $('#quizTitle').textContent=answer===''?'已跳过本题':'你答错了';
+    $('#quizFeedback').textContent='本题不获得道具。正确答案：'+q.answer;
     $('#quizExplanation').textContent='解题思路：'+q.explanation;
     $('#quizReview').hidden=false;
     $('#quizContinue').onclick=resume;
+    $('#quizOv').classList.toggle('reviewing',true);
+    $('#quizExplanation').scrollTop=0;
+    $('#quizTitle').focus({preventScroll:true});
   };
   KartEnglishTraining.mount(choices,q,submitAnswer);
   $('#quizOv').hidden = false; $('#quizTitle').focus({preventScroll:true});
