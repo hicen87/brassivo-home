@@ -152,7 +152,7 @@ tr.me td{background:rgba(255,201,60,.14)}
     <div><h2>难度</h2><div id="diffList" class="seg"></div></div>
     <div><h2>画质</h2><div id="qList" class="seg"></div></div>
   </section>
-  <section><h2>学习学霸模式</h2><input id="studyMode" type="hidden" value="true"><p class="keys">开局驶过起跑线及每圈通过终点线后答题：答对随机补满空道具格，答错不获得道具，随后继续行驶。学霸模式没有路上盲盒；答题时全场暂停。</p><div class="row2"><label class="keys">年级<select id="studyGrade" style="width:100%;padding:8px"><option value="1">一年级</option><option value="2">二年级</option><option value="3">三年级</option><option value="4">四年级</option><option value="5">五年级</option><option value="6">六年级</option></select></label><label class="keys">题库<select id="studySubject" style="width:100%;padding:8px"><option value="all">综合随机</option><option value="math">数学</option><option value="olympiad">奥数</option><option value="chinese">语文</option><option value="english">英语</option><option value="science">科学</option><option value="ethics">道德与法治</option><option value="music">音乐</option><option value="art">美术</option><option value="pe">体育与健康</option><option value="labor">劳动</option><option value="it">信息科技</option><option value="practice">综合实践</option></select></label></div><p id="studyBankInfo" class="keys" aria-live="polite"></p><p class="keys">优先抽取年级内思考题，答对直接继续比赛，答错阅读解析后点击继续。题库随年级切换；当前只开放英语；一、二年级为启蒙词汇。练习包含中文选词、听音辨词、拼写与朗读。</p></section>
+  <section><h2>学习学霸模式</h2><input id="studyMode" type="hidden" value="true"><p class="keys">开局驶过起跑线、每圈半圈棋盘格及终点线后答题：答对随机补满空道具格，答错不获得道具，随后继续行驶。学霸模式没有路上盲盒；答题时全场暂停。</p><div class="row2"><label class="keys">年级<select id="studyGrade" style="width:100%;padding:8px"><option value="1">一年级</option><option value="2">二年级</option><option value="3">三年级</option><option value="4">四年级</option><option value="5">五年级</option><option value="6">六年级</option></select></label><label class="keys">题库<select id="studySubject" style="width:100%;padding:8px"><option value="all">综合随机</option><option value="math">数学</option><option value="olympiad">奥数</option><option value="chinese">语文</option><option value="english">英语</option><option value="science">科学</option><option value="ethics">道德与法治</option><option value="music">音乐</option><option value="art">美术</option><option value="pe">体育与健康</option><option value="labor">劳动</option><option value="it">信息科技</option><option value="practice">综合实践</option></select></label></div><p id="studyBankInfo" class="keys" aria-live="polite"></p><p class="keys">优先抽取年级内思考题，答对直接继续比赛，答错阅读解析后点击继续。题库随年级切换；当前只开放英语；一、二年级为启蒙词汇。练习包含中文选词、听音辨词、拼写与朗读。</p></section>
   <details id="musicSettings"><summary style="cursor:pointer;font-weight:bold;color:var(--gold)">背景音乐</summary><label class="keys" style="display:block;margin:12px 0"><input id="musicEnabled" type="checkbox"> 播放随机节奏音乐</label><label class="keys" style="display:block">音乐音量 <output id="musicVolumeLabel">35%</output><input id="musicVolume" type="range" min="0" max="100" step="5" style="display:block;width:100%;min-height:44px"></label><p class="keys">像素冲刺 · 霓虹弯道 · 晴空飞车。比赛中随机播放，答题或暂停时音乐暂停。</p></details>
   <details id="controlSettings"><summary style="cursor:pointer;font-weight:bold;color:var(--gold)">控制设置</summary><label class="keys">手机 / 平板转向<select id="controlMenu" style="width:100%;padding:8px"><option value="tilt">重力控制</option><option value="buttons">左右方向键</option></select></label><button id="calibrateMenu" class="alt">校准重力中心</button><p class="keys">iPad 默认左右方向键，右下角按住加速。也可选择重力转向：左右倾斜控制方向；手机默认重力转向。无传感器时使用方向键。</p></details>
   <p class="best" id="bestTxt"></p>
@@ -216,8 +216,8 @@ tr.me td{background:rgba(255,201,60,.14)}
 <script src="vendor/three.min.js"></script>
 <script src="subjects.js?v=english-skills-20261003"></script>
 <div id="rotateGate" hidden role="dialog" aria-modal="true" aria-label="请横屏游玩"><div><h2>请横屏游玩 ↻</h2><p>将手机或平板横过来，获得更宽的赛道视野。若未自动旋转，请关闭设备的方向锁定。</p><button id="rotateAction" class="big">尝试切换横屏</button></div></div>
-<script src="season.js?v=english-skills-20261003"></script>
-<script src="english-training.js?v=english-skills-20261003"></script>
+<script src="season.js?v=midpoint-speech-20261003"></script>
+<script src="english-training.js?v=midpoint-speech-20261003"></script>
 <script src="learning.js?v=english-skills-20261003"></script>
 <script src="tilt.js?v=20261002"></script>
 <script src="api.js?v=auth-v2"></script>
@@ -228,7 +228,7 @@ tr.me td{background:rgba(255,201,60,.14)}
 <script src="music.js?v=rhythm-v1"></script>
 <script src="score.js?v=kart-s2-20261002"></script>
 <script src="account-form.js?v=auth-v2"></script>
-<script src="game-account.js?v=english-skills-20261003"></script>
+<script src="game-account.js?v=midpoint-speech-20261003"></script>
 <script src="reliable-save.js?v=kart-s2-startfix-20261002"></script>
 <script src="progression.js?v=kart-s2-startfix-20261002"></script>
 <script src="telemetry.js?v=kart-s2-startfix-20261002"></script>
@@ -576,6 +576,12 @@ function buildWorld(ti) {
   const ban = new THREE.Mesh(boxGeo, new THREE.MeshLambertMaterial({ map: checkerTex })); ban.scale.set(gw * 2 + 2, 2.2, 1); ban.position.set(0, 10, 0); ban.castShadow = true; gate.add(ban);
   checkerTex.repeat.set(3, 1);
 
+  // Flat midpoint checker: a checkpoint, not a collidable item box.
+  const midpoint=new THREE.Group();const mid=N/2;
+  midpoint.position.set(px[mid],0.1,pz[mid]);midpoint.rotation.y=tr.th[mid];midpoint.visible=G.study;group.add(midpoint);
+  for(let x=0;x<14;x++)for(let z=0;z<2;z++)box(midpoint,2,.035,2,-ROAD+1+x*2,0,-1+z*2,lam((x+z)%2?0x22252c:0xffe36a));
+  for(const side of [-1,1]){box(midpoint,.4,4,.4,side*(ROAD+2),2,0,lam(0xffe36a));box(midpoint,2,1.5,.3,side*(ROAD+2),4,0,lam(0xffe36a));}
+
   // --- item boxes & boost pads ---
   const boxes = [];
   const boxMat = new THREE.MeshLambertMaterial({ map: itemBoxTex, transparent: true, opacity: 0.92, emissive: 0x1b3a55 });
@@ -602,7 +608,7 @@ function buildWorld(ti) {
   const guide=new THREE.Group();group.add(guide);
   for(let k=0;k<N;k+=8){const ahead=(k+20)%N,curv=wrapAng(tr.th[ahead]-tr.th[k]);if(Math.abs(curv)<.15)continue;const l=Math.sign(curv)*-6;const m=new THREE.Mesh(boxGeo,lam(0xffd54a));m.scale.set(.5,.025,2);m.position.set(px[k]-tr.tz[k]*l,.08,pz[k]+tr.tx[k]*l);m.rotation.y=tr.th[k];guide.add(m);}
   guide.visible=G.mode==='practice';
-  world = { group, tr, boxes, pads,guide,ownedMaterials:[boxMat,gemMat,padMat],jellies: [], missiles: [], minimap: null };
+  world = { group, tr, boxes, pads,guide,midpoint,ownedMaterials:[boxMat,gemMat,padMat],jellies: [], missiles: [], minimap: null };
   G.tr = tr;
   buildMinimap();
 }
@@ -661,7 +667,7 @@ function placeGrid(order) {
     const s = (N - back) % N;
     k.x = tr.px[s] + (-tr.tz[s]) * l; k.z = tr.pz[s] + tr.tx[s] * l; k.heading = tr.th[s];
     k.idx = s; k.along = -back; k.speed = 0; k.y = 0; k.vy = 0;
-    k.studySpin=0; k.drifting = false; k.driftCharge = 0; k.boostT = 0; k.spinT = 0; k.item = null; k.rollT = 0; k.finished = false; k.lastLap = 1; k.wrongT = 0;
+    k.studyGate=-1;k.studyLap=-1;k.studySpin=0; k.drifting = false; k.driftCharge = 0; k.boostT = 0; k.spinT = 0; k.item = null; k.rollT = 0; k.finished = false; k.lastLap = 1; k.wrongT = 0;
     k.aiLat = l; k.aiLatGoal = l; k.aiItemT = 3 + (G.aiRandom||Math.random)() * 4; k.skill = 0.97 + (G.aiRandom||Math.random)() * 0.05;
     syncKartMesh(k, 0);
   });
@@ -811,10 +817,10 @@ async function saveCloudScore(seconds) {
 }
 let quizPending = null;
 function clearQuiz() { KartEnglishTraining.stop(); quizPending = null; $('#quizOv').hidden = true; }
-function studyCheckpoint(k, done=()=>{}) {
+function studyCheckpoint(k, done=()=>{}, title='终点答题') {
   if (quizPending) return;
   const n=G.studyStats.total;const q=G.questionIds?.[n]?KartLearning.byId(G.questionIds[n],KartSeason.rng((G.seed||0)+n)):KartLearning.question(G.grade,G.subject); quizPending = {k,q,opened:performance.now()}; G.paused = true;
-  $('#quizTitle').textContent='终点答题';engineSound(false,0,false);MUSIC.stop(); $('#quizQuestion').textContent = `${G.grade}年级 · ${q.subjectName}：${q.text}`;
+  $('#quizTitle').textContent=title;engineSound(false,0,false);MUSIC.stop(); $('#quizQuestion').textContent = `${G.grade}年级 · ${q.subjectName}：${q.text}`;
   $('#quizReview').hidden=true;$('#quizContinue').onclick=null;
   const choices = $('#quizChoices'); choices.textContent = '';choices.classList.toggle('vertical',q.options.some(x=>String(x).length>6));
   const submitAnswer = answer => {
@@ -848,12 +854,12 @@ function awardStudyItems(k,count,done=()=>{}){
   setItems(k,items);if(!k.isPlayer)k.aiItemT=1+Math.random()*4;else if(added)sfx('item');done();
 }
 function studyLapGate(k) {
-  if(!G.study || k.finished) return false;
-  const completed=Math.min(LAPS,Math.floor(k.along/G.tr.N));
-  if(completed<0 || completed<=(k.studyLap??-1)) return false;
-  k.studyLap=completed;
-  if(!k.isPlayer){if(completed<LAPS)awardStudyItems(k,1);return false;}
-  studyCheckpoint(k,()=>{if(completed===LAPS){k.finished=true;k.finishT=G.raceTime;computeOrder();finishPlayer();}});
+  if(!G.study || k.finished || (k.isPlayer&&quizPending)) return false;
+  const gate=Math.min(LAPS*2,Math.floor(k.along*2/G.tr.N));
+  if(gate<0 || gate<=(k.studyGate??-1)) return false;
+  k.studyGate=gate;k.studyLap=Math.floor(gate/2);
+  if(!k.isPlayer){if(gate<LAPS*2)awardStudyItems(k,1);return false;}
+  studyCheckpoint(k,()=>{if(gate===LAPS*2){k.finished=true;k.finishT=G.raceTime;computeOrder();finishPlayer();}},gate%2?'半圈答题':gate===0?'起点答题':'终点答题');
   return true;
 }
 function giveItem(k) { if (k.item || k.rollT > 0) return; k.rollT = k.isPlayer ? 1.1 : 0.8; if (k.isPlayer) sfx('item'); }
@@ -1098,7 +1104,7 @@ async function startRace() {
   LAPS=KartSeason.laps(G.mode||'race');G.seed=G.challenge?.seed??crypto.getRandomValues(new Uint32Array(1))[0];
   G.gameRandom=KartSeason.rng(G.seed);G.aiRandom=KartSeason.rng(G.seed^0xabcdef);
   KartExperience.begin();
-  G.questionIds=G.study?(['weekly','friend'].includes(G.mode)?KartLearning.playlist(G.grade,G.subject,LAPS+1,G.seed):Array.from({length:LAPS+1},()=>KartLearning.question(G.grade,G.subject).id)):[];
+  G.questionIds=G.study?(['weekly','friend'].includes(G.mode)?KartLearning.playlist(G.grade,G.subject,KartSeason.questions(LAPS),G.seed):Array.from({length:KartSeason.questions(LAPS)},()=>KartLearning.question(G.grade,G.subject).id)):[];
   if(G.study&&!['weekly','friend'].includes(G.mode)){const due=KartExperience.due(G.grade,G.subject);if(due.length){const q=due[0].q;if(!G.questionIds.includes(q.id))G.questionIds[0]=q.id;}}
   clearQuiz(); G.studyStats={total:0,correct:0}; G.cloudRun=null;
   if(G.cloudUser&&G.mode!=='practice'){

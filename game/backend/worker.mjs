@@ -73,7 +73,7 @@ export default {async fetch(req,env){
   }
   if(path==='/leaderboard'&&req.method==='GET'){
    const c=config({track:Number(url.searchParams.get('track')),diff:Number(url.searchParams.get('diff')),study:url.searchParams.get('study')==='1',grade:Number(url.searchParams.get('grade')),subject:url.searchParams.get('subject')});
-   const version=url.searchParams.get('version')||VERSION;if(![VERSION,'kart-s2-1300-20261003','kart-s2-20261002','composite-v1','six-laps-v1','wide-v1'].includes(version))return reply({ok:false,error:'赛季无效'},400);
+   const version=url.searchParams.get('version')||VERSION;if(![VERSION,'kart-english-20261003','kart-s2-1300-20261003','kart-s2-20261002','composite-v1','six-laps-v1','wide-v1'].includes(version))return reply({ok:false,error:'赛季无效'},400);
    const mode=url.searchParams.get('mode')||'race',seed=Number(url.searchParams.get('seed')||0);if(!['race','quick','weekly','friend'].includes(mode)||!Number.isInteger(seed)||seed<0||seed>4294967295)return reply({ok:false,error:'挑战无效'},400);
    const racing=url.searchParams.get('sort')==='time',order=racing?'s.ms,s.created':'d.points DESC,s.ms,s.created',outer=racing?'ms,created':'points DESC,ms,created';
    const results=await env.DB.prepare(`SELECT username,ms,correct,total,created,laps,hits,points FROM (SELECT u.username,s.ms,s.correct,s.total,s.created,d.laps,d.hits,d.points,ROW_NUMBER() OVER(PARTITION BY s.user_id ORDER BY ${order}) AS rn FROM game_scores s JOIN game_users u ON u.id=s.user_id LEFT JOIN game_score_details d ON d.run_id=s.run_id LEFT JOIN game_run_meta m ON m.run_id=s.run_id WHERE version=? AND track=? AND diff=? AND study=? AND grade=? AND subject=? AND COALESCE(m.mode,'race')=? AND CASE WHEN COALESCE(m.mode,'race') IN ('weekly','friend') THEN m.seed ELSE 0 END=?) WHERE rn=1 ORDER BY ${outer} LIMIT 50`).bind(version,c.track,c.diff,c.study,c.grade,c.subject,mode,seed).all();return reply({ok:true,version,rows:results.results});
@@ -85,7 +85,7 @@ export default {async fetch(req,env){
    if(!['race','quick','weekly','friend'].includes(mode)||body.laps!==laps)return reply({ok:false,error:'比赛模式无效'},400);
    let seed=Number(body.seed);if(!Number.isInteger(seed)||seed<0||seed>4294967295)return reply({ok:false,error:'随机种子无效'},400);
    if(mode==='weekly'){const w=week(now);if(!c.study||c.subject!=='english'||c.diff!==1||c.track!==hash(w)%3||seed!==hash(w+':'+c.grade))return reply({ok:false,error:'本周挑战设置已更新'},400);}
-   let ids=[];if(c.study){ids=['weekly','friend'].includes(mode)?playlist(c,laps+1,seed):body.questionIds;if(!Array.isArray(ids)||ids.length!==laps+1||new Set(ids).size!==ids.length||ids.some(id=>!validQuestion(id,c)))return reply({ok:false,error:'题目配置无效'},400);}
+   let ids=[];if(c.study){ids=['weekly','friend'].includes(mode)?playlist(c,laps*2+1,seed):body.questionIds;if(!Array.isArray(ids)||ids.length!==laps*2+1||new Set(ids).size!==ids.length||ids.some(id=>!validQuestion(id,c)))return reply({ok:false,error:'题目配置无效'},400);}
    const id='s2-'+crypto.randomUUID();await env.DB.batch([env.DB.prepare('INSERT INTO game_runs(id,user_id,track,diff,study,grade,subject,started) VALUES(?,?,?,?,?,?,?,?)').bind(id,me.id,c.track,c.diff,c.study,c.grade,c.subject,now),env.DB.prepare('INSERT INTO game_run_meta VALUES(?,?,?,?,?,?,?,?,?)').bind(id,VERSION,TRACK_VERSION,BANK_VERSION,laps,mode,seed,JSON.stringify(ids),now+7*86400000)]);return reply({ok:true,runId:id,questionIds:ids,rules:VERSION});
   }
   if(path==='/finish'&&req.method==='POST'){
@@ -97,7 +97,7 @@ export default {async fetch(req,env){
    let correct=0;for(const a of b.answers)if(await sha(a.answer)===answerHash(a.id))correct++;
    const total=ids.length,points=Math.round((total?correct/total:0)*600)+m.laps*50+Math.min(b.hits,5)*20;
    const result=await env.DB.batch([
-    env.DB.prepare('INSERT INTO game_scores SELECT id,user_id,track,diff,study,grade,subject,?,?,?, ?,? FROM game_runs WHERE id=? AND user_id=? AND used=0').bind(b.ms,correct,total,VERSION,now,r.id,me.id),
+    env.DB.prepare('INSERT INTO game_scores SELECT id,user_id,track,diff,study,grade,subject,?,?,?, ?,? FROM game_runs WHERE id=? AND user_id=? AND used=0').bind(b.ms,correct,total,m.rules,now,r.id,me.id),
     env.DB.prepare('INSERT INTO game_score_details SELECT id,?,?,? FROM game_runs WHERE id=? AND user_id=? AND used=0').bind(m.laps,b.hits,points,r.id,me.id),
     env.DB.prepare('UPDATE game_runs SET used=1 WHERE id=? AND user_id=?').bind(r.id,me.id)]);
    return reply({ok:true,alreadySaved:!result[0].meta.changes,points,correct,total});

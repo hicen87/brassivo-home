@@ -1,5 +1,5 @@
 import manifest from './question-manifest.json' with {type:'json'};
-export const VERSION='kart-english-20261003',TRACK_VERSION='equal1300-lines-v3',BANK_VERSION='english-skills-20261003';
+export const VERSION='kart-english-midpoint-20261003',TRACK_VERSION='equal1300-lines-v3',BANK_VERSION='english-skills-20261003';
 export const SUBJECTS=['all','math','olympiad','english','chinese','science','ethics','music','art','pe','labor','it','practice'];
 export function hash(s){let h=2166136261;for(const c of String(s))h=Math.imul(h^c.charCodeAt(0),16777619);return h>>>0;}
 export function week(now){const d=new Date(now);d.setUTCHours(0,0,0,0);d.setUTCDate(d.getUTCDate()-((d.getUTCDay()+6)%7));return d.toISOString().slice(0,10);}
@@ -8,7 +8,7 @@ export function validQuestion(id,c){const q=manifest[id];return !!q&&q[0]===c.gr
 export function playlist(c,count,seed){const items=Object.keys(manifest).filter(id=>validQuestion(id,c)),random=rng(seed),used=new Set(),out=[];while(out.length<count&&items.length){const novel=items.filter(id=>!used.has(manifest[id][3]));const choices=novel.length?novel:items;const id=choices[Math.floor(random()*choices.length)];out.push(id);used.add(manifest[id][3]);items.splice(items.indexOf(id),1);}return out;}
 export function answerHash(id){return manifest[id]?.[2];}
 export function validateFinish(b,r,m,now){
- if(m.rules!==VERSION||m.track_version!==TRACK_VERSION||m.bank!==BANK_VERSION||b.rules!==VERSION)throw Error('比赛版本不一致');
+ if(![VERSION,'kart-english-20261003'].includes(m.rules)||m.track_version!==TRACK_VERSION||m.bank!==BANK_VERSION||b.rules!==m.rules)throw Error('比赛版本不一致');
  if(now>m.expires)throw Error('比赛已过保存期限');
  if(!Number.isInteger(b.ms)||b.ms<m.laps*19000||b.ms>3600000||b.ms>now-r.started+1500)throw Error('成绩时间无效');
  if(b.laps!==m.laps||!Number.isInteger(b.hits)||b.hits<0||b.hits>m.laps*20)throw Error('圈数或击倒统计无效');
