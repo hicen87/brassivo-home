@@ -1,6 +1,6 @@
 (function(root){
   let bank=null;const loaded=new Map();const histories=new Map(),gradeRecent=new Map(),pools=new Map(),vectors=new Map();
-  const BANK_VERSION='20261002-readable-v7';
+  const BANK_VERSION='english-skills-20261003';
   const VERSION='20261002-diverse-v6',STORAGE='bk_question_history_v6';
   function restore(){try{const saved=JSON.parse(root.localStorage.getItem(STORAGE)||'null');if(saved?.version!==VERSION)return;for(const [k,v] of Object.entries(saved.histories||{}))if(Array.isArray(v.ids)&&Array.isArray(v.recent))histories.set(k,v);for(const [g,v] of Object.entries(saved.gradeRecent||{}))if(Array.isArray(v))gradeRecent.set(g,v);}catch(_){}}
   function save(){try{root.localStorage.setItem(STORAGE,JSON.stringify({version:VERSION,histories:Object.fromEntries(histories),gradeRecent:Object.fromEntries(gradeRecent)}));}catch(_){}}
@@ -8,7 +8,7 @@
   function pool(grade,subject){
     const key=Number(grade)+':'+subject;if(pools.has(key))return pools.get(key);
     const allowed=KartSubjects.available(grade);
-    const items=bank.questions.filter(q=>q.grade===Number(grade)&&allowed.includes(q.subject)&&(subject==='all'?q.subject!=='olympiad':q.subject===subject));
+    const items=bank.questions.filter(q=>q.grade===Number(grade)&&allowed.includes(q.subject)&&(subject==='all'?q.subject==='english':q.subject===subject));
     pools.set(key,items);return items;
   }
   function vector(q){

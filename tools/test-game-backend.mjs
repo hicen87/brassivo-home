@@ -1,7 +1,7 @@
 // Runs against a local, disposable D1 database; never creates production accounts.
 import assert from 'node:assert/strict';import {VERSION,TRACK_VERSION,BANK_VERSION,playlist} from '../game/backend/rules.mjs';import {execFileSync} from 'node:child_process';import fs from 'node:fs';
 const base=process.env.KART_TEST_API||'http://127.0.0.1:8788';if(!/^http:\/\/(127\.0\.0\.1|localhost):\d+$/.test(base))throw Error('Integration test requires local API');let cookie='';
-async function call(path,body,origin='https://brassivo.com'){const r=await fetch(base+path,{method:body===undefined?'GET':'POST',headers:{Origin:origin,'Content-Type':'application/json',Cookie:cookie},body:body===undefined?undefined:JSON.stringify(body)});const j=await r.json();return {r,j};}
+async function call(path,body,origin='https://brassivo.com'){const r=await fetch(base+path,{method:body===undefined?'GET':'POST',headers:{Connection:'close',Origin:origin,'Content-Type':'application/json',Cookie:cookie},body:body===undefined?undefined:JSON.stringify(body)});const j=await r.json();return {r,j};}
 const username='qa_'+Date.now(),password='Local-only-qa-2026';let x=await call('/register',{username,password});assert.equal(x.r.status,200);cookie=x.r.headers.get('set-cookie').split(';')[0];assert.equal((await call('/me')).j.user.username,username);
 const c={track:0,diff:1,study:true,grade:4,subject:'english',mode:'quick',seed:123,laps:1,rules:VERSION,trackVersion:TRACK_VERSION,bank:BANK_VERSION,questionIds:playlist({grade:4,subject:'english'},2,123)};
 x=await call('/runs',c);assert.equal(x.r.status,200);const id=x.j.runId;

@@ -152,7 +152,7 @@ tr.me td{background:rgba(255,201,60,.14)}
     <div><h2>难度</h2><div id="diffList" class="seg"></div></div>
     <div><h2>画质</h2><div id="qList" class="seg"></div></div>
   </section>
-  <section><h2>学习学霸模式</h2><input id="studyMode" type="hidden" value="true"><p class="keys">开局驶过起跑线及每圈通过终点线后答题：答对随机补满空道具格，答错不获得道具，随后继续行驶。学霸模式没有路上盲盒；答题时全场暂停。</p><div class="row2"><label class="keys">年级<select id="studyGrade" style="width:100%;padding:8px"><option value="1">一年级</option><option value="2">二年级</option><option value="3">三年级</option><option value="4">四年级</option><option value="5">五年级</option><option value="6">六年级</option></select></label><label class="keys">题库<select id="studySubject" style="width:100%;padding:8px"><option value="all">综合随机</option><option value="math">数学</option><option value="olympiad">奥数</option><option value="chinese">语文</option><option value="english">英语</option><option value="science">科学</option><option value="ethics">道德与法治</option><option value="music">音乐</option><option value="art">美术</option><option value="pe">体育与健康</option><option value="labor">劳动</option><option value="it">信息科技</option><option value="practice">综合实践</option></select></label></div><p id="studyBankInfo" class="keys" aria-live="polite"></p><p class="keys">优先抽取年级内思考题，答对直接继续比赛，答错阅读解析后点击继续。题库随年级切换；英语、信息科技从三年级起显示。奥数为独立拓展题库，综合随机抽取常规学科。</p></section>
+  <section><h2>学习学霸模式</h2><input id="studyMode" type="hidden" value="true"><p class="keys">开局驶过起跑线及每圈通过终点线后答题：答对随机补满空道具格，答错不获得道具，随后继续行驶。学霸模式没有路上盲盒；答题时全场暂停。</p><div class="row2"><label class="keys">年级<select id="studyGrade" style="width:100%;padding:8px"><option value="1">一年级</option><option value="2">二年级</option><option value="3">三年级</option><option value="4">四年级</option><option value="5">五年级</option><option value="6">六年级</option></select></label><label class="keys">题库<select id="studySubject" style="width:100%;padding:8px"><option value="all">综合随机</option><option value="math">数学</option><option value="olympiad">奥数</option><option value="chinese">语文</option><option value="english">英语</option><option value="science">科学</option><option value="ethics">道德与法治</option><option value="music">音乐</option><option value="art">美术</option><option value="pe">体育与健康</option><option value="labor">劳动</option><option value="it">信息科技</option><option value="practice">综合实践</option></select></label></div><p id="studyBankInfo" class="keys" aria-live="polite"></p><p class="keys">优先抽取年级内思考题，答对直接继续比赛，答错阅读解析后点击继续。题库随年级切换；当前只开放英语；一、二年级为启蒙词汇。练习包含中文选词、听音辨词、拼写与朗读。</p></section>
   <details id="musicSettings"><summary style="cursor:pointer;font-weight:bold;color:var(--gold)">背景音乐</summary><label class="keys" style="display:block;margin:12px 0"><input id="musicEnabled" type="checkbox"> 播放随机节奏音乐</label><label class="keys" style="display:block">音乐音量 <output id="musicVolumeLabel">35%</output><input id="musicVolume" type="range" min="0" max="100" step="5" style="display:block;width:100%;min-height:44px"></label><p class="keys">像素冲刺 · 霓虹弯道 · 晴空飞车。比赛中随机播放，答题或暂停时音乐暂停。</p></details>
   <details id="controlSettings"><summary style="cursor:pointer;font-weight:bold;color:var(--gold)">控制设置</summary><label class="keys">手机 / 平板转向<select id="controlMenu" style="width:100%;padding:8px"><option value="tilt">重力控制</option><option value="buttons">左右方向键</option></select></label><button id="calibrateMenu" class="alt">校准重力中心</button><p class="keys">iPad 默认左右方向键，右下角按住加速。也可选择重力转向：左右倾斜控制方向；手机默认重力转向。无传感器时使用方向键。</p></details>
   <p class="best" id="bestTxt"></p>
@@ -214,10 +214,11 @@ tr.me td{background:rgba(255,201,60,.14)}
 <div id="toast" class="toast" hidden></div>
 
 <script src="vendor/three.min.js"></script>
-<script src="subjects.js?v=olympiad-v4-20261002"></script>
+<script src="subjects.js?v=english-skills-20261003"></script>
 <div id="rotateGate" hidden role="dialog" aria-modal="true" aria-label="请横屏游玩"><div><h2>请横屏游玩 ↻</h2><p>将手机或平板横过来，获得更宽的赛道视野。若未自动旋转，请关闭设备的方向锁定。</p><button id="rotateAction" class="big">尝试切换横屏</button></div></div>
-<script src="season.js?v=study-landscape-20261003"></script>
-<script src="learning.js?v=kart-s2-20261002"></script>
+<script src="season.js?v=english-skills-20261003"></script>
+<script src="english-training.js?v=english-skills-20261003"></script>
+<script src="learning.js?v=english-skills-20261003"></script>
 <script src="tilt.js?v=20261002"></script>
 <script src="api.js?v=auth-v2"></script>
 <script src="play-limit.js?v=kart-s2-20261002"></script>
@@ -227,7 +228,7 @@ tr.me td{background:rgba(255,201,60,.14)}
 <script src="music.js?v=rhythm-v1"></script>
 <script src="score.js?v=kart-s2-20261002"></script>
 <script src="account-form.js?v=auth-v2"></script>
-<script src="game-account.js?v=study-landscape-20261003"></script>
+<script src="game-account.js?v=english-skills-20261003"></script>
 <script src="reliable-save.js?v=kart-s2-startfix-20261002"></script>
 <script src="progression.js?v=kart-s2-startfix-20261002"></script>
 <script src="telemetry.js?v=kart-s2-startfix-20261002"></script>
@@ -284,7 +285,7 @@ const ITEM_NAMES = { jelly: '果冻块', missile: '追踪弹',shield:'护盾',li
 const isIPad=/iPad/.test(navigator.userAgent)||(/Macintosh/.test(navigator.userAgent)&&navigator.maxTouchPoints>1);
 const coarse = matchMedia('(pointer: coarse)').matches || 'ontouchstart' in window;
 const G = {
-  state: 'menu', paused: false, trackIdx: store.get('track', 0), charIdx: store.get('char', 0), diff: store.get('diff', 1), study: true, grade: store.get('grade',1), subject: store.get('subject','all')==='local'?'all':store.get('subject','all'), studyStats:{total:0,correct:0},
+  state: 'menu', paused: false, trackIdx: store.get('track', 0), charIdx: store.get('char', 0), diff: store.get('diff', 1), study: true, grade: store.get('grade',1), subject: 'english', studyStats:{total:0,correct:0},
   qualSel: QUALS.includes(store.get('qual','low'))?store.get('qual','low'):'low', qual: 'low', karts: [], player: null, tr: null, raceTime: 0, countdown: 0,
   control:isIPad?store.get('ipadControl','buttons'):(store.get('control','tilt')==='joystick'?'buttons':store.get('control','tilt')),sessionControl:null,touch: coarse, time: 0, finishT: 0, shake: 0, frameAvg: 16, slowT: 0
 };
@@ -809,14 +810,14 @@ async function saveCloudScore(seconds) {
   await KartExperience.save(b);
 }
 let quizPending = null;
-function clearQuiz() { quizPending = null; $('#quizOv').hidden = true; }
+function clearQuiz() { KartEnglishTraining.stop(); quizPending = null; $('#quizOv').hidden = true; }
 function studyCheckpoint(k, done=()=>{}) {
   if (quizPending) return;
   const n=G.studyStats.total;const q=G.questionIds?.[n]?KartLearning.byId(G.questionIds[n],KartSeason.rng((G.seed||0)+n)):KartLearning.question(G.grade,G.subject); quizPending = {k,q,opened:performance.now()}; G.paused = true;
   $('#quizTitle').textContent='终点答题';engineSound(false,0,false);MUSIC.stop(); $('#quizQuestion').textContent = `${G.grade}年级 · ${q.subjectName}：${q.text}`;
   $('#quizReview').hidden=true;$('#quizContinue').onclick=null;
   const choices = $('#quizChoices'); choices.textContent = '';choices.classList.toggle('vertical',q.options.some(x=>String(x).length>6));
-  q.options.forEach(answer => { const b = document.createElement('button'); b.textContent = answer; b.onclick = () => {
+  const submitAnswer = answer => {
     if (!quizPending || quizPending.answered) return;
     quizPending.answered=true;
     for(const choice of choices.children)choice.disabled=true;
@@ -835,7 +836,8 @@ function studyCheckpoint(k, done=()=>{}) {
     $('#quizExplanation').textContent='解题思路：'+q.explanation;
     $('#quizReview').hidden=false;
     $('#quizContinue').onclick=resume;
-  };choices.appendChild(b); });
+  };
+  KartEnglishTraining.mount(choices,q,submitAnswer);
   $('#quizOv').hidden = false; $('#quizTitle').focus({preventScroll:true});
 }
 function heldItems(k){return [k.item||null,k.itemQueue?.[0]||null,k.itemQueue?.[1]||null];}
@@ -1359,10 +1361,10 @@ function trackThumb(def) {
 let bankCounts=null;
 function updateBankInfo(){
   let count=KartLearning.poolInfo(G.grade,G.subject).count;
-  if(!count&&bankCounts){count=G.subject==='all'?Object.entries(bankCounts.pools).filter(([key])=>key.startsWith(G.grade+':')&&!key.endsWith(':olympiad')).reduce((sum,[,n])=>sum+n,0):bankCounts.pools[G.grade+':'+G.subject]||0;}
+  if(!count&&bankCounts){count=G.subject==='all'?Object.entries(bankCounts.pools).filter(([key])=>key.startsWith(G.grade+':')&&key.endsWith(':english')).reduce((sum,[,n])=>sum+n,0):bankCounts.pools[G.grade+':'+G.subject]||0;}
   $('#studyBankInfo').textContent=count?`当前题库 ${count} 道 · 随机选项 · 近期相似题避让`:'正在读取题库数量…';
 }
-fetch('question-bank-counts.json?v=20261002-readable-v7',{signal:AbortSignal.timeout(10000)}).then(r=>{if(!r.ok)throw Error();return r.json();}).then(data=>{bankCounts=data;updateBankInfo();}).catch(()=>{$('#studyBankInfo').textContent='每个年级可选科目均不少于100道题';});
+fetch('question-bank-counts.json?v=english-skills-20261003',{signal:AbortSignal.timeout(10000)}).then(r=>{if(!r.ok)throw Error();return r.json();}).then(data=>{bankCounts=data;updateBankInfo();}).catch(()=>{$('#studyBankInfo').textContent='每个年级可选科目均不少于100道题';});
 function renderMenu() {
   const tl = $('#trackList'); tl.textContent = '';
   TRACKS.forEach((t, i) => {

@@ -1,10 +1,10 @@
 import manifest from './question-manifest.json' with {type:'json'};
-export const VERSION='kart-s2-1300-20261003',TRACK_VERSION='equal1300-lines-v3',BANK_VERSION='20261002-readable-v7';
+export const VERSION='kart-english-20261003',TRACK_VERSION='equal1300-lines-v3',BANK_VERSION='english-skills-20261003';
 export const SUBJECTS=['all','math','olympiad','english','chinese','science','ethics','music','art','pe','labor','it','practice'];
 export function hash(s){let h=2166136261;for(const c of String(s))h=Math.imul(h^c.charCodeAt(0),16777619);return h>>>0;}
 export function week(now){const d=new Date(now);d.setUTCHours(0,0,0,0);d.setUTCDate(d.getUTCDate()-((d.getUTCDay()+6)%7));return d.toISOString().slice(0,10);}
 function rng(a){return()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return ((t^t>>>14)>>>0)/4294967296;};}
-export function validQuestion(id,c){const q=manifest[id];return !!q&&q[0]===c.grade&&(c.subject==='all'?q[1]!=='olympiad':q[1]===c.subject)&&(c.grade>=3||!['english','it'].includes(q[1]));}
+export function validQuestion(id,c){const q=manifest[id];return !!q&&q[0]===c.grade&&(c.subject==='all'?q[1]==='english':q[1]===c.subject)&&(c.grade>=3||q[1]!=='it');}
 export function playlist(c,count,seed){const items=Object.keys(manifest).filter(id=>validQuestion(id,c)),random=rng(seed),used=new Set(),out=[];while(out.length<count&&items.length){const novel=items.filter(id=>!used.has(manifest[id][3]));const choices=novel.length?novel:items;const id=choices[Math.floor(random()*choices.length)];out.push(id);used.add(manifest[id][3]);items.splice(items.indexOf(id),1);}return out;}
 export function answerHash(id){return manifest[id]?.[2];}
 export function validateFinish(b,r,m,now){

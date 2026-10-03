@@ -5,7 +5,7 @@ async function sha(v){return hex(await crypto.subtle.digest('SHA-256',enc.encode
 async function passwordHash(password,salt){const key=await crypto.subtle.importKey('raw',enc.encode(password),'PBKDF2',false,['deriveBits']);return hex(await crypto.subtle.deriveBits({name:'PBKDF2',salt:enc.encode(salt),iterations:100000,hash:'SHA-256'},key,256));}
 const random=()=>hex(crypto.getRandomValues(new Uint8Array(32)));
 function equal(a,b){let d=a.length^b.length;for(let i=0;i<Math.max(a.length,b.length);i++)d|=(a.charCodeAt(i)||0)^(b.charCodeAt(i)||0);return d===0;}
-function config(body){const {track,diff}=body;if(!Number.isInteger(track)||track<0||track>2||!Number.isInteger(diff)||diff<0||diff>2)throw Error('赛道或难度无效');const study=body.study===true;const grade=study?Number(body.grade):0,subject=study?body.subject:'none';if(study&&(!Number.isInteger(grade)||grade<1||grade>6||(!SUBJECTS.includes(subject)||(grade<3&&['english','it'].includes(subject)))))throw Error('年级或科目无效');return {track,diff,study:study?1:0,grade,subject};}
+function config(body){const {track,diff}=body;if(!Number.isInteger(track)||track<0||track>2||!Number.isInteger(diff)||diff<0||diff>2)throw Error('赛道或难度无效');const study=body.study===true;const grade=study?Number(body.grade):0,subject=study?body.subject:'none';if(study&&(!Number.isInteger(grade)||grade<1||grade>6||(!SUBJECTS.includes(subject)||(grade<3&&['it'].includes(subject)))))throw Error('年级或科目无效');return {track,diff,study:study?1:0,grade,subject};}
 async function readBody(req){const raw=await req.text();if(raw.length>16000)throw new SyntaxError('请求过大');return JSON.parse(raw);}
 const schema=[
 'CREATE TABLE IF NOT EXISTS game_metrics (id TEXT PRIMARY KEY, day TEXT NOT NULL, event TEXT NOT NULL, cohort TEXT NOT NULL)',
@@ -73,7 +73,7 @@ export default {async fetch(req,env){
   }
   if(path==='/leaderboard'&&req.method==='GET'){
    const c=config({track:Number(url.searchParams.get('track')),diff:Number(url.searchParams.get('diff')),study:url.searchParams.get('study')==='1',grade:Number(url.searchParams.get('grade')),subject:url.searchParams.get('subject')});
-   const version=url.searchParams.get('version')||VERSION;if(![VERSION,'kart-s2-20261002','composite-v1','six-laps-v1','wide-v1'].includes(version))return reply({ok:false,error:'赛季无效'},400);
+   const version=url.searchParams.get('version')||VERSION;if(![VERSION,'kart-s2-1300-20261003','kart-s2-20261002','composite-v1','six-laps-v1','wide-v1'].includes(version))return reply({ok:false,error:'赛季无效'},400);
    const mode=url.searchParams.get('mode')||'race',seed=Number(url.searchParams.get('seed')||0);if(!['race','quick','weekly','friend'].includes(mode)||!Number.isInteger(seed)||seed<0||seed>4294967295)return reply({ok:false,error:'挑战无效'},400);
    const racing=url.searchParams.get('sort')==='time',order=racing?'s.ms,s.created':'d.points DESC,s.ms,s.created',outer=racing?'ms,created':'points DESC,ms,created';
    const results=await env.DB.prepare(`SELECT username,ms,correct,total,created,laps,hits,points FROM (SELECT u.username,s.ms,s.correct,s.total,s.created,d.laps,d.hits,d.points,ROW_NUMBER() OVER(PARTITION BY s.user_id ORDER BY ${order}) AS rn FROM game_scores s JOIN game_users u ON u.id=s.user_id LEFT JOIN game_score_details d ON d.run_id=s.run_id LEFT JOIN game_run_meta m ON m.run_id=s.run_id WHERE version=? AND track=? AND diff=? AND study=? AND grade=? AND subject=? AND COALESCE(m.mode,'race')=? AND CASE WHEN COALESCE(m.mode,'race') IN ('weekly','friend') THEN m.seed ELSE 0 END=?) WHERE rn=1 ORDER BY ${outer} LIMIT 50`).bind(version,c.track,c.diff,c.study,c.grade,c.subject,mode,seed).all();return reply({ok:true,version,rows:results.results});
@@ -84,7 +84,7 @@ export default {async fetch(req,env){
    const c=config(body),mode=body.mode||'race',laps=mode==='quick'?1:6;
    if(!['race','quick','weekly','friend'].includes(mode)||body.laps!==laps)return reply({ok:false,error:'比赛模式无效'},400);
    let seed=Number(body.seed);if(!Number.isInteger(seed)||seed<0||seed>4294967295)return reply({ok:false,error:'随机种子无效'},400);
-   if(mode==='weekly'){const w=week(now);if(!c.study||c.subject!=='all'||c.diff!==1||c.track!==hash(w)%3||seed!==hash(w+':'+c.grade))return reply({ok:false,error:'本周挑战设置已更新'},400);}
+   if(mode==='weekly'){const w=week(now);if(!c.study||c.subject!=='english'||c.diff!==1||c.track!==hash(w)%3||seed!==hash(w+':'+c.grade))return reply({ok:false,error:'本周挑战设置已更新'},400);}
    let ids=[];if(c.study){ids=['weekly','friend'].includes(mode)?playlist(c,laps+1,seed):body.questionIds;if(!Array.isArray(ids)||ids.length!==laps+1||new Set(ids).size!==ids.length||ids.some(id=>!validQuestion(id,c)))return reply({ok:false,error:'题目配置无效'},400);}
    const id='s2-'+crypto.randomUUID();await env.DB.batch([env.DB.prepare('INSERT INTO game_runs(id,user_id,track,diff,study,grade,subject,started) VALUES(?,?,?,?,?,?,?,?)').bind(id,me.id,c.track,c.diff,c.study,c.grade,c.subject,now),env.DB.prepare('INSERT INTO game_run_meta VALUES(?,?,?,?,?,?,?,?,?)').bind(id,VERSION,TRACK_VERSION,BANK_VERSION,laps,mode,seed,JSON.stringify(ids),now+7*86400000)]);return reply({ok:true,runId:id,questionIds:ids,rules:VERSION});
   }
