@@ -1,6 +1,8 @@
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import vm from 'node:vm';
 function setup(){const listeners={};const scope={document:{addEventListener(type,fn,options){listeners[type]={fn,options};}},Math};vm.createContext(scope);vm.runInContext(fs.readFileSync(new URL('../block-kart/touch-guard.js',import.meta.url),'utf8'),scope);return listeners;}
-function tap(time,x=10,control=true){return {timeStamp:time,touches:[],changedTouches:[{clientX:x,clientY:10}],target:{closest:()=>control},preventDefault(){this.prevented=true;}};}
+function tap(time,x=10,control=true){return {timeStamp:time,touches:[],changedTouches:[{clientX:x,clientY:10}],target:{closest:selector=>selector==='button,input,select,textarea,a,summary'?false:control},preventDefault(){this.prevented=true;}};}
 test('double tap zoom is canceled while first tap and separate controls remain usable',()=>{const l=setup(),first=tap(100),second=tap(200),other=tap(250,100);l.touchend.fn(first);assert(!first.prevented);l.touchend.fn(second);assert(second.prevented);l.touchend.fn(other);assert(!other.prevented);assert.equal(l.touchend.options.passive,false);const menu=tap(300,100,false);l.touchend.fn(menu);assert(!menu.prevented);});
 test('double click default is canceled without stopping delivery to game controls',()=>{const l=setup(),e={preventDefault(){this.prevented=true;}};l.dblclick.fn(e);assert(e.prevented);assert.equal(l.dblclick.options.capture,true);});
 test('long press context menu is blocked on driving controls but available outside the game surface',()=>{const l=setup();const control=tap(0),form=tap(0,0,false);l.contextmenu.fn(control);l.contextmenu.fn(form);assert(control.prevented);assert(!form.prevented);});
+
+test('rapid touch releases never swallow click-based pause or menu buttons',()=>{const l=setup();for(const time of [100,200,250]){const e=tap(time);e.target.closest=()=>true;l.touchend.fn(e);assert(!e.prevented);}});
