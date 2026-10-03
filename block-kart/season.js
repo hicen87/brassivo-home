@@ -1,7 +1,7 @@
 var KartSeason;
 (function(root){
 'use strict';
-const RULES='kart-s2-20261002',TRACKS='equal1758-lines-v2',BANK='20261002-readable-v7';
+const RULES='kart-s2-1300-20261003',TRACKS='equal1300-lines-v3',BANK='20261002-readable-v7';
 function week(date=new Date()){const d=new Date(date);d.setUTCHours(0,0,0,0);d.setUTCDate(d.getUTCDate()-((d.getUTCDay()+6)%7));return d.toISOString().slice(0,10);}
 function hash(s){let h=2166136261;for(const c of String(s))h=Math.imul(h^c.charCodeAt(0),16777619);return h>>>0;}
 function rng(a){return()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return ((t^t>>>14)>>>0)/4294967296;};}

@@ -1,5 +1,5 @@
 import manifest from './question-manifest.json' with {type:'json'};
-export const VERSION='kart-s2-20261002',TRACK_VERSION='equal1758-lines-v2',BANK_VERSION='20261002-readable-v7';
+export const VERSION='kart-s2-1300-20261003',TRACK_VERSION='equal1300-lines-v3',BANK_VERSION='20261002-readable-v7';
 export const SUBJECTS=['all','math','olympiad','english','chinese','science','ethics','music','art','pe','labor','it','practice'];
 export function hash(s){let h=2166136261;for(const c of String(s))h=Math.imul(h^c.charCodeAt(0),16777619);return h>>>0;}
 export function week(now){const d=new Date(now);d.setUTCHours(0,0,0,0);d.setUTCDate(d.getUTCDate()-((d.getUTCDay()+6)%7));return d.toISOString().slice(0,10);}

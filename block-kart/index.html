@@ -214,7 +214,7 @@ tr.me td{background:rgba(255,201,60,.14)}
 
 <script src="vendor/three.min.js"></script>
 <script src="subjects.js?v=olympiad-v4-20261002"></script>
-<script src="season.js?v=kart-s2-startfix-20261002"></script>
+<script src="season.js?v=kart-s2-1300-20261003"></script>
 <script src="learning.js?v=kart-s2-20261002"></script>
 <script src="tilt.js?v=20261002"></script>
 <script src="api.js?v=auth-v2"></script>
@@ -225,7 +225,7 @@ tr.me td{background:rgba(255,201,60,.14)}
 <script src="music.js?v=rhythm-v1"></script>
 <script src="score.js?v=kart-s2-20261002"></script>
 <script src="account-form.js?v=auth-v2"></script>
-<script src="game-account.js?v=kart-s2-20261002"></script>
+<script src="game-account.js?v=kart-s2-1300-20261003"></script>
 <script src="reliable-save.js?v=kart-s2-startfix-20261002"></script>
 <script src="progression.js?v=kart-s2-startfix-20261002"></script>
 <script src="telemetry.js?v=kart-s2-startfix-20261002"></script>
@@ -403,7 +403,7 @@ function box(parent, w, h, d, x, y, z, mat) { const m = new THREE.Mesh(boxGeo, m
 
 /* ================= track ================= */
 function trackCurve(def){return new THREE.CatmullRomCurve3(def.pts.map(p=>new THREE.Vector3(p[0],0,p[1])),true,'centripetal');}
-const TRACK_LENGTH = Math.max(...TRACKS.map(def=>trackCurve(def).getLength()))*1.5;
+const TRACK_LENGTH = 1300;
 function buildTrack(def) {
   const factor=TRACK_LENGTH/trackCurve(def).getLength();
   const pts = def.pts.map(p => new THREE.Vector3(p[0]*factor, 0, p[1]*factor));
