@@ -133,6 +133,7 @@ tr.me td{background:rgba(255,201,60,.14)}
 #quizOv .keys{font-size:15px;line-height:1.65}
 #quizContinue{font-size:20px}
 @media(max-width:600px){#quizOv .dialog{padding:18px;gap:12px}#quizOv h2{font-size:32px}#quizQuestion{font-size:20px}#quizChoices button{font-size:18px}#quizFeedback,#quizExplanation{font-size:17px}#quizOv .keys{font-size:14px}}
+#rotateGate{position:fixed;inset:0;z-index:1000;background:#141b29;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;box-sizing:border-box}#rotateGate[hidden]{display:none}#rotateGate h2{font-size:30px;color:var(--gold)}#rotateGate p{font-size:18px;line-height:1.6;max-width:420px}
 </style>
 
 </head>
@@ -151,7 +152,7 @@ tr.me td{background:rgba(255,201,60,.14)}
     <div><h2>难度</h2><div id="diffList" class="seg"></div></div>
     <div><h2>画质</h2><div id="qList" class="seg"></div></div>
   </section>
-  <section><label class="keys"><input id="studyMode" type="checkbox"> 学习学霸模式</label><p class="keys">开局驶过起跑线及每圈通过终点线后答题：答对随机补满空道具格，答错不获得道具，随后继续行驶。学霸模式没有路上盲盒；答题时全场暂停。</p><div class="row2"><label class="keys">年级<select id="studyGrade" style="width:100%;padding:8px"><option value="1">一年级</option><option value="2">二年级</option><option value="3">三年级</option><option value="4">四年级</option><option value="5">五年级</option><option value="6">六年级</option></select></label><label class="keys">题库<select id="studySubject" style="width:100%;padding:8px"><option value="all">综合随机</option><option value="math">数学</option><option value="olympiad">奥数</option><option value="chinese">语文</option><option value="english">英语</option><option value="science">科学</option><option value="ethics">道德与法治</option><option value="music">音乐</option><option value="art">美术</option><option value="pe">体育与健康</option><option value="labor">劳动</option><option value="it">信息科技</option><option value="practice">综合实践</option></select></label></div><p id="studyBankInfo" class="keys" aria-live="polite"></p><p class="keys">优先抽取年级内思考题，答对直接继续比赛，答错阅读解析后点击继续。题库随年级切换；英语、信息科技从三年级起显示。奥数为独立拓展题库，综合随机抽取常规学科。</p></section>
+  <section><h2>学习学霸模式</h2><input id="studyMode" type="hidden" value="true"><p class="keys">开局驶过起跑线及每圈通过终点线后答题：答对随机补满空道具格，答错不获得道具，随后继续行驶。学霸模式没有路上盲盒；答题时全场暂停。</p><div class="row2"><label class="keys">年级<select id="studyGrade" style="width:100%;padding:8px"><option value="1">一年级</option><option value="2">二年级</option><option value="3">三年级</option><option value="4">四年级</option><option value="5">五年级</option><option value="6">六年级</option></select></label><label class="keys">题库<select id="studySubject" style="width:100%;padding:8px"><option value="all">综合随机</option><option value="math">数学</option><option value="olympiad">奥数</option><option value="chinese">语文</option><option value="english">英语</option><option value="science">科学</option><option value="ethics">道德与法治</option><option value="music">音乐</option><option value="art">美术</option><option value="pe">体育与健康</option><option value="labor">劳动</option><option value="it">信息科技</option><option value="practice">综合实践</option></select></label></div><p id="studyBankInfo" class="keys" aria-live="polite"></p><p class="keys">优先抽取年级内思考题，答对直接继续比赛，答错阅读解析后点击继续。题库随年级切换；英语、信息科技从三年级起显示。奥数为独立拓展题库，综合随机抽取常规学科。</p></section>
   <details id="musicSettings"><summary style="cursor:pointer;font-weight:bold;color:var(--gold)">背景音乐</summary><label class="keys" style="display:block;margin:12px 0"><input id="musicEnabled" type="checkbox"> 播放随机节奏音乐</label><label class="keys" style="display:block">音乐音量 <output id="musicVolumeLabel">35%</output><input id="musicVolume" type="range" min="0" max="100" step="5" style="display:block;width:100%;min-height:44px"></label><p class="keys">像素冲刺 · 霓虹弯道 · 晴空飞车。比赛中随机播放，答题或暂停时音乐暂停。</p></details>
   <details id="controlSettings"><summary style="cursor:pointer;font-weight:bold;color:var(--gold)">控制设置</summary><label class="keys">手机 / 平板转向<select id="controlMenu" style="width:100%;padding:8px"><option value="tilt">重力控制</option><option value="buttons">左右方向键</option></select></label><button id="calibrateMenu" class="alt">校准重力中心</button><p class="keys">iPad 默认左右方向键，右下角按住加速。也可选择重力转向：左右倾斜控制方向；手机默认重力转向。无传感器时使用方向键。</p></details>
   <p class="best" id="bestTxt"></p>
@@ -208,13 +209,14 @@ tr.me td{background:rgba(255,201,60,.14)}
 </div>
 
 <div id="accountOv" class="overlay" hidden style="z-index:110"><div class="dialog panel" style="max-height:85vh;overflow:auto"><h2>玩家账号</h2><p id="accountStatus" role="status" aria-live="polite"></p><p class="keys">账号：3–20位英文字母、数字或下划线；密码：8–128位。账号名称会出现在排行榜。</p><form id="authForm"><label>账号<input id="username" autocomplete="username" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="例如 kart_player" required minlength="3" maxlength="20" pattern="[a-zA-Z0-9_]{3,20}"></label><label>密码<input id="password" placeholder="至少8位密码" type="password" autocomplete="current-password" required minlength="8" maxlength="128"></label><button class="big" value="login">登录</button><button class="alt" value="register">注册并登录</button></form><button id="logout" class="alt" hidden>退出登录</button><button class="alt" onclick="document.getElementById('accountOv').hidden=true">关闭</button></div></div>
-<div id="boardOv" class="overlay" hidden style="z-index:110"><div class="dialog panel" style="max-height:85vh;overflow:auto"><h2>游戏排行榜</h2><p class="keys">满分100分：准确率 × 60 分；每圈 5 分（最多 30）；每次有效击倒 2 分（最多 10）。普通模式不计答题分。</p><div id="boardFilters" style="display:grid;grid-template-columns:1fr 1fr;gap:8px"></div><p id="boardStatus"></p><table><thead><tr><th>排名</th><th>玩家</th><th>综合分 / 100</th><th>用时 / 答题 / 圈数 / 击倒</th></tr></thead><tbody id="boardRows"></tbody></table><button id="refreshBoard" class="alt">刷新</button><button class="alt" onclick="document.getElementById('boardOv').hidden=true">返回游戏</button></div></div>
+<div id="boardOv" class="overlay" hidden style="z-index:110"><div class="dialog panel" style="max-height:85vh;overflow:auto"><h2>游戏排行榜</h2><p class="keys">满分100分：准确率 × 60 分；每圈 5 分（最多 30）；每次有效击倒 2 分（最多 10）。</p><div id="boardFilters" style="display:grid;grid-template-columns:1fr 1fr;gap:8px"></div><p id="boardStatus"></p><table><thead><tr><th>排名</th><th>玩家</th><th>综合分 / 100</th><th>用时 / 答题 / 圈数 / 击倒</th></tr></thead><tbody id="boardRows"></tbody></table><button id="refreshBoard" class="alt">刷新</button><button class="alt" onclick="document.getElementById('boardOv').hidden=true">返回游戏</button></div></div>
 <div id="playLock" class="overlay" hidden style="z-index:999"><div class="dialog panel"><h2>休息时间</h2><p>已累计游玩 30 分钟，请休息 30 分钟。</p><p id="playLockTime" role="timer" style="font-size:36px;color:#ffe36a"></p><p>倒计时结束后可以继续游戏，刷新页面仍保留锁定。</p><details id="playAdmin"><summary style="cursor:pointer;color:var(--gold)">管理员解除休息</summary><form id="playUnlockForm" style="display:grid;gap:12px;margin-top:12px" novalidate><label>管理员密码<input id="playAdminPin" type="password" inputmode="numeric" autocomplete="off" maxlength="6" style="display:block;width:100%;padding:12px;font-size:20px;margin-top:8px" placeholder="输入管理员密码"></label><button id="playUnlockBtn" type="submit">解除本次休息</button><p id="playUnlockStatus" role="status" aria-live="polite" class="keys"></p></form></details></div></div>
 <div id="toast" class="toast" hidden></div>
 
 <script src="vendor/three.min.js"></script>
 <script src="subjects.js?v=olympiad-v4-20261002"></script>
-<script src="season.js?v=kart-s2-1300-20261003"></script>
+<div id="rotateGate" hidden role="dialog" aria-modal="true" aria-label="请横屏游玩"><div><h2>请横屏游玩 ↻</h2><p>将手机或平板横过来，获得更宽的赛道视野。若未自动旋转，请关闭设备的方向锁定。</p><button id="rotateAction" class="big">尝试切换横屏</button></div></div>
+<script src="season.js?v=study-landscape-20261003"></script>
 <script src="learning.js?v=kart-s2-20261002"></script>
 <script src="tilt.js?v=20261002"></script>
 <script src="api.js?v=auth-v2"></script>
@@ -225,7 +227,7 @@ tr.me td{background:rgba(255,201,60,.14)}
 <script src="music.js?v=rhythm-v1"></script>
 <script src="score.js?v=kart-s2-20261002"></script>
 <script src="account-form.js?v=auth-v2"></script>
-<script src="game-account.js?v=kart-s2-1300-20261003"></script>
+<script src="game-account.js?v=study-landscape-20261003"></script>
 <script src="reliable-save.js?v=kart-s2-startfix-20261002"></script>
 <script src="progression.js?v=kart-s2-startfix-20261002"></script>
 <script src="telemetry.js?v=kart-s2-startfix-20261002"></script>
@@ -282,7 +284,7 @@ const ITEM_NAMES = { jelly: '果冻块', missile: '追踪弹',shield:'护盾',li
 const isIPad=/iPad/.test(navigator.userAgent)||(/Macintosh/.test(navigator.userAgent)&&navigator.maxTouchPoints>1);
 const coarse = matchMedia('(pointer: coarse)').matches || 'ontouchstart' in window;
 const G = {
-  state: 'menu', paused: false, trackIdx: store.get('track', 0), charIdx: store.get('char', 0), diff: store.get('diff', 1), study: !!store.get('study', false), grade: store.get('grade',1), subject: store.get('subject','all')==='local'?'all':store.get('subject','all'), studyStats:{total:0,correct:0},
+  state: 'menu', paused: false, trackIdx: store.get('track', 0), charIdx: store.get('char', 0), diff: store.get('diff', 1), study: true, grade: store.get('grade',1), subject: store.get('subject','all')==='local'?'all':store.get('subject','all'), studyStats:{total:0,correct:0},
   qualSel: QUALS.includes(store.get('qual','low'))?store.get('qual','low'):'low', qual: 'low', karts: [], player: null, tr: null, raceTime: 0, countdown: 0,
   control:isIPad?store.get('ipadControl','buttons'):(store.get('control','tilt')==='joystick'?'buttons':store.get('control','tilt')),sessionControl:null,touch: coarse, time: 0, finishT: 0, shake: 0, frameAvg: 16, slowT: 0
 };
@@ -1069,7 +1071,22 @@ function buildWorldIfNeeded() {
   world.jellies.forEach(j => world.group.remove(j.m)); world.jellies = [];
   world.missiles.forEach(m => world.group.remove(m.g)); world.missiles = [];
 }
+function mobileDevice(){return navigator.maxTouchPoints>0 || matchMedia('(any-pointer:coarse)').matches;}
+function portraitBlocked(){return mobileDevice() && innerHeight>innerWidth;}
+async function requestLandscape(){
+  if(!mobileDevice())return;
+  try{if(!document.fullscreenElement && document.documentElement.requestFullscreen)await document.documentElement.requestFullscreen();}catch{}
+  try{if(screen.orientation?.lock)await screen.orientation.lock('landscape');}catch{}
+}
+function syncOrientation(){
+  const blocked=portraitBlocked();$('#rotateGate').hidden=!blocked;
+  if(blocked && ['race','countdown'].includes(G.state) && !G.paused){G.paused=true;if(!quizPending)$('#pauseOv').hidden=false;engineSound(false,0,false);MUSIC.stop();}
+  return blocked;
+}
 async function startRace() {
+  G.study=true;
+  await requestLandscape();
+  if(syncOrientation())return;
   if(KartPlayLimit.tick(false).locked)return;
   if(G.starting)return;G.starting=true;['menu','resultOv','pauseOv'].forEach(id=>$('#'+id).inert=true);$('#startBtn').disabled=true;$('#startBtn').textContent=G.study?'正在加载题库…':'准备比赛…';
   try {
@@ -1140,7 +1157,7 @@ function showResults() {
   if (prev == null || mine < prev) { store.set(key, mine); bestMsg = prev == null ? `首个纪录 ${fmt(mine)}` : `新纪录！${fmt(mine)}（原 ${fmt(prev)}）`; }
   else bestMsg = `本赛道最佳 ${fmt(prev)}`;
   const score=KartScore.calculate({correct:G.studyStats.correct,total:G.studyStats.total,laps:LAPS,hits:G.player.hits||0});
-  $('#resScore').textContent=`${G.study?'学习综合分':'综合分（普通模式不计答题分）'} ${score.points} / 100 分 · 答题 ${score.accuracy} 分（${G.studyStats.correct}/${G.studyStats.total}）· 完成 ${LAPS} 圈 ${score.laps} 分 · 有效击倒 ${G.player.hits||0} 次 ${score.hits} 分`;
+  $('#resScore').textContent=`学习综合分 ${score.points} / 100 分 · 答题 ${score.accuracy} 分（${G.studyStats.correct}/${G.studyStats.total}）· 完成 ${LAPS} 圈 ${score.laps} 分 · 有效击倒 ${G.player.hits||0} 次 ${score.hits} 分`;
   $('#resBest').textContent = `${TRACKS[G.trackIdx].name} · ${DIFFS[G.diff].name} · ${bestMsg}`;
   KartExperience.end(rank,mine,prev,bestLap,previousLap);
   saveCloudScore(mine);
@@ -1248,15 +1265,16 @@ let last = performance.now(); G.frameCount = 0;
 function frame(now) {
   requestAnimationFrame(frame);
   let dt = Math.min(0.05, (now - last) / 1000); last = now; G.time += dt; G.frameCount++;
+  const portrait=syncOrientation();
   syncMusic();
-  const limit=KartPlayLimit.tick(G.state==='race'||G.state==='countdown');
+  const limit=KartPlayLimit.tick(!portrait && (G.state==='race'||G.state==='countdown'));
   $('#playLock').hidden=!limit.locked;
   if(limit.locked){
     if(!G.limitPaused){G.limitPaused=true;G.limitWasPaused=G.paused;G.paused=true;engineSound(false,0,false);MUSIC.stop();}
     const seconds=Math.ceil(limit.remaining/1000);$('#playLockTime').textContent=String(Math.floor(seconds/60)).padStart(2,'0')+':'+String(seconds%60).padStart(2,'0');return;
   }
   if(G.limitPaused){G.limitPaused=false;if(G.state==='race'||G.state==='countdown'){G.paused=true;if(!quizPending)$('#pauseOv').hidden=false;}else G.paused=G.limitWasPaused;}
-  if (document.hidden) return;
+  if (document.hidden || portrait) return;
   G.frameAvg = lerp(G.frameAvg, dt * 1000, 0.05);
   if (G.state === 'menu') {
     $('#missileWarning').hidden=true;
@@ -1372,7 +1390,7 @@ function renderMenu() {
 }
 $('#studyGrade').onchange=e=>{G.grade=Number(e.target.value);store.set('grade',G.grade);if(G.mode==='weekly'){KartExperience.weeklyGrade(G.grade);return;}renderMenu();};
 $('#studySubject').onchange=e=>{G.subject=e.target.value;store.set('subject',G.subject);renderMenu();};
-$('#studyMode').onchange=e=>{G.study=e.target.checked;store.set('study',G.study);setupRace();renderMenu();};
+
 let playUnlockBusy=false;
 $('#playUnlockForm').onsubmit=async e=>{
   e.preventDefault();if(playUnlockBusy)return;
@@ -1387,6 +1405,7 @@ $('#playUnlockForm').onsubmit=async e=>{
   }catch(_){$('#playUnlockStatus').textContent='暂时无法验证，请重试。';}
   finally{playUnlockBusy=false;$('#playUnlockBtn').disabled=false;}
 };
+$('#rotateAction').onclick=requestLandscape;
 $('#startBtn').onclick = startRace;
 $('#pauseBtn').onclick = () => togglePause();
 $('#resumeBtn').onclick = () => togglePause();
