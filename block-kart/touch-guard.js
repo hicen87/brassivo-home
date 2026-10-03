@@ -1,5 +1,6 @@
 /* Prevent browser double-tap zoom without swallowing pointer-based game controls. */
 (()=>{
+ document.addEventListener('contextmenu',e=>{if(e.target.closest?.('#stage,#touch,#hud'))e.preventDefault();},{capture:true,passive:false});
  document.addEventListener('dblclick',e=>e.preventDefault(),{capture:true,passive:false});
  let previous=null;
  document.addEventListener('touchend',e=>{
