@@ -21,8 +21,8 @@
 }
 [hidden]{display:none!important}
 html,body{height:100%;margin:0;background:#10131c;color:var(--txt);overflow:hidden;touch-action:none;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none}
-body{font-family:'PingFang SC','Microsoft YaHei',system-ui,sans-serif;font-size:14px}
-#stage{position:fixed;inset:0}
+body{position:fixed;inset:0;width:100%;height:100%;height:100dvh;overscroll-behavior:none;font-family:'PingFang SC','Microsoft YaHei',system-ui,sans-serif;font-size:14px}
+#stage{position:absolute;inset:0}
 #stage canvas{display:block;width:100%;height:100%}
 button,a,summary,input,select{touch-action:manipulation}
 button{font:inherit;color:inherit;cursor:pointer}
@@ -340,13 +340,26 @@ function applyQuality() {
   resize();
 }
 function resize() {
-  const w = window.innerWidth, h = window.innerHeight;
+  // Measure the displayed stage: Safari can update it after its window resize event.
+  const bounds = $('#stage').getBoundingClientRect();
+  const w = Math.max(1, Math.round(bounds.width)), h = Math.max(1, Math.round(bounds.height));
   renderer.setSize(w, h, false);
   camera.aspect = w / h;
   G.baseFov = w < h ? 82 : 68;
   camera.updateProjectionMatrix();
 }
 window.addEventListener('resize', resize);
+// Keep the drawing buffer and camera in step with mobile browser chrome and rotation.
+if (window.ResizeObserver) new ResizeObserver(resize).observe($('#stage'));
+window.visualViewport?.addEventListener('resize', resize);
+document.addEventListener('fullscreenchange', resize);
+document.addEventListener('webkitfullscreenchange', resize);
+window.addEventListener('orientationchange', () => {
+  resize();
+  requestAnimationFrame(resize);
+  setTimeout(resize, 250);
+});
+window.addEventListener('pageshow', resize);
 
 /* ================= textures ================= */
 function canvasTex(w, h, draw, nearest = true) {
