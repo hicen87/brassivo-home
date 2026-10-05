@@ -109,3 +109,11 @@ test("indirect beneficiaries stay separate from direct company prices and escape
   assert.match(rendered, /&lt;script&gt;unsafe&lt;\/script&gt;/);
   assert.doesNotMatch(rendered, /OpenAI \(NVDA\)|<script>unsafe/);
 });
+
+test("front-end AIHOT list renders only the top 6 stories from snapshot", () => {
+  const data = structuredClone(item);
+  assert.ok(data.mediaFocus.aihot.stories.length >= 7, "snapshot has at least 7 stories");
+  const rendered = render(data);
+  const ranks = [...rendered.matchAll(/class="hot-rank">(\d+)</g)].map(m => m[1]);
+  assert.deepEqual(ranks, ["01", "02", "03", "04", "05", "06"]);
+});
