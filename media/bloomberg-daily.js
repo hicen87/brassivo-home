@@ -57,10 +57,25 @@ window.BLOOMBERG_MARKETS_DAILY = {
   "sourceUrl": "https://www.bloomberg.com/news/newsletters/2026-10-02/cooler-jobs-data-calms-raging-bond-market",
   "mediaFocus": {
     "barrons": {
-      "captureDate": "2026-10-02",
-      "capturedAt": "2026-10-02T22:55:00+08:00",
-      "summary": "Barron's 聚焦美光低估值下的投资者分歧、量子计算热度攀升、AI自主交易智能体实盘表现、Anthropic上市万亿美元估值讨论及存储芯片短缺缓解迹象。",
+      "captureDate": "2026-10-05",
+      "capturedAt": "2026-10-05T20:00:00+08:00",
+      "summary": "Barron's 聚焦马斯克将SpaceX AI更名为SpaceXSI响应超级智能导向、标普500高集中度风险、就业降温强化美联储暂停加息预期、AI实盘交易智能体边界及美光估值分歧。",
       "stories": [
+        {
+          "title": "马斯克确认SpaceX AI更名为SpaceXSI响应超级智能导向",
+          "summary": "SpaceX将旗下AI部门正式更名为SpaceXSI（超级智能），顺应美国政策导向并深化与xAI空天地一体化算力协同。",
+          "url": "https://www.barrons.com/articles/spacex-ai-spacexsi-elon-musk-super-intelligence-0a91e5c3"
+        },
+        {
+          "title": "标普500高集中度引关注，大盘分化考验后市韧性",
+          "summary": "微软、英伟达、Meta、苹果等巨头贡献下半年主要涨幅，大盘高集中度引发机构对防守反弹持续性的深度审视。",
+          "url": "https://www.barrons.com/articles/sp500-market-concentration-tech-leaders-rally-b8d219f4"
+        },
+        {
+          "title": "劳动力市场降温强化美联储十月按兵不动预期",
+          "summary": "最新非农就业与招聘数据显著走弱，华尔街投行普遍上调四季度美联储暂停紧缩加息的基准概率。",
+          "url": "https://www.barrons.com/articles/labor-market-cooling-fed-rate-hikes-pause-c73e01a8"
+        },
         {
           "title": "AI智能体获得真实资金炒股的实盘观察",
           "summary": "投资者给予AI智能体真实资金进行自主任命交易，测试量化算法与自动化决策在复杂市场中的实战边界。",
@@ -70,16 +85,6 @@ window.BLOOMBERG_MARKETS_DAILY = {
           "title": "量子计算迎来突破催化资本关注度升温",
           "summary": "IBM等巨头推进下一代量子系统突破，量子计算被华尔街视作继生成式AI后最具颠覆性的前沿赛道。",
           "url": "https://www.barrons.com/articles/quantum-computing-investing-ibm-ionq-c590f52c"
-        },
-        {
-          "title": "IBM量子计算系统突破或重燃估值动能",
-          "summary": "IBM发布第二代量子计算系统技术路线图，核心纠错能力提升有望推动企业级商业化落地提速。",
-          "url": "https://www.barrons.com/articles/ibm-stock-quantum-computing-system-two-a6c615de"
-        },
-        {
-          "title": "标普500指数纳入两家新成份股",
-          "summary": "标普道琼斯指数委员会宣布最新季度调整，纳入Twilio等符合盈利要求的高流动性成长企业。",
-          "url": "https://www.barrons.com/articles/twilio-vylor-sp500-stock-additions-64da8508"
         },
         {
           "title": "美光估值便宜为何机构投资者依然谨慎",
@@ -97,41 +102,26 @@ window.BLOOMBERG_MARKETS_DAILY = {
           "url": "https://www.barrons.com/articles/anthropic-ipo-new-math-ai-trillion-dollar-numbers-a906bbb0"
         },
         {
-          "title": "苹果沃尔玛等巨头迎来新CEO交接",
-          "summary": "多家跨国龙头进入权力平稳过渡期，投资者密切关注新任管理层在AI转型与资本分配上的最新战略。",
-          "url": "https://www.barrons.com/articles/apple-berkshire-walmart-stock-new-ceos-outlook-02676898"
+          "title": "特斯拉三季度交付数据后引发估值博弈",
+          "summary": "交付数据展现纯电与智驾基本盘韧性，分析师围绕四季度毛利复苏与Robotaxi商业化节奏展开激烈论辩。",
+          "url": "https://www.barrons.com/articles/tesla-delivery-results-d05dff64"
         },
         {
           "title": "希捷与西部数据因AI存储短缺缓解承压",
           "summary": "随着数据中心企业级大容量硬盘供应紧张逐步缓解，传统存储双雄股价在高位遭遇获利盘回吐。",
           "url": "https://www.barrons.com/articles/seagate-stock-western-digital-ai-data-centers-ab47e2a8"
-        },
-        {
-          "title": "特斯拉在电动车新赛道确立效率优势",
-          "summary": "最新交付数据与降本增效成果显示，特斯拉在纯电车型价格战与智驾商业化推进中展现更强防御韧性。",
-          "url": "https://www.barrons.com/articles/tesla-delivery-results-d05dff64"
         }
       ]
     },
     "wsj": {
-      "captureDate": "2026-10-02",
-      "capturedAt": "2026-10-02T22:55:00+08:00",
-      "summary": "华尔街日报头条聚焦美国9月非农新增就业仅2.9万人引发降温讨论、亚马逊投10亿美元争取数据中心社区支持、OpenAI解雇违规研究员及太空AI芯片测试。",
+      "captureDate": "2026-10-05",
+      "capturedAt": "2026-10-05T20:00:00+08:00",
+      "summary": "华尔街日报头条聚焦特朗普拟设立国家超级智能工作组、全美AI总开支规模博弈、大盘极值集中度红灯预警、亚马逊10亿美元争取数据中心审批及蜂群智能体安全防范。",
       "stories": [
         {
-          "title": "美国9月新增非农就业降至2.9万人",
-          "summary": "劳动力市场招聘显著放缓，失业率微升至4.2%，极大降低了美联储在年内再次收紧货币政策的可能性。",
-          "url": "https://www.wsj.com/economy/jobs/september-jobs-report-unemployment-6b6d6643"
-        },
-        {
-          "title": "美股神奇统计指标向投资者亮起红灯",
-          "summary": "技术与估值指标显示大盘集中度创数十年极值，警示在流动性变动时波动性可能被动放大。",
-          "url": "https://www.wsj.com/finance/stocks/the-amazing-stat-thats-a-red-flag-for-investors-342b70b7"
-        },
-        {
-          "title": "警惕AI失控：蜂群追踪者迅速出击排障",
-          "summary": "网络安全研究团队追踪自主AI智能体异常行为，揭示企业在部署高自主性模型时面临的未预见风险。",
-          "url": "https://www.wsj.com/tech/ai/swarm-chaser-openai-rubygems-hugging-face-7d55b51f"
+          "title": "特朗普拟设立国家超级智能特别工作组",
+          "summary": "白宫计划成立超级智能专门工作组，统筹前沿算力战略、数据中心审批绿色通道与安全对齐框架。",
+          "url": "https://www.wsj.com/politics/policy/trump-super-intelligence-task-force-clayton-7d29bc11"
         },
         {
           "title": "全美能否将GDP的9%投向AI成为产业豪赌",
@@ -139,19 +129,29 @@ window.BLOOMBERG_MARKETS_DAILY = {
           "url": "https://www.wsj.com/tech/ai/will-america-spend-9-of-its-gdp-on-ai-the-industry-is-counting-on-it-3501bb4f"
         },
         {
+          "title": "美股神奇统计指标向投资者亮起红灯",
+          "summary": "技术与估值指标显示大盘集中度创数十年极值，警示在流动性变动时波动性可能被动放大。",
+          "url": "https://www.wsj.com/finance/stocks/the-amazing-stat-thats-a-red-flag-for-investors-342b70b7"
+        },
+        {
           "title": "亚马逊推额外10亿美元争取数据中心审批",
           "summary": "亚马逊承诺透明度与额外社区基础设施支持，全力化解地方电力与土地阻力以加速算力扩建。",
           "url": "https://www.wsj.com/tech/amazons-new-push-to-get-buy-in-for-data-center-build-out-cc8d3f86"
         },
         {
-          "title": "OpenAI解雇涉嫌对外泄密的安全研究人员",
-          "summary": "OpenAI以违反公司敏感数据与安全保护规章为由解雇三名员工，内部模型对齐分歧再度曝光。",
-          "url": "https://www.wsj.com/tech/ai/openai-parts-ways-with-researchers-who-allegedly-shared-confidential-information-aebac528"
+          "title": "警惕AI失控：蜂群追踪者迅速出击排障",
+          "summary": "网络安全研究团队追踪自主AI智能体异常行为，揭示企业在部署高自主性模型时面临的未预见风险。",
+          "url": "https://www.wsj.com/tech/ai/swarm-chaser-openai-rubygems-hugging-face-7d55b51f"
         },
         {
           "title": "基金经理呼吁客户重新审视债券投资机会",
           "summary": "随着长端美债收益率攀升至5.2%上方，固定收益资产锁息价值凸显，资管机构建议拉长组合久期。",
           "url": "https://www.wsj.com/finance/investing/money-managers-are-asking-clients-to-give-the-bond-market-another-chance-6f874f1c"
+        },
+        {
+          "title": "OpenAI解雇涉嫌对外泄密的安全研究人员",
+          "summary": "OpenAI以违反公司敏感数据与安全保护规章为由解雇三名员工，内部模型对齐分歧再度曝光。",
+          "url": "https://www.wsj.com/tech/ai/openai-parts-ways-with-researchers-who-allegedly-shared-confidential-information-aebac528"
         },
         {
           "title": "谷歌卫星将自研AI芯片送入太空测试",
@@ -161,18 +161,18 @@ window.BLOOMBERG_MARKETS_DAILY = {
       ]
     },
     "aihot": {
-      "captureDate": "2026-10-02",
-      "capturedAt": "2026-10-02T22:55:00+08:00",
-      "boardUpdatedAt": "2026-10-02T22:50:00+08:00",
+      "captureDate": "2026-10-05",
+      "capturedAt": "2026-10-05T20:00:00+08:00",
+      "boardUpdatedAt": "2026-10-05T20:00:00+08:00",
       "windowHours": 48,
       "sourceUrl": "https://aihot.news/hot",
       "market": {
-        "checkedAt": "2026-10-02T22:55:00+08:00",
+        "checkedAt": "2026-10-05T20:00:00+08:00",
         "benchmark": {
-          "sessionDate": "2026-09-28",
-          "previousSessionDate": "2026-09-25",
-          "close": 7683.69,
-          "previousClose": 7743.41,
+          "sessionDate": "2026-10-02",
+          "previousSessionDate": "2026-10-01",
+          "close": 7722.72,
+          "previousClose": 7666.45,
           "sources": [
             "https://finance.yahoo.com/quote/%5ESPX/history/",
             "https://www.wsj.com/market-data/quotes/index/SPX/historical-prices"
@@ -180,30 +180,30 @@ window.BLOOMBERG_MARKETS_DAILY = {
         },
         "quotes": {
           "NVDA": {
-            "sessionDate": "2026-09-28",
-            "previousSessionDate": "2026-09-25",
-            "close": 228.86,
-            "previousClose": 225.07,
+            "sessionDate": "2026-10-02",
+            "previousSessionDate": "2026-10-01",
+            "close": 233.95,
+            "previousClose": 230.86,
             "sources": [
               "https://stockanalysis.com/stocks/nvda/history/",
               "https://finance.yahoo.com/quote/NVDA/history/"
             ]
           },
           "AMD": {
-            "sessionDate": "2026-09-28",
-            "previousSessionDate": "2026-09-25",
-            "close": 607.87,
-            "previousClose": 630.63,
+            "sessionDate": "2026-10-02",
+            "previousSessionDate": "2026-10-01",
+            "close": 633.91,
+            "previousClose": 615.73,
             "sources": [
               "https://stockanalysis.com/stocks/amd/history/",
               "https://finance.yahoo.com/quote/AMD/history/"
             ]
           },
           "META": {
-            "sessionDate": "2026-09-28",
-            "previousSessionDate": "2026-09-25",
-            "close": 715.62,
-            "previousClose": 751.66,
+            "sessionDate": "2026-10-02",
+            "previousSessionDate": "2026-10-01",
+            "close": 728.08,
+            "previousClose": 725.93,
             "sources": [
               "https://stockanalysis.com/stocks/meta/history/",
               "https://finance.yahoo.com/quote/META/history/"
@@ -214,9 +214,153 @@ window.BLOOMBERG_MARKETS_DAILY = {
       "stories": [
         {
           "rank": 1,
-          "title": "谷歌发布 Gemini 4 Argon 前沿模型",
-          "heat": 439,
-          "url": "https://aihot.news/story/daf111a0-908f-4f9c-8639-fc469d9ec53b",
+          "title": "OpenAI Codex 与 ChatGPT Work 承诺 28 天每日更新",
+          "heat": 121,
+          "url": "https://aihot.news/story/8d77783c-db18-4e6a-b8e7-70b012886402",
+          "marketLink": {
+            "company": "OpenAI",
+            "ticker": null,
+            "status": "no_direct",
+            "relationUrl": "https://openai.com/",
+            "eventPublishedAt": null,
+            "eventSourceUrl": null
+          },
+          "readThrough": {
+            "checkedAt": "2026-10-05T20:00:00+08:00",
+            "note": "OpenAI加速Codex与工作场景高频迭代，持续拉动底层云算力基础设施集群推理与微调需求。",
+            "candidates": [
+              {
+                "company": "Microsoft",
+                "ticker": "MSFT",
+                "exchange": "NASDAQ",
+                "exposure": "Azure独家云合作与企业级Copilot生态协同",
+                "direction": "潜在利好",
+                "condition": "OpenAI每日功能密集交付带动Azure云推理算力消耗与订阅转化率同步上行",
+                "sourceUrl": "https://www.microsoft.com/investor/"
+              }
+            ]
+          }
+        },
+        {
+          "rank": 2,
+          "title": "特朗普成立超级智能工作组，克莱顿牵头",
+          "heat": 103,
+          "url": "https://aihot.news/story/d5b32762-56e9-4fb8-8976-fef8dadd068a",
+          "marketLink": {
+            "company": "White House Super Intelligence Task Force",
+            "ticker": null,
+            "status": "no_direct",
+            "relationUrl": "https://www.whitehouse.gov/",
+            "eventPublishedAt": null,
+            "eventSourceUrl": null
+          },
+          "readThrough": {
+            "checkedAt": "2026-10-05T20:00:00+08:00",
+            "note": "美国设立超级智能专门工作组，政策导向聚焦国家级算力基础设施竞赛与前沿安全标准建设。",
+            "candidates": [
+              {
+                "company": "NVIDIA",
+                "ticker": "NVDA",
+                "exchange": "NASDAQ",
+                "exposure": "国家级AI主权超算中心与联邦研发算力底座供应",
+                "direction": "潜在利好",
+                "condition": "美国超级智能战略明确增加主权算力采购且未出台严苛的算力硬件流通限制",
+                "sourceUrl": "https://nvidianews.nvidia.com/"
+              }
+            ]
+          }
+        },
+        {
+          "rank": 3,
+          "title": "马斯克确认SpaceXAI将更名为SpaceXSI",
+          "heat": 98,
+          "url": "https://aihot.news/story/397fcf8b-ea91-4150-a638-8fd4679eed40",
+          "marketLink": {
+            "company": "SpaceX",
+            "ticker": null,
+            "status": "no_direct",
+            "relationUrl": "https://www.spacex.com/",
+            "eventPublishedAt": null,
+            "eventSourceUrl": null
+          },
+          "readThrough": {
+            "checkedAt": "2026-10-05T20:00:00+08:00",
+            "note": "马斯克响应官方超级智能政策将SpaceX算力部门改名，加深星链与xAI空天地一体化算力协同。",
+            "candidates": [
+              {
+                "company": "Tesla",
+                "ticker": "TSLA",
+                "exchange": "NASDAQ",
+                "exposure": "Dojo算力集群与FSD端到端神经网络模型架构跨业务共享",
+                "direction": "方向待确认",
+                "condition": "SpaceX超级智能研发成果能够实质反哺特斯拉自动驾驶与Optimus机器人算力效率",
+                "sourceUrl": "https://ir.tesla.com/"
+              }
+            ]
+          }
+        },
+        {
+          "rank": 4,
+          "title": "华为高通达成5G等专利交叉许可协议",
+          "heat": 83,
+          "url": "https://aihot.news/story/2db86cc5-e2f8-4e6f-b7c7-e987069aa6b0",
+          "marketLink": {
+            "company": "Qualcomm",
+            "ticker": "QCOM",
+            "status": "listed",
+            "relationUrl": "https://www.qualcomm.com/news",
+            "eventPublishedAt": null,
+            "eventSourceUrl": null
+          },
+          "readThrough": {
+            "checkedAt": "2026-10-05T20:00:00+08:00",
+            "note": "高通与华为达成专利交叉许可，消除移动通信与端侧AI知识产权诉讼风险，保障全球专利许可收入稳定。",
+            "candidates": []
+          }
+        },
+        {
+          "rank": 5,
+          "title": "OpenAI安全负责人罗宾逊离职并撰文批评",
+          "heat": 82,
+          "url": "https://aihot.news/story/fd9e2bf7-831d-46b7-8eae-5cdeb44ca379",
+          "marketLink": {
+            "company": "OpenAI",
+            "ticker": null,
+            "status": "no_direct",
+            "relationUrl": "https://openai.com/",
+            "eventPublishedAt": null,
+            "eventSourceUrl": null
+          },
+          "readThrough": {
+            "checkedAt": "2026-10-05T20:00:00+08:00",
+            "note": "核心安全负责人离职加剧市场对大模型商业化与对齐监管审查的担忧，监管合规摩擦短期升温。",
+            "candidates": []
+          }
+        },
+        {
+          "rank": 6,
+          "title": "施耐德电气226亿美元全现金收购PTC",
+          "heat": 61,
+          "url": "https://aihot.news/story/f4f04774-a627-409f-aeee-0bb78eff24cf",
+          "marketLink": {
+            "company": "PTC",
+            "ticker": "PTC",
+            "status": "listed",
+            "relationUrl": "https://www.ptc.com/en/investors",
+            "eventPublishedAt": null,
+            "eventSourceUrl": null
+          },
+          "readThrough": {
+            "checkedAt": "2026-10-05T20:00:00+08:00",
+            "note": "工业软件巨头巨额现金被并购，印证制造业数字化与数字孪生工业AI资产的战略价值溢价。",
+            "candidates": []
+          }
+        },
+        {
+          "rank": 7,
+          "title": "Gemini免费用户模型调整为Flash-Lite",
+          "heat": 56,
+          "url": "https://aihot.news/story/94326823-aa00-4316-a253-28c8c4098a05",
           "marketLink": {
             "company": "Alphabet",
             "ticker": "GOOG",
@@ -226,140 +370,54 @@ window.BLOOMBERG_MARKETS_DAILY = {
             "eventSourceUrl": null
           },
           "readThrough": {
-            "checkedAt": "2026-10-02T22:55:00+08:00",
-            "note": "谷歌新模型强化企业安全与多模态能力，巩固其云基础设施与搜索护城河。",
-            "candidates": []
-          }
-        },
-        {
-          "rank": 2,
-          "title": "Anthropic 推迟 IPO 至 11 月，招股书曝光",
-          "heat": 125,
-          "url": "https://aihot.news/story/935ed291-4d58-4132-a878-ce7fc3176c83",
-          "marketLink": {
-            "company": "Anthropic",
-            "ticker": null,
-            "status": "no_direct",
-            "relationUrl": "https://www.anthropic.com/",
-            "eventPublishedAt": null,
-            "eventSourceUrl": null
-          },
-          "readThrough": {
-            "checkedAt": "2026-10-02T22:55:00+08:00",
-            "note": "招股书披露巨额算力投入与AWS/谷歌云分销渠道，算力基础设施长期需求确定性提升。",
-            "candidates": [
-              {
-                "company": "Amazon",
-                "ticker": "AMZN",
-                "exchange": "NASDAQ",
-                "exposure": "AWS分销渠道与计算集群战略合作",
-                "direction": "潜在利好",
-                "condition": "AWS平台Anthropic模型调用量保持高增且云基础设施持续扩容",
-                "sourceUrl": "https://aws.amazon.com/bedrock/claude/"
-              }
-            ]
-          }
-        },
-        {
-          "rank": 3,
-          "title": "Cloudflare 开源决策模型 Clef 与 Clef-flash",
-          "heat": 117,
-          "url": "https://aihot.news/story/97076b2f-7819-4ece-a2f4-29dc76fdc10b",
-          "marketLink": {
-            "company": "Cloudflare",
-            "ticker": "NET",
-            "status": "listed",
-            "relationUrl": "https://www.cloudflare.com/",
-            "eventPublishedAt": null,
-            "eventSourceUrl": null
-          },
-          "readThrough": {
-            "checkedAt": "2026-10-02T22:55:00+08:00",
-            "note": "边缘推理与轻量级开源决策模型加速边缘AI部署，增强网络云平台黏性。",
-            "candidates": []
-          }
-        },
-        {
-          "rank": 4,
-          "title": "微软发布MAI-Transcribe-2-Streaming流式转写模型",
-          "heat": 97,
-          "url": "https://aihot.news/story/4d391f67-cbae-4a14-89e4-a1f8153d062a",
-          "marketLink": {
-            "company": "Microsoft",
-            "ticker": "MSFT",
-            "status": "listed",
-            "relationUrl": "https://www.microsoft.com/investor/",
-            "eventPublishedAt": null,
-            "eventSourceUrl": null
-          },
-          "readThrough": {
-            "checkedAt": "2026-10-02T22:55:00+08:00",
-            "note": "低延迟端到端语音转写模型赋能企业实时会议与Copilot交互体验。",
-            "candidates": []
-          }
-        },
-        {
-          "rank": 5,
-          "title": "Tavus发布Griffin视频交互模型",
-          "heat": 93,
-          "url": "https://aihot.news/story/f89a7e27-e5e9-4e16-8a9e-8fca7920df7f",
-          "marketLink": {
-            "company": "Tavus",
-            "ticker": null,
-            "status": "no_direct",
-            "relationUrl": "https://www.tavus.io/",
-            "eventPublishedAt": null,
-            "eventSourceUrl": null
-          },
-          "readThrough": {
-            "checkedAt": "2026-10-02T22:55:00+08:00",
-            "note": "低延迟会话式数字人与视频交互推进，多模态实时推理算力消耗提升。",
-            "candidates": []
-          }
-        },
-        {
-          "rank": 6,
-          "title": "OpenAI解雇3名安全研究员",
-          "heat": 92,
-          "url": "https://aihot.news/story/a2df69da-f530-4cf9-812f-48c246e2402e",
-          "marketLink": {
-            "company": "OpenAI",
-            "ticker": null,
-            "status": "no_direct",
-            "relationUrl": "https://openai.com/",
-            "eventPublishedAt": null,
-            "eventSourceUrl": null
-          },
-          "readThrough": {
-            "checkedAt": "2026-10-02T22:55:00+08:00",
-            "note": "内部安全治理与模型对齐分歧受关注，商业化推进节奏不减。",
-            "candidates": []
-          }
-        },
-        {
-          "rank": 7,
-          "title": "Claude Code mods 发布与示例更新",
-          "heat": 89,
-          "url": "https://aihot.news/story/5971919b-97f0-444a-95e6-3bd40d1e0368",
-          "marketLink": {
-            "company": "Anthropic",
-            "ticker": null,
-            "status": "no_direct",
-            "relationUrl": "https://www.anthropic.com/",
-            "eventPublishedAt": null,
-            "eventSourceUrl": null
-          },
-          "readThrough": {
-            "checkedAt": "2026-10-02T22:55:00+08:00",
-            "note": "代码智能体工作流扩展与生态丰富，推动开发者端算力调用活跃度。",
+            "checkedAt": "2026-10-05T20:00:00+08:00",
+            "note": "谷歌将免费端模型下调为轻量化Flash-Lite，大幅压降推理服务Token成本并提升单卡吞吐并发。",
             "candidates": []
           }
         },
         {
           "rank": 8,
-          "title": "OpenAI 发布常驻智能体 Dots",
-          "heat": 80,
-          "url": "https://aihot.news/story/a303df3a-51f9-454b-8dda-5ac2f2f71842",
+          "title": "Meta开源Muse Gadgets硬件计划并推Home Link",
+          "heat": 53,
+          "url": "https://aihot.news/story/e3d54065-1571-44a0-91b5-79600744e735",
+          "marketLink": {
+            "company": "Meta Platforms",
+            "ticker": "META",
+            "status": "listed",
+            "relationUrl": "https://investor.atmeta.com/",
+            "eventPublishedAt": null,
+            "eventSourceUrl": null
+          },
+          "readThrough": {
+            "checkedAt": "2026-10-05T20:00:00+08:00",
+            "note": "Meta持续拓展开源硬件与端侧智能家居协议，推动多模态端侧AI交互生态落地。",
+            "candidates": []
+          }
+        },
+        {
+          "rank": 9,
+          "title": "谷歌暂停OSS VRP产品漏洞提报",
+          "heat": 51,
+          "url": "https://aihot.news/story/46c7f8e8-51cb-4cf2-8486-5e3402815813",
+          "marketLink": {
+            "company": "Alphabet",
+            "ticker": "GOOG",
+            "status": "listed",
+            "relationUrl": "https://abc.xyz/investor/",
+            "eventPublishedAt": null,
+            "eventSourceUrl": null
+          },
+          "readThrough": {
+            "checkedAt": "2026-10-05T20:00:00+08:00",
+            "note": "开源漏洞奖励计划调整，反映科技大厂在安全合规审计流程上的成本结构优化与重构。",
+            "candidates": []
+          }
+        },
+        {
+          "rank": 10,
+          "title": "OpenAI在ChatGPT测试图像生成视觉广告",
+          "heat": 48,
+          "url": "https://aihot.news/story/93ed3076-cae1-4349-9f3d-c629827d554c",
           "marketLink": {
             "company": "OpenAI",
             "ticker": null,
@@ -369,47 +427,19 @@ window.BLOOMBERG_MARKETS_DAILY = {
             "eventSourceUrl": null
           },
           "readThrough": {
-            "checkedAt": "2026-10-02T22:55:00+08:00",
-            "note": "常驻后台智能体开辟全天候任务自动化，Token调用频率中枢上移。",
-            "candidates": []
-          }
-        },
-        {
-          "rank": 9,
-          "title": "arXiv 推出更严格投稿限流政策",
-          "heat": 79,
-          "url": "https://aihot.news/story/69db2408-5efe-4929-b6e3-98be0972c21b",
-          "marketLink": {
-            "company": "学术平台",
-            "ticker": null,
-            "status": "no_direct",
-            "relationUrl": "https://arxiv.org/",
-            "eventPublishedAt": null,
-            "eventSourceUrl": null
-          },
-          "readThrough": {
-            "checkedAt": "2026-10-02T22:55:00+08:00",
-            "note": "防范AI生成论文泛滥，前沿学术评审机制向高质量人工校验收紧。",
-            "candidates": []
-          }
-        },
-        {
-          "rank": 10,
-          "title": "赛力斯与华为回应问界专属专营模式调整",
-          "heat": 79,
-          "url": "https://aihot.news/story/8ade9c6c-461d-4ad7-8ba0-c7927655b7e6",
-          "marketLink": {
-            "company": "赛力斯",
-            "ticker": "601127.SS",
-            "status": "listed",
-            "relationUrl": "https://www.seres.cn/",
-            "eventPublishedAt": null,
-            "eventSourceUrl": null
-          },
-          "readThrough": {
-            "checkedAt": "2026-10-02T22:55:00+08:00",
-            "note": "专属销售渠道规范化运营，旨在提高高端智选车交付效率与单车综合盈利。",
-            "candidates": []
+            "checkedAt": "2026-10-05T20:00:00+08:00",
+            "note": "ChatGPT探索生成式视觉广告变现路径，潜在开启继订阅制后的第二增长曲线并分流传统搜索展示广告。",
+            "candidates": [
+              {
+                "company": "Alphabet",
+                "ticker": "GOOG",
+                "exchange": "NASDAQ",
+                "exposure": "全球数字搜索与展示广告市场份额直接竞争",
+                "direction": "风险观察",
+                "condition": "ChatGPT广告商业化投放ROI与点击率获得品牌广告主规模化预算采纳",
+                "sourceUrl": "https://abc.xyz/investor/"
+              }
+            ]
           }
         }
       ]
