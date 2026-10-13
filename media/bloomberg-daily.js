@@ -1,121 +1,121 @@
 window.BLOOMBERG_MARKETS_DAILY = {
-  "issueDate": "2026-10-12",
-  "publishedAt": "2026-10-12T10:39:56+00:00",
+  "issueDate": "2026-10-13",
+  "publishedAt": "2026-10-13T10:24:33+00:00",
   "newsletter": "Markets Daily",
-  "headline": "美股股票交易台创近190亿美元收入驱动银行股情绪逆转，高盛上调全球股市评级，标普逼近历史新高",
-  "bloombergTake": "Bloomberg Markets Daily（2026-10-12 原刊）报道，华尔街大型银行股票交易台季度创收预计接近190亿美元，有望推动银行股摆脱AI替代担忧引发的超跌并迎来情绪转暖；同时高盛看好财报季盈利韧性上调全球股票评级，标普500期指微涨0.1%逼近历史新高。此外地缘冲突推升布伦特原油升破105美元，亚马逊洽谈约70亿美元收购AI创企Decart，印度央行强力护盘卢比。以上为原刊快照，非实时行情；简报未给出统一市场涨跌预测。",
+  "headline": "全球投资者AI科技股敞口创疫情以来新高，博通CEO警示非理性博弈，黑石称AI增长助力美国抵御债务压力",
+  "bloombergTake": "Bloomberg Markets Daily（2026-10-13 原刊）报道，美银最新调查显示全球投资者对科技股的AI敞口达2020年疫情反弹以来最高水平；博通CEO陈福阳警示部分投资者对AI抱有不切实际的极端预期犹如置身赌场。同时黑石总裁格雷指出虽然美国债务突破40万亿美元，但AI繁荣带动的资本内流与高增速使其相比英法更具缓冲空间。此外布伦特原油回落至104.5美元，腾讯启动50亿美元AI债券发行，大行财报拉开帷幕。以上为原刊快照，非实时行情；简报未给出统一市场涨跌预测。",
   "bloombergStories": [
     {
-      "title": "股票交易业务创收近190亿美元有望扭转银行股AI恐慌情绪",
-      "summary": "大型银行即将披露三季度股票交易创收逼近190亿美元，部分分析师认为此前AI替代担忧引发的抛售已创造具吸引力的左侧配置窗口。"
+      "title": "美银调查显示全球投资者科技股AI敞口创2020年以来最高水平",
+      "summary": "美银最新基金经理调查显示，追逐AI行情的全球投资者对科技资产的风险敞口已升至六年来峰值，高集中度特征引发市场审视。"
     },
     {
-      "title": "高盛策略师看好财报季盈利强劲动能上调全球股票投资评级",
-      "summary": "随着美股财报季拉开帷幕，高盛认为强劲盈利动能将为全球权益资产提供坚实支撑，策略团队正式上调全球股市配置评级。"
+      "title": "博通CEO陈福阳警示部分AI交易者盲目涌入犹如置身赌场",
+      "summary": "陈福阳在公开活动上直言，大量涌入AI赛道的投资者并未理解底层技术逻辑，设定的极高预期可能面临落地节奏的现实考验。"
     },
     {
-      "title": "原油主力合约涨破105美元关口，地缘冲突推升能源供应溢价",
-      "summary": "受俄乌能源设施攻击及中东地缘局势升级影响，布伦特原油期货主力突破105.60美元，大宗商品通胀压力再度引发关注。"
+      "title": "黑石总裁称AI繁荣与资本内流助力美国抵御高赤字债务压力",
+      "summary": "尽管美债总额突破40万亿美元，但黑石高管认为AI驱动的技术投资与资本流入使美国比英法等欧洲国家拥有更高的增长护盾。"
     },
     {
-      "title": "亚马逊洽谈约70亿美元收购AI创企Decart深化基础设施布局",
-      "summary": "知情人士透露亚马逊正就约70亿美元估值谈判收购生成式AI初创公司Decart，意在进一步巩固AWS在云端大模型推理领域的底层技术壁垒。"
+      "title": "芯片股连续调整波及亚太市场，欧洲股市随油价回落反弹",
+      "summary": "半导体板块抛售延续压制亚太股市走势，而布伦特原油跌至104.5美元与美债收益率回落则推动欧洲股市多数走高。"
     },
     {
-      "title": "印度央行启动逾十年来最强力外汇干预坚守97卢比汇率底线",
-      "summary": "面对资本外流压力，印度央行加大美元抛售与流动性对冲力度，强化市场对央行不惜代价阻止卢比兑美元跌破97关口的政策预期。"
+      "title": "华尔街大行三季报拉开帷幕，股票与固收承销收入走向分化",
+      "summary": "摩根大通、富国、花旗与高盛密集披露财报，股票交易强劲与固定收益承销承压呈现结构性分化格局。"
     }
   ],
   "bullish": [
     {
-      "title": "华尔街财报季强劲盈利预期与交易创收驱动权益风险偏好",
-      "reason": "高盛上调全球股市评级叠加银行股票交易创收近190亿美元，确证资本市场活力与底层盈利增长具备坚实韧性。",
-      "condition": "验证条件为本周标普成分股龙头业绩披露营收与EPS超预期比例维持高位。"
+      "condition": "验证条件为北美科技龙头资本开支计划与三季度宏观GDP增速保持韧性扩张。",
+      "reason": "黑石指出AI技术投资驱动巨额全球资本持续回流美国，支撑经济增速并阶段性化解历史高位的财政赤字约束。",
+      "title": "AI驱动的高速资本开支与生产力投资为美国经济提供增长护盾"
     },
     {
-      "title": "科技巨头持续并购AI底层创企强化云端商业化壁垒",
-      "reason": "亚马逊拟70亿美元收购Decart印证超大规模云厂商在推理算力与大模型技术栈层面的战略布局仍在加速兑现。",
-      "condition": "验证条件为北美四大云巨头三季报云业务营收增速及CAPEX指引保持稳健扩张。"
+      "condition": "验证条件为本周大行财报净利息收入与全美核心企业营收超预期比率维持高位。",
+      "reason": "标普500期指持稳历史高位，能源与科技引领的企业指引扩张为权益资产估值提供基本面支撑。",
+      "title": "企业盈利扩张动能与回购韧性支撑风险资产底层现金流"
     }
   ],
   "bearish": [
     {
-      "title": "国际油价突破105美元加剧大宗通胀粘性与高利率久期约束",
-      "reason": "布伦特原油站上105美元关口可能阻碍美国后续通胀降温进程，限制长端国债利率下行斜率并推升无风险折现率。",
-      "condition": "验证条件为本周关键通胀数据反弹超预期并导致联储政策利率预期路径上移。"
+      "condition": "验证条件为后续半导体与云巨头业绩指引未能达到严苛的乐观上限而引发获利了结。",
+      "reason": "美银调查显示科技股配置达到六年来最拥挤水平，博通CEO对非理性博弈的警示反映出市场预期可能透支中短期业绩兑现。",
+      "title": "科技股AI敞口触及极值与过热预期面临估值回调脆弱性"
     },
     {
-      "title": "高利率环境下银行固定收益与并购逆风带来分化脆弱性",
-      "reason": "高利率对银行固定收益交易与并购重组管道构成持续压制，银行资产负债表与净息差在分化行情中仍具波动隐忧。",
-      "condition": "验证条件为大行财报中信贷坏账拨备与固收承销收入出现超预期下行。"
+      "condition": "验证条件为长端无风险利率重新攀升并加剧外部债务脆弱经济体的汇率贬值压力。",
+      "reason": "中美日等主要经济体之间的储蓄盈余与赤字鸿沟达到危机前极值水平，环形融资模式放大全球跨境资本流动波动风险。",
+      "title": "全球经常账户失衡逼近150年峰值加剧宏观脆弱性"
     }
   ],
-  "sourceUrl": "https://www.bloomberg.com/news/newsletters/2026-10-12/equity-trading-desks-may-spur-a-vibe-shift-on-bank-stocks",
+  "sourceUrl": "https://www.bloomberg.com/news/newsletters/2026-10-13/ai-exposure-surges-along-with-investor-expectations",
   "mediaFocus": {
     "barrons": {
-      "captureDate": "2026-10-12",
-      "capturedAt": "2026-10-12T20:00:00+08:00",
-      "summary": "Barron's 聚焦美股财报季业绩预期错配选股机会、大行财报面临市场审慎眼光、华尔街开启金融资产代币化时代、全球债市动荡下的新兴市场韧性，以及短久期债券投资组合防御策略。",
+      "captureDate": "2026-10-13",
+      "capturedAt": "2026-10-13T20:00:00+08:00",
+      "summary": "Barron's 聚焦美股三季报前瞻与利润率扩张动能、花旗重组释放30%重估空间、科技股回撤与大行财报催化顺周期轮动、SpaceX进军移动通信直连、百时美施贵宝临床试验挫折，以及高利率环境下商业地产与短久期防御配置。",
       "stories": [
         {
-          "title": "闪迪、SK海力士与亚马逊领衔异动，美股财报季前瞻",
-          "summary": "美股即将迎来又一轮重量级财报季，但市场估值高企背景下需要更强劲的确定性以支撑风险偏好。",
-          "url": "https://www.barrons.com/articles/stock-movers-df731e29"
+          "title": "美股财报季五大图表深度解析：盈利与利润率能否延续高位",
+          "summary": "华尔街迎来新一轮由能源与科技板块驱动的强劲业绩指引与利润率扩张，市场关注盈利超预期动能的持续性。",
+          "url": "https://www.barrons.com/articles/3q-earnings-season-preview-charts-146c1cd9"
         },
         {
-          "title": "华尔街大行三季报迎考，需应对悲观预期审视",
-          "summary": "分析师预计银行全行营收与每股收益同比攀升，但高利率持续时间与资产负债表潜在波动令投资者保持审慎。",
-          "url": "https://www.barrons.com/articles/big-banks-earnings-jpmorgan-citigroup-0a0ccb2a"
+          "title": "Keurig革新无塑料咖啡胶囊：压缩咖啡粉与海藻涂层重塑单杯咖啡",
+          "summary": "咖啡机巨头推出无胶囊单杯咖啡方案，采用海藻可降解涂层包裹压缩咖啡粉，推动环保消费升级。",
+          "url": "https://www.barrons.com/articles/keurig-stock-coffee-k-cups-plastic-f10f7196"
         },
         {
-          "title": "华尔街步入金融资产代币化时代，重塑交易基础设施",
-          "summary": "金融资产代币化有望成为电子化交易普及以来证券业最深刻的革命，摩根大通与花旗等巨头加速基础设施布局。",
-          "url": "https://www.barrons.com/articles/wall-street-tokenized-stock-trading-e808866d"
-        },
-        {
-          "title": "牛市格局下如何捕捉业绩预期错配的潜力个股",
-          "summary": "机构专业投资指南，通过预期修正差值与隐含估值错配，在顺周期牛市中挖掘具备超额安全边际的防御标的。",
-          "url": "https://www.barrons.com/articles/how-to-find-stocks-mismatched-earnings-expectations-6d744cd5"
-        },
-        {
-          "title": "全球债市动荡加剧，新兴市场展现差异化韧性",
-          "summary": "欧美长端国债利率宽幅震荡之际，新兴市场凭借稳健外汇储备与审慎货币政策呈现更强抗波动韧性。",
-          "url": "https://www.barrons.com/articles/global-bond-turmoil-reveals-emerging-market-resilience-f88eb238"
-        },
-        {
-          "title": "国际油价上行周期中如何挑选适配的能源ETF",
-          "summary": "在地缘溢价与能源转型交织背景下，精选上游开采、中游管网与综合一体化能源ETF的战术性配置逻辑。",
-          "url": "https://www.barrons.com/articles/how-to-pick-energy-etf-d27dbb87"
-        },
-        {
-          "title": "长端利率维持高位，组合应优先聚焦短久期防御配置",
-          "summary": "专业投资顾问建议不宜轻易抛弃固定收益，而是应将持仓久期收缩至短端以锁定高票息并防范利率久期风险。",
-          "url": "https://www.barrons.com/articles/interest-rates-bond-yields-investment-adb8601f"
-        },
-        {
-          "title": "花旗深度业务重组有望释放30%重估潜力，逢低买入正当时",
-          "summary": "分析师指出花旗精简非核心业务与提升ROE潜力被市场严重低估，当前估值仅为同业龙头一半，具备高修复弹性。",
+          "title": "花旗业务重组有望释放30%重估潜力：半价摩根大通逢低布局良机",
+          "summary": "分析师指出花旗业务精简与ROE提升潜力被市场显著低估，当前估值仅为同业龙头一半，具备高修复弹性。",
           "url": "https://www.barrons.com/articles/buy-citigroup-stock-trail-financials-3da35db6"
         },
         {
-          "title": "CCC获私有化收购要约大涨，垂直行业软件重估可期",
-          "summary": "汽车保险软件龙头CCC获得知名PE机构溢价收购接触，带动垂直软件SaaS板块估值预期触底反弹。",
-          "url": "https://www.barrons.com/articles/ccc-intelligent-solutions-stock-software-takeover-0bd883b6"
+          "title": "科技股抛售加剧，银行股财报催化美股向顺周期轮动",
+          "summary": "大行财报揭幕主导盘面，马斯克向美光警示中国存储芯片竞争，科技高估值压力推动资金向顺周期板块轮动。",
+          "url": "https://www.barrons.com/articles/stock-market-things-to-know-today-bank-earnings-micron-dcc2d3bd"
         },
         {
-          "title": "美股牛市四周年之际，大行财报与油价挑战令多头保持克制",
-          "summary": "哥伦布日美股交投平淡，市场静待银行股财报揭幕，美光面临外部竞争压力与高油价输入性扰动引发谨慎情绪。",
-          "url": "https://www.barrons.com/articles/stock-market-things-to-know-today-earnings-oil-b765556b"
+          "title": "SpaceX进军移动通信直连领域，如何真正撼动美国三大电信运营商",
+          "summary": "深度分析SpaceX收购地面低频频谱后在卫星直连手机服务上的战略壁垒及挑战传统电信巨头的关键路径。",
+          "url": "https://www.barrons.com/articles/spacex-stock-wireless-spectrum-verizon-86471ec6"
         },
         {
-          "title": "Pacira获晖致17亿美元全面溢价收购，创历史最佳单日涨幅",
-          "summary": "非阿片类特药龙头接受Viatris现金要约收购，推动标的股价创历史最佳表现，确立成熟医药并购高溢价基准。",
-          "url": "https://www.barrons.com/articles/viatris-pacira-biosciences-stock-acquisition-a0359d94"
+          "title": "百时美施贵宝关键临床试验结果不及预期引发股价重挫",
+          "summary": "BMS抗肿瘤新药试验面临令人困惑的疗效数据，引发市场对成熟管线商业化前景的担忧。",
+          "url": "https://www.barrons.com/articles/bristol-myers-squibb-stock-drug-trials-e2bb2683"
         },
         {
-          "title": "SpaceX获低频频谱进军移动通信，电信与铁塔股分化",
-          "summary": "SpaceX收购地面低频段频谱准备开展直连手机业务，传统电信运营商AT&T承压，而铁塔资产龙头Crown Castle逆市走强。",
-          "url": "https://www.barrons.com/articles/stock-movers-28befd73"
+          "title": "SpaceX收购地面低频频谱为何反而利好AST SpaceMobile",
+          "summary": "行业分析指出SpaceX加大频谱整合印证了直连卫星通信赛道的确定性，技术先发龙头AST亦迎估值催化。",
+          "url": "https://www.barrons.com/articles/ast-spacemobile-stock-spacex-spectrum-upgrade-5c491ff3"
+        },
+        {
+          "title": "特斯拉在欧洲更改完全自动驾驶命名以满足监管审批要求",
+          "summary": "特斯拉为推进FSD在欧洲市场的合规准入，调整自动驾驶相关表述以契合当地严苛的安全审查。",
+          "url": "https://www.barrons.com/articles/tesla-stock-full-self-driving-approval-europe-62a94678"
+        },
+        {
+          "title": "长端利率攀升背景下投资商业房地产的差异化配置逻辑",
+          "summary": "机构投资者阐述在高利率环境下通过精选优质现金流物业与折价资产抵御久期波动的策略。",
+          "url": "https://www.barrons.com/articles/real-estate-investing-fdc1a4bd"
+        },
+        {
+          "title": "长端美债收益率宽幅震荡，投资组合防御操作建议",
+          "summary": "资深投资顾问梳理在利率高位震荡窗口收缩久期、增加短端现金流配置与分散风险的实操指引。",
+          "url": "https://www.barrons.com/articles/interest-rates-bond-yields-investment-adb8601f"
+        },
+        {
+          "title": "华尔街步入金融资产代币化时代：重塑交易基础设施",
+          "summary": "金融资产代币化有望成为电子化普及以来证券业最深刻的革命，摩根大通与花旗等巨头加速区块链底座布局。",
+          "url": "https://www.barrons.com/articles/wall-street-tokenized-stock-trading-e808866d"
+        },
+        {
+          "title": "美联储面临新一轮金融压力与政策独立性大考",
+          "summary": "法律与政策学者深入探讨高利率久期约束、财政赤字膨胀及外部监管博弈对美联储宏观调控的严峻考验。",
+          "url": "https://www.barrons.com/articles/trump-fed-cook-case-reopened-a0e1f898"
         }
       ]
     },
@@ -167,18 +167,18 @@ window.BLOOMBERG_MARKETS_DAILY = {
       ]
     },
     "aihot": {
-      "captureDate": "2026-10-12",
-      "capturedAt": "2026-10-12T20:00:00+08:00",
-      "boardUpdatedAt": "2026-10-12T20:00:00+08:00",
+      "captureDate": "2026-10-13",
+      "capturedAt": "2026-10-13T20:00:00+08:00",
+      "boardUpdatedAt": "2026-10-13T20:00:00+08:00",
       "windowHours": 48,
       "sourceUrl": "https://aihot.news/hot",
       "market": {
-        "checkedAt": "2026-10-12T20:00:00+08:00",
+        "checkedAt": "2026-10-13T20:00:00+08:00",
         "benchmark": {
-          "sessionDate": "2026-10-09",
-          "previousSessionDate": "2026-10-08",
-          "close": 7811.54,
-          "previousClose": 7765.36,
+          "sessionDate": "2026-10-12",
+          "previousSessionDate": "2026-10-09",
+          "close": 7807.24,
+          "previousClose": 7811.54,
           "sources": [
             "https://finance.yahoo.com/quote/%5ESPX/history/",
             "https://www.wsj.com/market-data/quotes/index/SPX/historical-prices"
@@ -186,40 +186,40 @@ window.BLOOMBERG_MARKETS_DAILY = {
         },
         "quotes": {
           "NVDA": {
-            "sessionDate": "2026-10-09",
-            "previousSessionDate": "2026-10-08",
-            "close": 229.28,
-            "previousClose": 230.48,
+            "sessionDate": "2026-10-12",
+            "previousSessionDate": "2026-10-09",
+            "close": 226.32,
+            "previousClose": 229.28,
             "sources": [
               "https://stockanalysis.com/stocks/nvda/history/",
               "https://finance.yahoo.com/quote/NVDA/history/"
             ]
           },
           "MSFT": {
-            "sessionDate": "2026-10-09",
-            "previousSessionDate": "2026-10-08",
-            "close": 535.07,
-            "previousClose": 522.61,
+            "sessionDate": "2026-10-12",
+            "previousSessionDate": "2026-10-09",
+            "close": 541.15,
+            "previousClose": 535.07,
             "sources": [
               "https://stockanalysis.com/stocks/msft/history/",
               "https://finance.yahoo.com/quote/MSFT/history/"
             ]
           },
           "GOOGL": {
-            "sessionDate": "2026-10-09",
-            "previousSessionDate": "2026-10-08",
-            "close": 351.66,
-            "previousClose": 348.29,
+            "sessionDate": "2026-10-12",
+            "previousSessionDate": "2026-10-09",
+            "close": 352.72,
+            "previousClose": 351.66,
             "sources": [
               "https://stockanalysis.com/stocks/googl/history/",
               "https://finance.yahoo.com/quote/GOOGL/history/"
             ]
           },
           "AMZN": {
-            "sessionDate": "2026-10-09",
-            "previousSessionDate": "2026-10-08",
-            "close": 262.43,
-            "previousClose": 254.06,
+            "sessionDate": "2026-10-12",
+            "previousSessionDate": "2026-10-09",
+            "close": 259.53,
+            "previousClose": 262.43,
             "sources": [
               "https://stockanalysis.com/stocks/amzn/history/",
               "https://finance.yahoo.com/quote/AMZN/history/"
@@ -230,6 +230,121 @@ window.BLOOMBERG_MARKETS_DAILY = {
       "stories": [
         {
           "rank": 1,
+          "title": "Meta 发布 Muse Wonder 系列前沿模型",
+          "heat": 10,
+          "url": "https://aihot.news/story/f7f99eb7-84e6-4450-a43f-668dca988b22",
+          "marketLink": {
+            "company": "Meta Platforms",
+            "ticker": "META",
+            "status": "listed",
+            "relationUrl": "https://about.meta.com/",
+            "eventPublishedAt": null,
+            "eventSourceUrl": null
+          },
+          "readThrough": {
+            "checkedAt": "2026-10-13T20:00:00+08:00",
+            "note": "Meta推出Muse Wonder前沿多模态大模型，加速开源全模态生成与智能体在端侧与云端广告生态落地。",
+            "candidates": [
+              {
+                "company": "Meta Platforms",
+                "ticker": "META",
+                "exchange": "NASDAQ",
+                "exposure": "前沿模型多模态生成与智能体广告生态赋能",
+                "direction": "潜在利好",
+                "condition": "模型评测持续对标行业顶尖且云端毛利率保持健康",
+                "sourceUrl": "https://about.meta.com/news/"
+              }
+            ]
+          }
+        },
+        {
+          "rank": 2,
+          "title": "xAI 推出 The X Subscription，Cursor 并入其中",
+          "heat": 2,
+          "url": "https://aihot.news/story/650e9193-a6bd-489e-8151-e3cbc367002c",
+          "marketLink": {
+            "company": "xAI",
+            "ticker": null,
+            "status": "no_direct",
+            "relationUrl": "https://x.ai/",
+            "eventPublishedAt": null,
+            "eventSourceUrl": null
+          }
+        },
+        {
+          "rank": 3,
+          "title": "微软发布 Maia 300，2027 年扩至多吉瓦级部署",
+          "heat": 3,
+          "url": "https://aihot.news/story/aa2f60b8-b006-4122-a457-546a28c7f58b",
+          "marketLink": {
+            "company": "Microsoft",
+            "ticker": "MSFT",
+            "status": "listed",
+            "relationUrl": "https://www.microsoft.com/",
+            "eventPublishedAt": null,
+            "eventSourceUrl": null
+          },
+          "readThrough": {
+            "checkedAt": "2026-10-13T20:00:00+08:00",
+            "note": "微软正式揭幕第二代自研定制AI芯片Maia 300，规划2027年达成多吉瓦部署规模，降低算力单Token成本。",
+            "candidates": [
+              {
+                "company": "Microsoft",
+                "ticker": "MSFT",
+                "exchange": "NASDAQ",
+                "exposure": "自研云端AI定制加速芯片Maia降本增效",
+                "direction": "潜在利好",
+                "condition": "芯片量产顺利推进并显著优化Azure云资本开支效率",
+                "sourceUrl": "https://azure.microsoft.com/"
+              }
+            ]
+          }
+        },
+        {
+          "rank": 4,
+          "title": "Anthropic发布防蒸馏攻击新方法",
+          "heat": 90,
+          "url": "https://aihot.news/story/b3fcb5e6-44bc-41e7-a9ee-6e03dbed65f3",
+          "marketLink": {
+            "company": "Anthropic",
+            "ticker": null,
+            "status": "no_direct",
+            "relationUrl": "https://www.anthropic.com/",
+            "eventPublishedAt": null,
+            "eventSourceUrl": null
+          },
+          "readThrough": {
+            "checkedAt": "2026-10-13T20:00:00+08:00",
+            "note": "Anthropic提出全新模型防护技术抵御未授权模型蒸馏攻击，强化前沿大模型专有权重安全壁垒。",
+            "candidates": [
+              {
+                "company": "Amazon",
+                "ticker": "AMZN",
+                "exchange": "NASDAQ",
+                "exposure": "AWS Bedrock平台独家Claude模型安全与企业级调用黏性",
+                "direction": "潜在利好",
+                "condition": "企业客户对云端API调用的安全信任带动推理调用量增长",
+                "sourceUrl": "https://aws.amazon.com/bedrock/"
+              }
+            ]
+          }
+        },
+        {
+          "rank": 5,
+          "title": "Anthropic研究：小模型或可在IoT设备自我复制",
+          "heat": 9,
+          "url": "https://aihot.news/story/12f4e6cb-604e-40cd-a3c8-eeb6fead61ce",
+          "marketLink": {
+            "company": "Anthropic",
+            "ticker": null,
+            "status": "no_direct",
+            "relationUrl": "https://www.anthropic.com/",
+            "eventPublishedAt": null,
+            "eventSourceUrl": null
+          }
+        },
+        {
+          "rank": 6,
           "title": "Karpathy：LLM 能力认知鸿沟扩大为漏斗",
           "heat": 4,
           "url": "https://aihot.news/story/9ce2c8e5-8fa1-4763-b493-ddec042860cc",
@@ -243,9 +358,23 @@ window.BLOOMBERG_MARKETS_DAILY = {
           }
         },
         {
-          "rank": 2,
+          "rank": 7,
+          "title": "Character.AI申请破产 迪士尼2000万美元牵头竞购",
+          "heat": 2000,
+          "url": "https://aihot.news/story/979b3da3-735e-4bc0-a4c0-148e8d72e73a",
+          "marketLink": {
+            "company": "Character.AI",
+            "ticker": null,
+            "status": "no_direct",
+            "relationUrl": "https://character.ai/",
+            "eventPublishedAt": null,
+            "eventSourceUrl": null
+          }
+        },
+        {
+          "rank": 8,
           "title": "亚马逊洽谈约70亿美元收购Decart",
-          "heat": 2,
+          "heat": 70,
           "url": "https://aihot.news/story/03d4f9c6-4714-45e7-9db8-7af5df7e940a",
           "marketLink": {
             "company": "Amazon",
@@ -256,7 +385,7 @@ window.BLOOMBERG_MARKETS_DAILY = {
             "eventSourceUrl": null
           },
           "readThrough": {
-            "checkedAt": "2026-10-12T20:00:00+08:00",
+            "checkedAt": "2026-10-13T20:00:00+08:00",
             "note": "亚马逊拟以约70亿美元估值收购AI初创公司Decart，持续强化AWS底层大模型推理算力与全托管云服务壁垒。",
             "candidates": [
               {
@@ -272,173 +401,29 @@ window.BLOOMBERG_MARKETS_DAILY = {
           }
         },
         {
-          "rank": 3,
-          "title": "纳德拉：把前沿模型当内部风险管控",
-          "heat": 3,
-          "url": "https://aihot.news/story/ba1d5ac2-160e-4d9d-ae98-63405a9bb3f3",
-          "marketLink": {
-            "company": "Microsoft",
-            "ticker": "MSFT",
-            "status": "listed",
-            "relationUrl": "https://www.microsoft.com/",
-            "eventPublishedAt": null,
-            "eventSourceUrl": null
-          },
-          "readThrough": {
-            "checkedAt": "2026-10-12T20:00:00+08:00",
-            "note": "微软CEO纳德拉强调将前沿大模型研发置于严格的内部安全与风险管控框架下，平衡商业创新与企业级合规底线。",
-            "candidates": [
-              {
-                "company": "Microsoft",
-                "ticker": "MSFT",
-                "exchange": "NASDAQ",
-                "exposure": "企业级AI合规安全与Copilot商业化护城河",
-                "direction": "潜在利好",
-                "condition": "企业级客户AI采用率与Azure云服务收入增速维持稳健",
-                "sourceUrl": "https://www.microsoft.com/en-us/investor"
-              }
-            ]
-          }
-        },
-        {
-          "rank": 4,
-          "title": "英伟达洽谈收购或追加投资Reflection AI",
-          "heat": 3,
-          "url": "https://aihot.news/story/244f781e-a578-4493-804d-4b4cfa063ea3",
-          "marketLink": {
-            "company": "NVIDIA",
-            "ticker": "NVDA",
-            "status": "listed",
-            "relationUrl": "https://www.nvidia.com/",
-            "eventPublishedAt": null,
-            "eventSourceUrl": null
-          },
-          "readThrough": {
-            "checkedAt": "2026-10-12T20:00:00+08:00",
-            "note": "英伟达正接触洽谈收购或战略增资AI初创公司Reflection AI，持续拓宽全栈算力基础设施与模型算法协同边界。",
-            "candidates": [
-              {
-                "company": "NVIDIA",
-                "ticker": "NVDA",
-                "exchange": "NASDAQ",
-                "exposure": "全栈GPU算力与AI基础软件生态协同",
-                "direction": "潜在利好",
-                "condition": "战略投资协同效应顺利释放且核心芯片出货量保持强劲",
-                "sourceUrl": "https://investor.nvidia.com/"
-              }
-            ]
-          }
-        },
-        {
-          "rank": 5,
-          "title": "GPT-6.1 Sol 默认上下文提至 500k 并取消订阅长上下文费",
-          "heat": 6,
-          "url": "https://aihot.news/story/fa2e5d50-3b53-4b62-a0f1-5f2aef0240e3",
-          "marketLink": {
-            "company": "OpenAI",
-            "ticker": null,
-            "status": "no_direct",
-            "relationUrl": "https://openai.com/",
-            "eventPublishedAt": null,
-            "eventSourceUrl": null
-          },
-          "readThrough": {
-            "checkedAt": "2026-10-12T20:00:00+08:00",
-            "note": "OpenAI大幅提升前沿模型默认上下文窗口至500k并免收超长上下文溢价，加速长文本与多模态工作流的生产级落地。",
-            "candidates": [
-              {
-                "company": "Microsoft",
-                "ticker": "MSFT",
-                "exchange": "NASDAQ",
-                "exposure": "Azure OpenAI独家云端推理调用分成",
-                "direction": "潜在利好",
-                "condition": "开发者Token消耗量加速增长且云端毛利率保持健康",
-                "sourceUrl": "https://azure.microsoft.com/en-us/products/ai-services/openai-service"
-              }
-            ]
-          }
-        },
-        {
-          "rank": 6,
-          "title": "微软发布决策模型 Microsoft-Decision-1",
-          "heat": 1,
-          "url": "https://aihot.news/story/cd73b967-8f2e-455c-b267-b0f1904a91c4",
-          "marketLink": {
-            "company": "Microsoft",
-            "ticker": "MSFT",
-            "status": "listed",
-            "relationUrl": "https://www.microsoft.com/",
-            "eventPublishedAt": null,
-            "eventSourceUrl": null
-          },
-          "readThrough": {
-            "checkedAt": "2026-10-12T20:00:00+08:00",
-            "note": "微软推出专为复杂决策与自主智能体流程优化的Microsoft-Decision-1模型，全面赋能企业级工作流自动化。",
-            "candidates": [
-              {
-                "company": "Microsoft",
-                "ticker": "MSFT",
-                "exchange": "NASDAQ",
-                "exposure": "自主Agent与办公软件自动化生态变现",
-                "direction": "潜在利好",
-                "condition": "企业客户在Office与云端深度集成该决策模型",
-                "sourceUrl": "https://www.microsoft.com/en-us/research/"
-              }
-            ]
-          }
-        },
-        {
-          "rank": 7,
-          "title": "阶跃 Step 5 Preview 上线腾讯 WorkBuddy 限免",
-          "heat": 5,
-          "url": "https://aihot.news/story/792bbb90-504f-4bce-bd85-b7ac291511a8",
-          "marketLink": {
-            "company": "Tencent",
-            "ticker": null,
-            "status": "no_direct",
-            "relationUrl": "https://www.tencent.com/",
-            "eventPublishedAt": null,
-            "eventSourceUrl": null
-          }
-        },
-        {
-          "rank": 8,
-          "title": "王兴兴：最大错误是对AI不够相信",
-          "heat": 6,
-          "url": "https://aihot.news/story/0e3d8909-ddc1-4289-a020-d4e058d7f5a0",
-          "marketLink": {
-            "company": "Unitree Robotics",
-            "ticker": null,
-            "status": "no_direct",
-            "relationUrl": "https://www.unitree.com/",
-            "eventPublishedAt": null,
-            "eventSourceUrl": null
-          }
-        },
-        {
           "rank": 9,
-          "title": "无问芯穹完成23亿元C轮融资",
-          "heat": 23,
-          "url": "https://aihot.news/story/1f7cff1a-0a9f-4077-b0ea-3939cd6564a4",
+          "title": "面壁智能发布MiniCPM-V 4.7并登陆Mac端侧",
+          "heat": 4,
+          "url": "https://aihot.news/story/8989bd14-f10f-4838-ba12-08eb1b97c122",
           "marketLink": {
-            "company": "Infinigence-AI",
+            "company": "ModelBest",
             "ticker": null,
             "status": "no_direct",
-            "relationUrl": "https://www.infinigence.com/",
+            "relationUrl": "https://modelbest.cn/",
             "eventPublishedAt": null,
             "eventSourceUrl": null
           }
         },
         {
           "rank": 10,
-          "title": "马斯克确认SpaceXAI更名SpaceXSI",
-          "heat": 9,
-          "url": "https://aihot.news/story/397fcf8b-ea91-4150-a638-8fd4679eed40",
+          "title": "Anthropic 洽谈在大阪建首座日本数据中心",
+          "heat": 500,
+          "url": "https://aihot.news/story/06296e64-61e9-491e-99bc-0074421bdb06",
           "marketLink": {
-            "company": "SpaceX",
+            "company": "Anthropic",
             "ticker": null,
             "status": "no_direct",
-            "relationUrl": "https://www.spacex.com/",
+            "relationUrl": "https://www.anthropic.com/",
             "eventPublishedAt": null,
             "eventSourceUrl": null
           }
