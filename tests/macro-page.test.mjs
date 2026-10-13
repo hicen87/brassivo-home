@@ -18,15 +18,15 @@ const data = context.window.HONG_HAO_DASHBOARD_DATA;
 
 test("public page contains the verified baseline", () => {
   assert.equal(data.meta.baselineDate, "2026-09-01");
-  assert.equal(data.meta.latestSourceDate, "2026-09-24");
+  assert.equal(data.meta.latestSourceDate, "2026-10-13");
   assert.equal(data.assets.length, 26);
-  assert.equal(data.sources.length, 11);
+  assert.equal(data.sources.length, 12);
   assert.equal(data.sources.map((source) => source.date).join(","), [...data.sources.map((source) => source.date)].sort((a, b) => b.localeCompare(a)).join(","));
-  assert.equal(data.sources[0].id, "20260924-S1");
+  assert.equal(data.sources[0].id, "20261013-S1");
   assert.equal(data.rotation.filter((step) => step.state === "current").length, 1);
   assert.equal(data.rotation.find((step) => step.state === "current").id, "agriculture");
   assert.equal(data.rotation.find((step) => step.state === "current").stage, "结构主线");
-  assert.equal(data.changes[0].date, "2026-09-24");
+  assert.equal(data.changes[0].date, "2026-10-13");
   assert.equal(data.changes.at(-1).date, "2026-08-31");
 });
 
@@ -54,10 +54,10 @@ test("asset records are complete, unique, and traceable", () => {
 
 test("turning-point signals are explicit and limited to qualified changes", () => {
   const candidates = data.changes.filter((change) => change.turningPoint);
-  assert.equal(candidates.length, 5);
-  assert.equal(candidates[0].asset, "港股 / 高估值成长");
+  assert.equal(candidates.length, 6);
+  assert.equal(candidates[0].asset, "美国长久期国债");
   assert.equal(candidates[0].turningPoint.side, "bottom");
-  assert.equal(candidates[1].asset, "贵金属及矿业股");
+  assert.equal(candidates[1].asset, "港股 / 高估值成长");
   assert.equal(candidates[1].turningPoint.side, "bottom");
 
   const html = read("macro/index.html");
@@ -82,7 +82,7 @@ test("assets follow the horizon groups and direction priority", () => {
     horizonOrder.map((group) => sorted.filter((asset) => horizonGroup(asset) === group).length),
     [13, 12, 1]
   );
-  assert.equal(sorted[0].id, "hong-kong-equity");
+  assert.equal(sorted[0].id, "global-risk");
   assert.equal(sorted.at(-1).id, "precious-long");
 });
 
@@ -109,7 +109,7 @@ test("macro view page is direct-file compatible and has public metadata", () => 
   assert.match(html, /https:\/\/brassivo\.com\/macro\//);
   assert.match(html, /styles\.css\?v=20260925media-extracted/);
   assert.doesNotMatch(html, /id="bloomberg-daily"|bloomberg-daily\.js\?v=/);
-  assert.match(html, /dashboard-data\.js\?v=20260925dedupe-g2/);
+  assert.match(html, /dashboard-data\.js\?v=20261013/);
   const archiveStart = html.indexOf('<section class="archive-section');
   const ledgerStart = html.indexOf('<section class="ledger-section');
   assert.ok(archiveStart < ledgerStart && ledgerStart < html.indexOf('<footer'));
