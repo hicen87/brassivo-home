@@ -1,117 +1,117 @@
 window.BLOOMBERG_MARKETS_DAILY = {
-  "issueDate": "2026-10-14",
-  "publishedAt": "2026-10-14T09:28:07+00:00",
+  "issueDate": "2026-10-15",
+  "publishedAt": "2026-10-15T10:44:08+00:00",
   "newsletter": "Markets Daily",
-  "headline": "民间预测模型精准度击败华尔街大行，大行股票创收罕见反超固收，欧央行警示或需再度加息抗通胀",
-  "bloombergTake": "Bloomberg Markets Daily（2026-10-14 原刊）报道，前戏剧导演 Brian Golden 在预测市场上建立的通胀模型在过去 18 次 CPI 报告中的预测精准度击败了彭博跟踪的全部 25 位投行经济学家。同时五大行股票部门前九月创收超 660 亿美元罕见反超固收；欧央行官员 Wunsch 警示通胀逼近 4% 叠加法国债务危机或迫使其再度加息；IMF 称仅靠经济增长不足以化解美国债务失衡。此外沙特阿美遭遇袭击油价拉升，ASML 称 AI 需求超负荷上调销售预期，微软创一年来新高。以上为原刊快照，非实时行情；简报未给出统一市场涨跌预测。",
+  "headline": "四年最长平静期终结，通胀超预期重创科技资产，CoreWeave算力债务风险引发AI资本开支焦虑",
+  "bloombergTake": "Bloomberg Markets Daily（2026-10-15 原刊）报道，美国 CPI 创五个月最大涨幅打破了自 2020 年以来最长平静期，纳指挫 2%、罗素 2000 陷入回调、韩国暴跌 7.6%；10年期美债收益率冲高至 5.33% 后逆转。同时算力云龙头 CoreWeave 称欲无限制借贷引发债券暴跌，凸显 AI 资本开支杠杆焦虑；Anthropic 披露三季度营收 168 亿美元助力 IPO，但未驱散投资回报率疑虑；台积电虽交出亮丽指引但行业分化加剧。此外美银受罚单日蒸发 220 亿美元，乌克兰恢复打击俄炼油厂。以上为原刊快照，非实时行情；简报未给出统一市场涨跌预测。",
   "bloombergStories": [
     {
-      "title": "民间预测市场模型在过去18次通胀数据中精准度击败25家华尔街大行",
-      "summary": "前戏剧导演深研政府数据统计细节自建物价模型，在 Kalshi 预测市场上连续跑赢投行经济学家，预测最新 CPI 同比达 3.66%。"
+      "title": "美股长达四年最长平静期告终，通胀超预期催化全球科技股遭遇抛售",
+      "summary": "五个月来最大通胀增幅点燃政策紧缩担忧，纳指下挫 2%，韩国综合指数暴跌逾 7%，资金自高估值科技股回流短端避险资产。"
     },
     {
-      "title": "五大华尔街行股票业务创收超660亿美元，罕见反超固收与大宗商品",
-      "summary": "大行三季报显示股票交易部门吸金动能强劲，打破了算法与电子化将侵蚀股票利润的传统认知，收入结构迎来历史性反转。"
+      "title": "CoreWeave算力租赁债价大跌，巨额债务杠杆引发AI资本开支脆弱性审视",
+      "summary": "CoreWeave 透露激进举债诉求导致其 2032 年期高收益债跌至 78 美分，市场担忧 9% 借贷成本换取 5% 回报将造成结构性价值毁灭。"
     },
     {
-      "title": "欧洲央行官员警示通胀逼近4%叠加债务压力，或不得不再次加息",
-      "summary": "欧央行管委 Wunsch 表示抗通胀战役远未结束，中东局势持续升级与法国主权债务危机蔓延或迫使央行重新收紧货币政策。"
+      "title": "Anthropic披露三季度营收达168亿美元，IPO估值前夕面临变现增速现实审视",
+      "summary": "作为前沿大模型龙头，Anthropic 三季度巨额营收为上市铺路，但投资者对大规模模型训练后能否产生持续现金流的疑虑仍存。"
     },
     {
-      "title": "IMF总裁警告美国债务失衡加剧，单靠GDP增长无法根本化解赤字",
-      "summary": "国际货币基金组织指出每年需保持 6% 实际高增长才能稳定美债规模，现行以增长脱困的设想在当前高利率环境下难以实现。"
+      "title": "台积电营收展望超预期，但难掩资本市场对全球AI基础设施建设可持续性质疑",
+      "summary": "尽管晶圆代工订单极其饱满，但华尔街对科技巨头数千亿美元资本开支能否转化为终端口径盈利的审慎情绪逐步抬头。"
     },
     {
-      "title": "ASML上调全年销售预期，直言AI半导体设备激增需求超出负荷",
-      "summary": "光刻机巨头 ASML 披露芯片制造端算力扩产订单极度饱满，AI 基础设施投资热潮推动供应链龙头订单能见度显著拉长。"
+      "title": "美联储官员表态与中东炼油地缘扰动，大宗通胀与利率高位粘性交织",
+      "summary": "联储鹰派预期推升十月加息概率，乌克兰重启打击俄炼油厂叠加美银合规受罚，宏观流动性风险偏好遭遇多重挤压。"
     }
   ],
   "bullish": [
     {
-      "condition": "验证条件为台积电与北美云巨头后续指引持续上修，且全球芯片设备交付节奏保持顺畅。",
-      "reason": "ASML 订单超负荷与大行股票交易收入大超预期，印证科技基础设施资本开支与实体金融流动性双向扩张。",
-      "title": "AI半导体高景气与大行强劲财报支撑权益资产底层利润率"
+      "condition": "验证条件为四季度企业端 AI 生产力工具付费席位数与 API 调用单价维持正向扩张。",
+      "reason": "Anthropic 单季营收触及 168 亿美元新里程碑，反映下游企业对前沿大模型推理与智能体 API 的商业化付费意愿强劲。",
+      "title": "前沿模型商业化营收规模超预期印证行业真实有效需求扩张"
     },
     {
-      "condition": "验证条件为最新 CPI 实际读数未显著突破预测区间上限，长端美债收益率持稳于 5.2% 下方。",
-      "reason": "民间与另类预测市场提供更细颗粒度的宏观指标指引，帮助市场提前消化通胀预期，减少政策超预期带来的流动性踩踏。",
-      "title": "微观数据预测模型有效性提升有助于降低资产定价波动溢价"
+      "condition": "验证条件为全球晶圆先进制程产能利用率维持满产，且封装测试交期未发生非理性挤压。",
+      "reason": "台积电超预期业绩指引反映先进制程算力芯片实际订单依然饱满，AI 基础设施景气度仍具备底层硬件制造支撑。",
+      "title": "晶圆代工龙头业绩指引亮眼支撑半导体先进制程基本盘"
     }
   ],
   "bearish": [
     {
-      "condition": "验证条件为法德利差进一步走阔，且欧洲制造业采购经理人指数因融资收紧持续承压。",
-      "reason": "欧央行释放重启加息信号，叠加法国主权债务溢价走阔，加剧离岸美元与欧洲资本市场的再融资成本挤压。",
-      "title": "欧债财政主权压力与央行二次加息风险压制跨国资产估值"
+      "condition": "验证条件为高收益科技债信用违约互换（CDS）利差显著攀升，且算力云初创再融资面临阻滞。",
+      "reason": "CoreWeave 债券重挫暴露出部分算力服务商高息举债买卡模式的脆弱性，融资成本高于运营回报可能诱发信用利差走阔。",
+      "title": "算力租赁高杠杆融资与投入产出倒挂加剧AI基础设施信贷违约风险"
     },
     {
-      "condition": "验证条件为布伦特原油持续站稳 105 美元上方，且美国核心服务业通胀环比重新抬头。",
-      "reason": "IMF 警示美国债务化解节奏滞后，叠加沙特石油设施遇袭推高原油风险溢价，阻碍全球通胀向央行目标收敛。",
-      "title": "美国长期债务失衡与地缘冲突推升大宗商品二次通胀风险"
+      "condition": "验证条件为核心 PCE 环比读数持续高于预期，长端基准美债收益率重新站上 5.3% 关口。",
+      "reason": "通胀读数超预期迫使长端美债收益率冲高，加息预期重燃显著压制高估值成长股的远期现金流贴现倍数。",
+      "title": "二次通胀抬头推升无风险利率并对高估值科技资产形成多重挤压"
     }
   ],
-  "sourceUrl": "https://www.bloomberg.com/news/newsletters/2026-10-14/the-former-theater-director-who-keeps-beating-wall-street",
+  "sourceUrl": "https://www.bloomberg.com/news/newsletters/2026-10-15/market-calm-shatters-as-ai-rate-fears-collide",
   "mediaFocus": {
     "barrons": {
-      "captureDate": "2026-10-14",
-      "capturedAt": "2026-10-14T20:00:00+08:00",
-      "summary": "Barron's 聚焦物价高企对美国消费支出挤压、美国家庭债务逾期压力升温、逆周期捕捉市场反转时机、ASML 强劲业绩催化芯片分化、卫星通信龙头 AST SpaceMobile 多空博弈，以及高利率环境下资产配置防守与大行大额投资动向。",
+      "captureDate": "2026-10-15",
+      "capturedAt": "2026-10-15T20:00:00+08:00",
+      "summary": "Barron's 聚焦 CoreWeave 债券重挫引发的 AI 举债恐慌、Anthropic 收入增速放缓波及硬件板块、信用债市场告警信号、电力设备股估值承压、台积电深化与马斯克代工合作，以及苹果市值破 5 万亿与美银千亿债券浮亏压力。",
       "stories": [
         {
-          "title": "通胀高企挤压实际薪资水平，美国消费者会否收紧钱包？",
-          "summary": "物价上涨持续侵蚀居民实际薪资增长，市场高度关注美国家庭消费支出能否在四季度继续支撑经济韧性。",
-          "url": "https://www.barrons.com/articles/inflation-wages-consumer-spending-65ad1b05"
+          "title": "CoreWeave算力债风暴蔓延，英伟达会否再度出手提供资本托底？",
+          "summary": "算力独角兽债务违约担忧加剧，市场关注作为核心投资方与算力底座的英伟达会否提供结构性救助。",
+          "url": "https://www.barrons.com/articles/coreweave-stock-price-ai-debt-nvidia-rescue-3fb8a7f2"
         },
         {
-          "title": "美联储调研显示更多美国家庭在债务偿付上面临逾期压力",
-          "summary": "美联储最新家庭财富调查反映，高借贷成本下中低收入群体信用卡与汽车贷款违约风险有所上升。",
-          "url": "https://www.barrons.com/articles/us-family-wealth-debt-financial-stress-fed-survey-d1590c9d"
+          "title": "Anthropic增速放缓加剧市场悲观情绪，科技股抛售波及闪迪与AMD",
+          "summary": "大模型龙头收入增速放缓引发市场审视，AI 基础设施溢价回调外溢至存储芯片与加速卡硬件板块。",
+          "url": "https://www.barrons.com/articles/anthropic-ai-sandisk-amd-stock-f95d1de5"
         },
         {
-          "title": "捕捉市场反转时机的艺术：如何从估值极端错配中获利",
-          "summary": "华尔街资深投资人剖析在宏观分歧加剧时识别拐点信号的框架，捕捉情绪超跌带来的高赔率顺周期机会。",
-          "url": "https://www.barrons.com/articles/catching-market-turn-can-pay-off-798c95ee"
+          "title": "信用债市场拉响警报：高收益算力租赁债暴跌揭示资本过热隐患",
+          "summary": "CoreWeave 等企业高收益债券跌破面值，信用分析师警示杠杆驱动的 AI 数据中心重资产投资正在累积下行风险。",
+          "url": "https://www.barrons.com/articles/coreweave-stock-price-bonds-a8b8dfad"
         },
         {
-          "title": "ASML强劲业绩为何对整个半导体芯片板块至关重要",
-          "summary": "作为先进制程设备风向标，ASML 的高景气度验证了先进制程节点产能爬坡对整条半导体产业链的拉动。",
-          "url": "https://www.barrons.com/articles/asml-earnings-stock-price-d0973c5c"
+          "title": "债券风波波及GE Vernova，AI工业基础设施标的估值同步承压",
+          "summary": "电力与电网配套作为 AI 算力链关键环节，受整体基础设施融资成本抬升拖累，股价呈现避险调整。",
+          "url": "https://www.barrons.com/articles/coreweave-stock-bonds-ge-vernova-industrials-7b719fc9"
         },
         {
-          "title": "成熟制程芯片承压分化，先进制程与传统半导体两极走势加剧",
-          "summary": "AI 芯片需求狂飙的同时，汽车与工业成熟制程依然面临去库阵痛，行业呈现极度分化的结构性行情。",
-          "url": "https://www.barrons.com/articles/chip-stocks-slump-asml-earnings-adf7c928"
+          "title": "台积电与马斯克探讨算力代工合作，或有望平抑AI芯片恐慌情绪",
+          "summary": "市场传闻台积电与特斯拉/xAI 加深自研芯片制造合作，多元客户结构为代工龙头提供业绩护城河。",
+          "url": "https://www.barrons.com/articles/tsmc-earnings-stock-price-e352058b"
         },
         {
-          "title": "卫星通信龙头AST SpaceMobile成为华尔街多空博弈新战场",
-          "summary": "多方看好其直连蜂窝网络先发优势，空方质疑巨额资本开支与商业化落地周期，机构评级产生剧烈分歧。",
-          "url": "https://www.barrons.com/articles/ast-spacemobile-stock-price-rating-20e0b1ca"
+          "title": "美银困境远非12亿美元罚单：高利率存量债券浮亏突破千亿美元",
+          "summary": "除合规罚单冲击外，长期持有的低息抵押贷款证券与国债未实现浮亏过高，严重拖累净息差与股东权益修复。",
+          "url": "https://www.barrons.com/articles/bank-america-stock-fine-investors-0113f31b"
         },
         {
-          "title": "AI时代如何平衡投资组合分散度：科技、黄金与防御资产配置",
-          "summary": "面对科技大盘集中度风险，专业配置机构探讨如何利用黄金与非相关资产对冲 AI 高估值脆弱性。",
-          "url": "https://www.barrons.com/articles/portfolio-diversity-stocks-gold-ai-df718856"
+          "title": "苹果市值逆市突破5万亿美元大关，消费电子韧性能否支撑大盘？",
+          "summary": "在整体科技股遭遇估值回调之际，苹果凭借稳健现金流与大中华区 AI 部署预期市值创下全球新纪录。",
+          "url": "https://www.barrons.com/articles/apple-stock-nvidia-market-cap-tech-7608f3c6"
         },
         {
-          "title": "美光股价持续走低，马斯克发声称其逆周期加大存储投资是明智之举",
-          "summary": "尽管短线受行业竞合格局压制，马斯克向美光建言逆周期扩产 HBM 与高端 DRAM 将奠定长期竞争壁垒。",
-          "url": "https://www.barrons.com/articles/micron-stock-price-musk-memory-c3ebc8ff"
+          "title": "标普500股息率跌至历史低位，高估值集中度是否已步入危险区？",
+          "summary": "大盘股息率极端压缩至历史冰点，显示股票相对现金与短期国债收益率的风险溢价缓冲已处于极度脆弱状态。",
+          "url": "https://www.barrons.com/articles/sp500-dividend-yield-income-investors-d442e8e8"
         },
         {
-          "title": "游戏驿站创16个月来新高，散户抱团股异动揭示市场投机情绪",
-          "summary": "CEO 旗下投资机构进一步增持提振持仓信心，高贝塔投机标的活跃反映出市场流动性依然相对充裕。",
-          "url": "https://www.barrons.com/articles/gamestop-stock-price-high-market-ca5d84d4"
+          "title": "特斯拉与SpaceX合并传闻再起，马斯克帝国业务整合引华尔街猜想",
+          "summary": "分析探讨特斯拉将自动驾驶、Optimus 与 SpaceX 卫星通信通信及星舰物流深度绑定的潜在战略价值与法律挑战。",
+          "url": "https://www.barrons.com/articles/tesla-stock-spacex-merger-elon-musk-35d4536a"
         },
         {
-          "title": "前伯克希尔投资经理Combs在摩根大通完成50亿美元逆向投资",
-          "summary": "继承巴菲特价值投资精髓的 Combs 趁估值低谷大举买入金融龙头，彰显长期资本对优质资产的底气。",
-          "url": "https://www.barrons.com/articles/combs-jpmorgan-berkshire-stocks-buffett-071bd900"
+          "title": "亚马逊成为对冲基金最拥挤配置标的，资金集中度放大波动弹性",
+          "summary": "机构持仓数据显示对冲基金对亚马逊的配置拥挤度创年内新高，业绩预期高度一致可能成为财报季双刃剑。",
+          "url": "https://www.barrons.com/articles/hedge-fund-stocks-amazon-tesla-short-b2c9d35b"
         }
       ]
     },
     "wsj": {
-      "captureDate": "2026-10-14",
-      "capturedAt": "2026-10-14T20:00:00+08:00",
+      "captureDate": "2026-10-15",
+      "capturedAt": "2026-10-15T20:00:00+08:00",
       "summary": "WSJ 聚焦全球信贷息差分化、欧洲多国财政赤字担忧压制国债收益率表现、大宗商品高位波动对石化与航运成本粘性、企业云端工作流迁移提速，以及高房贷利率下美国房地产买卖双方深度观望僵局。",
       "stories": [
         {
@@ -142,18 +142,18 @@ window.BLOOMBERG_MARKETS_DAILY = {
       ]
     },
     "aihot": {
-      "captureDate": "2026-10-14",
-      "capturedAt": "2026-10-14T20:00:00+08:00",
-      "boardUpdatedAt": "2026-10-14T20:00:00+08:00",
+      "captureDate": "2026-10-15",
+      "capturedAt": "2026-10-15T20:00:00+08:00",
+      "boardUpdatedAt": "2026-10-15T20:00:00+08:00",
       "windowHours": 48,
       "sourceUrl": "https://aihot.news/hot",
       "market": {
-        "checkedAt": "2026-10-14T20:00:00+08:00",
+        "checkedAt": "2026-10-15T20:00:00+08:00",
         "benchmark": {
-          "sessionDate": "2026-10-13",
-          "previousSessionDate": "2026-10-12",
-          "close": 7805.45,
-          "previousClose": 7807.24,
+          "sessionDate": "2026-10-14",
+          "previousSessionDate": "2026-10-13",
+          "close": 7718.94,
+          "previousClose": 7805.45,
           "sources": [
             "https://finance.yahoo.com/quote/%5ESPX/history/",
             "https://www.wsj.com/market-data/quotes/index/SPX/historical-prices"
@@ -161,53 +161,63 @@ window.BLOOMBERG_MARKETS_DAILY = {
         },
         "quotes": {
           "NVDA": {
-            "sessionDate": "2026-10-13",
-            "previousSessionDate": "2026-10-12",
-            "close": 228.52,
-            "previousClose": 226.32,
+            "sessionDate": "2026-10-14",
+            "previousSessionDate": "2026-10-13",
+            "close": 221.3,
+            "previousClose": 228.52,
             "sources": [
               "https://stockanalysis.com/stocks/nvda/history/",
               "https://finance.yahoo.com/quote/NVDA/history/"
             ]
           },
           "MSFT": {
-            "sessionDate": "2026-10-13",
-            "previousSessionDate": "2026-10-12",
-            "close": 543.45,
-            "previousClose": 541.15,
+            "sessionDate": "2026-10-14",
+            "previousSessionDate": "2026-10-13",
+            "close": 533.69,
+            "previousClose": 543.45,
             "sources": [
               "https://stockanalysis.com/stocks/msft/history/",
               "https://finance.yahoo.com/quote/MSFT/history/"
             ]
           },
           "GOOGL": {
-            "sessionDate": "2026-10-13",
-            "previousSessionDate": "2026-10-12",
-            "close": 353.78,
-            "previousClose": 352.72,
+            "sessionDate": "2026-10-14",
+            "previousSessionDate": "2026-10-13",
+            "close": 347.64,
+            "previousClose": 353.78,
             "sources": [
               "https://stockanalysis.com/stocks/googl/history/",
               "https://finance.yahoo.com/quote/GOOGL/history/"
             ]
           },
           "AMZN": {
-            "sessionDate": "2026-10-13",
-            "previousSessionDate": "2026-10-12",
-            "close": 258.58,
-            "previousClose": 259.53,
+            "sessionDate": "2026-10-14",
+            "previousSessionDate": "2026-10-13",
+            "close": 254.08,
+            "previousClose": 258.58,
             "sources": [
               "https://stockanalysis.com/stocks/amzn/history/",
               "https://finance.yahoo.com/quote/AMZN/history/"
             ]
           },
           "META": {
-            "sessionDate": "2026-10-13",
-            "previousSessionDate": "2026-10-12",
-            "close": 762.5,
-            "previousClose": 742.96,
+            "sessionDate": "2026-10-14",
+            "previousSessionDate": "2026-10-13",
+            "close": 737.54,
+            "previousClose": 762.5,
             "sources": [
               "https://stockanalysis.com/stocks/meta/history/",
               "https://finance.yahoo.com/quote/META/history/"
+            ]
+          },
+          "AAPL": {
+            "sessionDate": "2026-10-14",
+            "previousSessionDate": "2026-10-13",
+            "close": 342.96,
+            "previousClose": 341.27,
+            "sources": [
+              "https://stockanalysis.com/stocks/aapl/history/",
+              "https://finance.yahoo.com/quote/AAPL/history/"
             ]
           }
         }
@@ -227,7 +237,7 @@ window.BLOOMBERG_MARKETS_DAILY = {
             "eventSourceUrl": "https://aihot.news/story/b9d1e480-fac1-479a-9209-5241ad001528"
           },
           "readThrough": {
-            "checkedAt": "2026-10-14T20:00:00+08:00",
+            "checkedAt": "2026-10-15T20:00:00+08:00",
             "note": "谷歌推出旗舰模型Gemini 4 Argon，面向复杂编码与智能体落地，采取高附加值收费策略加速云端算力变现。",
             "candidates": [
               {
@@ -244,8 +254,8 @@ window.BLOOMBERG_MARKETS_DAILY = {
         },
         {
           "rank": 2,
-          "title": "OpenAI工程师涉在会议室装窃听装置被捕",
-          "heat": 63,
+          "title": "OpenAI工程师涉装录音设备被捕",
+          "heat": 73,
           "url": "https://aihot.news/story/99f5c3c4-2817-4634-b110-98b7db9ef40c",
           "marketLink": {
             "company": "OpenAI",
@@ -256,7 +266,7 @@ window.BLOOMBERG_MARKETS_DAILY = {
             "eventSourceUrl": null
           },
           "readThrough": {
-            "checkedAt": "2026-10-14T20:00:00+08:00",
+            "checkedAt": "2026-10-15T20:00:00+08:00",
             "note": "OpenAI内部安全事件暴露前沿模型商业机密防范漏洞，或促使企业客户审视大模型供应商的内部安全审计机制。",
             "candidates": [
               {
@@ -273,37 +283,37 @@ window.BLOOMBERG_MARKETS_DAILY = {
         },
         {
           "rank": 3,
-          "title": "Meta 发布首批前沿模型 Muse Wonder 系列",
-          "heat": 83,
-          "url": "https://aihot.news/story/f7f99eb7-84e6-4450-a43f-668dca988b22",
+          "title": "DeepSeek 服务中断近5小时 致歉并补偿API用户",
+          "heat": 21,
+          "url": "https://aihot.news/story/c69fcda4-6491-4827-9c2b-42579fd92447",
           "marketLink": {
-            "company": "Meta Platforms",
-            "ticker": "META",
-            "status": "listed",
-            "relationUrl": "https://about.meta.com/",
-            "eventPublishedAt": "2026-10-13T18:00:00+08:00",
-            "eventSourceUrl": "https://aihot.news/story/f7f99eb7-84e6-4450-a43f-668dca988b22"
+            "company": "DeepSeek",
+            "ticker": null,
+            "status": "no_direct",
+            "relationUrl": "https://www.deepseek.com/",
+            "eventPublishedAt": null,
+            "eventSourceUrl": null
           },
           "readThrough": {
-            "checkedAt": "2026-10-14T20:00:00+08:00",
-            "note": "Meta前沿多模态大模型落地，巩固其在开源全模态生成与端侧广告内容自动化创作上的生态壁垒。",
+            "checkedAt": "2026-10-15T20:00:00+08:00",
+            "note": "高并发调用导致算力服务长时间宕机，凸显多云负载均衡与分布式集群容灾在生成式AI基础设施中的刚性需求。",
             "candidates": [
               {
-                "company": "Meta Platforms",
-                "ticker": "META",
+                "company": "Nvidia",
+                "ticker": "NVDA",
                 "exchange": "NASDAQ",
-                "exposure": "广告主全自动素材生成工具渗透率与社交平台用户互动时长提升",
-                "direction": "潜在利好",
-                "condition": "验证条件为四季度广告单价与总投放展示量实现双位数稳健增长。",
-                "sourceUrl": "https://investor.atmeta.com/"
+                "exposure": "云服务商加大对高性能网络基础设施与集群故障自愈硬件的冗余采购",
+                "direction": "方向待确认",
+                "condition": "验证条件为头部 AI 公司是否在四季度增加跨区域容灾备份算力集群的资本开支。",
+                "sourceUrl": "https://investor.nvidia.com/"
               }
             ]
           }
         },
         {
           "rank": 4,
-          "title": "Anthropic自研Scion替换git并分享经验",
-          "heat": 33,
+          "title": "Anthropic 自研 Scion 替换 git 并分享经验",
+          "heat": 40,
           "url": "https://aihot.news/story/dd9580d2-0aaa-4628-bab2-4e89974e44bb",
           "marketLink": {
             "company": "Anthropic",
@@ -314,7 +324,7 @@ window.BLOOMBERG_MARKETS_DAILY = {
             "eventSourceUrl": null
           },
           "readThrough": {
-            "checkedAt": "2026-10-14T20:00:00+08:00",
+            "checkedAt": "2026-10-15T20:00:00+08:00",
             "note": "Anthropic工程复盘显示AI Coding Agent引发代码合并量数十倍激增，倒逼开发基础设施向大规模智能体协作演进。",
             "candidates": [
               {
@@ -331,9 +341,67 @@ window.BLOOMBERG_MARKETS_DAILY = {
         },
         {
           "rank": 5,
-          "title": "苹果发布 HomeView 智能家居中枢",
-          "heat": 35,
-          "url": "https://aihot.news/story/af69d9b9-5ada-463b-b9e9-39abe571b452",
+          "title": "Anthropic三季度收入168亿美元，增速放缓",
+          "heat": 18,
+          "url": "https://aihot.news/story/f18eef00-3d70-4586-a109-ee6a78104fbf",
+          "marketLink": {
+            "company": "Anthropic",
+            "ticker": null,
+            "status": "no_direct",
+            "relationUrl": "https://www.anthropic.com/",
+            "eventPublishedAt": null,
+            "eventSourceUrl": null
+          },
+          "readThrough": {
+            "checkedAt": "2026-10-15T20:00:00+08:00",
+            "note": "前沿大模型收入体量逼近百亿美元级别，但边际增速收窄使得二级市场重估前期给予的极端超高估值乘数。",
+            "candidates": [
+              {
+                "company": "Amazon",
+                "ticker": "AMZN",
+                "exchange": "NASDAQ",
+                "exposure": "作为大额战略投资方与模型托管云，其投资账面浮动收益与Bedrock业务受情绪外溢",
+                "direction": "风险观察",
+                "condition": "验证条件为后续 AWS 云收入指引中生成式 AI 业务对总营收增速的贡献比例。",
+                "sourceUrl": "https://ir.aboutamazon.com/"
+              }
+            ]
+          }
+        },
+        {
+          "rank": 6,
+          "title": "八州起诉OpenAI称ChatGPT对儿童不安全",
+          "heat": 18,
+          "url": "https://aihot.news/story/312fbbf1-b598-4d74-bbc7-6008a54387f3",
+          "marketLink": {
+            "company": "OpenAI",
+            "ticker": null,
+            "status": "no_direct",
+            "relationUrl": "https://openai.com/",
+            "eventPublishedAt": null,
+            "eventSourceUrl": null
+          },
+          "readThrough": {
+            "checkedAt": "2026-10-15T20:00:00+08:00",
+            "note": "州级监管联合施压未成年人安全防护与内容合规，将推升大模型平台的内容审核开支与法律合规壁垒。",
+            "candidates": [
+              {
+                "company": "Microsoft",
+                "ticker": "MSFT",
+                "exchange": "NASDAQ",
+                "exposure": "Copilot 产品生态合规成本增加与企业安全治理功能升级",
+                "direction": "风险观察",
+                "condition": "验证条件为诉讼是否导致联邦或各州推出强制性年龄验证与护栏审计法规。",
+                "sourceUrl": "https://www.microsoft.com/investor"
+              }
+            ]
+          }
+        },
+        {
+          "rank": 7,
+          "title": "苹果诉OpenAI窃密，法官令OpenAI交招聘材料",
+          "heat": 20,
+          "url": "https://aihot.news/story/1c82cb6d-b96b-4f08-a826-d2ea44910b33",
           "marketLink": {
             "company": "Apple",
             "ticker": "AAPL",
@@ -341,57 +409,27 @@ window.BLOOMBERG_MARKETS_DAILY = {
             "relationUrl": "https://www.apple.com/",
             "eventPublishedAt": null,
             "eventSourceUrl": null
-          },
-          "readThrough": {
-            "checkedAt": "2026-10-14T20:00:00+08:00",
-            "note": "苹果推出以家庭为核心的智能交互硬件中枢，整合端侧 Apple Intelligence 与跨设备家庭生态联动。",
-            "candidates": [
-              {
-                "company": "Apple",
-                "ticker": "AAPL",
-                "exchange": "NASDAQ",
-                "exposure": "家庭端侧硬件销售与订阅服务生态黏性增强",
-                "direction": "潜在利好",
-                "condition": "验证条件为产品发布后的预售排期与全球生态配件开发者接入速度。",
-                "sourceUrl": "https://investor.apple.com/"
-              }
-            ]
           }
         },
         {
-          "rank": 6,
-          "title": "Character.AI申请破产 迪士尼2000万美元牵头竞购",
-          "heat": 28,
-          "url": "https://aihot.news/story/979b3da3-735e-4bc0-a4c0-148e8d72e73a",
+          "rank": 8,
+          "title": "Meta 发布首批前沿模型 Muse Wonder 系列",
+          "heat": 21,
+          "url": "https://aihot.news/story/f7f99eb7-84e6-4450-a43f-668dca988b22",
           "marketLink": {
-            "company": "Character.AI",
-            "ticker": null,
-            "status": "no_direct",
-            "relationUrl": "https://character.ai/",
-            "eventPublishedAt": null,
-            "eventSourceUrl": null
-          },
-          "readThrough": {
-            "checkedAt": "2026-10-14T20:00:00+08:00",
-            "note": "陪伴类AI应用面临高昂推理算力成本与变现不足困境，传统IP巨头趁低估值整合对话智能体技术资产。",
-            "candidates": [
-              {
-                "company": "Alphabet",
-                "ticker": "GOOGL",
-                "exchange": "NASDAQ",
-                "exposure": "此前已非独家授权核心技术并吸收核心创始团队，受破产清算冲击较小",
-                "direction": "方向待确认",
-                "condition": "验证条件为资产司法竞拍最终归属及知识产权重组条款。",
-                "sourceUrl": "https://abc.xyz/investor/"
-              }
-            ]
+            "company": "Meta Platforms",
+            "ticker": "META",
+            "status": "listed",
+            "relationUrl": "https://about.meta.com/",
+            "eventPublishedAt": "2026-10-13T18:00:00+08:00",
+            "eventSourceUrl": "https://aihot.news/story/f7f99eb7-84e6-4450-a43f-668dca988b22"
           }
         },
         {
-          "rank": 7,
-          "title": "xAI 推 The X Subscription，整合 Grok、Cursor 与 X Premium",
-          "heat": 36,
-          "url": "https://aihot.news/story/650e9193-a6bd-489e-8151-e3cbc367002c",
+          "rank": 9,
+          "title": "xAI 发布 Grok Voice 3.0，登顶语音评测榜",
+          "heat": 18,
+          "url": "https://aihot.news/story/fe6db43a-46f1-4dc3-9324-85138dc82596",
           "marketLink": {
             "company": "xAI",
             "ticker": null,
@@ -402,43 +440,15 @@ window.BLOOMBERG_MARKETS_DAILY = {
           }
         },
         {
-          "rank": 8,
-          "title": "微软发布 Maia 300，2027 年扩至多吉瓦级部署",
-          "heat": 35,
-          "url": "https://aihot.news/story/aa2f60b8-b006-4122-a457-546a28c7f58b",
-          "marketLink": {
-            "company": "Microsoft",
-            "ticker": "MSFT",
-            "status": "listed",
-            "relationUrl": "https://www.microsoft.com/",
-            "eventPublishedAt": null,
-            "eventSourceUrl": null
-          }
-        },
-        {
-          "rank": 9,
-          "title": "谷歌 Gemini 4 Argon 从定向开放走向全面上线",
-          "heat": 17,
-          "url": "https://aihot.news/story/daf111a0-908f-4f9c-8639-fc469d9ec53b",
-          "marketLink": {
-            "company": "Alphabet",
-            "ticker": "GOOGL",
-            "status": "listed",
-            "relationUrl": "https://abc.xyz/",
-            "eventPublishedAt": null,
-            "eventSourceUrl": null
-          }
-        },
-        {
           "rank": 10,
-          "title": "Anthropic研究：小模型或可在IoT设备自我复制",
-          "heat": 22,
-          "url": "https://aihot.news/story/12f4e6cb-604e-40cd-a3c8-eeb6fead61ce",
+          "title": "苹果发布 HomeView 智能家居中枢",
+          "heat": 33,
+          "url": "https://aihot.news/story/af69d9b9-5ada-463b-b9e9-39abe571b452",
           "marketLink": {
-            "company": "Anthropic",
-            "ticker": null,
-            "status": "no_direct",
-            "relationUrl": "https://www.anthropic.com/",
+            "company": "Apple",
+            "ticker": "AAPL",
+            "status": "listed",
+            "relationUrl": "https://www.apple.com/",
             "eventPublishedAt": null,
             "eventSourceUrl": null
           }
