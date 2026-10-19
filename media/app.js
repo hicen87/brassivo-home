@@ -489,6 +489,13 @@
     </article>` : "";
 
   target.innerHTML = `
+    <details class="judgments">
+      <summary><span>01 / BRASSIVO CONDITIONAL VIEW</span><strong>短期条件判断</strong><small>展开查看利多、利空与验证条件</small></summary>
+      <p class="judgment-note">以下仅基于 Bloomberg 这期邮件的事实独立推演，不是其他来源的共同观点。</p>
+      <div class="signal-grid">${signalCards(data.bullish, "positive", "短期利多")}${signalCards(data.bearish, "negative", "短期利空")}</div>
+      <p class="boundary-note">媒体摘要与 AI 热榜均保留各自刊期或抓取时点，不是实时行情；条件判断不自动改变策略基线、资金配比或 EPS 基线。</p>
+    </details>
+    <div class="section-heading"><span>02 / SOURCES</span><h2 id="media-title">媒体焦点与 AI 热榜</h2></div>
     <div class="source-group"><h3 class="group-title">宏观焦点</h3>
     <div class="source-grid">
       <article class="source-card bloomberg">
@@ -506,11 +513,5 @@
       ${storyCard(data.mediaFocus?.barrons, "Barron’s", "公司 / 个股", "barrons")}
       ${hotCard}
     </div></div>
-    <details class="judgments">
-      <summary><span>02 / BRASSIVO CONDITIONAL VIEW</span><strong>短期条件判断</strong><small>展开查看利多、利空与验证条件</small></summary>
-      <p class="judgment-note">以下仅基于 Bloomberg 这期邮件的事实独立推演，不是其他来源的共同观点。</p>
-      <div class="signal-grid">${signalCards(data.bullish, "positive", "短期利多")}${signalCards(data.bearish, "negative", "短期利空")}</div>
-      <p class="boundary-note">媒体摘要与 AI 热榜均保留各自刊期或抓取时点，不是实时行情；条件判断不自动改变策略基线、资金配比或 EPS 基线。</p>
-    </details>
   `;
 })();
