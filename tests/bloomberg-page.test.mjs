@@ -13,15 +13,14 @@ const context = { window: {} };
 vm.runInNewContext(js, context);
 const item = context.window.BLOOMBERG_MARKETS_DAILY;
 
-test("Bloomberg summary has a dated source and separate conditional judgments", () => {
+test("Bloomberg summary has a dated source and synthesized overall risk-asset judgment", () => {
   assert.match(item.issueDate, /^\d{4}-\d{2}-\d{2}$/);
   assert.match(item.publishedAt, /^\d{4}-\d{2}-\d{2}T/);
   assert.ok(item.sourceUrl.startsWith(`https://www.bloomberg.com/news/newsletters/${item.issueDate}/`));
   assert.ok(item.bloombergTake.includes("Bloomberg"));
-  for (const side of ["bullish", "bearish"]) {
-    assert.ok(item[side].length > 0);
-    for (const entry of item[side]) assert.ok(entry.title && entry.reason && entry.condition);
-  }
+  assert.ok(item.overallJudgment, "overallJudgment is required");
+  assert.ok(["bullish", "bearish"].includes(item.overallJudgment.regime));
+  assert.ok(item.overallJudgment.verdict && item.overallJudgment.title && item.overallJudgment.deduction && item.overallJudgment.condition);
 });
 
 test("public media page renders the Bloomberg section without private mail data", () => {
@@ -116,4 +115,11 @@ test("front-end AIHOT list renders only the top 6 stories from snapshot", () => 
   const rendered = render(data);
   const ranks = [...rendered.matchAll(/class="hot-rank">(\d+)</g)].map(m => m[1]);
   assert.deepEqual(ranks, ["01", "02", "03", "04", "05", "06"]);
+});
+
+test("front-end conditional view renders unified risk-asset regime synthesis instead of split bull/bear cards", () => {
+  const rendered = render(item);
+  assert.match(rendered, /class="signal-card regime-card (?:positive|negative)"/);
+  assert.match(rendered, /验证与反转条件：/);
+  assert.doesNotMatch(rendered, /短期利多 · Brassivo 推演|短期利空 · Brassivo 推演/);
 });

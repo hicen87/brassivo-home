@@ -451,7 +451,12 @@
     "英国释放美军基地附近袭击案嫌疑人": "UK releases suspects in alleged plot near US base",
     "首尔称朝韩非军事区爆炸很可能由地雷造成": "Seoul says land mines likely caused DMZ blast",
     "大法官Alito回避气候变化诉讼": "Justice Alito recuses himself from climate case",
-    "美国推动关键矿产供应链摆脱对华依赖": "US seeks critical-minerals supply chains less reliant on China"
+    "美国推动关键矿产供应链摆脱对华依赖": "US seeks critical-minerals supply chains less reliant on China",
+    "风险资产整体：短期利空格局": "Overall risk assets: Short-term bearish regime",
+    "风险资产整体：短期利多格局": "Overall risk assets: Short-term bullish regime",
+    "AI巨额开支撞上核心盈利减速叠加高油价冲击，压倒长债利率回落与等权重广度缓冲，风险资产整体处于短期利空格局": "Massive AI capex colliding with core profit deceleration and $117+ oil outweighs lower long-bond yields and equal-weight breadth, placing risk assets in a short-term bearish regime",
+    "综合权衡当期全部多空因素：尽管10年期美债收益率自5.4%峰值回落至4.93%（全球长债10月反弹2.2%、微软顺畅发债250亿美元）缓解了无风险折现率失控担忧，且等权重标普500月涨5.7%（周四406只成分股收涨）与传统能源巨头业绩提供了一定广度缓冲；但决定全球风险资产整体方向的主导矛盾在于AI核心权重股的盈利兑现受挫与宏观尾部冲击共振。Alphabet搜索与亚马逊电商两大现金牛增速同步放缓，却仍维持高达7500亿美元的AI资本开支膨胀，叠加英特尔暴跌25%与Reddit暴跌24%，动摇了美股盈利与估值的核心支柱；同时美伊军事冲突预期推升布油逼近118美元封锁降息空间，币安63亿美元黑客案直接抽紧高贝塔流动性。长债企稳与等权重轮动本质上属于资金撤离拥挤科技股后的防御性迁徙，无法抵消科技权重杀估值、高油价通胀掣肘与加密流动性受损的全局下行拉力，因此推演风险资产整体处于短期利空格局。": "Weighing all bullish and bearish forces together: although the 10-year Treasury yield pullback from 5.4% to 4.93% (alongside a 2.2% October rebound in global long bonds and Microsoft's smooth $25B debt sale) eases runaway discount-rate fears, and the equal-weight S&P 500's 5.7% monthly gain (with 406 constituents rising Thursday) plus strong energy earnings offer breadth cushioning, the dominant driver of overall risk assets is the collision of hyperscaler AI capex bloat with slowing core cash cows and macro tail shocks. Simultaneous deceleration in Alphabet search and Amazon retail against $750B in AI capex—compounded by Intel (-25%) and Reddit (-24%)—undermines the core earnings pillar of US equities. Meanwhile, US-Iran military strike risks pushing Brent near $118 constrain monetary easing, and Binance's record $6.3B hack drains high-beta liquidity. Long-bond stabilization and equal-weight rotation reflect defensive migration out of crowded tech rather than a broad bull impulse, leaving risk assets overall in a short-term bearish regime.",
+    "利空格局延续验证：亚马逊（-6.6%）、英特尔（-25%）与Reddit（-24%）盘后暴跌在正股交易中引发纳指100进一步破位下探，或布伦特原油突破120美元推升美债收益率重返5.0%上方；向利多格局扭转条件：等权重标普500与顺周期板块买盘完全承接科技权重抛压（标普500稳守关键支撑且超400股普涨延续），同时10年期美债收益率稳守4.90%下方、后续芯片与云龙头财报重新修复AI商业化变现信心。": "Bearish continuation: after-hours plunges in Amazon (-6.6%), Intel (-25%) and Reddit (-24%) trigger a further Nasdaq 100 breakdown in regular trading, or Brent crude breaks above $120 and pushes the 10-year Treasury yield back above 5.0%. Bullish reversal condition: equal-weight S&P 500 and cyclical inflows fully absorb big-tech selling while the 10-year yield holds below 4.90% and upcoming chip/cloud earnings restore confidence in AI monetization."
   };
   const bilingual = (zh, en) => {
     window.BrassivoLanguage?.addTranslations({ [zh]: en });
@@ -467,9 +472,10 @@
         <li><a href="${escapeHTML(story.url)}" rel="noopener noreferrer" target="_blank"><strong>${translated(story.title)}</strong><span aria-hidden="true">↗</span></a><p>${translated(story.summary)}</p></li>
       `).join("")}</ol>
     </article>` : `<article class="source-card ${kind}"><div class="source-meta"><span>${name}</span><small>${scope}</small></div><p class="source-summary">本期首页内容尚未核验，保留待更新状态。</p></article>`;
-  const signalCards = (items, tone, label) => items.map((entry) => `
-    <article class="signal-card ${tone}"><span>${label} · Brassivo 推演</span><h3>${translated(entry.title)}</h3><p>${translated(entry.reason)}</p><small>验证条件：${translated(entry.condition)}</small></article>
-  `).join("");
+  const renderRegimeJudgment = (judgment) => {
+    const tone = judgment.regime === "bullish" ? "positive" : "negative";
+    return `<article class="signal-card regime-card ${tone}"><span>${translated(judgment.verdict)} · ${bilingual("Brassivo 推演", "Brassivo analysis")}</span><h3>${translated(judgment.title)}</h3><p>${translated(judgment.deduction)}</p><small><span>${bilingual("验证与反转条件：", "Validation & reversal conditions: ")}</span>${translated(judgment.condition)}</small></article>`;
+  };
   const hot = data.mediaFocus?.aihot;
   const signed = value => `${value >= 0 ? "+" : ""}${value.toFixed(2)}`;
   const change = quote => (quote.close / quote.previousClose - 1) * 100;
@@ -512,11 +518,13 @@
       <a class="original-link" href="${escapeHTML(hot.sourceUrl)}" rel="noopener noreferrer" target="_blank">查看 AIHOT 完整榜单 ↗</a>
     </article>` : "";
 
+  const judgment = data.overallJudgment;
+  const regimeTone = judgment?.regime === "bullish" ? "positive" : "negative";
   target.innerHTML = `
     <details class="judgments">
-      <summary><span>01 / BRASSIVO CONDITIONAL VIEW</span><strong>短期条件判断</strong><small>展开查看利多、利空与验证条件</small></summary>
-      <p class="judgment-note">以下仅基于 Bloomberg 这期邮件的事实独立推演，不是其他来源的共同观点。</p>
-      <div class="signal-grid">${signalCards(data.bullish, "positive", "短期利多")}${signalCards(data.bearish, "negative", "短期利空")}</div>
+      <summary><span>01 / BRASSIVO CONDITIONAL VIEW</span><strong><span>短期条件判断</span>${judgment ? `<em class="regime-badge ${regimeTone}">${translated(judgment.verdict)}</em>` : ""}</strong><small>${bilingual("展开查看多空合力推演与验证条件", "Expand for net bull/bear synthesis and validation conditions")}</small></summary>
+      <p class="judgment-note">${bilingual("结合当期全部利多与利空因素的综合权衡（Brassivo 独立推演，非各媒体共同观点）：", "Net synthesis weighing all current bullish and bearish factors (Brassivo independent analysis, not a shared view of the media sources):")}</p>
+      <div class="signal-grid single-regime">${judgment ? renderRegimeJudgment(judgment) : ""}</div>
       <p class="boundary-note">媒体摘要与 AI 热榜均保留各自刊期或抓取时点，不是实时行情；条件判断不自动改变策略基线、资金配比或 EPS 基线。</p>
     </details>
     <div class="section-heading"><span>02 / SOURCES</span><h2 id="media-title">媒体焦点与 AI 热榜</h2></div>
