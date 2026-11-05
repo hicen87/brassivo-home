@@ -1,94 +1,94 @@
 window.BLOOMBERG_MARKETS_DAILY = {
-  "issueDate": "2026-11-04",
-  "publishedAt": "2026-11-04T11:21:08+00:00",
+  "issueDate": "2026-11-05",
+  "publishedAt": "2026-11-05T11:18:03+00:00",
   "newsletter": "Markets Daily",
-  "headline": "美国中期选举民主党重夺国会且特朗普接受结果提振股债，AMD与超微财报强劲引爆AI硬件而美元回落",
-  "bloombergTake": "Bloomberg Markets Daily（2026-11-04 原刊）报道，选民对生活成本与伊朗战争的不满助推民主党在中期选举中重夺国会，特朗普表态将接受选举结果促使投资者逢低买回股市：标普500期指涨1.0%至7676.50点，欧洲斯托克600涨1.4%，中国沪深300大涨2.3%，10年期美债收益率降3bp至4.93%（市场预期国会僵局将限制减税与开支扩张），彭博美元指数跌0.4%创两月最大跌幅，布油跌0.9%至102.64美元。盘面上，反数据中心浪潮令算力云商承压（Iren跌3.9%、CoreWeave跌3.3%），特斯拉跌5%、SpaceX跌6.9%，军工股普跌；但全球可再生能源股大涨，AMD销售指引远超预期盘前跳涨6%、超微电脑涨8.3%、Arista大涨13%，诺和诺德涨4.1%，CVS拟分拆零售药房。以上为原刊快照，非实时行情；简报未给出统一预测。",
+  "headline": "华尔街大行押注中期选举后美股迎年底反弹，顺周期轮动推升欧股与英股冲击历史新高而芯片股分化",
+  "bloombergTake": "Bloomberg Markets Daily（2026-11-05 原刊）报道，随着美国中期选举尘埃落定、政策不确定性下降且机构在10月大幅降仓（VIX周三创2025年4月来最大跌幅），华尔街交易台押注美股将在年底迎来反弹；汇丰策略师则将Anthropic IPO视为重返科技股的终极出清催化剂。市场连续第二日演绎选举轮动，顺周期跑赢芯片股，欧洲斯托克600涨0.6%与英国富时100迈向历史收盘新高，10年期美债收益率降1bp至4.88%，布油报96.18美元。丰田上调利润预期暴涨逾16%创1987年来最大涨幅；高盛与阿波罗洽售SpaceX约400亿美元芯片融资份额；中国否决软银收购ABB机器人业务；英国央行料三年多来首次加息；盘前AppLovin涨17%，高通跌5%、ARM跌3.4%。以上为原刊快照，非实时行情；简报未给出统一预测。",
   "bloombergStories": [
     {
-      "title": "民主党重夺国会控制权且特朗普表态接受结果，美股期指反弹1.0%、美债走强而美元创两月最大跌幅",
-      "summary": "政治僵局预期缓解财政赤字失控担忧，10年期美债收益率降至4.93%，欧洲斯托克600涨1.4%，中国沪深300大涨2.3%，布油回落至102.64美元。"
+      "title": "华尔街交易台押注美股迎年底反弹：选举落地、VIX创年半最大跌幅与机构轻仓构成多重支撑",
+      "summary": "城堡证券Rubner指美股年底阻力最小方向向上；市场预期民主党国会将约束科技巨头盲目AI开支，汇丰视Anthropic IPO为重返科技股的核心催化剂。"
     },
     {
-      "title": "AMD销售指引远超预期盘前跳涨6%，超微电脑涨8.3%、Arista大涨13%印证AI服务器与网络需求炽热",
-      "summary": "超微电脑上调全年销售展望，Arista给出超预期收入指引，Block三季报超预期涨6.8%；高通、ARM、AppLovin等将于今日盘后放榜。"
+      "title": "选举轮动交易进入第二日：顺周期跑赢芯片股，欧洲斯托克600与富时100迈向历史收盘新高",
+      "summary": "资金由存储与数据中心硬件轮动至传统顺周期；丰田因混动车需求强劲与日元走弱上调全年利润预期并加码股东回报，股价飙升逾16%创1987年来最大涨幅。"
     },
     {
-      "title": "选举结果触发跨板块剧烈轮动：全球可再生能源股大涨，算力云运营商、马斯克系与防务股承压",
-      "summary": "沃旭能源涨8.1%、First Solar涨9.2%、韩华解决方案飙升19%；反数据中心民意拖累Iren跌3.9%、CoreWeave跌3.3%，特斯拉跌5%、SpaceX跌6.9%。"
+      "title": "高盛与阿波罗洽谈向华尔街投资者分销SpaceX约400亿美元AI芯片融资交易份额；高通与ARM盘前承压",
+      "summary": "移动广告商AppLovin财报与指引超预期盘前暴涨17%；高通因利润指引平淡跌5%，ARM营收指引欠佳跌3.4%，Snap跌13%，马士基跌11%。"
     },
     {
-      "title": "油价与美债收益率打破正相关转为负向联动，高油价抑制增长特征增强主权债配置吸引力",
-      "summary": "加拿大皇家银行指出当前高油价通过抑制经济增长反而推低长端收益率；摩根大通资管呼吁美国财政部停发不受市场欢迎的20年期国债。"
+      "title": "分裂政府令美国债务上限重回视野：距41.1万亿美元上限仅剩约8000亿美元，料明年上半年触顶",
+      "summary": "德意志银行称债务上限是美国国内剩余的最大政策不确定性来源，X日临近恐引发到期国库券抛售与收益率曲线扭曲；英国央行今日料启动三年多来首次加息。"
     },
     {
-      "title": "医疗巨头重磅催化：诺和诺德再上调口服Wegovy销售预期涨4.1%，CVS拟拆分零售药房业务",
-      "summary": "诺和诺德在哥本哈根股市走高；媒体报道CVS Health计划分拆零售药房业务，或成医疗健康行业史上最大规模拆分之一。"
+      "title": "中国监管机构否决软银收购ABB工业机器人业务，中国A股散户经历近3万亿美元市值蒸发",
+      "summary": "软银拓展实体AI版图受挫；彭博专题关注中国股市抹去年内涨幅、近3万亿美元市值蒸发对2.5亿散户交易者的冲击，以及Alphabet搜索垄断面临自身AI蚕食风险。"
     }
   ],
   "overallJudgment": {
     "regime": "bullish",
     "verdict": "风险资产整体：短期利多格局",
-    "title": "中期选举落地消除政治尾部不确定性并压低美债收益率与油价，叠加AMD、超微与Arista强劲财报重燃AI硬件主线，风险资产整体转为短期利多格局",
-    "deduction": "综合权衡当期全部多空因素：尽管数据中心电价争议助推民主党胜选令新兴算力云运营商（Iren跌3.9%、CoreWeave跌3.3%）、马斯克关联企业（特斯拉跌5%、SpaceX跌6.9%）及防务板块局部承压，且科技巨头创纪录举债与Anthropic三季度转亏5.67亿美元仍提醒高成本算力约束；但决定短期风险资产全局定价的核心变量已实现双重积极共振。第一，美国中期选举尘埃落定且特朗普明确表态接受结果，消除了此前压制市场的政治尾部风险，同时分裂国会预期约束了财政赤字无序扩张，促使10年期美债收益率回落3bp至4.93%、彭博美元指数创两个月最大跌幅、布伦特原油回落0.9%至102.64美元，带动标普500期指涨1.0%、欧股涨1.4%、中国沪深300大涨2.3%，全球权益风险偏好显著修复。第二，产业端迎来硬核盈利验证，AMD给出远超分析师预期的销售指引（预计2027年营收增长超80%且数据中心芯片占八成）盘前跳涨6%，超微电脑上调全年展望大涨8.3%，网络设备龙头Arista创IPO以来最大营收增幅暴涨13%，叠加Apple智能接入阿里千问随iOS 27.3入华及腾讯发布视觉与电脑操作模型混元Hy4，有力对冲了前期科技利润率担忧。宏观折现率缓和与AI核心硬件业绩超预期形成合力，推演风险资产整体进入短期利多格局。",
-    "condition": "利多格局延续验证：今日美国财政部季度发债再融资计划平稳落地、10年期美债收益率稳守5.0%下方，且盘后高通（QCOM）与ARM财报印证端侧AI与数据中心需求共振；向利空格局逆转条件：国会针对AI数据中心能耗与审批出台超预期严厉监管法案，或中东地缘冲突升级令布油再度冲破110美元。"
+    "title": "中期选举落地触发VIX创年半最大跌幅与机构回补仓位，叠加10年期美债收益率降至4.88%与顺周期创历史新高，风险资产整体维持短期利多格局",
+    "deduction": "综合权衡当期全部多空因素：尽管分裂国会带来的2027年上半年41.1万亿美元债务上限僵局隐患、英国央行重启加息应对近5%通胀、民主党国会潜在约束AI数据中心扩张引发亚洲存储芯片回调，以及高通（盘前跌5%）与ARM（跌3.4%）指引平淡构成局部估值扰动；但主导全球风险资产定价的核心宏观与资金面合力依然显著偏多。第一，政治不确定性出清与波动率骤降激活年末逼空动能，周三标普500大涨1.58%收于7688.62点（微软大涨6.68%、亚马逊涨6.12%、苹果涨5.31%），VIX恐慌指数录得2025年4月以来最大单日跌幅，由于对冲基金与机构在10月剧烈减仓，当前极低的仓位敞口为年底回补风险资产提供了充足弹药（城堡证券指美股年底阻力最小方向向上）。第二，跨资产折现率与广度同步改善，10年期美债收益率进一步回落至4.88%，布伦特原油降至96.18美元缓解输入型通胀担忧，欧洲斯托克600与英国富时100双双迈向历史收盘新高，丰田暴涨逾16%、AppLovin财报大捷跳涨17%，印证行情正从单一硬件向优质科技生态与顺周期健康扩散。因此推演风险资产整体处于短期利多格局。",
+    "condition": "利多格局延续验证：10年期美债收益率稳守4.90%下方、顺周期与大型科技股良性轮动延续，且高盛与阿波罗分销SpaceX 400亿美元AI芯片融资获机构踊跃认购；向利空格局逆转条件：英国央行超预期鹰派加息引发全球主权债收益率反扑突破5.0%，或债务上限博弈提前冲击短端美元流动性。"
   },
-  "sourceUrl": "https://www.bloomberg.com/news/newsletters/2026-11-04/stock-bulls-are-glad-this-election-is-finally-over",
+  "sourceUrl": "https://www.bloomberg.com/news/newsletters/2026-11-05/the-case-for-a-year-end-us-stocks-rally",
   "mediaFocus": {
     "barrons": {
-      "captureDate": "2026-11-04",
-      "capturedAt": "2026-11-04T20:03:00+08:00",
-      "summary": "Barron's 首页聚焦 AI 债务在最糟时机触及历史峰值、民主党重夺国会后特朗普盟友承压、得州选情拖累特斯拉与 SpaceX 下挫、中期选举令防务股面临削减开支阵痛、AMD 财报大超预期印证 AI 芯片需求强劲、Arista 创上市以来最大营收增幅、超微电脑财报大捷股价跳涨、CVS 拟分拆保险与药房业务、燃料电池商 Bloom Energy 成选举意外赢家，以及数据中心监管升温下英伟达为何逆势上涨。",
+      "captureDate": "2026-11-05",
+      "capturedAt": "2026-11-05T20:03:00+08:00",
+      "summary": "Barron's 首页聚焦 40 万亿美元美国联邦债务终局推演与五条破局路径、特朗普与民主党国会僵局下华尔街押注妥协、为何蓝色浪潮难阻特朗普关税政策、中期选举后美元与美债收益率下行点燃淘金热、市场押注结束伊朗战争的现实阻力、信诺三季报远超预期、Arm 面临苹果与安卓双重挑战、美光份额收缩跌出买点、英特尔单月腰斩暴跌 50%，以及 AI 购物智能体与零售巨头博弈。",
       "stories": [
         {
-          "title": "AI 债务规模在最糟糕的时机触及历史纪录：亚马逊与 Alphabet 领衔发债潮",
-          "summary": "在高利率与回报率审视加剧之际，科技巨头以前所未有的速度涌入债券市场为算力基建融资，引发信用利差与现金流重估隐忧。",
-          "url": "https://www.barrons.com/articles/ai-debt-markets-amazon-alphabet-3e8faeb5"
+          "title": "40 万亿美元联邦债务终局推演：每个新生儿背负巨债下的五条破局路径",
+          "summary": "随着美国国债逼近 41 万亿美元上限且利息支出吞噬联邦预算，深度剖析财政紧缩、通胀稀释与债务重组等五种长期演进剧本。",
+          "url": "https://www.barrons.com/articles/congress-40-trillion-debt-endgame-e662f562"
         },
         {
-          "title": "民主党重夺国会控制权：特朗普核心商业盟友与放松监管交易面临逆风",
-          "summary": "中期选举结果改写华盛顿权力版图，依赖行政去监管红利的传统能源、加密货币与关联企业股票遭遇重新定价。",
-          "url": "https://www.barrons.com/articles/midterm-elections-democrats-trump-republican-a1a59c2b"
+          "title": "特朗普与民主党能否握手言和？华盛顿预期僵局而华尔街押注政治妥协",
+          "summary": "尽管政界普遍认为未来两年国会与白宫将陷入立法瘫痪，但华尔街交易员看好双方在预算、基建与监管边界上达成务实折中。",
+          "url": "https://www.barrons.com/articles/trump-democrats-gridlock-compromise-markets-ba8d36d1"
         },
         {
-          "title": "特斯拉与 SpaceX 盘前双双下挫：得克萨斯州选情与政治捐助反噬成主因",
-          "summary": "作为共和党最大金主，马斯克旗下核心资产在民主党胜选及得州地方监管博弈升温后承受直接抛压。",
-          "url": "https://www.barrons.com/articles/tesla-spacex-stock-elon-musk-midterm-election-1c9e3441"
+          "title": "为何即便“蓝色浪潮”席卷国会，也无法迫使特朗普在关税政策上退让",
+          "summary": "总统在贸易与关税领域拥有广泛的行政授权，民主党重夺国会控制权难以直接逆转现行进口关税壁垒与贸易保护主义议程。",
+          "url": "https://www.barrons.com/articles/midterm-elections-democrats-trump-tariffs-policy-497176cb"
         },
         {
-          "title": "军工防务股遭遇中期选举阵痛：民主党掌控国会恐遏制国防预算扩张",
-          "summary": "市场担忧新一届国会将严格审查五角大楼采购开支，洛克希德·马丁、雷神与通用动力等防务巨头盘前普跌。",
-          "url": "https://www.barrons.com/articles/rtx-lockeed-defense-stocks-midterm-elections-4c6d75ff"
+          "title": "淘金热潮再度升温：中期选举后美元回落与美债收益率下行提振金价",
+          "summary": "分裂政府预期压低实际利率与美元指数，叠加全球央行购金与地缘避险需求，黄金短期配置吸引力再度凸显。",
+          "url": "https://www.barrons.com/articles/gold-price-dollar-bond-yields-midterm-elections-25a81dad"
         },
         {
-          "title": "AMD 财报与指引大超预期：力证 AI 数据中心芯片需求远未见顶",
-          "summary": "苏姿丰预计明年数据中心芯片将贡献八成营收且整体收入增长超 80%，强劲展望一举驱散市场对算力采购放缓的疑虑。",
-          "url": "https://www.barrons.com/articles/amd-earnings-stock-price-7c8d5465"
+          "title": "市场押注特朗普将结束伊朗战争，但实现停火远比想象中艰难",
+          "summary": "选民对高油价与海外军事介入的厌倦促使原油回落，但中东复杂的地缘博弈意味着全面撤军与和平协议仍面临重重障碍。",
+          "url": "https://www.barrons.com/articles/midterm-election-voters-reject-iran-war-trump-6c2d5063"
         },
         {
-          "title": "Arista Networks 创 IPO 以来最大营收增幅：高速 AI 网络交换机供不应求",
-          "summary": "受益于云巨头大规模人工智能集群组网升级，公司季度业绩与下季指引全面超越华尔街预期，股价大涨 13%。",
-          "url": "https://www.barrons.com/articles/arista-networks-earnings-stock-price-6bfb2004"
+          "title": "信诺集团（Cigna）三季度财报远超华尔街预期，医疗服务展现韧性",
+          "summary": "受益于药房福利管理（PBM）业务增长与审慎的医疗成本控制，公司季度盈利显著击败市场共识，提振医疗保险板块情绪。",
+          "url": "https://www.barrons.com/articles/cigna-stock-earnings-422b79e0"
         },
         {
-          "title": "超微电脑交出亮眼财报并上调全年销售展望，股价应声跳涨逾 8%",
-          "summary": "AI 液冷服务器机架出货持续放量，强劲的季度营收指引提振了整个半导体硬件与服务器产业链信心。",
-          "url": "https://www.barrons.com/articles/super-micro-earnings-stock-ai-chips-6e1ecbd8"
+          "title": "Arm 股价遭遇苹果与安卓双重难题：数据中心发力难掩手机授权放缓",
+          "summary": "尽管 AI 服务器芯片授权稳步推进，但智能手机出货疲软导致整体营收指引仅勉强符合预期，股价盘前下跌逾 3%。",
+          "url": "https://www.barrons.com/articles/arm-earnings-stock-price-0b2ba8d0"
         },
         {
-          "title": "CVS Health 拟分拆医疗保险与零售药房业务，酝酿行业史上最大规模重组",
-          "summary": "面对药房报销挤压与医疗赔付率攀升，拆分计划旨在释放各板块独立估值潜力，带动股价盘前拉升。",
-          "url": "https://www.barrons.com/articles/cvs-health-earnings-stock-price-2b2f99cc"
+          "title": "美光科技股价因市场份额收缩再度下跌，为何这反而提供了买入良机",
+          "summary": "分析指出市场过度担忧短期 HBM 份额波动，忽视了高带宽存储芯片整体供不应求及美光估值已充分反映悲观预期的安全边际。",
+          "url": "https://www.barrons.com/articles/micron-stock-price-drop-e2480de5"
         },
         {
-          "title": "燃料电池厂商 Bloom Energy 成中期选举意外大赢家：分布式清洁电力受捧",
-          "summary": "当选民抵制数据中心推高电网电价时，能够绕开公共电网提供现场清洁发电的燃料电池方案迎来需求爆发。",
-          "url": "https://www.barrons.com/articles/bloom-energy-stock-ai-data-centers-midterm-elections-2eae1ed5"
+          "title": "英特尔股价一个月内腰斩暴跌 50%：特朗普的糟糕一周正变得雪上加霜",
+          "summary": "代工业务持续失血与转型受挫令英特尔市值剧烈缩水，使此前力推美国本土芯片制造入股方案的白宫承受沉重账面亏损压力。",
+          "url": "https://www.barrons.com/articles/intel-stock-chips-trump-stake-15bae5a5"
         },
         {
-          "title": "尽管数据中心面临更严苛的监管审视，为何英伟达股价依然逆势上涨",
-          "summary": "分析指出电力与用地审批收紧反而迫使云厂商优先采购最高能效比的旗舰 GPU，进一步巩固英伟达的算力垄断溢价。",
-          "url": "https://www.barrons.com/articles/nvidia-stock-price-data-centers-5b4a74a1"
+          "title": "零售购物智能体被誉为 AI 的“iPod 时刻”，但沃尔玛与塔吉特仍握有主动权",
+          "summary": "尽管 Meta Muse 等代购机器人兴起，但消费者信任度与履约供应链优势仍牢牢掌握在传统零售巨头手中。",
+          "url": "https://www.barrons.com/articles/muse-ai-shoppers-walmart-target-1451fb80"
         }
       ]
     },
@@ -125,18 +125,18 @@ window.BLOOMBERG_MARKETS_DAILY = {
       ]
     },
     "aihot": {
-      "boardUpdatedAt": "2026-11-04T20:00:00+08:00",
-      "captureDate": "2026-11-04",
-      "capturedAt": "2026-11-04T20:03:00+08:00",
+      "boardUpdatedAt": "2026-11-05T20:00:00+08:00",
+      "captureDate": "2026-11-05",
+      "capturedAt": "2026-11-05T20:04:00+08:00",
       "windowHours": 48,
       "sourceUrl": "https://aihot.news/hot",
       "market": {
-        "checkedAt": "2026-11-04T20:03:00+08:00",
+        "checkedAt": "2026-11-05T20:04:00+08:00",
         "benchmark": {
-          "sessionDate": "2026-11-03",
-          "previousSessionDate": "2026-11-02",
-          "close": 7568.92,
-          "previousClose": 7541.4,
+          "sessionDate": "2026-11-04",
+          "previousSessionDate": "2026-11-03",
+          "close": 7688.62,
+          "previousClose": 7568.92,
           "sources": [
             "https://finance.yahoo.com/quote/%5EGSPC",
             "https://www.google.com/finance/quote/.INX:INDEXSP"
@@ -144,63 +144,63 @@ window.BLOOMBERG_MARKETS_DAILY = {
         },
         "quotes": {
           "NVDA": {
-            "sessionDate": "2026-11-03",
-            "previousSessionDate": "2026-11-02",
-            "close": 206.69,
-            "previousClose": 202.06,
+            "sessionDate": "2026-11-04",
+            "previousSessionDate": "2026-11-03",
+            "close": 200.13,
+            "previousClose": 206.69,
             "sources": [
               "https://finance.yahoo.com/quote/NVDA",
               "https://www.google.com/finance/quote/NVDA:NASDAQ"
             ]
           },
           "MSFT": {
-            "sessionDate": "2026-11-03",
-            "previousSessionDate": "2026-11-02",
-            "close": 520.99,
-            "previousClose": 507.12,
+            "sessionDate": "2026-11-04",
+            "previousSessionDate": "2026-11-03",
+            "close": 555.8,
+            "previousClose": 520.99,
             "sources": [
               "https://finance.yahoo.com/quote/MSFT",
               "https://www.google.com/finance/quote/MSFT:NASDAQ"
             ]
           },
           "GOOGL": {
-            "sessionDate": "2026-11-03",
-            "previousSessionDate": "2026-11-02",
-            "close": 280.03,
-            "previousClose": 278.99,
+            "sessionDate": "2026-11-04",
+            "previousSessionDate": "2026-11-03",
+            "close": 288.93,
+            "previousClose": 280.03,
             "sources": [
               "https://finance.yahoo.com/quote/GOOGL",
               "https://www.google.com/finance/quote/GOOGL:NASDAQ"
             ]
           },
-          "AMZN": {
-            "sessionDate": "2026-11-03",
-            "previousSessionDate": "2026-11-02",
-            "close": 250.69,
-            "previousClose": 245.63,
-            "sources": [
-              "https://finance.yahoo.com/quote/AMZN",
-              "https://www.google.com/finance/quote/AMZN:NASDAQ"
-            ]
-          },
           "AAPL": {
-            "sessionDate": "2026-11-03",
-            "previousSessionDate": "2026-11-02",
-            "close": 331.9,
-            "previousClose": 338.32,
+            "sessionDate": "2026-11-04",
+            "previousSessionDate": "2026-11-03",
+            "close": 349.51,
+            "previousClose": 331.9,
             "sources": [
               "https://finance.yahoo.com/quote/AAPL",
               "https://www.google.com/finance/quote/AAPL:NASDAQ"
             ]
           },
-          "AMD": {
-            "sessionDate": "2026-11-03",
-            "previousSessionDate": "2026-11-02",
-            "close": 483.9,
-            "previousClose": 466.84,
+          "META": {
+            "sessionDate": "2026-11-04",
+            "previousSessionDate": "2026-11-03",
+            "close": 630,
+            "previousClose": 621.03,
             "sources": [
-              "https://finance.yahoo.com/quote/AMD",
-              "https://www.google.com/finance/quote/AMD:NASDAQ"
+              "https://finance.yahoo.com/quote/META",
+              "https://www.google.com/finance/quote/META:NASDAQ"
+            ]
+          },
+          "TCEHY": {
+            "sessionDate": "2026-11-04",
+            "previousSessionDate": "2026-11-03",
+            "close": 52.43,
+            "previousClose": 50.42,
+            "sources": [
+              "https://finance.yahoo.com/quote/TCEHY",
+              "https://www.google.com/finance/quote/TCEHY:OTCMKTS"
             ]
           }
         }
@@ -208,28 +208,28 @@ window.BLOOMBERG_MARKETS_DAILY = {
       "stories": [
         {
           "rank": 1,
-          "title": "MIT 称 GPT-6 Astra 可直接改写模型权重",
-          "heat": 252,
-          "url": "https://aihot.news/story/6967bf9e-459b-487f-93ce-2804c3605d57",
+          "title": "OpenAI 发布 Images 2.6：ChatGPT 可生成 GIF，API 上线两款模型",
+          "heat": 400,
+          "url": "https://aihot.news/story/37046dc2-8e44-4949-965c-ef07dbd0b13e",
           "marketLink": {
             "company": "OpenAI",
             "ticker": null,
             "status": "no_direct",
             "relationUrl": "https://openai.com",
-            "eventPublishedAt": "2026-11-03T08:00:00+08:00",
-            "eventSourceUrl": "https://aihot.news/story/6967bf9e-459b-487f-93ce-2804c3605d57"
+            "eventPublishedAt": "2026-11-05T08:00:00+08:00",
+            "eventSourceUrl": "https://aihot.news/story/37046dc2-8e44-4949-965c-ef07dbd0b13e"
           },
           "readThrough": {
-            "checkedAt": "2026-11-04T20:03:00+08:00",
-            "note": "MIT CSAIL 团队提出“权重空间编程”，称 GPT-6 Astra 无需梯度训练即可直接改写 Qwen3.5-0.8B 约 0.016% 权重并令数学成绩提升至 6 倍，尚待独立第三方复现。",
+            "checkedAt": "2026-11-05T20:04:00+08:00",
+            "note": "OpenAI 全量推送 Images 2.6 支持直接生成与逐帧编辑 GIF 动图，并在 API 上线主打 6 秒极速出图的 GPT-Image-2.6 Flare 与高画质多轮编辑模型 Sunburst。",
             "candidates": [
               {
                 "company": "Microsoft",
                 "ticker": "MSFT",
                 "exchange": "NASDAQ",
-                "exposure": "若前沿旗舰模型直接编程修改轻量化端侧小模型权重获独立证实，将显著降低 Azure 企业客户定制垂直小模型的后训练开销。",
-                "direction": "方向待确认",
-                "condition": "验证条件为外部研究团队复现权重空间编程效果并在更大参数规模模型上证明稳定性。",
+                "exposure": "高频多模态图像与 GIF 动图生成及企业级 API 调用直接部署于 Azure AI 基础设施，拉动云端推理算力消耗与订阅转化。",
+                "direction": "潜在利好",
+                "condition": "验证条件为 GPT-Image-2.6 系列 API 调用量持续攀升并带动 Azure OpenAI 服务收入超预期。",
                 "sourceUrl": "https://azure.microsoft.com"
               }
             ]
@@ -237,8 +237,95 @@ window.BLOOMBERG_MARKETS_DAILY = {
         },
         {
           "rank": 2,
-          "title": "Google将引导学习引入Search和Classroom，K-12学生AI工具默认关闭",
-          "heat": 190,
+          "title": "Claude Code 产品负责人 Cat Wu 转投 OpenAI",
+          "heat": 240,
+          "url": "https://aihot.news/story/0b20bea7-a1d4-451e-bb1b-38c63fadf89f",
+          "marketLink": {
+            "company": "OpenAI",
+            "ticker": null,
+            "status": "no_direct",
+            "relationUrl": "https://openai.com",
+            "eventPublishedAt": "2026-11-05T08:00:00+08:00",
+            "eventSourceUrl": "https://aihot.news/story/0b20bea7-a1d4-451e-bb1b-38c63fadf89f"
+          },
+          "readThrough": {
+            "checkedAt": "2026-11-05T20:04:00+08:00",
+            "note": "原 Anthropic 明星编程产品 Claude Code 负责人 Cat Wu 宣布加盟 OpenAI 负责核心智能体产品管理，凸显两大前沿实验室在 AI 编程工作流赛道的激烈人才争夺。",
+            "candidates": [
+              {
+                "company": "Microsoft",
+                "ticker": "MSFT",
+                "exchange": "NASDAQ",
+                "exposure": "OpenAI 强化智能体与 Codex 产品线有望反哺 GitHub Copilot 开发者生态，巩固微软在企业级 AI 软件工程领域的领先地位。",
+                "direction": "方向待确认",
+                "condition": "验证条件为 OpenAI 新一代编程智能体与微软开发者工具链实现深度协同并提升企业席位付费率。",
+                "sourceUrl": "https://github.com/features/copilot"
+              }
+            ]
+          }
+        },
+        {
+          "rank": 3,
+          "title": "腾讯混元 Hy4 正式发布，首增视觉与电脑操作",
+          "heat": 200,
+          "url": "https://aihot.news/story/491d220c-9d57-4295-af9f-e4382561b3f7",
+          "marketLink": {
+            "company": "Tencent",
+            "ticker": "TCEHY",
+            "status": "listed",
+            "relationUrl": "https://www.tencent.com",
+            "eventPublishedAt": "2026-11-04T08:00:00+08:00",
+            "eventSourceUrl": "https://aihot.news/story/491d220c-9d57-4295-af9f-e4382561b3f7"
+          },
+          "readThrough": {
+            "checkedAt": "2026-11-05T20:04:00+08:00",
+            "note": "腾讯混元发布 Hy4 正式版并因用户激增将推理集群紧急扩容十倍，首次引入细粒度视觉推理与电脑操作能力，OpenClaw 已宣布接入支持。",
+            "candidates": [
+              {
+                "company": "NVIDIA",
+                "ticker": "NVDA",
+                "exchange": "NASDAQ",
+                "exposure": "多模态视觉理解与长程 GUI 电脑操作智能体促使腾讯将推理集群紧急扩容十倍，印证复杂智能体工作流对高性能推理 GPU 的刚性消耗。",
+                "direction": "潜在利好",
+                "condition": "验证条件为混元 Hy4 开源后在企业级工作流与游戏研发场景维持高频调用。",
+                "sourceUrl": "https://www.nvidia.com"
+              }
+            ]
+          }
+        },
+        {
+          "rank": 4,
+          "title": "OpenAI宣布收购Pierre，工具将并入Codex",
+          "heat": 182,
+          "url": "https://aihot.news/story/eb3a8a76-8af1-48fb-8fa0-67903c2b1174",
+          "marketLink": {
+            "company": "OpenAI",
+            "ticker": null,
+            "status": "no_direct",
+            "relationUrl": "https://openai.com",
+            "eventPublishedAt": "2026-11-05T08:00:00+08:00",
+            "eventSourceUrl": "https://aihot.news/story/eb3a8a76-8af1-48fb-8fa0-67903c2b1174"
+          },
+          "readThrough": {
+            "checkedAt": "2026-11-05T20:04:00+08:00",
+            "note": "OpenAI 宣布收购代码存储与变更审阅开源工具开发商 Pierre Computer，将其 Trees、Diffs 等能力并入 Codex，加速打造团队与 AI 协同软件开发平台。",
+            "candidates": [
+              {
+                "company": "Microsoft",
+                "ticker": "MSFT",
+                "exchange": "NASDAQ",
+                "exposure": "Codex 从单一代码生成向代码托管与版本审阅平台延伸，既增强 Azure 算力消耗，也与微软旗下 GitHub 生态形成竞合演进。",
+                "direction": "方向待确认",
+                "condition": "验证条件为交易通过监管批准后 Codex 平台与 GitHub 形成互补商业化路径而非直接分流开发者订阅。",
+                "sourceUrl": "https://github.com"
+              }
+            ]
+          }
+        },
+        {
+          "rank": 5,
+          "title": "Google将AI学习功能引入Search和Classroom，学校禁用AI即失去搜索",
+          "heat": 164,
           "url": "https://aihot.news/story/956471b6-c78b-44c7-b4d4-e00583803aca",
           "marketLink": {
             "company": "Alphabet",
@@ -249,7 +336,7 @@ window.BLOOMBERG_MARKETS_DAILY = {
             "eventSourceUrl": "https://aihot.news/story/956471b6-c78b-44c7-b4d4-e00583803aca"
           },
           "readThrough": {
-            "checkedAt": "2026-11-04T20:03:00+08:00",
+            "checkedAt": "2026-11-05T20:04:00+08:00",
             "note": "Google 向全球 Google Classroom 开放 Guided Learning 并试点引入学生 Search，同时规定 K-12 账号默认关闭 AI 工具且管理员无法单独剥离 Gemini 与搜索。",
             "candidates": [
               {
@@ -265,9 +352,38 @@ window.BLOOMBERG_MARKETS_DAILY = {
           }
         },
         {
-          "rank": 3,
+          "rank": 6,
+          "title": "OpenAI称AI管线单次运行发现并修补948个Linux内核提权漏洞",
+          "heat": 163,
+          "url": "https://aihot.news/story/4ff5060c-160a-4d65-bf28-706c0d53ec34",
+          "marketLink": {
+            "company": "OpenAI",
+            "ticker": null,
+            "status": "no_direct",
+            "relationUrl": "https://openai.com",
+            "eventPublishedAt": "2026-11-05T08:00:00+08:00",
+            "eventSourceUrl": "https://aihot.news/story/4ff5060c-160a-4d65-bf28-706c0d53ec34"
+          },
+          "readThrough": {
+            "checkedAt": "2026-11-05T20:04:00+08:00",
+            "note": "OpenAI 披露其网络安全模型驱动的自主管线在单次耗资 121.3 万美元 API 算力的运行中，自动发现、验证并生成 948 个 Linux 内核本地提权漏洞补丁。",
+            "candidates": [
+              {
+                "company": "NVIDIA",
+                "ticker": "NVDA",
+                "exchange": "NASDAQ",
+                "exposure": "单次自动化代码安全审计即消耗超 121 万美元 API 推理成本，印证企业级深度安全验证与智能体长程推理将成为算力消耗的巨量新场景。",
+                "direction": "潜在利好",
+                "condition": "验证条件为自主漏洞发现与修补管线通过独立安全机构复核并向商业软件与云安全客户规模化推广。",
+                "sourceUrl": "https://www.nvidia.com"
+              }
+            ]
+          }
+        },
+        {
+          "rank": 7,
           "title": "苹果 Apple 智能随 iOS 27.3 入华，接入阿里千问",
-          "heat": 190,
+          "heat": 149,
           "url": "https://aihot.news/story/50f0b947-7493-4da9-95c7-bfad63bb5a8c",
           "marketLink": {
             "company": "Apple",
@@ -276,56 +392,40 @@ window.BLOOMBERG_MARKETS_DAILY = {
             "relationUrl": "https://www.apple.com",
             "eventPublishedAt": "2026-11-04T08:00:00+08:00",
             "eventSourceUrl": "https://aihot.news/story/50f0b947-7493-4da9-95c7-bfad63bb5a8c"
-          },
-          "readThrough": {
-            "checkedAt": "2026-11-04T20:03:00+08:00",
-            "note": "苹果宣布 Apple 智能随 iOS 27.3 开发者预览版入华、12 月正式上线，国行 Siri、写作工具与视觉智能系统级接入阿里巴巴千问模型。",
-            "candidates": [
-              {
-                "company": "Alibaba",
-                "ticker": "BABA",
-                "exchange": "NYSE",
-                "exposure": "千问作为国行 iPhone 系统级集成大模型直接触达中国高端存量用户，并带动阿里云底层推理算力调用与生态分发。",
-                "direction": "潜在利好",
-                "condition": "验证条件为 12 月 iOS 27.3 正式版推送后国行 iPhone 换机率回升及阿里云 AI 收入增速加快。",
-                "sourceUrl": "https://www.alibabagroup.com"
-              }
-            ]
           }
         },
         {
-          "rank": 4,
-          "title": "腾讯混元 Hy4 正式发布，首次引入视觉与电脑操作",
-          "heat": 178,
-          "url": "https://aihot.news/story/491d220c-9d57-4295-af9f-e4382561b3f7",
+          "rank": 8,
+          "title": "Meta收购Conductor，产品将逐步关停",
+          "heat": 120,
+          "url": "https://aihot.news/story/dfa910ce-d2f0-4f43-844a-e8798fd89b9e",
           "marketLink": {
-            "company": "Tencent",
-            "ticker": "TCEHY",
+            "company": "Meta",
+            "ticker": "META",
             "status": "listed",
-            "relationUrl": "https://www.tencent.com",
-            "eventPublishedAt": "2026-11-04T08:00:00+08:00",
-            "eventSourceUrl": "https://aihot.news/story/491d220c-9d57-4295-af9f-e4382561b3f7"
-          },
-          "readThrough": {
-            "checkedAt": "2026-11-04T20:03:00+08:00",
-            "note": "腾讯混元发布 Hy4 正式版并计划近期开源权重，首次引入细粒度视觉推理与命令行/图形界面电脑操作能力，已在腾讯云与元宝等产品上线。",
-            "candidates": [
-              {
-                "company": "NVIDIA",
-                "ticker": "NVDA",
-                "exchange": "NASDAQ",
-                "exposure": "多模态视觉理解与长程 GUI 电脑操作智能体显著拉升单次任务 Token 与显存消耗，支撑云厂商高性能推理芯片利用率。",
-                "direction": "潜在利好",
-                "condition": "验证条件为混元 Hy4 开源后在企业级工作流与游戏研发场景获得高频调用。",
-                "sourceUrl": "https://www.nvidia.com"
-              }
-            ]
+            "relationUrl": "https://about.meta.com",
+            "eventPublishedAt": "2026-11-05T08:00:00+08:00",
+            "eventSourceUrl": "https://aihot.news/story/dfa910ce-d2f0-4f43-844a-e8798fd89b9e"
           }
         },
         {
-          "rank": 5,
+          "rank": 9,
+          "title": "百度开源ERNIE 5.5 Flash Base基座模型",
+          "heat": 120,
+          "url": "https://aihot.news/story/0c969c38-7969-4bd9-9c91-f3cdf9b4a9cd",
+          "marketLink": {
+            "company": "Baidu",
+            "ticker": null,
+            "status": "no_direct",
+            "relationUrl": "https://www.baidu.com",
+            "eventPublishedAt": "2026-11-05T08:00:00+08:00",
+            "eventSourceUrl": "https://aihot.news/story/0c969c38-7969-4bd9-9c91-f3cdf9b4a9cd"
+          }
+        },
+        {
+          "rank": 10,
           "title": "Anthropic 开源 FlashProve 可验证推理原型",
-          "heat": 176,
+          "heat": 102,
           "url": "https://aihot.news/story/f33dbd76-b66f-428a-a7ec-f89e1db4f51b",
           "marketLink": {
             "company": "Anthropic",
@@ -334,106 +434,6 @@ window.BLOOMBERG_MARKETS_DAILY = {
             "relationUrl": "https://www.anthropic.com",
             "eventPublishedAt": "2026-11-04T08:00:00+08:00",
             "eventSourceUrl": "https://aihot.news/story/f33dbd76-b66f-428a-a7ec-f89e1db4f51b"
-          },
-          "readThrough": {
-            "checkedAt": "2026-11-04T20:03:00+08:00",
-            "note": "Anthropic 开源基于 zkSNARK 的可验证推理原型 FlashProve，可在不暴露模型权重下验证回复真伪，但其 GPU 耗时高达常规 vLLM 的 70 至 95 倍。",
-            "candidates": [
-              {
-                "company": "NVIDIA",
-                "ticker": "NVDA",
-                "exchange": "NASDAQ",
-                "exposure": "密码学零知识证明推理若在金融、政务及模型安全审计场景落地，将带来高出普通推理数十倍的额外 GPU 算力需求。",
-                "direction": "潜在利好",
-                "condition": "验证条件为可验证推理算力开销进一步降低并被监管合规或企业级 API 采纳为标准配置。",
-                "sourceUrl": "https://www.nvidia.com"
-              }
-            ]
-          }
-        },
-        {
-          "rank": 6,
-          "title": "Anthropic 递交 S-1 拟以 ANT 登陆纳斯达克",
-          "heat": 142,
-          "url": "https://aihot.news/story/82c796c0-3bf1-4c3a-8368-56913b4bf85d",
-          "marketLink": {
-            "company": "Anthropic",
-            "ticker": null,
-            "status": "no_direct",
-            "relationUrl": "https://www.anthropic.com",
-            "eventPublishedAt": "2026-11-03T08:00:00+08:00",
-            "eventSourceUrl": "https://aihot.news/story/82c796c0-3bf1-4c3a-8368-56913b4bf85d"
-          },
-          "readThrough": {
-            "checkedAt": "2026-11-04T20:03:00+08:00",
-            "note": "Anthropic 更新 S-1 文件披露三季度因 50 亿美元高价短期算力与 20 亿美元员工捐赠配比转亏 5.67 亿美元，长期算力与基建合同承诺总额达 8954 亿美元。",
-            "candidates": [
-              {
-                "company": "Amazon",
-                "ticker": "AMZN",
-                "exchange": "NASDAQ",
-                "exposure": "Anthropic 高达 8954 亿美元的长期算力采购承诺（其中 4475 亿美元须在 2031 年前支付）直接锁定 AWS 与谷歌云未来五年的底层基础设施订单。",
-                "direction": "潜在利好",
-                "condition": "验证条件为 Anthropic 成功完成纳斯达克 IPO 募资并按期履约云算力采购承诺。",
-                "sourceUrl": "https://aws.amazon.com"
-              }
-            ]
-          }
-        },
-        {
-          "rank": 7,
-          "title": "Claude Code 产品负责人 Cat Wu 宣布离开 Anthropic",
-          "heat": 127,
-          "url": "https://aihot.news/story/dbad8163-0b5e-4bbf-958a-b5ba34b8f2c9",
-          "marketLink": {
-            "company": "Anthropic",
-            "ticker": null,
-            "status": "no_direct",
-            "relationUrl": "https://www.anthropic.com",
-            "eventPublishedAt": "2026-11-04T08:00:00+08:00",
-            "eventSourceUrl": "https://aihot.news/story/dbad8163-0b5e-4bbf-958a-b5ba34b8f2c9"
-          }
-        },
-        {
-          "rank": 8,
-          "title": "AMD发布三季度财报，预计2027年营收增长超80%",
-          "heat": 98,
-          "url": "https://aihot.news/story/afb1ed66-7ecc-4d15-b9d1-90b835f6e985",
-          "marketLink": {
-            "company": "AMD",
-            "ticker": "AMD",
-            "status": "listed",
-            "relationUrl": "https://www.amd.com",
-            "eventPublishedAt": "2026-11-04T08:00:00+08:00",
-            "eventSourceUrl": "https://aihot.news/story/afb1ed66-7ecc-4d15-b9d1-90b835f6e985"
-          }
-        },
-        {
-          "rank": 9,
-          "title": "OpenAI 称 ChatGPT 搜索量达 Google 两成、周活 12 亿",
-          "heat": 86,
-          "url": "https://aihot.news/story/9c7379d1-14a9-4bd6-9974-018637abc036",
-          "marketLink": {
-            "company": "OpenAI",
-            "ticker": null,
-            "status": "no_direct",
-            "relationUrl": "https://openai.com",
-            "eventPublishedAt": "2026-11-03T08:00:00+08:00",
-            "eventSourceUrl": "https://aihot.news/story/9c7379d1-14a9-4bd6-9974-018637abc036"
-          }
-        },
-        {
-          "rank": 10,
-          "title": "Canva十年来首次增长放缓，22%员工受裁员重组影响",
-          "heat": 83,
-          "url": "https://aihot.news/story/d38a33f9-5a87-4e04-b800-0c7185a28e86",
-          "marketLink": {
-            "company": "Canva",
-            "ticker": null,
-            "status": "no_direct",
-            "relationUrl": "https://www.canva.com",
-            "eventPublishedAt": "2026-11-03T08:00:00+08:00",
-            "eventSourceUrl": "https://aihot.news/story/d38a33f9-5a87-4e04-b800-0c7185a28e86"
           }
         }
       ]
