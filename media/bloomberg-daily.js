@@ -1,94 +1,94 @@
 window.BLOOMBERG_MARKETS_DAILY = {
-  "issueDate": "2026-11-13",
-  "publishedAt": "2026-11-13T10:55:22+00:00",
+  "issueDate": "2026-11-16",
+  "publishedAt": "2026-11-16T10:37:55+00:00",
   "newsletter": "Markets Daily",
-  "headline": "美债避险交易瓦解推升10年期收益率至5.13%；黄仁勋被免职后英伟达余波未平，Anthropic IPO获6倍超额认购",
-  "bloombergTake": "Bloomberg Markets Daily（2026-11-13 原刊）报道，受顽固通胀、纽约联储主席威廉姆斯等官员鹰派表态（市场预期12月、1月和3月连续三次各加息25基点）及发债供给冲击影响，美债避险交易迅速瓦解，10年期美债收益率飙升至5.13%，施罗德基金经理正做空美债；高收益率与24小时15亿美元爆仓拖累比特币跌破7万美元。黄仁勋周三晚被赶下台后，英伟达周四盘中暴跌14%引发创纪录散户抄底、收跌4.3%，周五盘前反弹2.4%，但涉事人物关联上海数据中心走私芯片及新加坡起诉第5名嫌犯加剧美中芯片出口管制博弈。Anthropic巨型IPO获约6倍超额认购，SpaceX与特斯拉合并谈判推进；微软软件大宕机盘前跌2.9%，Cerebras与微软及甲骨文合作盘前暴涨18%。以上为原刊快照，非实时行情；简报未给出统一预测。",
+  "headline": "Anthropic本周迎史上最大IPO获近7倍超额认购；英伟达震荡余波拖累芯片股，美财长贝森特敦促管理层大换血",
+  "bloombergTake": "Bloomberg Markets Daily（2026-11-16 原刊）报道，Anthropic本周迎来拟募资904亿美元（含私募）的史上最大IPO大考（周三定价、周四挂牌），知情人士称已获近7倍超额认购，在黄仁勋离开英伟达后成为检验AI交易能否延续的风向标；大摩策略师建议“最大超配”全球股票。但短期科技股抛售延续（纳指100期指跌0.9%，韩股Kospi跌3.6%，部分源于机构腾挪仓位认购Anthropic），英伟达盘前跌1.7%、美光与英特尔跌超4.6%；美财长贝森特敦促英伟达“彻底”改组领导层，而黄仁勋据报探讨回归，周二将迎换帅后首份财报。10年期美债收益率维持5.13%，比特币24小时爆仓13亿美元并跌破6.5万美元；全美逾20年最长航管停摆致超1.7万架次航班取消；中国10月经济放缓，美柴油跌破6美元/加仑。以上为原刊快照，非实时行情；简报未给出统一预测。",
   "bloombergStories": [
     {
-      "title": "美债避险交易迅速瓦解：市场计价美联储连续三次加息，10年期美债收益率飙升至5.13%",
-      "summary": "纽约联储主席威廉姆斯等官员称通胀“过高”，掉期市场预期12月、1月和3月各加息25基点；美债遭遇猛烈抛售，施罗德基金经理做空美债并称当前利率波动比疫情和金融危机时更严峻，比特币受压跌破7万美元。"
+      "title": "Anthropic本周迎904亿美元史上最大IPO大考：认购接近7倍超额，接棒成为AI交易存续风向标",
+      "summary": "投行预计周三定价、周四挂牌，知情人士称认购订单已接近可售股数的7倍；台韩芯片股今日重挫（Kospi跌3.6%）部分源于机构减持芯片股腾挪资金认购Anthropic，大摩策略师仍建议“最大超配”全球股票。"
     },
     {
-      "title": "黄仁勋遭罢免后英伟达余波未平：创纪录散户抄底难掩治理分歧，涉华芯片走私调查升级",
-      "summary": "英伟达周四开盘暴跌14%后收跌4.3%，前30分钟散户净买入创历史纪录，但大股东廖凯原称他人掌舵不会增持；涉事人物Alice Huang关联上海数据中心走私芯片、新加坡起诉第5名嫌犯，美中或迎新一轮AI芯片出口管制摊牌。"
+      "title": "美财长贝森特敦促英伟达“彻底”改组领导层，黄仁勋据报探讨回归，周二迎换帅后首份财报",
+      "summary": "即便金融时报称被罢免的黄仁勋正探讨重返公司，美国财长贝森特仍公开敦促英伟达对领导层进行大刀阔斧洗牌；科技股抛售延续至新一周，盘前英伟达跌1.7%、美光跌4.7%、英特尔跌4.6%。"
     },
     {
-      "title": "Anthropic巨型IPO获约6倍超额认购，SpaceX与特斯拉合并谈判推进或于12月官宣",
-      "summary": "知情人士透露Anthropic IPO认购订单已达可售股数的约6倍，凸显机构对头部大模型资产追捧；马斯克旗下SpaceX与特斯拉合并谈判取得进展，最早或于下月宣布史上最大并购案。"
+      "title": "比特币跌破6.5万美元触发13亿美元多头爆仓，新世界发展折价82%供股在港暴跌41%",
+      "summary": "比特币自本月8万美元上方一路滑落至64,446美元，期权交易员严防跌向6万美元，拖累Strategy盘前跌8%、Circle跌6.8%；新世界发展拟折价82%供股筹资32亿美元暴跌41%，FDA拒批康方生物与Summit肺癌新药致两者暴跌逾21%。"
     },
     {
-      "title": "微软软件大宕机盘前跌2.9%，AI芯片挑战者Cerebras携微软与甲骨文合作盘前暴涨18%",
-      "summary": "微软Outlook、Teams与Copilot故障数小时影响全球政企运营；Cerebras发布超预期销售指引并与甲骨文及微软达成合作大涨18%，三星洽购数据中心液冷商Modine推动后者飙升23%。"
+      "title": "全美逾20年最严重技术故障致航管停摆、超1.7万架次航班取消，SpaceX星舰实现首次轨道回收",
+      "summary": "美国航司正全力恢复因逾20年最长全国停飞令而瘫痪的航线网络；SpaceX在得州发射场成功捕获从轨道返回的星舰火箭，向完全可重复使用系统迈出关键里程碑，股价涨0.8%；Take-Two因周四发售《GTA VI》涨4.3%。"
     },
     {
-      "title": "IEA称全球原油市场自伊朗战争爆发以来首次转向供应过剩，布伦特原油回落至95.23美元",
-      "summary": "国际能源署（IEA）表示受海湾出口回升推动，全球油市自伊朗战争爆发以来首次出现供应过剩，缓解部分能源通胀压力，布伦特原油期货微跌0.6%报95.23美元/桶。"
+      "title": "中国10月经济数据全面放缓显示刺激尚待传导，美国零售柴油跌破6美元缓解部分通胀压力",
+      "summary": "中国10月经济增长全面弱于预期，表明最新刺激措施尚未充分传导至实体经济；美国零售柴油价格自9月初以来首次跌破6美元/加仑，高盛亦预警2027年全球油市将出现可观供应过剩。"
     }
   ],
   "overallJudgment": {
     "regime": "bearish",
     "verdict": "风险资产整体：短期利空格局",
-    "title": "美债避险功能失灵推升10年期收益率至5.13%且市场计价连续三次加息，叠加英伟达换帅后美中芯片管制升级隐忧与微软全球宕机，风险资产延续短期利空格局",
-    "deduction": "综合权衡当期全部多空因素：尽管Anthropic巨型IPO已获约6倍超额认购、SpaceX与特斯拉合并谈判取得进展、AI芯片挑战者Cerebras凭超预期指引与微软/甲骨文合作盘前暴涨18%、三星洽购液冷商Modine引爆算力基建并购，且IEA确认全球油市自伊朗战争以来首次转向供应过剩（布油回落至95.23美元）；但决定风险资产短期方向的核心定价锚正遭受“无风险利率失速上行”与“科技权重股治理及运营冲击”的双重空头压制。第一，纽约联储主席威廉姆斯等官员密集释放鹰派信号，令市场计价12月、1月和3月连续三次各加息25基点，美债避险交易彻底瓦解，10年期美债收益率飙升至5.13%（周二与周四累计涨幅创2025年4月来最大），无风险利率破位上行直接触发跨资产去杠杆（比特币24小时爆仓15亿美元并跌破7万美元）。第二，黄仁勋遭罢免后虽有散户创纪录抄底支撑英伟达盘前小幅反弹，但机构与亿万富翁股东对临时管理层持观望态度，且涉事核心人物关联中国数据中心走私AI芯片、新加坡起诉第5名嫌犯及美商务部长面临审视，令美中新一轮AI芯片出口管制摊牌风险骤升（恒指跌1.5%）。第三，微软因Outlook、Teams与Copilot长达数小时大宕机盘前跌2.9%，进一步拖累大盘科技指数，因此综合推演风险资产整体维持短期利空格局。",
-    "condition": "利空格局延续验证：10年期美债收益率维持在5.10%上方运行并继续计价三次加息，或美国商务部针对英伟达事件出台更严厉的对华AI芯片出口限制；向利多格局逆转条件：通胀与就业数据降温推动10年期美债收益率回落至5.00%下方，同时Anthropic高倍认购顺利完成定价并带动AI算力与软件板块企稳。"
+    "title": "英伟达治理博弈升级叠加Anthropic巨型IPO引发亚洲芯片股抽血效应，10年期美债收益率高位持稳5.13%且加密市场连环爆仓，风险资产延续短期利空格局",
+    "deduction": "综合权衡当期全部多空因素：尽管Anthropic拟募资904亿美元的史上最大IPO已获近7倍超额认购、摩根士丹利高呼2027年拥抱风险并建议“最大超配”全球股票、SpaceX成功捕获轨道返回的星舰火箭、Take-Two受周四《GTA VI》发售提振大涨4.3%，且美国零售柴油跌破6美元/加仑配合高盛预警2027年油市过剩缓和了远期能源通胀压力；但风险资产短期定价仍受三大空头主线压制。第一，英伟达治理危机进入白热化博弈，美国财长贝森特公开施压要求“彻底”改组领导层，与试图探讨回归的黄仁勋及联署请愿的股东员工形成尖锐对立，令周二盘后英伟达财报面临极高不确定性，直接拖累纳指100期指跌0.9%、盘前美光与英特尔跌超4.6%。第二，Anthropic周四挂牌前夕引发明显的“流动性虹吸效应”，机构为腾挪仓位认购新股而大举抛售亚洲半导体权重股（韩国Kospi重挫3.6%）。第三，10年期美债收益率在高位5.13%企稳，高利率环境继续挤压高贝塔资产泡沫（比特币跌破6.5万美元、24小时多头爆仓13亿美元），叠加中国10月经济数据全面弱于预期及全美逾1.7万架次航班取消冲击服务业活动，因此综合推演风险资产整体维持短期利空格局。",
+    "condition": "利空格局延续验证：周二英伟达财报指引或管理层表态未能平息政商界对其治理与对华合规的质疑，或10年期美债收益率维持5.10%上方且比特币跌破6万美元关口；向利多格局逆转条件：周二英伟达财报与周三Anthropic IPO定价双双超预期并带动半导体止跌回升，同时周二美国10月零售销售数据温和回落促使美债收益率下行。"
   },
-  "sourceUrl": "https://www.bloomberg.com/news/newsletters/2026-11-13/that-haven-trade-in-treasury-bonds-didn-t-last-long",
+  "sourceUrl": "https://www.bloomberg.com/news/newsletters/2026-11-16/anthropic-holds-the-key-to-the-future-of-the-ai-trade",
   "mediaFocus": {
     "barrons": {
-      "captureDate": "2026-11-13",
-      "capturedAt": "2026-11-13T20:01:30+08:00",
-      "summary": "Barron's 首页聚焦英伟达即便深陷危机仍值得买入的估值逻辑、后黄仁勋时代的两大积极因素与一大核心威胁、英伟达公司债保持稳健但需紧盯临时 CEO 表现、无需持有英伟达也能跑赢标普 500 的 ETF 策略、AI 交易旧范式终结后的新赢家、微软软件大宕机在敏感时刻冲击股价、Texas Pacific Land 逆势投资机会、信用卡利率 10% 上限潜在影响、新兴市场消费高负债隐忧，以及 Cerebras 携手微软实现客户多元化。",
+      "captureDate": "2026-11-16",
+      "capturedAt": "2026-11-16T21:14:30+08:00",
+      "summary": "Barron's 首页聚焦美股迎来年内最艰难一周且成败始于英伟达财报、英伟达无需黄仁勋也能蓬勃发展的长线逻辑、黄仁勋丑闻令中美贸易休战岌岌可危、美联储加息周期恐延续至 2027 年、SpaceX 星舰回收测试难振短期股价、全美停飞乱局冲击航空股、“金融虚无主义”驱使年轻投资者涌入高风险投机、比特币暴跌拖累 Coinbase 与 Strategy、小鹏汽车财报大涨但电动车仍处亏损，以及美光面临强劲存储价格难抵估值回调的困境。",
       "stories": [
         {
-          "title": "即便深陷治理危机，英伟达股票目前依然值得买入",
-          "summary": "尽管创始人黄仁勋突遭罢免引发剧烈震荡，但英伟达在算力生态的护城河与回调后的估值水平仍为长线投资者提供了罕见买点。",
-          "url": "https://www.barrons.com/articles/jensen-huang-buy-nvidia-stock-ee276ed1"
+          "title": "美股迎来迄今最严峻一周大考，而一切都将从英伟达财报开始",
+          "summary": "在创始人突遭罢免与 AI 算力轮动剧震之际，英伟达周二盘后财报与 Anthropic 本周上市将共同决定美股年底走向。",
+          "url": "https://www.barrons.com/articles/stock-market-nvidia-earnings-huang-664a194c"
         },
         {
-          "title": "“后黄仁勋时代”的英伟达：两大积极信号与一大核心威胁",
-          "summary": "剖析新管理层规范公司治理与深厚技术储备带来的两大正面支撑，以及核心客户加速转向自研芯片或竞争对手的潜在威胁。",
-          "url": "https://www.barrons.com/articles/nvidia-stock-price-today-jensen-huang-83183f5d"
+          "title": "英伟达股票并不需要依靠黄仁勋一人也能继续蓬勃发展",
+          "summary": "尽管市场围绕黄仁勋能否回归争论不休，但英伟达在 CUDA 软件栈与 Blackwell/Rubin 硬件路线图的深厚壁垒足以支撑后创始人时代增长。",
+          "url": "https://www.barrons.com/articles/nvidia-stock-price-jensen-huang-comeback-9b6e1ebd"
         },
         {
-          "title": "英伟达公司债表现稳健，但债权人正密切审视临时 CEO 的下一步",
-          "summary": "信用市场尚未对管理层剧变计价违约风险，但固定收益投资者高度关注临时领导层能否稳定供应链并应对潜在地缘合规调查。",
-          "url": "https://www.barrons.com/articles/nvidia-bonds-jensen-huang-ceo-credit-risk-9fc0d593"
+          "title": "英伟达涉华丑闻正令中美贸易休战面临破裂危险",
+          "summary": "涉事人物关联上海数据中心走私芯片及财长贝森特强硬表态，使华盛顿对华技术出口鹰派再度占据上风，威胁双边经贸缓和。",
+          "url": "https://www.barrons.com/articles/nvidia-china-united-states-trade-jensen-huang-7f5879f9"
         },
         {
-          "title": "这些 ETF 证明：你不需要持有英伟达也能跑赢标普 500 指数",
-          "summary": "盘点通过等权重配置、精选金融工业及非英伟达半导体标的，在规避单一大盘科技股关键人风险的同时实现超额收益的 ETF 组合。",
-          "url": "https://www.barrons.com/articles/etfs-beating-sp500-without-nvidia-stock-97ea9f52"
+          "title": "顽固通胀迫使美联储加息周期恐一路延续至 2027 年",
+          "summary": "随着服务业通胀粘性与关税传导显现，利率掉期市场不仅计价今年 12 月加息，更开始押注紧缩周期将贯穿 2027 年上半年。",
+          "url": "https://www.barrons.com/articles/stocks-federal-reserve-raise-rates-2027-75495620"
         },
         {
-          "title": "我们所熟知的 AI 交易已然终结，接下来谁将如鱼得水？",
-          "summary": "随着“无脑买入英伟达”的单极阶段落幕，资金正加速轮动至 Anthropic 等头部大模型应用商以及定制 ASIC 与多元算力挑战者。",
-          "url": "https://www.barrons.com/articles/ai-trade-nvidia-anthropic-winners-losers-f1fae417"
+          "title": "SpaceX 星舰火箭成功完成轨道回收测试，但仍不足以大幅提振股价",
+          "summary": "虽然得州发射塔成功捕获返回地球的星舰验证了完全可复用技术，但投资者仍聚焦于高昂资本开支与特斯拉合并案的换股博弈。",
+          "url": "https://www.barrons.com/articles/spacex-stock-starship-rocket-launch-ec692e2b"
         },
         {
-          "title": "微软软件大宕机在敏感时刻冲击股价，加剧云业务可靠性审视",
-          "summary": "Outlook、Teams 与 Copilot 服务中断长达数小时，令正处于 AI 资本开支回报考量的微软面临企业客户信任度与股价双重压力。",
-          "url": "https://www.barrons.com/articles/microsoft-stock-office-outage-365-a8356c9e"
+          "title": "全美地面停飞乱局导致超 1.7 万架次航班取消，航空股集体受挫下跌",
+          "summary": "逾二十年来最严重的技术相关全国航管停摆打乱了感恩节前夕的出行排班，美联航与达美航空等面临高额赔付及运营成本上升。",
+          "url": "https://www.barrons.com/articles/united-stock-airlines-ground-stop-65cd02fb"
         },
         {
-          "title": "Texas Pacific Land：在市场悲观预期中浮现的能源土地资产投资良机",
-          "summary": "中期选举蓝色浪潮后能源板块情绪承压，但公司独特的二叠纪盆地特许权使用费与水务商业模式仍具备长期高现金流回报潜力。",
-          "url": "https://www.barrons.com/articles/the-blue-wave-crashed-on-texas-pacific-land-that-could-be-an-opportunity-1302c677"
+          "title": "“金融虚无主义”正驱使美国年轻一代投资者大举涌入高风险投机资产",
+          "summary": "高房价与生活成本压力令年轻群体对传统长期储蓄失去信心，转而涌向预测市场永续合约、高杠杆期权及加密代币寻求暴富机会。",
+          "url": "https://www.barrons.com/articles/financial-nihilism-risky-investing-5cb16404"
         },
         {
-          "title": "如果将信用卡利率上限设定为 10%？每年或为消费者节省 1000 亿美元",
-          "summary": "评估华盛顿推动信用卡利率封顶立法的现实路径，此举虽有望大幅减轻美国家庭利息负担，但将严重冲击发卡行利润并收紧信贷可得性。",
-          "url": "https://www.barrons.com/articles/lower-credit-card-rates-consumers-cd7a3396"
+          "title": "比特币价格连续重挫失守 6.5 万美元，拖累 Coinbase 与 Strategy 股价同步大跌",
+          "summary": "国债收益率突破 5.1% 与逾十亿美元杠杆多头平仓重创加密市场，高杠杆囤币巨头 Strategy 盘前再挫 8%。",
+          "url": "https://www.barrons.com/articles/bitcoin-prices-strategy-coinbase-f7d3191e"
         },
         {
-          "title": "新兴市场消费热潮背后暗藏巨额家庭债务隐忧",
-          "summary": "数字信贷扩张虽推动拉美与亚洲新兴经济体消费增长，但高利率环境下居民部门偿债比率攀升正引发银行坏账上升风险。",
-          "url": "https://www.barrons.com/articles/consumer-spending-emerging-markets-banking-debt-2c04a516"
+          "title": "小鹏汽车财报超预期带动股价跳涨，但纯电车业务整体仍未摆脱亏损泥潭",
+          "summary": "大众汽车技术合作收入与新车型交付量增长改善了毛利率表现，但激烈的价格战仍令中国造车新势力盈利拐点承压。",
+          "url": "https://www.barrons.com/articles/xpeng-earnings-stock-price-tesla-b64907eb"
         },
         {
-          "title": "Cerebras 新增微软战略合作，加速推进 OpenAI 以外的客户多元化",
-          "summary": "晶圆级 AI 芯片新秀 Cerebras 公布强劲销售指引并携手微软与甲骨文，显著降低单一客户依赖度并引爆股价盘前大涨。",
-          "url": "https://www.barrons.com/articles/cerebras-earnings-stock-price-3bad09cc"
+          "title": "美光科技股票审视：为何强劲的存储芯片价格在当前抛售潮中可能无济于事",
+          "summary": "尽管 HBM 内存供不应求，但在英伟达管理层震荡与机构腾挪资金认购 Anthropic IPO 的背景下，存储周期股估值仍面临下修。",
+          "url": "https://www.barrons.com/articles/micron-stock-price-memory-chips-429adf7e"
         }
       ]
     },
@@ -125,72 +125,72 @@ window.BLOOMBERG_MARKETS_DAILY = {
       ]
     },
     "aihot": {
-      "boardUpdatedAt": "2026-11-13T20:00:00+08:00",
-      "captureDate": "2026-11-13",
-      "capturedAt": "2026-11-13T20:01:45+08:00",
+      "boardUpdatedAt": "2026-11-16T21:10:00+08:00",
+      "captureDate": "2026-11-16",
+      "capturedAt": "2026-11-16T21:14:45+08:00",
       "windowHours": 48,
       "sourceUrl": "https://aihot.news/hot",
       "market": {
-        "checkedAt": "2026-11-13T20:02:00+08:00",
+        "checkedAt": "2026-11-16T21:15:00+08:00",
         "benchmark": {
-          "sessionDate": "2026-11-12",
-          "previousSessionDate": "2026-11-11",
-          "close": 7592.4,
-          "previousClose": 7619.38,
+          "sessionDate": "2026-11-13",
+          "previousSessionDate": "2026-11-12",
+          "close": 7561.67,
+          "previousClose": 7592.4,
           "sources": [
             "https://finance.yahoo.com/quote/%5EGSPC",
             "https://www.google.com/finance/quote/.INX:INDEXSP"
           ]
         },
         "quotes": {
+          "BABA": {
+            "sessionDate": "2026-11-13",
+            "previousSessionDate": "2026-11-12",
+            "close": 94.38,
+            "previousClose": 94.36,
+            "sources": [
+              "https://finance.yahoo.com/quote/BABA",
+              "https://www.google.com/finance/quote/BABA:NYSE"
+            ]
+          },
           "NVDA": {
-            "sessionDate": "2026-11-12",
-            "previousSessionDate": "2026-11-11",
-            "close": 166.19,
-            "previousClose": 173.73,
+            "sessionDate": "2026-11-13",
+            "previousSessionDate": "2026-11-12",
+            "close": 162.85,
+            "previousClose": 166.19,
             "sources": [
               "https://finance.yahoo.com/quote/NVDA",
               "https://www.google.com/finance/quote/NVDA:NASDAQ"
             ]
           },
-          "MSFT": {
-            "sessionDate": "2026-11-12",
-            "previousSessionDate": "2026-11-11",
-            "close": 523,
-            "previousClose": 521.13,
+          "TCEHY": {
+            "sessionDate": "2026-11-13",
+            "previousSessionDate": "2026-11-12",
+            "close": 49.74,
+            "previousClose": 50.12,
             "sources": [
-              "https://finance.yahoo.com/quote/MSFT",
-              "https://www.google.com/finance/quote/MSFT:NASDAQ"
+              "https://finance.yahoo.com/quote/TCEHY",
+              "https://www.google.com/finance/quote/TCEHY:OTCMKTS"
             ]
           },
           "GOOGL": {
-            "sessionDate": "2026-11-12",
-            "previousSessionDate": "2026-11-11",
-            "close": 298.7,
-            "previousClose": 293.45,
+            "sessionDate": "2026-11-13",
+            "previousSessionDate": "2026-11-12",
+            "close": 295.77,
+            "previousClose": 298.7,
             "sources": [
               "https://finance.yahoo.com/quote/GOOGL",
               "https://www.google.com/finance/quote/GOOGL:NASDAQ"
             ]
           },
-          "AMZN": {
-            "sessionDate": "2026-11-12",
-            "previousSessionDate": "2026-11-11",
-            "close": 267.44,
-            "previousClose": 266.17,
+          "AAPL": {
+            "sessionDate": "2026-11-13",
+            "previousSessionDate": "2026-11-12",
+            "close": 356.27,
+            "previousClose": 354.88,
             "sources": [
-              "https://finance.yahoo.com/quote/AMZN",
-              "https://www.google.com/finance/quote/AMZN:NASDAQ"
-            ]
-          },
-          "BIDU": {
-            "sessionDate": "2026-11-12",
-            "previousSessionDate": "2026-11-11",
-            "close": 77.63,
-            "previousClose": 79.76,
-            "sources": [
-              "https://finance.yahoo.com/quote/BIDU",
-              "https://www.google.com/finance/quote/BIDU:NASDAQ"
+              "https://finance.yahoo.com/quote/AAPL",
+              "https://www.google.com/finance/quote/AAPL:NASDAQ"
             ]
           }
         }
@@ -198,8 +198,37 @@ window.BLOOMBERG_MARKETS_DAILY = {
       "stories": [
         {
           "rank": 1,
-          "title": "黄仁勋辞任英伟达CEO并退出董事会",
-          "heat": 797,
+          "title": "阿里发布 Qwen4-Max，预览版先行接入多产品",
+          "heat": 346,
+          "url": "https://aihot.news/story/6b019bba-08b7-42da-8fe4-769d638f5ba7",
+          "marketLink": {
+            "company": "Alibaba",
+            "ticker": "BABA",
+            "status": "listed",
+            "relationUrl": "https://www.alibabagroup.com",
+            "eventPublishedAt": "2026-11-16T08:00:00+08:00",
+            "eventSourceUrl": "https://aihot.news/story/6b019bba-08b7-42da-8fe4-769d638f5ba7"
+          },
+          "readThrough": {
+            "checkedAt": "2026-11-16T21:15:00+08:00",
+            "note": "阿里正式发布 2.4 万亿参数稀疏 MoE 旗舰模型 Qwen4-Max（每 token 激活 71B、原生视觉与 1M 上下文），单任务平均成本较 Qwen3.8-Max 下降逾 60%，已接入千问 App、千问办公与 Qoder。",
+            "candidates": [
+              {
+                "company": "Alibaba",
+                "ticker": "BABA",
+                "exchange": "NYSE",
+                "exposure": "Qwen4-Max 大幅降低复杂企业工作流单任务 Token 消耗成本并全系接入千问办公生态，有助提振阿里云 MaaS 调用量与付费会员转化。",
+                "direction": "潜在利好",
+                "condition": "验证条件为阿里云 AI 相关收入占比持续提升及企业客户 Token Plan 续费率超预期。",
+                "sourceUrl": "https://www.alibabacloud.com"
+              }
+            ]
+          }
+        },
+        {
+          "rank": 2,
+          "title": "黄仁勋辞任英伟达CEO，CFO克雷斯临时接任",
+          "heat": 191,
           "url": "https://aihot.news/story/d01448e7-e6ef-4224-9e13-5f4b350dd6ed",
           "marketLink": {
             "company": "NVIDIA",
@@ -210,220 +239,191 @@ window.BLOOMBERG_MARKETS_DAILY = {
             "eventSourceUrl": "https://aihot.news/story/d01448e7-e6ef-4224-9e13-5f4b350dd6ed"
           },
           "readThrough": {
-            "checkedAt": "2026-11-13T20:02:00+08:00",
-            "note": "英伟达宣布黄仁勋辞任总裁兼 CEO 及董事职务（就未按董事会政策披露个人关系致歉），联合创始人 Chris Malachowsky 出任临时 CEO、执行副总裁 Puri 与 Kress 任临时联席总裁，董事会已委托外部机构寻找正式 CEO。",
+            "checkedAt": "2026-11-16T21:15:00+08:00",
+            "note": "英伟达宣布黄仁勋辞去 CEO 及董事职务，管理层过渡与涉华芯片走私及高风险算力担保调查持续发酵，美财长贝森特公开敦促公司对领导层进行彻底改组。",
             "candidates": [
               {
                 "company": "NVIDIA",
                 "ticker": "NVDA",
                 "exchange": "NASDAQ",
-                "exposure": "创始人卸任引发历史级治理震荡与涉华芯片走私合规审视，虽有散户抄底支撑但大客户算力分流与出口管制风险升温。",
+                "exposure": "管理层震荡与美国财政部、商务部审查叠加周二盘后财报大考，短期关键人折价与政策不确定性依然突出。",
                 "direction": "风险观察",
-                "condition": "验证条件为正式 CEO 遴选进展、核心云厂商订单留存率及美国商务部是否追加出口限制。",
+                "condition": "验证条件为周二盘后财报对 Blackwell/Rubin 交付指引及董事会对正式 CEO 安排的说明。",
                 "sourceUrl": "https://www.nvidia.com"
               }
             ]
           }
         },
         {
-          "rank": 2,
-          "title": "Google 发布 Gemini 4 Hydrogen，接入搜索与编程工具",
-          "heat": 505,
-          "url": "https://aihot.news/story/2ff1f46f-7e98-4965-a5b2-87329632ca5d",
-          "marketLink": {
-            "company": "Alphabet",
-            "ticker": "GOOGL",
-            "status": "listed",
-            "relationUrl": "https://deepmind.google/technologies/gemini/",
-            "eventPublishedAt": "2026-11-12T20:00:00+08:00",
-            "eventSourceUrl": "https://aihot.news/story/2ff1f46f-7e98-4965-a5b2-87329632ca5d"
-          },
-          "readThrough": {
-            "checkedAt": "2026-11-13T20:02:00+08:00",
-            "note": "Google 发布轻量高速模型 Gemini 4 Hydrogen（设为 Gemini 应用默认模型并支撑 Google 搜索 AI 概览与 AI 模式），API 输入/输出每百万 token 仅 0.50/3.00 美元，SWE-Bench Verified 得 80.2% 超越 Gemini 3.5 Pro。",
-            "candidates": [
-              {
-                "company": "Alphabet",
-                "ticker": "GOOGL",
-                "exchange": "NASDAQ",
-                "exposure": "以极低推理成本实现超越前代旗舰的编程与工具调用能力，显著降低 Google 搜索 AI 概览单次查询成本并提振 Vertex AI 开发者采用率。",
-                "direction": "潜在利好",
-                "condition": "验证条件为搜索 AI 模式单次推理成本下降带动营业利润率扩张及云 API 调用量放量。",
-                "sourceUrl": "https://deepmind.google/technologies/gemini/"
-              }
-            ]
-          }
-        },
-        {
           "rank": 3,
-          "title": "Anthropic 向 Team 和 Enterprise 推出 Claude Meetings beta",
-          "heat": 167,
-          "url": "https://aihot.news/story/dad94af2-7539-4652-a661-03cc5494c71b",
+          "title": "NVIDIA员工与投资者施压董事会，董事会另寻继任者",
+          "heat": 159,
+          "url": "https://aihot.news/story/68ccf963-6e38-4e86-b2f3-289bd70774fb",
           "marketLink": {
-            "company": "Anthropic",
-            "ticker": null,
-            "status": "no_direct",
-            "relationUrl": "https://www.anthropic.com",
-            "eventPublishedAt": "2026-11-12T20:00:00+08:00",
-            "eventSourceUrl": "https://aihot.news/story/dad94af2-7539-4652-a661-03cc5494c71b"
+            "company": "NVIDIA",
+            "ticker": "NVDA",
+            "status": "listed",
+            "relationUrl": "https://www.nvidia.com",
+            "eventPublishedAt": "2026-11-15T08:00:00+08:00",
+            "eventSourceUrl": "https://aihot.news/story/68ccf963-6e38-4e86-b2f3-289bd70774fb"
           },
           "readThrough": {
-            "checkedAt": "2026-11-13T20:02:00+08:00",
-            "note": "Anthropic 面向 Team 和 Enterprise 客户推出桌面端会议助手 Claude Meetings beta，无需机器人入会即可实时转录、查证材料并在会后自动更新文档、起草跟进邮件与派发任务。",
+            "checkedAt": "2026-11-16T21:15:00+08:00",
+            "note": "数百名英伟达员工与多位知名机构投资者致信施压董事会保留黄仁勋回归可能，而 FT 报道董事会已接触 Arm CEO Rene Haas 作为潜在继任人选之一，WSJ 则指罢免亦涉及对 AI 云商高风险融资担保。",
             "candidates": [
               {
-                "company": "Microsoft",
-                "ticker": "MSFT",
+                "company": "NVIDIA",
+                "ticker": "NVDA",
                 "exchange": "NASDAQ",
-                "exposure": "Claude Meetings 直接切入实时会议伴侣与会后自动化工作流，叠加当日 Teams/Copilot 宕机事件，加剧对 Microsoft 365 Copilot 的席位竞争。",
+                "exposure": "内部员工联署威胁离职与董事会外部猎头选帅形成拉锯，若核心研发骨干流失或算力融资担保收紧将直接冲击远期增长。",
                 "direction": "风险观察",
-                "condition": "验证条件为企业客户在会议协同场景对 Claude Enterprise 与 Teams Copilot 的续费与增购倾斜度。",
-                "sourceUrl": "https://www.microsoft.com/en-us/microsoft-365/copilot"
+                "condition": "验证条件为研发团队稳定性及周二财报电话会是否披露对 AI 云厂商担保敞口细节。",
+                "sourceUrl": "https://www.nvidia.com"
               }
             ]
           }
         },
         {
           "rank": 4,
-          "title": "Google发布Gemini Decision 1决策模型与Decisions API",
-          "heat": 150,
-          "url": "https://aihot.news/story/8febc4b1-e8fa-4418-97c6-eb03dfa73f42",
+          "title": "腾讯混元发布 Hy4 flash，WorkBuddy 与 OpenCode 接入",
+          "heat": 157,
+          "url": "https://aihot.news/story/f54f5245-d324-4798-af1d-ca328fcdf9f3",
           "marketLink": {
-            "company": "Alphabet",
-            "ticker": "GOOGL",
+            "company": "Tencent",
+            "ticker": "TCEHY",
             "status": "listed",
-            "relationUrl": "https://ai.google.dev",
-            "eventPublishedAt": "2026-11-11T20:00:00+08:00",
-            "eventSourceUrl": "https://aihot.news/story/8febc4b1-e8fa-4418-97c6-eb03dfa73f42"
+            "relationUrl": "https://www.tencent.com",
+            "eventPublishedAt": "2026-11-15T08:00:00+08:00",
+            "eventSourceUrl": "https://aihot.news/story/f54f5245-d324-4798-af1d-ca328fcdf9f3"
           },
           "readThrough": {
-            "checkedAt": "2026-11-13T20:02:00+08:00",
-            "note": "Google 发布由 Gemini Decision 1 驱动的 Decisions API（耗时 150–250ms，每百万输入 token 0.10 美元、输出免费），专为高频分类、欺诈检测与工作流路由设计。",
+            "checkedAt": "2026-11-16T21:15:00+08:00",
+            "note": "腾讯混元发布 224B 参数（每 token 激活 12B）的高性价比多模态模型 Hy4 flash，API 定价低至每百万 token 输入 0.5 元/输出 2 元，单任务成本约为 Hy4 的 5%，已接入 WorkBuddy 与 OpenCode。",
             "candidates": [
               {
-                "company": "Alphabet",
-                "ticker": "GOOGL",
-                "exchange": "NASDAQ",
-                "exposure": "毫秒级结构化决策 API 切入企业高频审核与风控生产管线，拓宽 Google Cloud AI 商业化边界。",
+                "company": "Tencent",
+                "ticker": "0700.HK",
+                "exchange": "HKEX",
+                "exposure": "极低推理成本推动 WorkBuddy 与微信生态高频日常生产力 Agent 普及，强化腾讯在企业办公与开发者工具端的用户粘性。",
                 "direction": "潜在利好",
-                "condition": "验证条件为企业生产环境大规模接入 Decisions API 并拉动云收入增长。",
-                "sourceUrl": "https://ai.google.dev"
+                "condition": "验证条件为 WorkBuddy 免费额度转积分付费后的商业化留存率与云 API 收入增量。",
+                "sourceUrl": "https://cloud.tencent.com"
               }
             ]
           }
         },
         {
           "rank": 5,
-          "title": "Anthropic启动IPO路演，估值预期回落至1.25–1.75万亿美元",
-          "heat": 131,
-          "url": "https://aihot.news/story/82c796c0-3bf1-4c3a-8368-56913b4bf85d",
+          "title": "Anthropic 发布 Fable 5.2 与 Mythos 5.2，多项评测登顶",
+          "heat": 90,
+          "url": "https://aihot.news/story/760e0591-91c2-4b7a-aea8-5a33ba5d86b1",
           "marketLink": {
             "company": "Anthropic",
             "ticker": null,
             "status": "no_direct",
             "relationUrl": "https://www.anthropic.com",
             "eventPublishedAt": "2026-11-10T08:00:00+08:00",
-            "eventSourceUrl": "https://aihot.news/story/82c796c0-3bf1-4c3a-8368-56913b4bf85d"
+            "eventSourceUrl": "https://aihot.news/story/760e0591-91c2-4b7a-aea8-5a33ba5d86b1"
           },
           "readThrough": {
-            "checkedAt": "2026-11-13T20:02:00+08:00",
-            "note": "Anthropic 启动纳斯达克 IPO 路演（代码 ANT，发行价区间 70–78 美元，连同基石私募总融资最高达 904 亿美元），彭博报道其公开认购订单已获约 6 倍超额认购。",
+            "checkedAt": "2026-11-16T21:15:00+08:00",
+            "note": "Anthropic 在本周四纳斯达克挂牌前夕推出 Fable 5.2（API 降价 20% 至 8/40 美元）与 Mythos 5.2，在智能指数 v5、WebDev 及 Robotics 评测全面登顶，支撑其 IPO 获近 7 倍超额认购。",
             "candidates": [
               {
-                "company": "Amazon",
-                "ticker": "AMZN",
+                "company": "Alphabet",
+                "ticker": "GOOGL",
                 "exchange": "NASDAQ",
-                "exposure": "作为核心云合作伙伴与重要股东，Anthropic 获约 6 倍超额认购与近 900 亿美元融资将巩固 AWS Bedrock 大模型算力长约兑现。",
+                "exposure": "作为核心股东、基石投资者及 Google Cloud/TPU 算力供应商，Anthropic 模型登顶与周四高倍认购上市将带来投资重估与云订单兑现。",
                 "direction": "潜在利好",
-                "condition": "验证条件为 Anthropic 下周按区间上限完成 IPO 定价并维持强劲二级市场表现。",
-                "sourceUrl": "https://aws.amazon.com/bedrock/claude/"
+                "condition": "验证条件为周三 Anthropic IPO 顺利按高位定价并在周四首日交易表现稳健。",
+                "sourceUrl": "https://cloud.google.com"
               }
             ]
           }
         },
         {
           "rank": 6,
-          "title": "李彦宏在百度世界2026提出“智能组织”",
-          "heat": 96,
-          "url": "https://aihot.news/story/ee2e9a50-8def-4105-994e-06f5d0926408",
+          "title": "苹果联合 OpenEvidence 启动健康 AI 使用研究",
+          "heat": 86,
+          "url": "https://aihot.news/story/191bfb56-33e5-4bfb-847f-c387d9c59be1",
           "marketLink": {
-            "company": "Baidu",
-            "ticker": "BIDU",
+            "company": "Apple",
+            "ticker": "AAPL",
             "status": "listed",
-            "relationUrl": "https://www.baidu.com",
-            "eventPublishedAt": "2026-11-12T08:00:00+08:00",
-            "eventSourceUrl": "https://aihot.news/story/ee2e9a50-8def-4105-994e-06f5d0926408"
+            "relationUrl": "https://www.apple.com",
+            "eventPublishedAt": "2026-11-15T08:00:00+08:00",
+            "eventSourceUrl": "https://aihot.news/story/191bfb56-33e5-4bfb-847f-c387d9c59be1"
           },
           "readThrough": {
-            "checkedAt": "2026-11-13T20:02:00+08:00",
-            "note": "李彦宏在百度世界 2026 提出“智能组织”概念（人类设定方向与拍板，碳基员工与硅基智能体按 1:N 协同执行），并展示企业级智能体平台“千帆悟空”及文心一言 6.0、萝卜快跑最新进展。",
+            "checkedAt": "2026-11-16T21:15:00+08:00",
+            "note": "苹果联合医疗 AI 公司 OpenEvidence 在美启动为期 12 个月、拟招募最多 20 万名 iOS 26 及以上 iPhone 用户的 Apple Health AI 使用研究，探索对话式健康 AI 交互与准确性。",
             "candidates": [
               {
-                "company": "Baidu",
-                "ticker": "BIDU",
+                "company": "Apple",
+                "ticker": "AAPL",
                 "exchange": "NASDAQ",
-                "exposure": "千帆悟空与文心一言 6.0 聚焦企业级多智能体编排落地，但在美中芯片管制收紧预期与国内云厂商价格战下短期股价仍承压回调。",
-                "direction": "方向待确认",
-                "condition": "验证条件为千帆悟空企业付费转化率提升并带动百度智能云季度营收加速增长。",
-                "sourceUrl": "https://cloud.baidu.com"
+                "exposure": "健康医疗是 Apple Intelligence 与穿戴设备订阅生态最具差异化的高粘性场景，大规模真实世界研究为后续推出合规健康 AI 助手铺路。",
+                "direction": "潜在利好",
+                "condition": "验证条件为研究转化为 iOS 与 Apple Watch 付费健康 AI 服务并拉动硬件换机。",
+                "sourceUrl": "https://www.apple.com/health/"
               }
             ]
           }
         },
         {
           "rank": 7,
-          "title": "豆包工作向企业开放第三方模型并推限时优惠",
-          "heat": 96,
-          "url": "https://aihot.news/story/60c71184-5d0c-4286-94d2-52e32d087f39",
-          "marketLink": {
-            "company": "ByteDance",
-            "ticker": null,
-            "status": "no_direct",
-            "relationUrl": "https://www.bytedance.com",
-            "eventPublishedAt": "2026-11-12T08:00:00+08:00",
-            "eventSourceUrl": "https://aihot.news/story/60c71184-5d0c-4286-94d2-52e32d087f39"
-          }
-        },
-        {
-          "rank": 8,
-          "title": "前OpenAI工程师称四家中国AI实验室用Blackwell训练模型",
-          "heat": 85,
-          "url": "https://aihot.news/story/d7ab817c-174b-469d-8150-f55f492570e4",
+          "title": "马斯克等联署请愿要求英伟达恢复黄仁勋职务",
+          "heat": 82,
+          "url": "https://aihot.news/story/aef05bb0-3b6a-4fb9-a717-a5a5aee6ba5c",
           "marketLink": {
             "company": "NVIDIA",
             "ticker": "NVDA",
             "status": "listed",
             "relationUrl": "https://www.nvidia.com",
-            "eventPublishedAt": "2026-11-12T08:00:00+08:00",
-            "eventSourceUrl": "https://aihot.news/story/d7ab817c-174b-469d-8150-f55f492570e4"
+            "eventPublishedAt": "2026-11-15T08:00:00+08:00",
+            "eventSourceUrl": "https://aihot.news/story/aef05bb0-3b6a-4fb9-a717-a5a5aee6ba5c"
+          }
+        },
+        {
+          "rank": 8,
+          "title": "豆包工作上线「工作台」功能",
+          "heat": 78,
+          "url": "https://aihot.news/story/7d88a903-9f3a-422d-832c-a253f28def8d",
+          "marketLink": {
+            "company": "ByteDance",
+            "ticker": null,
+            "status": "no_direct",
+            "relationUrl": "https://www.bytedance.com",
+            "eventPublishedAt": "2026-11-15T08:00:00+08:00",
+            "eventSourceUrl": "https://aihot.news/story/7d88a903-9f3a-422d-832c-a253f28def8d"
           }
         },
         {
           "rank": 9,
-          "title": "美联航封禁个人AI智能体代客订票",
-          "heat": 76,
-          "url": "https://aihot.news/story/532d299f-c029-4fd3-8dcf-d821dd59a569",
+          "title": "韩国税务师考试头名承认用AI作弊，政府扩大调查",
+          "heat": 74,
+          "url": "https://aihot.news/story/dbbc8a4e-38b0-4ece-a3da-f584e55c7813",
           "marketLink": {
-            "company": "United Airlines",
-            "ticker": "UAL",
-            "status": "listed",
-            "relationUrl": "https://www.united.com",
-            "eventPublishedAt": "2026-11-12T08:00:00+08:00",
-            "eventSourceUrl": "https://aihot.news/story/532d299f-c029-4fd3-8dcf-d821dd59a569"
+            "company": "South Korea NTS Exam",
+            "ticker": null,
+            "status": "no_direct",
+            "relationUrl": "https://aihot.news/story/dbbc8a4e-38b0-4ece-a3da-f584e55c7813",
+            "eventPublishedAt": "2026-11-15T08:00:00+08:00",
+            "eventSourceUrl": "https://aihot.news/story/dbbc8a4e-38b0-4ece-a3da-f584e55c7813"
           }
         },
         {
           "rank": 10,
-          "title": "DeepMind 发布 AlphaGenome 2 基因组模型",
-          "heat": 71,
-          "url": "https://aihot.news/story/315f4328-e4b0-4d44-bc5e-e317e0b0f8f6",
+          "title": "腾讯总办LinkTime笔记：全业务面向AI再创业",
+          "heat": 70,
+          "url": "https://aihot.news/story/54299132-eb8d-42fc-a933-d37148d0fe17",
           "marketLink": {
-            "company": "Alphabet",
-            "ticker": "GOOGL",
+            "company": "Tencent",
+            "ticker": "TCEHY",
             "status": "listed",
-            "relationUrl": "https://deepmind.google",
-            "eventPublishedAt": "2026-11-12T08:00:00+08:00",
-            "eventSourceUrl": "https://aihot.news/story/315f4328-e4b0-4d44-bc5e-e317e0b0f8f6"
+            "relationUrl": "https://www.tencent.com",
+            "eventPublishedAt": "2026-11-15T08:00:00+08:00",
+            "eventSourceUrl": "https://aihot.news/story/54299132-eb8d-42fc-a933-d37148d0fe17"
           }
         }
       ]
