@@ -67,10 +67,12 @@
     "宏观焦点": "Macro focus",
     "公司与产业": "Companies and industries",
     "宏观 / 政策与经济": "Macro / policy and economy",
+    "Bloomberg 与 CNBC Economy 聚焦宏观、政策与经济；CNBC Investing 与 AIHOT 关注公司、个股与 AI 产业动态。每个来源保留自己的时间与原站链接。": "Bloomberg and CNBC Economy focus on macro, policy and the economy; CNBC Investing and AIHOT cover companies, stocks and AI industry developments. Each source keeps its own timestamp and original links.",
     "Bloomberg 与《华尔街日报》聚焦宏观、政策与经济；Barron’s 与 AIHOT 关注公司、个股与 AI 产业动态。每个来源保留自己的时间与原站链接。": "Bloomberg and The Wall Street Journal focus on macro, policy and the economy; Barron’s and AIHOT cover companies, stocks and AI industry developments. Each source keeps its own timestamp and original links.",
     "阅读说明": "How to read",
     "Bloomberg 原刊": "Bloomberg issue",
     "原刊": "Issue date",
+    "焦点抓取": "Feed captured",
     "首页抓取": "Homepage captured",
     "榜单更新 ": "Board updated ",
     "抓取 ": "Captured ",
@@ -176,7 +178,6 @@
   }));
 
   const originals = new WeakMap();
-  const ignoredTags = new Set(["SCRIPT", "STYLE", "NOSCRIPT", "TEXTAREA", "INPUT"]);
   let language = "zh";
 
   function readPreference() {
@@ -188,33 +189,84 @@
     document.cookie = `brassivo_lang=${value}; domain=.brassivo.com; path=/; max-age=31536000; SameSite=Lax`;
   }
 
+  const attributes = ["aria-label", "placeholder", "title", "alt", "data-label"];
+
+  function translate(source) {
+    if (language !== "en") return source;
+    if (translations.has(source)) return translations.get(source);
+    const trimmed = source.trim();
+    if (!translations.has(trimmed)) return source;
+    return source.slice(0, source.indexOf(trimmed)) + translations.get(trimmed) + source.slice(source.indexOf(trimmed) + trimmed.length);
+  }
+
   function translateTextNode(node) {
-    if (!node || !node.parentElement || ignoredTags.has(node.parentElement.tagName)) return;
-    if (!originals.has(node)) originals.set(node, node.nodeValue);
-    const source = originals.get(node);
-    if (language === "zh") {
-      if (node.nodeValue !== source) node.nodeValue = source;
-      return;
-    }
-    const result = translations.get(source) ?? source;
-    if (result !== node.nodeValue) node.nodeValue = result;
+    if (!node || !node.parentElement || node.parentElement.closest("script,style,noscript,textarea,input,#brassivo-language-toggle")) return;
+    let state = originals.get(node);
+    // A renderer may reuse a node. Adopt its new source, but not our own output.
+    if (!state || node.nodeValue !== state.rendered) state = { source: node.nodeValue, rendered: node.nodeValue };
+    const result = translate(state.source);
+    state.rendered = result;
+    originals.set(node, state);
+    if (node.nodeValue !== result) node.nodeValue = result;
   }
 
   function translateAttributes(root) {
     const elements = [];
     if (root instanceof Element) elements.push(root);
-    if (root.querySelectorAll) elements.push(...root.querySelectorAll("[aria-label], [placeholder], [title]") );
+    if (root.querySelectorAll) elements.push(...root.querySelectorAll(attributes.map(name => `[${name}]`).join(",")));
     for (const element of elements) {
-      for (const attribute of ["aria-label", "placeholder", "title"]) {
-        if (!element.hasAttribute(attribute)) continue;
-        const key = `${attribute}`;
-        let values = originals.get(element);
-        if (!values) { values = {}; originals.set(element, values); }
-        if (!(key in values)) values[key] = element.getAttribute(attribute);
-        const source = values[key];
-        const result = language === "en" ? (translations.get(source) ?? source) : source;
-        if (element.getAttribute(attribute) !== result) element.setAttribute(attribute, result);
+      if (element.id === "brassivo-language-toggle") continue;
+      let values = originals.get(element);
+      if (!values) { values = {}; originals.set(element, values); }
+      for (const attribute of attributes) {
+        if (!element.hasAttribute(attribute)) { delete values[attribute]; continue; }
+        const current = element.getAttribute(attribute);
+        let state = values[attribute];
+        if (!state || current !== state.rendered) state = { source: current, rendered: current };
+        const result = translate(state.source);
+        state.rendered = result;
+        values[attribute] = state;
+        if (current !== result) element.setAttribute(attribute, result);
       }
+    }
+  }
+
+  const chartStates = new WeakMap();
+
+  function translateChartOption(option, states, path = "") {
+    if (typeof option === "string") {
+      let state = states.get(path);
+      if (!state || option !== state.rendered) state = { source: option, rendered: option };
+      state.rendered = translate(state.source);
+      states.set(path, state);
+      return state.rendered;
+    }
+    if (Array.isArray(option)) return option.map((item, index) => translateChartOption(item, states, `${path}.${index}`));
+    if (option && Object.getPrototypeOf(option) === Object.prototype) {
+      return Object.fromEntries(Object.entries(option).map(([key, item]) => [key, translateChartOption(item, states, `${path}.${key}`)]));
+    }
+    return option;
+  }
+
+  function translateCharts() {
+    if (!window.echarts) return;
+    for (const element of document.querySelectorAll("[_echarts_instance_]")) {
+      const chart = window.echarts.getInstanceByDom(element);
+      if (!chart || chart.isDisposed()) continue;
+      let state = chartStates.get(chart);
+      if (!state) {
+        state = { strings: new Map(), setOption: chart.setOption };
+        chartStates.set(chart, state);
+        chart.setOption = function(option, ...args) {
+          return state.setOption.call(this, translateChartOption(option, state.strings), ...args);
+        };
+      }
+      const option = chart.getOption();
+      const translated = translateChartOption(option, state.strings);
+      // ECharts may enable ARIA implicitly when its defaults are replayed.
+      // Preserve whether the source chart actually enabled this feature.
+      if (translated.aria && option.aria.enabled === undefined) translated.aria.enabled = false;
+      if (JSON.stringify(option) !== JSON.stringify(translated)) state.setOption.call(chart, translated, true);
     }
   }
 
@@ -224,6 +276,7 @@
     const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
     while (walker.nextNode()) translateTextNode(walker.currentNode);
     translateAttributes(document.body);
+    translateCharts();
     const button = document.getElementById("brassivo-language-toggle");
     if (button) {
       button.textContent = language === "en" ? "中" : "EN";
@@ -307,19 +360,39 @@
     installButton();
     apply(readPreference());
     new MutationObserver((records) => {
+      let chartAdded = false;
       for (const record of records) {
+        if (record.type === "characterData") translateTextNode(record.target);
+        if (record.type === "attributes") translateAttributes(record.target);
         for (const node of record.addedNodes) {
           if (node.nodeType === Node.TEXT_NODE) translateTextNode(node);
           else if (node.nodeType === Node.ELEMENT_NODE) {
+            if (node.matches("canvas,[_echarts_instance_]") || node.querySelector("canvas,[_echarts_instance_]")) chartAdded = true;
             const walker = document.createTreeWalker(node, NodeFilter.SHOW_TEXT);
             while (walker.nextNode()) translateTextNode(walker.currentNode);
             translateAttributes(node);
           }
         }
       }
-    }).observe(document.body, { childList: true, subtree: true });
+      if (chartAdded) translateCharts();
+    }).observe(document.body, { childList: true, characterData: true, attributes: true, attributeFilter: attributes, subtree: true });
   }
 
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start, { once: true });
-  else start();
+  // Load the static corpus at page initialization, before offering the button.
+  // A failed resource load leaves the Chinese page intact and emits a diagnostic.
+  const resource = new URL("research-i18n.en.js", document.currentScript.src);
+  resource.search = document.currentScript.src.includes("?") ? new URL(document.currentScript.src).search : "";
+  const prepared = new Promise((resolve, reject) => {
+    const script = document.createElement("script");
+    script.src = resource.href;
+    script.onload = () => {
+      if (!window.BrassivoPretranslations) { reject(new Error("Static English corpus missing")); return; }
+      for (const [zh, en] of Object.entries(window.BrassivoPretranslations)) translations.set(zh, en);
+      resolve();
+    };
+    script.onerror = () => reject(new Error("Static English corpus unavailable"));
+    document.head.append(script);
+  });
+  const ready = document.readyState === "loading" ? new Promise(resolve => document.addEventListener("DOMContentLoaded", resolve, { once: true })) : Promise.resolve();
+  Promise.all([prepared, ready]).then(start).catch(error => console.error("Brassivo language initialization:", error.message));
 })();

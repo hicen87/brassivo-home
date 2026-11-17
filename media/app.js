@@ -466,12 +466,12 @@
   const storyCard = (focus, name, scope, kind) => focus ? `
     <article class="source-card ${kind}">
       <div class="source-meta"><span>${name}</span><small>${scope}</small></div>
-      <div class="source-date"><span>首页抓取</span><time datetime="${escapeHTML(focus.capturedAt)}">${escapeHTML(focus.capturedAt.slice(0, 16).replace("T", " "))}</time></div>
+      <div class="source-date"><span>焦点抓取</span><time datetime="${escapeHTML(focus.capturedAt)}">${escapeHTML(focus.capturedAt.slice(0, 16).replace("T", " "))}</time></div>
       <p class="source-summary">${translated(focus.summary)}</p>
       <ol class="story-list">${focus.stories.map((story) => `
         <li><a href="${escapeHTML(story.url)}" rel="noopener noreferrer" target="_blank"><strong>${translated(story.title)}</strong><span aria-hidden="true">↗</span></a><p>${translated(story.summary)}</p></li>
       `).join("")}</ol>
-    </article>` : `<article class="source-card ${kind}"><div class="source-meta"><span>${name}</span><small>${scope}</small></div><p class="source-summary">本期首页内容尚未核验，保留待更新状态。</p></article>`;
+    </article>` : `<article class="source-card ${kind}"><div class="source-meta"><span>${name}</span><small>${scope}</small></div><p class="source-summary">本期焦点内容尚未核验，保留待更新状态。</p></article>`;
   const renderRegimeJudgment = (judgment) => {
     const tone = judgment.regime === "bullish" ? "positive" : "negative";
     return `<article class="signal-card regime-card ${tone}"><span>${translated(judgment.verdict)} · ${bilingual("Brassivo 推演", "Brassivo analysis")}</span><h3>${translated(judgment.title)}</h3><p>${translated(judgment.deduction)}</p><small><span>${bilingual("验证与反转条件：", "Validation & reversal conditions: ")}</span>${translated(judgment.condition)}</small></article>`;
@@ -538,11 +538,11 @@
         ${data.bloombergStories?.length ? `<ol class="story-list bloomberg-stories">${data.bloombergStories.map(story => `<li><strong>${translated(story.title)}</strong><p>${translated(story.summary)}</p></li>`).join("")}</ol>` : ""}
         <a class="original-link" href="${escapeHTML(data.sourceUrl)}" rel="noopener noreferrer" target="_blank">查看 ${newsletter} 原刊 ↗</a>
       </article>
-      ${storyCard(data.mediaFocus?.wsj, "The Wall Street Journal", "宏观 / 政策与经济", "wsj")}
+      ${storyCard(data.mediaFocus?.cnbcEconomy, "CNBC Economy", "宏观 / 政策与经济", "cnbc-economy")}
     </div></div>
     <div class="source-group"><h3 class="group-title">公司与产业</h3>
     <div class="source-grid">
-      ${storyCard(data.mediaFocus?.barrons, "Barron’s", "公司 / 个股", "barrons")}
+      ${storyCard(data.mediaFocus?.cnbcInvesting, "CNBC Investing", "公司 / 个股", "cnbc-investing")}
       ${hotCard}
     </div></div>
   `;

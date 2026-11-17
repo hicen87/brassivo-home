@@ -33,8 +33,8 @@ test("public media page renders the Bloomberg section without private mail data"
   assert.ok(js.length < 20000, "public file should be a compact original summary");
 });
 
-test("Barron's and WSJ homepage snapshots are dated, attributed, and use clean source URLs", () => {
-  for (const [name, host] of [["barrons", "www.barrons.com"], ["wsj", "www.wsj.com"]]) {
+test("CNBC Economy and CNBC Investing snapshots are dated, attributed, and use clean source URLs", () => {
+  for (const [name, host] of [["cnbcInvesting", "www.cnbc.com"], ["cnbcEconomy", "www.cnbc.com"]]) {
     const focus = item.mediaFocus[name];
     assert.match(focus.captureDate, /^\d{4}-\d{2}-\d{2}$/);
     assert.equal(focus.capturedAt.slice(0, 10), focus.captureDate);

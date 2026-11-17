@@ -35,95 +35,6 @@ window.BLOOMBERG_MARKETS_DAILY = {
   },
   "sourceUrl": "https://www.bloomberg.com/news/newsletters/2026-11-17/nvidia-s-earnings-come-at-a-time-of-mounting-tech-turmoil",
   "mediaFocus": {
-    "barrons": {
-      "captureDate": "2026-11-16",
-      "capturedAt": "2026-11-16T21:14:30+08:00",
-      "summary": "Barron's 首页聚焦美股迎来年内最艰难一周且成败始于英伟达财报、英伟达无需黄仁勋也能蓬勃发展的长线逻辑、黄仁勋丑闻令中美贸易休战岌岌可危、美联储加息周期恐延续至 2027 年、SpaceX 星舰回收测试难振短期股价、全美停飞乱局冲击航空股、“金融虚无主义”驱使年轻投资者涌入高风险投机、比特币暴跌拖累 Coinbase 与 Strategy、小鹏汽车财报大涨但电动车仍处亏损，以及美光面临强劲存储价格难抵估值回调的困境。",
-      "stories": [
-        {
-          "title": "美股迎来迄今最严峻一周大考，而一切都将从英伟达财报开始",
-          "summary": "在创始人突遭罢免与 AI 算力轮动剧震之际，英伟达周二盘后财报与 Anthropic 本周上市将共同决定美股年底走向。",
-          "url": "https://www.barrons.com/articles/stock-market-nvidia-earnings-huang-664a194c"
-        },
-        {
-          "title": "英伟达股票并不需要依靠黄仁勋一人也能继续蓬勃发展",
-          "summary": "尽管市场围绕黄仁勋能否回归争论不休，但英伟达在 CUDA 软件栈与 Blackwell/Rubin 硬件路线图的深厚壁垒足以支撑后创始人时代增长。",
-          "url": "https://www.barrons.com/articles/nvidia-stock-price-jensen-huang-comeback-9b6e1ebd"
-        },
-        {
-          "title": "英伟达涉华丑闻正令中美贸易休战面临破裂危险",
-          "summary": "涉事人物关联上海数据中心走私芯片及财长贝森特强硬表态，使华盛顿对华技术出口鹰派再度占据上风，威胁双边经贸缓和。",
-          "url": "https://www.barrons.com/articles/nvidia-china-united-states-trade-jensen-huang-7f5879f9"
-        },
-        {
-          "title": "顽固通胀迫使美联储加息周期恐一路延续至 2027 年",
-          "summary": "随着服务业通胀粘性与关税传导显现，利率掉期市场不仅计价今年 12 月加息，更开始押注紧缩周期将贯穿 2027 年上半年。",
-          "url": "https://www.barrons.com/articles/stocks-federal-reserve-raise-rates-2027-75495620"
-        },
-        {
-          "title": "SpaceX 星舰火箭成功完成轨道回收测试，但仍不足以大幅提振股价",
-          "summary": "虽然得州发射塔成功捕获返回地球的星舰验证了完全可复用技术，但投资者仍聚焦于高昂资本开支与特斯拉合并案的换股博弈。",
-          "url": "https://www.barrons.com/articles/spacex-stock-starship-rocket-launch-ec692e2b"
-        },
-        {
-          "title": "全美地面停飞乱局导致超 1.7 万架次航班取消，航空股集体受挫下跌",
-          "summary": "逾二十年来最严重的技术相关全国航管停摆打乱了感恩节前夕的出行排班，美联航与达美航空等面临高额赔付及运营成本上升。",
-          "url": "https://www.barrons.com/articles/united-stock-airlines-ground-stop-65cd02fb"
-        },
-        {
-          "title": "“金融虚无主义”正驱使美国年轻一代投资者大举涌入高风险投机资产",
-          "summary": "高房价与生活成本压力令年轻群体对传统长期储蓄失去信心，转而涌向预测市场永续合约、高杠杆期权及加密代币寻求暴富机会。",
-          "url": "https://www.barrons.com/articles/financial-nihilism-risky-investing-5cb16404"
-        },
-        {
-          "title": "比特币价格连续重挫失守 6.5 万美元，拖累 Coinbase 与 Strategy 股价同步大跌",
-          "summary": "国债收益率突破 5.1% 与逾十亿美元杠杆多头平仓重创加密市场，高杠杆囤币巨头 Strategy 盘前再挫 8%。",
-          "url": "https://www.barrons.com/articles/bitcoin-prices-strategy-coinbase-f7d3191e"
-        },
-        {
-          "title": "小鹏汽车财报超预期带动股价跳涨，但纯电车业务整体仍未摆脱亏损泥潭",
-          "summary": "大众汽车技术合作收入与新车型交付量增长改善了毛利率表现，但激烈的价格战仍令中国造车新势力盈利拐点承压。",
-          "url": "https://www.barrons.com/articles/xpeng-earnings-stock-price-tesla-b64907eb"
-        },
-        {
-          "title": "美光科技股票审视：为何强劲的存储芯片价格在当前抛售潮中可能无济于事",
-          "summary": "尽管 HBM 内存供不应求，但在英伟达管理层震荡与机构腾挪资金认购 Anthropic IPO 的背景下，存储周期股估值仍面临下修。",
-          "url": "https://www.barrons.com/articles/micron-stock-price-memory-chips-429adf7e"
-        }
-      ]
-    },
-    "wsj": {
-      "captureDate": "2026-10-21",
-      "capturedAt": "2026-10-21T20:00:00+08:00",
-      "summary": "WSJ 首页聚焦 SpaceX 与特斯拉董事会设立独立特别委员会评估历史级合并、Anthropic 招股书草案审视巨额算力长约与非现金亏损、马斯克涉下令限制军用版星链在乌连接速率、奈飞四季度指引放缓大跌 6% 创三年来最低增速，以及美债 32 万亿美元市场权力转移下对冲基金快钱接棒被动央行成为定价核心掮客。",
-      "stories": [
-        {
-          "title": "SpaceX 与特斯拉设立特别委员会评估合并，3.5 万亿美元并购引热议",
-          "summary": "两家巨头董事会已委派独立财务顾问评估换股方案，旨在实现商业航天、全球卫星通信与无人驾驶电动车队的底层技术算力打通。",
-          "url": "https://www.wsj.com/business/deals/spacex-tesla-special-committees-merger-evaluation"
-        },
-        {
-          "title": "马斯克被指下令对乌克兰军用版星链实施限速限制，引发华盛顿关切",
-          "summary": "知情人士透露马斯克对应用于前线的 Starshield 军用终端实施带宽上限，引发五角大楼与白宫对关键防务通信依赖单一供应商的反思。",
-          "url": "https://www.wsj.com/world/europe/elon-musk-ukraine-starshield-speed-restrictions"
-        },
-        {
-          "title": "Anthropic IPO 招股书草案审视：巨额算力长约与非现金会计亏损解析",
-          "summary": "监管文件显示其上半年名义会计亏损超 800 亿美元主要来自可转债公允价值重估，但已背负逾 6000 亿美元长期算力采购承诺。",
-          "url": "https://www.wsj.com/business/earnings/anthropic-ipo-s1-filing-accounting-charges-losses"
-        },
-        {
-          "title": "奈飞第四季度销售增速指引不及预期，盘后重挫 6% 遭遇内容荒挑战",
-          "summary": "联席 CEO 萨兰多斯承认业绩有待提升，连续四个季度增速放缓显露流媒体成熟期天花板，好莱坞罢工后遗症削弱了头部内容储备。",
-          "url": "https://www.wsj.com/business/media/netflix-q4-sales-growth-slowdown-earnings"
-        },
-        {
-          "title": "美债 32 万亿美元市场权力转移：“快钱”对冲基金接棒央行成为新核心掮客",
-          "summary": "对冲基金已控制约 70% 美国国债定价权，传统央行与养老金被动买盘退潮，促使主权债券市场波动性与收益率敏锐度显著上升。",
-          "url": "https://www.wsj.com/finance/investing/treasury-market-hedge-funds-fast-money-power-shift"
-        }
-      ]
-    },
     "aihot": {
       "captureDate": "2026-11-17",
       "capturedAt": "2026-11-17T20:10:00+08:00",
@@ -465,6 +376,100 @@ window.BLOOMBERG_MARKETS_DAILY = {
             "eventPublishedAt": "2026-11-17T07:32:00+08:00",
             "eventSourceUrl": "https://aihot.news/story/1876f686-a6e0-498d-a334-5366c0817311"
           }
+        }
+      ]
+    },
+    "cnbcEconomy": {
+      "captureDate": "2026-11-17",
+      "capturedAt": "2026-11-17T21:51:45+08:00",
+      "summary": "CNBC Economy 聚焦圣路易斯联储主席 Musalem 释放鹰派加息信号（未来数月或需再加息四次）、美联储主席 Kevin Warsh 权衡 AI 生产力革命对就业与利率的影响、日本三季度 GDP 受能源补贴退出及高油价拖累意外萎缩、美联储金融稳定调查将 AI 风险列为首要威胁，以及 10 月 PPI 同比升至 6.5% 创近四年新高。",
+      "stories": [
+        {
+          "title": "圣路易斯联储主席 Musalem 称未来数月可能还需加息四次",
+          "summary": "该预测代表美联储决策层中最为鹰派的立场之一，反映部分官员对顽固通胀的担忧。",
+          "url": "https://www.cnbc.com/2026/11/17/alberto-musalem-fed-interest-rates.html"
+        },
+        {
+          "title": "深度分析：美联储主席看到 AI 革命临近，正权衡其对就业与利率的含义",
+          "summary": "Kevin Warsh 认为 AI 正处于转折点，必须在就业冲击与利率路径之间做出艰难权衡。",
+          "url": "https://www.cnbc.com/2026/11/16/kevin-warsh-fed-ai-jobs-productivity-interest-rateshtml.html"
+        },
+        {
+          "title": "能源成本高企拖累日本三季度经济意外萎缩",
+          "summary": "日本家庭能源补贴于 9 月到期，使经济直接暴露在美伊冲突推升的高油价冲击下。",
+          "url": "https://www.cnbc.com/2026/11/16/japan-q3-gdp-energy-oil-prices.html"
+        },
+        {
+          "title": "美联储调查显示 AI 风险已成为金融体系的最大威胁",
+          "summary": "华尔街对高估值 AI 云巨头保持警惕，同时各地社区也对数据中心快速扩张引发关注。",
+          "url": "https://www.cnbc.com/2026/11/13/ai-risks-financial-system-federal-reserve.html"
+        },
+        {
+          "title": "美国 10 月批发物价环比涨 0.3%，同比增速达 6.5% 创近四年新高",
+          "summary": "生产者价格指数（PPI）环比略低于道琼斯预期的 0.4%，但同比通胀粘性依然显著。",
+          "url": "https://www.cnbc.com/2026/11/13/ppi-inflation-report-october-2026.html"
+        },
+        {
+          "title": "贝森特指责商务部监管不力，抨击英伟达芯片“流入”中国",
+          "summary": "英伟达 CEO 离职风波及涉华芯片出口审查升级，加剧美方对技术管控的内部争论。",
+          "url": "https://www.cnbc.com/2026/11/13/us-inflation-outlook-federal-reserve-rate-hike.html"
+        },
+        {
+          "title": "英国三季度经济扩张 0.7%，AI 成为额外增长引擎",
+          "summary": "英国三季度 GDP 增长 0.7% 符合市场预期，AI 相关投资与服务提供支撑。",
+          "url": "https://www.cnbc.com/2026/11/12/uk-gdp-third-quarter-2026.html"
+        },
+        {
+          "title": "分析：英伟达领导层危机考验其“AI 央行”的金融系统性地位",
+          "summary": "英伟达与产业链及金融机构的复杂关联，引发市场对其可能造成广泛冲击的担忧。",
+          "url": "https://www.cnbc.com/2026/11/11/nvidia-jensen-huang-ai-financial-system-risk.html"
+        }
+      ]
+    },
+    "cnbcInvesting": {
+      "captureDate": "2026-11-17",
+      "capturedAt": "2026-11-17T21:51:45+08:00",
+      "summary": "CNBC Investing 聚焦周二华尔街重磅投行评级（覆盖英伟达、Anthropic、SpaceX、亚马逊、特斯拉与 Alphabet）、英伟达盘后财报的亚洲/中国区销售看点及 2 万亿美元市值回撤后的期权隐含波动、Anthropic 本周 IPO 前获买入评级与 105 美元目标价，以及三季度 13F 机构对芯片和科技巨头的最新调仓。",
+      "stories": [
+        {
+          "title": "周二华尔街重磅分析师评级：英伟达、Anthropic、SpaceX、亚马逊等",
+          "summary": "汇总华尔街投行周二针对头部科技与 AI 标的的最新评级与目标价调整。",
+          "url": "https://www.cnbc.com/2026/11/17/tuesday-wall-street-analyst-calls-like-nvidia-anthropic.html"
+        },
+        {
+          "title": "英伟达财报前瞻：投资者重点关注的三大焦点",
+          "summary": "随着英伟达公布季报，亚洲与中国区销售表现及出口合规前景成为市场关注核心。",
+          "url": "https://www.cnbc.com/2026/11/17/nvidia-earnings-investor-china-jensen.html"
+        },
+        {
+          "title": "英伟达市值已蒸发 2 万亿美元，期权交易员押注财报剧烈波动",
+          "summary": "期权市场对本次英伟达财报后的隐含波动幅度定价显著高于历史常态水平。",
+          "url": "https://www.cnbc.com/2026/11/17/nvidia-has-lost-2-trillion-in-value-heres-what-options-traders-expect-from-earnings.html"
+        },
+        {
+          "title": "Anthropic 本周 IPO 前获买入评级，分析师看好其前景",
+          "summary": "New Street Research 在 Anthropic 预计本周上市前给予买入评级与 105 美元目标价。",
+          "url": "https://www.cnbc.com/2026/11/17/anthropic-ipo-new-street-buy-rating.html"
+        },
+        {
+          "title": "芯片、科技巨头及其他：对冲基金三季度买卖了哪些股票",
+          "summary": "随着各大机构投资者周一集中披露最新 13F 持仓报告，华尔街三季度主要押注浮出水面。",
+          "url": "https://www.cnbc.com/2026/11/16/chips-big-tech-and-more-what-hedge-funds-bought-and-sold-in-the-third-quarter.html"
+        },
+        {
+          "title": "周二核心个股动向：哪些题材可能主导下一交易日行情",
+          "summary": "受英伟达周一再度下挫拖累，纳斯达克综合指数已连续三个交易日收跌。",
+          "url": "https://www.cnbc.com/2026/11/16/tuesdays-big-stock-stories-whats-likely-to-move-the-market.html"
+        },
+        {
+          "title": "Anthropic 影子标的获交易员关注，衍生品市场释放看多信号",
+          "summary": "在 Anthropic IPO 临近之际，衍生品市场对相关代理投资标的呈现乐观情绪。",
+          "url": "https://www.cnbc.com/2026/11/16/anthropic-proxy-destiny-tech100-fund.html"
+        },
+        {
+          "title": "若 AI 泡沫破裂，历史规律显示这些防御板块有望走强",
+          "summary": "BTIG 指出随着科技股走弱，必选消费板块有望重演科网泡沫见顶后的领涨表现。",
+          "url": "https://www.cnbc.com/2026/11/16/if-the-ai-bubble-is-popping-history-shows-these-stocks-could-boom.html"
         }
       ]
     }
