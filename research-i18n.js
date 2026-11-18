@@ -67,6 +67,7 @@
     "宏观焦点": "Macro focus",
     "公司与产业": "Companies and industries",
     "宏观 / 政策与经济": "Macro / policy and economy",
+    "Bloomberg 聚焦全球宏观与市场短期波动；AIHOT 追踪过去 48 小时 AI 产业动态与产业链传导。每个来源保留自己的时间与原站链接。": "Bloomberg covers global macro and short-term market swings; AIHOT tracks 48-hour AI industry trends and supply-chain read-throughs. Each source keeps its own timestamp and original links.",
     "Bloomberg 与 CNBC Economy 聚焦宏观、政策与经济；CNBC Investing 与 AIHOT 关注公司、个股与 AI 产业动态。每个来源保留自己的时间与原站链接。": "Bloomberg and CNBC Economy focus on macro, policy and the economy; CNBC Investing and AIHOT cover companies, stocks and AI industry developments. Each source keeps its own timestamp and original links.",
     "Bloomberg 与《华尔街日报》聚焦宏观、政策与经济；Barron’s 与 AIHOT 关注公司、个股与 AI 产业动态。每个来源保留自己的时间与原站链接。": "Bloomberg and The Wall Street Journal focus on macro, policy and the economy; Barron’s and AIHOT cover companies, stocks and AI industry developments. Each source keeps its own timestamp and original links.",
     "阅读说明": "How to read",

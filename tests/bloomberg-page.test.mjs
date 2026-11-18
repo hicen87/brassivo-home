@@ -33,20 +33,12 @@ test("public media page renders the Bloomberg section without private mail data"
   assert.ok(js.length < 20000, "public file should be a compact original summary");
 });
 
-test("CNBC Economy and CNBC Investing snapshots are dated, attributed, and use clean source URLs", () => {
-  for (const [name, host] of [["cnbcInvesting", "www.cnbc.com"], ["cnbcEconomy", "www.cnbc.com"]]) {
-    const focus = item.mediaFocus[name];
-    assert.match(focus.captureDate, /^\d{4}-\d{2}-\d{2}$/);
-    assert.equal(focus.capturedAt.slice(0, 10), focus.captureDate);
-    assert.ok(focus.summary.length > 20);
-    assert.ok(focus.stories.length >= 2);
-    for (const story of focus.stories) {
-      const url = new URL(story.url);
-      assert.equal(url.hostname, host);
-      assert.equal(url.search, "");
-      assert.ok(story.title && story.summary);
-    }
-  }
+test("mediaFocus contains only AIHOT and front-end renders only Bloomberg and AIHOT cards", () => {
+  assert.deepEqual(Object.keys(item.mediaFocus).sort(), ["aihot"]);
+  const rendered = render(item);
+  assert.match(rendered, /class="source-card bloomberg"/);
+  assert.match(rendered, /class="source-card aihot"/);
+  assert.doesNotMatch(rendered, /CNBC Economy|CNBC Investing|cnbc-economy|cnbc-investing/);
 });
 
 test("AIHOT ranking is a dated 48-hour snapshot with clean story links", () => {

@@ -528,7 +528,6 @@
       <p class="boundary-note">媒体摘要与 AI 热榜均保留各自刊期或抓取时点，不是实时行情；条件判断不自动改变策略基线、资金配比或 EPS 基线。</p>
     </details>
     <div class="section-heading"><span>02 / SOURCES</span><h2 id="media-title">媒体焦点与 AI 热榜</h2></div>
-    <div class="source-group"><h3 class="group-title">宏观焦点</h3>
     <div class="source-grid">
       <article class="source-card bloomberg">
         <div class="source-meta"><span>Bloomberg</span><small>宏观 / 短期波动</small></div>
@@ -538,12 +537,7 @@
         ${data.bloombergStories?.length ? `<ol class="story-list bloomberg-stories">${data.bloombergStories.map(story => `<li><strong>${translated(story.title)}</strong><p>${translated(story.summary)}</p></li>`).join("")}</ol>` : ""}
         <a class="original-link" href="${escapeHTML(data.sourceUrl)}" rel="noopener noreferrer" target="_blank">查看 ${newsletter} 原刊 ↗</a>
       </article>
-      ${storyCard(data.mediaFocus?.cnbcEconomy, "CNBC Economy", "宏观 / 政策与经济", "cnbc-economy")}
-    </div></div>
-    <div class="source-group"><h3 class="group-title">公司与产业</h3>
-    <div class="source-grid">
-      ${storyCard(data.mediaFocus?.cnbcInvesting, "CNBC Investing", "公司 / 个股", "cnbc-investing")}
       ${hotCard}
-    </div></div>
+    </div>
   `;
 })();
