@@ -1,53 +1,53 @@
 window.BLOOMBERG_MARKETS_DAILY = {
-  "issueDate": "2026-11-19",
-  "publishedAt": "2026-11-19T11:13:56+00:00",
+  "issueDate": "2026-11-20",
+  "publishedAt": "2026-11-20T11:40:19+00:00",
   "newsletter": "Markets Daily",
-  "headline": "Anthropic超上限83美元定价创1073亿美元IPO纪录、暗盘预示开盘涨逾20%，纳指期货大涨2.1%点燃年末反弹憧憬",
-  "bloombergTake": "Bloomberg Markets Daily（2026-11-19 原刊）报道，Anthropic以每股83美元（高于70–78美元区间）完成IPO及私募共募资1,073亿美元破SpaceX纪录，暗盘预示首日开盘涨20%以上；纳指100期货大涨2.1%，Palo Alto宣布45亿美元收购Applied Compute并上调指引盘前涨9%，Alphabet涨2.9%、英伟达涨1.8%（猎头已接触Arm CEO Rene Haas接替黄仁勋）。中美俄元首在深圳举行三方会晤同意增加能源供应，11月油价累跌20%（布油91.96美元）。但美联储10月纪要显示几乎全体官员认为未来数月需继续加息，10年期美债收益率5.09%；法国政局拖累欧元跌破1.10创18个月新低；台股跌4.4%并收紧卖空限制、恒指跌1.9%。原刊快照，非实时行情。",
+  "headline": "AI回报疑虑引爆全球股市抛售潮：纳指高开倒跌、台股创1991年来最大单周跌幅，SpaceX芯片债收益率破8%、铜价跌至3月新低",
+  "bloombergTake": "Bloomberg Markets Daily（2026-11-20 原刊）报道，即便Anthropic创纪录IPO首日收涨17%，也未能阻挡全球AI抛售潮（今日盘前跌6.4%）：周四纳指100早盘涨2.3%后倒跌2.2%收场（较10月6日高点跌15%），MSCI全球指数连跌七日创三年最长连跌；日经跌5.1%、韩股跌5.2%（周跌8%）、台股周跌6.2%创1991年来最大单周跌幅，新兴市场逼近熊市。SpaceX为采购AI芯片拟发行的320亿美元债务收益率突破8%，DayOne暂停赴美IPO；LME铜价跌至3月以来最低并逼近1.2万美元；避险买盘推动10年期美债收益率回落6bp至4.98%。盘前AMD跌5.4%、英特尔跌5%、美光跌4.2%、光模块Coherent与Lumentum跌超5%，仅苹果因自研AI智能体进展微涨0.3%。原刊快照，非实时行情。",
   "bloombergStories": [
     {
-      "title": "Anthropic以83美元超上限完成1,073亿美元创纪录募资，暗盘指示首日开盘涨逾20%",
-      "summary": "Anthropic IPO与私募合计募资1,073亿美元刷新SpaceX纪录，灰市预示挂牌首日开盘涨幅超20%；叠加纳指100此前回调逾10%后科技股估值处于六年低位、11月油价跌20%，多头憧憬年末反弹。"
+      "title": "全球AI抛售潮蔓延：纳指高开2.3%倒跌2.2%，台股创1991年来最大单周跌幅",
+      "summary": "市场从追捧AI故事转向索取“回报证明”（招股书亦暴露前沿模型定价权弱化），MSCI全球指数七连跌；台股周跌6.2%创1991年来最惨，韩股周跌8%，日经单日重挫5.1%，欧股五连跌。"
     },
     {
-      "title": "盘前科技与网安股普涨：Palo Alto涨9%，Alphabet涨2.9%，英伟达猎头接触Arm CEO",
-      "summary": "Palo Alto上调盈利指引并斥资45亿美元收购AI平台Applied Compute，带动CrowdStrike涨6.3%、Zscaler涨4.7%；七巨头盘前走高，英伟达猎头接触Arm CEO Rene Haas推进换帅。"
+      "title": "SpaceX 320亿美元AI芯片债收益率破8%，DayOne数据中心暂停赴美IPO",
+      "summary": "SpaceX为采购AI芯片筹措的320亿美元债务收益率升破8%，反映债权人对巨额算力开支能否收回成本的高度担忧；新加坡数据中心运营商DayOne被迫暂停美国IPO计划。"
     },
     {
-      "title": "中美俄深圳三方会晤同意扩大能源供应，美联储纪要显示几乎一致同意继续加息",
-      "summary": "中、美、俄元首在深圳举行历史性三方会晤并同意增加能源供应；但美联储10月会议纪要显示几乎所有官员均认为未来数月仍需加息以压低通胀至2%，10年期美债收益率升2bp至5.09%。"
+      "title": "盘前芯片与光模块重挫、资金涌入防御股：AMD跌5.4%，仅苹果微涨0.3%",
+      "summary": "盘前AMD跌5.4%、英特尔跌5%、美光跌4.2%，Coherent与Lumentum跌超5%，Intuit下调营收指引暴跌11%；沃尔玛、T-Mobile与联合健康等防御股逆市走强，苹果因推进自研智能体微涨0.3%。"
     },
     {
-      "title": "法国预算与选举风险打压欧元跌破1.10创18个月新低，看空押注达六年最高",
-      "summary": "市场担忧法国预算僵局及明年大选极右翼勒庞与极左翼梅朗雄领跑恶化财政，欧元兑美元自8月底累跌6%破1.10；摩根士丹利与德商银行看跌明年欧元至1.08。"
+      "title": "AI基建质疑拖累金属市场崩跌：LME铜价创3月以来新低，锡周跌逾12%",
+      "summary": "市场质疑AI数据中心对铜需求的透支预期，叠加美元连涨四周与中国需求疲弱，LME铜价单日跌近4%逼近1.2万美元关口（9月曾近1.5万美元）；锡周跌超12%、锌跌约5%，黄金跌1.1%至3,586美元。"
     },
     {
-      "title": "大摩警示前沿AI越狱为最大低估风险；台股重挫4.4%收紧卖空，比特币抹去夏末涨幅",
-      "summary": "大摩宏观主管Hornbach称前沿AI突破沙箱造成经济破坏是当前最被低估的风险；台湾加权指数跌4.4%并收紧卖空限制护盘；比特币虽反弹2.2%至6.37万美元但已抹去夏末以来全部涨幅。"
+      "title": "欧洲年内发债首破2万亿欧元纪录，美议员接近达成禁止中国汽车入美协议",
+      "summary": "受政府借贷与AI融资潮推动，欧洲年内债券发行规模首次突破2万亿欧元；交易员押注主要央行在2027年底结束加息后将长期维持高利率；美国国会议员接近在跛脚鸭会期达成禁止中国汽车进入美国市场的协议。"
     }
   ],
   "overallJudgment": {
-    "regime": "bullish",
-    "verdict": "风险资产整体：短期偏多格局",
-    "title": "Anthropic超区间83美元定价且暗盘预示开盘涨逾20%，叠加Google与OpenAI旗舰模型密集落地及深圳三方能源共识，延续短期偏多修复格局",
-    "deduction": "综合权衡多空因素，昨日设定的偏多延续条件在盘前获强劲验证：第一，Anthropic以83美元超上限完成1,073亿美元创纪录IPO及私募（完全稀释估值约1.5万亿美元），灰市指示今日纳斯达克（ANT）开盘大涨逾20%，直接带动纳指100期货飙升2.1%。第二，Google发布Gemini 4 Neon/Hydrogen、Palo Alto斥资45亿美元并购AI平台且英伟达物色Arm CEO接班并提前加薪稳住研发团队，缓解科技股回调10%后的治理与商业化焦虑，盘前Alphabet涨2.9%、英伟达涨1.8%、网安板块暴涨。第三，中美俄深圳会晤达成扩大能源供应共识，11月油价跌20%（布油91.96美元）缓和输入型通胀。风险约束仍需警惕：美联储10月纪要显示几乎全员倾向继续加息（10年期美债5.09%）、台股大跌4.4%触发限空令、法国财政风险拖累欧元创18个月新低，故维持事件驱动的短期偏多修复判断，不宜盲目追高。",
-    "condition": "偏多格局延续验证：今日Anthropic（ANT）正式挂牌后收盘守住83美元发行价上方且纳指100稳守盘前反弹成果，同时10年期美债收益率不突破5.15%；向利空格局逆转条件：Anthropic开盘冲高后大幅回落破发引发AI高估值踩踏，或美联储官员进一步强化鹰派加息路径推动10年期美债突破5.15%并引发美股重回跌势。"
+    "regime": "bearish",
+    "verdict": "风险资产整体：短期利空格局",
+    "title": "Anthropic挂牌虽守发行价但纳指冲高2.3%后倒跌2.2%，叠加SpaceX芯片债收益率破8%、亚太芯片股崩跌与铜价破位，触发向短期利空格局逆转",
+    "deduction": "综合权衡多空因素，昨日设定的向利空格局逆转条件（纳指未能守住盘前反弹成果并重回跌势）已明确触发：第一，二级市场呈现典型“利好出尽即抛售”特征，周四纳指100早盘冲高2.3%后大幅倒跌2.2%（标普500大跌2.02%至7,175.83），Anthropic今日盘前亦回吐6.4%，MSCI全球指数录得三年来最长七连跌。第二，亚太算力硬件链遭遇重创，台股周跌6.2%创1991年来最大单周跌幅，日经与韩股单日均重挫逾5%，盘前AMD、英特尔、光模块普跌逾5%。第三，一级与信用市场融资摩擦急剧升温，SpaceX 320亿美元AI芯片债收益率高达8%以上、DayOne暂停数据中心IPO、LME铜价跌至3月来最低，表明跨资产资金正同步挤出AI资本开支泡沫。尽管10年期美债收益率因避险买盘回落6bp至4.98%，且Google、苹果密集推进桌面与端侧Agent，但短期空头去杠杆与要求“盈利回报证明”的定价逻辑占据绝对主导，故切换为短期利空格局。",
+    "condition": "利空格局延续验证：纳指100与费城半导体指数继续失守近期低点、Anthropic进一步跌向83美元发行价，或高收益AI算力债利差持续走阔；向偏多格局逆转条件：美债10年期收益率稳步回落至4.85%下方缓和估值折现压力，同时半导体与光模块龙头止跌企稳、标普500重新收复7,300点关口。"
   },
-  "sourceUrl": "https://www.bloomberg.com/news/newsletters/2026-11-19/anthropic-ipo-has-stock-bulls-dreaming-of-a-year-end-rally",
+  "sourceUrl": "https://www.bloomberg.com/news/newsletters/2026-11-20/skepticism-about-ai-is-crushing-stock-prices-around-the-world",
   "mediaFocus": {
     "aihot": {
-      "captureDate": "2026-11-19",
-      "capturedAt": "2026-11-19T20:01:30+08:00",
-      "boardUpdatedAt": "2026-11-19T20:00:00+08:00",
+      "captureDate": "2026-11-20",
+      "capturedAt": "2026-11-20T21:06:00+08:00",
+      "boardUpdatedAt": "2026-11-20T21:05:00+08:00",
       "windowHours": 48,
       "sourceUrl": "https://aihot.news/hot",
       "market": {
-        "checkedAt": "2026-11-19T20:02:50+08:00",
+        "checkedAt": "2026-11-20T21:07:20+08:00",
         "benchmark": {
-          "sessionDate": "2026-11-18",
-          "previousSessionDate": "2026-11-17",
-          "close": 7323.63,
-          "previousClose": 7340.53,
+          "sessionDate": "2026-11-19",
+          "previousSessionDate": "2026-11-18",
+          "close": 7175.83,
+          "previousClose": 7323.63,
           "sources": [
             "https://finance.yahoo.com/quote/%5EGSPC",
             "https://www.cnbc.com/quotes/.SPX"
@@ -55,53 +55,73 @@ window.BLOOMBERG_MARKETS_DAILY = {
         },
         "quotes": {
           "GOOGL": {
-            "sessionDate": "2026-11-18",
-            "previousSessionDate": "2026-11-17",
-            "close": 282.44,
-            "previousClose": 280.2,
+            "sessionDate": "2026-11-19",
+            "previousSessionDate": "2026-11-18",
+            "close": 272.66,
+            "previousClose": 282.44,
             "sources": [
               "https://finance.yahoo.com/quote/GOOGL",
               "https://www.cnbc.com/quotes/GOOGL"
             ]
           },
-          "NVDA": {
-            "sessionDate": "2026-11-18",
-            "previousSessionDate": "2026-11-17",
-            "close": 150.96,
-            "previousClose": 155.46,
+          "AAPL": {
+            "sessionDate": "2026-11-19",
+            "previousSessionDate": "2026-11-18",
+            "close": 349.21,
+            "previousClose": 352.45,
             "sources": [
-              "https://finance.yahoo.com/quote/NVDA",
-              "https://www.cnbc.com/quotes/NVDA"
+              "https://finance.yahoo.com/quote/AAPL",
+              "https://www.cnbc.com/quotes/AAPL"
             ]
           },
           "TCEHY": {
-            "sessionDate": "2026-11-18",
-            "previousSessionDate": "2026-11-17",
-            "close": 46.13,
-            "previousClose": 47.27,
+            "sessionDate": "2026-11-19",
+            "previousSessionDate": "2026-11-18",
+            "close": 44.16,
+            "previousClose": 46.13,
             "sources": [
               "https://finance.yahoo.com/quote/TCEHY",
               "https://www.cnbc.com/quotes/TCEHY"
             ]
           },
+          "META": {
+            "sessionDate": "2026-11-19",
+            "previousSessionDate": "2026-11-18",
+            "close": 596.22,
+            "previousClose": 616.38,
+            "sources": [
+              "https://finance.yahoo.com/quote/META",
+              "https://www.cnbc.com/quotes/META"
+            ]
+          },
+          "NVDA": {
+            "sessionDate": "2026-11-19",
+            "previousSessionDate": "2026-11-18",
+            "close": 145.98,
+            "previousClose": 150.96,
+            "sources": [
+              "https://finance.yahoo.com/quote/NVDA",
+              "https://www.cnbc.com/quotes/NVDA"
+            ]
+          },
           "AMZN": {
-            "sessionDate": "2026-11-18",
-            "previousSessionDate": "2026-11-17",
-            "close": 267.74,
-            "previousClose": 257.89,
+            "sessionDate": "2026-11-19",
+            "previousSessionDate": "2026-11-18",
+            "close": 257.37,
+            "previousClose": 267.74,
             "sources": [
               "https://finance.yahoo.com/quote/AMZN",
               "https://www.cnbc.com/quotes/AMZN"
             ]
           },
-          "TSM": {
-            "sessionDate": "2026-11-18",
-            "previousSessionDate": "2026-11-17",
-            "close": 362.62,
-            "previousClose": 359.69,
+          "MSFT": {
+            "sessionDate": "2026-11-19",
+            "previousSessionDate": "2026-11-18",
+            "close": 498.3,
+            "previousClose": 508.29,
             "sources": [
-              "https://finance.yahoo.com/quote/TSM",
-              "https://www.cnbc.com/quotes/TSM"
+              "https://finance.yahoo.com/quote/MSFT",
+              "https://www.cnbc.com/quotes/MSFT"
             ]
           }
         }
@@ -109,66 +129,8 @@ window.BLOOMBERG_MARKETS_DAILY = {
       "stories": [
         {
           "rank": 1,
-          "title": "Google 发布 Gemini 4 Neon，API 可直传 Office 文件",
-          "heat": 659,
-          "url": "https://aihot.news/story/74578987-a1ed-4ce0-96b8-658226459865",
-          "marketLink": {
-            "company": "Alphabet",
-            "ticker": "GOOGL",
-            "status": "listed",
-            "relationUrl": "https://abc.xyz",
-            "eventPublishedAt": "2026-11-19T05:37:00+08:00",
-            "eventSourceUrl": "https://aihot.news/story/74578987-a1ed-4ce0-96b8-658226459865"
-          },
-          "readThrough": {
-            "checkedAt": "2026-11-19T20:02:50+08:00",
-            "note": "Google 推出面向复杂软件工程、知识工作与科学工作流的 Gemini 4 Neon（gemini-4-neon），并在 API 中原生支持直接上传解析 Office 文档，强化企业生产力场景渗透。",
-            "candidates": [
-              {
-                "company": "Alphabet",
-                "ticker": "GOOGL",
-                "exchange": "NASDAQ",
-                "exposure": "Gemini 4 Neon 原生打通 Office 文档工作流与端到端工程任务，有助提升 Google Cloud Vertex AI 及 Workspace 企业级 API 付费调用粘性。",
-                "direction": "潜在利好",
-                "condition": "验证条件为 Google Cloud AI 收入增速及企业开发者 API 调用量环比持续扩张。",
-                "sourceUrl": "https://cloud.google.com/vertex-ai"
-              }
-            ]
-          }
-        },
-        {
-          "rank": 2,
-          "title": "OpenAI 发布 GPT-6.2 Astra 与 Sol 两款模型",
-          "heat": 508,
-          "url": "https://aihot.news/story/2254fd74-e05d-4b8b-861e-9d14e940f4bc",
-          "marketLink": {
-            "company": "OpenAI",
-            "ticker": null,
-            "status": "no_direct",
-            "relationUrl": "https://openai.com",
-            "eventPublishedAt": "2026-11-18T01:45:00+08:00",
-            "eventSourceUrl": "https://aihot.news/story/2254fd74-e05d-4b8b-861e-9d14e940f4bc"
-          },
-          "readThrough": {
-            "checkedAt": "2026-11-19T20:02:50+08:00",
-            "note": "OpenAI 推出旗舰代码与 3D/游戏生成模型 GPT-6.2 Astra 及日常工作模型 Sol，向 ChatGPT Work、Codex 付费及企业用户和 API 开放，加速高复杂度推理与编码调用。",
-            "candidates": [
-              {
-                "company": "Microsoft",
-                "ticker": "MSFT",
-                "exchange": "NASDAQ",
-                "exposure": "作为 OpenAI 核心云算力与商业分发伙伴，旗舰多模态编码与 3D 生成模型放量有望拉动 Azure AI 推理消耗与企业座席续费。",
-                "direction": "潜在利好",
-                "condition": "验证条件为 Azure AI 服务增速保持韧性且 API 推理调用增量覆盖高推理算力折旧成本。",
-                "sourceUrl": "https://azure.microsoft.com"
-              }
-            ]
-          }
-        },
-        {
-          "rank": 3,
-          "title": "Anthropic IPO 定价 83 美元，估值约 1.5 万亿美元",
-          "heat": 434,
+          "title": "Anthropic 上市：83 美元定价，首日收涨 17%",
+          "heat": 621,
           "url": "https://aihot.news/story/82c796c0-3bf1-4c3a-8368-56913b4bf85d",
           "marketLink": {
             "company": "Anthropic",
@@ -179,130 +141,121 @@ window.BLOOMBERG_MARKETS_DAILY = {
             "eventSourceUrl": "https://aihot.news/story/82c796c0-3bf1-4c3a-8368-56913b4bf85d"
           },
           "readThrough": {
-            "checkedAt": "2026-11-19T20:02:50+08:00",
-            "note": "Anthropic 将 IPO 发行价定为每股 83 美元（超 70–78 美元区间，完全稀释估值约 1.5 万亿美元，含私募共募资 1,073 亿美元），今日以代码 ANT 在纳斯达克挂牌，亚马逊与谷歌合计持股超 28%。",
+            "checkedAt": "2026-11-20T21:07:20+08:00",
+            "note": "Anthropic（ANT）以 83 美元发行价募资约 813 亿美元，叠加七家算力供应商按发行价认购 260 亿美元私募共募资 1,073 亿美元，首日开盘 111.50 美元、收涨 17%，但次日盘前受科技抛售潮拖累回落 6.4%。",
             "candidates": [
               {
                 "company": "Amazon",
                 "ticker": "AMZN",
                 "exchange": "NASDAQ",
-                "exposure": "作为核心战略股东与 AWS Bedrock 算力伙伴，Anthropic 超上限募资超千亿美元既大幅增厚股权账面价值，也强化长期 Trainium/AWS 算力采购能力。",
+                "exposure": "作为核心战略股东与 AWS Bedrock/Trainium 云算力供应商，Anthropic 千亿美元募资落地直接保障其未来数年云算力采购履约能力。",
                 "direction": "潜在利好",
-                "condition": "验证条件为 ANT 挂牌后二级市场交投稳健及 Anthropic 对 AWS 云算力长约持续扩容。",
+                "condition": "验证条件为 Anthropic 新增算力预算按约定向 AWS Trainium 集群转化为实际云收入。",
                 "sourceUrl": "https://aws.amazon.com/bedrock/claude/"
               },
               {
                 "company": "Alphabet",
                 "ticker": "GOOGL",
                 "exchange": "NASDAQ",
-                "exposure": "谷歌兼具重要股东与 Google Cloud TPU 算力供应方身份，巨额 IPO 资金到位将保障其多代 Claude 模型在谷歌云上的训练与推理履约。",
-                "direction": "潜在利好",
-                "condition": "验证条件为 Google Cloud AI 积压订单持续兑现及股权投资公允价值正向贡献。",
+                "exposure": "谷歌兼具重要股东与 Google Cloud TPU 算力伙伴身份，IPO 募资充实 Anthropic 资产负债表，但二级市场科技估值回调对短期情绪形成掣肘。",
+                "direction": "方向待确认",
+                "condition": "验证条件为 ANT 股价企稳于发行价上方且 Google Cloud AI 推理与训练订单持续放量。",
                 "sourceUrl": "https://cloud.google.com"
               }
             ]
           }
         },
         {
-          "rank": 4,
-          "title": "黄仁勋辞任英伟达CEO，称若董事会决定愿回归",
-          "heat": 260,
-          "url": "https://aihot.news/story/25f30555-1283-4773-8161-58d48e3d86e1",
+          "rank": 2,
+          "title": "Google 发布 Gemini 4 Neon，API 可直传 Office 文件",
+          "heat": 519,
+          "url": "https://aihot.news/story/74578987-a1ed-4ce0-96b8-658226459865",
           "marketLink": {
-            "company": "NVIDIA",
-            "ticker": "NVDA",
+            "company": "Alphabet",
+            "ticker": "GOOGL",
             "status": "listed",
-            "relationUrl": "https://www.nvidia.com",
-            "eventPublishedAt": "2026-11-17T02:11:00+08:00",
-            "eventSourceUrl": "https://aihot.news/story/25f30555-1283-4773-8161-58d48e3d86e1"
+            "relationUrl": "https://abc.xyz",
+            "eventPublishedAt": "2026-11-19T05:37:00+08:00",
+            "eventSourceUrl": "https://aihot.news/story/74578987-a1ed-4ce0-96b8-658226459865"
           },
           "readThrough": {
-            "checkedAt": "2026-11-19T20:02:50+08:00",
-            "note": "黄仁勋辞职后虽表态愿在董事会要求下回归，但董事会已明确拒绝并委托猎头接触 Arm CEO Rene Haas 推进外部选帅。",
+            "checkedAt": "2026-11-20T21:07:20+08:00",
+            "note": "Google 推出面向复杂软件工程、知识工作与科学工作流的 Gemini 4 Neon（每百万输入 token 3 美元），API 原生支持直传 Office 文件，强化企业生产力场景。",
             "candidates": [
               {
-                "company": "NVIDIA",
-                "ticker": "NVDA",
+                "company": "Alphabet",
+                "ticker": "GOOGL",
                 "exchange": "NASDAQ",
-                "exposure": "正式 CEO 遴选提速及接触成熟芯片掌门人有助于收敛管理层权力真空期，但战略投资收缩对中小算力客户的影响仍待观察。",
-                "direction": "方向待确认",
-                "condition": "验证条件为新任正式 CEO 人选落地及大客户订单节奏不受管理层交接干扰。",
-                "sourceUrl": "https://www.nvidia.com"
+                "exposure": "原生 Office 文档解析与高性价比 API 定价有助提升 Vertex AI 与 Workspace 企业客户粘性及付费 Token 调用量。",
+                "direction": "潜在利好",
+                "condition": "验证条件为企业级 API 调用增速能抵消单价下调并维持云业务利润率扩张。",
+                "sourceUrl": "https://cloud.google.com/vertex-ai"
+              }
+            ]
+          }
+        },
+        {
+          "rank": 3,
+          "title": "Google 为 Mac 版 Gemini 上线电脑操作功能",
+          "heat": 159,
+          "url": "https://aihot.news/story/2442138c-3137-45fd-9a2a-9c1b159c49ae",
+          "marketLink": {
+            "company": "Alphabet",
+            "ticker": "GOOGL",
+            "status": "listed",
+            "relationUrl": "https://abc.xyz",
+            "eventPublishedAt": "2026-11-20T02:09:00+08:00",
+            "eventSourceUrl": "https://aihot.news/story/2442138c-3137-45fd-9a2a-9c1b159c49ae"
+          },
+          "readThrough": {
+            "checkedAt": "2026-11-20T21:07:20+08:00",
+            "note": "macOS 版 Gemini 桌面应用上线 computer use 功能，可跨本地 Mac 应用、文件与网页代办填写表单、制作演示文稿等多步任务，支持实时预览与接管。",
+            "candidates": [
+              {
+                "company": "Alphabet",
+                "ticker": "GOOGL",
+                "exchange": "NASDAQ",
+                "exposure": "桌面端跨应用 Computer Use 落地抢占 macOS 生产力入口，高频多步视觉/操作推理将显著拉动单用户 Token 消耗。",
+                "direction": "潜在利好",
+                "condition": "验证条件为 Gemini 桌面端月活及 Google One AI 付费订阅转化率提升，且未触发系统级隐私安全封禁。",
+                "sourceUrl": "https://gemini.google.com"
+              }
+            ]
+          }
+        },
+        {
+          "rank": 4,
+          "title": "苹果被曝加速Siri智能体化并招聘工程师",
+          "heat": 99,
+          "url": "https://aihot.news/story/a1b6af96-fbdf-4779-80a9-0ca55270818c",
+          "marketLink": {
+            "company": "Apple",
+            "ticker": "AAPL",
+            "status": "listed",
+            "relationUrl": "https://www.apple.com",
+            "eventPublishedAt": "2026-11-20T06:31:00+08:00",
+            "eventSourceUrl": "https://aihot.news/story/a1b6af96-fbdf-4779-80a9-0ca55270818c"
+          },
+          "readThrough": {
+            "checkedAt": "2026-11-20T21:07:20+08:00",
+            "note": "彭博报道苹果新 CEO John Ternus 施压软件主管 Federighi 加速 Siri 智能体化以对标 OpenAI Dots、Meta Muse 与 Grok，推动苹果成为周五盘前唯一上涨的七巨头。",
+            "candidates": [
+              {
+                "company": "Apple",
+                "ticker": "AAPL",
+                "exchange": "NASDAQ",
+                "exposure": "依托系统级权限打造端侧 AI 智能体有助巩固硬件换机护城河，而且苹果相对克制的资本开支使其在 AI 投资回报质疑潮中具备避险溢价。",
+                "direction": "潜在利好",
+                "condition": "验证条件为新版智能体化 Siri 按期交付且带动 iPhone/Mac 换机周期加速。",
+                "sourceUrl": "https://www.apple.com"
               }
             ]
           }
         },
         {
           "rank": 5,
-          "title": "英伟达Q3营收1158亿美元，董事会拒绝恢复黄仁勋职务",
-          "heat": 137,
-          "url": "https://aihot.news/story/e79088af-89d6-42e0-8947-05fbb16ede38",
-          "marketLink": {
-            "company": "NVIDIA",
-            "ticker": "NVDA",
-            "status": "listed",
-            "relationUrl": "https://www.nvidia.com",
-            "eventPublishedAt": "2026-11-18T05:40:00+08:00",
-            "eventSourceUrl": "https://aihot.news/story/e79088af-89d6-42e0-8947-05fbb16ede38"
-          },
-          "readThrough": {
-            "checkedAt": "2026-11-19T20:02:50+08:00",
-            "note": "英伟达 Q3 营收 1,158 亿美元（同比+103%）、净利润 653 亿美元创纪录，Q4 指引 1,300 亿美元（不含中国算力）且 Vera Rubin 进展顺利。",
-            "candidates": [
-              {
-                "company": "NVIDIA",
-                "ticker": "NVDA",
-                "exchange": "NASDAQ",
-                "exposure": "Q3 业绩与 Q4 1,300 亿美元指引确认全球超大规模云厂算力资本开支依然强劲。",
-                "direction": "潜在利好",
-                "condition": "验证条件为 Blackwell 与 Vera Rubin 机架按期放量且毛利率维持高位。",
-                "sourceUrl": "https://investor.nvidia.com"
-              },
-              {
-                "company": "TSMC",
-                "ticker": "TSM",
-                "exchange": "NYSE",
-                "exposure": "英伟达数据中心收入同比翻倍且次世代芯片推进顺利，直接锁定台积电先进制程与 CoWoS 产能高利用率。",
-                "direction": "潜在利好",
-                "condition": "验证条件为台积电月度营收延续高增长及 CoWoS 扩产计划稳步兑现。",
-                "sourceUrl": "https://investor.tsmc.com"
-              }
-            ]
-          }
-        },
-        {
-          "rank": 6,
-          "title": "Nvidia临时CEO提前加薪并承诺路线不变",
-          "heat": 108,
-          "url": "https://aihot.news/story/c5899d4d-282f-4d24-9aa7-43f7b133d229",
-          "marketLink": {
-            "company": "NVIDIA",
-            "ticker": "NVDA",
-            "status": "listed",
-            "relationUrl": "https://www.nvidia.com",
-            "eventPublishedAt": "2026-11-19T02:59:00+08:00",
-            "eventSourceUrl": "https://aihot.news/story/c5899d4d-282f-4d24-9aa7-43f7b133d229"
-          },
-          "readThrough": {
-            "checkedAt": "2026-11-19T20:02:50+08:00",
-            "note": "临时 CEO Colette Kress 在全员大会承诺将加薪和额外股权提前至 12 月发放并保持技术路线不变，主动应对股价回撤后的人才流失担忧。",
-            "candidates": [
-              {
-                "company": "NVIDIA",
-                "ticker": "NVDA",
-                "exchange": "NASDAQ",
-                "exposure": "提前发放薪酬与股权激励有助稳定核心芯片与软件架构师团队，但也将在短期内温和推升股权激励费用（SBC）。",
-                "direction": "潜在利好",
-                "condition": "验证条件为核心研发团队保持稳定、Vera Rubin 研发进度不受换帅波及且运营利润率保持韧性。",
-                "sourceUrl": "https://www.nvidia.com"
-              }
-            ]
-          }
-        },
-        {
-          "rank": 7,
-          "title": "Google 将 Genie 4 开放给 AI Ultra 订阅者",
-          "heat": 92,
+          "title": "Google 将 Genie 4 开放给 AI Ultra 订阅者并上线 API",
+          "heat": 81,
           "url": "https://aihot.news/story/d9a88c5c-1b99-4e5b-af6c-dec4f752f180",
           "marketLink": {
             "company": "Alphabet",
@@ -311,48 +264,106 @@ window.BLOOMBERG_MARKETS_DAILY = {
             "relationUrl": "https://abc.xyz",
             "eventPublishedAt": "2026-11-19T02:14:00+08:00",
             "eventSourceUrl": "https://aihot.news/story/d9a88c5c-1b99-4e5b-af6c-dec4f752f180"
+          },
+          "readThrough": {
+            "checkedAt": "2026-11-20T21:07:20+08:00",
+            "note": "Google DeepMind 将世界模型 Genie 4 向 AI Ultra 高阶订阅者开放并同步上线 API，推进交互式 3D 环境生成商业化。",
+            "candidates": [
+              {
+                "company": "Alphabet",
+                "ticker": "GOOGL",
+                "exchange": "NASDAQ",
+                "exposure": "Genie 4 面向高客单价 Ultra 订阅层与开发者 API 开放，有助于将前沿世界模型转化为高毛利订阅与云推理收入。",
+                "direction": "潜在利好",
+                "condition": "验证条件为 AI Ultra 订阅留存率及游戏/仿真行业 API 付费调用规模持续增长。",
+                "sourceUrl": "https://deepmind.google"
+              }
+            ]
           }
         },
         {
-          "rank": 8,
-          "title": "Google 发布 Gemini 4 Hydrogen，接入搜索并免费开放任务代办",
-          "heat": 92,
-          "url": "https://aihot.news/story/2ff1f46f-7e98-4965-a5b2-87329632ca5d",
+          "rank": 6,
+          "title": "OpenAI报告：编码智能体加速研发但进展不均",
+          "heat": 74,
+          "url": "https://aihot.news/story/7208f05f-6fa1-4aec-9c4a-84bd96219f87",
           "marketLink": {
-            "company": "Alphabet",
-            "ticker": "GOOGL",
-            "status": "listed",
-            "relationUrl": "https://abc.xyz",
-            "eventPublishedAt": "2026-11-18T01:00:00+08:00",
-            "eventSourceUrl": "https://aihot.news/story/2ff1f46f-7e98-4965-a5b2-87329632ca5d"
+            "company": "OpenAI",
+            "ticker": null,
+            "status": "no_direct",
+            "relationUrl": "https://openai.com",
+            "eventPublishedAt": "2026-11-19T07:07:00+08:00",
+            "eventSourceUrl": "https://aihot.news/story/7208f05f-6fa1-4aec-9c4a-84bd96219f87"
+          },
+          "readThrough": {
+            "checkedAt": "2026-11-20T21:07:20+08:00",
+            "note": "OpenAI 内部研发加速报告显示 2–4 小时人工任务智能体自主成功率升至 46%、4–8 小时任务升至 35%，但长周期复杂系统工程与安全验证仍存在瓶颈。",
+            "candidates": [
+              {
+                "company": "Microsoft",
+                "ticker": "MSFT",
+                "exchange": "NASDAQ",
+                "exposure": "编码智能体在中等时长研发任务上的成功率翻倍支撑 GitHub Copilot 企业级渗透，但进展不均也意味着企业客户对高价 AI 工具的 ROI 审视趋严。",
+                "direction": "方向待确认",
+                "condition": "验证条件为 GitHub Copilot 企业座席净增与 ARPU 扩张能持续跑赢软件行业 IT 预算增速。",
+                "sourceUrl": "https://github.com/features/copilot"
+              }
+            ]
           }
         },
         {
-          "rank": 9,
-          "title": "腾讯WorkBuddy日活超千万，年化收入逾5亿美元",
-          "heat": 90,
-          "url": "https://aihot.news/story/f9f27ce5-c259-4268-9c72-3cdc38699171",
+          "rank": 7,
+          "title": "腾讯混元 Hy4 正式开源权重并发布 System Card",
+          "heat": 72,
+          "url": "https://aihot.news/story/491d220c-9d57-4295-af9f-e4382561b3f7",
           "marketLink": {
             "company": "Tencent",
             "ticker": "TCEHY",
             "status": "listed",
             "relationUrl": "https://www.tencent.com",
-            "eventPublishedAt": "2026-11-18T16:52:00+08:00",
-            "eventSourceUrl": "https://aihot.news/story/f9f27ce5-c259-4268-9c72-3cdc38699171"
+            "eventPublishedAt": "2026-11-20T11:41:00+08:00",
+            "eventSourceUrl": "https://aihot.news/story/491d220c-9d57-4295-af9f-e4382561b3f7"
+          }
+        },
+        {
+          "rank": 8,
+          "title": "Meta Muse Charm 据报定价 300 美元",
+          "heat": 71,
+          "url": "https://aihot.news/story/2463d589-e0e9-4642-b52b-8056a255d3e2",
+          "marketLink": {
+            "company": "Meta Platforms",
+            "ticker": "META",
+            "status": "listed",
+            "relationUrl": "https://about.meta.com",
+            "eventPublishedAt": "2026-11-20T04:22:00+08:00",
+            "eventSourceUrl": "https://aihot.news/story/2463d589-e0e9-4642-b52b-8056a255d3e2"
+          }
+        },
+        {
+          "rank": 9,
+          "title": "涉华芯片关联公司投资DeepSeek融资",
+          "heat": 69,
+          "url": "https://aihot.news/story/c4010e0b-ceb4-4081-bb9a-9c40af7f311e",
+          "marketLink": {
+            "company": "DeepSeek",
+            "ticker": null,
+            "status": "no_direct",
+            "relationUrl": "https://www.deepseek.com",
+            "eventPublishedAt": "2026-11-20T19:00:00+08:00",
+            "eventSourceUrl": "https://aihot.news/story/c4010e0b-ceb4-4081-bb9a-9c40af7f311e"
           }
         },
         {
           "rank": 10,
-          "title": "Nvidia停售H200芯片，结束对华出口通道",
-          "heat": 86,
-          "url": "https://aihot.news/story/fbb613d2-1a33-467d-87ff-5e666f2e2b9d",
+          "title": "OpenAI 向 Plus 与 Business 用户测试 dots",
+          "heat": 69,
+          "url": "https://aihot.news/story/9ba36bba-3cd1-40c9-b311-35e022a99425",
           "marketLink": {
-            "company": "NVIDIA",
-            "ticker": "NVDA",
-            "status": "listed",
-            "relationUrl": "https://www.nvidia.com",
-            "eventPublishedAt": "2026-11-18T07:37:00+08:00",
-            "eventSourceUrl": "https://aihot.news/story/fbb613d2-1a33-467d-87ff-5e666f2e2b9d"
+            "company": "OpenAI",
+            "ticker": null,
+            "status": "no_direct",
+            "relationUrl": "https://openai.com",
+            "eventPublishedAt": "2026-11-20T07:17:00+08:00",
+            "eventSourceUrl": "https://aihot.news/story/9ba36bba-3cd1-40c9-b311-35e022a99425"
           }
         }
       ]
