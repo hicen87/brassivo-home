@@ -1,127 +1,87 @@
 window.BLOOMBERG_MARKETS_DAILY = {
-  "issueDate": "2026-11-20",
-  "publishedAt": "2026-11-20T11:40:19+00:00",
+  "issueDate": "2026-11-23",
+  "publishedAt": "2026-11-23T11:49:12+00:00",
   "newsletter": "Markets Daily",
-  "headline": "AI回报疑虑引爆全球股市抛售潮：纳指高开倒跌、台股创1991年来最大单周跌幅，SpaceX芯片债收益率破8%、铜价跌至3月新低",
-  "bloombergTake": "Bloomberg Markets Daily（2026-11-20 原刊）报道，即便Anthropic创纪录IPO首日收涨17%，也未能阻挡全球AI抛售潮（今日盘前跌6.4%）：周四纳指100早盘涨2.3%后倒跌2.2%收场（较10月6日高点跌15%），MSCI全球指数连跌七日创三年最长连跌；日经跌5.1%、韩股跌5.2%（周跌8%）、台股周跌6.2%创1991年来最大单周跌幅，新兴市场逼近熊市。SpaceX为采购AI芯片拟发行的320亿美元债务收益率突破8%，DayOne暂停赴美IPO；LME铜价跌至3月以来最低并逼近1.2万美元；避险买盘推动10年期美债收益率回落6bp至4.98%。盘前AMD跌5.4%、英特尔跌5%、美光跌4.2%、光模块Coherent与Lumentum跌超5%，仅苹果因自研AI智能体进展微涨0.3%。原刊快照，非实时行情。",
+  "headline": "标普步入回调后美股期货强弹、七巨头领涨，CrowdStrike 440亿美元收购Zscaler，贝森特警示联储过度紧缩风险",
+  "bloombergTake": "Bloomberg Markets Daily（2026-11-23 原刊）报道，标普500跌入回调区间后，大摩Michael Wilson及高盛交易台等称抛售带来买点，但高盛亦警示仓位仍偏高、Yardeni将标普年底目标由7,900点下调至7,500点；盘前纳指100期货涨3.5%、标普期货涨2.9%，七巨头中英伟达涨8.6%、Alphabet涨4.8%，Anthropic盘前涨4.7%至92.79美元（较发行价涨约12%）。中韩台监管出手稳市（中国将融资保证金比例降至80%），日经跌5.1%，10年期美债收益率报4.95%。CrowdStrike斥资440亿美元收购Zscaler（盘前涨12%）；财长贝森特警示联储过度紧缩风险（周三将公布PCE，预期同比升3.8%）；特朗普称若谈判破裂明年或重启对伊战事；比特币连跌七周。原刊快照，非实时行情。",
   "bloombergStories": [
     {
-      "title": "全球AI抛售潮蔓延：纳指高开2.3%倒跌2.2%，台股创1991年来最大单周跌幅",
-      "summary": "市场从追捧AI故事转向索取“回报证明”（招股书亦暴露前沿模型定价权弱化），MSCI全球指数七连跌；台股周跌6.2%创1991年来最惨，韩股周跌8%，日经单日重挫5.1%，欧股五连跌。"
+      "title": "标普步入回调后美股期货强弹，华尔街多空激辩抄底时机",
+      "summary": "盘前标普500与纳指100期货分别涨2.9%与3.5%，七巨头中英伟达涨8.6%、Alphabet涨4.8%；大摩Wilson看多超大型科技与工业股，高盛则提示仓位仍偏高、Yardeni下调年底目标至7,500点。"
     },
     {
-      "title": "SpaceX 320亿美元AI芯片债收益率破8%，DayOne数据中心暂停赴美IPO",
-      "summary": "SpaceX为采购AI芯片筹措的320亿美元债务收益率升破8%，反映债权人对巨额算力开支能否收回成本的高度担忧；新加坡数据中心运营商DayOne被迫暂停美国IPO计划。"
+      "title": "中韩台监管协同稳市缓和抛压，CrowdStrike 440亿美元并购Zscaler",
+      "summary": "中国将融资保证金比例降至80%并协同韩台监管推出稳市举措，缓和亚洲卖压（日经跌5.1%）；CrowdStrike宣布440亿美元收购网络安全商Zscaler，推动Zscaler盘前大涨12%。"
     },
     {
-      "title": "盘前芯片与光模块重挫、资金涌入防御股：AMD跌5.4%，仅苹果微涨0.3%",
-      "summary": "盘前AMD跌5.4%、英特尔跌5%、美光跌4.2%，Coherent与Lumentum跌超5%，Intuit下调营收指引暴跌11%；沃尔玛、T-Mobile与联合健康等防御股逆市走强，苹果因推进自研智能体微涨0.3%。"
+      "title": "贝森特警示联储过度紧缩风险，周三10月PCE通胀数据受瞩目",
+      "summary": "美国财长贝森特警告美联储因通胀数据而过度紧缩恐危及经济；市场关注周三公布的10月PCE物价指数，彭博调查预期同比升3.8%（追平5月创下的三年新高），核心PCE亦料加速。"
     },
     {
-      "title": "AI基建质疑拖累金属市场崩跌：LME铜价创3月以来新低，锡周跌逾12%",
-      "summary": "市场质疑AI数据中心对铜需求的透支预期，叠加美元连涨四周与中国需求疲弱，LME铜价单日跌近4%逼近1.2万美元关口（9月曾近1.5万美元）；锡周跌超12%、锌跌约5%，黄金跌1.1%至3,586美元。"
+      "title": "工业金属现货挤仓与暴跌并存，比特币七连跌遭ETF资金持续撤出",
+      "summary": "铜、铝、锡继剧烈现货挤仓推高价差后上周大跌，实物短缺与金融去杠杆交织加剧波动；比特币连跌七周创2022年来最长连跌，资金持续流出加密ETF并转向SpaceX及Anthropic等股权。"
     },
     {
-      "title": "欧洲年内发债首破2万亿欧元纪录，美议员接近达成禁止中国汽车入美协议",
-      "summary": "受政府借贷与AI融资潮推动，欧洲年内债券发行规模首次突破2万亿欧元；交易员押注主要央行在2027年底结束加息后将长期维持高利率；美国国会议员接近在跛脚鸭会期达成禁止中国汽车进入美国市场的协议。"
+      "title": "特朗普称若外交谈判失败明年或重启对伊战事，美债收益率守4.95%",
+      "summary": "美国总统特朗普表示若未达成外交协议明年可能重启对伊朗军事行动，地缘尾险犹存；10年期美债收益率微升1bp至4.95%，Anthropic盘前涨4.7%至92.79美元，SpaceX获看多涨3.9%。"
     }
   ],
   "overallJudgment": {
     "regime": "bearish",
     "verdict": "风险资产整体：短期利空格局",
-    "title": "Anthropic挂牌虽守发行价但纳指冲高2.3%后倒跌2.2%，叠加SpaceX芯片债收益率破8%、亚太芯片股崩跌与铜价破位，触发向短期利空格局逆转",
-    "deduction": "综合权衡多空因素，昨日设定的向利空格局逆转条件（纳指未能守住盘前反弹成果并重回跌势）已明确触发：第一，二级市场呈现典型“利好出尽即抛售”特征，周四纳指100早盘冲高2.3%后大幅倒跌2.2%（标普500大跌2.02%至7,175.83），Anthropic今日盘前亦回吐6.4%，MSCI全球指数录得三年来最长七连跌。第二，亚太算力硬件链遭遇重创，台股周跌6.2%创1991年来最大单周跌幅，日经与韩股单日均重挫逾5%，盘前AMD、英特尔、光模块普跌逾5%。第三，一级与信用市场融资摩擦急剧升温，SpaceX 320亿美元AI芯片债收益率高达8%以上、DayOne暂停数据中心IPO、LME铜价跌至3月来最低，表明跨资产资金正同步挤出AI资本开支泡沫。尽管10年期美债收益率因避险买盘回落6bp至4.98%，且Google、苹果密集推进桌面与端侧Agent，但短期空头去杠杆与要求“盈利回报证明”的定价逻辑占据绝对主导，故切换为短期利空格局。",
-    "condition": "利空格局延续验证：纳指100与费城半导体指数继续失守近期低点、Anthropic进一步跌向83美元发行价，或高收益AI算力债利差持续走阔；向偏多格局逆转条件：美债10年期收益率稳步回落至4.85%下方缓和估值折现压力，同时半导体与光模块龙头止跌企稳、标普500重新收复7,300点关口。"
+    "title": "美股期指超跌强弹且亚洲监管稳市，但长端利率高企4.95%与PCE通胀大考前尚未触发反转，维持短期利空格局",
+    "deduction": "综合权衡多空因素：尽管今日盘前美股期货大幅反弹（标普期货+2.9%、纳指100期货+3.5%，英伟达+8.6%、Alphabet+4.8%、Anthropic+4.7%），且中韩台监管出手稳市（中国降融资保证金至80%）、CrowdStrike 440亿美元并购提振软件情绪、一年期衰退概率仅约20%（表明抛售偏交易结构而非经济衰退）；但上周五标普500大跌3.70%收于6,910.39点，距7,300点偏多逆转关口仍有明显距离，10年期美债收益率仍在4.95%（高于4.85%缓和阈值），高盛交易台与AlphaValue亦警示整体仓位仍偏高、周三10月PCE同比预期3.8%或令联储紧缩担忧延续，加之日经仍挫5.1%、比特币连跌七周、工业金属剧烈去杠杆及对伊地缘警告犹存，尚未满足向偏多格局逆转条件，故维持短期利空格局。",
+    "condition": "利空格局延续验证：本周10月PCE高于3.8%推升10年期美债收益率重返5.0%上方，或标普500反弹受阻并再度跌破6,900点；向偏多格局逆转条件：美债10年期收益率回落至4.85%下方缓和折现压力，同时半导体与光模块企稳、标普500放量收复7,300点关口。"
   },
-  "sourceUrl": "https://www.bloomberg.com/news/newsletters/2026-11-20/skepticism-about-ai-is-crushing-stock-prices-around-the-world",
+  "sourceUrl": "https://www.bloomberg.com/news/newsletters/2026-11-23/wall-street-sees-buying-opportunities-for-the-brave",
   "mediaFocus": {
     "aihot": {
-      "captureDate": "2026-11-20",
-      "capturedAt": "2026-11-20T21:06:00+08:00",
-      "boardUpdatedAt": "2026-11-20T21:05:00+08:00",
+      "captureDate": "2026-11-23",
+      "capturedAt": "2026-11-23T20:06:00+08:00",
+      "boardUpdatedAt": "2026-11-23T20:00:18+08:00",
       "windowHours": 48,
       "sourceUrl": "https://aihot.news/hot",
       "market": {
-        "checkedAt": "2026-11-20T21:07:20+08:00",
+        "checkedAt": "2026-11-23T20:06:00+08:00",
         "benchmark": {
-          "sessionDate": "2026-11-19",
-          "previousSessionDate": "2026-11-18",
-          "close": 7175.83,
-          "previousClose": 7323.63,
+          "sessionDate": "2026-11-20",
+          "previousSessionDate": "2026-11-19",
+          "close": 6910.39,
+          "previousClose": 7175.83,
           "sources": [
             "https://finance.yahoo.com/quote/%5EGSPC",
             "https://www.cnbc.com/quotes/.SPX"
           ]
         },
         "quotes": {
-          "GOOGL": {
-            "sessionDate": "2026-11-19",
-            "previousSessionDate": "2026-11-18",
-            "close": 272.66,
-            "previousClose": 282.44,
+          "TSLA": {
+            "sessionDate": "2026-11-20",
+            "previousSessionDate": "2026-11-19",
+            "close": 345.82,
+            "previousClose": 374.41,
             "sources": [
-              "https://finance.yahoo.com/quote/GOOGL",
-              "https://www.cnbc.com/quotes/GOOGL"
-            ]
-          },
-          "AAPL": {
-            "sessionDate": "2026-11-19",
-            "previousSessionDate": "2026-11-18",
-            "close": 349.21,
-            "previousClose": 352.45,
-            "sources": [
-              "https://finance.yahoo.com/quote/AAPL",
-              "https://www.cnbc.com/quotes/AAPL"
-            ]
-          },
-          "TCEHY": {
-            "sessionDate": "2026-11-19",
-            "previousSessionDate": "2026-11-18",
-            "close": 44.16,
-            "previousClose": 46.13,
-            "sources": [
-              "https://finance.yahoo.com/quote/TCEHY",
-              "https://www.cnbc.com/quotes/TCEHY"
-            ]
-          },
-          "META": {
-            "sessionDate": "2026-11-19",
-            "previousSessionDate": "2026-11-18",
-            "close": 596.22,
-            "previousClose": 616.38,
-            "sources": [
-              "https://finance.yahoo.com/quote/META",
-              "https://www.cnbc.com/quotes/META"
-            ]
-          },
-          "NVDA": {
-            "sessionDate": "2026-11-19",
-            "previousSessionDate": "2026-11-18",
-            "close": 145.98,
-            "previousClose": 150.96,
-            "sources": [
-              "https://finance.yahoo.com/quote/NVDA",
-              "https://www.cnbc.com/quotes/NVDA"
+              "https://finance.yahoo.com/quote/TSLA",
+              "https://www.cnbc.com/quotes/TSLA"
             ]
           },
           "AMZN": {
-            "sessionDate": "2026-11-19",
-            "previousSessionDate": "2026-11-18",
-            "close": 257.37,
-            "previousClose": 267.74,
+            "sessionDate": "2026-11-20",
+            "previousSessionDate": "2026-11-19",
+            "close": 246.82,
+            "previousClose": 257.37,
             "sources": [
               "https://finance.yahoo.com/quote/AMZN",
               "https://www.cnbc.com/quotes/AMZN"
             ]
           },
-          "MSFT": {
-            "sessionDate": "2026-11-19",
-            "previousSessionDate": "2026-11-18",
-            "close": 498.3,
-            "previousClose": 508.29,
+          "ANT": {
+            "sessionDate": "2026-11-20",
+            "previousSessionDate": "2026-11-19",
+            "close": 88.91,
+            "previousClose": 97.17,
             "sources": [
-              "https://finance.yahoo.com/quote/MSFT",
-              "https://www.cnbc.com/quotes/MSFT"
+              "https://finance.yahoo.com/quote/ANT",
+              "https://www.cnbc.com/quotes/ANT"
             ]
           }
         }
@@ -129,124 +89,105 @@ window.BLOOMBERG_MARKETS_DAILY = {
       "stories": [
         {
           "rank": 1,
-          "title": "Anthropic 上市：83 美元定价，首日收涨 17%",
-          "heat": 621,
-          "url": "https://aihot.news/story/82c796c0-3bf1-4c3a-8368-56913b4bf85d",
+          "title": "OpenAI 提议以困惑度设共同安全上限，微软公布可比数据",
+          "heat": 253,
+          "url": "https://aihot.news/story/c5ab5cf5-6316-4ad6-9d74-f0b378a2b064",
           "marketLink": {
-            "company": "Anthropic",
+            "company": "OpenAI",
             "ticker": null,
             "status": "no_direct",
-            "relationUrl": "https://www.anthropic.com",
-            "eventPublishedAt": "2026-11-18T01:04:00+08:00",
-            "eventSourceUrl": "https://aihot.news/story/82c796c0-3bf1-4c3a-8368-56913b4bf85d"
+            "relationUrl": "https://openai.com",
+            "eventPublishedAt": "2026-11-23T01:03:00+08:00",
+            "eventSourceUrl": "https://aihot.news/story/c5ab5cf5-6316-4ad6-9d74-f0b378a2b064"
           },
           "readThrough": {
-            "checkedAt": "2026-11-20T21:07:20+08:00",
-            "note": "Anthropic（ANT）以 83 美元发行价募资约 813 亿美元，叠加七家算力供应商按发行价认购 260 亿美元私募共募资 1,073 亿美元，首日开盘 111.50 美元、收涨 17%，但次日盘前受科技抛售潮拖累回落 6.4%。",
+            "checkedAt": "2026-11-23T20:06:00+08:00",
+            "note": "OpenAI提议以困惑度设为跨实验室安全上限，微软AI公布MAI-2 Base可比数据；透明度与合规倡议属行业规范讨论，尚不等于算力采购扩张或直接盈利变化。",
             "candidates": [
               {
-                "company": "Amazon",
-                "ticker": "AMZN",
+                "company": "Microsoft",
+                "ticker": "MSFT",
                 "exchange": "NASDAQ",
-                "exposure": "作为核心战略股东与 AWS Bedrock/Trainium 云算力供应商，Anthropic 千亿美元募资落地直接保障其未来数年云算力采购履约能力。",
-                "direction": "潜在利好",
-                "condition": "验证条件为 Anthropic 新增算力预算按约定向 AWS Trainium 集群转化为实际云收入。",
-                "sourceUrl": "https://aws.amazon.com/bedrock/claude/"
-              },
-              {
-                "company": "Alphabet",
-                "ticker": "GOOGL",
-                "exchange": "NASDAQ",
-                "exposure": "谷歌兼具重要股东与 Google Cloud TPU 算力伙伴身份，IPO 募资充实 Anthropic 资产负债表，但二级市场科技估值回调对短期情绪形成掣肘。",
+                "exposure": "微软AI率先呼应OpenAI透明度倡议并披露自研MAI-2 Base评测，体现前沿模型自研与合作并行的生态位。",
                 "direction": "方向待确认",
-                "condition": "验证条件为 ANT 股价企稳于发行价上方且 Google Cloud AI 推理与训练订单持续放量。",
-                "sourceUrl": "https://cloud.google.com"
+                "condition": "验证条件为安全基准共识落地是否影响MAI-2/Azure AI企业级客户采用率与资本开支节奏。",
+                "sourceUrl": "https://www.microsoft.com"
               }
             ]
           }
         },
         {
           "rank": 2,
-          "title": "Google 发布 Gemini 4 Neon，API 可直传 Office 文件",
-          "heat": 519,
-          "url": "https://aihot.news/story/74578987-a1ed-4ce0-96b8-658226459865",
+          "title": "Lean 社区确认阿尔波格黎曼猜想证明正确",
+          "heat": 239,
+          "url": "https://aihot.news/story/647b0945-9244-4f55-b509-0f3fa0f6fe51",
           "marketLink": {
-            "company": "Alphabet",
-            "ticker": "GOOGL",
-            "status": "listed",
-            "relationUrl": "https://abc.xyz",
-            "eventPublishedAt": "2026-11-19T05:37:00+08:00",
-            "eventSourceUrl": "https://aihot.news/story/74578987-a1ed-4ce0-96b8-658226459865"
+            "company": "Lean Community",
+            "ticker": null,
+            "status": "no_direct",
+            "relationUrl": "https://lean-lang.org",
+            "eventPublishedAt": "2026-11-20T23:37:46+08:00",
+            "eventSourceUrl": "https://aihot.news/story/647b0945-9244-4f55-b509-0f3fa0f6fe51"
           },
           "readThrough": {
-            "checkedAt": "2026-11-20T21:07:20+08:00",
-            "note": "Google 推出面向复杂软件工程、知识工作与科学工作流的 Gemini 4 Neon（每百万输入 token 3 美元），API 原生支持直传 Office 文件，强化企业生产力场景。",
+            "checkedAt": "2026-11-23T20:06:00+08:00",
+            "note": "Lean社区独立核实约1,700万行形式化证明代码正确；事件凸显人机协作与形式化验证结合的科研潜力，但商业化与泛化能力仍待观察。",
             "candidates": [
               {
-                "company": "Alphabet",
-                "ticker": "GOOGL",
+                "company": "Anthropic",
+                "ticker": "ANT",
                 "exchange": "NASDAQ",
-                "exposure": "原生 Office 文档解析与高性价比 API 定价有助提升 Vertex AI 与 Workspace 企业客户粘性及付费 Token 调用量。",
-                "direction": "潜在利好",
-                "condition": "验证条件为企业级 API 调用增速能抵消单价下调并维持云业务利润率扩张。",
-                "sourceUrl": "https://cloud.google.com/vertex-ai"
+                "exposure": "研究者称在协作中深度使用Claude辅助完成形式化推理，提升前沿模型在科研与验证领域的品牌影响力。",
+                "direction": "方向待确认",
+                "condition": "验证条件为高难度推理突破能否转化为科研、软件形式化验证等高客单价企业付费收入。",
+                "sourceUrl": "https://www.anthropic.com"
               }
             ]
           }
         },
         {
           "rank": 3,
-          "title": "Google 为 Mac 版 Gemini 上线电脑操作功能",
-          "heat": 159,
-          "url": "https://aihot.news/story/2442138c-3137-45fd-9a2a-9c1b159c49ae",
+          "title": "智谱发布GLM-5.4旗舰模型并上线Coding Plan",
+          "heat": 180,
+          "url": "https://aihot.news/story/fc5a905b-54af-4de4-9c7c-a366a60a9f84",
           "marketLink": {
-            "company": "Alphabet",
-            "ticker": "GOOGL",
+            "company": "Zhipu AI",
+            "ticker": "02513.HK",
             "status": "listed",
-            "relationUrl": "https://abc.xyz",
-            "eventPublishedAt": "2026-11-20T02:09:00+08:00",
-            "eventSourceUrl": "https://aihot.news/story/2442138c-3137-45fd-9a2a-9c1b159c49ae"
+            "relationUrl": "https://www.zhipuai.cn",
+            "eventPublishedAt": "2026-11-23T12:49:30+08:00",
+            "eventSourceUrl": "https://aihot.news/story/fc5a905b-54af-4de4-9c7c-a366a60a9f84"
           },
           "readThrough": {
-            "checkedAt": "2026-11-20T21:07:20+08:00",
-            "note": "macOS 版 Gemini 桌面应用上线 computer use 功能，可跨本地 Mac 应用、文件与网页代办填写表单、制作演示文稿等多步任务，支持实时预览与接管。",
-            "candidates": [
-              {
-                "company": "Alphabet",
-                "ticker": "GOOGL",
-                "exchange": "NASDAQ",
-                "exposure": "桌面端跨应用 Computer Use 落地抢占 macOS 生产力入口，高频多步视觉/操作推理将显著拉动单用户 Token 消耗。",
-                "direction": "潜在利好",
-                "condition": "验证条件为 Gemini 桌面端月活及 Google One AI 付费订阅转化率提升，且未触发系统级隐私安全封禁。",
-                "sourceUrl": "https://gemini.google.com"
-              }
-            ]
+            "checkedAt": "2026-11-23T20:06:00+08:00",
+            "note": "GLM-5.4采用28层共享权重循环Transformer以压缩参数实现更深推理，并上线Coding Plan；架构效率提升可能减少单位参数需求，是否拉动总算力取决于付费调用量。",
+            "candidates": []
           }
         },
         {
           "rank": 4,
-          "title": "苹果被曝加速Siri智能体化并招聘工程师",
-          "heat": 99,
-          "url": "https://aihot.news/story/a1b6af96-fbdf-4779-80a9-0ca55270818c",
+          "title": "Thinking Machines 开源循环模型 Inkling 2 Mini",
+          "heat": 105,
+          "url": "https://aihot.news/story/0cf0f02a-0464-43db-b253-ed1878937b74",
           "marketLink": {
-            "company": "Apple",
-            "ticker": "AAPL",
-            "status": "listed",
-            "relationUrl": "https://www.apple.com",
-            "eventPublishedAt": "2026-11-20T06:31:00+08:00",
-            "eventSourceUrl": "https://aihot.news/story/a1b6af96-fbdf-4779-80a9-0ca55270818c"
+            "company": "Thinking Machines Lab",
+            "ticker": null,
+            "status": "no_direct",
+            "relationUrl": "https://thinkingmachines.ai",
+            "eventPublishedAt": "2026-11-21T04:10:34+08:00",
+            "eventSourceUrl": "https://aihot.news/story/0cf0f02a-0464-43db-b253-ed1878937b74"
           },
           "readThrough": {
-            "checkedAt": "2026-11-20T21:07:20+08:00",
-            "note": "彭博报道苹果新 CEO John Ternus 施压软件主管 Federighi 加速 Siri 智能体化以对标 OpenAI Dots、Meta Muse 与 Grok，推动苹果成为周五盘前唯一上涨的七巨头。",
+            "checkedAt": "2026-11-23T20:06:00+08:00",
+            "note": "26.4B循环Transformer小模型支持32GB内存Mac及桌面GPU本地运行；端侧高效推理可能分流部分云端轻量调用，方向仍待确认。",
             "candidates": [
               {
                 "company": "Apple",
                 "ticker": "AAPL",
                 "exchange": "NASDAQ",
-                "exposure": "依托系统级权限打造端侧 AI 智能体有助巩固硬件换机护城河，而且苹果相对克制的资本开支使其在 AI 投资回报质疑潮中具备避险溢价。",
-                "direction": "潜在利好",
-                "condition": "验证条件为新版智能体化 Siri 按期交付且带动 iPhone/Mac 换机周期加速。",
+                "exposure": "模型明确针对32GB以上统一内存Mac本地推理优化，丰富Mac端侧开发与本地AI工作流。",
+                "direction": "方向待确认",
+                "condition": "验证条件为开源高效模型生态能否拉动高配MacBook Pro/Mac Studio大内存机型出货占比。",
                 "sourceUrl": "https://www.apple.com"
               }
             ]
@@ -254,116 +195,106 @@ window.BLOOMBERG_MARKETS_DAILY = {
         },
         {
           "rank": 5,
-          "title": "Google 将 Genie 4 开放给 AI Ultra 订阅者并上线 API",
-          "heat": 81,
-          "url": "https://aihot.news/story/d9a88c5c-1b99-4e5b-af6c-dec4f752f180",
+          "title": "特斯拉FSD v15下月推送，马斯克介绍天空箭头导航",
+          "heat": 100,
+          "url": "https://aihot.news/story/fcbdc9a0-bdf5-473c-9f26-7a51a8deb2e3",
           "marketLink": {
-            "company": "Alphabet",
-            "ticker": "GOOGL",
+            "company": "Tesla",
+            "ticker": "TSLA",
             "status": "listed",
-            "relationUrl": "https://abc.xyz",
-            "eventPublishedAt": "2026-11-19T02:14:00+08:00",
-            "eventSourceUrl": "https://aihot.news/story/d9a88c5c-1b99-4e5b-af6c-dec4f752f180"
+            "relationUrl": "https://www.tesla.com",
+            "eventPublishedAt": "2026-11-22T04:26:59+08:00",
+            "eventSourceUrl": "https://aihot.news/story/fcbdc9a0-bdf5-473c-9f26-7a51a8deb2e3"
           },
           "readThrough": {
-            "checkedAt": "2026-11-20T21:07:20+08:00",
-            "note": "Google DeepMind 将世界模型 Genie 4 向 AI Ultra 高阶订阅者开放并同步上线 API，推进交互式 3D 环境生成商业化。",
+            "checkedAt": "2026-11-23T20:06:00+08:00",
+            "note": "特斯拉预告FSD v15下月推送并共用Robotaxi/Optimus视觉编码器，但相关安全提升说法尚无独立验证数据，且报道在周五收盘后出现。",
             "candidates": [
               {
-                "company": "Alphabet",
-                "ticker": "GOOGL",
+                "company": "Tesla",
+                "ticker": "TSLA",
                 "exchange": "NASDAQ",
-                "exposure": "Genie 4 面向高客单价 Ultra 订阅层与开发者 API 开放，有助于将前沿世界模型转化为高毛利订阅与云推理收入。",
-                "direction": "潜在利好",
-                "condition": "验证条件为 AI Ultra 订阅留存率及游戏/仿真行业 API 付费调用规模持续增长。",
-                "sourceUrl": "https://deepmind.google"
+                "exposure": "端到端网络升级与车机实时渲染旨在强化FSD体验与订阅吸引力，但实际交付与延迟表现仍待推送后检验。",
+                "direction": "方向待确认",
+                "condition": "验证条件为下月如期全量推送且独立实测干预率与FSD付费订阅率同步提升。",
+                "sourceUrl": "https://www.tesla.com"
               }
             ]
           }
         },
         {
           "rank": 6,
-          "title": "OpenAI报告：编码智能体加速研发但进展不均",
-          "heat": 74,
-          "url": "https://aihot.news/story/7208f05f-6fa1-4aec-9c4a-84bd96219f87",
+          "title": "蚂蚁开源首个多模态医疗大模型 LingSante-3.1-air-VL",
+          "heat": 84,
+          "url": "https://aihot.news/story/7a64c34c-2019-47e0-9ceb-2faff7425307",
           "marketLink": {
-            "company": "OpenAI",
+            "company": "Ant Group",
             "ticker": null,
             "status": "no_direct",
-            "relationUrl": "https://openai.com",
-            "eventPublishedAt": "2026-11-19T07:07:00+08:00",
-            "eventSourceUrl": "https://aihot.news/story/7208f05f-6fa1-4aec-9c4a-84bd96219f87"
+            "relationUrl": "https://www.antgroup.com",
+            "eventPublishedAt": "2026-11-23T01:26:19+08:00",
+            "eventSourceUrl": "https://aihot.news/story/7a64c34c-2019-47e0-9ceb-2faff7425307"
           },
           "readThrough": {
-            "checkedAt": "2026-11-20T21:07:20+08:00",
-            "note": "OpenAI 内部研发加速报告显示 2–4 小时人工任务智能体自主成功率升至 46%、4–8 小时任务升至 35%，但长周期复杂系统工程与安全验证仍存在瓶颈。",
-            "candidates": [
-              {
-                "company": "Microsoft",
-                "ticker": "MSFT",
-                "exchange": "NASDAQ",
-                "exposure": "编码智能体在中等时长研发任务上的成功率翻倍支撑 GitHub Copilot 企业级渗透，但进展不均也意味着企业客户对高价 AI 工具的 ROI 审视趋严。",
-                "direction": "方向待确认",
-                "condition": "验证条件为 GitHub Copilot 企业座席净增与 ARPU 扩张能持续跑赢软件行业 IT 预算增速。",
-                "sourceUrl": "https://github.com/features/copilot"
-              }
-            ]
+            "checkedAt": "2026-11-23T20:06:00+08:00",
+            "note": "蚂蚁开源124B/5.5B激活多模态医疗模型，性能宣称尚无独立验证且非医疗器械；无直接美股上市主体映射，暂不列间接受益标的。",
+            "candidates": []
           }
         },
         {
           "rank": 7,
-          "title": "腾讯混元 Hy4 正式开源权重并发布 System Card",
-          "heat": 72,
-          "url": "https://aihot.news/story/491d220c-9d57-4295-af9f-e4382561b3f7",
+          "title": "蚂蚁开源560B医疗MoE模型LingSante-3.1-flash",
+          "heat": 71,
+          "url": "https://aihot.news/story/5e931c88-3e7c-4f18-be7f-6c6902aa59b2",
           "marketLink": {
-            "company": "Tencent",
-            "ticker": "TCEHY",
-            "status": "listed",
-            "relationUrl": "https://www.tencent.com",
-            "eventPublishedAt": "2026-11-20T11:41:00+08:00",
-            "eventSourceUrl": "https://aihot.news/story/491d220c-9d57-4295-af9f-e4382561b3f7"
+            "company": "Ant Group",
+            "ticker": null,
+            "status": "no_direct",
+            "relationUrl": "https://www.antgroup.com",
+            "eventPublishedAt": "2026-11-22T11:19:38+08:00",
+            "eventSourceUrl": "https://aihot.news/story/5e931c88-3e7c-4f18-be7f-6c6902aa59b2"
           }
         },
         {
           "rank": 8,
-          "title": "Meta Muse Charm 据报定价 300 美元",
-          "heat": 71,
-          "url": "https://aihot.news/story/2463d589-e0e9-4642-b52b-8056a255d3e2",
+          "title": "200万诱饵请求测出AI服务链数据外泄",
+          "heat": 58,
+          "url": "https://aihot.news/story/2d0a9c1a-2a0a-41b6-a7ef-776ef03a783b",
           "marketLink": {
-            "company": "Meta Platforms",
-            "ticker": "META",
-            "status": "listed",
-            "relationUrl": "https://about.meta.com",
-            "eventPublishedAt": "2026-11-20T04:22:00+08:00",
-            "eventSourceUrl": "https://aihot.news/story/2463d589-e0e9-4642-b52b-8056a255d3e2"
+            "company": "Dragos",
+            "ticker": null,
+            "status": "no_direct",
+            "relationUrl": "https://www.dragos.com",
+            "eventPublishedAt": "2026-11-21T04:59:08+08:00",
+            "eventSourceUrl": "https://aihot.news/story/2d0a9c1a-2a0a-41b6-a7ef-776ef03a783b"
           }
         },
         {
           "rank": 9,
-          "title": "涉华芯片关联公司投资DeepSeek融资",
-          "heat": 69,
-          "url": "https://aihot.news/story/c4010e0b-ceb4-4081-bb9a-9c40af7f311e",
+          "title": "亚马逊深入谈判收购Decart，估值约75亿美元",
+          "heat": 53,
+          "url": "https://aihot.news/story/51379310-d375-40d8-88e1-a8112bca2c10",
           "marketLink": {
-            "company": "DeepSeek",
-            "ticker": null,
-            "status": "no_direct",
-            "relationUrl": "https://www.deepseek.com",
-            "eventPublishedAt": "2026-11-20T19:00:00+08:00",
-            "eventSourceUrl": "https://aihot.news/story/c4010e0b-ceb4-4081-bb9a-9c40af7f311e"
+            "company": "Amazon",
+            "ticker": "AMZN",
+            "status": "listed",
+            "relationUrl": "https://www.aboutamazon.com",
+            "eventPublishedAt": "2026-11-22T08:10:14+08:00",
+            "eventSourceUrl": "https://aihot.news/story/51379310-d375-40d8-88e1-a8112bca2c10"
           }
         },
         {
           "rank": 10,
-          "title": "OpenAI 向 Plus 与 Business 用户测试 dots",
-          "heat": 69,
-          "url": "https://aihot.news/story/9ba36bba-3cd1-40c9-b311-35e022a99425",
+          "title": "Anthropic 上市首日收涨 17%，次日回落",
+          "heat": 52,
+          "url": "https://aihot.news/story/82c796c0-3bf1-4c3a-8368-56913b4bf85d",
           "marketLink": {
-            "company": "OpenAI",
-            "ticker": null,
-            "status": "no_direct",
-            "relationUrl": "https://openai.com",
-            "eventPublishedAt": "2026-11-20T07:17:00+08:00",
-            "eventSourceUrl": "https://aihot.news/story/9ba36bba-3cd1-40c9-b311-35e022a99425"
+            "company": "Anthropic",
+            "ticker": "ANT",
+            "status": "listed",
+            "relationUrl": "https://www.anthropic.com",
+            "eventPublishedAt": "2026-11-18T08:12:10+08:00",
+            "eventSourceUrl": "https://aihot.news/story/82c796c0-3bf1-4c3a-8368-56913b4bf85d"
           }
         }
       ]
