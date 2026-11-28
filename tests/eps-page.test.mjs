@@ -109,7 +109,7 @@ test("homepage and public indexes link to the public EPS module", () => {
 
   const homepageLinks = [...homepage.matchAll(/<a class="card" href="([^"]+)"/g)].map((match) => match[1]);
   assert.deepEqual(homepageLinks, [
-    "/media/", "/macro/", "/eps/", "https://investment.brassivo.com",
+    "/media/", "/radar/", "/macro/", "/eps/", "https://investment.brassivo.com",
     "https://stocks.brassivo.com/sectors.html", "https://china.brassivo.com/sectors.html",
     "https://stocks.brassivo.com", "https://china.brassivo.com"
   ]);

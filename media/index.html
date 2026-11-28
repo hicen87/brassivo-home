@@ -14,8 +14,10 @@
   <meta property="og:description" content="Bloomberg 原刊摘要与 AIHOT 热点榜，各自注明刊期或抓取时点。">
   <meta property="og:url" content="https://brassivo.com/media/">
   <title>主流媒体每日焦点 · Brassivo Research</title>
-  <link rel="stylesheet" href="styles.css?v=20261030-regime">
+  <link rel="stylesheet" href="styles.css?v=20261128-interest">
   <script defer src="https://brassivo.com/research-i18n.js?v=20261118-2col"></script>
+  <script defer src="interest-analysis-data.js?v=20261127-0914117d"></script>
+  <script defer src="interest-analysis.js?v=20261128"></script>
   <script defer src="bloomberg-daily.js?v=20261123-9f617a76"></script>
   <script defer src="app.js?v=20261123"></script>
 </head>
@@ -27,6 +29,7 @@
       <nav class="research-nav" aria-label="全站研究导航">
         <a href="/">首页</a>
         <a href="/media/" aria-current="page">媒体焦点</a>
+        <a href="/radar/">核心美股</a>
         <a href="/macro/">宏观观点</a>
         <a href="/eps/">EPS修正</a>
         <a href="https://investment.brassivo.com">全球流动性</a>
@@ -42,15 +45,16 @@
         <div class="intro-grid">
           <div>
             <h1 id="page-title">主流媒体<br>每日焦点</h1>
-            <p class="lead">Bloomberg 聚焦全球宏观与市场短期波动；AIHOT 追踪过去 48 小时 AI 产业动态与产业链传导。每个来源保留自己的时间与原站链接。</p>
+            <p class="lead">Bloomberg 聚焦全球宏观与市场短期波动（含每日早晚报利益分析 2.0 归档）；AIHOT 追踪过去 48 小时 AI 产业动态与产业链传导。每个来源保留自己的时间与原站链接。</p>
           </div>
           <aside class="reading-note" aria-label="阅读说明">
             <span>HOW TO READ</span>
-            <p>这里是各自刊期或抓取时点的快照。AI 热度是站内讨论指标，下方的短期条件判断是 Brassivo 的独立推演。</p>
+            <p>上方为每日自动归档的 Bloomberg《亚洲早报》与 Markets Daily 利益分析 2.0（支持切换结构化四模块或高清长图）；下方为原刊摘要与 AI 热点榜。</p>
             <div class="date-line"><span>Bloomberg 原刊</span><time id="issue-date">—</time></div>
           </aside>
         </div>
       </section>
+      <section id="interest-analysis" class="interest-section" aria-labelledby="interest-title"></section>
       <section id="media-focus" class="media-section" aria-labelledby="media-title">
         <div id="media-content" aria-live="polite"><p class="unavailable">正在读取已核验的媒体焦点与 AI 热榜…</p></div>
       </section>
