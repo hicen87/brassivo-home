@@ -80,7 +80,7 @@ test("Interest Analysis 2.0 front-end renders four modules and escapes HTML", ()
   assert.doesNotMatch(target.innerHTML, /<script>alert/);
 });
 
-test("Core US Radar dataset is public-safe and ranks all 6 core US stocks", () => {
+test("Core US Radar dataset is public-safe and ranks all 7 core US stocks including AAPL", () => {
   const js = read("radar/radar-data.js");
   assert.doesNotMatch(js, FORBIDDEN);
 
@@ -90,9 +90,9 @@ test("Core US Radar dataset is public-safe and ranks all 6 core US stocks", () =
   assert.ok(data && Array.isArray(data.weeks) && data.weeks.length >= 1);
 
   const latest = data.weeks[0];
-  assert.equal(latest.stocks.length, 6);
+  assert.equal(latest.stocks.length, 7);
   const tickers = new Set(latest.stocks.map((s) => s.ticker));
-  for (const tk of ["MSFT", "META", "TSM", "BRK.A", "GOOG", "AMZN"]) {
+  for (const tk of ["MSFT", "META", "TSM", "BRK.A", "GOOG", "AMZN", "AAPL"]) {
     assert.ok(tickers.has(tk), `missing core ticker ${tk}`);
   }
   for (let i = 1; i < latest.stocks.length; i++) {
@@ -100,8 +100,10 @@ test("Core US Radar dataset is public-safe and ranks all 6 core US stocks", () =
   }
   for (const s of latest.stocks) {
     assert.notEqual(s.pe, "—", `${s.ticker} should have parsed PE/PB`);
+    assert.notEqual(s.roic, "—", `${s.ticker} should have parsed ROIC`);
     assert.equal(s.strikeZones.length, 3, `${s.ticker} should have 3 strike zones`);
     assert.equal(s.fourDimBreakdown.length, 4, `${s.ticker} should have 4-dim breakdown`);
+    assert.ok(s.bdmPlayers.length >= 4, `${s.ticker} should have BDM players`);
   }
 });
 

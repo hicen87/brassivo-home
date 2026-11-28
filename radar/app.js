@@ -36,7 +36,7 @@
     if (!zone) return "";
     if (zone.includes("高性价比")) return "is-high";
     if (zone.includes("合理")) return "is-fair";
-    if (zone.includes("偏贵")) return "is-expensive";
+    if (zone.includes("偏贵") || zone.includes("透支") || zone.includes("高估")) return "is-expensive";
     return "";
   };
 
