@@ -125,14 +125,12 @@ test("macro view page is direct-file compatible and has public metadata", () => 
   const researchNav = html.match(/<nav class="research-nav"[\s\S]*?<\/nav>/)?.[0] || "";
   for (const href of [
     "https://brassivo.com",
+    "https://brassivo.com/media/",
+    "https://brassivo.com/radar/",
     "https://brassivo.com/macro/",
-    "https://brassivo.com/eps/",
-    "https://investment.brassivo.com",
-    "https://stocks.brassivo.com/sectors.html",
-    "https://china.brassivo.com/sectors.html",
-    "https://stocks.brassivo.com",
-    "https://china.brassivo.com"
+    "https://brassivo.com/eps/"
   ]) assert.match(researchNav, new RegExp(`href=["']${href.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}["']`));
+  assert.doesNotMatch(researchNav, /investment\.brassivo\.com|stocks\.brassivo\.com|china\.brassivo\.com/);
   assert.equal((researchNav.match(/aria-current="page"/g) || []).length, 1);
   assert.match(html, /<header class="site-header">[\s\S]*?<img src="\/favicon\.svg" alt="" \/>[\s\S]*?BRASSIVO <b>RESEARCH<\/b>[\s\S]*?<span class="private-mark">MACRO LEDGER/);
   assert.doesNotMatch(html, /洪灏资产方向跟踪台账\.md|\.pdf|\.jpg/);
