@@ -36,7 +36,7 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;border
 .read-through summary{display:flex;flex-wrap:wrap;align-items:baseline;gap:3px 8px;cursor:pointer;list-style:none}.read-through summary::-webkit-details-marker{display:none}.read-through summary::after{content:"⌄";margin-left:auto;color:#815ac4}.read-through[open] summary::after{content:"⌃"}
 
 /* Interest Analysis 2.0 (Asia Morning & Markets Daily) */
-.interest-section{padding-bottom:34px;margin-bottom:28px;border-bottom:1px solid var(--line)}
+.interest-section{padding-bottom:32px}
 .ia-heading{flex-wrap:wrap;align-items:baseline}
 .ia-updated{margin-left:auto;color:var(--muted);font-size:12px;font-variant-numeric:tabular-nums}
 .ia-controls{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;margin-bottom:16px}

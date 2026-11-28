@@ -6,112 +6,32 @@ import vm from "node:vm";
 import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const js = fs.readFileSync(path.join(root, "media/bloomberg-daily.js"), "utf8");
 const html = fs.readFileSync(path.join(root, "media/index.html"), "utf8");
-const app = fs.readFileSync(path.join(root, "media/app.js"), "utf8");
-const context = { window: {} };
-vm.runInNewContext(js, context);
-const item = context.window.BLOOMBERG_MARKETS_DAILY;
+const dataJs = fs.readFileSync(path.join(root, "media/interest-analysis-data.js"), "utf8");
+const script = fs.readFileSync(path.join(root, "media/interest-analysis.js"), "utf8");
 
-test("Bloomberg summary has a dated source and synthesized overall risk-asset judgment", () => {
-  assert.match(item.issueDate, /^\d{4}-\d{2}-\d{2}$/);
-  assert.match(item.publishedAt, /^\d{4}-\d{2}-\d{2}T/);
-  assert.ok(item.sourceUrl.startsWith(`https://www.bloomberg.com/news/newsletters/${item.issueDate}/`));
-  assert.ok(item.bloombergTake.includes("Bloomberg"));
-  assert.ok(item.overallJudgment, "overallJudgment is required");
-  assert.ok(["bullish", "bearish"].includes(item.overallJudgment.regime));
-  assert.ok(item.overallJudgment.verdict && item.overallJudgment.title && item.overallJudgment.deduction && item.overallJudgment.condition);
-});
-
-test("public media page renders the Bloomberg section without private mail data", () => {
-  assert.match(html, /id="media-focus"/);
-  assert.match(html, new RegExp(`bloomberg-daily\\.js\\?v=${item.issueDate.replaceAll("-", "")}-[a-f0-9]{8}`));
+test("public media page renders only Interest Analysis 2.0 without legacy AIHOT or conditional view", () => {
   assert.match(html, /<h1 id="page-title">主流媒体/);
-  assert.match(app, /source-grid/);
-  assert.match(app, /Brassivo 推演/);
-  assert.doesNotMatch(js, /\/Users\/|gmail\.com|mail\.google\.com|@news\.bloomberg\.com|Content-Type:|Message-ID:/i);
-  assert.ok(js.length < 20000, "public file should be a compact original summary");
+  assert.match(html, /id="interest-analysis"/);
+  assert.match(html, /interest-analysis-data\.js\?v=\d{8}-[a-f0-9]{8}/);
+  assert.doesNotMatch(html, /id="media-focus"|bloomberg-daily\.js|AIHOT|短期条件判断/);
+  assert.doesNotMatch(dataJs, /\/Users\/|gmail\.com|mail\.google\.com|@news\.bloomberg\.com|Content-Type:|Message-ID:/i);
 });
 
-test("mediaFocus contains only AIHOT and front-end renders only Bloomberg and AIHOT cards", () => {
-  assert.deepEqual(Object.keys(item.mediaFocus).sort(), ["aihot"]);
-  const rendered = render(item);
-  assert.match(rendered, /class="source-card bloomberg"/);
-  assert.match(rendered, /class="source-card aihot"/);
-  assert.doesNotMatch(rendered, /CNBC Economy|CNBC Investing|cnbc-economy|cnbc-investing/);
-});
+test("Interest Analysis 2.0 page updates latest archive date and renders entries cleanly", () => {
+  const dataCtx = { window: {} };
+  vm.runInNewContext(dataJs, dataCtx);
+  const data = dataCtx.window.BRASSIVO_INTEREST_ANALYSIS;
+  assert.ok(data.entries.length >= 2);
 
-test("AIHOT ranking is a dated 48-hour snapshot with clean story links", () => {
-  const hot = item.mediaFocus.aihot;
-  assert.equal(hot.sourceUrl, "https://aihot.news/hot");
-  assert.equal(hot.windowHours, 48);
-  assert.equal(hot.capturedAt.slice(0, 10), hot.captureDate);
-  assert.ok(Date.parse(hot.boardUpdatedAt) <= Date.parse(hot.capturedAt));
-  assert.ok(hot.stories.length >= 1 && hot.stories.length <= 10);
-  for (const [index, story] of hot.stories.entries()) {
-    assert.equal(story.rank, index + 1);
-    assert.ok(story.title.length > 10);
-    assert.ok(Number.isInteger(story.heat));
-    assert.match(story.url, /^https:\/\/aihot\.news\/story\/[0-9a-f-]{36}$/);
-  }
-  assert.match(app, /标题为聚合站的事件描述/);
-  assert.match(html, /媒体焦点与 AI 热榜/);
-});
-
-const render = data => {
-  const target = { innerHTML: "" };
-  const env = { window: { BLOOMBERG_MARKETS_DAILY: data }, document: { querySelector: selector => selector === "#media-content" ? target : {} } };
-  vm.runInNewContext(app, env);
-  return target.innerHTML;
-};
-test("market summaries derive close-to-close moves and keep missing data distinct from zero", () => {
-  const data = structuredClone(item);
-  const story = data.mediaFocus.aihot.stories[0];
-  story.marketLink = { company: "Example", ticker: "TEST", status: "listed", relationUrl: "https://example.com/", eventPublishedAt: null, eventSourceUrl: null };
-  data.mediaFocus.aihot.market = { checkedAt: "2026-09-27T00:00:00Z", benchmark: { sessionDate: "2026-09-25", previousSessionDate: "2026-09-24", close: 101, previousClose: 100, sources: [] }, quotes: { TEST: { sessionDate: "2026-09-25", previousSessionDate: "2026-09-24", close: 105, previousClose: 100, sources: [] } } };
-  const rendered = render(data);
-  assert.match(rendered, /美股收盘 \+5\.00%/);
-  assert.match(rendered, /较标普500 \+4\.00 个百分点/);
-  assert.match(rendered, /值得研究；新闻影响待核验/);
-  delete data.mediaFocus.aihot.market.quotes.TEST;
-  const missing = render(data);
-  assert.match(missing, /Example \(TEST\).*?行情待核验/s);
-  assert.doesNotMatch(missing, /美股收盘 \+0\.00%/);
-});
-test("company mappings escape HTML and do not attach private businesses to listed investors", () => {
-  const data = structuredClone(item);
-  const story = data.mediaFocus.aihot.stories[0];
-  story.marketLink = { company: "<img src=x>", ticker: null, status: "no_direct", relationUrl: null };
-  const rendered = render(data);
-  assert.match(rendered, /&lt;img src=x&gt;/);
-  assert.doesNotMatch(rendered, /<img src=x>/);
-  assert.match(rendered, /暂无已核验的直接上市标的/);
-});
-
-test("indirect beneficiaries stay separate from direct company prices and escape content", () => {
-  const data = structuredClone(item);
-  const story = data.mediaFocus.aihot.stories[1];
-  story.marketLink = { company: "OpenAI", ticker: null, status: "no_direct", relationUrl: null };
-  story.readThrough = { checkedAt: "2026-09-28T09:00:00+08:00", note: "<script>unsafe</script>", candidates: [{ company: "NVIDIA", ticker: "NVDA", exchange: "NASDAQ", direction: "潜在利好", exposure: "GPU supply", condition: "Requires incremental orders", sourceUrl: "https://example.com/" }] };
-  const rendered = render(data);
-  assert.match(rendered, /产业链推演 · 条件性/);
-  assert.match(rendered, /NVIDIA \(NVDA · NASDAQ\)/);
-  assert.match(rendered, /Requires incremental orders/);
-  assert.match(rendered, /&lt;script&gt;unsafe&lt;\/script&gt;/);
-  assert.doesNotMatch(rendered, /OpenAI \(NVDA\)|<script>unsafe/);
-});
-
-test("front-end AIHOT list renders only the top 6 stories from snapshot", () => {
-  const data = structuredClone(item);
-  assert.ok(data.mediaFocus.aihot.stories.length >= 7, "snapshot has at least 7 stories");
-  const rendered = render(data);
-  const ranks = [...rendered.matchAll(/class="hot-rank">(\d+)</g)].map(m => m[1]);
-  assert.deepEqual(ranks, ["01", "02", "03", "04", "05", "06"]);
-});
-
-test("front-end conditional view renders unified risk-asset regime synthesis instead of split bull/bear cards", () => {
-  const rendered = render(item);
-  assert.match(rendered, /class="signal-card regime-card (?:positive|negative)"/);
-  assert.match(rendered, /验证与反转条件：/);
-  assert.doesNotMatch(rendered, /短期利多 · Brassivo 推演|短期利空 · Brassivo 推演/);
+  const rootEl = { innerHTML: "", hidden: false, querySelectorAll: () => [], querySelector: () => null };
+  const dateEl = { textContent: "" };
+  vm.runInNewContext(script, {
+    window: { BRASSIVO_INTEREST_ANALYSIS: data },
+    document: { querySelector: (s) => (s === "#interest-analysis" ? rootEl : s === "#interest-latest-date" ? dateEl : null) }
+  });
+  assert.equal(dateEl.textContent, data.latestDate);
+  assert.match(rootEl.innerHTML, /01 \/ INTEREST ANALYSIS 2\.0/);
+  assert.match(rootEl.innerHTML, /谢林信号真伪过滤/);
+  assert.match(rootEl.innerHTML, /BDM 权力加权博弈矩阵/);
 });

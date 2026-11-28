@@ -133,6 +133,8 @@
   const render = () => {
     const entry = pickEntry();
     state.id = entry.id;
+    const latestEl = document.querySelector("#interest-latest-date");
+    if (latestEl) latestEl.textContent = dataset.latestDate || entry.date || "—";
     const list = currentList();
     const hasAsia = entries.some((e) => e.edition === "asia_morning");
     const hasMarkets = entries.some((e) => e.edition === "markets_daily");
@@ -141,7 +143,7 @@
 
     root.innerHTML = `
       <div class="section-heading ia-heading">
-        <span>00 / INTEREST ANALYSIS 2.0</span>
+        <span>01 / INTEREST ANALYSIS 2.0</span>
         <h2 id="interest-title">布隆伯格 · 利益分析 2.0（早报 / 晚报）</h2>
         <small class="ia-updated">自动同步：${escapeHTML(dataset.updatedAt || entry.date)}</small>
       </div>
