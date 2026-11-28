@@ -5,9 +5,13 @@
 
   const dataset = window.BRASSIVO_RADAR_DATA;
   if (!dataset || !Array.isArray(dataset.weeks) || !dataset.weeks.length) {
-    root.innerHTML = `<p class="unavailable">暂无已发布的六大核心美股周度快照。</p>`;
+    root.innerHTML = `<p class="unavailable">暂无已发布的核心美股周度快照。</p>`;
     return;
   }
+
+  const EPS_API_URL = "https://api.brassivo.com/eps/data";
+  const EPS_ALIASES = { GOOG: "GOOGL" };
+  const PERIOD_LABELS = ["Q1", "Q2", "FY1", "FY2"];
 
   const escapeHTML = (value) =>
     String(value ?? "").replace(/[&<>"']/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]));
@@ -16,7 +20,10 @@
   const initialHash = (window.location?.hash || "").replace(/^#/, "").toUpperCase();
   const state = {
     weekIndex: 0,
-    selectedTicker: initialHash || weeks[0].stocks[0]?.ticker || ""
+    selectedTicker: initialHash || weeks[0].stocks[0]?.ticker || "",
+    epsAsOf: "",
+    epsBySymbol: new Map(),
+    epsLoaded: false
   };
 
   const verdictClass = (v) => {
@@ -38,6 +45,58 @@
     if (zone.includes("合理")) return "is-fair";
     if (zone.includes("偏贵") || zone.includes("透支") || zone.includes("高估")) return "is-expensive";
     return "";
+  };
+
+  const classifyEps = (stock) => {
+    const total = Number(stock?.score?.total);
+    if (!Number.isFinite(total)) return { dir: "flat", arrow: "→", label: "中性" };
+    if (total >= 70) return { dir: "up", arrow: "↑", label: "强势上修" };
+    if (total >= 55) return { dir: "up", arrow: "↑", label: "稳步上修" };
+    if (total >= 45) return { dir: "flat", arrow: "→", label: "多空分化" };
+    if (total >= 35) return { dir: "down", arrow: "↓", label: "预期偏弱" };
+    return { dir: "down", arrow: "↓", label: "预期下修" };
+  };
+
+  const lookupEps = (ticker) => {
+    const key = String(ticker || "").toUpperCase();
+    return state.epsBySymbol.get(key) || (EPS_ALIASES[key] ? state.epsBySymbol.get(EPS_ALIASES[key]) : null) || null;
+  };
+
+  const renderEpsCell = (ticker) => {
+    if (!state.epsLoaded) return `<span class="eps-none">读取中…</span>`;
+    const eps = lookupEps(ticker);
+    if (!eps || !Number.isFinite(Number(eps.score?.total))) {
+      return `<span class="eps-none">未纳入 EPS 台账</span>`;
+    }
+    const meta = classifyEps(eps);
+    const total = Number(eps.score.total).toFixed(1);
+    const rank = eps.score?.rank ? `美股 #${eps.score.rank}` : "";
+    return `<a class="eps-badge is-${meta.dir}" href="/eps/" data-eps-link="1">EPS ${escapeHTML(total)} ${meta.arrow} ↗</a><span class="eps-badge-sub">${escapeHTML(meta.label)}${rank ? ` · ${escapeHTML(rank)}` : ""}</span>`;
+  };
+
+  const renderEpsDetailStrip = (ticker) => {
+    if (!state.epsLoaded) return "";
+    const eps = lookupEps(ticker);
+    if (!eps || !Number.isFinite(Number(eps.score?.total))) return "";
+    const meta = classifyEps(eps);
+    const total = Number(eps.score.total).toFixed(1);
+    const trend = Array.isArray(eps.estimateRevisionTrend) ? eps.estimateRevisionTrend : [];
+    const chipCls = (val) => {
+      const s = String(val || "");
+      if (s.startsWith("+")) return "pos";
+      if (s.startsWith("-")) return "neg";
+      return "";
+    };
+    return `
+      <div class="eps-readonly-strip">
+        <div class="eps-strip-left">
+          <span class="eps-strip-kicker">EPS 边际对照（只读${state.epsAsOf ? ` · ${escapeHTML(state.epsAsOf)}` : ""}）</span>
+          <span class="eps-badge is-${meta.dir}">加权评分 ${escapeHTML(total)} ${meta.arrow} · ${escapeHTML(meta.label)}</span>
+          ${trend.length ? `<div class="eps-trend-chips">${trend.slice(0, 4).map((v, i) => `<span class="eps-chip ${chipCls(v)}">${PERIOD_LABELS[i] || `P${i + 1}`} ${escapeHTML(v)}</span>`).join("")}</div>` : ""}
+        </div>
+        <a class="eps-strip-link" href="/eps/">前往 EPS 台账查看 Zacks 标注原图 ↗</a>
+      </div>
+    `;
   };
 
   const renderDetail = (stock) => {
@@ -62,6 +121,7 @@
         </div>
 
         ${stock.overboughtWarning ? `<div class="overbought-banner" role="alert">${escapeHTML(stock.overboughtWarning)}</div>` : ""}
+        ${renderEpsDetailStrip(stock.ticker)}
         ${stock.positioning ? `<div class="positioning-box"><strong>核心定位：</strong>${escapeHTML(stock.positioning)}</div>` : ""}
 
         <div class="metric-grid">
@@ -156,6 +216,7 @@
         </label>
         <div class="radar-meta-pills">
           ${week.benchmark10Y ? `<span>10Y 美债基准：${escapeHTML(week.benchmark10Y)}</span>` : ""}
+          ${state.epsAsOf ? `<span>EPS 边际截至：${escapeHTML(state.epsAsOf)}</span>` : ""}
           <span>自动同步：${escapeHTML(dataset.updatedAt || week.date)}</span>
         </div>
       </div>
@@ -170,7 +231,7 @@
       <div class="section-heading">
         <span>01 / VALUE RANKING</span>
         <h2>综合投资价值排序表</h2>
-        <small>点击任意一行切换下方全景研判</small>
+        <small>EPS 边际列为只读参考，不参与四维加权打分与排名 · 点击任意行切换下方全景</small>
       </div>
 
       <div class="ranking-wrap">
@@ -185,8 +246,8 @@
               <th>ROIC</th>
               <th>四维得分</th>
               <th>BDM 均衡</th>
+              <th>EPS 边际（只读）</th>
               <th>当前击球区 / 警示</th>
-              <th>操作</th>
             </tr>
           </thead>
           <tbody>
@@ -206,11 +267,11 @@
                     <div class="score-bar${sc < 68 ? " is-mid" : ""}" aria-hidden="true"><span style="width:${Math.min(100, Math.max(0, sc))}%"></span></div>
                   </td>
                   <td class="num"><strong>${s.bdmScore != null ? escapeHTML(s.bdmScore.toFixed(1)) : "—"}</strong> <small>${escapeHTML(s.bdmVerdict || "")}</small></td>
+                  <td>${renderEpsCell(s.ticker)}</td>
                   <td>
                     <span class="zone-tag ${zoneClass(s.currentZone)}">${escapeHTML(s.currentZone)}</span>
                     ${s.overboughtWarning ? `<br><span class="warn-badge">⚠️ RSI 超买警示</span>` : ""}
                   </td>
-                  <td><button type="button" class="inspect-btn">${isSel ? "正在查看" : "展开全景"}</button></td>
                 </tr>
               `;
             }).join("")}
@@ -235,6 +296,10 @@
       });
     }
 
+    root.querySelectorAll("[data-eps-link]").forEach((link) => {
+      link.addEventListener("click", (ev) => ev.stopPropagation());
+    });
+
     root.querySelectorAll("tr[data-ticker]").forEach((row) => {
       row.addEventListener("click", () => {
         state.selectedTicker = row.dataset.ticker;
@@ -250,5 +315,27 @@
     });
   };
 
+  const loadEpsSnapshot = async () => {
+    if (typeof window.fetch !== "function") {
+      state.epsLoaded = true;
+      return;
+    }
+    try {
+      const res = await window.fetch(EPS_API_URL, { cache: "no-store" });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const payload = await res.json();
+      state.epsAsOf = payload?.asOf || payload?.baselineDate || "";
+      state.epsBySymbol = new Map(
+        (payload?.stocks || []).map((item) => [String(item.symbol || "").toUpperCase(), item])
+      );
+    } catch {
+      // Fail softly: radar remains fully usable without live EPS data
+    } finally {
+      state.epsLoaded = true;
+      render();
+    }
+  };
+
   render();
+  loadEpsSnapshot();
 })();

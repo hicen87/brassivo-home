@@ -130,7 +130,39 @@ test("Core US Radar page renders ranking table, overbought alert, and homepage l
     document: { querySelector: (s) => (s === "#radar-root" ? rootEl : s === "#radar-date" ? dateEl : null) }
   });
   assert.match(rootEl.innerHTML, /综合投资价值排序表/);
+  assert.match(rootEl.innerHTML, /EPS 边际（只读）/);
   assert.match(rootEl.innerHTML, /overbought-banner/);
   assert.match(rootEl.innerHTML, /三档击球区/);
   assert.match(dateEl.textContent, /^\d{4}-\d{2}-\d{2}$/);
+});
+
+test("Core US Radar hydrates read-only EPS badges and detail strip without altering ranking", async () => {
+  const app = read("radar/app.js");
+  const dataJs = read("radar/radar-data.js");
+  const dataCtx = { window: {} };
+  vm.runInNewContext(dataJs, dataCtx);
+
+  const rootEl = { innerHTML: "", querySelector: () => null, querySelectorAll: () => [] };
+  const dateEl = { textContent: "" };
+  const mockEps = {
+    asOf: "2026-11-26",
+    stocks: [
+      { symbol: "META", score: { total: 27.1, rank: 6 }, estimateRevisionTrend: ["+0.87%", "-9.03%", "-6.42%", "-1.90%"] },
+      { symbol: "GOOGL", score: { total: 45.9, rank: 4 }, estimateRevisionTrend: ["-2.49%", "+1.85%", "-3.61%", "+1.50%"] }
+    ]
+  };
+  vm.runInNewContext(app, {
+    window: {
+      BRASSIVO_RADAR_DATA: dataCtx.window.BRASSIVO_RADAR_DATA,
+      location: { hash: "#META" },
+      history: {},
+      fetch: async () => ({ ok: true, json: async () => mockEps })
+    },
+    document: { querySelector: (s) => (s === "#radar-root" ? rootEl : s === "#radar-date" ? dateEl : null) }
+  });
+  await new Promise((r) => setTimeout(r, 10));
+  assert.match(rootEl.innerHTML, /EPS 27\.1 ↓/);
+  assert.match(rootEl.innerHTML, /EPS 45\.9 →/);
+  assert.match(rootEl.innerHTML, /eps-readonly-strip/);
+  assert.match(rootEl.innerHTML, /Q1 \+0\.87%/);
 });
